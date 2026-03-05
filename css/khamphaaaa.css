@@ -1,0 +1,248 @@
+/* --- DESKTOP FIX --- */
+.khamphaalbum-section {
+    padding-top: 0px;
+    padding-bottom: 100px;
+    background-color: var(--color-white);
+    /* Giữ section ổn định */
+    overflow: hidden; 
+}
+
+    .khamphaalbum-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 13px;
+    }
+
+    .section-title {
+        font-size: 1.9rem; /* Giảm size xuống một chút cho tinh tế */
+        font-weight: 500;
+        text-transform: none;
+        letter-spacing: -0.5px; /* QUOC dùng letter-spacing hẹp cho title */
+        color: var(--text-color);
+    }
+
+    /* Label "Hành trình" */
+    .khamphaalbum-header .section-label {
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 200;
+        letter-spacing: 0.1em;
+        color: var(--color-text-muted);
+    }
+
+    /* Cụm 2 nút điều hướng */
+    .khamphaalbum-controls {
+        display: flex;
+        gap: 12px;
+    }
+
+    .ctrl-btn {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 1px solid var(--black); /* Màu dark từ footer nhưng nhạt đi */
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: var(--color-dark); /* Màu hắc ín của mày */
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        padding: 0;
+    }
+
+
+.khamphaalbum-slider {
+    display: flex;
+    /* Tăng gap lên một chút cho thoáng giống QUOC */
+    gap: 20px; 
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-behavior: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    /* Quan trọng: Padding này phải khớp với container của mày để đồng nhất lề */
+    padding: 0; 
+}
+
+/* Ép lề chuẩn cho toàn bộ section khamphaalbum */
+.khamphaalbum-section .casa-container {
+    max-width: 1200px; /* Hoặc con số chuẩn của các section khác mày đang dùng */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 55px !important;
+    padding-right: 55px !important;
+    box-sizing: border-box !important;
+}
+
+/* Sửa lại kích thước item để không làm bung lề container */
+.khamphaalbum-item {
+    flex: 0 0 calc((100% - 40px) / 3) !important; /* 24px là tổng gap: 12px * 2 */
+    min-width: calc((100% - 40px) / 3) !important;
+    scroll-snap-stop: always !important;
+    scroll-snap-align: start !important;
+
+}
+
+.khamphaalbum-item img {
+    width: 100%;
+    aspect-ratio: 11/12;
+    object-fit: cover;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.item-info {
+        position: relative; /* Đảm bảo nó nằm theo luồng tự nhiên */
+        padding: 0 10px 20px 0;
+        text-align: left;
+    }
+
+    .item-title {
+        font-size: 1.9rem;
+        font-weight: 500;
+        margin-bottom: 20px;
+        color: #000000;
+        display: block;
+    }
+
+    .item-desc {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #000000;
+        margin-bottom: 15px;
+        /* Giới hạn 3 dòng để các card đều nhau */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+
+    .card-link {
+    display: inline-block;
+    background-color: #1a1a1a; /* Màu đen đặc trưng */
+    color: #ffffff;
+    padding: 12px 28px; /* Độ rộng vừa phải để nút nhìn cân đối */
+    border-radius: 100px; /* Bo tròn hoàn toàn hai đầu */
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: none; /* QUOC thường không viết hoa hết, để chữ tự nhiên */
+    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid #1a1a1a;
+    margin-top: 5px; /* Tạo khoảng cách nhẹ với đoạn mô tả */
+}
+
+/* Hiệu ứng Hover - Đảo màu nhẹ nhàng */
+.card-link:hover {
+    background-color: transparent;
+    color: #1a1a1a;
+}
+
+    .khamphaalbum-progress-container {
+        width: 100%;
+        height: 1px;
+        transform: scaleY(0.8);
+        background-color:var(--color-bar); /* Nền thanh mảnh, nhạt */
+        margin-top: 30px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .khamphaalbum-progress-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 101%;
+        width: 0%; /* Bắt đầu từ 0 */
+        background-color: #000000; 
+        opacity: 1 !important;
+        transition: width 0.2s ease-out; 
+    }
+
+
+
+/* ==========================================================================
+   MOBILE & TABLET FIX (Danna's Golden Rule: Lề 20px, Section 40px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. Reset Container: Bỏ padding 60px của Desktop, về đúng 20px [cite: 2026-02-07] */
+    .khamphaalbum-section .casa-container {
+        padding-bottom: 80px;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .khamphaalbum-section {
+        padding: 0 !important; 
+        overflow: hidden; 
+    }
+
+    /* 2. Header: Căn thẳng hàng lề 20px [cite: 2026-02-07] */
+    .khamphaalbum-header {
+        padding: 0 20px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .section-title {
+        font-size: 1.8rem !important;
+        max-width: 300px;
+    }
+
+
+    .khamphaalbum-controls {
+        display: none;
+    }
+
+    
+    .khamphaalbum-slider {
+        padding: 0 20px !important; /* Tạo lề 20px cho ảnh đầu [cite: 2026-02-07] */
+        scroll-padding: 0 20px !important; /* BUỘC trình duyệt dừng đúng vạch 20px */
+        gap: 7px !important;
+        scroll-snap-type: x mandatory !important;
+        display: flex !important;
+        margin-right: 0 !important;
+    }
+
+    /* 4. Item: Tỷ lệ 85% sang chảnh, hở đuôi ảnh sau */
+    .khamphaalbum-item {
+        flex: 0 0 85% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        scroll-snap-align: start !important; /* Hít chặt lề trái khi vuốt */
+    }
+
+    
+    /* 3. Đảm bảo item cuối không mang theo margin thừa */
+    .khamphaalbum-item:last-child {
+        margin-right: 0 !important;
+    }
+
+    .khamphaalbum-item img {
+        aspect-ratio: 7/8 !important; 
+        margin-bottom: 15px !important;
+    }
+
+    /* 5. Fix Text: Không bị chìm, không bị lệch */
+    .item-info {
+        padding: 0 !important;
+    }
+
+    .item-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    .item-desc {
+        font-size: 0.95rem !important;
+        -webkit-line-clamp: 3 !important;
+    }
+
+    .khamphaalbum-progress-container {
+        margin: 30px 0 0 0 !important;
+        width: 100%;
+    }
+}

@@ -1,0 +1,548 @@
+@media (min-width: 769px) {
+/* Section Text Lead */
+.intro-text-section {
+        /* Trả padding trái phải về 0 để container lo, giữ nguyên section-gap của mày */
+        padding: var(--section-gap) 0 !important; 
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Để khi zoom out cái lồng 1650px sẽ vào giữa */
+    }
+
+
+.intro-text-section .container {
+        /* [MỎ NEO] Khóa chặt khung xương 1650px */
+        width: 100% !important;
+        max-width: var(--container-max) !important; 
+        margin: 0 auto !important;
+        /* Padding 55px huyền thoại giúp chữ CAM KẾT thẳng hàng Logo */
+        padding: 0 var(--side-padding) !important;
+        box-sizing: border-box;
+    }
+    
+   
+
+.intro-content {
+        /* Giữ nguyên max-width 500px để Title ngắt dòng đẹp */
+        max-width: 500px !important; 
+        margin-left: 0 !important;
+        margin-right: auto !important;
+        text-align: left;
+    }
+
+.sub-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-h3);
+    margin-bottom: 20px;
+}
+
+.main-title {
+    font-size: clamp(38px, 5vw, 50px);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.desc-text {
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 670px;
+    color: var(--color-black);
+}
+}
+
+
+
+/* Section Dải Logo ngang */
+.logo-strip-section {
+    padding: 40px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0;
+}
+
+.logo-track {
+    display: flex;
+    justify-content: center; /* Căn giữa dải logo */
+    align-items: center;
+    gap: 99px; /* Khoảng cách giữa các logo */
+    flex-wrap: wrap;
+}
+
+.logo-track img {
+    height: 65px; 
+    width: auto;
+    transition: 0.3s;
+}
+
+.logo-track img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.cert-section {
+    max-width: 1340px; /* Hoặc 950px tùy mày muốn */
+    margin: 0 auto;
+    padding: 60px 55px;
+}
+
+.cert-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    margin-bottom: 100px; /* Khoảng cách giữa các chứng chỉ rộng cho thoáng */
+}
+.cert-item:first-child {
+    margin-bottom: -40px;
+}
+.cert-item:last-child {
+    margin-bottom: 15px;
+}
+
+/* ĐÂY LÀ CHỖ SO LE: Cứ thằng thứ 2, 4, 6... là tự đảo ngược */
+.cert-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.cert-media {
+    flex: 1;
+    text-align: center;
+}
+
+.cert-media img {
+    max-width: 100%;
+    height: auto;
+    /* Có thể thêm đổ bóng nhẹ kiểu mockup */
+    
+}
+
+.cert-info1, 
+.cert-info2,
+.cert-info3,
+.cert-info4,
+.cert-info5 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Luôn canh trái text */
+}
+
+.cert-tag {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #888;
+}
+
+.cert-title {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.cert-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 35px;
+    max-width: 550px;
+}
+
+/* Nút View chuẩn QUOC */
+.btn-view-cert {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    border: 1px solid #000;
+    padding: 12px 25px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-view-cert:hover {
+    background: #000;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+/* Container tổng của Section */
+.faq-wrapper {
+    width: 100%;
+    padding: 0 60px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff; /* Nền trang trắng */
+}
+
+/* Tiêu đề FAQ căn giữa */
+.faq-title {
+    font-size: 32px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    text-transform: none; /* Giữ nguyên định dạng chữ */
+}
+
+/* Khối nền xám nhạt chứa câu hỏi */
+.faq-content-block {
+    background-color: #f4f4f4; /* Màu xám rất nhạt đúng hình */
+    width: 100%;
+    max-width: 840px; /* Giới hạn độ rộng nội dung */
+    padding: 15px 50px; /* Padding rộng rãi tạo độ thoáng */
+    box-sizing: border-box;
+}
+
+.faq-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer; /* Để người dùng biết là bấm được */
+    padding: 22px 0;
+}
+
+/* Từng dòng câu hỏi */
+.faq-item {
+    border-bottom: 1px solid var(--color-bar);
+    transition: background-color 0.3s ease;
+}
+
+.faq-item:last-child {
+    border-bottom: none; /* Dòng cuối không có kẻ ngang */
+}
+
+/* Typography cho câu hỏi */
+.faq-question {
+    font-size: 13px;
+    font-weight: 800; /* Độ đậm vừa phải */
+    color: #1a1a1a; /* Màu gần đen */
+    line-height: 1.4;
+}
+
+
+/* PHẦN MỚI: Câu trả lời */
+.faq-answer-wrapper {
+    display: grid;
+    grid-template-rows: 0fr; /* Mặc định là 0 */
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Hiệu ứng dòng chảy của QUOC */
+    overflow: hidden;
+}
+
+/* Nội dung bên trong Grid */
+.faq-answer-content {
+    min-height: 0;
+}
+
+.faq-answer-content p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+    padding-bottom: 20px; /* Tạo khoảng trống khi mở */
+}
+
+/* KHI ACTIVE: Bung Grid ra */
+.faq-item.active .faq-answer-wrapper {
+    grid-template-rows: 1fr; /* Mở ra đúng bằng nội dung chữ */
+}
+
+/* Nút tròn chứa icon */
+    .ed-faq-icon-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+        background-color: #e0e0e0;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .faq-header-row:hover .ed-faq-icon-btn {
+    background-color: var(--color-dark);
+    }
+
+    .faq-header-row:hover .ed-faq-chevron {
+    stroke: #ffffff;
+    }
+
+    .faq-item.active .ed-faq-chevron {
+    transform: rotate(180deg);
+}
+
+    /* Icon SVG */
+    .ed-faq-chevron {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Đồng bộ thời gian với slide */
+    width: 11px;
+    height: 11px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 3;
+}
+    
+
+
+
+
+/*RESPONSIVE*/
+/* --- RESPONSIVE CHO TABLET & MOBILE --- */
+@media (max-width: 1024px) {
+    /* 1. Section Text Lead: Cho ra giữa cho dễ đọc */
+
+    .intro-text-section {
+    padding: 40px 20px;
+    padding-left: 0 !important; 
+    padding-right: 0 !important;
+    
+    }
+
+    .intro-content {
+        max-width: 90% !important;
+        margin: 0 auto !important;
+        text-align: start; 
+    }
+
+    .intro-content .sub-title {
+        display: block;
+        font-size: 11px;
+        color: var(--color-h3);
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    /* 2. Dải Logo: Chế độ Swipe ngang */
+    .logo-strip-section {
+        padding: 30px 0;
+    }
+    
+    .logo-track {
+        justify-content: flex-start; /* Để bắt đầu từ trái */
+        flex-wrap: nowrap; /* Không cho xuống hàng */
+        overflow-x: auto; /* Cho phép cuộn ngang */
+        padding: 0 20px; /* Thêm padding để không bị dính lề */
+        -webkit-overflow-scrolling: touch; /* Cuộn mượt trên iPhone */
+        gap: 40px;
+    }
+
+    .logo-track::-webkit-scrollbar {
+        height: 2px; /* Thanh cuộn siêu mỏng kiểu Google mày thích */
+    }
+    
+    .logo-track img {
+        height: 35px; /* Nhỏ lại một chút trên mobile */
+        flex-shrink: 0; /* Không cho logo bị bóp méo */
+    }
+}
+
+
+    /* 3. Khối Chứng chỉ: Ép thành hàng dọc duy nhất */
+    @media (max-width: 1024px) {
+    /* 1. Giải phóng khung tổng để bám sát lề 20px */
+    .cert-section {
+        padding: 40px 0 !important; /* Trên dưới 40px theo luật, lề ngang để cert-item lo */
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden;
+    }
+
+    .cert-item, 
+    .cert-item:nth-child(even) {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px;
+        margin-bottom: 80px;
+        padding: 0 20px !important; /* Đảm bảo chuẩn lề 20px của mày */
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .cert-media {
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .cert-media img {
+        /* Cho ảnh to ra để chiếm không gian, không bị lọt thỏm giữa lề rộng */
+        width: 100% !important; 
+        max-width: 350px; /* Giới hạn để không bị quá thô trên mobile to */
+        height: auto;
+        object-fit: contain;
+    }
+
+    .cert-info1 {
+        margin-top: -30px;
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+
+    }
+
+    .cert-info2 {
+        margin-top: -40px;
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+    }
+
+    .cert-info3 {
+        margin-top: -40px;
+        margin-bottom: 40px;
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+    }
+
+    .cert-info4 {
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+    }
+
+    .cert-info5 {
+        margin-top: -40px;
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+    }
+
+    .cert-title {
+        font-size: 24px !important; /* Giảm nhẹ để không bị gãy dòng quá xấu */
+        line-height: 1.3;
+        margin-bottom: 15px;
+    }
+
+    .cert-desc {
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 100% !important; /* Dãn chữ ra sát lề 20px */
+        margin-bottom: 25px;
+    }
+
+    .btn-view-cert {
+        display: flex;
+        width: 100%;
+        max-width: 280px; /* Không để nút tràn 100% vì nhìn sẽ rất thô, để tầm này là vừa đẹp */
+        justify-content: center;
+        padding: 12px 0;
+        border: 1px solid #000; /* Ví dụ style nút */
+        text-decoration: none;
+    }
+}
+
+/* Tinh chỉnh riêng cho Mobile nhỏ */
+@media (max-width: 480px) {
+    .cert-item {
+        margin-bottom: 60px !important;
+        padding: 0 20px !important; /* Luôn giữ 20px */
+    }
+    
+    .cert-title {
+        font-size: 22px !important;
+    }
+}
+
+
+
+
+
+
+
+
+/* --- RESPONSIVE CHO FAQ (MOBILE & TABLET) --- */
+@media (max-width: 1024px) {
+    /* Container tổng */
+    .faq-wrapper {
+        padding: 0 20px;
+    }
+
+    .faq-title {
+        font-size: 28px; /* Giảm nhẹ tiêu đề cho cân đối */
+        margin-bottom: 30px;
+    }
+
+    /* Khối nền xám: Bỏ giới hạn max-width và chỉnh lại padding */
+    .faq-content-block {
+        max-width: 100%;
+        padding: 5px 20px; /* Thu hẹp padding nội bộ để ưu tiên không gian chữ */
+        background-color: #f4f4f4; /* Giữ nguyên màu xám nhạt chuẩn QUOC */
+    }
+
+    /* Từng dòng câu hỏi */
+    .faq-header-row {
+        padding: 18px 0; /* Thu nhỏ khoảng cách dòng một chút */
+    }
+
+    /* Font chữ trên mobile: Cần rõ ràng nhưng không quá to */
+    .faq-question {
+        font-size: 14px; /* Tăng 1px so với desktop để dễ đọc trên điện thoại */
+        letter-spacing: -0.01em;
+        padding-right: 15px; /* Tránh chữ đè lên icon */
+    }
+
+    /* Câu trả lời */
+    .faq-answer-content p {
+        font-size: 12px;
+        line-height: 1.4;
+        padding-bottom: 15px;
+    }
+
+    /* Icon nút tròn: Giữ nguyên kích thước để dễ chạm (Touch target) */
+    .ed-faq-icon-btn {
+        width: 28px; /* Tăng nhẹ để ngón tay dễ bấm */
+        height: 28px;
+    }
+
+    .ed-faq-chevron {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Tinh chỉnh cho màn hình siêu nhỏ */
+@media (max-width: 480px) {
+    .faq-title {
+        font-size: 24px;
+    }
+    
+    .faq-question {
+        font-size: 13px; /* Quay lại 13px nếu màn hình quá hẹp */
+    }
+}

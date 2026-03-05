@@ -1,0 +1,206 @@
+.company {
+    width: 100% !important;
+    background-color: #988e86 !important;
+    overflow: hidden !important; 
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.about-intro::before, 
+.about-intro::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* ============================================================
+   2. GIAO DIỆN MOBILE - GIỮ NGUYÊN 100% CỦA DANNA
+   ============================================================ */
+@media (max-width: 768px) {
+    .company {
+        margin-top: 80px !important; 
+        margin-bottom: 10px !important;
+    }
+
+    .about-intro {
+        display: flex !important;
+        flex-direction: column !important; 
+        min-height: auto !important; 
+        width: 100vw !important;
+        position: relative;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .about-main-text {
+        order: 2 !important; /* Chữ nằm trên */
+        width: 100% !important; 
+        padding: 30px 25px !important; 
+        background-color: #e9c2b6 !important;
+        color: #ffffff;
+    }
+
+    .about-main-visual {
+        order: 2 !important; /* Ảnh nằm dưới */
+        width: 100% !important;
+    }
+
+    .image-inner {
+        width: 100% !important;
+        height: 55vh !important; 
+        display: block !important;
+    }
+    
+    .image-inner img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    .about-main-text .title { 
+        font-size: 22px !important; 
+        font-weight: 400;
+        margin-bottom: 20px !important; 
+    }
+
+    .about-main-text .sub-title { 
+        font-size: 12px !important; 
+        font-weight: 100; 
+        margin-bottom: 10px !important; 
+        color: #ffffff;
+    }
+    .about-main-text .description { 
+        font-size: 11px !important; 
+        line-height: 1.6 !important; 
+    }
+
+    .about-intro .btn-discover {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 48px !important;
+        padding: 0 40px !important;
+        border-radius: 50px !important;
+        margin-top: 20px !important;
+        text-decoration: none;
+        font-weight: 600;
+    }
+}
+
+/* ============================================================
+   3. GIAO DIỆN DESKTOP - ĐÃ ĐẢO VỊ TRÍ
+   ============================================================ */
+@media (min-width: 769px) {
+    .company {
+        max-width: none; 
+        width: 100%;
+        padding: 0 ;
+        margin: -1px 0 0 0; 
+        
+        background-color: #e9c2b6 !important;
+    }
+    
+
+    .about-intro {
+        display: flex !important;
+        /* ĐỔI Ở ĐÂY: Dùng row-reverse để đẩy Ảnh (đứng trước trong HTML) sang Phải */
+        flex-direction: row-reverse !important; 
+        align-items: stretch !important;
+        width: 100% !important;
+        min-height: 100vh !important;
+        margin: 0 !important
+    }
+
+    /* ẢNH BÊN PHẢI (Do row-reverse) */
+    .about-main-visual {
+        flex: 0 0 50% !important; /* Fix nhẹ lỗi cú pháp 0 50% 0 của mày */
+        width: 50% !important;
+    }
+
+    .image-inner, .image-inner img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+
+    /* CHỮ BÊN TRÁI (Do row-reverse) */
+    .about-main-text {
+        flex: 0 0 50% !important;
+        color: #ffffff;
+        background-color: #f5dbd4 !important; 
+        
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important;
+        /* Trả về lề trái tuyệt đối theo ý mày */
+        align-items: flex-start !important; 
+        
+        padding: 60px 55px !important; 
+        max-width: none !important;
+    }
+
+    /* Khống chế độ dài của cụm text để không bị "dài dại" khi zoom out */
+    .about-main-text .top-content, 
+    .about-main-text .description,
+    .about-main-text .btn-discover {
+        width: 100%;
+        /* Đây là độ dài tối đa của dòng chữ khi zoom out */
+        /* Tao để 700px để nó không bao giờ bị dãn quá rộng gây khó đọc */
+        max-width: 700px !important; 
+        
+        margin-left: 0 !important;
+        margin-right: auto !important;
+        text-align: left !important;
+    }
+    
+    .about-main-text .sub-title {
+        font-size: 15px;
+        font-weight: 200;
+        margin-bottom: 10px !important;
+        color: var(--white);
+    }
+
+    .about-main-text .title {
+        font-size: clamp(24px, 2.5vw, 35px);
+        font-weight: 400;
+        line-height: 1.1 !important;
+        margin-bottom: 30px;
+        margin-top: 10px;
+    }
+
+    .about-main-text .description { 
+        font-size: 13px !important; 
+        line-height: 1.2 !important; 
+        margin-bottom: 40px !important;
+        max-width: 100%;
+    }
+
+    .about-intro .btn-discover {
+        display: inline-block !important; 
+        width: fit-content !important;
+        align-self: flex-start !important; 
+        background: #fff !important;
+        color: #000 !important;
+        padding: 14px 45px !important;
+        border-radius: 50px !important;
+        text-decoration: none;
+        font-weight: 500;
+        border: 1px solid transparent !important;
+        transition: all 0.1s ease-in-out !important;
+    }
+
+    .about-intro .btn-discover:hover {
+        background-color: #e9c2b6 !important;
+        transition: none !important;
+        box-shadow: inset 0 0 0 2px #ffffff !important; 
+    }
+
+    .about-intro .btn-discover:hover .text {
+        transform: none;
+        color:#ffffff;
+    }
+
+    .about-intro .btn-discover .line { display: none !important; }
+}

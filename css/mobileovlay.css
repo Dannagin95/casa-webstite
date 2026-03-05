@@ -1,0 +1,69 @@
+@media (max-width: 1024px) {
+    /* Khung chứa để fix lỗi rớt đáy và dính lề [cite: 2026-02-11] */
+    .mobile-nav-viewport {
+        flex: 1;
+        position: relative;
+        overflow-x: hidden; /* Chống tràn ngang khi trượt [cite: 2026-02-11] */
+    }
+
+
+    .mobile-overlay a {
+    text-decoration: none !important;
+}
+    /* Style chung cho tất cả các mục menu để đồng bộ 100% [cite: 2026-02-11] */
+    .has-sub, .no-sub, .sub-nav-item, .has-sub-level-3 {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center;
+        padding: 8px 0 !important;
+        font-size: 21px !important;
+        color: #000;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .visual-card {
+        text-decoration: none !important;
+    }
+
+    .has-sub i, .sub-nav-item i, .has-sub-level-3 i {
+        font-size: 14px;
+        color: #ccc;
+    }
+
+    /* Nút Back [cite: 2026-02-11] */
+    .sub-back-trigger {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        color: var(--color-text-muted);
+        font-weight: 400;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
+    /* Ẩn hiện các tầng [cite: 2026-02-11] */
+    .mobile-nav, .sub-menu-layer {
+        display: none;
+        flex-direction: column;
+    }
+
+    .active {
+        display: flex !important;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .sub-group-title {
+        font-size: 11px;
+        color: #ccc;
+        text-transform: uppercase;
+        margin: 20px 0 10px 0;
+        letter-spacing: 1px;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateX(10px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+}

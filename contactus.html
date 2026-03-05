@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - CASA</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/contactus.css">
+</head>
+<body class="contact-only-body">
+
+    <header class="simple-contact-header">
+        <a href="index.html" class="logo">
+                <img src="images/logoblack.png" alt="CASA">
+    </header>
+
+    <main class="contact-main-wrapper">
+        <div class="casa-container-small">
+            
+            <nav class="contact-breadcrumb">
+                <a href="index.html">CASA</a> <span>/</span> Liên hệ
+            </nav>
+
+            <div class="contact-card">
+                <h1 class="contact-card-title">Liên hệ</h1>
+                
+                <form class="contact-form">
+                    <div class="input-group">
+                        <label>Tên<span class="required">*</span></label>
+                        <input type="text" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Hạng mục <span class="required">*</span></label>
+                        <div class="select-wrapper">
+                            <select required>
+                                <option value="" disabled selected>Chọn hạng mục</option>
+                                <option value="support">Support</option>
+                                <option value="business">Business</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Tin nhắn <span class="required">*</span></label>
+                        <textarea rows="5" required></textarea>
+                    </div>
+
+                    <div class="attach-wrapper">
+                        <label for="file-upload" class="attach-button">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48" />
+                            </svg>
+                            Attach Files
+                        </label>
+                        <input type="file" id="file-upload" hidden multiple>
+                        <p class="attach-note">Đính kèm tối đa 10 tệp. Dung lượng tối đa mỗi tệp là 10 MB.</p>
+                    </div>
+
+                    <button type="submit" class="contact-submit-btn">Send</button>
+
+                    <p class="recaptcha-text">
+                        This site is protected by reCAPTCHA Enterprise and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.
+                    </p>
+                </form>
+            </div>
+
+            <footer class="simple-contact-footer">
+                <a href="index.html">CASA</a>
+            </footer>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASA Parquet | Khởi nguồn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/lichsu.css">
+    <link rel="stylesheet" href="./css/topbarheader.css">
+    <link rel="stylesheet" href="./css/siteheader.css">
+    <link rel="stylesheet" href="./css/megamenu.css">
+    <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/mobileovlay.css">
+    <link rel="stylesheet" href="./css/featurebars.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <button class="top-bar-btn"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="top-bar-content">
+                <p>Chính sách bảo hành - tìm hiểu ngay</p>
+            </div>
+            <button class="top-bar-btn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+
+
+    <header class="site-header">
+    <div class="header-inner">
+        <div class="nav-col trai">
+            <div class="m-nav-group">
+                <button class="m-trigger-btn" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div id="m-search-trigger" class="m-trigger-search">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </div>
+            </div>
+
+            <nav class="nav-list desktop-only">
+                <div class="nav-link has-dropdown" data-menu="company">CASA <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="nav-link has-dropdown" data-menu="product">Sản phẩm <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="nav-link has-dropdown" data-menu="system">Hệ <i class="fa-solid fa-chevron-down"></i></div>
+                <a href="duan.html" class="nav-link">Dự án</a>
+            </nav>
+        </div>
+
+        <div class="nav-col giua">
+            <a href="index.html" class="logo">
+                <img src="images/logowhite.png" alt="CASA">
+            </a>
+        </div>
+
+        <div class="nav-col phai">
+            <div class="m-nav-group">
+                <div class="util-item cart-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <nav class="nav-list desktop-only">
+                <div class="nav-link lang-switch" id="lang-trigger">
+                    <img src="https://flagcdn.com/w40/vn.png" alt="VN Flag" class="flag-icon">
+                    <span>VN</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <div class="lang-dropdown">
+                        <ul class="lang-list">
+                            <li class="lang-item active">
+                                <img src="https://flagcdn.com/w40/vn.png" class="flag-icon-small">
+                                <span>Vietnam (VN)</span>
+                            </li>
+                            <li class="lang-item">
+                                <img src="https://flagcdn.com/w40/us.png" class="flag-icon-small">
+                                <span>English (EN)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="util-item search-icon" id="search-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </div>
+
+                <div class="util-item user-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+
+                <div class="util-item cart-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="mega-menu" id="megaMenu">
+        <div class="mega-content-container">
+            <div class="mega-section" id="menu-company">
+                <div class="mega-links">
+                    <span class="mega-subtitle">Về CASA</span>
+                    <a href="lichsu.html">Chúng tôi là ai</a>
+                    <a href="#">Sứ mệnh</a>
+                    <a href="quytrinh.html">Quy trình</a>
+                    <a href="chungchi.html">Chứng chỉ</a>
+                </div>
+                <div class="mega-links">
+                    <span class="mega-subtitle">Hỗ trợ</span>
+                    <a href="contactus.html">Liên hệ</a>
+                    <a href="#">Trung tâm trợ giúp</a>
+                    <a href="#">Showroom</a>
+                </div>
+                <div class="mega-image"><img src="images/explore1.png"></div>
+                <div class="mega-image"><img src="images/whoweare.jpg"></div>
+            </div>
+            
+            <div class="mega-section" id="menu-product">
+                <div class="mega-links">
+                    <span class="mega-subtitle">Bộ sưu tập</span>
+                    <a href="#">Riva</a>
+                    <a href="#">Alpi</a>
+                    <a href="#">Mastro</a>
+                    <a href="#">La Dolce</a>
+                    <a href="#">Parma</a>
+                </div>
+                <div class="mega-image"><img src="imagessanpham/maestria.webp"></div>
+                <div class="mega-image"><img src="imagessanpham/LaDolce.jpg"></div>
+            </div>
+
+            <div class="mega-section" id="menu-system">
+                <div class="mega-links">
+                    <span class="mega-subtitle">Thành phần</span>
+                    <a href="wood.html">Gỗ</a>
+                    <a href="structure.html">Cấu trúc</a>
+                    <a href="#">Bề mặt</a>
+                    <a href="xuongca.html">Hệ xương cá</a>
+                    <a href="#">Hệ thẳng</a>
+                </div>
+                <div class="mega-image"><img src="imageswood/woodbg.webp"></div>
+                <div class="mega-image"><img src="imageswood/Teak.jpg"></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<div id="search-drawer" class="search-drawer">
+    <div class="search-backdrop" id="search-backdrop"></div>
+    
+    <div class="search-container">
+        <div class="search-panel">
+            <div class="search-header">
+                <input type="text" placeholder="Tìm kiếm..." id="search-input" autocomplete="off">
+                <button id="search-close-btn" class="close-x">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <ul class="search-list">
+                <li><a href="#">CASA</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Hệ</a></li>
+                <li><a href="duan.html">Dự Án</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    
+
+    <div class="mobile-overlay" id="mobileMenu">
+    <div class="mobile-header">
+        <div class="close-menu"><i class="fa-solid fa-xmark"></i></div>
+        <div class="sub-back-trigger" style="display: none;">
+            <i class="fa-solid fa-chevron-left"></i> <span class="back-text">Explore</span>
+        </div>
+    </div>
+
+    <div class="mobile-nav-viewport">
+        <nav class="mobile-nav active" id="main-nav-level">
+            <div class="has-sub" data-sub="casa-sub">CASA <i class="fa-solid fa-chevron-right"></i></div>
+            <div class="has-sub" data-sub="product-sub">Sản phẩm <i class="fa-solid fa-chevron-right"></i></div>
+            <div class="has-sub" data-sub="system-sub">Hệ <i class="fa-solid fa-chevron-right"></i></div>
+            <div class="no-sub">Dự án</div>
+            <div class="no-sub">Blog</div>
+        </nav>
+
+        <div class="sub-menu-container">
+            <div class="sub-menu-layer" id="casa-sub">
+                <div class="has-sub-level-3" data-sub="ve-casa-detail">Về CASA <i class="fa-solid fa-chevron-right"></i></div>
+                <div class="has-sub-level-3" data-sub="ho-tro-detail">Hỗ trợ <i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+
+            <div class="sub-menu-layer" id="ve-casa-detail">
+                <a href="lichsu.html" class="sub-nav-item">Chúng tôi là ai</a>
+                <a href="sumenh.html" class="sub-nav-item">Sứ mệnh</a>
+                <a href="quytrinh.html" class="sub-nav-item">Quy trình</a>
+                <a href="chungchi.html" class="sub-nav-item">Chứng chỉ</a>
+            </div>
+
+            <div class="sub-menu-layer" id="ho-tro-detail">
+                <a href="contactus.html" class="sub-nav-item">Liên hệ</a>
+                <a href="tro-giup.html" class="sub-nav-item">Trung tâm trợ giúp</a>
+                <a href="showroom.html" class="sub-nav-item">Showroom</a>
+            </div>
+
+            <div class="sub-menu-layer" id="product-sub">
+                <a href="sp1.html" class="sub-nav-item">Riva</a>
+                <a href="sp2.html" class="sub-nav-item">Alpi</a>
+                <a href="sp2.html" class="sub-nav-item">Mastro</a>
+                <a href="sp2.html" class="sub-nav-item">La Dolce</a>
+                <a href="sp2.html" class="sub-nav-item">Parma</a>
+
+                <div class="sub-visual-layout">
+                    <a href="bst-2026.html" class="visual-card">
+                        <img src="https://images.unsplash.com/photo-1616486341351-7025018a95c2?q=80&w=300" alt="">
+                        <span>BST 2026</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sub-menu-layer" id="system-sub">
+                <a href="wood.html" class="sub-nav-item">Gỗ</a>
+                <a href="structure.html" class="sub-nav-item">Cấu trúc</a>
+                <a href="surface.html" class="sub-nav-item">Bề mặt</a>
+                <a href="xuongca.html" class="sub-nav-item">Hệ xương cá</a>
+                <a href="lineshape.html" class="sub-nav-item">Hệ thẳng</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-footer">
+    <div class="footer-line"></div>
+    <div class="footer-content">
+        <div class="casa-lang-dropdown">
+            <div class="casa-lang-trigger">
+                <div class="casa-flag-box">
+                    <img src="https://flagcdn.com/w40/vn.png" alt="VN" class="casa-current-flag">
+                </div>
+                <span class="casa-current-text">VN</span>
+                <svg class="casa-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                    <path d="M1 1L5 5L9 1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="account-link">
+            <a href="#">Tài khoản</a>
+        </div>
+    </div>
+</div>
+
+<div class="casa-sheet-overlay"></div>
+<div class="casa-lang-sheet">
+    <button class="casa-sheet-close">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M13 1L1 13M1 1L13 13" stroke="black" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    </button>
+    
+    <div class="casa-sheet-header">
+        <h3>Ngôn ngữ</h3> </div>
+    
+    <div class="casa-sheet-line"></div> <ul class="casa-sheet-list">
+        <li class="casa-sheet-item active" data-lang="VN" data-flag="https://flagcdn.com/w80/vn.png">
+            <img src="https://flagcdn.com/w80/vn.png"> <span>Tiếng Việt (VN)</span>
+        </li>
+        <li class="casa-sheet-item" data-lang="EN" data-flag="https://flagcdn.com/w80/us.png">
+            <img src="https://flagcdn.com/w80/us.png"> <span>English (EN)</span>
+        </li>
+    </ul>
+</div>
+</div>
+
+
+
+
+    <section class="lichsuhero">
+        <div class="lichsuhero-bg">
+            <img src="images/Casa demo hình.jpg" alt="Background">
+        </div>
+        <div class="lichsuhero-text">
+            <h1>Thẩm mỹ tĩnh tại</h1>
+            <p>CASA hiện diện để tạo nên những bề mặt gỗ cho phép không gian tự do thể hiện bản sắc của nó. Công năng, cảm giác sử dụng và thẩm mỹ cùng tồn tại hài hòa trong đời sống hằng ngày.</p>
+        </div>
+    </section>
+
+
+    
+    
+
+
+<section class="philosophy-section">
+    <div class="casa-container">
+        <div class="philo-label">
+            <span class="section-label">Nền móng</span>
+        </div>
+        
+        <div class="philo-content">
+            <h2 class="philo-title urbanist">
+                Câu chuyện 
+            </h2>
+            <div class="philo-description">
+                <p>
+                    CASA được hình thành từ một khát vọng giản dị: tạo nên những bề mặt gỗ mà chính chúng tôi muốn sống cùng mỗi ngày. Từ những trải nghiệm thực tế trong không gian kiến trúc và thi công, CASA dần nhận ra nhu cầu về một dòng ván gỗ cân bằng giữa thẩm mỹ, độ bền và giá trị sử dụng lâu dài. Bắt đầu với những bản vẽ đầu tiên, lựa chọn vật liệu cẩn trọng và quy trình hoàn thiện thủ công, CASA phát triển các bộ sưu tập mang tinh thần tinh giản, tôn vinh vân gỗ tự nhiên và cảm giác chân thực dưới mỗi bước chân. Qua thời gian, CASA đã trở thành một thương hiệu ván gỗ cao cấp được tin cậy, đồng hành cùng các kiến trúc sư, nhà thiết kế và gia chủ trong việc kiến tạo những không gian sống bền vững, tinh tế và có chiều sâu.
+                </p>
+                <a href="sumenh.html" class="btn-casa">Tìm hiểu thêm</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="journey-section">
+    <div class="casa-container">
+        <div class="journey-header">
+            <span class="section-label">Hành trình</span>
+            <div class="journey-controls">
+                <button class="ctrl-btn prev-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                </button>
+                <button class="ctrl-btn next-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 18l6-6-6-6" />
+                </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="journey-slider" id="journeySlider">
+            <div class="journey-item">
+                <img src="imageshistory/hình 1.avif" alt="CASA Heritage">
+                
+            </div>
+            <div class="journey-item">
+                <img src="imageshistory/hinh3.webp" alt="CASA Heritage">
+                
+            </div>
+            <div class="journey-item">
+                <img src="imageshistory/hinh2.webp" alt="CASA Heritage">
+                
+            </div>
+            <div class="journey-item">
+                <img src="imageshistory/hinh4.webp" alt="CASA Heritage">
+                
+            </div>
+            <div class="journey-item">
+                <img src="imageshistory/hinh5.jpg" alt="CASA Heritage">
+                
+            </div>
+            </div>
+        <div class="journey-progress-container">
+            <div class="journey-progress-bar" id="journeyProgressBar"></div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<section class="nhiemvu-section">
+    <div class="casa-container">
+        <div class="nhiemvu-intro">
+            <span class="section-label">Tinh thần của CASA</span>
+            <h2 class="nhiemvu-main-text">
+                CASA tin rằng ván gỗ lý tưởng là khi bạn gần như không nhận ra sự hiện diện của nó — chỉ còn lại cảm giác thoải mái, liền mạch và tự nhiên trong từng bước chân. Chúng tôi tập trung tạo nên những bề mặt gỗ bền bỉ, ổn định theo thời gian, nơi công năng và thẩm mỹ tinh giản hòa quyện.
+        </div>
+
+        <div class="nhiemvu-grid">
+            <div class="nhiemvu-item">
+                <div class="nhiemvu-img">
+                    <img src="imageshistory/hieunang.jpg" alt="Performance">
+                </div>
+                <h3 class="nhiemvu-title">Hiệu năng </h3>
+                <p class="nhiemvu-desc">
+                    Hiệu năng đích thực là khi không còn những xao nhãng trong trải nghiệm. Thông qua việc kiểm soát chặt chẽ cấu trúc ván, phát triển giải pháp kỹ thuật riêng và lựa chọn vật liệu cao cấp, CASA đạt được sự ổn định, độ bền và cảm giác sử dụng nhất quán theo thời gian.
+            </div>
+
+            <div class="nhiemvu-item">
+                <div class="nhiemvu-img">
+                    <img src="imageshistory/giatri.avif" alt="Culture">
+                </div>
+                <h3 class="nhiemvu-title">Giá trị</h3>
+                <p class="nhiemvu-desc">
+                    Bắt nguồn từ mối liên kết cảm xúc giữa con người và không gian sống, nơi vật liệu được cảm nhận nhiều hơn là phô bày. Chúng tôi tôn vinh gỗ như một phần tự nhiên của đời sống — bền bỉ, tinh giản và gắn bó theo thời gian.
+            </div>
+
+            <div class="nhiemvu-item">
+                <div class="nhiemvu-img">
+                    <img src="images/aboutbg.jpg" alt="Aesthetics">
+                </div>
+                <h3 class="nhiemvu-title">Thẩm mỹ</h3>
+                <p class="nhiemvu-desc">
+                    Cảm hứng được hình thành từ những không gian sống thực tế, nơi kiến trúc, ánh sáng và vật liệu cùng tồn tại một cách hài hòa. Thẩm mỹ được thể hiện qua sắc độ gỗ tự nhiên, bề mặt được xử lý tinh tế và những đường nét bền vững với thời gian — không chạy theo xu hướng, mà đủ lặng để ở lại lâu dài.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="lichsuprocess-section">
+    <div class="lichsuprocess-overlay">
+        <div class="lichsuprocess-content">
+            <h2 class="lichsuprocess-title">Quy trình</h2>
+            <p class="lichsuprocess-description">
+                'Quy trình của CASA được xây dựng trên sự chọn lọc và tiết chế — từ vật liệu, cấu trúc đến bề mặt hoàn thiện. Chúng tôi loại bỏ những yếu tố không cần thiết để tập trung vào điều cốt lõi: độ bền, tính ứng dụng và vẻ đẹp tự nhiên của gỗ.
+            </p>
+            <a href="quytrinh.html" class="lichsuprocess-btn">Xem thêm</a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<section class="features-bar">
+    <div class="container">
+        <div class="features-grid">
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                </div>
+                <h3>Chính sách bảo hành</h3>
+                <a href="baohanh.html">Xem quy định bảo hành</a>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                        <polyline points="2 17 12 22 22 17"/>
+                        <polyline points="2 12 12 17 22 12"/>
+                    </svg>
+                </div>
+                <h3>Cấu trúc kỹ thuật</h3>
+                <a href="structure.html">Khám phá lớp gỗ Engineering</a>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M2 12h20"/>
+                        <path d="M6 12v-3"/>
+                        <path d="M10 12v-3"/>
+                        <path d="M14 12v-3"/>
+                        <path d="M18 12v-3"/>
+                        <rect x="2" y="8" width="20" height="8" rx="1"/>
+                    </svg>
+                </div>
+                <h3>Kích thước</h3>
+                <a href="#">Xem bảng kích thước chuẩn</a>
+            </div>
+          </div>
+
+<div class="features-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</section>
+
+
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-mission">
+            <h2 class="mission-text">
+                Chúng tôi theo đuổi sứ mệnh tạo nên những sàn gỗ có chất lượng vượt chuẩn, hài hòa tự nhiên trong không gian sống, chạm đến cảm xúc người sử dụng một cách bền vững.
+            </h2>
+            <a href="lichsu.html" class="learn-more-btn">Tìm hiểu thêm</a>
+        </div>
+
+        <div class="footer-main">
+            <div class="footer-col">
+                <ul class="footer-links">
+                    <li><a href="contactus.html">Liên hệ</a></li>
+                    <li><a href="#">Trung tâm trợ giúp</a></li>
+                    <li><a href="#">Kích thước</a></li>
+                    <li><a href="#">Showroom</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <ul class="footer-links">
+                    <li><a href="#">Sứ mệnh</a></li>
+                    <li><a href="lichsu.html">Khởi nguồn</a></li>
+                    <li><a href="quytrinh.html">Quy trình</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-col">
+                <h4 class="newsletter-title">Nhận tin tức & cập nhật từ CASA</h4>
+                <p class="newsletter-desc">Những hé lộ sớm, bộ sưu tập mới và các cập nhật mới nhất — luôn được gửi đến bạn.</p>
+                <form class="newsletter-form">
+    <div class="input-group">
+        <input type="email" placeholder="E-mail" required class="newsletter-input">
+        <button type="submit" class="submit-btn">
+            <span class="arrow-circle">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </span>
+        </button>
+    </div>
+</form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            
+            <div class="bottom-left">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="copyright-group">
+                    <span>© 2026, CASA</span>
+                    <ul class="legal-links">
+                        <li><a href="#">Refund policy</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#">Terms of service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bottom-right">
+    <div class="country-selector" id="langgSelector">
+        <div class="casa-flag-box-footer">
+            <img src="https://flagcdn.com/w80/vn.png" alt="VN" id="currentFlag">
+        </div>
+        <span id="currentLanggText">VN</span>
+        <svg class="casa-arrow-footer" width="10" height="6" viewBox="0 0 10 6" fill="none" id="chevronIcon">
+            <path d="M1 1L5 5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        <ul class="langg-dropdown" id="langgDropdown">
+            <li class="active" data-lang="VN" data-flag="https://flagcdn.com/w80/vn.png">
+                <img src="https://flagcdn.com/w80/vn.png"> <span>Vietnam(VN)</span>
+            </li>
+            <li data-lang="EN" data-flag="https://flagcdn.com/w80/us.png">
+                <img src="https://flagcdn.com/w80/us.png"> <span>English(EN)</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="lang-sheet-overlay"></div>
+<div class="lang-sheet-container">
+    <button class="lang-sheet-close">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M1 13L13 1" stroke="black" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="lang-sheet-content">
+        <p class="lang-sheet-title">Ngôn ngữ</p>
+        <div class="lang-sheet-divider"></div>
+        <ul class="lang-sheet-list">
+            <li class="active" data-lang="VN" data-flag="https://flagcdn.com/w80/vn.png">
+                <img src="https://flagcdn.com/w80/vn.png"> <span>Tiếng Việt (VN)</span>
+            </li>
+            <li data-lang="EN" data-flag="https://flagcdn.com/w80/us.png">
+                <img src="https://flagcdn.com/w80/us.png"> <span>English (EN)</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+        </div>
+    </div>
+</footer>
+
+
+    <script src="js/index.js"></script>
+    <script src="js/history.js"></script>
+    <script src="js/search.js"></script>
+    <script type="module" src="js/search-logic.js"></script>
+    <script src="js/mobilemenu.js"></script>
+    
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,60 @@
+.philosophy-section {
+    padding: var(--section-gap) 0; /* Lề trên dưới hít theo root */
+    background-color: var(--color-white);
+}
+
+.philosophy-wrapper {
+    display: grid;
+    /* Cột 1 (Label) hẹp thôi, Cột 2 (Content) chiếm phần lớn còn lại */
+    grid-template-columns: 0.8fr 2.2fr; 
+    gap: 40px;
+}
+
+/* Nhãn "TRIẾT LÝ" - cho nó nhỏ và mờ đúng chất QUOC */
+.philo-label .section-label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-text-muted);
+    padding-top: 15px; /* Dóng hàng với dòng đầu của tiêu đề */
+    display: block;
+}
+
+/* Cột nội dung chính */
+.philo-content {
+    max-width: 1000px; /* Khống chế độ rộng để không bị loãng trên màn hình 1650px */
+}
+
+.philo-title {
+    font-size: clamp(36px, 4.5vw, 56px); /* Chữ lớn, nét mỏng sang trọng */
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 50px;
+    color: var(--color-black);
+}
+
+.philo-description p {
+    font-size: 20px;
+    line-height: 1.7;
+    color: var(--color-black);
+    max-width: 700px; /* Đoạn văn ngắn lại để tạo khoảng trống bên phải */
+    opacity: 0.85;
+}
+
+/* Nút "Tìm hiểu thêm" - làm kiểu mỏng hoặc nút tròn như QUOC */
+.btn-casa {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 15px 45px;
+    background: #000;
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.btn-casa:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}

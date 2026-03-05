@@ -1,0 +1,203 @@
+/* Reset cho trang Contact */
+.contact-only-body {
+    background-color: #fafafa; /* Nền xám nhạt nhẹ nhàng */
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+.simple-contact-header {
+    padding: 40px 0;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.casa-container-small {
+    max-width: 730px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-breadcrumb {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.contact-breadcrumb a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Thẻ chứa Form trắng tinh */
+.contact-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    padding: 40px;
+    border-radius: 4px;
+}
+
+.contact-card-title {
+    font-size: 24px;
+    margin: 0 0 30px 0;
+    font-weight: 600;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.required { color: #ff4d4f; }
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #000;
+    outline: none;
+}
+
+/* Nút đính kèm */
+.attach-wrapper {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.attach-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px;
+    border: 1px dashed #d9d9d9;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+}
+
+.attach-button:hover { background: #f9f9f9; }
+
+.attach-note {
+    font-size: 12px;
+    color: #999;
+    margin-top: 8px;
+}
+
+/* Nút Submit đen tuyền */
+.contact-submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.recaptcha-text {
+    font-size: 11px;
+    color: #999;
+    line-height: 1.4;
+}
+
+.simple-contact-footer {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.simple-contact-footer a {
+    text-decoration: none;
+    color: #888;
+    font-size: 14px;
+}   
+
+
+
+
+/* --- RESPONSIVE MOBILE CHUẨN QUOC [cite: 2026-02-11] --- */
+@media (max-width: 1024px) {
+    /* 1. Phẳng hóa nền: bỏ xám nhạt, để trắng tinh cho đồng nhất [cite: 2026-02-11] */
+    .contact-only-body {
+        background-color: #ffffff !important;
+    }
+
+    /* 2. Ép lề đúng luật 20px [cite: 2026-02-07] */
+    .casa-container-small {
+        padding: 0 20px !important;
+        max-width: 100% !important;
+    }
+
+    /* 3. Phá bỏ cái "khung" card [cite: 2026-02-11] */
+    .contact-card {
+        border: none !important; /* Bỏ viền cho thoáng */
+        padding: 0 !important;   /* Bỏ padding card để hít theo container 20px */
+        background: transparent !important;
+    }
+
+    /* 4. Tinh chỉnh Header & Title */
+    .simple-contact-header {
+        padding: 30px 0 10px 0 !important;
+        margin-bottom: 20px !important;
+    }
+
+    .contact-card-title {
+        font-size: 28px !important; /* To và đậm chất như QUOC [cite: 2026-02-11] */
+        margin-bottom: 25px !important;
+    }
+
+    /* 5. Input tinh tế hơn trên Mobile */
+    .input-group label {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    .input-group input, 
+    .input-group select, 
+    .input-group textarea {
+        padding: 14px 12px !important; /* Tăng độ cao cho dễ chạm tay [cite: 2026-02-11] */
+        font-size: 16px !important;    /* Tránh iOS tự động zoom khi click vào input */
+        border-color: #e5e5e5;
+    }
+
+    /* 6. Nút Attach và Submit */
+    .attach-button {
+        padding: 18px !important;
+        background-color: #fcfcfc;
+    }
+
+    .contact-submit-btn {
+        padding: 18px !important;
+        font-size: 16px;
+        border-radius: 2px !important; /* Vuông vức hơn cho đanh [cite: 2026-02-11] */
+        margin-top: 10px;
+    }
+
+    /* 7. Footer */
+    .simple-contact-footer {
+        padding: 30px 0 !important;
+    }
+}

@@ -1,0 +1,184 @@
+/*SEARCHPANEL */
+body.search-open {
+    overflow: hidden;
+}
+
+/* 2. Tổng thể lớp phủ */
+.search-drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    visibility: hidden;
+    pointer-events: none;
+    transition: visibility 0.4s; /* Đợi animation của panel xong mới ẩn hẳn */
+}
+
+.search-drawer.is-active {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* 3. Lớp nền mờ - FIX: Thêm opacity ban đầu */
+.search-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+    opacity: 0; /* Bắt đầu từ 0 */
+    transition: opacity 0.4s ease;
+}
+
+.search-drawer.is-active .search-backdrop {
+    opacity: 1;
+}
+
+/* 4. Cái bảng trắng - Đã căn chỉnh lề mỏng và zoom chuẩn */
+.search-panel {
+    position: fixed;
+    top: 16px; 
+    right: 16px;
+    bottom: 16px; 
+    
+    width: 43vw; 
+    min-width: 320px;
+    max-width: 780px; 
+
+    background: #fff;
+    z-index: 10001;
+    padding: 40px;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+
+    /* Hiệu ứng Fade + Slide mượt */
+    opacity: 0;
+    transform: translateX(30px); /* Nhích xa hơn tí cho cảm giác trượt rõ hơn */
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.search-drawer.is-active .search-panel {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Input & List */
+.search-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 15px;
+    margin-bottom: 35px;
+}
+.search-header .text {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.search-header input {
+    flex: 1; border: none; outline: none; font-size: 30px; font-weight: 800; font-family: inherit; color: #000000
+}
+
+#search-input::placeholder {
+    color: #858585;
+    font-size: 25px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.close-x { background: none; border: none; cursor: pointer; padding: 5px; }
+.search-list { list-style: none; padding: 0; }
+.search-list li { margin-bottom: 15px; }
+.search-list li a .highlight {
+    color: #FFD700;
+    font-weight: bold;
+    background: transparent; /* Hoặc thêm background nếu muốn nổi bật hơn */
+}
+.search-list a { text-decoration: none; color: #000000; font-size: 22px; transition: 0.3s; display: inline-block; }
+.search-list a:hover { transform: translateX(5px); color: #000; opacity: 0.6; }
+
+
+
+
+
+@media (max-width: 1024px) {
+    body.search-open {
+        overflow: hidden !important;
+        touch-action: none;
+    }
+
+    .search-drawer {
+        position: fixed !important;
+        inset: 0 !important;
+        padding: 8px !important; /* Tạo lề 8px quanh màn hình [cite: 2026-02-11] */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+        z-index: 100000 !important;
+    }
+
+    .search-container {
+        display: contents !important; 
+    }
+
+    .search-panel {
+        /* 1. RESET TUYỆT ĐỐI - KHÔNG CHO DESKTOP LẤN SÂN */
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        margin: 0 !important;
+        
+        /* 2. CHẶN ĐỨNG VỆT TRẮNG: ÉP KÍCH THƯỚC CHUẨN MOBILE [cite: 2026-02-11] */
+        width: 100% !important; 
+        min-width: 0 !important; /* Xóa bỏ cái 320px của desktop */
+        max-width: none !important; /* Xóa bỏ cái 780px của desktop */
+
+        /* 3. CO GIÃN LINH HOẠT THEO TỪ KHÓA [cite: 2026-02-11] */
+        height: auto !important;
+        height: fit-content !important;
+        max-height: calc(100dvh - 16px) !important; /* Lề trên 8px + dưới 8px */
+
+        background: #ffffff !important;
+        padding: 20px !important; /* Giữ thông số mày vừa sửa [cite: 2026-02-07] */
+        display: flex !important;
+        flex-direction: column !important;
+        border-radius: 0 !important;
+        box-sizing: border-box !important;
+        
+        /* 4. DIỆT TẬN GỐC BÓNG ĐỔ VÀ VIỀN LẠ */
+        box-shadow: none !important; /* Tạm thời tắt sạch bóng để xem còn vệt trắng không */
+        border: none !important;
+        outline: none !important;
+        
+        /* 5. HIỆU ỨNG MƯỢT */
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #search-input::placeholder {
+        color: #858585;
+        font-size: 15px;
+        font-weight: 700;
+        transition: color 0.3s ease;
+    }
+
+    .search-drawer.is-active .search-panel {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .search-list {
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow-y: auto !important;
+        flex-grow: 1;
+        min-height: 0;
+    }
+
+    .search-list::-webkit-scrollbar { display: none; }
+    
+    .search-list li { margin-bottom: 8px !important; }
+    .search-list li a { font-size: 15px !important; }
+}

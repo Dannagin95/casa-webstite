@@ -1,0 +1,91 @@
+/* ============================================================
+   SECTION MISSION - MOBILE FIRST
+   ============================================================ */
+.mission {
+    width: 100% !important;
+    background-color: #ffffff !important;
+    padding: 50px 20px !important; /* Lề rộng cho thoáng đúng chất QUOC */
+}
+
+.mission .mission-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    max-width: 100% !important;
+}
+
+.mission .sub-title {
+    font-size: 11px !important;
+    letter-spacing: 1px !important;
+    color: #000000 !important;
+    text-transform: uppercase !important;
+
+    font-weight: 300 !important;
+}
+
+.mission .main-heading {
+    font-size: 40px !important; /* Mobile chữ phải đủ to để gây ấn tượng */
+    line-height: 1.2 !important;
+    font-weight: 400 !important;
+    color: #1a1a1a !important;
+    margin-bottom: 40px !important;
+}
+
+.mission .btn-read-more {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #1a1a1a !important; /* Nút đen tuyền như ảnh */
+    color: #ffffff !important;
+    padding: 15px 35px !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    transition: transform 0.3s ease !important;
+}
+
+/* ============================================================
+   SECTION MISSION - DESKTOP
+   ============================================================ */
+@media (min-width: 769px) {
+    .mission {
+        padding: 80px 0 !important;
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Đẩy cái lồng nội dung vào giữa màn hình */
+    }
+
+    .mission .container {
+        /* [MỎ NEO] Khóa chặt khung xương 1650px */
+        max-width: var(--container-max) !important; 
+        width: 100% !important;
+        margin: 0 auto !important;
+        /* Dùng đúng side-padding 55px để chữ SỨ MỆNH thẳng hàng với Logo Header */
+        padding: 0 var(--side-padding) !important; 
+        box-sizing: border-box;
+    }
+
+    .mission .mission-content {
+        /* Bỏ cái margin 55px cũ đi vì đã có padding của container lo */
+        margin: 0 !important; 
+        /* Khống chế độ rộng nội dung để ngắt dòng cho đẹp (giống ý mày muốn ở phần About) */
+        max-width: 1200px !important; 
+        text-align: left;
+    }
+
+    .mission .main-heading {
+        font-size: clamp(32px, 4vw, 56px) !important;
+        max-width: 90% !important;
+        letter-spacing: -1px !important;
+        line-height: 1.1;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .mission .btn-read-more:hover {
+        color:#000000 !important;
+        background-color: #ffffff !important;
+        box-shadow: inset 0 0 0 2px #000000 !important; 
+    }
+}

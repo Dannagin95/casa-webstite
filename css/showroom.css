@@ -1,0 +1,466 @@
+.showroomhero {
+    height: 93vh; 
+    position: relative; 
+    display: flex;
+    align-items: flex-end; 
+    /* Thay đổi quan trọng: Bỏ padding cố định, dùng flex để căn giữa khối nội dung */
+    padding: 0; 
+    justify-content: center; 
+    width: 100%;
+}
+
+.showroomhero-bg { position: absolute; inset: 0; z-index: -1; }
+
+.showroomhero-bg img { width: 100%; height: 100%; object-fit: cover; }
+
+
+.showroomhero-text { 
+    color: #fff; 
+    width: 100%;
+    max-width: var(--container-max); /* Khóa chặt ở 1650px */
+    margin: 0 auto; /* Ép vào giữa màn hình */
+    padding: 0 var(--side-padding); /* Trả lại đúng 55px padding để chữ đứng đúng vị trí cũ */
+    margin-bottom: 48px;
+    z-index: 2;
+    text-align: left; /* Đảm bảo chữ vẫn canh trái bên trong cái lồng 1650px */
+}
+
+
+.showroomherohero-text h1 { font-size: 60px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
+
+.showroomhero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
+
+.mobile-only { 
+    display: none !important; 
+}
+
+/* Mặc định trên Desktop: Giấu nút Mobile */
+.mobile-menu-btn, .mobile-overlay { display: none; }
+
+
+
+@media (max-width: 1024px) {
+    .showroomhero {
+        /* 1. Xóa bỏ chiều cao 75vh cũ */
+        height: auto !important; 
+        
+        /* 2. Dùng min-height theo % chiều ngang màn hình (tương đương tỉ lệ 4:5) */
+        /* Cách này giúp nó co giãn thông minh mà không bị ép cứng như aspect-ratio */
+        min-height: 120vw !important; 
+        
+        /* 3. Đảm bảo ảnh nền luôn lấp đầy cái khung mới này */
+        background-size: cover !important;
+        background-position: center !important;
+
+        /* GIỮ NGUYÊN TOÀN BỘ CẤU TRÚC CỦA MÀY */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; 
+        align-items: center;    
+        text-align: center;
+        padding: 0 20px;
+        padding-bottom: 20px !important; 
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        border-top: 1px solid #ffffff;
+    }
+
+    .showroomhero-text {
+        padding: 0 !important; 
+        margin: 0 auto !important;
+        max-width: 100% !important; 
+        width: 100% !important;
+        
+        /* Đảm bảo căn giữa tuyệt đối */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center !important;
+        margin-bottom: 20px !important; /* Khoảng cách so với đáy section 20px */
+    }
+
+    .showroomhero-text h1 {
+        font-size: 28px; 
+        font-weight: 400;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .showroomhero-text p {
+        font-size: 12px;
+        letter-spacing: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+
+/* TABLET: Dàn ngang ra tối ưu */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .showroomhero {
+        min-height: 56vw !important; /* Tỉ lệ ngang cho Tablet [cite: 2026-02-07] */
+    }
+}
+
+
+
+
+
+/* 1. SỬA LẠI LỀ SECTION (Đồng bộ Hero nhưng thoáng hơn) */
+.section-space-custom {
+    padding-top: calc(var(--section-gap) + 40px) !important; /* Lề trên rộng hơn Hero 1 chút */
+    padding-bottom: calc(var(--section-gap) - 40px) !important; /* Lề dưới bóp gọn lại */
+}
+
+/* 2. THANH SEARCH & KHOẢNG CÁCH GẠCH ĐỎ [cite: 2025-12-29] */
+.stockist-search-area {
+    width: 100%;
+    margin-bottom: 15px !important; /* Bóp chặt khoảng cách gạch đỏ [cite: 2025-12-29] */
+}
+
+.search-flex-container {
+    display: flex;
+    width: 100%;
+    height: 42px; 
+    gap: 10px; /* ĐÂY NÈ: Tạo khoảng hở giữa ô input và nút đen [cite: 2025-12-29] */
+}
+
+/* Ô INPUT: Trắng, viền mảnh */
+.search-input-wrapper {
+    flex: 1;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.search-input-wrapper input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: #333;
+}
+
+.search-input-wrapper input::placeholder {
+    color: #ccc;
+}
+
+.btn-search-black-v2 {
+    width: 42px; 
+    height: 42px;
+    background: var(--black); 
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    
+    /* BO CẠNH NHẸ: 2px hoặc 3px là con số "vàng" cho xì-tai này [cite: 2026-02-04] */
+    border-radius: 3px; 
+    
+    transition: all 0.2s ease;
+}
+.btn-search-black-v2:hover {
+    opacity: 0.8;
+}
+
+/* CSS bổ sung để đảm bảo lề Search thẳng với lề Hero [cite: 2025-12-29] */
+.casa-container .stockist-search-area {
+    padding: 0; /* Để nó dài hết cỡ theo container [cite: 2025-12-29] */
+}
+
+/* 3. THÂN MÁY: ĐƯỜNG DOTTED MẢNH [cite: 2025-12-29] */
+.stockist-main-body {
+    display: flex;
+    border: 1px dotted var(--color-bar);
+    height: 38em; /* Tỉ lệ zoom co giãn theo font */
+}
+
+.stockist-sidebar {
+    width: 340px; /* Thu hẹp lại để Map rộng hơn */
+    border-right: 1px dotted var(--color-bar);
+    padding: 35px 25px;
+    overflow-y: auto;
+}
+
+/* 4. CỤM TEXT BÊN TRÁI: NHỎ - NGẮN - SANG [cite: 2025-12-29] */
+.stockist-item {
+    display: flex;
+    gap: 12px;
+}
+
+.store-pin-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.distance-tag {
+    font-size: 10px;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.stockist-info-box {
+    max-width: 190px; /* ÉP ĐỘ DÀI CỤM TEXT NGẮN LẠI ĐỂ XUỐNG DÒNG ĐẸP [cite: 2025-12-29] */
+}
+
+.store-name {
+    font-size: 13px !important; /* TEXT NHỎ LẠI CHO SANG [cite: 2025-12-29] */
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.address-text, .contact-info p, .contact-info a {
+    font-size: 11.5px !important; /* Text cực nhỏ và tinh tế kiểu QUOC [cite: 2025-12-29] */
+    line-height: 1.6;
+    color: var(--color-text-main);
+    text-decoration: none;
+    margin-bottom: 2px;
+    display: block;
+}
+
+.contact-info {
+    margin-top: 20px; /* Khoảng cách thoáng giữa địa chỉ và phone [cite: 2025-12-29] */
+}
+
+.phone-number {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* 5. MAP VIEW */
+.stockist-map {
+    flex: 1;
+    filter: grayscale(1) opacity(0.8);
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .section-space-custom {
+        padding-top: 40px !important; 
+        padding-bottom: 40px !important; 
+        padding-left: var(--side-padding-mobile) !important; 
+        padding-right: var(--side-padding-mobile) !important;
+    }
+
+    /* 2. XOAY DỌC BODY [cite: 2025-12-29] */
+    .stockist-main-body {
+        flex-direction: column;
+        height: auto; 
+        border: none;
+    }
+
+    .stockist-map {
+        order: 1;
+        width: 100%;
+        aspect-ratio: 1 / 1 !important; 
+        height: auto !important; 
+        margin-bottom: 15px;
+    }
+
+    .stockist-sidebar {
+        order: 2; /* List Store nằm dưới */
+        width: 100%;
+        padding: 20px 0; /* Bỏ padding ngang vì đã có container lo */
+        border-right: none;
+        border-top: 1px dotted var(--color-bar); /* Ngăn cách với Map bằng đường dotted */
+    }
+
+    /* 4. CHỈNH LẠI CỤM TEXT CHO MOBILE [cite: 2025-12-29] */
+    .stockist-info-box {
+        max-width: 100%; /* Trên mobile cho text tràn ra hết chiều ngang cho dễ đọc [cite: 2025-12-29] */
+    }
+
+    .store-name {
+        font-size: 15px !important; /* Mobile chữ to hơn tí cho dễ bấm [cite: 2025-12-29] */
+    }
+
+    .address-text, .contact-info p, .contact-info a {
+        font-size: 13px !important;
+        line-height: 1.5;
+    }
+
+    /* 5. THANH SEARCH TRÊN MOBILE [cite: 2025-12-29] */
+    .stockist-search-area {
+        margin-bottom: 15px !important; /* Khoảng cách vừa phải với Map [cite: 2025-12-29] */
+    }
+    
+    .search-flex-container {
+        height: 45px; /* Làm to hơn tí cho ngón tay dễ chạm [cite: 2025-12-29] */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- FEATURES BAR --- */
+.features-bar {
+        margin-top: 100px;
+        padding: 80px 0 !important; 
+        background-color: #f6f6f6;
+        border-top: 1px solid #f6f6f6;
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Đẩy cái container vào giữa */
+    }
+
+
+.features-bar .container {
+        /* [MỎ NEO] Khóa chặt khung xương 1650px */
+        width: 100% !important;
+        max-width: var(--container-max) !important; 
+        margin: 0 auto !important;
+        /* Padding trái phải 55px để icon ngoài cùng không bị chạm mép 1650px */
+        padding: 0 var(--side-padding) !important;
+        box-sizing: border-box;
+    }
+    
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cột đều nhau */
+    gap: 40px;
+    max-width: 100%; /* Giới hạn chiều rộng để không bị loãng */
+    margin: 0 auto; /* Căn giữa màn hình */
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.features-dots {
+    display: none; /* Desktop vẫn ẩn */
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 0; /* Tạo khoảng cách với vùng lướt */
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+/* Style cho Icon SVG */
+.feature-icon {
+    margin-bottom: 20px;
+    color: #000;
+}
+.feature-icon svg {
+    width: 32px;  /* Kích thước icon giống QUOC (nhỏ gọn) */
+    height: 32px;
+}
+
+/* Tiêu đề mục */
+.feature-item h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    margin: 0 0 10px 0;
+    text-transform: none;
+    letter-spacing: 1px;
+}
+
+/* Link bên dưới */
+.feature-item a {
+    font-family: 'Barlow', sans-serif; /* Font thường cho dễ đọc */
+    font-size: 13px;
+    color: #555;
+    text-decoration: underline; /* Gạch chân giống QUOC */
+    text-underline-offset: 4px; /* Gạch chân cách chữ ra một chút cho đẹp */
+    transition: 0.3s;
+}
+
+.feature-item a:hover {
+    color: #000; /* Rê chuột vào đen đậm lên */
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .features-bar {
+        margin-top: 80px;
+        padding: 40px 0; /* Giữ khoảng cách trên dưới vừa phải */
+        overflow: hidden; /* Tránh bị tràn trang */
+    }
+
+    .features-grid {
+        display: flex; /* Chuyển từ Grid sang Flex để các mục nằm trên 1 hàng ngang */
+        overflow-x: auto; /* Cho phép cuộn ngang */
+        scroll-snap-type: x mandatory; /* Hiệu ứng "hít" vào giữa mỗi mục khi lướt */
+        gap: 0; /* Xóa khoảng cách grid */
+        padding-bottom: 20px; /* Chừa chỗ cho thanh cuộn (nếu có) */
+        
+        /* Ẩn thanh cuộn (scrollbar) để nhìn cho sạch */
+        -ms-overflow-style: none;  /* IE/Edge */
+        scrollbar-width: none;  /* Firefox */
+        -webkit-overflow-scrolling: touch; /* Giúp lướt trên iPhone mượt hơn */
+    }
+
+    /* Ẩn thanh cuộn trên Chrome/Safari */
+    .features-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .feature-item {
+        flex: 0 0 100%; /* Quan trọng: Mỗi mục chiếm đúng 100% chiều rộng màn hình */
+        scroll-snap-align: center; 
+        scroll-snap-stop: always;
+        padding: 0 30px; 
+        box-sizing: border-box;
+    }
+
+    .feature-icon svg {
+        width: 28px; /* Cho icon nhỏ lại một chút trên mobile */
+        height: 28px;
+    }
+
+
+    .features-dots {
+        display: flex !important; 
+    }
+
+    .dot {
+        width: 7px; /* To lên một chút cho dễ thấy */
+        height: 7px;
+        border-radius: 50%;
+        background-color: #817c7c; /* Màu xám nhạt */
+        display: block;
+        transition: all 0.3s ease;
+    }
+
+    .dot.active {
+        background-color: #000; /* Chấm đang chọn màu đen */
+        transform: scale(1.3);
+    }
+}

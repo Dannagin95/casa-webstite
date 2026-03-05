@@ -1,0 +1,523 @@
+/* --- HEADER CASA PARQUET --- */
+.site-header {
+    position: absolute; 
+    top: auto; 
+    left: 0;
+    margin-top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 25px 0;
+    background: transparent;
+    transition: background 0.4s ease;
+    /* CHIÊU ĐẶC TRỊ: Header giờ như không khí, chuột đi xuyên qua vùng trống */
+    pointer-events: auto !important; 
+}
+
+
+.site-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0; /* Mặc định ẩn */
+    height: 1px;
+    background: rgba(0, 0, 0, 0.05); /* Màu đen siêu nhạt, gần như trong suốt */
+    transition: width 0.4s ease; /* Hiệu ứng gạch ngang chạy ra từ giữa cho xịn */
+}
+
+
+.header-is-white::after {
+    width: calc(100%); /* Để hở 2 đầu 60px cho sang, hoặc 100% tùy mày */
+}
+
+
+
+.header-inner {
+    display: flex; 
+    align-items: center; 
+    /* Thay đổi: Không dùng space-between tự do nữa */
+    justify-content: center; 
+    width: 100%;
+    max-width: var(--container-max); /* Chuẩn 1650px của mày */
+    margin: 0 auto;
+    padding: 0 var(--side-padding);
+    pointer-events: auto;
+    position: relative; /* Để làm mỏ neo cho 3 cột */
+}
+
+.nav-list { display: flex; align-items: center; gap: 38px; }
+.nav-link, .util-item, .lang-switch {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0em;
+    text-transform: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.nav-col { flex: 1; display: flex; align-items: center; }
+.nav-col.trai { justify-content: flex-start; }
+.nav-col.giua { 
+    justify-content: center; 
+    flex: 0 0 auto; /* Logo luôn nằm chính giữa tuyệt đối */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.nav-col.phai { 
+    justify-content: flex-end; 
+    /* Giữ vị trí bên phải của khung 1650px */
+    gap: 25px !important; 
+}
+
+.mobile-only {
+    display: none; /* Mặc định ẩn trên desktop */
+}
+
+/* --- CSS CHO ICON SVG (SEARCH & CART) --- */
+.util-item svg {
+    display: block;
+    stroke: #ffffff; 
+    stroke-width: 2px;
+}
+
+/* Khi Header chuyển sang màu trắng (.header-is-white) */
+.header-is-white .util-item svg {
+    stroke: #000000; /* Icon chuyển sang màu đen cho nổi */
+}
+
+
+/* Căn chỉnh lại khoảng cách cụm icon bên phải cho cân */
+.nav-col.phai {
+    gap: 25px !important;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+.logo img {
+    height: 40px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+/* KHI MENU MỞ (Header chuyển sang nền trắng) */
+.header-is-white .logo img {
+    /* Mày chỉ cần thay đường dẫn file logo màu đen của mày vào đây */
+    content: url('../images/logoblack.png');
+}
+
+
+/* MEGA MENU */
+.has-dropdown { position:static !important; }
+
+.has-dropdown i {
+    font-size: 0.7em; /* Cho nó nhỏ lại, cực kỳ tinh tế */
+    margin-left: 5px;
+    vertical-align: middle;
+    opacity: 3; /* Hơi mờ tí cho sang */
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+    font-weight: 700 !important; 
+    
+    /* Nếu nó vẫn chưa chịu đậm, dùng chiêu "đắp thêm thịt" này */
+    -webkit-text-stroke: 0.5px currentColor;
+}
+
+
+
+.lang-switch {
+    position: relative;
+    display: flex;
+    align-items: center; /* Quan trọng nhất: Căn giữa cờ và chữ theo chiều dọc */
+    gap: 8px;            /* Khoảng cách giữa cờ và chữ */
+    cursor: pointer;
+    padding: 5px 0;      /* Tạo vùng click rộng hơn một chút */
+}
+
+.flag-icon {
+    width: 20px;         /* Độ lớn lá cờ, tầm 18-20px là vừa với font chữ */
+    height: 20px;
+    border-radius: 50%;  /* Bo tròn xoe giống QUOC */
+    object-fit: cover;   /* Đảm bảo sao vàng nằm giữa, không bị méo */
+    display: block;      /* Loại bỏ khoảng trống thừa dưới ảnh */
+    
+}
+
+.lang-switch span {
+    font-size: 12px;     /* Chỉnh font chữ VN cho thanh thoát */
+    font-weight: 800;
+    line-height: 1;      /* Đảm bảo chữ không làm lệch chiều cao hàng */
+    letter-spacing: 0.5px;
+}
+
+.lang-switch i {
+    font-size: 0.7em; /* Cho nó nhỏ lại, cực kỳ tinh tế */
+    margin-left: 5px;
+    vertical-align: middle;
+    opacity: 3; /* Hơi mờ tí cho sang */
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+    font-weight: 700 !important; 
+    
+    /* Nếu nó vẫn chưa chịu đậm, dùng chiêu "đắp thêm thịt" này */
+    -webkit-text-stroke: 0.5px currentColor;
+}
+
+
+/* Bảng menu đổ xuống - Sạch sẽ không viền */
+.lang-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    right: 0;
+    z-index: 10000;
+    background: #fff;
+    min-width: 200px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: none; /* Xóa border để nhìn liền mạch với header trắng */
+    padding: 10px 0; /* Tạo khoảng đệm trên dưới cho list */
+}
+
+/* List bên trong */
+.lang-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Từng dòng ngôn ngữ */
+.lang-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    cursor: pointer;
+    background: #ffffff; /* Ép nền trắng cứng cho từng dòng */
+    transition: background 0.2s;
+    border-bottom: none !important;
+}
+
+.lang-item:hover {
+    background: #ffffff !important; /* Khi hover nó xám nhẹ, không thể trong suốt */
+}
+
+/* Icon cờ trong list - tròn xòe */
+.flag-icon-small {
+    width: 22px !important;  /* Tăng nhẹ kích thước cho dễ nhìn */
+    height: 22px !important; /* BẮT BUỘC width và height phải bằng nhau */
+    border-radius: 50% !important; /* Bo tròn hoàn hảo */
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;  /* CỰC KỲ QUAN TRỌNG: Giúp ảnh không bị méo/bầu dục */
+    display: inline-block;
+    flex-shrink: 0; /* Đảm bảo icon không bị bóp méo khi text quá dài */
+}
+
+.lang-item span {
+    font-size: 13px;
+    color: #333;
+    font-weight: 400;
+}
+
+/* Dòng đang chọn */
+.lang-item.active span {
+    font-weight: 600;
+}
+
+/* Hiệu ứng xoay mũi tên */
+.lang-switch i {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.lang-switch.is-active i {
+    transform: rotate(180deg);
+}
+
+
+
+
+
+/* 1. Mặc định trên Desktop: Ẩn nhóm mobile mới này đi */
+.m-nav-group { 
+    display: none; 
+}
+
+/* 2. Kích hoạt trên Tablet/Mobile (max-width: 1024px) */
+@media (max-width: 1024px) {
+    /* Hiện nhóm mobile mới */
+    .m-nav-group {
+        display: flex !important;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* Ẩn hoàn toàn nhóm desktop để lấy chỗ */
+    .desktop-only { 
+        display: none !important; 
+    }
+
+    /* Golden Parameters: Lề 2 bên 20px [cite: 2026-02-07] */
+    .header-inner {
+        padding: 0 20px !important;
+        height: 30px;
+    }
+
+    /* Định hình các nút trigger mới */
+    .m-trigger-btn, .m-trigger-search {
+        color: #fff !important; /* Mặc định trắng trên nền ảnh */
+        stroke: #fff !important;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Khi header chuyển trắng, đổi sang đen */
+    .header-is-white .m-trigger-btn i,
+    .header-is-white .m-trigger-search svg {
+        color: #000 !important;
+        stroke: #000 !important;
+    }
+
+    /* Kích thước icon */
+    .m-trigger-btn i { font-size: 22px; }
+    .m-trigger-search svg { width: 22px; height: 22px; }
+}
+
+
+
+
+@media (max-width: 1024px) {
+    .mobile-overlay {
+        position: fixed;
+        top: 8px; left: 8px; right: 8px; bottom: 8px;
+        background: #fff;
+        z-index: 9999;
+        display: none; /* JS bật cái này lên đầu tiên */
+        flex-direction: column;
+        padding: 25px;
+        
+        /* Trạng thái ẩn */
+        opacity: 0;
+        transform: translateY(10px); /* Hơi lệch xuống một chút để lúc hiện nó bay lên */
+        box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0);
+
+        /* TÁCH BIỆT THỜI GIAN:
+           - box-shadow: 0s (Hiện ngay lập tức)
+           - opacity và transform: 0.3s (Hiện mượt mà) */
+        transition: 
+            box-shadow 0s linear, 
+            opacity 0.3s ease, 
+            transform 0.3s ease;
+    }
+
+    .mobile-overlay.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0); /* Bay về vị trí chuẩn */
+        
+        /* Shadow tối sầm lại ngay lập tức */
+        box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0.5) !important;
+    }
+
+
+    /* Nút đóng trong vòng tròn mờ */
+    .close-menu {
+        width: 40px; height: 40px;
+        background: #ffffff;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 15px;
+        margin-bottom: 18px;
+        border: 1px solid #e0e0e0;
+    }
+
+    .mobile-nav { flex: 1; }
+
+    .mobile-nav a {
+        display: flex;
+        justify-content: space-between; /* Đẩy mũi tên sang phải */
+        align-items: center;
+        padding: 8px 0;
+        font-size: 21px;
+        color: #000;
+        text-decoration: none;
+        font-weight: 400;
+    }
+
+    .mobile-nav a i {
+        font-size: 14px;
+        color: #ccc; /* Mũi tên nhạt màu như QUOC */
+    }
+
+
+
+
+    /* PHẦN ĐÁY BOX */
+    /* PHẦN ĐÁY MENU MOBILE */
+
+.mobile-footer {
+        /* Bỏ padding ngang ở đây để line có thể chạy full lề [cite: 2025-12-29] */
+        padding: 0 0 0px 0 !important; 
+        margin-top: auto;
+        width: 100%;
+    }
+    .footer-line {
+        height: 0.5px;
+        background: #e0e0e0; 
+        margin-bottom: 20px;
+        /* Line này sẽ rộng bằng menu ở trên nếu nó không bị kẹt trong padding */
+        width: 100%; 
+    }
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* Chỉ đưa padding 20px vào phần nội dung chữ/icon [cite: 2026-02-07] */
+        padding: 0 20px; 
+    }
+
+.casa-flag-box {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #eee;
+    display: flex; /* Căn giữa cái hình bên trong */
+    align-items: center;
+    justify-content: center;
+}
+
+.casa-current-flag {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Quan trọng: để nó cắt hình chữ nhật thành vuông */
+    aspect-ratio: 1/1; /* Ép tỉ lệ vuông [cite: 2025-12-29] */
+}
+
+.casa-current-text {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Lá cờ trong bảng Bottom Sheet */
+.casa-sheet-item img {
+        width: 22px; height: 22px; border-radius: 50%;
+        object-fit: cover; aspect-ratio: 1/1; /* Tròn xoe [cite: 2025-12-29] */
+    }
+    
+    .casa-lang-trigger { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+    .casa-arrow { transition: transform 0.3s ease; }
+
+    /* Khi mở bảng: Xoay mũi tên [cite: 2025-12-29] */
+    body.sheet-open .casa-arrow { transform: rotate(180deg); }
+
+    /* 2. Lớp phủ đen */
+    .casa-sheet-overlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.5); z-index: 2000;
+        opacity: 0; visibility: hidden;
+        /* Không để delay ở đây để nó hiện ngay [cite: 2026-02-11] */
+        transition: opacity 0.4s ease, visibility 0.4s;
+    }
+
+    /* 3. Bottom Sheet (Ẩn triệt để khi chưa mở) */
+    .casa-lang-sheet {
+        position: fixed; bottom: 0; left: 0; width: 100%;
+        background: #fff; border-radius: 24px 24px 0 0;
+        padding: 30px 20px 50px 20px; z-index: 2001;
+        transform: translateY(110%); /* Giấu kỹ bên dưới */
+        visibility: hidden;
+        /* Thêm delay 0.1s cho transform [cite: 2026-02-11] */
+        transition: transform 0.6s cubic-bezier(0.32, 1, 0.23, 1) 0.1s, visibility 0.6s 0.1s;
+    }
+
+
+    .casa-sheet-header {
+        display: flex;
+        justify-content: center; /* Ép chữ Ngôn ngữ vào giữa [cite: 2025-12-29] */
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .casa-sheet-header h3 {
+        font-size: 17px; 
+        font-weight: 600; 
+        margin: 0; /* Xóa margin mặc định có thể gây lệch [cite: 2025-12-29] */
+        color: #000000;
+        text-align: center;
+    }
+
+    .casa-sheet-line {
+        height: 0.5px; 
+        background: #eee; 
+        width: 100%; /* Line chạy full chiều ngang sheet [cite: 2025-12-29] */
+        margin: 0 auto 10px auto; /* Căn giữa line [cite: 2025-12-29] */
+    }
+    .casa-sheet-list {
+        list-style: none; padding: 0; margin: 0;
+    }
+
+
+
+
+    /* 4. Nút X tròn - Ẩn mặc định [cite: 2025-12-29] */
+   .casa-sheet-close {
+        position: absolute; top: -65px; left: 50%; transform: translateX(-50%);
+        width: 44px; height: 44px; background: #fff; border-radius: 50%;
+        display: none; align-items: center; justify-content: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: none;
+        opacity: 0;
+    }
+
+    /* TRẠNG THÁI MỞ */
+    body.sheet-open .casa-sheet-overlay { opacity: 1; visibility: visible; }
+    body.sheet-open .casa-lang-sheet { transform: translateY(0); visibility: visible; }
+    body.sheet-open .casa-sheet-close { 
+        display: flex; 
+        animation: fadeInXWithDelay 0.6s forwards; 
+        animation-delay: 0.3s; 
+    }
+
+    body:not(.sheet-open) .casa-lang-sheet {
+        transition: transform 0.4s ease, visibility 0.4s; /* Đóng nhanh hơn cho thoát */
+    }
+
+   @keyframes fadeInXWithDelay {
+        from { opacity: 0; transform: translate(-50%, 20px); }
+        to { opacity: 1; transform: translate(-50%, 0); }
+    }
+
+    /* Style items [cite: 2026-02-11] */
+    .casa-sheet-item {
+        display: flex; 
+        align-items: center; 
+        justify-content: center; /* Ép nội dung ngôn ngữ vào giữa [cite: 2025-12-29] */
+        gap: 12px;
+        padding: 18px 0;
+        border-bottom: none !important;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .casa-sheet-item span {
+        font-size: 15px; color: #000000; font-weight: 400;
+    }
+
+    .casa-sheet-item.active span {
+        font-weight: 700; /* Đậm lên khi được chọn [cite: 2025-12-29] */
+        color: #000;
+    }
+    .casa-sheet-item:last-child { border-bottom: none; }
+    .account-link a { text-decoration: none !important; color: #000; font-size: 12px; font-weight: 600; }
+}
+
+
+
+
+

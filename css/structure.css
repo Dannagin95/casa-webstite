@@ -1,0 +1,916 @@
+/*cautruchero*/
+.cautruchero {
+    height: 93vh; 
+    position: relative; 
+    display: flex;
+    align-items: flex-end; 
+    /* Thay đổi quan trọng: Bỏ padding cố định, dùng flex để căn giữa khối nội dung */
+    padding: 0; 
+    justify-content: center; 
+    width: 100%;
+}
+
+.cautruchero-bg { position: absolute; inset: 0; z-index: -1; }
+.cautruchero-bg img { width: 100%; height: 100%; object-fit: cover; }
+
+.cautruchero-text { 
+    color: #fff; 
+    width: 100%;
+    max-width: var(--container-max); /* Khóa chặt ở 1650px */
+    margin: 0 auto; /* Ép vào giữa màn hình */
+    padding: 0 var(--side-padding); /* Trả lại đúng 55px padding để chữ đứng đúng vị trí cũ */
+    margin-bottom: 48px;
+    z-index: 2;
+    text-align: left; /* Đảm bảo chữ vẫn canh trái bên trong cái lồng 1650px */
+}
+.cautruchero-text h1 { font-size: 50px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
+.cautruchero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
+
+.mobile-only { 
+    display: none !important; 
+}
+
+/* Mặc định trên Desktop: Giấu nút Mobile */
+.mobile-menu-btn, .mobile-overlay { display: none; }
+
+
+@media (max-width: 1024px) {
+    .cautruchero {
+        /* 1. Xóa bỏ chiều cao 75vh cũ */
+        height: auto !important; 
+        
+        /* 2. Dùng min-height theo % chiều ngang màn hình (tương đương tỉ lệ 4:5) */
+        /* Cách này giúp nó co giãn thông minh mà không bị ép cứng như aspect-ratio */
+        min-height: 120vw !important; 
+        
+        /* 3. Đảm bảo ảnh nền luôn lấp đầy cái khung mới này */
+        background-size: cover !important;
+        background-position: center !important;
+
+        /* GIỮ NGUYÊN TOÀN BỘ CẤU TRÚC CỦA MÀY */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; 
+        align-items: center;    
+        text-align: center;
+        padding: 0 20px;
+        padding-bottom: 20px !important; 
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        border-top: 1px solid #ffffff;
+    }
+
+    .cautruchero-text {
+        padding: 0 !important; 
+        margin: 0 auto !important;
+        max-width: 100% !important; 
+        width: 100% !important;
+        
+        /* Đảm bảo căn giữa tuyệt đối */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center !important;
+        margin-bottom: 20px !important; /* Khoảng cách so với đáy section 20px */
+    }
+
+    .cautruchero-text h1 {
+        font-size: 28px; 
+        font-weight: 400;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .cautruchero-text p {
+        font-size: 12px;
+        letter-spacing: 0px;
+        margin-bottom: 0px;
+    }
+}
+/* TABLET: Dàn ngang ra tối ưu */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .cautruchero {
+        min-height: 56vw !important; /* Tỉ lệ ngang cho Tablet [cite: 2026-02-07] */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* --- TECH STRUCTURE SECTION --- */
+.tech-structure-section {
+    padding: var(--section-gap) 0; /* Desktop 80px */
+}
+
+.tech-label .section-subtitle {
+    display: inline-block; /* Để margin-bottom có tác dụng */
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    color: #2b2929; 
+}
+
+
+/* Phần Text đầu Section */
+.tech-intro {
+    margin-bottom: 50px;
+}
+
+.tech-main-title {
+    font-size: clamp(38px, 5vw, 50px);
+    font-weight: 400;
+    text-transform: none;
+    margin-bottom: 20px;
+    max-width: 1100px; /* Vẫn giữ cái này để dòng chữ không bị dài quá khổ */
+}
+
+.tech-main-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 520px;
+    color: var(--black);
+}
+
+/* Ảnh Hero full ngang */
+.tech-hero-image {
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.tech-hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Layout chi tiết 2 cột (30% - 70%) */
+.detail-row {
+    display: grid;
+    grid-template-columns: 30% 1fr; /* Cột trái 30%, cột phải tự động */
+    gap: 60px;
+    align-items: center;
+    padding: 60px 0;
+    border-top: 1px solid var(--color-bar); /* Đường kẻ mảnh style QUOC */
+}
+
+.detail-img-col img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.detail-text-col h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.detail-text-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
+
+
+
+/* --- MOBILE RESPONSIVE (Nguyên tắc 20px/40px) --- */
+@media (max-width: 768px) {
+   .tech-structure-section .casa-container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .tech-structure-section {
+        padding: 40px 0;
+    }
+
+    .tech-label {
+        padding: 0 20px;
+    }
+
+    .tech-label .section-subtitle {
+        display: block;
+        font-size: 11px;
+        color: var(--color-h3);
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+
+    .tech-intro, .tech-details-list {
+        padding: 0 var(--side-padding-mobile); 
+    }
+
+    .tech-main-title {
+        font-size: 28px;
+        text-transform: none;
+        font-weight: 400;
+    }
+
+    .tech-hero-image {
+        margin-bottom: 40px;
+    }
+
+    /* Chuyển 2 cột thành hàng dọc trên Mobile */
+    .detail-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 40px 0;
+    }
+
+    .detail-img-col {
+        width: 100%; /* Ảnh chiếm trọn chiều ngang trừ lề */
+    }
+
+    .detail-text-col h3 {
+        font-size: 18px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* --- SECTION & CONTAINER --- */
+.tech-dark-gallery .casa-container {
+    max-width: 1200px; /* Hoặc con số chuẩn của các section khác mày đang dùng */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 55px !important;
+    padding-right: 55px !important;
+    box-sizing: border-box !important;
+}
+
+.tech-dark-gallery {
+    background-color: var(--color-bg-dark);
+    color: var(--white);
+    padding: var(--section-gap) 0;
+    overflow: hidden;
+}
+
+.tech-header-top {
+    display: block !important; /* Hủy bỏ flex-between để text và nút xếp chồng */
+    margin-bottom: 40px;
+}
+
+.tech-main-desc-long {
+    font-size: 28px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 850px;
+    margin-bottom: 20px; /* Khoảng cách xuống cụm nút */
+}
+
+.tech-main-desc-long p {
+    margin-bottom: 15px; /* Khoảng cách giữa các đoạn văn khi bung ra */
+    display: inline; /* Giữ đoạn 1 và dấu ... nằm cùng hàng */
+}
+
+#more-tech p {
+    display: block; /* Các đoạn ẩn bên trong sẽ tự động xuống hàng */
+    margin-top: 20px;
+    max-width: 850px;
+    font-size: 28px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.read-more-link {
+    color: #ffffff; /* Màu xanh chuẩn QUOC [cite: 2026-02-11] */
+    text-decoration: underline;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline; /* Để nó hít vào cuối dòng văn */
+}
+
+/* NÚT ĐIỀU HƯỚNG */
+.tech-slider-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    position: relative; /* Tạo lớp riêng */
+    z-index: 10;        /* Đảm bảo nằm trên phần text */
+    pointer-events: auto !important; /* Ép nhận sự kiện click */
+    margin-top: 20px;   /* Tách hẳn khỏi đống chữ Xem thêm */
+    clear: both;        /* Chống tràn từ các thẻ inline phía trên */
+}
+
+.tech-ctrl-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    cursor: pointer !important; /* Hiện bàn tay khi rà vào */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    outline: none;
+    -webkit-appearance: none; /* Khử lỗi hiển thị nút trên Safari */
+}
+
+.tech-ctrl-btn:hover { 
+    border-color: var(--white); 
+    background: rgba(255,255,255,0.1); 
+}
+
+.tech-ctrl-btn svg {
+    pointer-events: none; /* Tránh việc click trúng cái icon SVG làm nút không nhận lệnh */
+}
+
+/* --- SLIDER MAIN --- */
+.tech-slider-main {
+    display: flex;
+    /* Tăng gap lên một chút cho thoáng giống QUOC */
+    gap: 20px; 
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-behavior: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    /* Quan trọng: Padding này phải khớp với container của mày để đồng nhất lề */
+    padding: 0; 
+}
+
+.tech-slider-main::-webkit-scrollbar { display: none; }
+
+.tech-slide-item {
+    flex: 0 0 calc((100% - 40px) / 3) !important; /* 24px là tổng gap: 12px * 2 */
+    min-width: calc((100% - 40px) / 3) !important;
+    scroll-snap-stop: always !important;
+    scroll-snap-align: start !important;
+}
+
+.tech-image-box img {
+    width: 100%;
+    aspect-ratio: 7/8;
+    object-fit: cover;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.tech-item-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.tech-item-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #999;
+}
+
+/* --- PROGRESS BAR --- */
+.tech-progress-wrap {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin: 40px 0 60px;
+    position: relative;
+}
+
+.tech-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 33%;
+    background: var(--white);
+    transition: 0.3s;
+}
+
+/* --- FOOTER (Giữ nguyên của mày) --- */
+.tech-footer-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 50px;
+}
+
+.stat-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 12px;
+}
+
+.stars { display: flex; gap: 8px; align-items: center; }
+.techdot { width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--white); }
+.techdot.active { background-color: var(--white) !important; }
+.tech-box { padding: 12px 0;}
+.tech-box h4 { font-size: 14px; margin-bottom: 0px; text-transform: uppercase; }
+.tech-box p { font-size: 13px; color: #888; line-height: 1.6; margin-bottom: 14px }
+
+
+
+
+/* --- MOBILE (Golden Rule 20/40) --- */
+@media (max-width: 768px) {
+    .tech-dark-gallery { 
+        padding: 40px 0 !important;
+        overflow: hidden;
+    }
+
+
+    .tech-dark-gallery .casa-container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 100% !important;
+    }
+    
+    .tech-header-top {
+        padding: 0 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .tech-main-desc-long {
+        font-size: 14px;
+    }
+
+    .tech-main-desc-long p {
+        margin-bottom: 1.5em; /* Tạo khoảng cách giữa các đoạn văn */
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    #more-tech p {
+    display: block; /* Các đoạn ẩn bên trong sẽ tự động xuống hàng */
+    margin-top: 20px;
+    max-width: 850px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .read-more-link {
+        color: #ffffff; /* Hoặc màu trắng tùy mày */
+        text-decoration: none;
+        font-weight: 500;
+        display: inline-block; /* Luôn là inline để hít vào chữ */
+    }
+    
+    .tech-slider-controls { display: none; }
+    
+    .tech-slider-main {
+        padding: 0 20px !important; /* Tạo lề 20px cho ảnh đầu [cite: 2026-02-07] */
+        scroll-padding: 0 20px !important; /* BUỘC trình duyệt dừng đúng vạch 20px */
+        gap: 9px !important;
+        scroll-snap-type: x mandatory !important;
+        display: flex !important;
+        margin-right: 0 !important;
+    }
+    
+    .tech-slide-item { 
+        flex: 0 0 85% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        scroll-snap-align: start !important;
+    }
+
+    .tech-progress-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: var(--white);
+        width: 0; 
+        /* KHÔNG transition, KHÔNG animation */
+        transition: none !important; 
+        will-change: width;
+    }
+
+    .tech-footer-info {
+        grid-template-columns: 1fr;
+        padding: 20px 20px 0;
+        gap: 30px;
+    }
+
+    .stars { display: flex; gap: 5px; align-items: center; }
+    .techdot { width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--white); }
+    .techdot.active { background-color: var(--white) !important; }
+
+    .tech-box h4 { font-size: 14px; margin-bottom: 0px; text-transform: uppercase; }
+    .tech-box p { font-size: 13px; color: var(--color-text-muted); line-height: 1.4; margin-bottom: 14px; }
+}
+
+
+
+
+
+
+
+
+
+
+/* --- DESKTOP FIX --- */
+.khamphaalbum-section {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    background-color: var(--color-white);
+    /* Giữ section ổn định */
+    overflow: hidden; 
+}
+
+    .khamphaalbum-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 13px;
+    }
+
+    .section-title {
+        font-size: 1.9rem; /* Giảm size xuống một chút cho tinh tế */
+        font-weight: 500;
+        text-transform: none;
+        letter-spacing: -0.5px; /* QUOC dùng letter-spacing hẹp cho title */
+        color: var(--text-color);
+    }
+
+    /* Label "Hành trình" */
+    .khamphaalbum-header .section-label {
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 200;
+        letter-spacing: 0.1em;
+        color: var(--color-text-muted);
+    }
+
+    /* Cụm 2 nút điều hướng */
+    .khamphaalbum-controls {
+        display: flex;
+        gap: 12px;
+    }
+
+    .ctrl-btn {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 1px solid var(--black); /* Màu dark từ footer nhưng nhạt đi */
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: var(--color-dark); /* Màu hắc ín của mày */
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        padding: 0;
+    }
+
+
+.khamphaalbum-slider {
+    display: flex;
+    /* Tăng gap lên một chút cho thoáng giống QUOC */
+    gap: 20px; 
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-behavior: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    /* Quan trọng: Padding này phải khớp với container của mày để đồng nhất lề */
+    padding: 0; 
+}
+
+/* Ép lề chuẩn cho toàn bộ section khamphaalbum */
+.khamphaalbum-section .casa-container {
+    max-width: 1200px; /* Hoặc con số chuẩn của các section khác mày đang dùng */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 55px !important;
+    padding-right: 55px !important;
+    box-sizing: border-box !important;
+}
+
+/* Sửa lại kích thước item để không làm bung lề container */
+.khamphaalbum-item {
+    flex: 0 0 calc((100% - 40px) / 3) !important; /* 24px là tổng gap: 12px * 2 */
+    min-width: calc((100% - 40px) / 3) !important;
+    scroll-snap-stop: always !important;
+    scroll-snap-align: start !important;
+
+}
+
+.khamphaalbum-item img {
+    width: 100%;
+    aspect-ratio: 11/12;
+    object-fit: cover;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.item-info {
+        position: relative; /* Đảm bảo nó nằm theo luồng tự nhiên */
+        padding: 0 10px 20px 0;
+        text-align: left;
+    }
+
+    .item-title {
+        font-size: 1.9rem;
+        font-weight: 500;
+        margin-bottom: 20px;
+        color: #000000;
+        display: block;
+    }
+
+    .item-desc {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #000000;
+        margin-bottom: 15px;
+        /* Giới hạn 3 dòng để các card đều nhau */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+
+    .card-link {
+    display: inline-block;
+    background-color: #1a1a1a; /* Màu đen đặc trưng */
+    color: #ffffff;
+    padding: 12px 28px; /* Độ rộng vừa phải để nút nhìn cân đối */
+    border-radius: 100px; /* Bo tròn hoàn toàn hai đầu */
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: none; /* QUOC thường không viết hoa hết, để chữ tự nhiên */
+    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid #1a1a1a;
+    margin-top: 5px; /* Tạo khoảng cách nhẹ với đoạn mô tả */
+}
+
+/* Hiệu ứng Hover - Đảo màu nhẹ nhàng */
+.card-link:hover {
+    background-color: transparent;
+    color: #1a1a1a;
+}
+
+    .khamphaalbum-progress-container {
+        width: 100%;
+        height: 1px;
+        transform: scaleY(0.8);
+        background-color:var(--color-bar); /* Nền thanh mảnh, nhạt */
+        margin-top: 30px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .khamphaalbum-progress-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 101%;
+        width: 0%; /* Bắt đầu từ 0 */
+        background-color: #000000; 
+        opacity: 1 !important;
+        transition: width 0.2s ease-out; 
+    }
+
+
+
+/* ==========================================================================
+   MOBILE & TABLET FIX (Danna's Golden Rule: Lề 20px, Section 40px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    /* 1. Reset Container: Bỏ padding 60px của Desktop, về đúng 20px [cite: 2026-02-07] */
+    .khamphaalbum-section .casa-container {
+        padding-top: 40px;
+        padding-bottom: 80px;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .khamphaalbum-section {
+        padding: 0 !important; 
+        overflow: hidden; 
+    }
+
+    /* 2. Header: Căn thẳng hàng lề 20px [cite: 2026-02-07] */
+    .khamphaalbum-header {
+        padding: 0 20px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .section-title {
+        font-size: 1.8rem !important;
+        max-width: 300px;
+    }
+
+
+    .khamphaalbum-controls {
+        display: none;
+    }
+
+    
+    .khamphaalbum-slider {
+        padding: 0 20px !important; /* Tạo lề 20px cho ảnh đầu [cite: 2026-02-07] */
+        scroll-padding: 0 20px !important; /* BUỘC trình duyệt dừng đúng vạch 20px */
+        gap: 7px !important;
+        scroll-snap-type: x mandatory !important;
+        display: flex !important;
+        margin-right: 0 !important;
+    }
+
+    /* 4. Item: Tỷ lệ 85% sang chảnh, hở đuôi ảnh sau */
+    .khamphaalbum-item {
+        flex: 0 0 85% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        scroll-snap-align: start !important; /* Hít chặt lề trái khi vuốt */
+    }
+
+    
+    /* 3. Đảm bảo item cuối không mang theo margin thừa */
+    .khamphaalbum-item:last-child {
+        margin-right: 0 !important;
+    }
+
+    .khamphaalbum-item img {
+        aspect-ratio: 7/8 !important; 
+        margin-bottom: 15px !important;
+    }
+
+    /* 5. Fix Text: Không bị chìm, không bị lệch */
+    .item-info {
+        padding: 0 !important;
+    }
+
+    .item-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    .item-desc {
+        font-size: 0.95rem !important;
+        -webkit-line-clamp: 3 !important;
+    }
+
+    .khamphaalbum-progress-container {
+        margin: 30px 0 0 0 !important;
+        width: 100%;
+    }
+}
+
+
+/* --- FEATURES BAR --- */
+.features-bar {
+        padding: 80px 0 !important; 
+        background-color: #f6f6f6;
+        border-top: 1px solid #f6f6f6;
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Đẩy cái container vào giữa */
+    }
+
+
+.features-bar .container {
+        /* [MỎ NEO] Khóa chặt khung xương 1650px */
+        width: 100% !important;
+        max-width: var(--container-max) !important; 
+        margin: 0 auto !important;
+        /* Padding trái phải 55px để icon ngoài cùng không bị chạm mép 1650px */
+        padding: 0 var(--side-padding) !important;
+        box-sizing: border-box;
+    }
+    
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cột đều nhau */
+    gap: 40px;
+    max-width: 100%; /* Giới hạn chiều rộng để không bị loãng */
+    margin: 0 auto; /* Căn giữa màn hình */
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.features-dots {
+    display: none; /* Desktop vẫn ẩn */
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 0; /* Tạo khoảng cách với vùng lướt */
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+/* Style cho Icon SVG */
+.feature-icon {
+    margin-bottom: 20px;
+    color: #000;
+}
+.feature-icon svg {
+    width: 32px;  /* Kích thước icon giống QUOC (nhỏ gọn) */
+    height: 32px;
+}
+
+/* Tiêu đề mục */
+.feature-item h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    margin: 0 0 10px 0;
+    text-transform: none;
+    letter-spacing: 1px;
+}
+
+/* Link bên dưới */
+.feature-item a {
+    font-family: 'Barlow', sans-serif; /* Font thường cho dễ đọc */
+    font-size: 13px;
+    color: #555;
+    text-decoration: underline; /* Gạch chân giống QUOC */
+    text-underline-offset: 4px; /* Gạch chân cách chữ ra một chút cho đẹp */
+    transition: 0.3s;
+}
+
+.feature-item a:hover {
+    color: #000; /* Rê chuột vào đen đậm lên */
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .features-bar {
+        padding: 40px 0; /* Giữ khoảng cách trên dưới vừa phải */
+        overflow: hidden; /* Tránh bị tràn trang */
+    }
+
+    .features-grid {
+        display: flex; /* Chuyển từ Grid sang Flex để các mục nằm trên 1 hàng ngang */
+        overflow-x: auto; /* Cho phép cuộn ngang */
+        scroll-snap-type: x mandatory; /* Hiệu ứng "hít" vào giữa mỗi mục khi lướt */
+        gap: 0; /* Xóa khoảng cách grid */
+        padding-bottom: 20px; /* Chừa chỗ cho thanh cuộn (nếu có) */
+        
+        /* Ẩn thanh cuộn (scrollbar) để nhìn cho sạch */
+        -ms-overflow-style: none;  /* IE/Edge */
+        scrollbar-width: none;  /* Firefox */
+        -webkit-overflow-scrolling: touch; /* Giúp lướt trên iPhone mượt hơn */
+    }
+
+    /* Ẩn thanh cuộn trên Chrome/Safari */
+    .features-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .feature-item {
+        flex: 0 0 100%; /* Quan trọng: Mỗi mục chiếm đúng 100% chiều rộng màn hình */
+        scroll-snap-align: center; 
+        scroll-snap-stop: always;
+        padding: 0 30px; 
+        box-sizing: border-box;
+    }
+
+    .feature-icon svg {
+        width: 28px; /* Cho icon nhỏ lại một chút trên mobile */
+        height: 28px;
+    }
+
+
+    .features-dots {
+        display: flex !important; 
+    }
+
+    .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: #817c7c; /* Màu xám nhạt */
+        display: block;
+        transition: all 0.3s ease;
+    }
+
+    .dot.active {
+        background-color: #000;
+        transform: scale(1.3);
+    }
+}

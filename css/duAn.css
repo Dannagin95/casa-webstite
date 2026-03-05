@@ -1,0 +1,190 @@
+/* =========================================
+   1. MOBILE VERSION (ƯU TIÊN - GIỮ NGUYÊN HIỆU ỨNG CŨ)
+   ========================================= */
+@media (max-width: 767px) {
+    .projects {
+        padding-top: 50px; /* Tạo khoảng hở với Hero 70vh phía trên */
+        overflow: hidden;
+    }
+
+    .projects .container {
+        padding-left: 0 !important; 
+        padding-right: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin-top: 0 !important; /* Reset lại cho khớp layout mới */
+    }
+
+    .section-header {
+        padding: 0 20px;
+        margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 1px;
+        color: var(--color-bg-dark);
+        text-transform: uppercase;
+    }
+
+    /* HIỆU ỨNG LƯỚT NGANG SNAPPING ĐẶC TRƯNG */
+    .project-grid {
+        display: flex !important;
+        gap: 18px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory; 
+        
+        -webkit-overflow-scrolling: touch; 
+        padding-left: 20px;  
+        padding-right: 20px; 
+    }
+
+    .project-grid::-webkit-scrollbar { display: none; }
+
+   .project-card {
+    /* Độ rộng card: Chiếm khoảng 75% để chừa một phần card sau lọt vào khung hình [cite: 2026-02-11] */
+    flex: 0 0 75vw !important; 
+    width: 75vw !important;
+    
+    /* CHIẾC GẬY THẦN KỲ: Tỉ lệ 3:4 hoặc 4:5 (Rộng : Cao) [cite: 2026-02-11] */
+    /* Tỉ lệ này giúp card luôn đứng, bất kể màn hình cao hay thấp */
+    aspect-ratio: 6 / 7; 
+    
+    /* BỎ CÁI NÀY ĐI: height: 57vh; -> Nó là thủ phạm gây biến dạng [cite: 2026-02-11] */
+
+    scroll-snap-stop: always !important;
+    scroll-snap-align: center;
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+    .card-img {
+        height: 100% !important;
+        width: 100%;
+        background: #000;
+    }
+
+    .card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.85; /* Tối nhẹ để nổi chữ */
+    }
+
+    .card-info {
+        position: absolute !important;
+        bottom: 30px !important;
+        left: 20px !important;
+        right: 20px !important;
+        z-index: 2;
+    }
+
+    .project-card .card-info h3 {
+        color: #ffffff !important;
+        font-family: 'Urbanist', sans-serif !important;
+        font-weight: 500 !important;
+        font-size: 22px !important; /* Tăng nhẹ kích thước cho sang */
+        line-height: 1.2 !important;
+        margin: 0 !important;
+    }
+}
+
+/* =========================================
+   2. DESKTOP VERSION - ĐỒNG BỘ LỀ 60PX
+   ========================================= */
+@media (min-width: 768px) {
+    .projects {
+        /* [QUAN TRỌNG] Trả lại sự tự do cho section, không dùng padding trái phải để đẩy lề */
+        padding: 80px 0 !important; 
+        background: #fff;
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Luôn gom nội dung vào giữa màn hình */
+    }
+
+    .projects .container {
+        /* [MỎ NEO] Khóa chặt khung xương 1650px giống Header và Hero */
+        max-width: var(--container-max) !important; 
+        width: 100% !important;
+        margin: 0 auto !important;
+        /* Dùng đúng side-padding 55px từ biến hệ thống để thẳng hàng lề trái */
+        padding-left: var(--side-padding) !important; 
+        padding-right: var(--side-padding) !important;
+        box-sizing: border-box;
+    }
+
+    /* Giữ nguyên toàn bộ Style Header và Grid của mày */
+    .section-header {
+        margin-bottom: 36px;
+        text-align: left; 
+    }
+
+    .section-subtitle {
+        display: block;
+        font-size: 11px;
+        font-weight: 300;
+        color: #2b2929;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .project-grid {
+        margin-top: -1%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 24px; 
+    }
+
+    .project-card {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        aspect-ratio: 6/7; /* Tỉ lệ đứng portrait */
+    }
+
+    .card-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    /* Hiệu ứng Zoom & Gradient đáy */
+    .project-card:hover .card-img img {
+        transform: scale(1.08);
+    }
+
+    .card-img::after {
+        content: "";
+        position: absolute;
+        bottom: 0; left: 0; width: 100%; height: 50%;
+        background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+        z-index: 1;
+    }
+
+    .card-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 35px; /* Chữ cách mép card một chút */
+        z-index: 2;
+        box-sizing: border-box;
+    }
+
+    .project-card .card-info h3 {
+        font-family: 'Urbanist', sans-serif !important;
+        font-size: 26px;
+        font-weight: 400;
+        color: #fff;
+        margin: 0;
+        line-height: 1.2;
+    }
+}

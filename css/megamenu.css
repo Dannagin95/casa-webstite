@@ -1,0 +1,121 @@
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: auto; /* Menu phải nhận chuột */
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.mega-menu.is-visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+/* Trạng thái Header khi đang mở Menu */
+.header-is-white {
+    background: #ffffff !important;
+    pointer-events: auto !important; /* Khi mở menu thì header phải "hiện hình" để ko bị đóng */
+}
+
+.header-is-white .nav-link, 
+.header-is-white .util-item {
+    color: #1a1a1a !important;
+}
+
+.mega-content-container {
+    max-width: 1650px;
+    margin: 0 auto;
+    padding: 40px 55px;
+}
+
+.mega-section {
+    display: none; /* Ẩn đi khi chưa hover */
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 60px; 
+    width: 100%;
+}
+
+.mega-section.is-active {
+    display: flex !important; /* Bắt buộc dàn hàng ngang */
+    flex-direction: row !important; /* Khẳng định lại là hàng ngang */
+}
+
+.mega-links {
+    display: flex;
+    flex-direction: column; /* Link bên trong vẫn xếp dọc */
+    gap: 17px;
+    align-items: flex-start;
+    /* Chìa khóa layout: */
+    flex: 0 0 250px; /* Cố định chiều rộng cột chữ */
+    margin-right: auto; 
+}
+
+
+.mega-links:nth-of-type(2) { 
+    margin-left: -70px;
+    margin-right: auto; 
+}
+
+
+.mega-links a {
+    color: #000000 !important;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: none !important;
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+    padding-bottom: 2px;
+    display: inline-block;
+}
+
+.mega-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px; 
+    background-color: #000000;
+    transition: width 0.3s ease;
+}
+
+/* Hiệu ứng hover: Chỉ chạy line, chữ đứng yên */
+
+
+.mega-links a:hover::after {
+    width: 100%; 
+}
+
+.mega-subtitle {
+    font-size: 12px;
+    color: #6d6a6a;
+
+}
+
+
+
+
+.mega-image {
+    flex: 0 0 300px; /* Cố định chiều rộng mỗi ảnh */
+    max-width: 420px;
+    min-height: 100px;
+}
+
+.mega-image img {
+    width: 100%;       /* Luôn rộng bằng cái vỏ 350px ở trên */
+    height: 336px;     /* Set chiều cao thủ công bằng chiều rộng để nó VUÔNG */
+    object-fit: cover; /* QUAN TRỌNG: Để ảnh không bị móp, nó sẽ tự cắt gọn */
+    display: block;
+}
+
+.mega-image + .mega-image {
+margin-left: -44px;
+}

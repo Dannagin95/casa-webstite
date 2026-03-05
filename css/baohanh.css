@@ -1,0 +1,373 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--color-bg-page);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: var(--black);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Header & Logo --- */
+.site-header {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.site-logo {
+    height: 30px; /* Chỉnh lại theo size logo của mày */
+    width: auto;
+}
+
+/* --- Main Layout --- */
+.warranty-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.warranty-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 950px;
+    min-height: 500px;
+    padding: 200px 140px;
+    position: relative;
+    border: 1px solid var(--color-border);
+    text-align: center;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05), 
+                0 2px 10px rgba(0, 0, 0, 0.02);
+    
+    /* Đảm bảo bo góc nhẹ nếu layout yêu cầu, thường là 2-4px */
+    border-radius: 4px;
+    overflow: hidden; /* Giữ các phần tử con (như scroll-area) không tràn khỏi bo góc */
+}
+
+/* --- Navigation Buttons --- */
+.nav-btn {
+    position: absolute;
+    top: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    padding: 10px;
+    transition: opacity 0.3s;
+    z-index: 10; /* Đảm bảo nút luôn nằm trên vùng scroll */
+}
+
+.prev-btn {
+    left: 25px;
+    display: none; /* Mặc định ẩn ở bước 1 */
+}
+
+.close-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* --- SCROLL AREA & PROGRESS BAR (PHẦN MỚI THÊM) --- */
+.scroll-area {
+    max-height: 450px; /* Độ cao vùng cuộn để không phá vỡ padding 200px của mày */
+    overflow-y: auto;
+    padding-right: 30px;
+    text-align: left; /* Căn trái cho nội dung dài chuẩn QUOC */
+}
+
+/* Ẩn thanh cuộn mặc định */
+.scroll-area::-webkit-scrollbar {
+    width: 0px;
+}
+
+.scroll-progress-container {
+    position: absolute;
+    right: 40px;
+    top: 200px;  /* Khớp với padding-top của card */
+    bottom: 200px; /* Khớp với padding-bottom của card */
+    width: 2px;
+    background: #f0f0f0;
+}
+
+.scroll-progress-bar {
+    width: 100%;
+    height: 0%;
+    background: #000;
+    transition: height 0.1s ease;
+}
+
+/* Khoảng cách tùy chỉnh cho các thẻ p trong quy trình */
+.process-p {
+    margin-bottom: 25px; 
+    display: block;
+}
+
+.process-p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Steps & Animation --- */
+.step-content {
+    display: none;
+    opacity: 0;
+}
+
+.step-content.active {
+    display: block;
+    animation: fadeIn 0.4s forwards;
+}
+
+/* Character count style */
+.char-count {
+    display: block;
+    font-size: 11px;
+    color: #999;
+    margin-top: 8px;
+    text-align: left;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Typography --- */
+.card-title {
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.card-body {
+    margin-bottom: 40px;
+    color: var(--black);
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+/* --- Form Fields --- */
+.check-list {
+    list-style: none;
+    font-size: 22px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.check-list li {
+    padding-left: 20px;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.check-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+}
+
+.input-group { text-align: left; }
+
+.field-label {
+    display: block;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+textarea, input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--color-border);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    outline: none;
+    background: var(--color-bg-page);
+    border-radius: 4px;
+}
+
+textarea { height: 100px; resize: none; }
+
+/* --- Button --- */
+.btn-action {
+    background: #f1f1f1;
+    border: none;
+    padding: 15px 35px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-action:hover { background: #e5e5e5; }
+
+.btn-action.disabled {
+    background:#e5e5e5;
+    opacity: 0.3; /* Mờ đi đúng kiểu QUOC */
+    pointer-events: none; /* Không cho click */
+    cursor: not-allowed;
+    filter: grayscale(3); /* Làm nút trông "chết" hẳn */
+}
+
+/* --- Footer --- */
+.site-footer {
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: var(--color-grey);
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 12px;
+}
+
+
+
+/* --- HIỆU CHỈNH LÕI STEP 2 ĐỘC LẬP CHUẨN QUOC --- */
+
+#step-2.step-content.active {
+    /* Ép Step 2 phủ kín diện tích bên trong của warranty-card */
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: block; 
+    margin: 0;
+    padding: 2px;
+}
+
+/* Vùng Viewport: Chiếm trọn diện tích Box */
+.step2-viewport {
+    width: 100%;
+    min-height: 400px;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* Padding này giúp text không dính lề, mày có thể chỉnh tùy ý */
+    padding: 80px 140px 40px 140px; 
+}
+.step2-viewport::-webkit-scrollbar { display: none; }
+
+.step2-inner-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Progress Bar: Khối dài bo 2 đầu, nằm bên trái nút Close (X) */
+.quoc-scroll-container {
+    position: absolute;
+    right: 120px; /* Cách lề phải 80px để né nút X */
+    top: 80px; 
+    bottom: 80px;
+    width: 4px;
+    background: rgba(0,0,0,0.03);
+    z-index: 100;
+}
+
+.quoc-thumb {
+    position: absolute;
+    width: 100%;
+    height: 160px; /* Độ dài khối trượt rời */
+    background: #d3d3d3;
+    border-radius: 10px; /* Bo tròn 2 đầu [cite: 8] */
+    top: 0;
+    transition: transform 0.1s linear;
+}
+
+/* Nút Next trong vùng scroll */
+.step2-footer-scroll {
+    padding: 40px 0;
+    text-align: center;
+}
+
+
+
+
+
+/* --- WARRANTY MOBILE RESPONSIVE (LOGIC PHÁ BOX) --- */
+@media (max-width: 768px) {
+    /* 1. Giải phóng Container & Card [cite: 2026-02-07, 2026-02-11] */
+    .warranty-container {
+        padding: 0 !important;
+        display: block !important; /* Không cần flex center nữa */
+    }
+
+    .warranty-card {
+        border: none !important;      /* Bỏ viền box */
+        box-shadow: none !important;  /* Bỏ đổ bóng */
+        background: transparent !important;
+        padding: 40px 20px !important; /* Lề trên 40px, lề 2 bên 20px chuẩn bài [cite: 2026-02-07] */
+        max-width: 100% !important;
+        min-height: auto !important;
+        border-radius: 0 !important;
+    }
+
+    /* 2. Điều hướng (Nút Back/Close) [cite: 2026-02-11] */
+    .nav-btn, .close-btn {
+        top: 10px !important;
+        padding: 5px !important;
+    }
+    .prev-btn { left: 15px !important; }
+    .close-btn { right: 15px !important; }
+
+    /* 3. Typography & Nội dung [cite: 2026-02-11] */
+    .card-title {
+        font-size: 18px !important; /* Giảm size cho mobile */
+        margin-bottom: 25px !important;
+        text-align: center;
+    }
+
+    .card-body {
+        font-size: 16px !important; /* Text description nhỏ lại cho tinh tế */
+        line-height: 1.6 !important;
+        margin-bottom: 40px !important; /* Khoảng cách xuống nút bấm [cite: 2026-02-07] */
+        text-align: center;
+    }
+
+    .check-list {
+        font-size: 16px !important;
+        padding-left: 0 !important;
+    }
+
+    /* 4. Xử lý Step 2 (Vùng cuộn đặc biệt) [cite: 2026-02-11] */
+    #step-2.step-content.active {
+        position: relative !important; /* Trả về luồng tự nhiên trên mobile */
+        padding: 0 !important;
+    }
+
+    .step2-viewport {
+        padding: 20px 0 !important; /* Bỏ padding 140px của desktop */
+        height: auto !important;
+        overflow-y: visible !important; /* Cho phép cuộn toàn trang thay vì cuộn trong box */
+    }
+
+    /* Ẩn thanh progress bar rời của QUOC trên mobile để layout sạch hơn */
+    .quoc-scroll-container {
+        display: none !important;
+    }
+
+    /* 5. Nút bấm - Phẳng và tối giản [cite: 2026-02-11] */
+    .btn-action {
+        width: 100%; /* Nút full-width cho mobile dễ bấm */
+        max-width: 250px;
+        margin: 0 auto;
+        display: block;
+        background: #f1f1f1 !important;
+        padding: 18px !important;
+        font-size: 14px !important;
+        border-radius: 4px !important;
+    }
+
+    /* 6. Section Gap [cite: 2026-02-07] */
+    .step-content {
+        margin-bottom: 40px !important;
+    }
+}
