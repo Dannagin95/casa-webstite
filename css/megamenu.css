@@ -6,7 +6,7 @@
     background: #fff;
     visibility: hidden;
     opacity: 0;
-    pointer-events: auto; /* Menu phải nhận chuột */
+    pointer-events: auto; 
     transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.3s ease;
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
@@ -17,10 +17,10 @@
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
 }
 
-/* Trạng thái Header khi đang mở Menu */
+
 .header-is-white {
     background: #ffffff !important;
-    pointer-events: auto !important; /* Khi mở menu thì header phải "hiện hình" để ko bị đóng */
+    pointer-events: auto !important; 
 }
 
 .header-is-white .nav-link, 
@@ -35,7 +35,7 @@
 }
 
 .mega-section {
-    display: none; /* Ẩn đi khi chưa hover */
+    display: none; 
     justify-content: flex-start;
     align-items: flex-start;
     gap: 60px; 
@@ -43,17 +43,17 @@
 }
 
 .mega-section.is-active {
-    display: flex !important; /* Bắt buộc dàn hàng ngang */
-    flex-direction: row !important; /* Khẳng định lại là hàng ngang */
+    display: flex !important; 
+    flex-direction: row !important; 
 }
 
 .mega-links {
     display: flex;
-    flex-direction: column; /* Link bên trong vẫn xếp dọc */
+    flex-direction: column;
     gap: 17px;
     align-items: flex-start;
-    /* Chìa khóa layout: */
-    flex: 0 0 250px; /* Cố định chiều rộng cột chữ */
+    
+    flex: 0 0 250px; 
     margin-right: auto; 
 }
 
@@ -87,7 +87,7 @@
     transition: width 0.3s ease;
 }
 
-/* Hiệu ứng hover: Chỉ chạy line, chữ đứng yên */
+
 
 
 .mega-links a:hover::after {
@@ -104,15 +104,15 @@
 
 
 .mega-image {
-    flex: 0 0 300px; /* Cố định chiều rộng mỗi ảnh */
+    flex: 0 0 300px; 
     max-width: 420px;
     min-height: 100px;
 }
 
 .mega-image img {
-    width: 100%;       /* Luôn rộng bằng cái vỏ 350px ở trên */
-    height: 336px;     /* Set chiều cao thủ công bằng chiều rộng để nó VUÔNG */
-    object-fit: cover; /* QUAN TRỌNG: Để ảnh không bị móp, nó sẽ tự cắt gọn */
+    width: 100%;       
+    height: 336px;     
+    object-fit: cover; 
     display: block;
 }
 

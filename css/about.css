@@ -12,9 +12,7 @@
     content: none !important;
 }
 
-/* ============================================================
-   2. GIAO DIỆN MOBILE - GIỮ NGUYÊN 100% CỦA DANNA
-   ============================================================ */
+
 @media (max-width: 768px) {
     .company {
         margin-top: 80px !important; 
@@ -32,7 +30,7 @@
     }
 
     .about-main-text {
-        order: 2 !important; /* Chữ nằm trên */
+        order: 2 !important; 
         width: 100% !important; 
         padding: 30px 25px !important; 
         background-color: #e9c2b6 !important;
@@ -40,7 +38,7 @@
     }
 
     .about-main-visual {
-        order: 2 !important; /* Ảnh nằm dưới */
+        order: 2 !important; 
         width: 100% !important;
     }
 
@@ -88,9 +86,7 @@
     }
 }
 
-/* ============================================================
-   3. GIAO DIỆN DESKTOP - ĐÃ ĐẢO VỊ TRÍ
-   ============================================================ */
+
 @media (min-width: 769px) {
     .company {
         max-width: none; 
@@ -104,7 +100,7 @@
 
     .about-intro {
         display: flex !important;
-        /* ĐỔI Ở ĐÂY: Dùng row-reverse để đẩy Ảnh (đứng trước trong HTML) sang Phải */
+      
         flex-direction: row-reverse !important; 
         align-items: stretch !important;
         width: 100% !important;
@@ -112,9 +108,9 @@
         margin: 0 !important
     }
 
-    /* ẢNH BÊN PHẢI (Do row-reverse) */
+    
     .about-main-visual {
-        flex: 0 0 50% !important; /* Fix nhẹ lỗi cú pháp 0 50% 0 của mày */
+        flex: 0 0 50% !important;
         width: 50% !important;
     }
 
@@ -125,7 +121,7 @@
         display: block !important;
     }
 
-    /* CHỮ BÊN TRÁI (Do row-reverse) */
+    
     .about-main-text {
         flex: 0 0 50% !important;
         color: #ffffff;
@@ -134,20 +130,19 @@
         display: flex !important;
         flex-direction: column !important;
         justify-content: flex-end !important;
-        /* Trả về lề trái tuyệt đối theo ý mày */
+     
         align-items: flex-start !important; 
         
         padding: 60px 55px !important; 
         max-width: none !important;
     }
 
-    /* Khống chế độ dài của cụm text để không bị "dài dại" khi zoom out */
+
     .about-main-text .top-content, 
     .about-main-text .description,
     .about-main-text .btn-discover {
         width: 100%;
-        /* Đây là độ dài tối đa của dòng chữ khi zoom out */
-        /* Tao để 700px để nó không bao giờ bị dãn quá rộng gây khó đọc */
+        
         max-width: 700px !important; 
         
         margin-left: 0 !important;
