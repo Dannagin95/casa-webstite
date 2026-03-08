@@ -1,5 +1,4 @@
-/*cautruchero*/
-.cautruchero {
+.duannhero {
     height: 93vh; 
     position: relative; 
     display: flex;
@@ -10,10 +9,12 @@
     width: 100%;
 }
 
-.cautruchero-bg { position: absolute; inset: 0; z-index: -1; }
-.cautruchero-bg img { width: 100%; height: 100%; object-fit: cover; }
+.duannhero-bg { position: absolute; inset: 0; z-index: -1; }
 
-.cautruchero-text { 
+.duannhero-bg img { width: 100%; height: 100%; object-fit: cover; }
+
+
+.duannhero-text { 
     color: #fff; 
     width: 100%;
     max-width: var(--container-max); /* Khóa chặt ở 1650px */
@@ -23,8 +24,12 @@
     z-index: 2;
     text-align: left; /* Đảm bảo chữ vẫn canh trái bên trong cái lồng 1650px */
 }
-.cautruchero-text h1 { font-size: 50px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
-.cautruchero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
+
+
+.duannhero-text h1
+ { font-size: 60px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
+
+.duannhero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
 
 .mobile-only { 
     display: none !important; 
@@ -34,8 +39,9 @@
 .mobile-menu-btn, .mobile-overlay { display: none; }
 
 
+
 @media (max-width: 1024px) {
-    .cautruchero {
+    .duannhero {
         /* 1. Xóa bỏ chiều cao 75vh cũ */
         height: auto !important; 
         
@@ -60,7 +66,7 @@
         border-top: 1px solid #ffffff;
     }
 
-    .cautruchero-text {
+    .duannhero-text {
         padding: 0 !important; 
         margin: 0 auto !important;
         max-width: 100% !important; 
@@ -74,22 +80,24 @@
         margin-bottom: 20px !important; /* Khoảng cách so với đáy section 20px */
     }
 
-    .cautruchero-text h1 {
+    .duannhero-text h1 {
         font-size: 28px; 
         font-weight: 400;
         margin-bottom: 20px;
         line-height: 1.2;
     }
 
-    .cautruchero-text p {
+    .duannhero-text p {
         font-size: 12px;
         letter-spacing: 0px;
         margin-bottom: 0px;
     }
 }
+
+
 /* TABLET: Dàn ngang ra tối ưu */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .cautruchero {
+    .duannhero {
         min-height: 56vw !important; /* Tỉ lệ ngang cho Tablet [cite: 2026-02-07] */
     }
 }
@@ -102,416 +110,242 @@
 
 
 
-
-/* --- TECH STRUCTURE SECTION --- */
-.tech-structure-section {
-    padding: var(--section-gap) 0; /* Desktop 80px */
+/* TỔNG THỂ TRANG DUAN [cite: 2025-12-29] */
+.duan-page-body {
+    padding-top: var(--section-gap); /* 80px [cite: 2025-12-29] */
+    padding-bottom: var(--section-gap);
 }
 
-.tech-label .section-subtitle {
-    display: inline-block; /* Để margin-bottom có tác dụng */
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-
-    color: #2b2929; 
+/* TẦNG 1: INTRO */
+.duan-intro-minimal {
+    padding-bottom: 80px;
 }
 
-
-/* Phần Text đầu Section */
-.tech-intro {
-    margin-bottom: 50px;
+.duan-intro-text-wrapper {
+    max-width: 720px; 
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* CHỮ LỆCH TRÁI: Đây là điểm mấu chốt mày muốn [cite: 2025-12-29] */
+    text-align: left; 
 }
 
-.tech-main-title {
-    font-size: clamp(38px, 5vw, 50px);
-    font-weight: 400;
-    text-transform: none;
-    margin-bottom: 20px;
-    max-width: 1100px; /* Vẫn giữ cái này để dòng chữ không bị dài quá khổ */
-}
-
-.tech-main-desc {
+.duan-intro-text-wrapper p {
+    font-family: var(--font-body);
     font-size: 13px;
     line-height: 1.6;
-    max-width: 520px;
-    color: var(--black);
+    color: #000000;
+    margin-bottom: 25px;
+    
+    /* Giữ nguyên form chữ khi zoom in/out [cite: 2025-12-29] */
+    word-break: keep-all;
 }
 
-/* Ảnh Hero full ngang */
-.tech-hero-image {
-    width: 100%;
-    margin-bottom: 80px;
-}
-
-.tech-hero-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Layout chi tiết 2 cột (30% - 70%) */
-.detail-row {
-    display: grid;
-    grid-template-columns: 30% 1fr; /* Cột trái 30%, cột phải tự động */
-    gap: 60px;
-    align-items: center;
-    padding: 60px 0;
-    border-top: 1px solid var(--color-bar); /* Đường kẻ mảnh style QUOC */
-}
-
-.detail-img-col img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-.detail-text-col h3 {
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
-
-.detail-text-col p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: var(--color-text-muted);
-}
-
-
-
-/* --- MOBILE RESPONSIVE (Nguyên tắc 20px/40px) --- */
-@media (max-width: 768px) {
-   .tech-structure-section .casa-container {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        max-width: 100% !important;
-    }
-
-    .tech-structure-section {
-        padding: 40px 0;
-    }
-
-    .tech-label {
-        padding: 0 20px;
-    }
-
-    .tech-label .section-subtitle {
-        display: block;
-        font-size: 11px;
-        color: var(--color-h3);
-        font-weight: 300;
-        letter-spacing: 1px;
-    }
-
-
-    .tech-intro, .tech-details-list {
-        padding: 0 var(--side-padding-mobile); 
-    }
-
-    .tech-main-title {
-        font-size: 28px;
-        text-transform: none;
-        font-weight: 400;
-    }
-
-    .tech-hero-image {
-        margin-bottom: 40px;
-    }
-
-    /* Chuyển 2 cột thành hàng dọc trên Mobile */
-    .detail-row {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 40px 0;
-    }
-
-    .detail-img-col {
-        width: 100%; /* Ảnh chiếm trọn chiều ngang trừ lề */
-    }
-
-    .detail-text-col h3 {
-        font-size: 18px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-/* --- SECTION & CONTAINER --- */
-.tech-dark-gallery .casa-container {
-    max-width: 1200px; /* Hoặc con số chuẩn của các section khác mày đang dùng */
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 55px !important;
-    padding-right: 55px !important;
-    box-sizing: border-box !important;
-}
-
-.tech-dark-gallery {
-    background-color: var(--color-bg-dark);
-    color: var(--white);
-    padding: var(--section-gap) 0;
+/* TẦNG 2: HÌNH LỚN [cite: 2025-12-29] */
+.duan-hero-image {
+    width: 100vw; /* Ép rộng bằng đúng chiều rộng màn hình [cite: 2025-12-29] */
+    position: relative;
+    left: 50%; /* Đẩy sang phải 50% [cite: 2025-12-29] */
+    right: 50%;
+    margin-left: -50vw; /* Kéo ngược lại lề trái 50% để căn giữa hoàn hảo [cite: 2025-12-29] */
+    margin-right: -50vw;
+    margin-bottom: 80px; 
     overflow: hidden;
 }
 
-.tech-header-top {
-    display: block !important; /* Hủy bỏ flex-between để text và nút xếp chồng */
-    margin-bottom: 40px;
-}
-
-.tech-main-desc-long {
-    font-size: 28px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 850px;
-    margin-bottom: 20px; /* Khoảng cách xuống cụm nút */
-}
-
-.tech-main-desc-long p {
-    margin-bottom: 15px; /* Khoảng cách giữa các đoạn văn khi bung ra */
-    display: inline; /* Giữ đoạn 1 và dấu ... nằm cùng hàng */
-}
-
-#more-tech p {
-    display: block; /* Các đoạn ẩn bên trong sẽ tự động xuống hàng */
-    margin-top: 20px;
-    max-width: 850px;
-    font-size: 28px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.read-more-link {
-    color: #ffffff; /* Màu xanh chuẩn QUOC [cite: 2026-02-11] */
-    text-decoration: underline;
-    font-weight: 500;
-    cursor: pointer;
-    display: inline; /* Để nó hít vào cuối dòng văn */
-}
-
-/* NÚT ĐIỀU HƯỚNG */
-.tech-slider-controls {
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
-    position: relative; /* Tạo lớp riêng */
-    z-index: 10;        /* Đảm bảo nằm trên phần text */
-    pointer-events: auto !important; /* Ép nhận sự kiện click */
-    margin-top: 20px;   /* Tách hẳn khỏi đống chữ Xem thêm */
-    clear: both;        /* Chống tràn từ các thẻ inline phía trên */
-}
-
-.tech-ctrl-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.2);
-    background: transparent;
-    cursor: pointer !important; /* Hiện bàn tay khi rà vào */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-    outline: none;
-    -webkit-appearance: none; /* Khử lỗi hiển thị nút trên Safari */
-}
-
-.tech-ctrl-btn:hover { 
-    border-color: var(--white); 
-    background: rgba(255,255,255,0.1); 
-}
-
-.tech-ctrl-btn svg {
-    pointer-events: none; /* Tránh việc click trúng cái icon SVG làm nút không nhận lệnh */
-}
-
-/* --- SLIDER MAIN --- */
-.tech-slider-main {
-    display: flex;
-    /* Tăng gap lên một chút cho thoáng giống QUOC */
-    gap: 20px; 
-    overflow-x: auto;
-    scroll-snap-type: x proximity;
-    scroll-behavior: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    /* Quan trọng: Padding này phải khớp với container của mày để đồng nhất lề */
-    padding: 0; 
-}
-
-.tech-slider-main::-webkit-scrollbar { display: none; }
-
-.tech-slide-item {
-    flex: 0 0 calc((100% - 40px) / 3) !important; /* 24px là tổng gap: 12px * 2 */
-    min-width: calc((100% - 40px) / 3) !important;
-    scroll-snap-stop: always !important;
-    scroll-snap-align: start !important;
-}
-
-.tech-image-box img {
+.duan-hero-wrapper {
     width: 100%;
-    aspect-ratio: 7/8;
+    max-width: 100%; /* Bỏ cái 90% nãy tao đề xuất đi [cite: 2025-12-29] */
+    aspect-ratio: 16 / 6;
+}
+
+.duan-hero-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh không bị méo khi tràn viền [cite: 2025-12-29] */
+}
+
+/* TẦNG 3: TEXT GIỮA (Căn trái đồng bộ Intro) [cite: 2025-12-29] */
+.duan-mid-content {
+    /* ÉP KHUNG RA GIỮA: Dùng margin auto [cite: 2025-12-29] */
+    max-width: 720px; /* Khớp đúng độ rộng 720px của Tầng 1 [cite: 2025-12-29] */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px; /* Khoảng cách xuống Grid dự án bên dưới [cite: 2025-12-29] */
+
+    /* CHỮ LỆCH TRÁI: Đúng nết QUOC [cite: 2025-12-29] */
+    text-align: left; 
+}
+
+.duan-mid-content p {
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 1.6; /* Dãn dòng rộng đồng bộ [cite: 2025-12-29] */
+    color: #000000;
+    font-style: italic; /* Giữ nguyên nét nghiêng để phân biệt với Intro [cite: 2025-12-29] */
+}
+
+
+
+
+/* TẦNG 4: GRID 3 DỰ ÁN [cite: 2025-12-29] */
+.duan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px; /* Khoảng cách giữa 3 cột [cite: 2025-12-29] */
+}
+
+.duan-card {
+    text-decoration: none;
+    color: inherit;
+}
+
+.duan-card-img {
+    width: 100%;
+    aspect-ratio: 6/7; /* Tỉ lệ dọc Portrait chuẩn QUOC [cite: 2025-12-29] */
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.duan-card-img img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    margin-bottom: 15px;
-    display: block;
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.tech-item-title {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 12px;
+.duan-card:hover .duan-card-img img {
+    transform: scale(1.05); /* Hover mượt kiểu Casa [cite: 2026-02-11] */
 }
 
-.tech-item-desc {
+.duan-card-title {
     font-size: 14px;
-    line-height: 1.6;
-    color: #999;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
-/* --- PROGRESS BAR --- */
-.tech-progress-wrap {
-    width: 100%;
-    height: 1px;
-    background: rgba(255,255,255,0.1);
-    margin: 40px 0 60px;
+.duan-card-desc {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.4;
+}
+
+
+
+.duan-outro-text {
+    padding-top: 80px;
+}
+
+.duan-outro-wrapper {
+    max-width: 720px; /* Giữ đúng trục dọc 720px xuyên suốt [cite: 2025-12-29] */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; 
+}
+
+.duan-outro-main p {
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 1.6; /* Dãn dòng rộng để đoạn văn dài không bị ngộp [cite: 2025-12-29] */
+    color: #000000;
+    margin-bottom: 25px; /* Khoảng cách với dòng cuối [cite: 2025-12-29] */
+}
+
+.duan-outro-closing p {
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 1.6;
+    color: #000000; /* Chốt hạ bằng màu đậm hơn cho có lực [cite: 2025-12-29] */
+    font-weight: 700; /* Hơi đậm hơn một chút để tạo điểm nhấn kết bài [cite: 2025-12-29] */
     position: relative;
 }
 
-.tech-progress-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 33%;
-    background: var(--white);
-    transition: 0.3s;
-}
-
-/* --- FOOTER (Giữ nguyên của mày) --- */
-.tech-footer-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 50px;
-}
-
-.stat-line {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    font-size: 12px;
-}
-
-.stars { display: flex; gap: 8px; align-items: center; }
-.techdot { width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--white); }
-.techdot.active { background-color: var(--white) !important; }
-.tech-box { padding: 12px 0;}
-.tech-box h4 { font-size: 14px; margin-bottom: 0px; text-transform: uppercase; }
-.tech-box p { font-size: 13px; color: #888; line-height: 1.6; margin-bottom: 14px }
 
 
 
 
-/* --- MOBILE (Golden Rule 20/40) --- */
-@media (max-width: 768px) {
-    .tech-dark-gallery { 
-        padding: 40px 0 !important;
-        overflow: hidden;
+@media (max-width: 1024px) {
+    
+    /* 1. ĐỒNG BỘ LỀ ĐẦU TRANG VỚI TOÀN BỘ WEBSITE [cite: 2026-02-07] */
+    .duan-page-body {
+        padding-top: 0 !important; /* Triệt tiêu để khớp với các trang khác [cite: 2026-02-07] */
+        padding-bottom: 30px !important;
     }
 
-
-    .tech-dark-gallery .casa-container {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+    /* 2. KHUNG CONTAINER CHUẨN CASA [cite: 2026-02-07] */
+    .duan-page-body .casa-container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: 100% !important;
         max-width: 100% !important;
-    }
-    
-    .tech-header-top {
-        padding: 0 20px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+        margin: 0 !important;
     }
 
-    .tech-main-desc-long {
-        font-size: 14px;
-    }
-
-    .tech-main-desc-long p {
-        margin-bottom: 1.5em; /* Tạo khoảng cách giữa các đoạn văn */
-        line-height: 1.7;
-        color: rgba(255, 255, 255, 0.9);
-    }
-
-    #more-tech p {
-    display: block; /* Các đoạn ẩn bên trong sẽ tự động xuống hàng */
-    margin-top: 20px;
-    max-width: 850px;
-    font-size: 14px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
-    }
-    
-    .read-more-link {
-        color: #ffffff; /* Hoặc màu trắng tùy mày */
-        text-decoration: none;
-        font-weight: 500;
-        display: inline-block; /* Luôn là inline để hít vào chữ */
-    }
-    
-    .tech-slider-controls { display: none; }
-    
-    .tech-slider-main {
-        padding: 0 20px !important; /* Tạo lề 20px cho ảnh đầu [cite: 2026-02-07] */
-        scroll-padding: 0 20px !important; /* BUỘC trình duyệt dừng đúng vạch 20px */
-        gap: 9px !important;
-        scroll-snap-type: x mandatory !important;
-        display: flex !important;
+    /* 3. CÁC KHỐI TEXT: BUNG RỘNG & FIX LỀ TRÊN DƯỚI [cite: 2025-12-29] */
+    .duan-intro-text-wrapper,
+    .duan-mid-content,
+    .duan-outro-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin-left: 0 !important;
         margin-right: 0 !important;
     }
-    
-    .tech-slide-item { 
-        flex: 0 0 85% !important;
-        min-width: 100% !important;
+
+    /* Thu hẹp lề để layout "chặt" hơn trên mobile [cite: 2025-12-29] */
+    .duan-intro-minimal {
+        padding-top: 40px !important;
+        padding-bottom: 35px !important;
+    }
+
+    .duan-mid-content {
+        margin-bottom: 35px !important;
+    }
+
+    .duan-outro-text {
+        padding-top: 60px !important;
+    }
+
+    .duan-outro-main p {
+        margin-bottom: 15px !important;
+    }
+
+    /* 4. HÌNH LỚN HERO: TRÀN VIỀN [cite: 2025-12-29] */
+    .duan-hero-image {
+        position: relative;
+        left: 0 !important; 
+        margin-left: -20px !important; 
+        margin-right: -20px !important;
+        width: calc(100% + 40px) !important; 
+        max-width: none !important;
+        margin-bottom: 40px; 
+    }
+
+    .duan-hero-wrapper {
+        width: 100% !important; 
         max-width: 100% !important;
-        scroll-snap-align: start !important;
+        margin: 0 !important; 
+        padding: 0 !important;
+        left: 0 !important; 
+        aspect-ratio: 16 / 6; 
     }
 
-    .tech-progress-bar {
-        position: absolute;
-        top: 0;
-        left: 0;
+    .duan-hero-wrapper img {
+        width: 100%;
         height: 100%;
-        background: var(--white);
-        width: 0; 
-        /* KHÔNG transition, KHÔNG animation */
-        transition: none !important; 
-        will-change: width;
+        object-fit: cover;
     }
 
-    .tech-footer-info {
-        grid-template-columns: 1fr;
-        padding: 20px 20px 0;
-        gap: 30px;
+    /* 5. GRID DỰ ÁN: 1 CỘT DỌC [cite: 2025-12-29] */
+    .duan-grid {
+        grid-template-columns: 1fr !important;
+        gap: 60px !important;
     }
-
-    .stars { display: flex; gap: 5px; align-items: center; }
-    .techdot { width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--white); }
-    .techdot.active { background-color: var(--white) !important; }
-
-    .tech-box h4 { font-size: 14px; margin-bottom: 0px; text-transform: uppercase; }
-    .tech-box p { font-size: 13px; color: var(--color-text-muted); line-height: 1.4; margin-bottom: 14px; }
 }
+
+
 
 
 
@@ -777,6 +611,10 @@
 
 
 
+
+
+
+
 /* --- FEATURES BAR --- */
 .features-bar {
         padding: 80px 0 !important; 
@@ -905,7 +743,7 @@
     }
 
     .dot {
-        width: 7px;
+        width: 7px; /* To lên một chút cho dễ thấy */
         height: 7px;
         border-radius: 50%;
         background-color: #817c7c; /* Màu xám nhạt */
@@ -914,7 +752,7 @@
     }
 
     .dot.active {
-        background-color: #000;
+        background-color: #000; /* Chấm đang chọn màu đen */
         transform: scale(1.3);
     }
 }
