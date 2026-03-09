@@ -1,0 +1,172 @@
+
+.blog-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Cao bằng màn hình */
+    min-height: 750px;
+    background-image: url('../imagesblog/woodgrainhero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Hiệu ứng đứng hình khi cuộn (Parallax) */
+    background-attachment: fixed; 
+}
+
+/* Lớp phủ để chữ trắng nổi bật trên mọi loại ảnh */
+.blog-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 50%);
+    
+    /* [QUAN TRỌNG] Dùng flex để gom cái nội dung vào giữa khi zoom out */
+    display: flex;
+    justify-content: center; 
+    align-items: flex-end; 
+    padding: 0; /* Bỏ padding trực tiếp để container lo */
+}
+
+.blog-content {
+    color: #ffffff;
+    width: 100% !important;
+    max-width: var(--container-max) !important; 
+    margin: 0 auto !important;
+    padding: 0 var(--side-padding) 80px var(--side-padding) !important; /* Lề 55px và đáy 80px */
+    box-sizing: border-box;
+    text-align: left; /* Luôn canh trái trong cái lồng 1650px */
+}
+
+.blog-subtitle {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 11px;
+    font-weight: 300;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+.blog-title {
+    font-size: clamp(40px, 5vw, 30px); /* Tự co giãn font theo màn hình */
+    font-weight: 500;
+    margin-bottom: 18px;
+    letter-spacing: -0.02em;
+}
+
+.blog-description {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    max-width: 800px;
+}
+
+.blog-btn {
+    display: inline-block;
+    padding: 14px 35px;
+    background-color: #ffffff;
+    color: var(--black);
+    text-decoration: none;
+    border: 2px solid var(--white); /* Viền cùng màu với nền */
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0.1em;
+    
+}
+
+.blog-btn:hover {
+    background-color: transparent;   
+    color: var(--white);           
+}
+
+/* --- RESPONSIVE LICHSUPROCESS --- */
+@media (max-width: 1024px) {
+    .blog-section {
+        /* Bỏ chiều cao cố định, dùng tỉ lệ khung hình để co giãn thông minh */
+        height: auto !important; 
+        min-height: unset !important;
+        aspect-ratio: 4 / 5; /* Tỉ lệ dọc hiện đại, giống ảnh QUOC mày gửi */
+        background-attachment: scroll; /* Fix lỗi lag trên mobile */
+    }
+
+    .blog-overlay {
+        display: flex;
+        align-items: flex-end; 
+        justify-content: center; 
+        text-align: center;
+        
+        
+        padding: 60px 20px 40px 20px !important;
+        
+        background: rgba(0,0,0,0.3); 
+    }
+
+    .blog-content {
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        text-align: center !important;
+        padding: 0 !important;
+        /* CHIÊU CUỐI: Dùng margin-bottom âm để ép cụm này xuống sát mép dưới hơn nữa */
+    }
+
+    
+    .blog-subtitle {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 1px;
+        color: var(--wwhite);
+        text-transform: uppercase;
+    }
+
+
+    .blog-title {
+        font-size: 28px !important;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        font-weight: 400;
+        width: 100%; /* Đảm bảo text có không gian để căn giữa */
+    }
+
+    .blog-description {
+        font-size: 12px;
+        letter-spacing: 0px;
+        margin-bottom: 25px;
+        
+        /* [QUAN TRỌNG] Cho phép chữ dãn ra tối đa không gian cho phép */
+        max-width: 100% !important; 
+        width: 100% !important;
+        
+        /* Giữ lề lối */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .blog-btn {
+        padding: 13px 30px;
+        font-size: 15px;
+        /* Khóa nút không bị dãn ngang, luôn nằm chính giữa */
+        width: fit-content !important; 
+        display: inline-block;
+        margin: 0 auto;
+        margin-bottom: 0 !important;
+    }
+}
+
+/* TABLET: Dài ngang ra tối ưu như Desktop (như hình iPad Mini mày gửi) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .blog-section {
+        aspect-ratio: 16 / 9; /* Ép về tỉ lệ màn hình ngang */
+    }
+    
+    .blog-title {
+        font-size: 45px !important;
+    }
+}
