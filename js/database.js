@@ -26,5 +26,6 @@ export const searchDatabase = [
 
 
     { title: "Liên hệ", url: "contactus.html", keywords: "liên hệ" },
-    { title: "Dự Án", url: "duan.html", keywords: "dự án" }
+    { title: "Dự Án", url: "duan.html", keywords: "dự án" },
+    { title: "Blog" , url: "blog.html", keywords: "bl blog b"}
 ];
