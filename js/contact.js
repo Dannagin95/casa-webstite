@@ -38,17 +38,18 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbzYGd7djERnrVQIsIu2DE
     });
 
     function sendData(data) {
-        fetch(scriptURL, { method: 'POST', body: data })
-        .then(res => {
-            alert("Gửi thành công rồi Danna! Check Google Sheets đi.");
-            form.reset();
-            fileNote.innerText = "Đính kèm tối đa 10 tệp.";
-            btn.disabled = false;
-            btn.innerText = "Send";
-        })
-        .catch(err => {
-            alert("Lỗi rồi mày ơi: " + err.message);
-            btn.disabled = false;
-            btn.innerText = "Send";
-        });
-    }
+    fetch(scriptURL, { method: 'POST', body: data })
+    .then(res => {
+   
+        alert("Cảm ơn bạn đã gửi thông tin! Casa Parquet sẽ liên hệ lại sớm nhất."); 
+        form.reset();
+        fileNote.innerText = "Đính kèm tối đa 10 tệp.";
+        btn.disabled = false;
+        btn.innerText = "Send";
+    })
+    .catch(err => {
+        alert("Lỗi hệ thống: " + err.message);
+        btn.disabled = false;
+        btn.innerText = "Send";
+    });
+}
