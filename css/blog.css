@@ -170,3 +170,113 @@
         font-size: 45px !important;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*BLOGPAGE*/
+.blogpagehero {
+    height: 93vh; 
+    position: relative; 
+    display: flex;
+    align-items: flex-end; 
+    /* Thay đổi quan trọng: Bỏ padding cố định, dùng flex để căn giữa khối nội dung */
+    padding: 0; 
+    justify-content: center; 
+    width: 100%;
+}
+
+/* Thêm lớp phủ sẫm màu */
+.blogpagehero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1); /* Độ sẫm 25%, mày có thể tăng lên 0.3 nếu muốn tối hơn */
+    z-index: 1;
+}
+
+.blogpagehero-bg { 
+    position: absolute; 
+    inset: 0; 
+    z-index: -1; 
+}
+
+
+.blogpagehero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 0;
+}
+
+
+.mobile-only { 
+    display: none !important; 
+}
+
+/* Mặc định trên Desktop: Giấu nút Mobile */
+.mobile-menu-btn, .mobile-overlay { display: none; }
+
+
+
+
+
+@media (max-width: 1024px) {
+    .blogpagehero {
+       
+        height: auto !important; 
+        
+       
+        min-height: 120vw !important; 
+        
+    
+        background-size: cover !important;
+        background-position: center !important;
+
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; 
+        align-items: center;    
+        text-align: center;
+        padding: 0 20px;
+        padding-bottom: 20px !important; 
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        border-top: 1px solid #ffffff;
+    }
+
+    .blogpagehero-text {
+        padding: 0 !important; 
+        margin: 0 auto !important;
+        max-width: 100% !important; 
+        width: 100% !important;
+        
+        /* Đảm bảo căn giữa tuyệt đối */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center !important;
+        margin-bottom: 20px !important; 
+    }
+
+}
+
+
+/* TABLET: Dàn ngang ra tối ưu */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .blogpagehero {
+        min-height: 56vw !important; 
+    }
+}
