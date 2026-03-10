@@ -1,4 +1,4 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycby_Yud_YX-sTXBnUz6PjOklk9pV7c83Sj_oNnFBPnDhlxTvj02y5azvRfT5Mp6JPnc8/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw55b7H_pqVjtAUfX49rnrf-5lE3apboF4oKDlzSHN_u54v2pGEGXlkWeYGJzpQqK7S/exec';
     const form = document.getElementById('casa-contact-form');
     const btn = document.getElementById('submit-btn');
     const fileInput = document.getElementById('file-upload');
