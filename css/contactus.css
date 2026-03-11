@@ -104,6 +104,36 @@
     margin-top: 8px;
 }
 
+
+
+
+#file-list {
+    margin-top: 10px;
+}
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f4f4f4;
+    padding: 8px 12px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.remove-btn {
+    color: #ff4d4d;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.remove-btn:hover {
+    color: #cc0000;
+}
+
+
+
+
+
 /* Nút Submit đen tuyền */
 .contact-submit-btn {
     width: 100%;
@@ -134,6 +164,10 @@
     color: #888;
     font-size: 14px;
 }   
+
+
+
+
 
 
 
