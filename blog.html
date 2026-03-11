@@ -286,7 +286,59 @@
 
 
 
+<main class="casa-container section-space">
+    <section class="blog-grid">
+        
+        <article class="blog-card">
+            <a href="post-1.html" class="blog-card-image">
+                <img src="imagesblog/woodgrainhero2.jpg" alt="Woodgrain">
+            </a>
+            <div class="blog-card-content">
+                <a href="post-1.html" class="blog-card-title">
+                    <h3>CASA Parquet: Vì sao vân gỗ không bao giờ lặp lại?</h3>
+                </a>
+                <p class="blog-card-desc">
+                    Không có hai tấm gỗ nào giống nhau; mỗi đường vân là dấu vết được hình thành qua nhiều năm sinh trưởng trong tự nhiên.
+                </p>
+            </div>
+        </article>
 
+        <article class="blog-card">
+            <a href="post-2.html" class="blog-card-image">
+                <img src="img-2.jpg" alt="Quoc Pham">
+            </a>
+            <div class="blog-card-content">
+                <a href="post-2.html" class="blog-card-title">
+                    <h3>CASA Parquet: Gỗ trong kiến trúc hiện đại – vật liệu cổ điển trong ngôn ngữ đương đại</h3>
+                </a>
+                <p class="blog-card-desc">
+                    Trong kiến trúc ngày nay, gỗ được sử dụng như một yếu tố cân bằng giữa các vật liệu cứng và lạnh, mang lại cảm giác ấm áp và chiều sâu tự nhiên cho không gian.
+                </p>
+            </div>
+        </article>
+
+        <article class="blog-card">
+            <a href="post-3.html" class="blog-card-image">
+                <img src="img-3.jpg" alt="Moritz Lorenz">
+            </a>
+            <div class="blog-card-content">
+                <a href="post-3.html" class="blog-card-title">
+                    <h3>CASA Parquet: Vai trò của màu sàn gỗ trong việc định hình không gian sống.</h3>
+                </a>
+                <p class="blog-card-desc">
+                    Tông màu của sàn gỗ ảnh hưởng trực tiếp đến cảm nhận về ánh sáng, tỷ lệ và bầu không khí của căn phòng, từ đó định hình cách một không gian được trải nghiệm.
+                </p>
+            </div>
+        </article>
+
+    </section>
+
+    <div class="blog-pagination">
+        <button class="pag-btn prev">❮</button>
+        <span class="pag-number">1 / 2</span>
+        <button class="pag-btn next">❯</button>
+    </div>
+</main>
 
 
     
@@ -440,14 +492,14 @@
                     <li><a href="contactus.html">Liên hệ</a></li>
                     <li><a href="#">Trung tâm trợ giúp</a></li>
                     <li><a href="#">Kích thước</a></li>
-                    <li><a href="#">Showroom</a></li>
+                    <li><a href="showroom.html">Showroom</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
                 <ul class="footer-links">
                     <li><a href="#">Sứ mệnh</a></li>
-                    <li><a href="#">Khởi nguồn</a></li>
+                    <li><a href="lichsu.html">Khởi nguồn</a></li>
                     <li><a href="quytrinh.html">Quy trình</a></li>
                 </ul>
             </div>
@@ -488,21 +540,45 @@
             </div>
             
             <div class="bottom-right">
-                <div class="country-selector" id="langgSelector">
-                   <img src="https://api.iconify.design/mdi:web.svg" alt="Vietnam" id="currentFlag">
-                   <span id="currentLanggText">Vietnam</span>
-                   <i class="fas fa-chevron-down" id="chevronIcon">
-                   </i>
+    <div class="country-selector" id="langgSelector">
+        <div class="casa-flag-box-footer">
+            <img src="https://flagcdn.com/w80/vn.png" alt="VN" id="currentFlag">
+        </div>
+        <span id="currentLanggText">VN</span>
+        <svg class="casa-arrow-footer" width="10" height="6" viewBox="0 0 10 6" fill="none" id="chevronIcon">
+            <path d="M1 1L5 5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
 
-                <ul class="langg-dropdown" id="langgDropdown">
-                  <li data-lang="vn" data-flag="https://flagcdn.com/w20/vn.png">
-                  <img src="https://flagcdn.com/w20/vn.png" alt="VN"> Vietnam</li>
-                  <li data-lang="en" data-flag="https://flagcdn.com/w20/gb.png">
-                  <img src="https://flagcdn.com/w20/gb.png" alt="EN"> English</li>
-                </ul>
-             </div>
-            </div>
+        <ul class="langg-dropdown" id="langgDropdown">
+            <li class="active" data-lang="VN" data-flag="https://flagcdn.com/w80/vn.png">
+                <img src="https://flagcdn.com/w80/vn.png"> <span>Vietnam(VN)</span>
+            </li>
+            <li data-lang="EN" data-flag="https://flagcdn.com/w80/us.png">
+                <img src="https://flagcdn.com/w80/us.png"> <span>English(EN)</span>
+            </li>
+        </ul>
+    </div>
+</div>
 
+
+<div class="lang-sheet-overlay"></div>
+<div class="lang-sheet-container">
+    <button class="lang-sheet-close">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M1 13L13 1" stroke="black" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="lang-sheet-content">
+        <p class="lang-sheet-title">Ngôn ngữ</p>
+        <div class="lang-sheet-divider"></div>
+        <ul class="lang-sheet-list">
+            <li class="active" data-lang="VN" data-flag="https://flagcdn.com/w80/vn.png">
+                <img src="https://flagcdn.com/w80/vn.png"> <span>Tiếng Việt (VN)</span>
+            </li>
+            <li data-lang="EN" data-flag="https://flagcdn.com/w80/us.png">
+                <img src="https://flagcdn.com/w80/us.png"> <span>English (EN)</span>
+            </li>
+        </ul>
+    </div>
+</div>
 
         </div>
     </div>
@@ -511,7 +587,7 @@
 
     <script src="js/index.js"></script>
     <script src="js/faq.js"></script>
-    <script src="js/wood.js"></script>
+    <script src="js/footerlang.js"></script>
     <script src="js/search.js"></script>
     <script type="module" src="js/search-logic.js"></script>
     <script src="js/mobilemenu.js"></script>

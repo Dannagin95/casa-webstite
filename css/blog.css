@@ -287,3 +287,95 @@
 
 
 
+/* GRID CHUẨN 3 CỘT */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px; /* Khoảng cách giữa các bài viết */
+    align-items: start;
+}
+
+/* KHUNG ẢNH - CHỐNG LỆCH */
+.blog-card-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Ép tỉ lệ dọc theo mẫu QUOC. Nếu muốn vuông thì đổi thành 1/1 */
+    overflow: hidden;
+    margin-bottom: 24px;
+    background-color: var(--gray); /* Tận dụng màu nền xám từ base.css */
+}
+
+.blog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.blog-card:hover .blog-card-image img {
+    transform: scale(1.05); /* Zoom mượt 5% */
+}
+
+/* TYPOGRAPHY */
+.blog-card-title {
+    text-decoration: none;
+    color: var(--color-h3);
+    display: block;
+    margin-bottom: 12px;
+}
+
+.blog-card-title h3 {
+    font-size: 22px; 
+    line-height: 1.4;
+    /* Không cần set font-family vì base.css đã lo rồi */
+}
+
+.blog-card-desc {
+    font-size: 15px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+/* PHÂN TRANG */
+.blog-pagination {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 15px;
+    font-family: var(--font-body);
+}
+
+.pag-btn {
+    background: none;
+    border: 1px solid var(--color-border);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    color: var(--black);
+}
+
+.pag-btn:hover {
+    border-color: var(--black);
+    background: var(--black);
+    color: var(--white);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr; 
+    }
+}
