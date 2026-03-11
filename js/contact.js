@@ -49,7 +49,7 @@ window.removeFile = (index) => {
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
     btn.disabled = true;
-    btn.innerText = "Sending...";
+    btn.innerText = "Đang gửi...";
 
     const payload = {
         fullname: form.querySelector('[name="fullname"]').value,
