@@ -1,4 +1,4 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbxGVfqoe8vKw8tXlGFG7mw7wKop7u-jXIlWclphJUqCCSChxTNwOXKXSQIEvFkylnQJ/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyTjDPefktNzanaD6qjVSscKuxqBm71SGKmNNYAL6ETrmMQQ_5zQBCGDsnFYZZSX2xo/exec';
     const form = document.getElementById('casa-contact-form');
     const btn = document.getElementById('submit-btn');
     const fileInput = document.getElementById('file-upload');
@@ -9,45 +9,39 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbxGVfqoe8vKw8tXlGFG7m
         fileNote.innerText = count > 0 ? `Đã chọn ${count} tệp.` : "Đính kèm tối đa 10 tệp.";
     });
 
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         btn.disabled = true;
         btn.innerText = "Sending...";
 
         const formData = new FormData(form);
-        const file = fileInput.files[0];
-
-        // Tạo đối tượng chứa dữ liệu để gửi đi
+        const files = fileInput.files;
         const data = new URLSearchParams();
-        
-        // Đưa toàn bộ chữ từ form vào data (Full name, Email, Category, Message)
+
+        // 1. Đưa thông tin chữ vào trước
         for (const pair of formData) {
-            data.append(pair[0], pair[1]);
+            if (pair[0] !== 'file-upload') data.append(pair[0], pair[1]);
         }
 
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function() {
-                // Lấy phần Base64 của file
-                const base64Data = reader.result.split(',')[1];
-                
-                // Thêm các trường file vào data
-                data.append("fileData", base64Data);
-                data.append("mimeType", file.type);
-                data.append("fileName", file.name);
-                
-                sendData(data);
-            };
-            reader.onerror = function() {
-                alert("Lỗi khi đọc file!");
-                btn.disabled = false;
-                btn.innerText = "Send";
-            };
-            reader.readAsDataURL(file);
-        } else {
-            // Nếu không có file thì gửi luôn
-            sendData(data);
+        // 2. Xử lý nén và gửi nhiều file
+        if (files.length > 0) {
+            const filePromises = Array.from(files).map(file => {
+                return new Promise((resolve) => {
+                    const reader = new FileReader();
+                    reader.onload = () => resolve({
+                        data: reader.result.split(',')[1],
+                        mimeType: file.type,
+                        fileName: file.name
+                    });
+                    reader.readAsDataURL(file);
+                });
+            });
+
+            const allFiles = await Promise.all(filePromises);
+            data.append("allFiles", JSON.stringify(allFiles)); // Gửi nguyên cục file dưới dạng JSON
         }
+
+        sendData(data);
     });
 
     function sendData(data) {
