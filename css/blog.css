@@ -299,7 +299,7 @@
 .blog-card-image {
     display: block;
     width: 100%;
-    aspect-ratio: 4 / 5; /* Ép tỉ lệ dọc theo mẫu QUOC. Nếu muốn vuông thì đổi thành 1/1 */
+    aspect-ratio: 6/7; /* Ép tỉ lệ dọc theo mẫu QUOC. Nếu muốn vuông thì đổi thành 1/1 */
     overflow: hidden;
     margin-bottom: 24px;
     background-color: var(--gray); /* Tận dụng màu nền xám từ base.css */
