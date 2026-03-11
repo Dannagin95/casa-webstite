@@ -125,7 +125,7 @@
     .about-main-text {
         flex: 0 0 50% !important;
         color: #ffffff;
-        background-color: #202018 !important; 
+        background-color: #E5E0D1 !important; 
         
         display: flex !important;
         flex-direction: column !important;
@@ -167,7 +167,7 @@
 
     .about-main-text .description { 
         font-size: 13px !important; 
-        line-height: 1.2 !important; 
+        line-height: 1.4 !important; 
         margin-bottom: 40px !important;
         max-width: 100%;
     }
@@ -181,7 +181,8 @@
         padding: 14px 45px !important;
         border-radius: 50px !important;
         text-decoration: none;
-        font-weight: 500;
+        font-size: 15px;
+        font-weight: 400;
         border: 1px solid transparent !important;
         transition: all 0.1s ease-in-out !important;
     }

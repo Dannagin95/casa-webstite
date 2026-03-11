@@ -684,7 +684,7 @@
     .lichsuprocess-btn {
         padding: 13px 30px;
         font-size: 15px;
-        /* Khóa nút không bị dãn ngang, luôn nằm chính giữa */
+        font-weight: 400;
         width: fit-content !important; 
         display: inline-block;
         margin: 0 auto;
