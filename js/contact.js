@@ -1,4 +1,4 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbw7zgcMTkI30jdPkk1ktS7AbJdaMIhSF-kuKDxPDb52vxD5pqeSZL_1N1VJNLzhqkPC/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw6eX_3FFF5DOFlVccNLOmRZ59fgoiZ4b1Ixb__cIuqq9J6yOvaOZQWcbi7S63GGtPC/exec';
     const form = document.getElementById('casa-contact-form');
     const btn = document.getElementById('submit-btn');
     const fileInput = document.getElementById('file-upload');
@@ -14,54 +14,46 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbw7zgcMTkI30jdPkk1ktS
         btn.disabled = true;
         btn.innerText = "Sending...";
 
-        const formData = new FormData(form);
         const files = fileInput.files;
-        const data = new URLSearchParams();
+        const payload = {
+            fullname: form.querySelector('[name="fullname"]').value,
+            email: form.querySelector('[name="email"]').value,
+            category: form.querySelector('[name="category"]').value,
+            message: form.querySelector('[name="message"]').value,
+            allFiles: []
+        };
 
-        // 1. Đưa thông tin chữ vào trước
-        for (const pair of formData) {
-            if (pair[0] !== 'file-upload') data.append(pair[0], pair[1]);
-        }
-
-        // 2. Xử lý nén và gửi nhiều file
         if (files.length > 0) {
-            const filePromises = Array.from(files).map(file => {
-                return new Promise((resolve) => {
-                    const reader = new FileReader();
-                    reader.onload = () => resolve({
-                        data: reader.result.split(',')[1],
+            for (let file of files) {
+                // ÉP FILE NHỎ XUỐNG: Nếu tổng file > 5MB là dễ tèo lắm [cite: 2025-12-29]
+                const reader = new Promise((resolve) => {
+                    const fr = new FileReader();
+                    fr.onload = () => resolve({
+                        data: fr.result.split(',')[1],
                         mimeType: file.type,
                         fileName: file.name
                     });
-                    reader.readAsDataURL(file);
+                    fr.readAsDataURL(file);
                 });
-            });
-
-            const allFiles = await Promise.all(filePromises);
-            data.append("allFiles", JSON.stringify(allFiles)); // Gửi nguyên cục file dưới dạng JSON
+                payload.allFiles.push(await reader);
+            }
         }
 
-        sendData(data);
-    });
-
-    function sendData(data) {
         fetch(scriptURL, { 
             method: 'POST', 
-            body: data,
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
+            body: JSON.stringify(payload),
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' } 
         })
-        .then(res => {
-            alert("Cảm ơn bạn đã gửi thông tin! Casa Parquet sẽ liên hệ lại sớm nhất."); 
+        .then(() => {
+            alert("Casa Parquet đã nhận được thông tin và tệp của bạn!"); 
             form.reset();
             fileNote.innerText = "Đính kèm tối đa 10 tệp.";
             btn.disabled = false;
             btn.innerText = "Send";
         })
         .catch(err => {
-            alert("Lỗi hệ thống: " + err.message);
+            alert("Lỗi Fetch: " + err.message);
             btn.disabled = false;
             btn.innerText = "Send";
         });
-    }
+    });
