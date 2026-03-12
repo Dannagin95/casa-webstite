@@ -22,14 +22,18 @@
 <body>
 
     <div class="top-bar">
-        <div class="top-bar-inner">
-            <button class="top-bar-btn"><i class="fa-solid fa-chevron-left"></i></button>
-            <div class="top-bar-content">
-                <p>Chính sách bảo hành - tìm hiểu ngay</p>
-            </div>
-            <button class="top-bar-btn"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="top-bar-inner">
+        <button class="top-bar-btn" onclick="toggleTopbar()"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="top-bar-content">
+            <p>
+                <a id="top-bar-link" href="baohanh.html" style="text-decoration: none; color: inherit;">
+                    <span id="top-bar-text">Chính sách bảo hành - tìm hiểu ngay</span>
+                </a>
+            </p>
         </div>
+        <button class="top-bar-btn" onclick="toggleTopbar()"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
+</div>
 
 
 
@@ -761,6 +765,7 @@ Mọi chi tiết đều được tính toán để đảm bảo hiệu năng s�
 
 
     <script src="js/index.js"></script>
+    <script src="js/topbar.js"></script>
     <script src="js/search.js"></script>
     <script type="module" src="js/search-logic.js"></script>
     <script src="js/techslider.js"></script>

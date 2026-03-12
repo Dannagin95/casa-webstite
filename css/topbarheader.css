@@ -46,6 +46,18 @@
     margin: 0; /* Fix lỗi mặc định của thẻ P */
 }
 
+/* Hiệu ứng trượt và mờ cho nội dung Topbar */
+.top-bar-content p {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Khi nội dung đang thay đổi */
+.top-bar-content.is-changing p {
+    opacity: 0;
+    transform: translateY(5px); /* Trượt nhẹ xuống dưới khi biến mất */
+}
 
 
 
