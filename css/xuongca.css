@@ -1,0 +1,354 @@
+.xuongcahero {
+    height: 93vh; 
+    position: relative; 
+    display: flex;
+    align-items: flex-end; 
+    padding: 0; 
+    justify-content: center; 
+    width: 100%;
+}
+
+.xuongcahero-bg { position: absolute; inset: 0; z-index: -1; }
+.xuongcahero-bg img { width: 100%; height: 100%; object-fit: cover; }
+
+.xuongcahero-text { 
+    color: #fff; 
+    width: 100%;
+    max-width: var(--container-max); /* Khóa chặt ở 1650px */
+    margin: 0 auto; /* Ép vào giữa màn hình */
+    padding: 0 var(--side-padding); /* Trả lại đúng 55px padding để chữ đứng đúng vị trí cũ */
+    margin-bottom: 48px;
+    z-index: 2;
+    text-align: left; /* Đảm bảo chữ vẫn canh trái bên trong cái lồng 1650px */
+}
+
+.xuongcahero-text h1
+ { font-size: 60px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
+.xuongcahero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
+.mobile-only { 
+    display: none !important; 
+}
+.mobile-menu-btn, .mobile-overlay { display: none; }
+
+
+
+@media (max-width: 1024px) {
+    .xuongcahero {
+        height: auto !important; 
+        min-height: 120vw !important; 
+        background-size: cover !important;
+        background-position: center !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; 
+        align-items: center;    
+        text-align: center;
+        padding: 0 20px;
+        padding-bottom: 20px !important; 
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        border-top: 1px solid #ffffff;
+    }
+
+   .xuongcahero-text {
+        padding: 0 !important; 
+        margin: 0 auto !important;
+        max-width: 100% !important; 
+        width: 100% !important;
+        
+        /* Đảm bảo căn giữa tuyệt đối */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+
+    .xuongcahero-text h1 {
+        font-size: 28px; 
+        font-weight: 400;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .xuongcahero-text p {
+        font-size: 12px;
+        letter-spacing: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .xuongcahero {
+        min-height: 56vw !important;
+    }
+}
+
+
+
+
+
+
+.herringbone-finishing-section {
+    padding-top: 80px; /* Tạo khoảng cách lớn với phần Hero trên cùng [cite: 2025-12-29] */
+    padding-bottom: var(--section-gap);
+}
+.herringbone-intro {
+    max-width: 900px;
+    margin-bottom: 70px; /* Khoảng cách từ intro xuống dòng "CÁC DẠNG BỀ MẶT" [cite: 2025-12-29] */
+}
+.herringbone-main-title {
+    font-size: clamp(38px, 5vw, 50px);
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    max-width: 670px;
+}
+.herringbone-description p {
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 670px;
+    color: var(--color-black);
+}
+
+@media (max-width: 1024px) {
+.herringbone-finishing-section {
+        padding-top: 40px !important; /* Chuẩn 40px Casa Mobile [cite: 2026-02-07] */
+        padding-bottom: 40px !important;
+        padding-left: 20px !important; /* Chuẩn lề 20px [cite: 2026-02-07] */
+        padding-right: 20px !important;
+    }
+}
+
+
+
+
+/* Section Intro nằm giữa */
+.hungary-intro {
+    width: 100%;
+    margin: 40px 0; /* Cách section trên dưới 40px */
+    padding: 80px var(--side-padding); /* Tăng padding trên dưới cho thoáng đúng chất luxury */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.hungary-intro-container {
+    max-width: 850px; 
+    width: 100%;
+}
+
+.hungary-title {
+    font-size: clamp(24px, 3.5vw, 30px); /* Kích thước vừa phải, không quá to */
+    line-height: 1.5;
+    font-weight: 400;
+    color: #1a1a1a; /* Đen sâu */
+    letter-spacing: -0.01em;
+    margin-bottom: 25px; /* Khoảng cách tới subtitle bên dưới */
+}
+
+.hungary-subtitle {
+    font-size: 10px; /* Nhỏ lại tí nữa cho tinh tế */
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em; /* Dãn chữ ra cho sang */
+    color: #999999; /* MÀU NHẠT CHUẨN QUOC */
+    display: block;
+}
+
+/* --- Responsive 20px lề --- */
+@media (max-width: 1024px) {
+    .hungary-intro {
+        margin: 40px 0;
+        padding: 60px 20px; /* Lề 20px mặc định */
+    }
+    
+    .hungary-title {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+}
+
+
+
+
+
+
+.herringbone-single-image {
+    width: 100%;
+    max-width: var(--container-max); 
+    margin: 40px auto; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+.herringbone-single-image img {
+    width: 100%;
+    height: 600px; 
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .herringbone-single-image {
+        padding: 0 20px; 
+        margin: 40px auto;
+    }
+    
+    .herringbone-single-image img {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+
+
+
+
+
+
+/* --- FEATURES BAR --- */
+.features-bar {
+        margin-top: 40px;
+        padding: 80px 0 !important; 
+        background-color: #f6f6f6;
+        border-top: 1px solid #f6f6f6;
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Đẩy cái container vào giữa */
+    }
+
+
+.features-bar .container {
+        /* [MỎ NEO] Khóa chặt khung xương 1650px */
+        width: 100% !important;
+        max-width: var(--container-max) !important; 
+        margin: 0 auto !important;
+        /* Padding trái phải 55px để icon ngoài cùng không bị chạm mép 1650px */
+        padding: 0 var(--side-padding) !important;
+        box-sizing: border-box;
+    }
+    
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cột đều nhau */
+    gap: 40px;
+    max-width: 100%; /* Giới hạn chiều rộng để không bị loãng */
+    margin: 0 auto; /* Căn giữa màn hình */
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.features-dots {
+    display: none; /* Desktop vẫn ẩn */
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 0; /* Tạo khoảng cách với vùng lướt */
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+/* Style cho Icon SVG */
+.feature-icon {
+    margin-bottom: 20px;
+    color: #000;
+}
+.feature-icon svg {
+    width: 32px;  /* Kích thước icon giống QUOC (nhỏ gọn) */
+    height: 32px;
+}
+
+/* Tiêu đề mục */
+.feature-item h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    margin: 0 0 10px 0;
+    text-transform: none;
+    letter-spacing: 1px;
+}
+
+/* Link bên dưới */
+.feature-item a {
+    font-family: 'Barlow', sans-serif; /* Font thường cho dễ đọc */
+    font-size: 13px;
+    color: #555;
+    text-decoration: underline; /* Gạch chân giống QUOC */
+    text-underline-offset: 4px; /* Gạch chân cách chữ ra một chút cho đẹp */
+    transition: 0.3s;
+}
+
+.feature-item a:hover {
+    color: #000; /* Rê chuột vào đen đậm lên */
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .features-bar {
+        margin-top: 40px;
+        padding: 40px 0; /* Giữ khoảng cách trên dưới vừa phải */
+        overflow: hidden; /* Tránh bị tràn trang */
+    }
+
+    .features-grid {
+        display: flex; /* Chuyển từ Grid sang Flex để các mục nằm trên 1 hàng ngang */
+        overflow-x: auto; /* Cho phép cuộn ngang */
+        scroll-snap-type: x mandatory; /* Hiệu ứng "hít" vào giữa mỗi mục khi lướt */
+        gap: 0; /* Xóa khoảng cách grid */
+        padding-bottom: 20px; /* Chừa chỗ cho thanh cuộn (nếu có) */
+        
+        /* Ẩn thanh cuộn (scrollbar) để nhìn cho sạch */
+        -ms-overflow-style: none;  /* IE/Edge */
+        scrollbar-width: none;  /* Firefox */
+        -webkit-overflow-scrolling: touch; /* Giúp lướt trên iPhone mượt hơn */
+    }
+
+    /* Ẩn thanh cuộn trên Chrome/Safari */
+    .features-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .feature-item {
+        flex: 0 0 100%; /* Quan trọng: Mỗi mục chiếm đúng 100% chiều rộng màn hình */
+        scroll-snap-align: center; 
+        scroll-snap-stop: always;
+        padding: 0 30px; 
+        box-sizing: border-box;
+    }
+
+    .feature-icon svg {
+        width: 28px; /* Cho icon nhỏ lại một chút trên mobile */
+        height: 28px;
+    }
+
+
+    .features-dots {
+        display: flex !important; 
+    }
+
+    .dot {
+        width: 7px; /* To lên một chút cho dễ thấy */
+        height: 7px;
+        border-radius: 50%;
+        background-color: #817c7c; /* Màu xám nhạt */
+        display: block;
+        transition: all 0.3s ease;
+    }
+
+    .dot.active {
+        background-color: #000; /* Chấm đang chọn màu đen */
+        transform: scale(1.3);
+    }
+}
