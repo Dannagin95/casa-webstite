@@ -98,3 +98,4 @@ form.addEventListener('submit', async (e) => {
         btn.innerText = "Send";
     });
 });
+

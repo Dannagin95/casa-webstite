@@ -288,7 +288,6 @@
 
 
 
-
 @media (max-width: 1024px) {
     .footer {
         padding: 60px 20px 40px 20px !important;
@@ -490,4 +489,61 @@ body.footer-sheet-open .lang-sheet-close {
         max-width: 100% !important;
     }
 }
+}
+
+
+
+
+.newsletter-wrapper {
+    position: relative;
+    margin-top: 20px;
+}
+
+.newsletter-success-box {
+    background-color: #ffffff; 
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 405px;
+    animation: slideUpSuccess 0.4s ease-out forwards;
+}
+
+.success-check-icon {
+    background-color: #cccbd8; /* Màu xám tím nhạt */
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-text {
+    color: #888da8; /* Màu chữ xanh xám nhạt */
+    font-size: 10px;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Triệt tiêu màu nền mặc định khi trình duyệt autofill */
+.newsletter-input:-webkit-autofill,
+.newsletter-input:-webkit-autofill:hover, 
+.newsletter-input:-webkit-autofill:focus, 
+.newsletter-input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px rgb(23 26 27) inset !important; /* Thay #1a1a1a bằng màu nền footer của mày */
+    -webkit-text-fill-color: white !important; /* Giữ màu chữ luôn trắng */
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Thêm cái này để tắt cái khung viền xanh mặc định của trình duyệt nếu có */
+.newsletter-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+@keyframes slideUpSuccess {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
