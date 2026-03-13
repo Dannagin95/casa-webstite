@@ -1,6 +1,6 @@
 const topBarData = [
-    { text: "Chính sách bảo hành - tìm hiểu ngay", link: "baohanh.html" },
-    { text: "Ghé thăm chúng tôi - xem bản đồ", link: "showroom.html" }
+    { text: "Chính sách bảo hành - tìm hiểu ngay", link: "/baohanh.html" },
+    { text: "Ghé thăm chúng tôi - xem bản đồ", link: "/showroom.html" }
 ];
 
 let currentIndex = 0;
