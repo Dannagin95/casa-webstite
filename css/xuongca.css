@@ -206,7 +206,7 @@
 
 
 
-.italy90-info, .french30-info, .hungary60-info {
+.italy90-info, .french30-info, .hungary45-info {
     width: 100%;
     margin: 40px auto;
     padding: 80px var(--side-padding) 10px;
@@ -214,12 +214,12 @@
     text-align: center;
 }
 
-.italy90-container, .french30-container, .hungary60-container {
+.italy90-container, .french30-container, .hungary45-container {
     max-width: 720px;
     margin: 0 auto;
 }
 
-.italy90-title, .french30-title, .hungary60-title {
+.italy90-title, .french30-title, .hungary45-title {
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -228,7 +228,7 @@
     margin-bottom: 25px;
 }
 
-.italy90-description p, .french30-description p, .hungary60-description p {
+.italy90-description p, .french30-description p, .hungary45-description p {
     font-size: 12px;
     line-height: 1.6;
     color: var(--color-black);
@@ -238,16 +238,16 @@
 
 /* --- Responsive Tablet/Mobile (Lề 20px) --- */
 @media (max-width: 1024px) {
-    .italy90-info, .french30-info, .hungary60-info {
+    .italy90-info, .french30-info, .hungary45-info {
         margin: 40px auto;
         padding: 40px 20px 10px; /* Giảm padding top trên mobile cho cân đối */
     }
     
-    .italy90-title, .french30-title, .hungary60-title {
+    .italy90-title, .french30-title, .hungary45-title {
         font-size: 13px;
     }
 
-    .italy90-description p, .french30-description p, .hungary60-description p {
+    .italy90-description p, .french30-description p, .hungary45-description p {
         font-size: 12px;
         line-height: 1.7;
     }
@@ -260,14 +260,14 @@
 
 
 
-.italy90-specifications, .french30-specifications, .hungary60-specifications {
+.italy90-specifications, .french30-specifications, .hungary45-specifications {
     max-width: var(--container-max); 
     margin: 40px auto; 
     padding: 0;
     box-sizing: border-box;
 }
 
-.italy90-spec-inner, .french30-spec-inner, .hungary60-spec-inner {
+.italy90-spec-inner, .french30-spec-inner, .hungary45-spec-inner {
     display: flex;
     align-items: stretch;
     gap: 60px;
@@ -278,7 +278,7 @@
     display: flex;
 }
 
-.italy90-technical-collage, .french30-technical-collage, .hungary60-technical-collage {
+.italy90-technical-collage, .french30-technical-collage, .hungary45-technical-collage {
     width: 100%;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -371,12 +371,12 @@
 }
 
 @media (max-width: 1024px) {
-    .italy90-specifications, .french30-specifications, .hungary60-specifications {
+    .italy90-specifications, .french30-specifications, .hungary45-specifications {
         margin: 40px auto;
         padding: 0 20px;
     }
     
-    .italy90-spec-inner, .french30-spec-inner, .hungary60-spec-inner {
+    .italy90-spec-inner, .french30-spec-inner, .hungary45-spec-inner {
         flex-direction: column;
         gap: 30px;
     }
