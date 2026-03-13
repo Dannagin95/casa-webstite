@@ -374,12 +374,12 @@
 
 .blog-card-title h3 {
     font-size: 22px; 
-    line-height: 1.4;
+    line-height: 1.6;
     /* Không cần set font-family vì base.css đã lo rồi */
 }
 
 .blog-card-desc {
-    font-size: 15px;
+    font-size: 13px;
     color: var(--black);
     line-height: 1.6;
 }
@@ -456,12 +456,12 @@
 
 .firstblog-header {
     margin-bottom: 60px;
-    max-width: 1100px;
+    max-width: 1000px;
 }
 
 .firstblog-main-title {
-    font-size: clamp(36px, 5vw, 54px);
-    line-height: 1.1;
+    font-size: clamp(36px, 5vw, 50px);
+    line-height: 1.4;
     margin-bottom: 30px;
     color: var(--black);
     font-family: var(--font-heading);
@@ -471,7 +471,7 @@
     font-size: 13px;
     color: var(--black);
     max-width: 650px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* Bóp nội dung chữ ở giữa (Tránh dàn trải 1650px) */
@@ -586,12 +586,12 @@
 
 .secondblog-header {
     margin-bottom: 60px;
-    max-width: 1100px;
+    max-width: 1000px;
 }
 
 .secondblog-main-title {
-    font-size: clamp(36px, 5vw, 54px);
-    line-height: 1.1;
+    font-size: clamp(36px, 5vw, 50px);
+    line-height: 1.4;
     margin-bottom: 30px;
     color: var(--black);
     font-family: var(--font-heading);
@@ -601,7 +601,7 @@
     font-size: 13px;
     color: var(--black);
     max-width: 650px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* Bóp nội dung chữ ở giữa (Tránh dàn trải 1650px) */
@@ -728,12 +728,12 @@
 
 .thirdblog-header {
     margin-bottom: 60px;
-    max-width: 1100px;
+    max-width: 1000px;
 }
 
 .thirdblog-main-title {
-    font-size: clamp(36px, 5vw, 54px);
-    line-height: 1.1;
+    font-size: clamp(36px, 5vw, 50px);
+    line-height: 1.4;
     margin-bottom: 30px;
     color: var(--black);
     font-family: var(--font-heading);
@@ -743,7 +743,7 @@
     font-size: 13px;
     color: var(--black);
     max-width: 650px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* Bóp nội dung chữ ở giữa (Tránh dàn trải 1650px) */
@@ -883,8 +883,8 @@
         display: block;
         font-size: 11px;
         font-weight:300;
-        margin-bottom: 15px;
         color: #2b2929;
+        margin-bottom: 30px !important;
         letter-spacing: 1px;
         text-transform: uppercase;
     }
@@ -935,7 +935,7 @@
     .sanpham-info { padding: 7px 0; }
    
     .sanpham-info .name { font-size: 20px; margin: 10px 0; font-weight: 500; color: #1a1a1a; }
-    .sanpham-info .desc { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 15px; }
+    .sanpham-info .desc { font-size: 13px !important; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 15px; }
 
    .luot-footer {
         display: flex !important;

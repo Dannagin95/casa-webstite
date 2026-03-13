@@ -273,6 +273,12 @@
         margin-right: 0 !important;
     }
 
+    .step1-description p {
+        font-size: 12px !important;
+        line-height: 1.6;
+    }
+
+
     /* Nếu cái 01 (label) vẫn bị lệch, ép nó luôn */
     .step1-label {
         padding-left: 0 !important;

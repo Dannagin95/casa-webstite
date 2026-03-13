@@ -99,10 +99,10 @@
 }
 .herringbone-main-title {
     font-size: clamp(38px, 5vw, 50px);
-    font-weight: 500;
-    line-height: 1.1;
+    line-height: 1.4;
     margin-bottom: 30px;
     max-width: 670px;
+    font-family: var(--font-heading);
 }
 .herringbone-description p {
     font-size: 13px;
@@ -136,7 +136,7 @@
 }
 
 .hungary-intro-container {
-    max-width: 850px; 
+    max-width: 720px; 
     width: 100%;
 }
 
@@ -154,7 +154,7 @@
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.15em; /* Dãn chữ ra cho sang */
-    color: #999999; /* MÀU NHẠT CHUẨN QUOC */
+    color: var(--color-text-muted); /* MÀU NHẠT CHUẨN QUOC */
     display: block;
 }
 
@@ -193,19 +193,27 @@
 
 @media (max-width: 1024px) {
     .herringbone-single-image {
-        padding: 0 20px; 
-        margin: 40px auto;
+        padding: 0; 
+        margin: 40px 0;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
     }
     
     .herringbone-single-image img {
+        width: 100%;
         height: auto;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 4 / 3;
     }
 }
 
 
 
 
+/* --- 1. PHẦN INTRO (CĂN GIỮ 720PX) --- */
 .italy90-info, .french30-info, .hungary45-info {
     width: 100%;
     margin: 40px auto;
@@ -229,37 +237,14 @@
 }
 
 .italy90-description p, .french30-description p, .hungary45-description p {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.6;
     color: var(--color-black);
     margin-bottom: 20px;
     font-weight: 400;
 }
 
-/* --- Responsive Tablet/Mobile (Lề 20px) --- */
-@media (max-width: 1024px) {
-    .italy90-info, .french30-info, .hungary45-info {
-        margin: 40px auto;
-        padding: 40px 20px 10px; /* Giảm padding top trên mobile cho cân đối */
-    }
-    
-    .italy90-title, .french30-title, .hungary45-title {
-        font-size: 13px;
-    }
-
-    .italy90-description p, .french30-description p, .hungary45-description p {
-        font-size: 12px;
-        line-height: 1.7;
-    }
-}
-
-
-
-
-
-
-
-
+/* --- 2. PHẦN SPECIFICATIONS (COLLAGE) --- */
 .italy90-specifications, .french30-specifications, .hungary45-specifications {
     max-width: var(--container-max); 
     margin: 40px auto; 
@@ -336,9 +321,9 @@
 }
 
 .spec-desc {
-    font-size: 15px;
-    line-height: 1.8;
-    color: #444;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--color-black);
     margin-bottom: 30px;
 }
 
@@ -370,22 +355,49 @@
     color: #1a1a1a;
 }
 
+/* --- 3. RESPONSIVE CHUNG CHO CẢ 2 PHẦN (LỀ 20PX) --- */
 @media (max-width: 1024px) {
+    /* Ép tất cả section cha vào lề 20px */
+    .italy90-info, .french30-info, .hungary45-info,
     .italy90-specifications, .french30-specifications, .hungary45-specifications {
         margin: 40px auto;
-        padding: 0 20px;
+        padding: 0;
     }
-    
+
+    /* Chỉnh riêng padding top cho phần Info trên mobile */
+    .italy90-info, .french30-info, .hungary45-info {
+        padding-top: 40px !important;
+        padding-bottom: 10px !important;
+    }
+
+    .italy90-title, .french30-title, .hungary45-title {
+        font-size: 13px;
+    }
+
+    .italy90-description p, .french30-description p, .hungary45-description p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    /* Chỉnh Layout Spec rớt dòng */
     .italy90-spec-inner, .french30-spec-inner, .hungary45-spec-inner {
         flex-direction: column;
         gap: 30px;
     }
 
+    /* Ép khung ảnh hiển thị cân đối trên mobile */
     .spec-visual {
-        height: 400px; 
+        height: auto;
+        aspect-ratio: 4/3;
+    }
+
+    /* Để text bám sát lề 20px của cha, không thụt thêm padding */
+    .spec-content {
+        font-size: 12px;
+        line-height: 1.6;
+        padding: 0;
     }
 }
-
 
 
 

@@ -113,16 +113,20 @@
 }
 
 .philo-label .section-label {
-    font-size: 12px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #2b2929;
+    font-weight: 300;
+    
+    display: inline-block;
+    width: 100%;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-text-muted);
 }
 
 /* Tiêu đề lớn hít lề trái */
 .philo-title {
     font-size: clamp(38px, 5vw, 50px);
-    line-height: 1.1;
+    line-height: 1.4;
     font-weight: 500;
     margin-bottom: 30px;
     max-width: 1100px; /* Vẫn giữ cái này để dòng chữ không bị dài quá khổ */
@@ -185,7 +189,7 @@
     }
 
     .philo-title {
-        font-size: 28px !important; 
+        font-size: 38px !important; 
         line-height: 1.2;
         margin-bottom: 20px;
         max-width: 100%; /* Đảm bảo chữ dàn hết chiều ngang container */
@@ -193,7 +197,7 @@
 
     .philo-description p {
         font-size: 13px; /* Tăng nhẹ font chữ đọc trên mobile cho đỡ mỏi mắt */
-        line-height: 1.5;
+        line-height: 1.6;
         margin-bottom: 25px;
         max-width: 100%; /* Chữ không bị bó hẹp như Desktop */
     }
@@ -242,11 +246,14 @@
 
 /* Label "Hành trình" */
 .journey-header .section-label {
-    font-size: 12px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #2b2929;
+    font-weight: 300;
+    
+    display: inline-block;
+    width: 100%;
     text-transform: uppercase;
-    font-weight: 200;
-    letter-spacing: 0.1em;
-    color: var(--color-text-muted);
 }
 
 /* Cụm 2 nút điều hướng */
@@ -428,18 +435,21 @@
 }
 
 .nhiemvu-intro .section-label {
-    display: block;
     font-size: 11px;
+    letter-spacing: 1px;
+    color: #2b2929;
+    font-weight: 300;
+    margin-bottom: 30px; 
+    
+    display: inline-block;
+    width: 100%;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--color-text-muted);
-    margin-bottom: 25px;
 }
 
 .nhiemvu-main-text {
     font-size: 30px;
-    line-height: 1.35;
-    font-weight: 500;
+    line-height: 1.5;
+    font-weight: 400;
     color: var(--color-dark);
     letter-spacing: -0.01em;
 }
@@ -480,7 +490,7 @@
 }
 
 .nhiemvu-desc {
-    font-size: 16px;
+    font-size: 13px;
     line-height: 1.6;
     color: var(--black);
 }
@@ -540,8 +550,8 @@
     }
 
     .nhiemvu-desc {
-        font-size: 15px !important;
-        line-height: 1.5;
+        font-size: 12px !important;
+        line-height: 1.6;
     }
 }
 

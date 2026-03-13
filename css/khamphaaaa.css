@@ -108,8 +108,8 @@
     }
 
     .item-desc {
-        font-size: 1rem;
-        line-height: 1.5;
+        font-size: 13px;
+        line-height: 1.6;
         color: #000000;
         margin-bottom: 15px;
         /* Giới hạn 3 dòng để các card đều nhau */
