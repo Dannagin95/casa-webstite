@@ -152,7 +152,7 @@
 
 /* Hiệu ứng Hover cho sang */
 .newsletter-form .input-group:focus-within {
-    border: 2px solid #ffffff; /* Viền mờ tinh tế */
+    border: 1px solid #ffffff; /* Viền mờ tinh tế */
 }
 
 .submit-btn:hover .arrow-circle {
@@ -316,10 +316,9 @@
 
     /* Ép cái Newsletter phải chiếm trọn 2 cột (xuống hàng riêng) */
     .newsletter-col {
-        grid-column: span 2; 
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start !important;
+        grid-column: span 2 !important;
+        width: 100% !important;
+        padding: 0 !important; /* Đảm bảo không bị lề lạ */
     }
 
 
@@ -330,11 +329,28 @@
 
     /* 3. Newsletter Box: Tràn 100% như QUOC */
     .newsletter-form .input-group {
-        width: 100%;
-        max-width: 100% !important;
-        margin: 0 !important;
+        display: flex !important;
+        width: calc(100vw - 40px) !important; /* Full màn hình trừ đi lề 2 bên 20px */
+        max-width: none !important; 
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+        padding: 12px 20px !important;
     }
 
+
+    .newsletter-input {
+        flex: 1 !important;
+        width: 100% !important;
+        background: transparent !important;
+    }
+
+    .newsletter-success-box {
+        width: calc(100vw - 40px) !important;
+        max-width: none !important;
+        box-sizing: border-box !important;
+    }
+
+    
     /* 4. Bottom Bar: Trình bày trật tự dóng lề trái */
     .footer-bottom {
         flex-direction: column !important;
@@ -494,6 +510,12 @@ body.footer-sheet-open .lang-sheet-close {
 
 
 
+
+
+
+
+
+/*Phần Email*/
 .newsletter-wrapper {
     position: relative;
     margin-top: 20px;
@@ -547,3 +569,8 @@ body.footer-sheet-open .lang-sheet-close {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+
+
+    
+
