@@ -67,3 +67,24 @@ h1, h2, h3, h4, .urbanist {
     font-family: var(--font-heading);
     font-weight: 400;
 }
+
+
+
+/* Phủ tone cho tất cả ảnh mà không làm mất chi tiết */
+img {
+    /* 1. Kéo màu về tone ấm (Sepia giúp tạo nền nâu nhẹ) */
+    /* 2. Giảm độ rực (Saturate) để ảnh trông nghệ và Matte hơn */
+    /* 3. Chỉnh nhẹ độ sáng và tương phản */
+    filter: sepia(20%) saturate(80%) contrast(95%) brightness(95%);
+    
+    /* Chống chỉ định cho Logo và Icon - giữ nguyên màu gốc */
+    transition: filter 0.3s ease;
+}
+
+/* Những thứ liên quan đến nhận diện thương hiệu thì không nên ám màu */
+.logo img, 
+.icon img, 
+[class*="nav"] img, 
+[class*="footer"] img:not(.gallery-img) {
+    filter: none !important;
+}
