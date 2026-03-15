@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlay = e.target.closest('.casa-sheet-overlay');
     const item = e.target.closest('.casa-sheet-item');
 
-    // Mở bảng & Xoay mũi tên bằng class trên body
+
     if (trigger) {
         document.body.classList.add('sheet-open');
         return;
@@ -92,3 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 });
+
+
+
+
+
+

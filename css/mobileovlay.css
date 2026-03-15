@@ -32,38 +32,30 @@
     margin-top: 20px; 
 }
 
-
 .visual-card {
     display: flex;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory; 
     scroll-behavior: smooth;
     gap: 7px;
     padding: 0;
     text-decoration: none !important;
-    -webkit-overflow-scrolling: touch;
+    scroll-snap-stop: always !important; 
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-x: contain;
     scrollbar-width: none; 
-    display: flex;
-    overflow-x: auto;
-    
-
-    scroll-snap-type: x mandatory; 
-    scroll-snap-stop: always; 
-    
-    -webkit-overflow-scrolling: auto;
 }
 
 .visual-card::-webkit-scrollbar {
     display: none;
 }
 
-
 .visual-item {
-    flex: 0 0 50%; 
+    flex: 0 0 50.1%;
     position: relative;
     scroll-snap-align: center;
     aspect-ratio: 7/8;
-    scroll-snap-align: center;
+    min-width: 50.1%;
 }
 
 .visual-item img {
