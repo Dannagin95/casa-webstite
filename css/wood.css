@@ -148,7 +148,7 @@
     }
 
 /* --- CỘT TRÁI: HÌNH ẢNH (STICKY) --- */
-.wood-visuals {
+.wood-wdisplay {
     width: 45%; /* Chiếm 1 nửa màn hình */
     height: 90vh; /* Full chiều cao màn hình */
     position: sticky; /* Dính chặt khi cuộn */
@@ -156,7 +156,7 @@
     overflow: hidden;
 }
 
-.visual-item {
+.wdisplay-item {
     position: absolute;
     top: 80px; left: 0;
     width: 100%; height: 100%;
@@ -165,28 +165,19 @@
     z-index: 1;
 }
 
-.visual-item.active {
+.wdisplay-item.active {
     opacity: 1; /* Chỉ hiện cái đang Active */
     z-index: 2;
 }
 
-.visual-item img {
+.wdisplay-item img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Đảm bảo hình phủ kín không bị méo */
     transform: scale(1.05); /* Zoom nhẹ để tạo chiều sâu */
 }
 
-/* Text đè lên hình (Option) */
-.visual-overlay {
-    position: absolute;
-    bottom: 40px; left: 40px;
-    color: white;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    opacity: 0.8;
-}
+
 
 /* --- CỘT PHẢI: NỘI DUNG (SCROLL) --- */
 .wood-contents {
@@ -311,52 +302,42 @@
         box-sizing: border-box !important;
     }
 
-    .visual-overlay, .visual-item * {
+    .wdisplay-overlay, .wdisplay-item * {
         max-width: 100% !important;
         box-sizing: border-box !important;
     }
 
-    .wood-visuals, .wood-contents {
+    .wood-wdisplay, .wood-contents {
         display: contents; 
     }
 
-    /* Hình ảnh: Luôn nằm trên */
-    .visual-item {
+   
+    .wdisplay-item {
         position: relative !important;
-        overflow: hidden !important; /* KHÓA CHẶT: Không cho text đâm ra ngoài [cite: 2025-12-29] */
+        overflow: hidden !important; 
     }
-    .visual-overlay {
-        position: absolute !important;
-        bottom: 20px !important;
-        left: 20px !important; /* Ép về lề trái cho an toàn [cite: 2025-12-29] */
-        right: auto !important; /* Bỏ bám mép phải [cite: 2025-12-29] */
-        background: rgba(0,0,0,0.5); /* Thêm tí nền cho dễ đọc trên mobile [cite: 2025-12-29] */
-        padding: 5px 12px;
-        font-size: 11px !important;
-        white-space: nowrap; 
-        max-width: calc(100% - 40px); /* Đảm bảo không bao giờ vượt quá chiều ngang ảnh [cite: 2025-12-29] */
-    }
+    
 
-    .visual-item img {
+    .wdisplay-item img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 
-    /* Text: Luôn nằm dưới hình tương ứng */
+   
     .content-block {
-        order: calc(var(--order) * 2 + 1); /* Luôn đứng sau hình 1 bậc */
+        order: calc(var(--order) * 2 + 1); 
         position: relative !important;
         width: 100% !important;
         min-height: auto !important;
-        padding: 60px 0 30px 0 !important; /* Padding gọn gàng */
+        padding: 60px 0 30px 0 !important; 
         opacity: 1 !important;
         visibility: visible !important;
         text-align: left;
         
     }
 
-    /* Tinh chỉnh typography theo hình mày gửi */
+   
     .wood-title {
         font-size: 24px !important;
         margin: 15px 0 10px 0 !important;
@@ -370,18 +351,18 @@
         margin-bottom: 25px !important;
     }
 
-    /* Chỉ số specs nằm dưới cùng của block text */
+    
     .wood-specs {
         padding-top: 20px;
         width: 100% !important;
-        max-width: 100% !important; /* Đập nát cái giới hạn 400px của Desktop */
+        max-width: 100% !important; 
         box-sizing: border-box !important;
     }
 
     .spec-row {
         width: 100% !important;
-        gap: 15px !important; /* Ép khoảng cách an toàn giữa chữ và thanh chạy */
-        margin-bottom: 12px !important; /* Thu gọn khoảng cách các dòng lại cho thanh thoát */
+        gap: 15px !important; 
+        margin-bottom: 12px !important; 
     }
 
     .spec-row span {
@@ -392,16 +373,15 @@
     }
 
     .spec-bar {
-        display: block !important; /* Đảm bảo nó là một khối [cite: 2025-12-29] */
+        display: block !important; 
         width: 100% !important;
-        height: 2px !important; /* Độ mỏng 2px như desktop [cite: 2025-12-29] */
-        background: #eee !important; /* Màu nền thanh xám [cite: 2025-12-29] */
+        height: 2px !important; 
+        background: #eee !important; 
         position: relative !important;
         overflow: hidden;
     }
 
     .spec-bar .fill {
-        /* Bỏ !important ở width để nó nhận cái width="80%" từ HTML của mày [cite: 2025-12-29] */
         height: 100% !important;
         background: #000000 !important;
         display: block !important;

@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Chọn tất cả các block nội dung
     const blocks = document.querySelectorAll('.content-block');
-    const visuals = document.querySelectorAll('.visual-item');
+    const visuals = document.querySelectorAll('.wdisplay-item');
 
     // 2. Thiết lập Observer (Người quan sát)
     const observer = new IntersectionObserver((entries) => {
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function rearrangeWoodForMobile() {
     if (window.innerWidth <= 1024) {
         const wrapper = document.querySelector('.wood-showcase-wrapper');
-        const visualItems = document.querySelectorAll('.visual-item');
+        const visualItems = document.querySelectorAll('.wdisplay-item');
         const contentBlocks = document.querySelectorAll('.content-block');
 
         contentBlocks.forEach((block, index) => {
