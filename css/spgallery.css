@@ -47,16 +47,10 @@
         /* Thuộc tính này cực kỳ hiệu quả để làm slide "đầm" hơn */
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
-
-       
         margin-left: -20px; 
         margin-right: -20px;
-        
-        /* Bù lại khoảng trống bằng padding để card đầu tiên vẫn đúng vị trí ban đầu */
         padding-left: 20px; 
         padding-right: 20px;
-
-        /* Điểm dừng (snap) phải khớp với lề 20px để card ăn vào đúng vị trí */
         scroll-padding-left: 20px;
     }
 
@@ -67,7 +61,7 @@
 
     .luot-track {
         display: flex;
-        gap: 9px; /* Khoảng cách giữa các card */
+        gap: 7px; /* Khoảng cách giữa các card */
         width: max-content;
     }
     /* 4. Product Card (Thẻ sản phẩm) */
@@ -82,7 +76,7 @@
     .sanpham-image {
         position: relative;
         width: 100%;
-        aspect-ratio: 6 / 7; /* Tỷ lệ ảnh dọc chuẩn e-commerce hiện nay */
+        aspect-ratio: 7/8; /* Tỷ lệ ảnh dọc chuẩn e-commerce hiện nay */
         overflow: hidden;
         background-color: #f5f5f5; /* Màu nền chờ khi ảnh chưa load */
         margin-bottom: 15px;
