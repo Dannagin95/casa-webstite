@@ -70,21 +70,52 @@ h1, h2, h3, h4, .urbanist {
 
 
 
-/* Phủ tone cho tất cả ảnh mà không làm mất chi tiết */
+/*Delete all the defaut hightlight :))*/
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none; 
+}
+
+
+
+
+
 img {
-    /* 1. Kéo màu về tone ấm (Sepia giúp tạo nền nâu nhẹ) */
-    /* 2. Giảm độ rực (Saturate) để ảnh trông nghệ và Matte hơn */
-    /* 3. Chỉnh nhẹ độ sáng và tương phản */
     filter: sepia(20%) saturate(80%) contrast(95%) brightness(95%);
-    
-    /* Chống chỉ định cho Logo và Icon - giữ nguyên màu gốc */
     transition: filter 0.3s ease;
 }
 
-/* Những thứ liên quan đến nhận diện thương hiệu thì không nên ám màu */
 .logo img, 
 .icon img, 
 [class*="nav"] img, 
 [class*="footer"] img:not(.gallery-img) {
     filter: none !important;
+}
+
+.detail-row img, 
+.detail-img-col img,
+.cert-item img,
+.cert-media img,
+.logo-wrapper img,
+.logo-track img,
+img[src*="imagescautruc"] {
+    filter: none !important;
+}
+
+
+
+
+
+
+
+img {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* NHƯNG, mày phải trả lại quyền click cho các thẻ bao ngoài (link) 
+để người dùng vẫn bấm vào xem chi tiết được */
+a, button, .clickable-area {
+    pointer-events: auto !important;
 }
