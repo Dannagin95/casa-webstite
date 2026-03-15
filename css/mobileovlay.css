@@ -25,31 +25,29 @@
     
     
 
-    /* Container giữ nguyên class của mày */
+
 .sub-visual-layout {
     width: 100%;
     overflow: hidden;
-    margin-top: 20px; /* Cách section trên theo chuẩn 40px */
+    margin-top: 20px; 
 }
 
-/* Slider ngang */
+
 .visual-card {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     gap: 7px;
-    padding: 0; /* Lề trái phải 20px theo chuẩn mobile */
+    padding: 0;
     text-decoration: none !important;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Ẩn scrollbar Firefox */
+    scrollbar-width: none; 
     display: flex;
     overflow-x: auto;
     
-    /* Dòng này cực kỳ quan trọng: mandatory buộc nó phải hít vào điểm snap */
+
     scroll-snap-type: x mandatory; 
-    scroll-boundary-behavior-x: contain;
-    /* Dòng này là chìa khóa để chặn việc lướt quá nhanh qua nhiều hình */
     scroll-snap-stop: always; 
     
     -webkit-overflow-scrolling: auto;
@@ -59,9 +57,9 @@
     display: none;
 }
 
-/* Từng item trong slider */
+
 .visual-item {
-    flex: 0 0 50%; /* Hiện 80% để lộ một chút ảnh tiếp theo */
+    flex: 0 0 50%; 
     position: relative;
     scroll-snap-align: center;
     aspect-ratio: 7/8;
@@ -74,7 +72,6 @@
     object-fit: cover;
 }
 
-/* Text Overlay kiểu QUOC */
 .card-title {
     position: absolute;
     bottom: 15px;
@@ -84,7 +81,7 @@
     font-weight: 700;
     text-transform: none;
     letter-spacing: 1px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Giúp chữ nổi bật trên nền ảnh */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3); 
 }
 
 
