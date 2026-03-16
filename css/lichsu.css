@@ -1,10 +1,9 @@
-/*Historyhero*/
+
 .lichsuhero {
     height: 93vh; 
     position: relative; 
     display: flex;
     align-items: flex-end; 
-    /* Thay đổi quan trọng: Bỏ padding cố định, dùng flex để căn giữa khối nội dung */
     padding: 0; 
     justify-content: center; 
     width: 100%;
@@ -16,12 +15,12 @@
 .lichsuhero-text { 
     color: #fff; 
     width: 100%;
-    max-width: var(--container-max); /* Khóa chặt ở 1650px */
-    margin: 0 auto; /* Ép vào giữa màn hình */
-    padding: 0 var(--side-padding); /* Trả lại đúng 55px padding để chữ đứng đúng vị trí cũ */
+    max-width: var(--container-max); 
+    margin: 0 auto; 
+    padding: 0 var(--side-padding); 
     margin-bottom: 48px;
     z-index: 2;
-    text-align: left; /* Đảm bảo chữ vẫn canh trái bên trong cái lồng 1650px */
+    text-align: left; 
 }
 .lichsuhero-text h1 { font-size: 50px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
 .lichsuhero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
@@ -30,25 +29,17 @@
     display: none !important; 
 }
 
-/* Mặc định trên Desktop: Giấu nút Mobile */
+
 .mobile-menu-btn, .mobile-overlay { display: none; }
 
 
 
 @media (max-width: 1024px) {
     .lichsuhero {
-        /* 1. Xóa bỏ chiều cao 75vh cũ */
         height: auto !important; 
-        
-        /* 2. Dùng min-height theo % chiều ngang màn hình (tương đương tỉ lệ 4:5) */
-        /* Cách này giúp nó co giãn thông minh mà không bị ép cứng như aspect-ratio */
         min-height: 120vw !important; 
-        
-        /* 3. Đảm bảo ảnh nền luôn lấp đầy cái khung mới này */
         background-size: cover !important;
         background-position: center !important;
-
-        /* GIỮ NGUYÊN TOÀN BỘ CẤU TRÚC CỦA MÀY */
         display: flex;
         flex-direction: column;
         justify-content: flex-end; 
