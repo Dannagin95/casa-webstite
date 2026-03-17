@@ -14,7 +14,8 @@
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.1);
-    z-index: 1;
+    z-index: 2; /* Nằm trên ảnh */
+    pointer-events: none;
 }
 
 .hero-bg { 
@@ -34,6 +35,7 @@
     display: flex;
     width: 100%;
     height: 100%;
+    z-index: 1;
     transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -69,7 +71,7 @@
     z-index: 10;
 }
 
-.dot {
+.hero-dot {
     width: 12px;
     height: 12px;
     border: 2px solid #fff;
@@ -79,7 +81,7 @@
     transition: background 0.3s ease;
 }
 
-.dot.active {
+.hero-dot.active {
     background: #fff;
 }
 
@@ -200,33 +202,35 @@
 
 
 
-.hero .hero-dots {
+    .hero-dots {
         position: absolute !important;
-        left: auto !important; 
-        right: 20px !important; /* Lề chuẩn 20px */
-        top: 30% !important;
+        right: 20px !important; 
+        top: 35% !important; /* Đổi sang con số cố định, đừng dùng calc phức tạp */
+        left: auto !important;
         
-        transform: none !important; 
-        transition: none !important;
+        /* CÔNG THỨC CHỐNG RUNG (BẮT BUỘC) */
+        transform: translateZ(0) !important; /* Ép lên lớp render riêng của GPU */
+        backface-visibility: hidden !important; 
+        perspective: 1000px;
+        will-change: transform; 
         
         display: flex !important;
         flex-direction: column !important;
-        gap: 12px !important;
-        z-index: 100;
+        gap: 15px !important;
+        z-index: 9999 !important; /* Ưu tiên cao nhất */
     }
 
-    /* Đường dẫn đúng: .hero -> .hero-dots -> .dot */
-    .hero .hero-dots .dot {
-        width: 7px !important;
-        height: 7px !important;
-        border: 1px solid #fff !important;
+    .hero-dot {
+        width: 8px !important; /* Cho nó to hơn xíu dễ bấm */
+        height: 8px !important;
+        border: 1.5px solid #fff !important;
         background: transparent !important;
-        transition: background 0.3s ease !important;
+        /* Tắt transition cho vị trí, chỉ để lại cho màu sắc */
+        transition: background 0.3s ease !important; 
     }
 
-    /* Dot active sẽ trắng mà không cần cãi vã */
-    .hero .hero-dots .dot.active {
-        background-color: #ffffff !important;
+    section.hero > .hero-dots .hero-dot.active {
+        background: #ffffff !important;
     }
 }
 
