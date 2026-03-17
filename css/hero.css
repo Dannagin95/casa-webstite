@@ -41,11 +41,23 @@
 
 
 .hero-track img {
+    /* 1. Ép trình duyệt dùng card đồ họa để vẽ, giữ độ nét */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    
+    /* 2. Thuật toán làm mịn ảnh cao cấp nhất */
+    image-rendering: -webkit-optimize-contrast; /* Dành cho Chrome/Safari */
+    image-rendering: crisp-edges;
+    
+    /* 3. Chống hiện tượng vỡ hạt khi nội dung thay đổi */
+    will-change: transform;
+    
+    /* Giữ nguyên các thông số cũ của mày */
     width: 100%;
     height: 100%;
     object-fit: cover;
-    flex-shrink: 0; 
-    pointer-events: none; 
+    flex-shrink: 0;
+    pointer-events: none;
 }
 
 
