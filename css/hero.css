@@ -36,32 +36,27 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);
+    /* Mày định hạ xuống 1.2s thì sửa ở đây luôn */
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    /* Chuyển will-change ra đây để tối ưu render toàn bộ khối trượt */
+    will-change: transform;
+    transform: translateZ(0);
 }
 
-
 .hero-track img {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    image-rendering: -webkit-optimize-contrast; 
-    image-rendering: crisp-edges;
-    will-change: transform;
     width: 100%;
     height: 100%;
     object-fit: cover;
     flex-shrink: 0;
     pointer-events: none;
-    /* THÊM DÒNG NÀY ĐỂ HẾT VÒNG TRÒN GẠCH CHÉO */
     -webkit-user-drag: none; 
-}
-
-
-.hero-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: relative;
-    z-index: 0;
+    
+    /* Giữ lại cái này để ảnh nét trên Safari/Chrome */
+    image-rendering: -webkit-optimize-contrast;
+    
+    /* Chống nháy hình khi trượt */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 
@@ -208,28 +203,33 @@
 
     .hero-dots {
         position: absolute !important;
-        right: 20px !important; 
-        top: 150px !important; /* Đứng im tại 150px như mày muốn */
-        left: auto !important;
-        /* KHÓA CHẶT RUNG: Chỉ dùng translateZ, không dùng translateY nữa */
-        transform: translateZ(0) !important; 
-        will-change: transform;
-        z-index: 9999 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 15px !important;
+    right: 20px !important; 
+    top: 150px !important; 
+    left: auto !important;
+    
+    /* FIX GIẬT: Xóa transform và will-change */
+    transform: none !important; 
+    will-change: auto !important;
+    
+    /* CÁCH LY HOÀN TOÀN: Để không bị ảnh hưởng bởi slider trượt */
+    contain: layout style paint;
+    
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    z-index: 9999 !important;
     }
 
     .hero-dot {
         width: 8px !important; 
-        height: 8px !important;
-        border: 1.5px solid #fff !important;
-        background: transparent !important;
-        transform: translateZ(0); 
-        backface-visibility: hidden;
+    height: 8px !important;
+    border: 1.5px solid #fff !important;
+    background: transparent !important;
+    /* Giữ backface để render mượt trên iOS */
+    backface-visibility: hidden;
     }
 
-    section.hero > .hero-dots .hero-dot.active {
+    .hero-dot.active {
         background: #ffffff !important;
     }
 }

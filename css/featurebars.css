@@ -6,6 +6,7 @@
         width: 100%;
         display: flex;
         justify-content: center; /* Đẩy cái container vào giữa */
+        contain: paint layout;
     }
 
 
@@ -125,16 +126,16 @@
         display: flex !important; 
     }
 
-    .dot {
-        width: 7px; /* To lên một chút cho dễ thấy */
-        height: 7px;
+    .feat-dot {
+        width: 8px; /* To lên một chút cho dễ thấy */
+        height: 8px;
         border-radius: 50%;
         background-color: #817c7c; /* Màu xám nhạt */
         display: block;
         transition: all 0.3s ease;
     }
 
-    .dot.active {
+    .feat-dot.active {
         background-color: #000; /* Chấm đang chọn màu đen */
         transform: scale(1.3);
     }

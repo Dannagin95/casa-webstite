@@ -39,7 +39,7 @@
         const updateSlider = (withAnimation = true) => {
             if (withAnimation) {
                 // Giữ nguyên 2s cho tự động để tạo cảm giác sang trọng
-                track.style.transition = 'transform 2s cubic-bezier(0.25, 1, 0.5, 1)';
+                track.style.transition = 'transform 1.2s cubic-bezier(0.25, 1, 0.5, 1)';
             } else {
                 track.style.transition = 'none';
             }
@@ -82,6 +82,10 @@
 
         const dragAction = (e) => {
             if (!isDragging) return;
+
+            // [FIX CHUỘT DÍNH]: Chặn hành vi bôi đen text/hình rác của trình duyệt khi đang cố ý kéo
+            if (e.type === 'mousemove') e.preventDefault();
+
             const currentPosition = getPositionX(e);
             const diff = ((currentPosition - startPos) / window.innerWidth) * 100;
             currentTranslate = prevTranslate + diff;
@@ -119,9 +123,15 @@
             });
         });
 
+        // CÁC DÒNG QUYẾT ĐỊNH SỐ PHẬN:
         heroBg.addEventListener('mousedown', dragStart);
-        heroBg.addEventListener('mousemove', dragAction);
+        
+        // [FIX CHUỘT DÍNH]: Đổi từ heroBg sang window, lỡ tay mày kéo văng chuột ra mép ngoài màn hình thì nó vẫn nhận lệnh "nhả tay".
+        window.addEventListener('mousemove', dragAction);
         window.addEventListener('mouseup', dragEnd);
+
+        // [FIX GẠCH CHÉO]: "Thiến" luôn hành vi tự động bắt hình ảnh (Drag & Drop native) của trình duyệt. 
+        heroBg.addEventListener('dragstart', (e) => e.preventDefault());
 
         heroBg.addEventListener('touchstart', dragStart, { passive: true });
         heroBg.addEventListener('touchmove', dragAction, { passive: false });

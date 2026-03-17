@@ -314,7 +314,7 @@ syncSlider();
 
 document.addEventListener('DOMContentLoaded', function() {
     const grid = document.querySelector('.features-grid');
-    const dots = document.querySelectorAll('.features-dots .dot');
+    const dots = document.querySelectorAll('.features-dots .feat-dot');
 
     if (grid && dots.length > 0) {
         grid.addEventListener('scroll', () => {
