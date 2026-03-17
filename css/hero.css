@@ -202,17 +202,28 @@
 
 
 
+    .hero-track img {
+    width: 100vw;
+    height: 100%; /* Hoặc khớp với min-height của .hero */
+    object-fit: cover; /* Quan trọng để ảnh không bị bóp méo */
+    flex-shrink: 0;
+}
+   
+
+
     .hero-dots {
         position: absolute !important;
         right: 20px !important; 
-        top: 35% !important; /* Đổi sang con số cố định, đừng dùng calc phức tạp */
+        top: 35% !important; 
         left: auto !important;
+        contain: layout style paint; 
+        backface-visibility: hidden;
         
-        /* CÔNG THỨC CHỐNG RUNG (BẮT BUỘC) */
-        transform: translateZ(0) !important; /* Ép lên lớp render riêng của GPU */
+
+        transform: translateY(-50%) translateZ(0) !important;
         backface-visibility: hidden !important; 
         perspective: 1000px;
-        will-change: transform; 
+        will-change: transform, top;
         
         display: flex !important;
         flex-direction: column !important;
@@ -226,7 +237,8 @@
         border: 1.5px solid #fff !important;
         background: transparent !important;
         /* Tắt transition cho vị trí, chỉ để lại cho màu sắc */
-        transition: background 0.3s ease !important; 
+        transform: translateZ(0); 
+        backface-visibility: hidden;
     }
 
     section.hero > .hero-dots .hero-dot.active {

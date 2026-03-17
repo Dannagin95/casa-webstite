@@ -1,4 +1,4 @@
-(() => { // Bọc kín để cô lập biến
+(() => {
     document.addEventListener("DOMContentLoaded", () => {
         const track = document.getElementById('heroTrack');
         const heroBg = document.querySelector('.hero-bg');
@@ -6,125 +6,129 @@
         if (!track || !heroBg) return;
 
         const images = track.querySelectorAll('img');
-        const totalImages = images.length; 
-        const realImagesCount = totalImages - 2; 
-        let currentIndex = 1; 
+        const totalImages = images.length;
+        const realImagesCount = totalImages - 2;
+        let currentIndex = 1;
         let isDragging = false;
         let startPos = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+        let animationID;
         let autoPlayTimer;
 
-        // Thiết lập vị trí ban đầu
-        track.style.transition = 'none';
+        // 1. THIẾT LẬP BAN ĐẦU
         track.style.transform = `translateX(-100%)`;
 
+        // 2. LOGIC CẬP NHẬT DOT (Tối ưu để không bị tính toán thừa)
         const updateDots = () => {
             if (dots.length === 0) return;
-            let activeDot = currentIndex - 1;
-            if (currentIndex === 0) activeDot = realImagesCount - 1;
-            else if (currentIndex === totalImages - 1) activeDot = 0;
-            
+            let activeIndex = currentIndex - 1;
+            if (currentIndex === 0) activeIndex = realImagesCount - 1;
+            if (currentIndex === totalImages - 1) activeIndex = 0;
+
             dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === activeDot);
+                dot.classList.toggle('active', i === activeIndex);
             });
+        };
+
+        // 3. HÀM CẬP NHẬT SLIDER (Tách biệt Animation và Nhảy Loop)
+        const setSliderPosition = () => {
+            track.style.transform = `translateX(${currentTranslate}%)`;
         };
 
         const updateSlider = (withAnimation = true) => {
             if (withAnimation) {
+                // Giữ nguyên 2s cho tự động để tạo cảm giác sang trọng
                 track.style.transition = 'transform 2s cubic-bezier(0.25, 1, 0.5, 1)';
             } else {
                 track.style.transition = 'none';
             }
-            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            currentTranslate = -currentIndex * 100;
+            setSliderPosition();
             updateDots();
         };
 
-        const handleLoop = () => {
-            track.addEventListener('transitionend', function _listener() {
-                if (currentIndex === 0) {
-                    currentIndex = realImagesCount;
-                    updateSlider(false);
-                } else if (currentIndex === totalImages - 1) {
-                    currentIndex = 1;
-                    updateSlider(false);
-                }
-            }, { once: true });
-        };
+        // 4. CHỐT CHẶN LOOP (Gắn 1 lần duy nhất - Cực quan trọng để chống nhảy dot)
+        track.addEventListener('transitionend', () => {
+            if (currentIndex === 0) {
+                currentIndex = realImagesCount;
+                updateSlider(false);
+            } else if (currentIndex === totalImages - 1) {
+                currentIndex = 1;
+                updateSlider(false);
+            }
+        });
 
-        const nextSlide = () => {
-            currentIndex++;
-            updateSlider();
-            handleLoop();
-        };
-
+        // 5. AUTOPLAY
         const startAutoPlay = () => {
             clearInterval(autoPlayTimer);
-            autoPlayTimer = setInterval(nextSlide, 4000); 
+            autoPlayTimer = setInterval(() => {
+                currentIndex++;
+                updateSlider();
+            }, 5000); // Tăng lên 5s cho đỡ vội, chuẩn gu minimalist
         };
-        startAutoPlay();
 
-        // Xử lý Drag
+        // 6. XỬ LÝ DRAG (Dùng RequestAnimationFrame để mượt tuyệt đối)
+        const getPositionX = (e) => e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+
         const dragStart = (e) => {
             isDragging = true;
-            startPos = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-            track.style.transition = 'none';
+            startPos = getPositionX(e);
             clearInterval(autoPlayTimer);
+            track.style.transition = 'none';
+            // Lấy vị trí thực tế lúc đang kéo
+            prevTranslate = -currentIndex * 100;
         };
 
         const dragAction = (e) => {
             if (!isDragging) return;
+            const currentPosition = getPositionX(e);
+            const diff = ((currentPosition - startPos) / window.innerWidth) * 100;
+            currentTranslate = prevTranslate + diff;
             
-            // Chống giật trang khi đang kéo slider trên mobile
+            // Dùng requestAnimationFrame để trình duyệt render nhẹ nhàng nhất có thể
+            animationID = requestAnimationFrame(setSliderPosition);
+            
             if (e.type === 'touchmove') e.preventDefault();
-
-            const currentPosition = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-            const diff = currentPosition - startPos;
-
-            // Xử lý biên trượt
-            if (currentIndex === 0 && diff > 50) {
-                currentIndex = realImagesCount;
-                startPos = currentPosition - diff;
-            } else if (currentIndex === totalImages - 1 && diff < -50) {
-                currentIndex = 1;
-                startPos = currentPosition - diff;
-            }
-
-            track.style.transform = `translateX(calc(-${currentIndex * 100}% + ${diff}px))`;
         };
 
-        const dragEnd = (e) => {
+        const dragEnd = () => {
             if (!isDragging) return;
             isDragging = false;
-            const endPos = e.type.includes('mouse') ? e.clientX : (e.changedTouches ? e.changedTouches[0].clientX : startPos);
-            const diff = endPos - startPos;
+            cancelAnimationFrame(animationID);
 
-            if (diff < -100) {
-                currentIndex++;
-            } else if (diff > 100) {
-                currentIndex--;
-            }
+            const movedBy = currentTranslate - prevTranslate;
 
-            updateSlider();
-            handleLoop();
+            // Nếu kéo quá 15% chiều ngang thì chuyển slide
+            if (movedBy < -15) currentIndex++;
+            else if (movedBy > 15) currentIndex--;
+
+            // Khi nhả tay ra, dùng transition nhanh hơn (0.6s) để slider "hít" vào chỗ cũ
+            track.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+            updateSlider(true); 
+            
             startAutoPlay();
         };
 
-        // Event Listeners
+        // 7. EVENT LISTENERS
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 currentIndex = index + 1;
                 updateSlider();
-                handleLoop(); 
                 startAutoPlay();
             });
         });
 
         heroBg.addEventListener('mousedown', dragStart);
         heroBg.addEventListener('mousemove', dragAction);
-        window.addEventListener('mouseup', dragEnd); // Giữ window để thả chuột ngoài vùng vẫn ăn
+        window.addEventListener('mouseup', dragEnd);
 
-        // Dùng {passive: false} để e.preventDefault() có tác dụng chống giật
-        heroBg.addEventListener('touchstart', dragStart, {passive: true});
-        heroBg.addEventListener('touchmove', dragAction, {passive: false});
+        heroBg.addEventListener('touchstart', dragStart, { passive: true });
+        heroBg.addEventListener('touchmove', dragAction, { passive: false });
         heroBg.addEventListener('touchend', dragEnd);
+
+        // Khởi chạy
+        updateDots();
+        startAutoPlay();
     });
 })();
