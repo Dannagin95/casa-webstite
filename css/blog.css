@@ -260,6 +260,28 @@
 }
 
 
+.blogpagehero-text { 
+    color: #fff; 
+    width: 100%;
+    max-width: var(--container-max); /* Khóa chặt ở 1650px */
+    margin: 0 auto; /* Ép vào giữa màn hình */
+    padding: 0 var(--side-padding); /* Trả lại đúng 55px padding để chữ đứng đúng vị trí cũ */
+    margin-bottom: 48px;
+    z-index: 2;
+    text-align: left; /* Đảm bảo chữ vẫn canh trái bên trong cái lồng 1650px */
+}
+
+.sub-title {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.blogpagehero-text h1
+ { font-size: 58px; line-height: 1.1; margin-bottom: 30px; font-weight: 400; }
+
+
 .mobile-only { 
     display: none !important; 
 }
@@ -476,7 +498,7 @@
 
 /* Bóp nội dung chữ ở giữa (Tránh dàn trải 1650px) */
 .firstblog-text-container {
-    max-width: 720px;
+    max-width: 680px;
     margin: 0 auto;
     padding: 30px 0;
 }
@@ -485,7 +507,18 @@
     font-size: 13px;
     line-height: 1.6;
     margin-bottom: 20px;
-    color: var(--color-text-main);
+    color: var(--black);
+}
+
+.firstblog-middletext {
+    display: block;
+    font-size: 11px;
+    font-weight: 200;
+    color: var(--color-text-muted);
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+    letter-spacing: 0px;
+    text-transform: uppercase;    
 }
 
 /* Gallery 4 cột mặc định cho Desktop */
@@ -616,7 +649,7 @@
     font-size: 13px;
     line-height: 1.6;
     margin-bottom: 20px;
-    color: var(--color-text-main);
+    color: var(--black);
 }
 
 

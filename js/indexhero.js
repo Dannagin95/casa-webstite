@@ -15,11 +15,12 @@
         let prevTranslate = 0;
         let animationID;
         let autoPlayTimer;
+        let isTransitioning = false; 
 
-        // 1. THIẾT LẬP BAN ĐẦU
+       
         track.style.transform = `translateX(-100%)`;
 
-        // 2. LOGIC CẬP NHẬT DOT (Tối ưu để không bị tính toán thừa)
+     
         const updateDots = () => {
             if (dots.length === 0) return;
             let activeIndex = currentIndex - 1;
@@ -31,113 +32,148 @@
             });
         };
 
-        // 3. HÀM CẬP NHẬT SLIDER (Tách biệt Animation và Nhảy Loop)
+
         const setSliderPosition = () => {
             track.style.transform = `translateX(${currentTranslate}%)`;
         };
 
         const updateSlider = (withAnimation = true) => {
             if (withAnimation) {
-                // Giữ nguyên 2s cho tự động để tạo cảm giác sang trọng
                 track.style.transition = 'transform 1.2s cubic-bezier(0.25, 1, 0.5, 1)';
             } else {
                 track.style.transition = 'none';
             }
+
             currentTranslate = -currentIndex * 100;
             setSliderPosition();
             updateDots();
         };
 
-        // 4. CHỐT CHẶN LOOP (Gắn 1 lần duy nhất - Cực quan trọng để chống nhảy dot)
+
         track.addEventListener('transitionend', () => {
+            isTransitioning = false; 
+
             if (currentIndex === 0) {
                 currentIndex = realImagesCount;
-                updateSlider(false);
+                track.style.transition = 'none';
+                currentTranslate = -currentIndex * 100;
+                setSliderPosition();
             } else if (currentIndex === totalImages - 1) {
                 currentIndex = 1;
-                updateSlider(false);
+                track.style.transition = 'none';
+                currentTranslate = -currentIndex * 100;
+                setSliderPosition();
             }
         });
 
-        // 5. AUTOPLAY
+
         const startAutoPlay = () => {
             clearInterval(autoPlayTimer);
             autoPlayTimer = setInterval(() => {
-                currentIndex++;
-                updateSlider();
-            }, 5000); // Tăng lên 5s cho đỡ vội, chuẩn gu minimalist
+                if (!isDragging) {
+                    currentIndex++;
+                    updateSlider();
+                }
+            }, 5000);
         };
 
-        // 6. XỬ LÝ DRAG (Dùng RequestAnimationFrame để mượt tuyệt đối)
         const getPositionX = (e) => e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
 
         const dragStart = (e) => {
             isDragging = true;
-            startPos = getPositionX(e);
+            isTransitioning = false; 
             clearInterval(autoPlayTimer);
             track.style.transition = 'none';
-            // Lấy vị trí thực tế lúc đang kéo
+
+            if (currentIndex === 0) {
+                currentIndex = realImagesCount; 
+            } else if (currentIndex === totalImages - 1) {
+                currentIndex = 1; 
+            }
+
             prevTranslate = -currentIndex * 100;
+            currentTranslate = prevTranslate;
+            setSliderPosition(); 
+
+            startPos = getPositionX(e);
         };
 
-        const dragAction = (e) => {
-            if (!isDragging) return;
 
-            // [FIX CHUỘT DÍNH]: Chặn hành vi bôi đen text/hình rác của trình duyệt khi đang cố ý kéo
-            if (e.type === 'mousemove') e.preventDefault();
+        const dragActionDesktop = (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
 
             const currentPosition = getPositionX(e);
             const diff = ((currentPosition - startPos) / window.innerWidth) * 100;
-            currentTranslate = prevTranslate + diff;
+            let targetTranslate = prevTranslate + diff;
+
+            const minTranslate = -((totalImages - 1) * 100); 
+            const maxTranslate = 0;
+            currentTranslate = Math.max(minTranslate, Math.min(maxTranslate, targetTranslate));
             
-            // Dùng requestAnimationFrame để trình duyệt render nhẹ nhàng nhất có thể
             animationID = requestAnimationFrame(setSliderPosition);
-            
-            if (e.type === 'touchmove') e.preventDefault();
         };
 
-        const dragEnd = () => {
+        const dragEndDesktop = () => {
             if (!isDragging) return;
             isDragging = false;
             cancelAnimationFrame(animationID);
 
             const movedBy = currentTranslate - prevTranslate;
 
-            // Nếu kéo quá 15% chiều ngang thì chuyển slide
             if (movedBy < -15) currentIndex++;
             else if (movedBy > 15) currentIndex--;
 
-            // Khi nhả tay ra, dùng transition nhanh hơn (0.6s) để slider "hít" vào chỗ cũ
+            currentIndex = Math.max(0, Math.min(totalImages - 1, currentIndex));
+
+            isTransitioning = true;
             track.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
             updateSlider(true); 
-            
             startAutoPlay();
         };
 
-        // 7. EVENT LISTENERS
+        const dragActionMobile = (e) => {
+            if (!isDragging) return;
+            const currentPosition = getPositionX(e);
+            const diff = ((currentPosition - startPos) / window.innerWidth) * 100;
+            currentTranslate = prevTranslate + diff;
+            
+            animationID = requestAnimationFrame(setSliderPosition);
+        };
+
+        const dragEndMobile = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            cancelAnimationFrame(animationID);
+
+            const movedBy = currentTranslate - prevTranslate;
+            if (movedBy < -15) currentIndex++;
+            else if (movedBy > 15) currentIndex--;
+
+            isTransitioning = true;
+            track.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+            updateSlider(true); 
+            startAutoPlay();
+        };
+
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
+                if (isTransitioning) return;
                 currentIndex = index + 1;
                 updateSlider();
                 startAutoPlay();
             });
         });
 
-        // CÁC DÒNG QUYẾT ĐỊNH SỐ PHẬN:
+
         heroBg.addEventListener('mousedown', dragStart);
-        
-        // [FIX CHUỘT DÍNH]: Đổi từ heroBg sang window, lỡ tay mày kéo văng chuột ra mép ngoài màn hình thì nó vẫn nhận lệnh "nhả tay".
-        window.addEventListener('mousemove', dragAction);
-        window.addEventListener('mouseup', dragEnd);
-
-        // [FIX GẠCH CHÉO]: "Thiến" luôn hành vi tự động bắt hình ảnh (Drag & Drop native) của trình duyệt. 
+        window.addEventListener('mousemove', dragActionDesktop);
+        window.addEventListener('mouseup', dragEndDesktop);
         heroBg.addEventListener('dragstart', (e) => e.preventDefault());
-
         heroBg.addEventListener('touchstart', dragStart, { passive: true });
-        heroBg.addEventListener('touchmove', dragAction, { passive: false });
-        heroBg.addEventListener('touchend', dragEnd);
+        heroBg.addEventListener('touchmove', dragActionMobile, { passive: false });
+        heroBg.addEventListener('touchend', dragEndMobile);
 
-        // Khởi chạy
         updateDots();
         startAutoPlay();
     });
