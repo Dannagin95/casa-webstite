@@ -665,6 +665,7 @@
 .secondblog-single-image img {
     width: 100%; /* Hình ảnh tràn hết Section, khớp lề với container */
     height: auto; /* Giữ tỉ lệ ngang lớn tự nhiên của hình */
+    aspect-ratio: 16 / 8;
     display: block; /* Tránh khoảng hở thừa ở đáy */
     object-fit: cover; /* Đảm bảo hình lấp đầy khung mà không bị méo */
     transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1); /* Kế thừa hiệu ứng zoom */
