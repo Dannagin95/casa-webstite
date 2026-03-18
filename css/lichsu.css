@@ -12,6 +12,14 @@
 .lichsuhero-bg { position: absolute; inset: 0; z-index: -1; }
 .lichsuhero-bg img { width: 100%; height: 100%; object-fit: cover; }
 
+.lichsuhero-text .sub-title {
+    font-size: 11px;
+    word-spacing: 5px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
 .lichsuhero-text { 
     color: #fff; 
     width: 100%;
@@ -22,7 +30,7 @@
     z-index: 2;
     text-align: left; 
 }
-.lichsuhero-text h1 { font-size: 50px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
+.lichsuhero-text h1 { font-size: 30px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
 .lichsuhero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
 
 .mobile-only { 

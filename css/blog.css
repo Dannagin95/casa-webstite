@@ -40,9 +40,9 @@
 
 .blog-subtitle {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 11px;
-    font-weight: 300;
+    font-weight: 200;
     color: #ffffff;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -273,9 +273,10 @@
 
 .sub-title {
     font-size: 11px;
-    font-weight: 300;
+    word-spacing: 5px;
+    font-weight: 200;
     letter-spacing: 1px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .blogpagehero-text h1
@@ -940,7 +941,7 @@
     .luot-header .sub-title {
         display: block;
         font-size: 11px;
-        font-weight:300;
+        font-weight: 200;
         color: #2b2929;
         margin-bottom: 30px !important;
         letter-spacing: 1px;
