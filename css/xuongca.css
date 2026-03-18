@@ -184,7 +184,8 @@
     box-sizing: border-box;
 }
 
-.herringbone-single-image img {
+/* Thay img bằng video, giữ nguyên height 600px và object-fit */
+.herringbone-single-image video {
     width: 100%;
     height: 600px; 
     object-fit: cover;
@@ -203,7 +204,8 @@
         margin-right: -50vw;
     }
     
-    .herringbone-single-image img {
+    /* Giữ nguyên tỉ lệ 4/3 cho video trên mobile như mày đã thiết lập cho ảnh */
+    .herringbone-single-image video {
         width: 100%;
         height: auto;
         aspect-ratio: 4 / 3;
