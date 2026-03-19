@@ -108,6 +108,7 @@
     font-size: 13px;
     line-height: 1.6;
     max-width: 670px;
+    margin-bottom: 20px;
     color: var(--color-black);
 }
 

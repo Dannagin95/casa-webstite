@@ -6,6 +6,7 @@
     flex-direction: column;
     align-items: center;
     background-color: #ffffff; /* Nền trang trắng */
+    margin-bottom: 20px;
 }
 
 /* Tiêu đề FAQ căn giữa */
