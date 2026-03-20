@@ -247,42 +247,45 @@ const spViewport = document.querySelector('.luot-viewport');
 let spIdx = 0;
 
 function syncSlider() {
-    if (window.innerWidth <= 768) {
-        spTrack.style.transform = 'none';
+    if (window.innerWidth < 1440) {
+        if (spTrack) spTrack.style.transform = 'none';
         return;
     }
+
     const card = document.querySelector('.sanpham-card');
     if (!card) return;
     
     const move = spIdx * (card.offsetWidth + 25);
     spTrack.style.transform = `translateX(-${move}px)`;
 
-    // Update bar & buttons cho Desktop
-    if (spBar) spBar.style.width = `${50 + (spIdx * 25)}%`;
+    // FIX GIẬT DESKTOP: Trả lại transition mượt mà cho thanh bar khi ở Desktop
+    if (spBar) {
+        spBar.style.transition = 'width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'; 
+        spBar.style.width = `${50 + (spIdx * 25)}%`;
+    }
+    
     if (spPrev) spPrev.style.opacity = spIdx === 0 ? "0.3" : "1";
     if (spNext) spNext.style.opacity = spIdx >= 2 ? "0.3" : "1";
 }
 
-// --- LOGIC MOBILE: FIX NHẠY & CHẠY DỨT KHOÁT ---
+// --- LOGIC VUỐT TAY: DÙNG CHUNG CHO MOBILE & TABLET ---
 if (spViewport) {
-    let isScrolling; // Biến kiểm soát khung hình
+    let isScrolling; 
 
     spViewport.addEventListener('scroll', () => {
-        if (window.innerWidth <= 768 && spBar) {
-            // Hủy frame cũ nếu đang đợi, giúp giảm độ nhạy dư thừa
+        // MỞ RỘNG: Chạy cho mọi màn hình dưới 1440px (Bao gồm iPad Air/Pro)
+        if (window.innerWidth < 1440 && spBar) {
             window.cancelAnimationFrame(isScrolling);
 
             isScrolling = window.requestAnimationFrame(() => {
                 const scrollLeft = spViewport.scrollLeft;
                 const maxScroll = spViewport.scrollWidth - spViewport.clientWidth;
                 
-                // Tính % dựa trên vị trí cuộn (0 đến 1)
                 const percentage = maxScroll > 0 ? scrollLeft / maxScroll : 0;
 
-                // Cập nhật thanh bar: Bắt đầu từ 20%, kết thúc 100%
+                // Cập nhật thanh bar: Bám sát theo ngón tay vuốt
                 const finalWidth = 20 + (percentage * 80);
                 
-                // Tắt transition để thanh bar bám sát tay, dùng toFixed để mượt hơn
                 spBar.style.transition = 'none'; 
                 spBar.style.width = `${finalWidth.toFixed(2)}%`;
             });
@@ -290,18 +293,27 @@ if (spViewport) {
     }, { passive: true });
 }
 
-// Event Listeners cho Desktop
-spNext?.addEventListener('click', () => { if (spIdx < 2) { spIdx++; syncSlider(); } });
-spPrev?.addEventListener('click', () => { if (spIdx > 0) { spIdx--; syncSlider(); } });
+// Event Listeners cho Desktop (Chỉ hoạt động khi ở Desktop)
+spNext?.addEventListener('click', () => { 
+    if (window.innerWidth >= 1440 && spIdx < 2) { 
+        spIdx++; syncSlider(); 
+    } 
+});
+spPrev?.addEventListener('click', () => { 
+    if (window.innerWidth >= 1440 && spIdx > 0) { 
+        spIdx--; syncSlider(); 
+    } 
+});
 
 window.addEventListener('resize', () => {
-    if (window.innerWidth <= 768 && spBar) {
-        // Nếu resize về mobile, reset nhẹ để tính lại theo scroll
+    if (window.innerWidth < 1440 && spBar) {
+        // Reset thanh bar về trạng thái đầu khi chuyển breakpoint
         spBar.style.width = '20%';
     }
     syncSlider();
 });
 
+// Khởi tạo lần đầu
 syncSlider();
 
 

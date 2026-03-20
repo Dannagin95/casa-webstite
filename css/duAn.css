@@ -20,8 +20,10 @@
     .section-subtitle {
         display: block;
         font-size: 11px;
+        word-spacing: 5px;
+        font-weight: 200;
         letter-spacing: 1px;
-        color: var(--color-bg-dark);
+        color: #2b2929;
         text-transform: uppercase;
     }
 
@@ -88,6 +90,7 @@ IPAD/TABLET SYNC (768px - 1024px)
         padding: 40px 0 !important; 
         overflow: hidden;
         background: #fff;
+        margin-bottom: -40px;
     }
 
     .projects .container {
@@ -100,8 +103,8 @@ IPAD/TABLET SYNC (768px - 1024px)
 
     .section-header {
         padding: 0 20px;
-        margin-bottom: 30px;
         text-align: left;
+        margin-bottom: 20px;
     }
 
     .section-subtitle {
@@ -112,12 +115,12 @@ IPAD/TABLET SYNC (768px - 1024px)
         color: #2b2929;
         letter-spacing: 1px;
         text-transform: uppercase;
-        margin-bottom: 20px !important;
+
     }
 
     .project-grid {
         display: flex !important;
-        gap: 20px;
+        gap: 25px;
         overflow-x: auto;
         scroll-snap-type: x mandatory; 
         -webkit-overflow-scrolling: touch; 
@@ -131,8 +134,8 @@ IPAD/TABLET SYNC (768px - 1024px)
     .project-grid::-webkit-scrollbar { display: none; }
 
     .project-card {
-        flex: 0 0 45vw !important; /* Độ rộng hiển thị được ~2 card rưỡi */
-        width: 45vw !important;
+        flex: 0 0 38vw !important; /* Độ rộng hiển thị được ~2 card rưỡi */
+        width: 38vw !important;
         aspect-ratio: 6 / 7; 
         scroll-snap-stop: always !important;
         scroll-snap-align: center;

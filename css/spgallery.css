@@ -168,3 +168,117 @@
         transition: width 0.3s ease, left 0.3s ease;
     }
 }
+
+
+
+/* ============================================================
+   2. TABLET NHỎ / IPAD ĐỨNG (768px - 1024px)
+   ============================================================ */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .sanpham-gallery {
+        padding: 40px 20px !important;
+    }
+    
+    .luot-viewport {
+        margin-left: -20px !important; 
+        margin-right: -20px !important;
+        scroll-padding-left: 20px !important;
+    }
+    .luot-track {
+        gap: 7px !important; /* Khoảng cách card riêng cho Tablet nhỏ */
+    }
+    .sanpham-card {
+        /* Chỉnh width tại đây: Hiện ~2.5 card */
+        width: calc((100vw - 40px - 30px) / 2) !important;
+        flex: 0 0 calc((100vw - 40px - 30px) / 2) !important;
+        flex-shrink: 0 !important;
+    }
+}
+
+
+
+
+
+
+@media screen and (min-width: 820px) and (max-width: 1439px) {
+    
+    /* 1. Dùng Selector cụ thể để diệt tận gốc nút và thanh bar mà không cần rác code */
+    .sanpham-gallery .luot-footer .luot-nav {
+        display: none !important;
+    }
+
+    .sanpham-gallery .luot-footer .luot-progress-container {
+        display: block !important; /* Hiện lại */
+        width: 100% !important;
+        height: 2px !important;
+        background-color: #e0e0e0 !important;
+        margin-top: 30px !important; /* Khoảng cách từ card xuống thanh bar */
+        position: relative !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .sanpham-gallery {
+        padding: 60px 20px !important; /* Golden Parameters [cite: 2026-02-07] */
+        display: block !important;
+    }
+
+     
+    .luot-header {
+        margin-bottom: 25px;
+        text-align: left; /* Canh trái cho giống phong cách tạp chí */
+    }
+
+    .luot-header .sub-title {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #2b2929;
+        margin-bottom: 20px;
+    }
+
+
+    .luot-viewport {
+        display: flex !important;
+        overflow-x: auto !important; 
+        -webkit-overflow-scrolling: touch !important; 
+        scroll-snap-type: x mandatory !important;
+        scrollbar-width: none !important;
+        
+        /* Logic tràn viền nhưng giữ lề 20px [cite: 2026-02-07] */
+        margin-left: -20px !important; 
+        margin-right: -20px !important;
+        padding-left: 20px !important; 
+        scroll-padding-left: 20px !important;
+    }
+
+    .luot-viewport::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .luot-track {
+        display: flex !important;
+        gap: 20px !important; 
+        width: max-content !important;
+        
+        /* Chặn JS can thiệp vào tọa độ để vuốt tay mượt mà */
+        transform: none !important; 
+        transition: none !important;
+    }
+
+    /* Bỏ width dư thừa theo ý mày, chỉ giữ để ngăn co rút */
+    .luot-track::after {
+        content: "";
+        display: block;
+        flex-shrink: 0;
+    }
+
+    .sanpham-card {
+        /* Mày đang để chia 2 (~2 card hiện ra), tao giữ nguyên tỉ lệ này */
+        width: calc((100vw - 40px - 20px) / 2) !important;
+        flex: 0 0 calc((100vw - 40px - 20px) / 2) !important;
+        flex-shrink: 0 !important;
+        scroll-snap-align: start !important;
+    }
+}
