@@ -252,9 +252,10 @@
 @media screen and (min-width: 768px) and (max-width: 819px) {
     /* Ép container bung lề */
     .khamphaalbum-section .casa-container {
-        padding: 0 !important;
+        padding: 40px 0 !important;
         max-width: 100% !important;
         width: 100% !important;
+        margin-bottom: 40px;
     }
 
     /* Ép Slider nhận lề 20px và không xuống hàng */
@@ -279,6 +280,24 @@
         aspect-ratio: 6/7 !important;
         width: 100% !important;
     }
+
+    .khamphaalbum-section .khamphaalbum-progress-container {
+        display: block !important; /* Đảm bảo không bị ẩn */
+        margin: 30px 20px 0 20px !important; /* Lề 20px chuẩn Danna [cite: 2026-02-07] */
+        width: calc(100% - 40px) !important; /* Trừ đi 2 bên lề 20px */
+        background-color: var(--color-bar) !important;
+        height: 1px !important;
+        position: relative !important;
+        overflow: visible !important;
+    }
+
+    .khamphaalbum-section .khamphaalbum-progress-bar {
+        background-color: #000000 !important;
+        height: 100% !important;
+        display: block !important;
+    }
+
+
 }
 
 
@@ -288,7 +307,7 @@
 
 /* 2. TABLET LỚN (820px - 1439px) - Fix dính lề trái */
 @media screen and (min-width: 820px) and (max-width: 1439px) {
-    .khamphaalbum-section { padding: 40px 0 !important; overflow: hidden !important; }
+    .khamphaalbum-section { padding: 40px 0 !important; overflow: hidden !important; margin-bottom: 40px; }
     
     .khamphaalbum-section .casa-container {
         padding-left: 0 !important;
@@ -297,7 +316,7 @@
     }
     
     .khamphaalbum-header { 
-        padding: 0 20px !important; 
+        padding: 10px 20px !important; 
         box-sizing: border-box !important;
         width: 100% !important; /* Chống tràn, nhả lề trái 20px ra */
     }
