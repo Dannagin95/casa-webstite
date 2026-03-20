@@ -1,202 +1,148 @@
-.company {
-    width: 100% !important;
-    background-color: #988e86 !important;
-    overflow: hidden !important; 
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-.about-intro::before, 
-.about-intro::after {
-    display: none !important;
-    content: none !important;
-}
-
-
-@media (max-width: 768px) {
-    .company {
-        margin-top: 80px !important; 
-        margin-bottom: 10px !important;
-    }
-
+/* ============================================================
+   1. MOBILE (Dưới 768px) - GIỮ NGUYÊN GỐC 100%
+   ============================================================ */
+@media (max-width: 767px) {
+    .company { margin-top: 20px !important; margin-bottom: 10px !important; }
     .about-intro {
-        display: flex !important;
-        flex-direction: column !important; 
-        min-height: auto !important; 
-        width: 100vw !important;
-        position: relative;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
+        display: flex !important; flex-direction: column !important; min-height: auto !important; width: 100vw !important;
+        position: relative; left: 50% !important; transform: translateX(-50%) !important;
     }
-
     .about-main-text {
-        order: 2 !important; 
-        width: 100% !important; 
-        padding: 30px 25px !important; 
-        background-color: #2D1B17 !important;
-        color: #ffffff;
+        order: 2 !important; width: 100% !important; padding: 30px 25px !important; 
+        background-color: #2D1B17 !important; color: #ffffff;
     }
-
-    .about-main-visual {
-        order: 2 !important; 
-        width: 100% !important;
-    }
-
-    .image-inner {
-        width: 100% !important;
-        height: 55vh !important; 
-        display: block !important;
-    }
-    
-    .image-inner img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-    }
-
-    .about-main-text .title { 
-        font-size: 22px !important; 
-        font-weight: 400;
-        margin-bottom: 20px !important; 
-    }
-
-    .about-main-text .sub-title { 
-        font-size: 12px !important; 
-        font-weight: 100; 
-        margin-bottom: 10px !important; 
-        color: #ffffff;
-    }
-    .about-main-text .description { 
-        font-size: 11px !important; 
-        line-height: 1.6 !important; 
-    }
-
+    .about-main-visual { order: 1 !important; width: 100% !important; }
+    .image-inner { width: 100% !important; height: 55vh !important; display: block !important; }
+    .image-inner img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+    .about-main-text .title { font-size: 22px !important; font-weight: 400; margin-bottom: 20px !important; }
+    .about-main-text .sub-title { font-size: 12px !important; font-weight: 100; margin-bottom: 10px !important; color: #ffffff; }
+    .about-main-text .description { font-size: 11px !important; line-height: 1.6 !important; }
     .about-intro .btn-discover {
-        background-color: #ffffff !important;
-        color: #000000 !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        height: 48px !important;
-        padding: 0 40px !important;
-        border-radius: 50px !important;
-        margin-top: 20px !important;
-        text-decoration: none;
+        background-color: #ffffff !important; color: #000000 !important;
+        display: inline-flex !important; align-items: center !important; justify-content: center !important;
+        height: 48px !important; padding: 0 40px !important; border-radius: 50px !important;
+        margin-top: 20px !important; text-decoration: none !important; /* FIX: Bỏ gạch chân */
         font-weight: 600;
     }
 }
 
-
-@media (min-width: 769px) {
-    .company {
-        max-width: none; 
-        width: 100%;
-        padding: 0 ;
-        margin: -1px 0 0 0; 
-        
-        background-color: #202018 !important;
-    }
-    
-
+/* ============================================================
+   2. TABLET NHỎ (768px - 819px) - IPAD MINI / PORTRAIT
+   ============================================================ */
+@media screen and (min-width: 768px) and (max-width: 819px) {
+    .company { margin-top: 20px !important; margin-bottom: 10px !important; }
     .about-intro {
         display: flex !important;
-      
-        flex-direction: row-reverse !important; 
-        align-items: stretch !important;
+        flex-direction: column !important; 
+        min-height: auto !important;
         width: 100% !important;
-        min-height: 100vh !important;
-        margin: 0 !important
+    }
+    .about-main-visual { order: 1 !important; width: 100% !important; }
+    .about-main-text {
+        order: 2 !important; width: 100% !important;
+        padding: 30px 25px !important; /* Lề tổng của cả cụm text */
+        background-color: #2D1B17 !important;
     }
 
+    /* --- TÁCH RIÊNG 3 THÀNH PHẦN ĐỂ MÀY TỰ CHỈNH LỀ --- */
     
-    .about-main-visual {
-        flex: 0 0 50% !important;
-        width: 50% !important;
-    }
-
-    .image-inner, .image-inner img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
+    .about-main-text .sub-title { 
+        color: #ffffff !important;
+        font-size: 11px !important;
+        margin-bottom: 10px !important; /* Chỉnh khoảng cách dưới sub-title */
         display: block !important;
     }
 
-    
-    .about-main-text {
-        flex: 0 0 50% !important;
-        color: #ffffff;
-        background-color: #2D1B17 !important; 
-        
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-end !important;
-     
-        align-items: flex-start !important; 
-        
-        padding: 60px 55px !important; 
-        max-width: none !important;
-    }
-
-
-    .about-main-text .top-content, 
-    .about-main-text .description,
-    .about-main-text .btn-discover {
-        width: 100%;
-        
-        max-width: 700px !important; 
-        
-        margin-left: 0 !important;
-        margin-right: auto !important;
-        text-align: left !important;
-    }
-    
-    .about-main-text .sub-title {
-        font-size: 11px;
-        font-weight: 200;
-        margin-bottom: 10px !important;
-        color: var(--white);
-    }
-
-    .about-main-text .title {
-        font-size: clamp(24px, 2.5vw, 35px);
-        font-weight: 400;
-        line-height: 1.1 !important;
-        margin-bottom: 40px;
-        margin-top: 20px;
+    .about-main-text .title { 
+        color: #ffffff !important;
+        font-size: 22px !important;
+        margin-bottom: 20px !important; /* Chỉnh khoảng cách dưới title */
+        line-height: 1.2 !important;
+        display: block !important;
     }
 
     .about-main-text .description { 
-        font-size: 13px !important; 
-        line-height: 1.6 !important; 
-        margin-bottom: 40px !important;
-        max-width: 100%;
+        color: #ffffff !important;
+        font-size: 11px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 25px !important; /* Chỉnh khoảng cách từ text đến nút */
+        display: block !important;
     }
+
+    /* --- HẾT PHẦN TÁCH TEXT --- */
+
+    .image-inner { width: 100% !important; height: 50vh !important; display: block !important; }
+    .image-inner img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
 
     .about-intro .btn-discover {
-        display: inline-block !important; 
-        width: fit-content !important;
-        align-self: flex-start !important; 
-        background: #fff !important;
-        color: #000 !important;
-        padding: 14px 45px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        height: 48px !important;
+        padding: 0 40px !important;
         border-radius: 50px !important;
-        text-decoration: none;
-        font-size: 15px;
-        font-weight: 400;
-        border: 1px solid transparent !important;
-        transition: all 0.1s ease-in-out !important;
+        text-decoration: none !important;
+        width: fit-content !important;
     }
+}
 
-    .about-intro .btn-discover:hover {
-        background-color: transparent !important;
-        transition: none !important;
-        box-shadow: inset 0 0 0 2px #ffffff !important; 
+
+
+/* ============================================================
+   3. TABLET LỚN (820px - 1439px) - IPAD AIR/PRO (DÀN NGANG, FIX NÚT BẤM)
+   ============================================================ */
+@media screen and (min-width: 820px) and (max-width: 1439px) {
+    .company { background-color: #202018 !important; margin: 20px 0 0 0; }
+    .about-intro {
+        display: flex !important; flex-direction: row-reverse !important; 
+        align-items: stretch !important; width: 100% !important; 
+        min-height: auto !important; /* FIX: Tablet lớn ngắn hơn để không bị dài gớm [cite: 2026-02-11] */
     }
-
-    .about-intro .btn-discover:hover .text {
-        transform: none;
-        color:#ffffff;
+    .about-main-visual { flex: 0 0 50% !important; width: 50% !important; aspect-ratio: 3 / 4 !important;}
+    .about-main-text {
+        flex: 0 0 50% !important; background-color: #2D1B17 !important; color: #ffffff; aspect-ratio: 1 / 1 !important; 
+        display: flex !important; flex-direction: column !important; justify-content: flex-end !important;
+        padding: 40px !important; /* Giảm padding cho iPad đỡ ngộp [cite: 2026-02-11] */
     }
+    .image-inner, .image-inner img { width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important; }
+    .about-main-text .title { font-size: 28px !important; font-weight: 400; margin-bottom: 20px !important; }
+    .about-main-text .description { font-size: 13px !important; line-height: 1.6 !important; margin-bottom: 30px !important; }
+    
+    /* FIX: Nút thu gọn lại, không tràn ngang bằng độ dài cụm text [cite: 2026-02-11] */
+    .about-intro .btn-discover {
+        display: inline-block !important; width: fit-content !important; /* Chỉ dài bằng text */
+        background: #fff !important; color: #000 !important;
+        padding: 12px 35px !important; /* Padding nút nhỏ lại */
+        border-radius: 50px !important; text-decoration: none !important; /* FIX: Bỏ gạch chân */
+        font-size: 14px !important;
+    }
+}
 
-    .about-intro .btn-discover .line { display: none !important; }
+
+/* ============================================================
+   4. DESKTOP (Từ 1440px trở lên) - GIỮ NGUYÊN GỐC 100%
+   ============================================================ */
+@media screen and (min-width: 1440px) {
+    .company { background-color: #202018 !important; margin: -1px 0 0 0; padding: 0; width: 100%; }
+    .about-intro {
+        display: flex !important; flex-direction: row-reverse !important; 
+        align-items: stretch !important; width: 100% !important; min-height: 100vh !important;
+    }
+    .about-main-visual, .about-main-text { flex: 0 0 50% !important; }
+    .about-main-text {
+        background-color: #2D1B17 !important; color: #ffffff;
+        display: flex !important; flex-direction: column !important; justify-content: flex-end !important;
+        padding: 60px 55px !important;
+    }
+    .about-main-text .title { font-size: clamp(24px, 2.5vw, 35px); font-weight: 400; line-height: 1.1 !important; margin-bottom: 40px; }
+    .about-main-text .sub-title {display: block; word-spacing: 5px; font-size: 11px; font-weight: 200; color: #ffffff; letter-spacing: 1px; text-transform: uppercase;}
+    .about-main-text .description { font-size: 13px !important; line-height: 1.6 !important;    margin-bottom: 40px !important; }
+    .about-intro .btn-discover {
+        display: inline-block !important; width: fit-content !important; background: #fff !important;
+        color: #000 !important; padding: 14px 45px !important; border-radius: 50px !important;
+        text-decoration: none !important;
+    }
+    .about-intro .btn-discover:hover { background-color: transparent !important; box-shadow: inset 0 0 0 2px #ffffff !important; color: #ffffff !important }
 }

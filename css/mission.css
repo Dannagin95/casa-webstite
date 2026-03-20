@@ -89,3 +89,34 @@
         box-shadow: inset 0 0 0 2px #000000 !important; 
     }
 }
+
+
+
+/* ============================================================
+   CHỈ FIX LỀ MISSION CHO TABLET LỚN (820px - 1439px)
+   ============================================================ */
+@media screen and (min-width: 820px) and (max-width: 1439px) {
+    .mission {
+        /* Ngăn cách section 40px chuẩn bài mày giao [cite: 2026-02-07] */
+        padding: 80px 0 !important; 
+    }
+
+    .mission .container {
+        padding: 0 20px !important; 
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .mission .mission-content {
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .mission .main-heading {
+        /* Nắn lại font một chút cho khớp tỉ lệ tablet lớn */
+        font-size: 42px !important; 
+        line-height: 1.2 !important;
+        margin-top: 15px !important;
+        margin-bottom: 30px !important;
+    }
+}
