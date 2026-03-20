@@ -1,9 +1,6 @@
-/* =========================================
-   1. MOBILE VERSION (ƯU TIÊN - GIỮ NGUYÊN HIỆU ỨNG CŨ)
-   ========================================= */
 @media (max-width: 767px) {
     .projects {
-        padding-top: 50px; /* Tạo khoảng hở với Hero 70vh phía trên */
+        padding-top: 50px; 
         overflow: hidden;
     }
 
@@ -12,7 +9,7 @@
         padding-right: 0 !important;
         width: 100% !important;
         max-width: none !important;
-        margin-top: 0 !important; /* Reset lại cho khớp layout mới */
+        margin-top: 0 !important; 
     }
 
     .section-header {
@@ -28,7 +25,6 @@
         text-transform: uppercase;
     }
 
-    /* HIỆU ỨNG LƯỚT NGANG SNAPPING ĐẶC TRƯNG */
     .project-grid {
         display: flex !important;
         gap: 18px;
@@ -43,22 +39,15 @@
     .project-grid::-webkit-scrollbar { display: none; }
 
    .project-card {
-    /* Độ rộng card: Chiếm khoảng 75% để chừa một phần card sau lọt vào khung hình [cite: 2026-02-11] */
-    flex: 0 0 75vw !important; 
-    width: 75vw !important;
-    
-    /* CHIẾC GẬY THẦN KỲ: Tỉ lệ 3:4 hoặc 4:5 (Rộng : Cao) [cite: 2026-02-11] */
-    /* Tỉ lệ này giúp card luôn đứng, bất kể màn hình cao hay thấp */
-    aspect-ratio: 6 / 7; 
-    
-    /* BỎ CÁI NÀY ĐI: height: 57vh; -> Nó là thủ phạm gây biến dạng [cite: 2026-02-11] */
-
-    scroll-snap-stop: always !important;
-    scroll-snap-align: center;
-    position: relative;
-    text-decoration: none;
-    overflow: hidden;
-}
+        flex: 0 0 75vw !important; 
+        width: 75vw !important;
+        aspect-ratio: 6 / 7; 
+        scroll-snap-stop: always !important;
+        scroll-snap-align: center;
+        position: relative;
+        text-decoration: none;
+        overflow: hidden;
+    }
 
     .card-img {
         height: 100% !important;
@@ -70,7 +59,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        opacity: 0.85; /* Tối nhẹ để nổi chữ */
+        opacity: 0.85; 
     }
 
     .card-info {
@@ -85,16 +74,116 @@
         color: #ffffff !important;
         font-family: 'Urbanist', sans-serif !important;
         font-weight: 500 !important;
-        font-size: 22px !important; /* Tăng nhẹ kích thước cho sang */
+        font-size: 22px !important; 
         line-height: 1.2 !important;
         margin: 0 !important;
     }
 }
 
 /* =========================================
-   2. DESKTOP VERSION - ĐỒNG BỘ LỀ 60PX
+IPAD/TABLET SYNC (768px - 1024px)
    ========================================= */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+    .projects {
+        padding: 40px 0 !important; 
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .projects .container {
+        padding-left: 0 !important; 
+        padding-right: 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+    }
+
+    .section-header {
+        padding: 0 20px;
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    .section-subtitle {
+        display: block;
+        word-spacing: 5px;
+        font-size: 11px;
+        font-weight: 200;
+        color: #2b2929;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 20px !important;
+    }
+
+    .project-grid {
+        display: flex !important;
+        gap: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory; 
+        -webkit-overflow-scrolling: touch; 
+        padding-left: 20px;  
+        padding-right: 20px; 
+        /* Khử thanh cuộn trên iPad */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .project-grid::-webkit-scrollbar { display: none; }
+
+    .project-card {
+        flex: 0 0 45vw !important; /* Độ rộng hiển thị được ~2 card rưỡi */
+        width: 45vw !important;
+        aspect-ratio: 6 / 7; 
+        scroll-snap-stop: always !important;
+        scroll-snap-align: center;
+        position: relative;
+        text-decoration: none;
+        overflow: hidden;
+    }
+
+    .card-img {
+        height: 100% !important;
+        width: 100%;
+    }
+
+    .card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-img::after {
+        content: "";
+        position: absolute;
+        bottom: 0; left: 0; width: 100%; height: 50%;
+        background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+        z-index: 1;
+    }
+
+    .card-info {
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+        right: 20px;
+        padding: 0;
+        z-index: 2;
+        box-sizing: border-box;
+    }
+
+    .project-card .card-info h3 {
+        color: #ffffff !important;
+        font-family: 'Urbanist', sans-serif !important;
+        font-weight: 500 !important;
+        font-size: 24px !important; 
+        line-height: 1.2 !important;
+        margin: 0 !important;
+    }
+}
+
+/* =========================================
+   3. DESKTOP VERSION - ĐỒNG BỘ LỀ 60PX
+   ========================================= */
+@media (min-width: 1025px) {
     .projects {
         /* [QUAN TRỌNG] Trả lại sự tự do cho section, không dùng padding trái phải để đẩy lề */
         padding: 80px 0 !important; 
@@ -155,13 +244,10 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        /* ĐÃ BỎ TRANSITION ZOOM THEO YÊU CẦU */
     }
 
-    /* Hiệu ứng Zoom & Gradient đáy */
-    .project-card:hover .card-img img {
-        transform: scale(1.08);
-    }
+    /* ĐÃ BỎ BLOCK HOVER ZOOM (.project-card:hover .card-img img) THEO YÊU CẦU */
 
     .card-img::after {
         content: "";
@@ -180,7 +266,7 @@
         z-index: 2;
         box-sizing: border-box;
     }
-
+    
     .project-card .card-info h3 {
         font-family: 'Urbanist', sans-serif !important;
         font-size: 26px;
