@@ -101,14 +101,12 @@
 
 
 
-/*Philolichsu*/
-.philosophy-section {
-    padding: var(--section-gap) 0; /* Lề trên dưới hít theo root */
-}
+/* ==========================================================================
+   SECTION: PHILOSOPHY (TRIẾT LÝ) - COMPONENT TỔNG
+   ========================================================================== */
 
-/* Nhãn nằm riêng một dòng */
-.philo-label {
-    margin-bottom: 25px; /* Khoảng cách từ nhãn xuống tiêu đề */
+.philosophy-section {
+    padding: var(--section-gap) 0;
 }
 
 .philo-label .section-label {
@@ -116,41 +114,22 @@
     letter-spacing: 1px;
     color: #2b2929;
     font-weight: 300;
-    
     display: inline-block;
     width: 100%;
     text-transform: uppercase;
 }
 
-/* Tiêu đề lớn hít lề trái */
-.philo-title {
-    font-size: clamp(38px, 5vw, 50px);
-    line-height: 1.4;
-    font-weight: 400;
-    margin-bottom: 30px;
-    max-width: 1100px; /* Vẫn giữ cái này để dòng chữ không bị dài quá khổ */
-}
-
-/* Đoạn mô tả và nút bấm */
-.philo-description p {
-    font-size: 13px;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    max-width: 670px;
-    color: var(--color-black);
-}
-
 .btn-casa {
     display: inline-block;
     padding: 16px 45px;
-    background-color: var(--color-dark); /* Màu hắc ín từ Footer */
+    background-color: var(--color-dark);
     color: var(--white);     
-    border: 2px solid var(--color-dark); /* Viền cùng màu với nền */
+    border: 2px solid var(--color-dark);
     border-radius: 100px;
     text-decoration: none;
     font-size: 15px;
     font-weight: 500;
-    transition: none;
+    transition: 0.3s ease;
     cursor: pointer;
 }
 
@@ -159,65 +138,135 @@
     color: var(--color-dark);           
 }
 
-
-/* ==========================================================================
-   PHILOSOPHY RESPONSIVE (Danna's Golden Rule: 20px / 40px)
-   ========================================================================== */
-
-@media (max-width: 1024px) {
-    .philosophy-section {
-        padding: 40px 0 !important;
-        
+/* --------------------------------------------------------------------------
+   1. DESKTOP (1440px trở lên)
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 1440px) {
+    .philo-label { margin-bottom: 25px; }
+    
+    .philo-title {
+        font-size: clamp(38px, 5vw, 50px);
+        line-height: 1.4;
+        font-weight: 400;
+        margin-bottom: 30px;
+        max-width: 1100px;
     }
+
+    .philo-description p {
+        font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        max-width: 670px;
+        color: var(--color-black);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLET LỚN (820px - 1439px) - iPad Pro, Air...
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 820px) and (max-width: 1439px) {
+    .philosophy-section { padding: 60px 0 !important; }
 
     .philosophy-section .casa-container {
         padding-left: 20px !important;
         padding-right: 20px !important;
-        width: 100% !important;
         max-width: 100% !important;
     }
 
-    .philo-label {
-        margin-bottom: 15px; 
-    }
-
-    .philo-label .section-label {
+    .philo-label { margin-bottom: 25px; 
         font-size: 11px; 
-        font-weight: 300;
-        color: #2b2929;
-    }
+        word-spacing: 5px; 
+        font-weight: 200 !important; 
+        letter-spacing: 1px; 
+        color: #2b2929; 
+        text-transform: uppercase;}
 
     .philo-title {
-        font-size: 36px !important; 
+        font-size: 36px !important;
         line-height: 1.2;
-        margin-bottom: 20px;
-        max-width: 100%; /* Đảm bảo chữ dàn hết chiều ngang container */
+        margin-bottom: 25px;
+        max-width: 100%;
     }
 
     .philo-description p {
-        font-size: 12px; /* Tăng nhẹ font chữ đọc trên mobile cho đỡ mỏi mắt */
-        line-height: 1.6;
-        margin-bottom: 25px;
-        max-width: 100%; /* Chữ không bị bó hẹp như Desktop */
+        font-size: 13px;
+        max-width: 670px; /* Giữ độ rộng vừa phải cho Tablet lớn */
+        margin-bottom: 30px;
     }
 
-    .btn-casa {
-        width: 100%; /* Trên mobile nút bấm nên dàn hàng ngang cho dễ click */
-        text-align: center;
-        padding: 14px 0; /* Giảm nhẹ padding */
-        font-size: 14px;
-    }
+    .btn-casa { width: auto; }
 }
 
-/* Tablet ngang nếu mày muốn giữ nút bấm nhỏ */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .btn-casa {
-        width: auto; /* Tablet ngang thì không cần dàn 100% chiều rộng */
+/* --------------------------------------------------------------------------
+   3. TABLET NHỎ (768px - 819px) - iPad Mini...
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 768px) and (max-width: 819px) {
+    .philosophy-section { padding: 60px 0 !important; }
+
+    .philosophy-section .casa-container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .philo-label { margin-bottom: 25px; 
+        font-size: 11px; 
+        word-spacing: 5px; 
+        font-weight: 200 !important; 
+        letter-spacing: 1px; 
+        color: #2b2929; 
+        text-transform: uppercase;}
+
+    .philo-title {
+        font-size: 28px !important;
+        line-height: 1.2;
+        margin-bottom: 30px;
+    }
+
+    .philo-description p {
+        font-size: 12.5px;
+        line-height: 1.7;
+        max-width: 100%;
+        margin-bottom: 25px;
+        max-width: 670px;
+    }
+
+    .btn-casa { 
+        width: auto; 
         padding: 15px 40px;
     }
-    
+}
+
+/* --------------------------------------------------------------------------
+   4. MOBILE (Dưới 768px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 767px) {
+    .philosophy-section { padding: 50px 0 !important; }
+
+    .philosophy-section .casa-container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .philo-label { margin-bottom: 25px; font-size: 11px; word-spacing: 5px; font-weight: 200 !important; letter-spacing: 1px; color: #2b2929; text-transform: uppercase;}
+
     .philo-title {
-        font-size: 36px !important;
+        font-size: 28px !important; /* Thu nhỏ tiêu đề cho mobile hít lề đẹp */
+        line-height: 1.25;
+        margin-bottom: 20px;
+    }
+
+    .philo-description p {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.7;
+        margin-bottom: 25px;
+        color: var(--black);
+    }
+
+    .btn-casa {
+        width: 100%; /* Dàn hàng ngang cho dễ click trên mobile */
+        text-align: center;
+        padding: 14px 0;
     }
 }
 
@@ -229,13 +278,17 @@
 
 
 
+
+
+/* --------------------------------------------------------------------------
+   1. CORE & DESKTOP (GỐC 100% - KHÔNG BỌC MEDIA QUERY)
+   -------------------------------------------------------------------------- */
 /* --- SECTION JOURNEY --- */
 .journey-section {
     padding: 0;
     background-color: var(--color-white);
 }
 
-/* Header: Label bên trái, Nút bên phải */
 .journey-header {
     display: flex;
     justify-content: space-between;
@@ -243,19 +296,16 @@
     margin-bottom: 13px;
 }
 
-/* Label "Hành trình" */
 .journey-header .section-label {
     font-size: 11px;
     letter-spacing: 1px;
     color: #2b2929;
     font-weight: 300;
-    
     display: inline-block;
     width: 100%;
     text-transform: uppercase;
 }
 
-/* Cụm 2 nút điều hướng */
 .journey-controls {
     display: flex;
     gap: 12px;
@@ -265,18 +315,17 @@
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    border: 1px solid var(--black); /* Màu dark từ footer nhưng nhạt đi */
+    border: 1px solid var(--black);
     background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: var(--color-dark); /* Màu hắc ín của mày */
+    color: var(--color-dark);
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     padding: 0;
 }
 
-/* Hover nút: Đảo màu đúng như mày muốn */
 .ctrl-btn:hover {
     background-color: var(--color-dark);
     color: #ffffff;
@@ -290,15 +339,13 @@
 .ctrl-btn:disabled {
     opacity: 0.2;
     cursor: not-allowed;
-    pointer-events: none; /* Ngăn không cho click luôn */
+    pointer-events: none;
 }
 
-/* --- KHUNG SLIDER --- */
 .journey-slider {
     display: flex;
     gap: 12px;
     overflow-x: auto; 
-    /* Dùng proximity để JS dễ làm việc hơn trên Desktop */
     scroll-snap-type: x proximity; 
     scroll-behavior: smooth;
     -ms-overflow-style: none;
@@ -310,7 +357,6 @@
 }
 
 .journey-item {
-    /* Ép chiều rộng để không bị co ảnh trên Desktop */
     flex: 0 0 calc((100% - 24px) / 3) !important; 
     min-width: calc((100% - 24px) / 3) !important;
     scroll-snap-align: start;
@@ -328,7 +374,7 @@
     width: 100%;
     height: 1px;
     transform: scaleY(0.8);
-    background-color:var(--color-bar); /* Nền thanh mảnh, nhạt */
+    background-color:var(--color-bar);
     margin-top: 30px;
     position: relative;
     overflow: hidden;
@@ -339,14 +385,92 @@
     top: 0;
     left: 0;
     height: 100%;
-    width: 0%; /* Bắt đầu từ 0 */
+    width: 0%; 
     background-color: var(--black); 
     transition: width 0.2s ease-out; 
 }
 
 
-/* --- RESPONSIVE MOBILE & TABLET CHO JOURNEY (LOGIC KHÁM PHÁ) --- */
-@media (max-width: 1024px) {
+/* --- TABLET LỚN (820px - 1439px): FIX VỠ TRANG & LIỆT PROGRESS --- */
+@media screen and (min-width: 820px) and (max-width: 1439px) {
+    .journey-section .casa-container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 100% !important;
+    }
+    .journey-section { padding: 40px 0 !important; overflow: hidden; margin-top: -20px; }
+    .journey-header { padding: 0 20px !important; margin-bottom: 20px !important; }
+    .journey-controls { display: none !important; }
+
+    .journey-slider {
+        padding: 0 !important;
+        padding-left: 20px !important; /* Lề trái 20px chuẩn */
+        scroll-padding-left: 20px !important;
+        gap: 20px !important;
+        scroll-snap-type: x mandatory !important;
+        display: flex !important;
+        overflow-x: auto !important;
+    }
+
+    .journey-item {
+        flex: 0 0 45% !important; /* Hiện khoảng 2.5 card */
+        min-width: 45% !important;
+        scroll-snap-align: start !important;
+    }
+
+    /* FIX PROGRESS BAR CHẠY HẾT: Đẩy lề phải vào item cuối */
+    .journey-item:last-child {
+        margin-right: 20px !important;
+    }
+
+    .journey-item img { aspect-ratio: 6/7 !important; margin-bottom: 15px !important; }
+    .journey-progress-container { margin: 40px 20px 0 20px !important; width: calc(100% - 40px) !important; }
+}
+
+
+
+/* --- TABLET NHỎ (768px - 819px): FIX PROGRESS BAR CHẠY HẾT --- */
+@media screen and (min-width: 768px) and (max-width: 819px) {
+    .journey-section .casa-container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 100% !important;
+    }
+    .journey-section { padding: 40px 0 !important; overflow: hidden; margin-top: -20px; }
+    .journey-header { padding: 0 20px !important; margin-bottom: 20px !important; }
+    .journey-controls { display: none !important; }
+
+    .journey-slider {
+        padding: 0 !important;
+        padding-left: 20px !important;
+        scroll-padding-left: 20px !important;
+        gap: 10px !important;
+        scroll-snap-type: x mandatory !important;
+        display: flex !important;
+        overflow-x: auto !important;
+    }
+
+    .journey-item {
+        flex: 0 0 44% !important; /* Hiện khoảng 1.5 card */
+        min-width: 44% !important;
+        scroll-snap-align: start !important;
+    }
+
+    /* FIX PROGRESS BAR CHẠY HẾT: Đẩy lề phải vào item cuối */
+    .journey-item:last-child {
+        margin-right: 20px !important;
+    }
+
+    .journey-item img { aspect-ratio: 6/7 !important; margin-bottom: 15px !important; }
+    .journey-progress-container { margin: 40px 20px 0 20px !important; width: calc(100% - 40px) !important; }
+}
+
+
+
+/* --------------------------------------------------------------------------
+   4. MOBILE (Dưới 768px) - GỐC 100% CỦA MÀY
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 767px) {
     .journey-section .casa-container {
         padding-left: 0 !important;
         padding-right: 0 !important;
@@ -370,26 +494,22 @@
         color: var(--color-bg-dark); 
     }
 
-
-
-    /* 1. Ẩn nút điều hướng trên mobile vì khách dùng tay vuốt [cite: 2026-02-11] */
     .journey-controls {
         display: none !important;
     }
 
-    /* 2. Slider: Tạo lề 20px và ép trình duyệt dừng đúng vạch [cite: 2026-02-07] */
     .journey-slider {
         padding: 0 20px !important; 
         scroll-padding-left: 20px !important; 
-        gap: 9px !important; /* Đồng bộ gap 9px như khampha */
-        scroll-snap-type: x mandatory !important; /* Vuốt phát nào hít phát đó */
+        gap: 9px !important; 
+        scroll-snap-type: x mandatory !important; 
         display: flex !important;
         overflow-x: auto !important;
         margin-right: 0;
     }
 
-    /* 3. Item: 85% sang chảnh, để hở một chút ảnh sau cho khách biết đường mà vuốt */
     .journey-item {
+        /* GỐC CỦA MOBILE */
         flex: 0 0 85% !important;
         min-width: 100% !important;
         max-width: 100% !important;
@@ -397,18 +517,15 @@
         scroll-snap-stop: always !important;
     }
 
-    /* 4. Đảm bảo item cuối không bị dư margin */
     .journey-item:last-child {
         margin-right: 0 !important;
     }
 
-    /* 5. Tỷ lệ ảnh đồng bộ */
     .journey-item img {
         aspect-ratio: 6/7 !important; 
         margin-bottom: 15px !important;
     }
 
-    /* 6. Thanh Progress: Để sát lề 20px cho đẹp [cite: 2026-02-07] */
     .journey-progress-container {
         margin: 40px 0 0 0 !important;
         width: 100%;

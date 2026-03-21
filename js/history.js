@@ -71,7 +71,7 @@ document.addEventListener('click', () => {
 
 
 
-/*History - Journey - Realtime Step Logic*/
+/*History - Journey - Realtime Step Logic - ĐÃ FIX TRIỆT ĐỂ TABLET*/
 document.addEventListener('DOMContentLoaded', () => {
     const slider = document.getElementById('journeySlider');
     const progressBar = document.getElementById('journeyProgressBar');
@@ -80,30 +80,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (slider && progressBar) {
         let currentStep = 0;
-        const maxStepsMobile = 4; // 5 ảnh = 4 lần lướt
 
         const updateUI = (fromScroll = false) => {
-            const isMobile = window.innerWidth <= 1024;
-            
-            // 1. Tính toán Progress theo nấc
-            let progressWidth;
-            if (isMobile) {
-                progressWidth = currentStep * 25; // 0, 25, 50, 75, 100
-            } else {
-                // Giữ nguyên Desktop của mày
+            const width = window.innerWidth;
+            const isDesktop = width > 1439;
+
+            // 1. TÍNH PROGRESS BAR
+            if (isDesktop) {
+                // Giữ nguyên logic Desktop của mày
                 const desktopMaxSteps = 2;
                 const safeStep = Math.min(currentStep, desktopMaxSteps);
-                progressWidth = 60 + (safeStep * 20);
-            }
-            
-            progressBar.style.width = `${progressWidth}%`;
+                progressBar.style.width = `${60 + (safeStep * 20)}%`;
+            } else {
+                // TABLET & MOBILE: Chạy real-time theo pixel để đảm bảo 100%
+                const maxScroll = slider.scrollWidth - slider.clientWidth;
+                const currentScroll = slider.scrollLeft;
+                let scrollPercent = (currentScroll / maxScroll) * 100;
+                
+                // Bẫy sai số: Gần cuối là ép 100%
+                if (maxScroll - currentScroll < 5) scrollPercent = 100;
+                if (currentScroll < 5) scrollPercent = 0;
 
-            // 2. Chỉ cuộn Slider nếu hàm này KHÔNG được gọi từ sự kiện 'scroll'
-            // (Để tránh việc đang vuốt tay mà JS lại nhảy vào tranh chấp vị trí)
+                progressBar.style.width = `${scrollPercent}%`;
+            }
+
+            // 2. CHỈ CUỘN NẾU CLICK NÚT (KHÔNG PHẢI ĐANG VUỐT)
             if (!fromScroll) {
                 const item = slider.querySelector('.journey-item');
                 if (item) {
-                    const gap = isMobile ? 9 : 12;
+                    let gap = 12; 
+                    if (width <= 1439 && width >= 820) gap = 15;
+                    else if (width < 820 && width >= 768) gap = 10;
+                    else if (width < 768) gap = 9;
+
                     const stepWidth = item.offsetWidth + gap;
                     slider.scrollTo({
                         left: currentStep * stepWidth,
@@ -112,39 +121,49 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // 3. Disable nút trên Desktop
+            // 3. DISABLE NÚT
             if (nextBtn && prevBtn) {
+                const limit = isDesktop ? 2 : 4;
                 prevBtn.disabled = (currentStep === 0);
-                nextBtn.disabled = (currentStep === (isMobile ? maxStepsMobile : 2));
+                nextBtn.disabled = (currentStep >= limit);
             }
         };
 
-        // Xử lý sự kiện cuộn tay - NHẠY TỨC THÌ
+        // XỬ LÝ CUỘN (CHỦ YẾU CHO TABLET/MOBILE)
         slider.addEventListener('scroll', () => {
-            if (window.innerWidth <= 1024) {
+            const width = window.innerWidth;
+            if (width <= 1439) {
+                // Cập nhật Progress bar real-time theo pixel
+                const maxScroll = slider.scrollWidth - slider.clientWidth;
+                let scrollPercent = (slider.scrollLeft / maxScroll) * 100;
+                if (maxScroll - slider.scrollLeft < 5) scrollPercent = 100;
+                progressBar.style.width = `${scrollPercent}%`;
+
+                // Tính toán Step để disable nút và dùng cho resize
                 const item = slider.querySelector('.journey-item');
-                if (!item) return;
-                
-                const gap = 9;
-                const stepWidth = item.offsetWidth + gap;
-                
-                // Tính xem vị trí hiện tại gần step nào nhất
-                const newStep = Math.round(slider.scrollLeft / stepWidth);
-                
-                if (newStep !== currentStep) {
-                    currentStep = newStep;
-                    updateUI(true); // 'true' để báo là đang vuốt, đừng cuộn slider nữa
+                if (item) {
+                    let gap = width >= 820 ? 15 : (width >= 768 ? 10 : 9);
+                    const stepWidth = item.offsetWidth + gap;
+                    const newStep = Math.round(slider.scrollLeft / stepWidth);
+                    if (newStep !== currentStep) {
+                        currentStep = newStep;
+                        // Không gọi updateUI(true) ở đây để tránh giật, chỉ cập nhật nút
+                        if (nextBtn && prevBtn) {
+                            prevBtn.disabled = (currentStep === 0);
+                            nextBtn.disabled = (currentStep >= 4);
+                        }
+                    }
                 }
             }
         }, { passive: true });
 
-        // Giữ nguyên logic Click cho Desktop
+        // LOGIC CLICK NÚT (DÀNH CHO DESKTOP)
         if (nextBtn && prevBtn) {
             const handleBtnClick = (dir) => {
-                const limit = window.innerWidth <= 1024 ? maxStepsMobile : 2;
+                const limit = window.innerWidth > 1439 ? 2 : 4;
                 if (dir === 'next' && currentStep < limit) currentStep++;
                 else if (dir === 'prev' && currentStep > 0) currentStep--;
-                updateUI(false); // 'false' để nó tự cuộn slider đến vị trí mới
+                updateUI(false);
             };
             nextBtn.onclick = () => handleBtnClick('next');
             prevBtn.onclick = () => handleBtnClick('prev');
