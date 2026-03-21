@@ -87,7 +87,7 @@ IPAD/TABLET SYNC (768px - 1024px)
    ========================================= */
 @media (min-width: 768px) and (max-width: 1024px) {
     .projects {
-        padding: 40px 0 !important; 
+        padding: 60px 0 !important; 
         overflow: hidden;
         background: #fff;
         margin-bottom: -40px;

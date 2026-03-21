@@ -89,7 +89,7 @@
     width: 100%;
     aspect-ratio: 11/12;
     object-fit: cover;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     display: block;
 }
 
@@ -232,7 +232,7 @@
     }
 
     .item-title {
-        font-size: 1.3rem !important;
+        font-size: 22px !important;
         margin-bottom: 10px !important;
     }
 

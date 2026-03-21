@@ -70,7 +70,7 @@ h1, h2, h3, h4, .urbanist {
 
 
 
-/*Delete all the defaut hightlight :))*/
+
 * {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none; 
@@ -114,8 +114,7 @@ img {
     -webkit-user-drag: none;
 }
 
-/* NHƯNG, mày phải trả lại quyền click cho các thẻ bao ngoài (link) 
-để người dùng vẫn bấm vào xem chi tiết được */
+
 a, button, .clickable-area {
     pointer-events: auto !important;
 }

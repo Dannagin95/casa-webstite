@@ -176,7 +176,7 @@
    ============================================================ */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .sanpham-gallery {
-        padding: 40px 20px !important;
+        padding: 60px 20px !important;
     }
     
     .luot-viewport {

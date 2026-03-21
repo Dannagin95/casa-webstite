@@ -574,3 +574,72 @@ body.footer-sheet-open .lang-sheet-close {
 
     
 
+/* --- FIX FOOTER TRIỆT ĐỂ CHO TABLET LỚN (820px - 1439px) --- */
+@media screen and (min-width: 820px) and (max-width: 1439px) {
+    .footer {
+        /* Padding chuẩn 40px trên dưới theo yêu cầu của mày */
+        padding: 60px 20px 40px 20px !important; 
+        overflow: hidden;
+    }
+
+    .footer-container {
+        padding: 0 !important; /* Đã có padding 20px ở .footer bọc ngoài */
+        max-width: 100% !important;
+    }
+
+    /* 1. Cụm Mission: Thu nhỏ font lại tí cho sang, không bị thô */
+    .footer-mission {
+        margin-bottom: 60px !important;
+    }
+    .mission-text {
+        font-size: 1.8rem !important; 
+        max-width: 90% !important;
+    }
+
+    /* 2. Layout Main: CHIA ĐỀU 4 PHẦN (Newsletter chiếm 2 phần cuối) */
+    .footer-main {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important; /* Chia 4 cột bằng nhau */
+        gap: 20px !important;
+        align-items: start;
+    }
+
+    /* Đẩy Newsletter vào 2 cột cuối */
+    .newsletter-col {
+        grid-column: span 2 !important; 
+    }
+
+    /* 3. QUAN TRỌNG: Fix cái Box Email làm vỡ layout */
+    .newsletter-form .input-group {
+        width: 100% !important; /* Không dùng 100vw ở đây, chết đấy! */
+        max-width: 100% !important; /* Cho nó dãn hết khung 2 cột */
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .newsletter-desc {
+        max-width: 100% !important; /* Cho chữ chạy hết chiều rộng cột */
+    }
+
+    /* 4. Bottom Bar: Trả về 2 bên cho chuyên nghiệp */
+    .footer-bottom {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: flex-end !important;
+        padding-top: 40px !important;
+    }
+
+    .bottom-left {
+        width: auto !important;
+        margin-bottom: 0 !important;
+    }
+
+    .bottom-right {
+        width: auto !important;
+        justify-content: flex-end !important;
+    }
+
+    .social-links {
+        margin-bottom: 20px !important;
+    }
+}

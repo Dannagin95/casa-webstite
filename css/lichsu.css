@@ -111,6 +111,7 @@
 
 .philo-label .section-label {
     font-size: 11px;
+    word-spacing: 5px;
     letter-spacing: 1px;
     color: #2b2929;
     font-weight: 300;
@@ -256,8 +257,9 @@
     }
 
     .philo-description p {
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 400;
+        word-spacing: 1px;
         line-height: 1.7;
         margin-bottom: 25px;
         color: var(--black);
@@ -299,6 +301,7 @@
 .journey-header .section-label {
     font-size: 11px;
     letter-spacing: 1px;
+    word-spacing: 5px;
     color: #2b2929;
     font-weight: 300;
     display: inline-block;
@@ -538,8 +541,11 @@
 
 
 
-/*NHIEM VU*/
-/* --- SECTION NHIEM VU --- */
+/* ==========================================================================
+   SECTION NHIEM VU - CHUẨN DANNA (KHÔNG CHẾ CHÁO)
+   ========================================================================== */
+
+/* 1. LAYOUT GỐC / DESKTOP (Mặc định cho mọi màn hình lớn) */
 .nhiemvu-section {
     padding: var(--section-gap) 0;
     background-color: var(--color-white);
@@ -552,25 +558,24 @@
 
 .nhiemvu-intro .section-label {
     font-size: 11px;
+    word-spacing: 5px;
     letter-spacing: 1px;
     color: #2b2929;
-    font-weight: 300;
+    font-weight: 200;
     margin-bottom: 30px; 
-    
     display: inline-block;
     width: 100%;
-    text-transform: uppercase;
+    text-transform: uppercase; /* GIỮ NGUYÊN UPPERCASE THEO Ý MÀY */
 }
 
 .nhiemvu-main-text {
     font-size: 30px;
-    line-height: 1.5;
+    line-height: 1.5; /* KHOẢNG CÁCH DÒNG GỐC 1.5 */
     font-weight: 400;
     color: var(--color-dark);
     letter-spacing: -0.01em;
 }
 
-/* Lưới 3 cột */
 .nhiemvu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -585,7 +590,7 @@
 .nhiemvu-img {
     width: 100%;
     aspect-ratio: 7 / 8; 
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     overflow: hidden;
     background-color: #f9f9f9;
 }
@@ -597,9 +602,122 @@
     transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-
 .nhiemvu-title {
-    font-size: 35px;
+    font-size: 33px;
+    font-weight: 500;
+    margin-bottom: 18px;
+    color: var(--black);
+}
+
+.nhiemvu-desc {
+    font-size: 13px;
+    line-height: 1.6; /* KHOẢNG CÁCH DÒNG DESC 1.6 */
+    color: var(--black);
+}
+
+/* 2. RESPONSIVE CHO TABLET (1439px trở xuống) */
+@media screen and (max-width: 1439px) {
+    .nhiemvu-section {
+        padding: 20px 0 !important; 
+        margin-bottom: 40px;
+    }
+
+    .nhiemvu-section .casa-container {
+        padding-left: 20px !important; /* Lề 2 bên 20px [cite: 2026-02-07] */
+        padding-right: 20px !important;
+        max-width: 100% !important;
+    }
+
+    .nhiemvu-intro { margin-bottom: 40px; }
+    
+    .nhiemvu-intro .section-label {
+        display: block;
+        word-spacing: 5px;
+        font-size: 11px;
+        font-weight: 200;
+        color: #2b2929;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+    }    
+    
+    .nhiemvu-main-text {
+        font-size: 33px !important; 
+        word-spacing: 1px;
+        color: var(--black);
+        line-height: 1.3 !important; 
+        padding-bottom: 20px;
+    }
+
+    /* ĐƯA VỀ NGANG VÀ THÊM THUỘC TÍNH LƯỚT (KHÔNG PROGRESS BAR) */
+    .nhiemvu-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        gap: 20px !important;
+        padding-bottom: 10px;
+        scrollbar-width: none; /* ẨN TRÊN FIREFOX */
+        -ms-overflow-style: none; /* ẨN TRÊN IE/EDGE */
+    }
+
+    .nhiemvu-grid::-webkit-scrollbar {
+        display: none !important; /* ẨN TRÊN CHROME/SAFARI */
+    }
+
+    .nhiemvu-item {
+        flex: 0 0 32% !important; /* Ép 3 cột cùng hiện trên Tablet L */
+        min-width: 300px;
+    }
+
+    .nhiemvu-img {
+        aspect-ratio: 7 / 8 !important;
+        margin-bottom: 20px !important;
+    }
+
+    .nhiemvu-title {
+        font-size: 28px !important;
+        margin-bottom: 12px !important;
+    }
+}
+
+/* 3. ĐIỀU CHỈNH RIÊNG CHO TABLET NHỎ (Dưới 820px) */
+@media screen and (max-width: 819px) {
+    .nhiemvu-item {
+        flex: 0 0 45% !important; /* Hiện 2 cột rưỡi để biết đường lướt */
+    }
+}
+
+/* 4. MOBILE (< 767px) - GIỮ NGUYÊN DỌC NHƯ MÀY MUỐN */
+@media screen and (max-width: 767px) {
+    .nhiemvu-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+
+    .nhiemvu-item {
+        width: 100% !important;
+        flex: none !important;
+    }
+
+    .nhiemvu-img {
+        aspect-ratio: 1 / 1 !important;
+    }
+
+
+    .nhiemvu-intro { 
+        margin-top: -10px;
+        margin-bottom: 40px; 
+    } 
+
+    .nhiemvu-main-text {
+        font-size: 33px !important; 
+        color: var(--black);
+        line-height: 1.3 !important; 
+        padding-bottom: 20px;
+    }
+
+    .nhiemvu-title {
+    font-size: 22px !important;
     font-weight: 500;
     margin-bottom: 18px;
     color: var(--color-dark);
@@ -607,68 +725,10 @@
 
 .nhiemvu-desc {
     font-size: 13px;
-    line-height: 1.6;
+    line-height: 1.6; 
+    word-spacing: 1px;
     color: var(--black);
 }
-
-/* ==========================================================================
-   SECTION NHIEM VU RESPONSIVE (Danna's Golden Rule: 20px / 40px)
-   ========================================================================== */
-
-@media (max-width: 1024px) {
-    .nhiemvu-section {
-        /* Section cách nhau 40px [cite: 2026-02-07] */
-        padding: 0 !important;
-    }
-
-    .nhiemvu-section .casa-container {
-        /* Lề 2 bên mặc định 20px [cite: 2026-02-07] */
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-        max-width: 100% !important;
-    }
-
-    .nhiemvu-intro {
-        margin-bottom: 40px; /* Thu hẹp khoảng cách so với Desktop */
-    }
-
-    .nhiemvu-intro .section-label {
-        font-size: 11px; 
-        font-weight: 300;
-        letter-spacing: 1px;
-        color: var(--color-bg-dark);
-    }
-
-    /* Ép chữ lớn 40px theo ý mày */
-    .nhiemvu-main-text {
-        font-size: 29px !important; 
-        line-height: 1.1; 
-        letter-spacing: -0.02em;
-        font-weight: 400;
-    }
-
-    /* Lưới 3 cột về 1 cột */
-    .nhiemvu-grid {
-        padding: 40px 0;
-        grid-template-columns: 1fr !important;
-        gap: 40px !important; /* Các item cách nhau đúng 40px cho đồng bộ */
-    }
-
-    .nhiemvu-img {
-        /* Tỉ lệ ảnh có thể giữ 7/8 hoặc về 1/1 cho gọn mobile tùy mày */
-        aspect-ratio: 1 / 1 !important; 
-        margin-bottom: 20px !important;
-    }
-
-    .nhiemvu-title {
-        font-size: 28px !important; /* Tiêu đề item nhỏ hơn tiêu đề chính */
-        margin-bottom: 12px !important;
-    }
-
-    .nhiemvu-desc {
-        font-size: 12px !important;
-        line-height: 1.6;
-    }
 }
 
 
