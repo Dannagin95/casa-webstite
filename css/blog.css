@@ -358,116 +358,113 @@
 
 
 
-/* GRID CHUẨN 3 CỘT */
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px; /* Khoảng cách giữa các bài viết */
-    align-items: start;
+/* ==========================================================================
+   BLOG GRID - BẢN TRÀN VIỀN TABLET (FULL PROFESSIONAL)
+   ========================================================================== */
+
+/* --- 1. PHẦN CHUNG --- */
+.blog-card-title, .blog-card-image, .blog-card-title:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+    outline: none !important;
+    display: block;
 }
 
-/* KHUNG ẢNH - CHỐNG LỆCH */
 .blog-card-image {
-    display: block;
+    overflow: hidden !important;
+    position: relative;
     width: 100%;
-    aspect-ratio: 6/7; /* Ép tỉ lệ dọc theo mẫu QUOC. Nếu muốn vuông thì đổi thành 1/1 */
-    overflow: hidden;
-    margin-bottom: 24px;
-    background-color: var(--gray); /* Tận dụng màu nền xám từ base.css */
 }
 
 .blog-card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
     transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .blog-card:hover .blog-card-image img {
-    transform: scale(1.05); /* Zoom mượt 5% */
+    transform: scale(1.08);
 }
 
-/* TYPOGRAPHY */
-.blog-card-title {
-    text-decoration: none;
-    color: var(--color-h3);
-    display: block;
-    margin-bottom: 12px;
+/* --- 2. DESKTOP & TABLET LỚN (GIỮ NGUYÊN) --- */
+@media screen and (min-width: 1024px) {
+    .blog-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 40px !important;
+        padding: 0 !important;
+        margin-bottom: 60px !important;
+    }
+    .blog-card-image { aspect-ratio: 6/7; margin-bottom: 24px; }
+    .blog-card-title h3 { font-size: 22px; line-height: 1.6; color: var(--color-h3); margin-bottom: 12px; }
+    .blog-card-desc { font-size: 13px; line-height: 1.6; color: var(--black); }
 }
 
-.blog-card-title h3 {
-    font-size: 22px; 
-    line-height: 1.6;
-    /* Không cần set font-family vì base.css đã lo rồi */
+/* --- 3. TABLET MINI (768px - 1023px): TRÀN VIỀN CHUYÊN NGHIỆP --- */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .blog-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        gap: 20px !important;
+        /* Phá lề: Kéo tràn ra 20px để sát mép màn hình */
+        margin-left: -20px !important; 
+        margin-right: -20px !important;
+        /* Padding đệm để card đầu/cuối không dính sát lề khi dừng */
+        padding: 0 20px 40px 20px !important; 
+        scrollbar-width: none !important;
+        -webkit-overflow-scrolling: touch;
+    }
+    .blog-grid::-webkit-scrollbar { display: none !important; }
+    
+    .blog-card { 
+        flex: 0 0 70% !important; /* Tăng kích thước card để lướt thấy rõ hơn */
+        min-width: 320px !important; 
+    }
+    .blog-card-image { aspect-ratio: 6/7 !important; margin-bottom: 20px !important; }
+    .blog-card-title h3 { font-size: 20px !important; line-height: 1.5 !important; color: var(--color-h3) !important; margin-bottom: 10px !important; }
+    .blog-card-desc { font-size: 13px !important; line-height: 1.6 !important; color: var(--black) !important; }
 }
 
-.blog-card-desc {
-    font-size: 13px;
-    color: var(--black);
-    line-height: 1.6;
+/* --- 4. MOBILE (< 767px) --- */
+@media screen and (max-width: 767px) {
+    .blog-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+        padding: 0 !important;
+    }
+    .blog-card-image { aspect-ratio: 6/7 !important; margin-bottom: 20px !important; }
+    .blog-card-title h3 { font-size: 22px !important; line-height: 1.6 !important; color: var(--color-h3) !important; margin-bottom: 12px !important; }
+    .blog-card-desc { font-size: 13px !important; line-height: 1.6 !important; color: var(--black) !important; }
 }
 
-/* PHÂN TRANG */
-.blog-pagination {
-    margin-top: 60px;
-    display: flex;
-    justify-content: center;
+/* --- 5. PAGINATION --- */
+.blog-pagination { 
+    margin-top: 60px; 
+    display: flex; 
+    justify-content: center; 
     align-items: center;
-    gap: 15px;
+    gap: 15px; 
     font-size: 15px;
-    font-family: var(--font-body);
+    color: var(--black);
 }
+
+.blog-pagination a, .blog-pagination span { text-decoration: none !important; color: var(--black) !important; }
 
 .pag-btn {
-    background: none;
-    border: 1px solid var(--color-border);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: 0.3s;
-    color: var(--black);
+    width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--color-border);
+    display: flex; align-items: center; justify-content: center; cursor: pointer;
+    transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); color: var(--black); background: none;
+    padding: 0; outline: none;
 }
 
-.pag-btn:hover {
-    border-color: var(--black);
-    background: var(--black);
-    color: var(--white);
-}
+.pag-btn:hover { background: var(--black) !important; color: var(--white) !important; border-color: var(--black) !important; }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-    .blog-grid {
-        grid-template-columns: repeat(2, 1fr); 
-    }
-}
-
-@media (max-width: 768px) {
-    .blog-grid {
-        grid-template-columns: 1fr; 
-    }
-}
-
-
-
-
-
-.blog-card-title, .blog-card-image {
-    text-decoration: none !important;
-    display: block;
-    color: inherit;
-}
-
-/* Hiệu ứng mượt mà khi di chuột vào ảnh bài viết */
-.blog-card-image img {
-    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.blog-card-image:hover img {
-    transform: scale(1.03); /* Zoom nhẹ đúng chất Casa */
+@media screen and (max-width: 1023px) {
+    .blog-pagination { margin-top: 40px; gap: 15px; font-size: 15px; }
+    .pag-btn { width: 40px; height: 40px; }
 }
 
 
