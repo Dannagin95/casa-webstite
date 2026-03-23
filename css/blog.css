@@ -393,7 +393,7 @@
     .blog-grid {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
-        gap: 40px !important;
+        gap: 20px !important;
         padding: 0 !important;
         margin-bottom: 60px !important;
     }
@@ -402,12 +402,14 @@
     .blog-card-desc { font-size: 13px; line-height: 1.6; color: var(--black); }
 }
 
+
+
 /* --- 3. TABLET MINI (768px - 1023px): TRÀN VIỀN CHUYÊN NGHIỆP --- */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .blog-grid {
         display: flex !important;
         overflow-x: auto !important;
-        gap: 20px !important;
+        gap: 8px !important;
         /* Phá lề: Kéo tràn ra 20px để sát mép màn hình */
         margin-left: -20px !important; 
         margin-right: -20px !important;
@@ -419,13 +421,16 @@
     .blog-grid::-webkit-scrollbar { display: none !important; }
     
     .blog-card { 
-        flex: 0 0 70% !important; /* Tăng kích thước card để lướt thấy rõ hơn */
-        min-width: 320px !important; 
+        width: calc((100vw - 40px - 30px) / 2) !important;
+        flex: 0 0 calc((100vw - 40px - 30px) / 2) !important;
+        flex-shrink: 0 !important;
     }
     .blog-card-image { aspect-ratio: 6/7 !important; margin-bottom: 20px !important; }
     .blog-card-title h3 { font-size: 20px !important; line-height: 1.5 !important; color: var(--color-h3) !important; margin-bottom: 10px !important; }
     .blog-card-desc { font-size: 13px !important; line-height: 1.6 !important; color: var(--black) !important; }
 }
+
+
 
 /* --- 4. MOBILE (< 767px) --- */
 @media screen and (max-width: 767px) {
@@ -472,15 +477,36 @@
 
 
 
-/* --- FIRST BLOG SECTION --- */
 
-.firstblog-header {
-    margin-bottom: 60px;
-    max-width: 1000px;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   FIRST BLOG SECTION - FULL RESPONSIVE SEPARATED
+   ========================================================================== */
+
+/* --- 1. BASE STYLES (DÙNG CHUNG) --- */
+.firstblog-header { margin-bottom: 60px; max-width: 1000px; }
 
 .firstblog-main-title {
-    font-size: clamp(36px, 5vw, 50px);
+    font-size: clamp(38px, 5vw, 50px);
     line-height: 1.4;
     margin-bottom: 30px;
     color: var(--black);
@@ -494,7 +520,6 @@
     line-height: 1.6;
 }
 
-/* Bóp nội dung chữ ở giữa (Tránh dàn trải 1650px) */
 .firstblog-text-container {
     max-width: 680px;
     margin: 0 auto;
@@ -515,21 +540,12 @@
     color: var(--color-text-muted);
     margin-top: 40px !important;
     margin-bottom: 40px !important;
-    letter-spacing: 0px;
     text-transform: uppercase;    
-}
-
-/* Gallery 4 cột mặc định cho Desktop */
-.firstblog-gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 13px;
-    margin: 60px 0;
 }
 
 .firstblog-gallery-item {
     aspect-ratio: 1/1.2;
-    overflow: hidden;
+    overflow: hidden !important; /* Khóa khung zoom */
     background-color: var(--gray);
 }
 
@@ -541,9 +557,7 @@
     cursor: zoom-in;
 }
 
-.firstblog-gallery-item:hover img {
-    transform: scale(1.1);
-}
+.firstblog-gallery-item:hover img { transform: scale(1.1); }
 
 .firstblog-photography-credit {
     font-style: italic;
@@ -552,55 +566,79 @@
     font-size: 14px;
 }
 
-/* --- HỆ THỐNG RESPONSIVE TỐI ƯU --- */
+.blog-scroll-indicator {
+    display: none; /* Mặc định ẩn hết */
+    width: 100%;
+    height: 2px;
+    background: var(--color-border); /* Màu nhạt của web */
+    margin-top: 20px;
+    position: relative;
+}
 
-/* 1. Màn Tablet & Mobile (Dưới 1024px): Fix lề 20px/40px theo ý mày */
-@media (max-width: 1024px) {
-    .casa-container {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-    }
-
-    .section-space {
-        padding-top: 40px !important;
-        padding-bottom: 40px !important;
-    }
-
-    /* Giữ nguyên 4 cột cho Tablet nhưng cập nhật gap và font theo mày đã set */
+/* --- 2. DESKTOP ( > 1024px ) --- */
+@media screen and (min-width: 1025px) {
     .firstblog-gallery-grid {
-        grid-template-columns: repeat(4, 1fr); 
-        gap: 15px; 
-    }
-    
-    .firstblog-main-title {
-        font-size: 48px;
-    }
-
-    /* Để chữ không bị bó quá hẹp trên màn hình nhỏ */
-    .firstblog-text-container {
-        max-width: 100%; 
-        padding: 20px 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 13px;
+        padding-top: 40px;
+        padding-bottom: 60px;
     }
 }
 
-/* 2. Màn Mobile (Dưới 768px): Biến hình Gallery 2x2 */
-@media (max-width: 768px) {
-    .firstblog-main-title {
-        font-size: 36px; 
-        margin-bottom: 20px;
+/* --- 3. TABLET LỚN ( 992px - 1024px ): DẠNG LƯỚT NGANG --- */
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+    .firstblog-header { padding: 20px 0;}
+
+    /* --- 1. CSS MẶC ĐỊNH: ẨN THANH TASKBAR --- */
+.blog-scroll-indicator {
+    display: block !important;
+    max-width: 678px;
+    height: 1px; /* Mỏng lại tối đa cho sang */
+    background: #e0e0e0; /* Màu xám nhạt, nhẹ nhàng */
+    margin: 40px auto !important; 
+    
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll-progress {
+    width: 60%; /* Độ dài thanh đen */
+    height: 100%;
+    background: var(--black); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* transition: 0.1s linear; -> Nếu muốn nó bám sát sạt ngón tay thì để linear hoặc bỏ luôn transition */
+    will-change: transform;
+}
+
+    .blog-scroll-indicator {
+        display: block !important; /* Hiện ra */
+        max-width: 678px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
+    /* Giữ nguyên cái CSS cũ của mày bên dưới */
     .firstblog-gallery-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 hình trên, 2 hình dưới đúng mẫu */
-        gap: 5px;
-        margin: 20px 0 !important;
-        margin-top: 0px !important;
+        display: flex !important;
+        overflow-x: auto !important;
+        gap: 20px !important;
+        margin: 40px -20px !important; 
+        padding: 0 20px 20px 20px !important; 
+        scrollbar-width: none !important;
     }
+    .firstblog-gallery-grid::-webkit-scrollbar { display: none !important; }
 
     .firstblog-gallery-item {
-        aspect-ratio: 1 / 1.1; /* Tỉ lệ vuông vắn hơn cho mobile */
+        width: calc((100vw - 40px - 20px) / 2) !important;
+        flex: 0 0 calc((100vw - 40px - 20px) / 2) !important;
+        flex-shrink: 0 !important;
+        scroll-snap-align: start !important;
     }
 }
+    
 
 
 
@@ -608,167 +646,212 @@
 
 
 
-
-
-
-
-
-
-/* --- SECOND BLOG SECTION --- */
-
-.secondblog-header {
-    margin-bottom: 60px;
-    max-width: 1000px;
+/* --- 4. TABLET NHỎ ( 768px - 991px ): CỤM 2 TRÊN 2 DƯỚI (FIXED) --- */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .firstblog-header { padding: 20px 0; max-width: 720px !important;}
+    .firstblog-text-container {
+        max-width: 480px !important;
+        margin-bottom: 0;
 }
 
+    .firstblog-gallery-grid {
+        /* Chuyển sang Flex để nuông chiều cái calc width của mày */
+        display: flex !important;
+        flex-wrap: wrap !important;
+        
+        /* KHOẢNG CÁCH NGANG: Phải khớp với con số 30px trong hàm calc của mày */
+        column-gap: 8px !important; 
+        
+        /* KHOẢNG CÁCH DỌC: Mày muốn thưa bao nhiêu thì chỉnh ở đây */
+        row-gap: 8px !important;    
+        
+        margin: 20px 0 !important; 
+        margin-bottom: 40px !important;
+        justify-content: center !important;
+    }
+    
+    .firstblog-gallery-item {
+        /* GIỮ NGUYÊN HIỆN TRẠNG ĐỂ ĐỒNG BỘ SLIDE */
+        width: calc((100vw - 40px - 30px) / 2) !important;
+        flex: 0 0 calc((100vw - 40px - 30px) / 2) !important;
+        flex-shrink: 0 !important;
+        aspect-ratio: 1 / 1.1 !important;
+    }
+    
+    .firstblog-main-title { font-size: 48px; }
+    .firstblog-text-container { max-width: 100%; padding: 20px 0; }
+    .casa-container { padding: 0 20px !important; } 
+}
+
+
+
+
+/* --- 5. MOBILE ( < 767px ) --- */
+@media screen and (max-width: 767px) {
+    .firstblog-main-title { font-size: 36px; margin-bottom: 20px; }
+
+    .firstblog-gallery-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 5px !important;
+        margin: 20px 0 40px 0 !important;
+    }
+
+    .firstblog-gallery-item { aspect-ratio: 1 / 1.1 !important; }
+    
+    .firstblog-text-container { max-width: 100%; padding: 20px 0; }
+    .casa-container { padding: 0 20px !important; }
+    .section-space { padding: 40px 0 !important; } /* Thông số vàng [cite: 2026-02-07] */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- 1. BASE STYLES (DESKTOP MẶC ĐỊNH) --- */
+.secondblog-header { margin-bottom: 60px; max-width: 1000px; }
 .secondblog-main-title {
-    font-size: clamp(36px, 5vw, 50px);
+    font-size: clamp(38px, 5vw, 50px);
     line-height: 1.4;
     margin-bottom: 30px;
-    color: var(--black);
     font-family: var(--font-heading);
 }
-
 .secondblog-subtitle {
     font-size: 13px;
     color: var(--black);
     max-width: 650px;
     line-height: 1.6;
 }
+.secondblog-text-container { max-width: 670px; margin: 0 auto; padding: 30px 0; }
+.secondblog-text-container p { font-size: 13px; line-height: 1.6; margin-bottom: 20px; }
 
+/* Ảnh đơn tràn viền */
+.secondblog-single-image { width: 100%; margin-top: 40px; margin-bottom: 60px; display: block; overflow: hidden; background-color: var(--gray); }
+.secondblog-single-image img { width: 100%; height: auto; aspect-ratio: 16 / 8; display: block; object-fit: cover; transition: transform 1.2s ease; cursor: zoom-in; }
 
-.secondblog-text-container {
-    max-width: 670px;
-    margin: 0 auto;
-    padding: 30px 0;
-}
-
-.secondblog-text-container p {
-    font-size: 13px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    color: var(--black);
-}
-
-
-.secondblog-single-image {
-    width: 100%; /* Chiều ngang tràn hết phần nội dung của container */
-    margin: 60px 0; /* Khoảng cách trên dưới consistent với các phần khác */
-    display: block; /* Tránh khoảng hở thừa ở đáy */
-    overflow: hidden; /* Cho smooth transitions và chứa ảnh */
-    background-color: var(--gray); /* Màu nền trống đồng nhất */
-}
-
-.secondblog-single-image img {
-    width: 100%; /* Hình ảnh tràn hết Section, khớp lề với container */
-    height: auto; /* Giữ tỉ lệ ngang lớn tự nhiên của hình */
-    aspect-ratio: 16 / 8;
-    display: block; /* Tránh khoảng hở thừa ở đáy */
-    object-fit: cover; /* Đảm bảo hình lấp đầy khung mà không bị méo */
-    transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1); /* Kế thừa hiệu ứng zoom */
-    cursor: zoom-in; /* Cursor on hover */
-}
-
-
-
+/* Gallery Desktop */
 .secondblog-gallery-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 13px; 
-    
     width: 100%;
     max-width: 1120px; 
     margin: 60px auto !important; 
 }
-
-.secondblog-gallery-item {
-    aspect-ratio: 1 / 1.2; 
-    overflow: hidden;
-    background-color: var(--gray);
-}
-
-.secondblog-gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.secondblog-gallery-item { aspect-ratio: 1 / 1.2; overflow: hidden; background-color: var(--gray); }
+.secondblog-gallery-item img { width: 100%; height: 100%; object-fit: cover; }
 
 
-.secondblog-photography-credit {
-    font-style: italic;
-    color: var(--color-text-muted);
-    margin-top: 40px;
-    font-size: 14px;
-}
 
 
-@media (max-width: 1024px) {
-    .casa-container {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
+/* --- 2. TABLET LỚN ( 992px - 1024px ): DẠNG LƯỚT --- */
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+    .secondblog-gallery-grid {
+        display: flex !important;
+        gap: 20px !important;
+        margin: 40px -20px !important; 
+        padding: 0 20px 20px 20px !important; 
+        scrollbar-width: none !important;
     }
 
-    .section-space {
-        padding-top: 40px !important;
-        padding-bottom: 40px !important;
+    
+    .secondblog-gallery-item {
+        width: calc((100vw - 40px - 20px) / 2) !important;
+        flex: 0 0 calc((100vw - 40px - 20px) / 2) !important;
+    }
+}
+
+
+
+
+/* --- 3. TABLET NHỎ ( 768px - 991px ): ÉP THÔNG SỐ RIÊNG BIỆT --- */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    
+    /* 1. Reset Header & Text theo thông số mày muốn */
+    .secondblog-header { 
+        padding: 20px 0 !important; 
+        max-width: 720px !important; 
+        margin-left: auto; 
+        margin-right: auto;
+    }
+    
+    /* 1. ĐẶC TRỊ SINGLE IMAGE - ÉP NÓ RA GIỮA VÀ TRÀN 2 BÊN */
+    .secondblog-single-image { 
+        width: 100vw !important; /* Ép lấy toàn bộ chiều ngang màn hình */
+        position: relative !important;
+        left: 50% !important;
+        right: 50% !important;
+        margin-left: -50vw !important; /* Kéo nó về lại chính giữa từ tâm */
+        margin-right: -50vw !important;
+        
+        margin-top: 20px !important;
+        margin-bottom: 40px !important;
+        display: block !important;
+        overflow: hidden !important;
     }
 
+    .secondblog-single-image img { 
+        width: 100% !important; 
+        height: auto !important; 
+        display: block !important;
+        object-fit: cover !important; 
+        /* Tỉ lệ ảnh mày muốn, ví dụ 16/9 cho sang */
+        aspect-ratio: 16 / 9 !important; 
+    }
 
+    /* 2. Giữ mớ text ở giữa 480px như cũ */
+    .secondblog-text-container {
+        max-width: 480px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 20px 0 !important;
+        /* Đảm bảo text không bị dính vào lề */
+    }
+
+    /* 3. Gallery 2x2 giữ nguyên phong độ */
+    .secondblog-gallery-grid {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        column-gap: 30px !important; 
+        row-gap: 60px !important; /* Độ thưa dọc mày ưng [cite: 2026-02-07] */
+        margin: 40px 0 !important;
+        justify-content: center !important;
+    }
+
+    .secondblog-gallery-item {
+        width: calc((100vw - 40px - 30px) / 2) !important;
+        flex: 0 0 calc((100vw - 40px - 30px) / 2) !important;
+        aspect-ratio: 1 / 1.1 !important;
+    }
+}
+
+
+
+
+
+/* --- 4. MOBILE ( DƯỚI 768px ) --- */
+@media (max-width: 768px) {
     .secondblog-single-image {
-        padding: 0; 
-        margin: 20px 0;
-        margin-top: -5px;
         width: 100vw;
         position: relative;
         left: 50%;
-        right: 50%;
         margin-left: -50vw;
-        margin-right: -50vw;
-}
-
-    .secondblog-single-image img {
-    width: 100%; 
-    height: auto; 
-    display: block; 
-    object-fit: cover; 
-    transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1); 
-    cursor: zoom-in; 
-}
+        margin-top: -5px;
+    }
     .secondblog-gallery-grid {
-        grid-template-columns: repeat(4, 1fr); 
-        gap: 15px; 
-    }
-    
-    .secondblog-main-title {
-        font-size: 48px;
-    }
-
-    /* Để chữ không bị bó quá hẹp trên màn hình nhỏ */
-    .secondblog-text-container {
-        max-width: 100%; 
-        padding: 20px 0;
-    }
-}
-
-/* 2. Màn Mobile (Dưới 768px): Biến hình Gallery 2x2 */
-@media (max-width: 768px) {
-    .secondblog-main-title {
-        font-size: 36px; 
-        margin-bottom: 20px;
-    }
-
-    .secondblog-gallery-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 hình trên, 2 hình dưới đúng mẫu */
-        gap: 5px;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 5px !important;
         margin: 20px 0 !important;
-        margin-top: 0px !important;
-
     }
-
-
-    .secondblog-gallery-item {
-        aspect-ratio: 1 / 1.8; /* Tỉ lệ vuông vắn hơn cho mobile */
-    }
+    .secondblog-gallery-item { aspect-ratio: 1 / 1.8 !important; }
 }
 
 

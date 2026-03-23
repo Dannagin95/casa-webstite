@@ -120,7 +120,7 @@ IPAD/TABLET SYNC (768px - 1024px)
 
     .project-grid {
         display: flex !important;
-        gap: 25px;
+        gap: 20px;
         overflow-x: auto;
         scroll-snap-type: x mandatory; 
         -webkit-overflow-scrolling: touch; 

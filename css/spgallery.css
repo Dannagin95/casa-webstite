@@ -185,7 +185,7 @@
         scroll-padding-left: 20px !important;
     }
     .luot-track {
-        gap: 7px !important; /* Khoảng cách card riêng cho Tablet nhỏ */
+        gap: 8px !important; /* Khoảng cách card riêng cho Tablet nhỏ */
     }
     .sanpham-card {
         /* Chỉnh width tại đây: Hiện ~2.5 card */

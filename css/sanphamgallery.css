@@ -57,7 +57,7 @@
     
     .luot-track { 
         display: flex; 
-        gap: 25px; 
+        gap: 20px !important; 
         transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); 
     }
     .sanpham-card { flex: 0 0 calc(33.333% - 20px); }
