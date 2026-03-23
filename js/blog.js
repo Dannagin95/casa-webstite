@@ -2,7 +2,7 @@
    SCROLL INDICATOR - TABLET LỚN (60% WIDTH)
    ========================================================================== */
 const initGalleryScroll = () => {
-    const gallery = document.querySelector('.firstblog-gallery-grid');
+    const gallery = document.querySelector('.firstblog-gallery-grid, .thirdblog-gallery-grid');
     const progress = document.querySelector('.scroll-progress');
     const indicator = document.querySelector('.blog-scroll-indicator');
 
