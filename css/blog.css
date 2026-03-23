@@ -873,6 +873,14 @@
         margin-bottom: 40px;
     }
 
+    .secondblog-single-image img { 
+        width: 100% !important; 
+        height: auto !important; 
+        display: block !important;
+        object-fit: cover !important; 
+        aspect-ratio: 16 / 12 !important; 
+    }
+
     .secondblog-text-container { max-width: 100%; padding: 20px 20px; }
 
     .secondblog-gallery-grid {
