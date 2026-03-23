@@ -426,7 +426,7 @@
         margin-right: 20px !important;
     }
 
-    .journey-item img { aspect-ratio: 6/7 !important; margin-bottom: 15px !important; }
+    .journey-item img { aspect-ratio: 6/7 !important; margin-bottom: 5px !important; }
     .journey-progress-container { margin: 40px 20px 0 20px !important; width: calc(100% - 40px) !important; }
 }
 

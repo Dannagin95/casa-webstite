@@ -1,69 +1,60 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Ép trình duyệt vẽ lại cái fill để nó nhận width từ HTML [cite: 2025-12-29]
-    const fills = document.querySelectorAll('.spec-bar .fill');
-    fills.forEach(f => {
-        const w = f.style.width;
-        f.style.width = '0';
-        setTimeout(() => { f.style.width = w; }, 100);
-    });
-});
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Chọn tất cả các block nội dung
-    const blocks = document.querySelectorAll('.content-block');
-    const visuals = document.querySelectorAll('.wdisplay-item');
+    const tabButtons = document.querySelectorAll('.wood-tab-btn');
+    const tabPanels = document.querySelectorAll('.wood-panel');
 
-    // 2. Thiết lập Observer (Người quan sát)
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            // Nếu block này đang nằm giữa màn hình (trên 50%)
-            if (entry.isIntersecting) {
-                // Lấy ID hình ảnh mục tiêu từ data-target
-                const targetId = entry.target.getAttribute('data-target');
-                
-                // Xóa active cũ
-                visuals.forEach(v => v.classList.remove('active'));
-                
-                // Thêm active mới cho hình tương ứng
-                const activeVisual = document.getElementById(targetId);
-                if (activeVisual) {
-                    activeVisual.classList.add('active');
-                }
-            }
+    // Hàm kích hoạt thanh Specs Bar
+    const animateBars = (panel) => {
+        const bars = panel.querySelectorAll('.bar-fill');
+        bars.forEach(bar => {
+            // Reset về 0 trước khi chạy
+            bar.style.transition = 'none';
+            bar.style.width = '0';
+            
+            // Force reflow để trình duyệt nhận diện trạng thái 0
+            bar.offsetHeight; 
+            
+            // Bắt đầu chạy dựa trên data-width đã set trong HTML
+            bar.style.transition = 'width 1.5s cubic-bezier(0.19, 1, 0.22, 1)';
+            const targetWidth = bar.getAttribute('data-width');
+            bar.style.width = targetWidth;
         });
-    }, {
-        threshold: 0.5 // Kích hoạt khi block hiện ra 50%
-    });
+    };
 
-    // 3. Bắt đầu quan sát từng block
-    blocks.forEach(block => observer.observe(block));
-});
-
-
-
-function rearrangeWoodForMobile() {
-    if (window.innerWidth <= 1024) {
-        const wrapper = document.querySelector('.wood-showcase-wrapper');
-        const visualItems = document.querySelectorAll('.wdisplay-item');
-        const contentBlocks = document.querySelectorAll('.content-block');
-
-        contentBlocks.forEach((block, index) => {
-            // Chèn hình tương ứng vào ngay trước khối text
-            if (visualItems[index]) {
-                block.parentNode.insertBefore(visualItems[index], block);
-            }
-        });
+    // Khởi tạo cho tab active mặc định khi vừa load trang
+    const initialActive = document.querySelector('.wood-panel.active');
+    if (initialActive) {
+        animateBars(initialActive);
     }
-}
 
-// Chạy khi load trang và khi resize
-window.addEventListener('load', rearrangeWoodForMobile);
-window.addEventListener('resize', rearrangeWoodForMobile);
+    // Sự kiện Click chuyển Tab
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.getAttribute('data-wood');
+            const targetPanel = document.getElementById(targetId);
+
+            if (!targetPanel || btn.classList.contains('active')) return;
+
+            // 1. Xử lý trạng thái nút
+            tabButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // 2. Xử lý hiển thị Panel
+            tabPanels.forEach(panel => {
+                panel.classList.remove('active');
+                // Reset các thanh bar của các panel khác về 0
+                panel.querySelectorAll('.bar-fill').forEach(bar => bar.style.width = '0');
+            });
+
+            targetPanel.classList.add('active');
+
+            // 3. Kích hoạt animation thanh bar cho panel mới hiện
+            // Delay 100ms để khớp với animation fadeIn của CSS
+            setTimeout(() => {
+                animateBars(targetPanel);
+            }, 100);
+        });
+    });
+});
 
 
 

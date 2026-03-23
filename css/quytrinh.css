@@ -95,6 +95,11 @@
 
 
 
+
+/* ================================================
+MAIN' PROGRESS - ALL BODY SECTIONS
+================================================ */
+
 .step1-section {
     padding: var(--section-gap) 0; /* Lề trên dưới hít theo root */
     margin-bottom: -40px;
@@ -251,105 +256,206 @@
 
 
 /* ==========================================================================
-   STEP 1 ALBUM - MOBILE RESPONSIVE (Danna's Standard: 20px - 40px)
+   1. BASE / DESKTOP (Min 1025px) 
    ========================================================================== */
-@media (max-width: 1024px) {
+.step1-section {
+    padding: var(--section-gap) 0; /* Lề trên dưới hít theo root */
+    margin-bottom: -40px;
+}
+.step1-label { margin-bottom: 25px; }
+.step1-label .section-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-muted); }
+.step1-title { font-size: clamp(38px, 5vw, 50px); line-height: 1.1; font-weight: 500; margin-bottom: 30px; max-width: 1100px; }
+.step1-description p { font-size: 13px; line-height: 1.6; margin-bottom: 30px; max-width: 670px; color: var(--color-black); }
+
+.step1album-section { padding-top: 0px; background-color: var(--color-white); }
+.step1album-header { display: flex; justify-content: flex-end; align-items: center; margin-bottom: 13px; }
+.step1album-header .section-label { font-size: 12px; text-transform: uppercase; font-weight: 200; letter-spacing: 0.1em; color: var(--color-text-muted); }
+.step1album-controls { display: flex; gap: 12px; }
+.ctrl-btn { width: 35px; height: 35px; border-radius: 50%; border: 1px solid var(--black); background-color: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--color-dark); transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); padding: 0; }
+.ctrl-btn:hover { background-color: var(--color-dark); color: #ffffff; }
+
+.step1album-slider { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; }
+.step1album-slider::-webkit-scrollbar { display: none; }
+.step1album-item { flex: 0 0 calc(33.333% - 13.333px); scroll-snap-align: start; } /* 3 cột Desktop */
+.step1album-item img { width: 100%; aspect-ratio: 7/8; object-fit: cover; margin-bottom: 15px; display: block; }
+
+.step1album-progress-container { width: 100%; height: 1px; transform: scaleY(0.8); background-color: var(--color-bar); margin-top: 35px; position: relative; overflow: hidden; }
+.step1album-progress-bar { position: absolute; top: 0; left: 0; height: 100%; width: 0%; background-color: var(--black); transition: width 0.2s ease-out; }
+
+
+/* ==========================================================================
+   2. TABLET LARGE (992px - 1024px) - iPad Pro
+   Ghi đè để Card không bị phình to và lề hít lề Casa
+   ========================================================================== */
+@media (min-width: 992px) and (max-width: 1024px) {
+    .step1-section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 60px;
+    }
+
+    /* 2. ÉP CONTAINER HÍT ĐÚNG 20PX [cite: 2026-02-07] */
+    .step1-section .casa-container {
+        padding-left: 20px !important; 
+        padding-right: 20px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    .step1album-header { 
+        padding: 0 !important; /* Hít theo container cha */
+        margin-bottom: 15px !important;
+    }
+
+    .step1album-controls { 
+        display: none !important; /* Ẩn nút theo lệnh của mày */
+    }
+
+    .step1album-section .casa-container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .step1album-slider { 
+        padding: 0 !important;
+        padding-left: 20px !important; /* Lề trái 20px chuẩn */
+        scroll-padding-left: 20px !important;
+        gap: 20px !important;
+        scroll-snap-type: x mandatory !important;
+        display: flex !important;
+        overflow-x: auto !important;
+    }
+    
+    /* 4. ITEM & RATIO: HIỆN 2.5 CARD ĐỂ LỘ ĐUÔI ẢNH [cite: 2026-01-01] */
+    .step1album-item { 
+        flex: 0 0 45% !important; /* Hiện khoảng 2.5 card */
+        min-width: 45% !important;
+        scroll-snap-align: start !important;
+    }
+
+    .step1album-item img { 
+        aspect-ratio: 6/7 !important; /* Đồng bộ ratio với iPad Mini cho đẹp */
+        margin-bottom: 15px !important;
+        width: 100% !important;
+    }
+
+    /* 5. PROGRESS BAR: HÍT LỀ 20PX [cite: 2026-02-07] */
+    .step1album-progress-container {
+        margin: 30px 20px 0 20px !important; 
+        width: calc(100% - 40px) !important;
+    }
+}
+
+
+
+/* ==========================================================================
+   3. TABLET SMALL (768px - 991px) - iPad Mini/Air
+   Xử lý triệt để iPad Mini card to tổ chảng. Tao chia 2 cột.
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* 1. TRIỆT TIÊU LỀ TO: ÉP SECTION & CONTAINER VỀ 0 TRƯỚC [cite: 2026-02-07] */
+    .step1-section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .step1-section .casa-container {
+        padding-left: 20px !important; /* Chốt chặn lề 20px duy nhất ở đây */
+        padding-right: 20px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    /* 2. HEADER & TITLE */
+    .step1album-header { 
+        padding: 0 !important; /* Đã ăn theo padding của casa-container ở trên */
+        margin-bottom: 15px !important;
+    }
+
+    .step1album-controls { 
+        display: none !important; 
+    }
+
+    .step1-title { 
+        font-size: 32px !important; 
+        margin-left: 0 !important;
+    }
+    
+    /* 3. SLIDER: PHẢI TRÀN LỀ ĐỂ VUỐT MỚI SƯỚNG [cite: 2026-01-01] */
+    .step1album-section .casa-container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .step1album-slider { 
+        padding: 0 20px !important; /* Tạo lề ảo bên trong slider */
+        scroll-padding: 0 20px !important;
+        gap: 10px !important; /* Đúng 10px mày muốn */
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+    }
+    
+    /* 4. ITEM & RATIO: GIỮ NGUYÊN THÔNG SỐ MÀY VỪA CHỈNH */
+    .step1album-item { 
+        flex: 0 0 44% !important; 
+        min-width: 44% !important;
+        scroll-snap-align: start !important;
+    }
+
+    .step1album-item img { 
+        aspect-ratio: 6/7 !important; 
+        margin-bottom: 12px !important;
+        width: 100% !important;
+    }
+
+    /* 5. PROGRESS BAR: ÉP HÍT LỀ 20PX [cite: 2026-02-07] */
+    .step1album-progress-container {
+        margin: 25px 20px 0 20px !important; 
+        width: calc(100% - 40px) !important;
+    }
+}
+
+
+/* ==========================================================================
+   4. MOBILE LAYER (Max 767px) - iPhone SE...
+   Bê nguyên 100% các thông số gốc của mày, kể cả cái calc phức tạp.
+   ========================================================================== */
+@media (max-width: 767px) {
     .step1-section .casa-container {
         padding-left: 20px !important;
         padding-right: 20px !important;
-        /* Giữ nguyên padding trên dưới 40px nếu mày muốn [cite: 2026-02-07] */
         padding-top: 0 !important;
         padding-bottom: 0 !important;
         box-sizing: border-box !important;
     }
+    .step1-title, .step1-description p { max-width: 100% !important; margin-left: 0 !important; margin-right: 0 !important; }
+    .step1-description p { font-size: 12px !important; line-height: 1.6; }
+    .step1-label { padding-left: 0 !important; margin-left: 0 !important; }
 
+    .step1album-section { padding: 0 !important; overflow: hidden; }
+    .step1album-section .casa-container { padding-left: 0 !important; padding-right: 0 !important; max-width: 100% !important; }
+    .step1album-header { padding: 0 20px !important; margin-bottom: 0px !important; }
+    .step1album-controls { display: none; }  
 
-
-    /* Đảm bảo tiêu đề và mô tả không bị tràn lề */
-    .step1-title, 
-    .step1-description p {
-        max-width: 100% !important; /* Bỏ giới hạn px của desktop để nó hít theo lề 20px [cite: 2026-02-11] */
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-
-    .step1-description p {
-        font-size: 12px !important;
-        line-height: 1.6;
-    }
-
-
-    /* Nếu cái 01 (label) vẫn bị lệch, ép nó luôn */
-    .step1-label {
-        padding-left: 0 !important;
-        margin-left: 0 !important;
-    }
-
-
-
-    /* 1. Reset Section & Container [cite: 2026-02-07] */
-    .step1album-section .casa-container {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        max-width: 100% !important;
-    }
-    
-    .step1album-section {
-        padding: 0 !important; /* Trên dưới 40px chuẩn [cite: 2026-02-07] */
-        overflow: hidden;
-    }
-
-    
-    /* Đưa header về đúng lề 20px [cite: 2026-02-07] */
-    .step1album-header {
-        padding: 0 20px !important;
-        margin-bottom: 0px !important;
-    }
-
-    .step1album-controls {
-        display: none;
-    }  
-
-    /* 2. Slider: Chốt chặn lề trái/phải để không bị "nhứ" */
     .step1album-slider {
         padding: 0 20px !important; 
         scroll-padding: 0 20px !important; 
-        gap: 9px !important;
-        scroll-snap-type: x mandatory !important; /* Ép hít mạnh dứt khoát */
-        scroll-behavior: auto !important; /* Để vuốt tay không bị ảo */
+        gap: 8px !important;
+        scroll-snap-type: x mandatory !important;
+        scroll-behavior: auto !important;
         display: flex !important;
         margin-right: 0 !important;
     }
-
-    /* 3. Item: Tỷ lệ 85% để lộ đuôi ảnh sau, Aspect Ratio 6/7 */
     .step1album-item {
-        flex: 0 0 85% !important;
+        flex: 0 0 85% !important; /* TRẢ LẠI 85% CHO MÀY, KHÔNG ĐỔI */
         min-width: 100% !important;
         max-width: 100% !important;
         scroll-snap-align: start !important;
-        scroll-snap-stop: always !important; /* Phanh ăn tiền: chỉ qua từng ảnh */
+        scroll-snap-stop: always !important;
     }
-
-    .step1album-item:last-child {
-        margin-right: 0 !important;
-    }
-
-    .step1album-item img {
-        aspect-ratio: 6/7 !important; /* Đúng yêu cầu của mày */
-        margin-bottom: 15px !important;
-    }
-
-    /* 4. Fix khoảng hở lề phải 20px cho item cuối cùng [cite: 2026-02-07] */
-
-    /* 5. Progress Bar & Info */
-    .step1album-progress-container {
-        margin: 25px 0 0 0  !important; /* Căn đúng lề 20px [cite: 2026-02-07] */
-        width: 100%;
-    }
-
-    .item-info {
-        padding: 0 !important;
-    }
+    .step1album-item img { aspect-ratio: 6/7 !important; margin-bottom: 15px !important; }
+    .step1album-progress-container { margin: 20px 0 0 0 !important; width: 100%; }
 }
 
 

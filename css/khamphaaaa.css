@@ -341,5 +341,5 @@
     }
     
     .item-info { padding-right: 0 !important; }
-    .khamphaalbum-progress-container { margin: 20px 20px 0 20px !important; width: calc(100% - 40px) !important; }
+    .khamphaalbum-progress-container { margin: 20px 20px 0 20px !important; width: calc(100% - 40px) !important; margin-bottom: -20px !important; }
 }
