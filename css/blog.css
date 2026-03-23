@@ -215,7 +215,8 @@
 .blogpagehero,
 .firstbloghero,
 .secondbloghero,
-.thirdbloghero {
+.thirdbloghero,
+.fourthbloghero {
     height: 93vh; 
     position: relative; 
     display: flex;
@@ -230,7 +231,8 @@
 .blogpagehero-bg::after,
 .firstbloghero-bg::after,
 .secondbloghero-bg::after,
-.thirdbloghero-bg::after {
+.thirdbloghero-bg::after,
+.fourthbloghero-bg::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -241,7 +243,8 @@
 .blogpagehero-bg,
 .firstbloghero-bg,
 .secondbloghero-bg,
-.thirdbloghero-bg { 
+.thirdbloghero-bg,
+.fourthbloghero-bg { 
     position: absolute; 
     inset: 0; 
     z-index: -1; 
@@ -251,7 +254,8 @@
 .blogpagehero-bg img,
 .firstbloghero-bg img,
 .secondbloghero-bg img,
-.thirdbloghero-bg img {
+.thirdbloghero-bg img,
+.fourthbloghero-bg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -298,7 +302,8 @@
     .blogpagehero,
     .firstbloghero,
     .secondbloghero,
-    .thirdbloghero {
+    .thirdbloghero,
+    .fourthbloghero {
        
         height: auto !important; 
         
@@ -325,7 +330,8 @@
     .blogpagehero-text,
     .firstbloghero-text,
     .secondbloghero-text,
-    .thirdbloghero-text {
+    .thirdbloghero-text,
+    .fourthbloghero-text {
         padding: 0 !important; 
         margin: 0 auto !important;
         max-width: 100% !important; 
@@ -347,7 +353,8 @@
     .blogpagehero,
     .firstbloghero,
     .secondbloghero,
-    .thirdbloghero {
+    .thirdbloghero,
+    .fourthbloghero {
         min-height: 56vw !important; 
     }
 }
@@ -356,6 +363,13 @@
 
 
 
+.blog-page-wrapper {
+    display: contents; 
+}
+
+.blog-page-wrapper[style*="display: none"] {
+    display: none !important;
+}
 
 
 /* ==========================================================================
@@ -1107,6 +1121,230 @@
     .casa-container { padding: 0 20px !important; }
     .section-space { padding: 40px 0 !important; } /* Thông số vàng [cite: 2026-02-07] */
 }
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   FOURTH BLOG SECTION - FULL RESPONSIVE SEPARATED
+   ========================================================================== */
+
+/* --- 1. BASE STYLES (DÙNG CHUNG) --- */
+.fourthblog-header { margin-bottom: 60px; max-width: 1000px; }
+
+.fourthblog-main-title {
+    font-size: clamp(38px, 5vw, 50px);
+    line-height: 1.4;
+    margin-bottom: 30px;
+    color: var(--black);
+    font-family: var(--font-heading);
+}
+
+.fourthblog-subtitle {
+    font-size: 13px;
+    color: var(--black);
+    max-width: 650px;
+    line-height: 1.6;
+}
+
+.fourthblog-text-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.fourthblog-text-container p {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--black);
+}
+
+.fourthblog-middletext {
+    display: block;
+    font-size: 11px;
+    font-weight: 200;
+    color: var(--color-text-muted);
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+    text-transform: uppercase;    
+}
+
+.fourthblog-gallery-item {
+    aspect-ratio: 1/1.2;
+    overflow: hidden !important; /* Khóa khung zoom */
+    background-color: var(--gray);
+}
+
+.fourthblog-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: zoom-in;
+}
+
+.fourthblog-gallery-item:hover img { transform: scale(1.1); }
+
+.fourthblog-photography-credit {
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+.blog-scroll-indicator {
+    display: none; /* Mặc định ẩn hết */
+    width: 100%;
+    height: 2px;
+    background: var(--color-border); /* Màu nhạt của web */
+    margin-top: 20px;
+    position: relative;
+}
+
+/* --- 2. DESKTOP ( > 1024px ) --- */
+@media screen and (min-width: 1025px) {
+    .fourthblog-gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 13px;
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+}
+
+/* --- 3. TABLET LỚN ( 992px - 1024px ): DẠNG LƯỚT NGANG --- */
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+    .fourthblog-header { padding: 20px 0;}
+
+    /* --- 1. CSS MẶC ĐỊNH: ẨN THANH TASKBAR --- */
+.blog-scroll-indicator {
+    display: block !important;
+    max-width: 678px;
+    height: 1px; /* Mỏng lại tối đa cho sang */
+    background: #e0e0e0; /* Màu xám nhạt, nhẹ nhàng */
+    margin: 40px auto !important; 
+    
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll-progress {
+    width: 60%; /* Độ dài thanh đen */
+    height: 100%;
+    background: var(--black); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* transition: 0.1s linear; -> Nếu muốn nó bám sát sạt ngón tay thì để linear hoặc bỏ luôn transition */
+    will-change: transform;
+}
+
+    .blog-scroll-indicator {
+        display: block !important; /* Hiện ra */
+        max-width: 678px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Giữ nguyên cái CSS cũ của mày bên dưới */
+    .fourthblog-gallery-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        gap: 20px !important;
+        margin: 40px -20px !important; 
+        padding: 0 20px 20px 20px !important; 
+        scrollbar-width: none !important;
+    }
+    .fourthblog-gallery-grid::-webkit-scrollbar { display: none !important; }
+
+    .fourthblog-gallery-item {
+        width: calc((100vw - 40px - 20px) / 2) !important;
+        flex: 0 0 calc((100vw - 40px - 20px) / 2) !important;
+        flex-shrink: 0 !important;
+        scroll-snap-align: start !important;
+    }
+}
+    
+
+
+
+
+
+
+
+/* --- 4. TABLET NHỎ ( 768px - 991px ): CỤM 2 TRÊN 2 DƯỚI (FIXED) --- */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .fourthblog-header { padding: 60px 0; max-width: 720px !important;}
+    .fourthblog-text-container {
+        max-width: 480px !important;
+        margin-bottom: 0;
+}
+
+    .fourthblog-gallery-grid {
+        /* Chuyển sang Flex để nuông chiều cái calc width của mày */
+        display: flex !important;
+        flex-wrap: wrap !important;
+        
+        /* KHOẢNG CÁCH NGANG: Phải khớp với con số 30px trong hàm calc của mày */
+        column-gap: 8px !important; 
+        
+        /* KHOẢNG CÁCH DỌC: Mày muốn thưa bao nhiêu thì chỉnh ở đây */
+        row-gap: 8px !important;    
+        
+        margin: 20px 0 !important; 
+        margin-bottom: 40px !important;
+        justify-content: center !important;
+    }
+    
+    .fourthblog-gallery-item {
+        /* GIỮ NGUYÊN HIỆN TRẠNG ĐỂ ĐỒNG BỘ SLIDE */
+        width: calc((100vw - 40px - 8px) / 2) !important;
+        flex: 0 0 calc((100vw - 40px - 8px) / 2) !important;
+        flex-shrink: 0 !important;
+        aspect-ratio: 1 / 1.1 !important;
+    }
+    
+    .fourthblog-main-title { font-size: 48px; }
+    .fourthblog-text-container { max-width: 100%; padding: 20px 0; }
+    .casa-container { padding: 0 20px !important; } 
+}
+
+
+
+
+/* --- 5. MOBILE ( < 767px ) --- */
+@media screen and (max-width: 767px) {
+    .fourthblog-header {
+        padding: 0 20px;
+    }
+    .fourthblog-main-title { font-size: 36px; margin-bottom: 20px; }
+
+    .fourthblog-gallery-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 5px !important;
+        margin: 20px 20px 40px 20px !important;
+    }
+
+    .fourthblog-gallery-item { aspect-ratio: 1 / 1.1 !important; }
+    
+    .fourthblog-text-container { max-width: 100%; padding: 20px 20px; }
+    .casa-container { padding: 0 20px !important; }
+    .section-space { padding: 40px 0 !important; } /* Thông số vàng [cite: 2026-02-07] */
+}
+
+
+
+
+
+
+
 
 
 
