@@ -91,8 +91,8 @@ document.addEventListener('DOMContentLoaded', function() {
 const woodGalleries = {
     "soi": ["imageswood/Oak tree.jpg", "imageswood/Oak tree 2.jpg", "imageswood/Oak tree 3.jpg", "imageswood/Oak tree 4.png"],
     "occho": ["imageswood/Walnut tree.jpg", "imageswood/Walnut tree 1.jpg", "imageswood/Walnut tree 2.jpg", "imageswood/Walnut tree 3.jpg"],
-    "teak": ["imageswood/Teak tree.jpg", "imageswood/Teak tree 1.jpg"],
-    "tanbi": ["imageswood/Ash.jpg", "imageswood/tan-bi-van-1.jpg"]
+    "teak": ["imageswood/Teak tree.jpg", "imageswood/Teak tree 1.jpg", "imageswood/Teak tree 2.jpg", "imageswood/Teak tree 3.jpg"],
+    "tanbi": ["imageswood/Ash tree.jpg", "imageswood/Ash tree 1.jpg", "imageswood/Ash tree 2.jpg", "imageswood/Ash tree 3.jpg"]
 };
 
 

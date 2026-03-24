@@ -200,6 +200,7 @@ Wood image's range
 
 /* Cụm 4 nút nằm giữa */
 .wood-tabs-control {
+    padding-top: 40px;
     display: flex;
     justify-content: center; /* Đưa các nút ra giữa */
     gap: 20px;
@@ -409,7 +410,7 @@ Wood image's range
     /* --- 2. CỤM NÚT: GIỮ 1 HÀNG NGANG --- */
     .wood-tabs-control {
         gap: 20px;
-        margin-top: 80px;
+        margin-top: 40px;
     }
 
     .wood-tab-btn {
@@ -489,7 +490,7 @@ Wood image's range
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
-        margin-top: 60px;
+        margin-top: 20px;
     }
 
     .wood-tab-btn {
@@ -750,93 +751,128 @@ Wood image's range
 
 
 
-/* ==========================================================================
-   SECTION NHIEM VU - CHUẨN DANNA (KHÔNG CHẾ CHÁO)
-   ========================================================================== */
 
-/* 1. LAYOUT GỐC / DESKTOP (Mặc định cho mọi màn hình lớn) */
-.commit-section {
-    padding: var(--section-gap) 0;
-    background-color: var(--color-white);
+
+/* ============================================================
+   SECTION woodcommitment - MOBILE FIRST
+   ============================================================ */
+.woodcommitment {
+    width: 100% !important;
+    background-color: #ffffff !important;
+    padding: 50px 20px !important; 
 }
 
-.commit-intro {
-    max-width: var(--container-max);
-    margin-bottom: 80px;
+.woodcommitment .woodcommitment-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    max-width: 100% !important;
 }
 
-.commit-intro .commit-label {
-    font-size: 11px;
-    word-spacing: 5px;
-    letter-spacing: 1px;
-    color: #2b2929;
-    font-weight: 200;
-    margin-bottom: 30px; 
-    display: inline-block;
-    width: 100%;
-    text-transform: uppercase; /* GIỮ NGUYÊN UPPERCASE THEO Ý MÀY */
+.woodcommitment .sub-title {
+    font-size: 11px !important;
+    letter-spacing: 1px !important;
+    color: #000000 !important;
+    text-transform: uppercase !important;
+    margin-bottom: 20px;
+    font-weight: 200 !important;
 }
 
-.commit-main-text {
-    font-size: 30px;
-    line-height: 1.5; /* KHOẢNG CÁCH DÒNG GỐC 1.5 */
-    font-weight: 400;
-    color: var(--color-dark);
-    letter-spacing: -0.01em;
+.woodcommitment .main-heading {
+    font-size: 42px !important; /* Mobile chữ phải đủ to để gây ấn tượng */
+    line-height: 1.3 !important;
+    font-weight: 400 !important;
+    color: var(--black) !important;
+    margin-bottom: 40px !important;
 }
 
+.woodcommitment .btn-read-more {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #1a1a1a !important; /* Nút đen tuyền như ảnh */
+    color: #ffffff !important;
+    padding: 15px 35px !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    transition: transform 0.3s ease !important;
+}
 
-/* 2. RESPONSIVE CHO TABLET (1439px trở xuống) */
-@media screen and (max-width: 1439px) {
-    .WoodCommitment-section {
-        padding: 20px 0 !important; 
+/* ============================================================
+   SECTION woodcommitment - DESKTOP
+   ============================================================ */
+@media (min-width: 769px) {
+    .woodcommitment {
+        padding: 0 0 100px !important;
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Đẩy cái lồng nội dung vào giữa màn hình */
+    }
+
+    .woodcommitment .container {
+        /* [MỎ NEO] Khóa chặt khung xương 1650px */
+        max-width: var(--container-max) !important; 
+        width: 100% !important;
+        margin: 0 auto !important;
+        /* Dùng đúng side-padding 55px để chữ SỨ MỆNH thẳng hàng với Logo Header */
+        padding: 0 var(--side-padding) !important; 
+        box-sizing: border-box;
+    }
+
+    .woodcommitment .woodcommitment-content {
+        /* Bỏ cái margin 55px cũ đi vì đã có padding của container lo */
+        margin: 0 !important; 
+        /* Khống chế độ rộng nội dung để ngắt dòng cho đẹp (giống ý mày muốn ở phần About) */
+        max-width: 1200px !important; 
+        text-align: left;
+    }
+
+    .woodcommitment .main-heading {
+        font-size: clamp(42px, 4vw, 56px) !important;
+        max-width: 90% !important;
+        letter-spacing: -1px !important;
+        line-height: 1.1;
+        margin-top: 20px;
         margin-bottom: 40px;
     }
 
-    .WoodCommitment-section .casa-container {
-        padding-left: 20px !important; /* Lề 2 bên 20px [cite: 2026-02-07] */
-        padding-right: 20px !important;
-        max-width: 100% !important;
+    .woodcommitment .btn-read-more:hover {
+        color:#000000 !important;
+        background-color: #ffffff !important;
+        box-shadow: inset 0 0 0 2px #000000 !important; 
     }
-
-    .commit-intro { margin-bottom: 40px; }
-    
-    .commit-intro .commit-label {
-        display: block;
-        word-spacing: 5px;
-        font-size: 11px;
-        font-weight: 200;
-        color: #2b2929;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        margin-bottom: 25px;
-    }    
-    
-    .commit-main-text {
-        font-size: 33px !important; 
-        word-spacing: 1px;
-        color: var(--black);
-        line-height: 1.3 !important; 
-        padding-bottom: 20px;
-    }
-
 }
 
 
 
-/* 4. MOBILE (< 767px) - GIỮ NGUYÊN DỌC NHƯ MÀY MUỐN */
-@media screen and (max-width: 767px) {
+/* ============================================================
+   CHỈ FIX LỀ woodcommitment CHO TABLET LỚN (820px - 1439px)
+   ============================================================ */
+@media screen and (min-width: 820px) and (max-width: 1439px) {
+    .woodcommitment {
+        /* Ngăn cách section 40px chuẩn bài mày giao [cite: 2026-02-07] */
+        padding: 80px 0 !important; 
+    }
 
-    .commit-intro { 
-        margin-top: -10px;
-        margin-bottom: 40px; 
-    } 
+    .woodcommitment .container {
+        padding: 0 20px !important; 
+        max-width: 100% !important;
+        width: 100% !important;
+    }
 
-    .commit-main-text {
-        font-size: 33px !important; 
-        color: var(--black);
-        line-height: 1.3 !important; 
-        padding-bottom: 20px;
+    .woodcommitment .woodcommitment-content {
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .woodcommitment .main-heading {
+        /* Nắn lại font một chút cho khớp tỉ lệ tablet lớn */
+        font-size: 42px !important; 
+        line-height: 1.3 !important;
+        margin-top: 15px !important;
+        margin-bottom: 30px !important;
     }
 }
 
