@@ -115,7 +115,6 @@
     letter-spacing: 1px;
     color: #2b2929;
     font-weight: 300;
-    display: inline-block;
     width: 100%;
     text-transform: uppercase;
 }
@@ -143,7 +142,15 @@
    1. DESKTOP (1440px trở lên)
    -------------------------------------------------------------------------- */
 @media screen and (min-width: 1440px) {
-    .philo-label { margin-bottom: 25px; }
+    .philo-label { 
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: 300;
+        letter-spacing: 1px;
+        color: #2b2929;
+        font-weight: 300;
+        margin-bottom: 30px;
+    }
     
     .philo-title {
         font-size: clamp(38px, 5vw, 50px);
@@ -218,17 +225,16 @@
         text-transform: uppercase;}
 
     .philo-title {
-        font-size: 28px !important;
+        font-size: 40px !important;
         line-height: 1.2;
         margin-bottom: 30px;
     }
 
     .philo-description p {
-        font-size: 12.5px;
-        line-height: 1.7;
-        max-width: 100%;
+        font-size: 12px;
+        line-height: 1.6;
         margin-bottom: 25px;
-        max-width: 670px;
+        max-width: 600px;
     }
 
     .btn-casa { 
@@ -252,15 +258,15 @@
 
     .philo-title {
         font-size: 28px !important; /* Thu nhỏ tiêu đề cho mobile hít lề đẹp */
-        line-height: 1.25;
+        line-height: 1.2;
         margin-bottom: 20px;
     }
 
     .philo-description p {
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 400;
         word-spacing: 1px;
-        line-height: 1.7;
+        line-height: 1.6;
         margin-bottom: 25px;
         color: var(--black);
     }

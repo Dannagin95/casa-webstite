@@ -24,8 +24,8 @@
 }
 
 .mission .main-heading {
-    font-size: 42px !important; /* Mobile chữ phải đủ to để gây ấn tượng */
-    line-height: 1.3 !important;
+    font-size: 36px !important; /* Mobile chữ phải đủ to để gây ấn tượng */
+    line-height: 1.2 !important;
     font-weight: 400 !important;
     color: var(--black) !important;
     margin-bottom: 40px !important;
