@@ -85,26 +85,30 @@
 
 
 
-/*========================
-Wood image's range
-==========================*/
+
+
+
+/*========================================================================================
+INTEGRATED WOOD SLIDER CSS (4 TIERS)
+==========================================================================================*/
+
 .wood-img-col {
     position: relative;
-    overflow: hidden; /* Khóa không cho ảnh thừa tràn ra ngoài */
+    overflow: hidden; 
 }
 
 .wood-slider-track {
-    display: flex; /* Xếp các ảnh thành một hàng ngang dài */
+    display: flex; 
     width: 100%;
-    height: 100%;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Hiệu ứng lướt mượt */
+    height: 100% !important; /* ĐANG XỬ LÝ: Ép track cao bằng khung cha */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
 .wood-slider-track img {
-    min-width: 100%; /* Mỗi ảnh chiếm đúng 100% chiều rộng khung */
+    min-width: 100%; 
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; 
     flex-shrink: 0;
 }
 
@@ -128,7 +132,7 @@ Wood image's range
     align-items: center;
     justify-content: center;
     transition: all 0.3s;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px);
 }
 
 .nav-btn:hover {
@@ -145,28 +149,94 @@ Wood image's range
     fill: #ffffff;
 }
 
-.wood-img-col img {
-    transition: opacity 0.3s ease; /* Hiệu ứng chuyển ảnh mượt */
+.wood-progress {
+    display: none;
 }
 
+/* TẦNG 1: MOBILE (Max: 767px) */
+@media (max-width: 767px) {
+    .wood-img-col {
+        width: 100% !important;
+        position: relative !important;
+        height: 0 !important;
+        padding-top: 80% !important; 
+        overflow: hidden !important;
+        background: #f0f0f0; /* Màu nền chờ cho sang */
+    }
 
+    /* 2. Ép đoàn tàu Slider phải nằm trọn trong cái "hố" vừa tạo */
+    .wood-slider-track {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100% !important;
+        display: flex !important;
+    }
 
+    /* 3. Ảnh con hít full 100% cái hố đó */
+    .wood-slider-track img {
+        min-width: 100%;
+        width: 100%;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+    }
 
+    .wood-nav {
+        display: none !important;
+    }
 
+    .wood-progress {
+    display: block !important;
+    position: absolute !important;
+    bottom: 25px !important; /* Đẩy lên cao hơn xíu cho thanh thoát */
+    left: 60px !important;   /* Thu hẹp lề trái */
+    right: 60px !important;  /* Thu hẹp lề phải */
+    width: calc(100% - 120px) !important; /* Tổng cộng cụm vào 80px */
+    height: 1px !important;  /* Mỏng như sợi chỉ */
+    background-color: rgba(255, 255, 255, 0.2) !important; /* Đường ray mờ để làm nền */
+    z-index: 10 !important;
+    overflow: visible !important; /* Để con thoi trượt tự do */
+}
 
+.wood-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100% !important;
+    background-color: #ffffff !important; /* Trắng tinh */
+    /* Quan trọng: Độ dài con thoi sẽ cố định, ví dụ 25% tổng chiều dài */
+    width: 25% !important; 
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 0 8px #ffffff; /* Thêm tí glow cho sang */
+}
+}
 
-/* ==========================================================================
-   PART 1: INTRO & TABS (CĂN GIỮA)
-   ========================================================================== */
+/* TẦNG 2 & 3 & 4 (Tablet/Desktop) */
+@media (min-width: 768px) {
+    .wood-progress {
+        display: none !important;
+    }
+    
+    .wood-nav {
+        display: flex !important;
+    }
+}
+
+/*============================================================================================
+WOOD IMAGE' RANGE
+============================================================================================*/
+
 .wood-intro-section {
     padding-top: var(--section-gap);
-    padding-bottom: 80px; /* Khoảng cách xuống Part 2 là 40px theo "Golden Parameter" [cite: 2026-02-04] */
+    padding-bottom: 80px; 
     text-align: center;
 }
 
 .intro-content {
     max-width: 750px;
-    margin: 0 auto 40px auto; /* Căn giữa cụm text */
+    margin: 0 auto 40px auto; 
 }
 
 .intro-content .sub-title {
@@ -195,14 +265,13 @@ Wood image's range
     margin-bottom: 30px;
     max-width: 680px;
     color: var(--color-black);
-    margin: 0 auto; /* Căn giữa desc */
+    margin: 0 auto; 
 }
 
-/* Cụm 4 nút nằm giữa */
 .wood-tabs-control {
     padding-top: 40px;
     display: flex;
-    justify-content: center; /* Đưa các nút ra giữa */
+    justify-content: center; 
     gap: 20px;
     flex-wrap: wrap;
 }
@@ -228,26 +297,20 @@ Wood image's range
     color: var(--white);
 }
 
-
-/* ==========================================================================
-   PART 2: TABS CONTENT (FULL WIDTH 100%)
-   ========================================================================== */
 .wood-visual-section {
     padding-bottom: var(--section-gap);
     width: 100%;
     position: relative;
-    overflow: hidden; /* Chặn tràn ngang tuyệt đối */
+    overflow: hidden; 
 }
 
-/* 1. ĐẨY CÁC PANEL NẰM CHỒNG LÊN NHAU TẠI 1 VỊ TRÍ */
 .wood-panel {
-    display: none; /* Ẩn mặc định */
+    display: none; 
     opacity: 0;
     width: 100%;
-    position: relative; /* Giữ cấu trúc 50/50 sole nhau */
+    position: relative; 
 }
 
-/* CHỈ HIỆN PANEL CÓ CLASS ACTIVE */
 .wood-panel.active {
     display: block;
     opacity: 1;
@@ -259,12 +322,11 @@ Wood image's range
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 2. LAYOUT 50/50 TRÀN VIỀN */
 .wood-flex-row {
     display: flex;
     align-items: stretch;
     height: 680px;
-    width: 100%; /* Tràn hết mép trình duyệt */
+    width: 100%; 
 }
 
 .wood-flex-row.reverse {
@@ -283,71 +345,66 @@ Wood image's range
     display: block;
 }
 
-/* PHẦN QUAN TRỌNG: Cột Text hít lề 55px của Casa [cite: 2026-02-07] */
 .wood-text-col {
     background-color: #fcfcfc;
-    /* Dùng padding-left để dóng hàng với Intro (55px) [cite: 2026-02-07] */
     padding-left: var(--side-padding); 
-    padding-right: 120px; /* Lề phải cho thoáng chữ */
+    padding-right: 120px; 
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-/* Khi đảo bên (Reverse): Lề phải hít 55px */
 .wood-flex-row.reverse .wood-text-col {
     padding-left: 120px;
     padding-right: var(--side-padding);
 }
 
-/* 3. TINH CHỈNH TEXT & SPECS CHO SANG [cite: 2026-03, 2026-02-11] */
 .wood-tag {
     font-size: 11px;
     text-transform: uppercase;
     word-spacing: 5px;
-    letter-spacing: 1px; /* Tăng khoảng cách chữ cho tinh tế [cite: 2026-02-11] */
+    letter-spacing: 1px; 
     color: #2b2929;
     margin-bottom: 25px;
     display: block;
 }
 
 .wood-title {
-    font-size: clamp(28px, 3.5vw, 42px); /* Dùng clamp để title tự co giãn khi zoom */
+    font-size: clamp(28px, 3.5vw, 42px); 
     line-height: 1.1;
     margin-bottom: 30px;
 }
 
 .wood-desc {
     font-size: 14px;
-    line-height: 1.6; /* Tăng line-height cho thoáng desc [cite: 2026-02-04] */
+    line-height: 1.6; 
     color: var(--color-grey);
     margin-bottom: 50px;
-    max-width: 480px; /* Bóp desc lại xíu cho sang [cite: 2026-02-11] */
+    max-width: 480px; 
 }
 
-/* Wood Specs Bars - Tinh chỉnh mảnh và chạy mượt [cite: 2026-03, 2026-02-11] */
 .wood-specs {
     max-width: 380px;
 }
 
 .spec-item {
-    margin-bottom: 30px; /* Tăng khoảng cách giữa 2 specs */
+    margin-bottom: 30px; 
 }
 
 .spec-item span {
     font-size: 12px;
     text-transform: uppercase;
     display: block;
-    margin-bottom: 12px; /* Tăng lề xuống thanh bar */
+    margin-bottom: 12px; 
     letter-spacing: 0.1em;
 }
 
 .bar-bg {
     width: 100%;
-    height: 1px; /* Thanh bar mảnh hơn [cite: 2026-02-11] */
+    height: 1px; 
     background: #e0e0e0;
     position: relative;
-    overflow: hidden; /* Tránh tràn loading bar ra ngoài */
+    overflow: hidden; 
 }
 
 .bar-fill {
@@ -356,30 +413,23 @@ Wood image's range
     left: 0;
     height: 100%;
     background: var(--black);
-    width: 0; /* Reset về 0 để JS kích hoạt chạy */
-    transition: width 1.8s cubic-bezier(0.19, 1, 0.22, 1); /* Tăng thời gian chạy cho mượt [cite: 2026-02-11] */
+    width: 0; 
+    transition: width 1.8s cubic-bezier(0.19, 1, 0.22, 1); 
 }
 
 @media (max-width: 1024px) {
-    /* Ép text column hít lề 20px theo Golden Parameters */
     .wood-text-col, .wood-flex-row.reverse .wood-text-col {
         padding-left: 20px !important;
         padding-right: 20px !important;
     }
     
     .wood-flex-row {
-        height: 600px; /* Hạ chiều cao xuống một chút cho cân đối với màn Tablet */
+        height: 600px; 
     }
 }
 
-
-
-/* ==========================================================================
-   TẦNG 4: TABLET LARGE (Max: 1199px) - Cân bằng không gian
-   ========================================================================== */
+/* TẦNG 4: TABLET LARGE (Max: 1199px) */
 @media (max-width: 1199px) and (min-width: 992px) {
-
-    /* --- 1. ĐỒNG BỘ LỀ VÀ KHOẢNG CÁCH [cite: 2026-02-07] --- */
     .casa-container { 
         padding: 0 20px !important; 
     }
@@ -406,8 +456,6 @@ Wood image's range
         margin: 0 auto; 
     }
 
-
-    /* --- 2. CỤM NÚT: GIỮ 1 HÀNG NGANG --- */
     .wood-tabs-control {
         gap: 20px;
         margin-top: 40px;
@@ -416,15 +464,13 @@ Wood image's range
     .wood-tab-btn {
         padding: 12px 30px !important;
         font-size: 16px;
-        /* Giữ nguyên luật co giãn của mày */
         width: auto !important;
         flex: 0 1 auto !important;
-        transition: none !important; /* Khóa giật */
+        transition: none !important; 
     }
 
-    /* --- 3. VISUAL SECTION: SO LE SANG TRỌNG --- */
     .wood-flex-row {
-        height: 500px !important; /* Chiều cao vừa vặn cho tablet lớn */
+        height: 500px !important; 
     }
 
     .wood-img-col {
@@ -433,46 +479,35 @@ Wood image's range
 
     .wood-text-col {
         width: 50% !important;
-        /* Thu nhỏ padding so với Desktop (120px) để không bị hẹp chữ */
         padding: 20px !important; 
     }
 
-    /* Đảm bảo so le bên ngược lại cũng chuẩn 60px */
     .wood-flex-row.reverse .wood-text-col {
         padding: 20px !important;
     }
 
-    /* --- 4. CHỐNG GIẬT PANEL --- */
     .wood-panel.active {
         animation: none !important;
         transform: none !important;
     }
 }
 
-
-
-
-/* ==========================================================================
-   TẦNG 3: TABLET SMALL (Max: 991px) - Tinh chỉnh không gian
-   ========================================================================== */
+/* TẦNG 3: TABLET SMALL (Max: 991px) */
 @media (max-width: 991px) {
-
-    /* --- 1. ĐỒNG BỘ LỀ VÀ KHOẢNG CÁCH [cite: 2026-02-07] --- */
     .casa-container { 
         padding: 0 20px !important; 
     }
 
     .wood-intro-section {
-        padding-top: 40px !important; /* Trả về đúng 40px của mày */
+        padding-top: 40px !important; 
         padding-bottom: 40px !important;
     }
 
     .wood-visual-section {
-        padding-top: 10px !important; /* Trả về đúng 40px của mày */
+        padding-top: 10px !important; 
         padding-bottom: 60px !important;
     }
 
-    /* --- 2. INTRO TEXT TABLET --- */
     .intro-content .main-title {
         font-size: 40px; 
         line-height: 1.2;
@@ -484,7 +519,6 @@ Wood image's range
         margin: 0 auto; 
     }
 
-    /* --- 3. CỤM NÚT: GIỮ NGUYÊN MỘT HÀNG --- */
     .wood-tabs-control {
         display: flex;
         flex-wrap: wrap;
@@ -501,36 +535,27 @@ Wood image's range
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        /* Chống giật nút tuyệt đối */
-        transition: none !important;
-
-        /* THÊM 2 DÒNG NÀY ĐỂ GIỮ NÚT KHÔNG GIẬT */
         box-sizing: border-box !important;
-        border: 1px solid rgb(23, 26, 27) !important; /* Tạo khung sẵn để khi active không bị nống thêm 1px */
+        border: 1px solid rgb(23, 26, 27) !important; 
     }
 
     .wood-tab-btn.active {
         background-color: #171a1b !important;
         color: #ffffff !important;
-        border: 1px solid #171a1b !important; /* Đổi màu border thay vì thêm mới */
-        /* Triệt tiêu mọi thay đổi về font-weight hay layout */
+        border: 1px solid #171a1b !important; 
         font-weight: inherit !important; 
     }
 
-    /* --- 4. VISUAL SECTION: GIỮ NGUYÊN THÔNG SỐ CỦA MÀY --- */
     .wood-panel {
-        /* 1. Thay vì display: none, dùng cái này để giữ khung hình đứng yên */
         height: 0;
         overflow: hidden;
         visibility: hidden;
         pointer-events: none;
-        /* 2. Khóa cứng mọi chuyển động thừa */
         transition: none !important;
         animation: none !important;
     }    
 
     .wood-panel.active {
-        /* 3. Bật lại nội dung mà không làm sụt trang */
         height: auto;
         visibility: visible;
         pointer-events: auto;
@@ -540,11 +565,10 @@ Wood image's range
     .wood-flex-row {
         display: flex !important;
         flex-direction: row !important; 
-        height: 430px !important; /* Đúng 430px của mày */
+        height: 430px !important; 
         overflow: hidden;
     }
 
-    /* Giữ tính chất so le của Desktop nhưng ép lề Tablet */
     .wood-flex-row.reverse {
         flex-direction: row-reverse !important; 
     }
@@ -563,13 +587,12 @@ Wood image's range
     .wood-text-col, 
     .wood-flex-row.reverse .wood-text-col {
         width: 50% !important;
-        padding: 20px !important; /* Đồng bộ 40px cho cả 2 chiều so le */
+        padding: 20px !important; 
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
-    /* --- 5. TEXT TRONG VISUAL (TABLET) --- */
     .wood-title {
         font-size: 28px;
         margin-bottom: 20px;
@@ -582,23 +605,15 @@ Wood image's range
     }
 }
 
-
-
-
-
-/* ==========================================================================
-   TẦNG 4: MOBILE (Max: 767px) - ĐẬP CẤU TRÚC 50/50, ẢNH LÊN TRÊN
-   ========================================================================== */
+/* TẦNG 4: MOBILE (Max: 767px) */
 @media (max-width: 767px) {
-
-    /* --- 1. INTRO TEXT: HÍT TRÁI TUYỆT ĐỐI --- */
     .wood-intro-section {
         padding-top: 40px;
         padding-bottom: 40px;
-        text-align: left; /* Căn trái toàn bộ section */
+        text-align: left; 
     }
 
-    .casa-container { padding: 0 20px !important; } /* Lề chuẩn 20px [cite: 2026-02-07] */
+    .casa-container { padding: 0 20px !important; } 
 
     .intro-content {
         margin-left: 0;
@@ -620,12 +635,11 @@ Wood image's range
         text-align: left;
     }
 
-    /* --- 2. CỤM NÚT: 2x2 & KHÔNG GIỰT --- */
     .wood-tabs-control {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center; /* Căn giữa cụm nút */
-        gap: 12px 10px; /* Giảm gap ngang để ép 2 nút mỗi hàng */
+        justify-content: center; 
+        gap: 12px 10px; 
         width: 100%;
         margin-top: 60px;
         padding: 0;
@@ -638,13 +652,12 @@ Wood image's range
         justify-content: center !important;
         text-align: center !important;
         padding: 10px 15px !important;
-        transition: background-color 0.2s ease !important; /* Chỉ đổi màu, không đổi layout */
+        transition: background-color 0.2s ease !important; 
     }
 
     .wood-tab-btn.active {
         background-color: #171a1b !important;
         color: #ffffff !important;
-        /* Khóa chặt padding giống hệt lúc chưa active để chữ không nhảy */
         padding: 10px 15px !important; 
         transform: none !important;
     }
@@ -655,7 +668,7 @@ Wood image's range
     }
 
     .wood-panel {
-        grid-area: 1 / 1 / 2 / 2; /* Ép tất cả các panel nằm đè lên nhau cùng 1 vị trí */
+        grid-area: 1 / 1 / 2 / 2; 
         visibility: hidden;
         opacity: 0;
         height: 0;
@@ -669,52 +682,46 @@ Wood image's range
         opacity: 1;
         height: auto;
         overflow: visible;
-        display: block !important; /* Giữ để Js của mày không bị lỗi logic */
+        display: block !important; 
     }
 
-
-
-    /* --- 3. TRIỆT TIÊU GIỰT KHI CHUYỂN TAB --- */
     .wood-panel.active {
-        animation: none !important; /* Xóa bỏ woodFadeIn */
-        transform: none !important; /* Không cho nhảy vị trí */
+        animation: none !important; 
+        transform: none !important; 
     }
 
-    /* --- 4. VISUAL SECTION: CẤU TRÚC DỌC --- */
-.wood-visual-section .casa-container {
-    padding: 0 20px !important; /* Đảm bảo visual cũng hít lề 20px [cite: 2026-02-07] */
-}
+    .wood-visual-section .casa-container {
+        padding: 0 20px !important; 
+    }
 
-.wood-flex-row, 
-.wood-flex-row.reverse {
-    display: flex !important;
-    flex-direction: column !important; /* Ép thành cột dọc */
-    height: auto !important; /* Mở khóa để text tự do đẩy xuống */
-    margin-bottom: 20px !important; /* Chừa chút khoảng cách cho visual và text */
-}
+    .wood-flex-row, 
+    .wood-flex-row.reverse {
+        display: flex !important;
+        flex-direction: column !important; 
+        height: auto !important; 
+        margin-bottom: 20px !important; 
+    }
 
-/* 1. ÉP KHUNG CHỨA VỀ 100PX (BẤT CHẤP MIN-HEIGHT) */
-.wood-img-col {
-    width: 100% !important;
-    height: 220px !important; /* Con số 100px mày muốn */
-    min-height: 100px !important; /* KHÓA CHẾT min-height để không bị nống ra */
-    max-height: 300px !important; /* KHÓA CHẾT max-height */
-    order: -1; 
-    overflow: hidden !important; /* Đảm bảo ảnh thừa bị cắt bỏ */
-    margin-bottom: 0 !important;
-}
+    .wood-img-col {
+        width: 100% !important;
+        height: 250px !important; /* ĐANG XỬ LÝ: Chiều cao khung Mobile */
+        min-height: 100px !important; 
+        max-height: 300px !important; 
+        order: -1; 
+        overflow: hidden !important; 
+        margin-bottom: 0 !important;
+    }
 
-/* 2. ÉP CÁI ẢNH BÊN TRONG PHẢI CO LẠI THEO 100PX */
-.wood-img-col img {
-    width: 100% !important;
-    height: 100% !important; /* Lấp đầy 100px của khung cha */
-    object-fit: cover !important; /* Cắt gọn ảnh, không méo hình */
-    display: block !important;
-}
+    .wood-img-col img {
+        width: 100% !important;
+        height: 100% !important; /* ĐANG XỬ LÝ: Ép ảnh chiếm trọn 220px */
+        object-fit: cover !important; 
+        display: block !important;
+    }
 
     .wood-text-col {
         width: 100% !important;
-        padding: 20px 20px !important; /* Hít lề chuẩn [cite: 2026-02-07] */
+        padding: 20px 20px !important; 
     }
 
     .wood-flex-row.reverse .wood-text-col {
@@ -722,7 +729,6 @@ Wood image's range
         padding: 20px 20px !important;
     }
 
-    /* --- 5. TEXT TRONG VISUAL --- */
     .wood-tag {
         display: none;
     }
@@ -743,6 +749,7 @@ Wood image's range
         max-width: 100% !important;
     }
 }
+
 
 
 

@@ -105,36 +105,62 @@ document.querySelectorAll('.wood-panel').forEach(panel => {
     if (images && images.length > 1) {
         let currentIndex = 0;
 
-        // 1. Dựng "đoàn tàu" chứa tất cả ảnh
-        const slideHtml = `
-            <div class="wood-slider-track">
-                ${images.map(src => `<img src="${src}" alt="Wood Detail">`).join('')}
-            </div>
-            <div class="wood-nav">
-                <button class="nav-btn prev"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
-                <button class="nav-btn next"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>
-            </div>
+        // 1. Tạo HTML Slider chuẩn
+        const trackHtml = images.map(src => `<img src="${src}" alt="Wood Detail">`).join('');
+        
+        const uiHtml = `
+            <div class="wood-slider-track">${trackHtml}</div>
+            <div class="wood-nav"><button class="nav-btn prev">...</button><button class="nav-btn next">...</button></div>
+            <div class="wood-progress"><div class="wood-progress-bar"></div></div>
         `;
         
-        // Xóa cái img cũ đi và thay bằng slider
-        imgCol.innerHTML = slideHtml;
+        imgCol.innerHTML = uiHtml;
+        
         const track = imgCol.querySelector('.wood-slider-track');
+        const progressBar = imgCol.querySelector('.wood-progress-bar');
 
-        const updateSlide = (index) => {
-            // Đẩy đoàn tàu đi một khoảng bằng đúng chiều rộng của khung
+        // 2. Hàm cập nhật - ÉP POSITION TUYỆT ĐỐI
+        const updateGallery = (index) => {
             track.style.transform = `translateX(-${index * 100}%)`;
+            const totalSteps = images.length - 1;
+    const movePercent = (index / totalSteps) * (100 - 25); // 25 là chiều rộng con thoi ở CSS
+    
+    progressBar.style.transform = `translateX(${movePercent * (images.length / (images.length - 0.75))}%)`; 
+    // Hoặc cách đơn giản và chính xác nhất cho mọi số lượng ảnh:
+    const step = 100 / images.length;
+    progressBar.style.width = `${step}%`;
+    progressBar.style.transform = `translateX(${index * 100}%)`;
+
+            // FIX CHO MOBILE: Ép track hít vào cái hố Padding-top
+            if (window.innerWidth <= 767) {
+                track.style.position = 'absolute';
+                track.style.height = '100%';
+            }
         };
 
-        imgCol.querySelector('.prev').addEventListener('click', (e) => {
+        updateGallery(0);
+
+        // 3. Nút bấm
+        imgCol.querySelector('.prev').onclick = (e) => {
             e.stopPropagation();
             currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-            updateSlide(currentIndex);
-        });
+            updateGallery(currentIndex);
+        };
 
-        imgCol.querySelector('.next').addEventListener('click', (e) => {
+        imgCol.querySelector('.next').onclick = (e) => {
             e.stopPropagation();
             currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-            updateSlide(currentIndex);
-        });
+            updateGallery(currentIndex);
+        };
+
+        // 4. Swipe Mobile
+        let startX = 0;
+        imgCol.ontouchstart = (e) => { startX = e.touches[0].clientX; };
+        imgCol.ontouchend = (e) => {
+            let endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50) currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+            else if (endX - startX > 50) currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+            updateGallery(currentIndex);
+        };
     }
 });
