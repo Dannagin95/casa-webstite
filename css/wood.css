@@ -132,16 +132,17 @@
 .wood-tabs-control {
     display: flex;
     justify-content: center; /* Đưa các nút ra giữa */
-    gap: 12px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
 .wood-tab-btn {
     padding: 10px 30px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid rgb(23, 26, 27);
     background: transparent;
+    color: #000000;
     border-radius: 100px;
-    font-size: 13px;
+    font-size: 18px;
     font-weight: 700;
     text-transform: none;
     letter-spacing: 0.05em;
@@ -150,8 +151,9 @@
 }
 
 .wood-tab-btn.active {
-    background-color: #E6F3E6;
+    background-color: rgb(23, 26, 27);
     border-color: #E6F3E6;
+    color: var(--white);
 }
 
 
@@ -189,7 +191,7 @@
 .wood-flex-row {
     display: flex;
     align-items: stretch;
-    min-height: 700px;
+    height: 680px;
     width: 100%; /* Tràn hết mép trình duyệt */
 }
 
@@ -230,8 +232,9 @@
 .wood-tag {
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.2em; /* Tăng khoảng cách chữ cho tinh tế [cite: 2026-02-11] */
-    color: var(--color-text-muted);
+    word-spacing: 5px;
+    letter-spacing: 1px; /* Tăng khoảng cách chữ cho tinh tế [cite: 2026-02-11] */
+    color: #2b2929;
     margin-bottom: 25px;
     display: block;
 }
@@ -244,7 +247,7 @@
 
 .wood-desc {
     font-size: 14px;
-    line-height: 1.9; /* Tăng line-height cho thoáng desc [cite: 2026-02-04] */
+    line-height: 1.6; /* Tăng line-height cho thoáng desc [cite: 2026-02-04] */
     color: var(--color-grey);
     margin-bottom: 50px;
     max-width: 480px; /* Bóp desc lại xíu cho sang [cite: 2026-02-11] */
@@ -285,18 +288,194 @@
     transition: width 1.8s cubic-bezier(0.19, 1, 0.22, 1); /* Tăng thời gian chạy cho mượt [cite: 2026-02-11] */
 }
 
-/* ==========================================================================
-   TABLET LARGE (ÉP LỀ 20PX TRUẤN ĐÉP) [cite: 2026-02-07]
-   ========================================================================== */
 @media (max-width: 1024px) {
-    /* Ép text column hít lề 20px [cite: 2026-02-07] */
+    /* Ép text column hít lề 20px theo Golden Parameters */
     .wood-text-col, .wood-flex-row.reverse .wood-text-col {
         padding-left: 20px !important;
         padding-right: 20px !important;
     }
     
     .wood-flex-row {
-        min-height: 550px;
+        height: 600px; /* Hạ chiều cao xuống một chút cho cân đối với màn Tablet */
+    }
+}
+
+/* ==========================================================================
+   TẦNG 3: TABLET SMALL (Max: 991px) - Tinh chỉnh không gian
+   ========================================================================== */
+@media (max-width: 991px) {
+    .wood-flex-row {
+        height: 500px; /* Hạ tiếp chiều cao để ảnh và text không bị kéo quá giãn */
+    }
+    
+    .wood-text-col, .wood-flex-row.reverse .wood-text-col {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .wood-tab-btn {
+        padding: 8px 24px;
+        font-size: 16px; 
+    }
+}
+
+
+
+/* ==========================================================================
+   TẦNG 4: MOBILE (Max: 767px) - ĐẬP CẤU TRÚC 50/50, ẢNH LÊN TRÊN
+   ========================================================================== */
+@media (max-width: 767px) {
+
+    /* --- 1. INTRO TEXT: HÍT TRÁI TUYỆT ĐỐI --- */
+    .wood-intro-section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        text-align: left; /* Căn trái toàn bộ section */
+    }
+
+    .casa-container { padding: 0 20px !important; } /* Lề chuẩn 20px [cite: 2026-02-07] */
+
+    .intro-content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .intro-content .sub-title {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .intro-content .main-title {
+        text-align: left;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .intro-content .desc-text {
+        text-align: left;
+    }
+
+    /* --- 2. CỤM NÚT: 2x2 & KHÔNG GIỰT --- */
+    .wood-tabs-control {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Căn giữa cụm nút */
+        gap: 12px 10px; /* Giảm gap ngang để ép 2 nút mỗi hàng */
+        width: 100%;
+        margin-top: 60px;
+        margin-bottom: 10px;
+        padding: 0;
+    }
+
+    .wood-tab-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 10px 15px !important;
+        transition: background-color 0.2s ease !important; /* Chỉ đổi màu, không đổi layout */
+    }
+
+    .wood-tab-btn.active {
+        background-color: #171a1b !important;
+        color: #ffffff !important;
+        /* Khóa chặt padding giống hệt lúc chưa active để chữ không nhảy */
+        padding: 10px 15px !important; 
+        transform: none !important;
+    }
+
+    .wood-panels-container {
+        display: grid !important;
+        grid-template-columns: 1fr;
+    }
+
+    .wood-panel {
+        grid-area: 1 / 1 / 2 / 2; /* Ép tất cả các panel nằm đè lên nhau cùng 1 vị trí */
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .wood-panel.active {
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+        overflow: visible;
+        display: block !important; /* Giữ để Js của mày không bị lỗi logic */
+    }
+
+
+
+    /* --- 3. TRIỆT TIÊU GIỰT KHI CHUYỂN TAB --- */
+    .wood-panel.active {
+        animation: none !important; /* Xóa bỏ woodFadeIn */
+        transform: none !important; /* Không cho nhảy vị trí */
+    }
+
+    /* --- 4. VISUAL SECTION: CẤU TRÚC DỌC --- */
+.wood-visual-section .casa-container {
+    padding: 0 20px !important; /* Đảm bảo visual cũng hít lề 20px [cite: 2026-02-07] */
+}
+
+.wood-flex-row, 
+.wood-flex-row.reverse {
+    display: flex !important;
+    flex-direction: column !important; /* Ép thành cột dọc */
+    height: auto !important; /* Mở khóa để text tự do đẩy xuống */
+    margin-bottom: 20px !important; /* Chừa chút khoảng cách cho visual và text */
+}
+
+/* 1. ÉP KHUNG CHỨA VỀ 100PX (BẤT CHẤP MIN-HEIGHT) */
+.wood-img-col {
+    width: 100% !important;
+    height: 220px !important; /* Con số 100px mày muốn */
+    min-height: 100px !important; /* KHÓA CHẾT min-height để không bị nống ra */
+    max-height: 300px !important; /* KHÓA CHẾT max-height */
+    order: -1; 
+    overflow: hidden !important; /* Đảm bảo ảnh thừa bị cắt bỏ */
+    margin-bottom: 0 !important;
+}
+
+/* 2. ÉP CÁI ẢNH BÊN TRONG PHẢI CO LẠI THEO 100PX */
+.wood-img-col img {
+    width: 100% !important;
+    height: 100% !important; /* Lấp đầy 100px của khung cha */
+    object-fit: cover !important; /* Cắt gọn ảnh, không méo hình */
+    display: block !important;
+}
+
+    .wood-text-col {
+        width: 100% !important;
+        padding: 20px 20px !important; /* Hít lề chuẩn [cite: 2026-02-07] */
+    }
+
+    .wood-flex-row.reverse .wood-text-col {
+        width: 100% !important;
+        padding: 20px 20px !important;
+    }
+
+    /* --- 5. TEXT TRONG VISUAL --- */
+    .wood-tag {
+        display: none;
+    }
+
+    .wood-title {
+        font-size: 26px;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+
+    .wood-desc {
+        max-width: 100% !important;
+        text-align: left;
+        margin-bottom: 40px;
+    }
+
+    .wood-specs {
+        max-width: 100% !important;
     }
 }
 
