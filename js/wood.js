@@ -110,7 +110,11 @@ document.querySelectorAll('.wood-panel').forEach(panel => {
         
         const uiHtml = `
             <div class="wood-slider-track">${trackHtml}</div>
-            <div class="wood-nav"><button class="nav-btn prev">...</button><button class="nav-btn next">...</button></div>
+            <div class="wood-nav"><button class="nav-btn prev"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M15 18l-6-6 6-6" />
+                    </svg></button><button class="nav-btn next"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 18l6-6-6-6" />
+                </svg></button></div>
             <div class="wood-progress"><div class="wood-progress-bar"></div></div>
         `;
         
