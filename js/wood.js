@@ -82,3 +82,59 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });  
+
+
+
+
+
+
+const woodGalleries = {
+    "soi": ["imageswood/Oak tree.jpg", "imageswood/Oak tree 2.jpg", "imageswood/Oak tree 3.jpg", "imageswood/Oak tree 4.png"],
+    "occho": ["imageswood/Walnut tree.jpg", "imageswood/Walnut tree 1.jpg", "imageswood/Walnut tree 2.jpg", "imageswood/Walnut tree 3.jpg"],
+    "teak": ["imageswood/Teak tree.jpg", "imageswood/Teak tree 1.jpg"],
+    "tanbi": ["imageswood/Ash.jpg", "imageswood/tan-bi-van-1.jpg"]
+};
+
+
+
+document.querySelectorAll('.wood-panel').forEach(panel => {
+    const id = panel.id;
+    const imgCol = panel.querySelector('.wood-img-col');
+    const images = woodGalleries[id];
+
+    if (images && images.length > 1) {
+        let currentIndex = 0;
+
+        // 1. Dựng "đoàn tàu" chứa tất cả ảnh
+        const slideHtml = `
+            <div class="wood-slider-track">
+                ${images.map(src => `<img src="${src}" alt="Wood Detail">`).join('')}
+            </div>
+            <div class="wood-nav">
+                <button class="nav-btn prev"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
+                <button class="nav-btn next"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>
+            </div>
+        `;
+        
+        // Xóa cái img cũ đi và thay bằng slider
+        imgCol.innerHTML = slideHtml;
+        const track = imgCol.querySelector('.wood-slider-track');
+
+        const updateSlide = (index) => {
+            // Đẩy đoàn tàu đi một khoảng bằng đúng chiều rộng của khung
+            track.style.transform = `translateX(-${index * 100}%)`;
+        };
+
+        imgCol.querySelector('.prev').addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+            updateSlide(currentIndex);
+        });
+
+        imgCol.querySelector('.next').addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+            updateSlide(currentIndex);
+        });
+    }
+});
