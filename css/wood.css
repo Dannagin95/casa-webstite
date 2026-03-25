@@ -122,7 +122,7 @@ INTEGRATED WOOD SLIDER CSS (4 TIERS)
 }
 
 .nav-btn {
-    border: 2px solid #eee !important;
+    border: 2px solid #ffffff !important;
     background: none;
     width: 55px;
     height: 55px;
@@ -140,6 +140,7 @@ INTEGRATED WOOD SLIDER CSS (4 TIERS)
 }
 
 .nav-btn svg {
+    color: #ffffff;
     width: 24px;
     height: 24px;
   }
@@ -452,6 +453,7 @@ WOOD IMAGE' RANGE
     }
 
     .intro-content .desc-text {
+        font-size: 12px;
         max-width: 680px;
         color: var(--color-black);
         margin: 0 auto; 

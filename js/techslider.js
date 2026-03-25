@@ -9,57 +9,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!slider || !progressBar) return;
 
-        // Hàm tính toán progress bar
-        const handleScroll = () => {
+        const updateProgress = () => {
             const scrollLeft = slider.scrollLeft;
-            const maxScroll = slider.scrollWidth - slider.offsetWidth;
-            const isMobile = window.innerWidth <= 1024;
-
+            const maxScroll = slider.scrollWidth - slider.clientWidth;
             if (maxScroll <= 0) return;
 
-            const scrollPercent = scrollLeft / maxScroll;
-            let progress;
+            const isDesktop = window.innerWidth > 991;
+            const handleWidthPercent = isDesktop ? 60 : 20;
+            progressBar.style.width = `${handleWidthPercent}%`;
 
-            if (isMobile) {
-                progress = scrollPercent * 100;
-            } else {
-                // Desktop: chạy từ 33% (vì 1 slide hiện 3 cái) đến 100%
-                progress = 33 + (scrollPercent * 67);
-            }
-            progressBar.style.width = `${progress}%`;
+            const railWidth = progressBar.parentElement.offsetWidth;
+            const handleWidth = (handleWidthPercent / 100) * railWidth;
+            const maxTravel = railWidth - handleWidth;
+
+            const scrollPercent = scrollLeft / maxScroll;
+            const translateX = scrollPercent * maxTravel;
+
+            progressBar.style.transform = `translateX(${translateX}px)`;
         };
 
-        // Xử lý nút bấm (Đã sửa lỗi ReferenceError)
         if (nextBtn && prevBtn) {
             const move = (dir) => {
                 const firstItem = section.querySelector('.tech-slide-item');
-                if (!firstItem) return;
-
-                const itemWidth = firstItem.offsetWidth;
-                // Lấy gap chuẩn từ CSS (20px như mày đã set)
-                const gap = 20; 
-                
+                const gap = parseFloat(window.getComputedStyle(slider).gap) || 0;
                 slider.scrollBy({ 
-                    left: dir === 'next' ? (itemWidth + gap) : -(itemWidth + gap), 
+                    left: dir === 'next' ? (firstItem.offsetWidth + gap) : -(firstItem.offsetWidth + gap), 
                     behavior: 'smooth' 
                 });
             };
-
-            nextBtn.onclick = (e) => {
-                e.preventDefault();
-                move('next');
-            };
-            prevBtn.onclick = (e) => {
-                e.preventDefault();
-                move('prev');
-            };
+            nextBtn.onclick = (e) => { e.preventDefault(); move('next'); };
+            prevBtn.onclick = (e) => { e.preventDefault(); move('prev'); };
         }
 
-        slider.addEventListener('scroll', handleScroll, { passive: true });
-        handleScroll(); // Khởi tạo phát đầu
+        slider.addEventListener('scroll', () => {
+            requestAnimationFrame(updateProgress);
+        }, { passive: true });
+        
+        window.addEventListener('resize', updateProgress);
+        updateProgress();
     });
 });
-
 
 
 
