@@ -89,14 +89,21 @@
 
 
 
+/*===================================================================
+   1. LAYER MẶC ĐỊNH & DESKTOP (> 1200px)
+===================================================================*/
+/* --- Section & Container --- */
 .herringbone-finishing-section {
-    padding-top: 80px; /* Tạo khoảng cách lớn với phần Hero trên cùng [cite: 2025-12-29] */
+    padding-top: 80px;
     padding-bottom: var(--section-gap);
 }
+
 .herringbone-intro {
     max-width: 900px;
-    margin-bottom: 70px; /* Khoảng cách từ intro xuống dòng "CÁC DẠNG BỀ MẶT" [cite: 2025-12-29] */
+    margin-bottom: 70px;
 }
+
+/* --- Text & Typography --- */
 .herringbone-main-title {
     font-size: clamp(38px, 5vw, 50px);
     line-height: 1.4;
@@ -104,31 +111,131 @@
     max-width: 670px;
     font-family: var(--font-heading);
 }
+
 .herringbone-description p {
     font-size: 13px;
     line-height: 1.6;
     max-width: 670px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: var(--color-black);
 }
 
-@media (max-width: 1024px) {
-.herringbone-finishing-section {
-        padding-top: 40px !important; /* Chuẩn 40px Casa Mobile [cite: 2026-02-07] */
+/*===================================================================
+   2. LAYER TABLET LARGE (992px - 1199px)
+===================================================================*/
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Section & Container */
+    .herringbone-finishing-section {
+        padding-top: 60px !important;
         padding-bottom: 40px !important;
-        padding-left: 20px !important; /* Chuẩn lề 20px [cite: 2026-02-07] */
+        padding-left: 20px !important;
         padding-right: 20px !important;
+    }
+    
+    .herringbone-intro {
+        max-width: 900px;
+        margin-bottom: 70px;
+    }
+
+    /* Text & Typography */
+    .herringbone-main-title {
+        font-size: 40px; 
+        line-height: 1.2;
+        margin-bottom: 25px;
+    }
+
+    .herringbone-description p {
+        font-size: 13px;
+        max-width: 670px;
+    }
+}
+
+/*===================================================================
+   3. LAYER TABLET SMALL (768px - 991px)
+===================================================================*/
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Section & Container */
+    .herringbone-finishing-section {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .herringbone-intro {
+        margin-bottom: 40px; /* Tự động bóp nhẹ cho Tablet */
+    }
+
+    /* Text & Typography */
+    .herringbone-main-title {
+        font-size: 40px !important; 
+        line-height: 1.2 !important; 
+        color: var(--black) !important; 
+        margin-bottom: 25px !important; 
+        font-weight: 400;
+    }
+
+    .herringbone-description p {
+        font-size: 12px !important; 
+        line-height: 1.6 !important; 
+        color: var(--black) !important; 
+        margin-bottom: 20px;
+    }
+}
+
+/*===================================================================
+   4. LAYER MOBILE (< 767px)
+===================================================================*/
+@media (max-width: 767px) {
+    /* Section & Container */
+    .herringbone-finishing-section {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .herringbone-intro {
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+
+    /* Text & Typography */
+    .herringbone-main-title {
+        font-size: 28px !important; 
+        line-height: 1.2;
+        margin-bottom: 25px;
+        max-width: 90%;
+        font-weight: 400;
+    }
+
+    .herringbone-description p {
+        font-size: 12px; 
+        line-height: 1.6;
+        max-width: 100%;
+        color: var(--color-black);
     }
 }
 
 
 
 
-/* Section Intro nằm giữa */
+
+
+
+
+
+
+
+
+/*===================================================================
+   1. LAYER MẶC ĐỊNH & DESKTOP (> 1200px)
+===================================================================*/
+/* --- Section & Container --- */
 .hungary-intro {
     width: 100%;
-    margin: 40px 0; /* Cách section trên dưới 40px */
-    padding: 80px var(--side-padding); /* Tăng padding trên dưới cho thoáng đúng chất luxury */
+    margin: 40px 0;
+    padding: 80px var(--side-padding);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -141,34 +248,84 @@
     width: 100%;
 }
 
+/* --- Text & Typography --- */
 .hungary-title {
-    font-size: clamp(24px, 3.5vw, 30px); /* Kích thước vừa phải, không quá to */
+    font-size: clamp(24px, 3.5vw, 30px);
     line-height: 1.5;
     font-weight: 400;
-    color: #1a1a1a; /* Đen sâu */
+    color: #1a1a1a;
     letter-spacing: -0.01em;
-    margin-bottom: 25px; /* Khoảng cách tới subtitle bên dưới */
+    margin-bottom: 25px;
 }
 
 .hungary-subtitle {
-    font-size: 10px; /* Nhỏ lại tí nữa cho tinh tế */
-    font-weight: 400;
+    font-size: 10px;
+    font-weight: 300;
+    word-spacing: 5px;
     text-transform: uppercase;
-    letter-spacing: 0.15em; /* Dãn chữ ra cho sang */
-    color: var(--color-text-muted); /* MÀU NHẠT CHUẨN QUOC */
+    letter-spacing: 0.15em;
+    color: var(--color-text-muted);
     display: block;
 }
 
-/* --- Responsive 20px lề --- */
-@media (max-width: 1024px) {
+/*===================================================================
+   2. LAYER TABLET LARGE (992px - 1199px)
+===================================================================*/
+@media (min-width: 992px) and (max-width: 1199px) {
     .hungary-intro {
         margin: 40px 0;
-        padding: 60px 20px; /* Lề 20px mặc định */
+        padding: 40px var(--side-padding);
+    }
+
+    .hungary-title {
+        font-size: 26px;
+        max-width: 680px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+}
+
+/*===================================================================
+   3. LAYER TABLET SMALL (768px - 991px)
+===================================================================*/
+@media (min-width: 768px) and (max-width: 991px) {
+    .hungary-intro {
+        margin: 40px 0;
+        padding: 40px 20px; /* Lề 20px chuẩn Casa */
+    }
+
+    .hungary-title {
+        font-size: 22px;
+        line-height: 1.6;
+        max-width: 480px;
+        margin: 0 auto; 
+        margin-bottom: 20px;
+    }
+
+    .hungary-subtitle {
+        font-size: 10px;
+    }
+}
+
+/*===================================================================
+   4. LAYER MOBILE (< 767px)
+===================================================================*/
+@media (max-width: 767px) {
+    .hungary-intro {
+        margin: 40px 0;
+        padding: 40px 20px;
     }
     
     .hungary-title {
         font-size: 20px;
         line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .hungary-subtitle {
+        font-size: 9px;
+        letter-spacing: 0.12em;
+        word-spacing: 5px;
     }
 }
 
@@ -177,6 +334,24 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*===================================================================
+   1. LAYER MẶC ĐỊNH & DESKTOP (> 1200px)
+===================================================================*/
+/* --- Section & Container --- */
 .herringbone-single-image {
     width: 100%;
     max-width: var(--container-max); 
@@ -185,6 +360,7 @@
     box-sizing: border-box;
 }
 
+/* --- Image & Display --- */
 .herringbone-single-image img {
     width: 100%;
     height: 600px; 
@@ -192,7 +368,71 @@
     display: block;
 }
 
-@media (max-width: 1024px) {
+/*===================================================================
+   2. LAYER TABLET LARGE (992px - 1199px)
+===================================================================*/
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Section & Container: Bắt đầu áp dụng tràn viền nếu cần */
+    .herringbone-single-image {
+        width: 100vw !important; /* Ép lấy toàn bộ chiều ngang màn hình */
+        position: relative !important;
+        left: 50% !important;
+        right: 50% !important;
+        margin-left: -50vw !important; /* Kéo nó về lại chính giữa từ tâm */
+        margin-right: -50vw !important;
+        
+        margin-top: 20px !important;
+        margin-bottom: 40px !important;
+        display: block !important;
+        overflow: hidden !important;
+    }
+
+    /* Image & Display */
+    .herringbone-single-image img {
+        width: 100% !important; 
+        height: auto !important; 
+        display: block !important;
+        object-fit: cover !important; 
+        /* Tỉ lệ ảnh mày muốn, ví dụ 16/9 cho sang */
+        aspect-ratio: 16 / 9 !important; 
+    }
+}
+
+/*===================================================================
+   3. LAYER TABLET SMALL (768px - 991px)
+===================================================================*/
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Section & Container */
+    .herringbone-single-image {
+        width: 100vw !important; /* Ép lấy toàn bộ chiều ngang màn hình */
+        position: relative !important;
+        left: 50% !important;
+        right: 50% !important;
+        margin-left: -50vw !important; /* Kéo nó về lại chính giữa từ tâm */
+        margin-right: -50vw !important;
+        
+        margin-top: 20px !important;
+        margin-bottom: 40px !important;
+        display: block !important;
+        overflow: hidden !important;
+    }
+
+    /* Image & Display */
+    .herringbone-single-image img {
+        width: 100% !important; 
+        height: auto !important; 
+        display: block !important;
+        object-fit: cover !important; 
+        /* Tỉ lệ ảnh mày muốn, ví dụ 16/9 cho sang */
+        aspect-ratio: 16 / 9 !important; 
+    }
+}
+
+/*===================================================================
+   4. LAYER MOBILE (< 767px)
+===================================================================*/
+@media (max-width: 767px) {
+    /* Section & Container */
     .herringbone-single-image {
         padding: 0; 
         margin: 40px 0;
@@ -203,13 +443,22 @@
         margin-left: -50vw;
         margin-right: -50vw;
     }
-    
+
+    /* Image & Display */
     .herringbone-single-image img {
         width: 100%;
         height: auto;
         aspect-ratio: 4 / 3;
     }
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -244,6 +493,8 @@
     margin-bottom: 20px;
     font-weight: 400;
 }
+
+
 
 /* --- 2. PHẦN SPECIFICATIONS (COLLAGE) --- */
 .italy90-specifications, .french30-specifications, .hungary45-specifications {
