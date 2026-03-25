@@ -118,19 +118,21 @@
 
 
 
+/*===================================================================
+   1. LAYER MẶC ĐỊNH & DESKTOP (> 1200px)
+===================================================================*/
 .surface-finishing-section {
-    padding-top: 80px; /* Tạo khoảng cách lớn với phần Hero trên cùng [cite: 2025-12-29] */
-    padding-bottom: var(--section-gap);
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
-/* 2. CỤM GIỚI THIỆU: Tách rời đoạn văn [cite: 2025-12-29] */
 .surface-intro {
+    margin-bottom: 70px;
     max-width: 1000px;
-    margin-bottom: 70px; /* Khoảng cách từ intro xuống dòng "CÁC DẠNG BỀ MẶT" [cite: 2025-12-29] */
 }
 
 .surface-main-title {
-    font-size: clamp(38px, 5vw, 50px);
+    font-size: clamp(28px, 5vw, 50px);
     font-weight: 400;
     line-height: 1.4;
     margin-bottom: 30px;
@@ -142,26 +144,29 @@
     line-height: 1.6;
     max-width: 670px;
     color: var(--color-black);
+    margin-bottom: 25px;
 }
 
 .surface-sub-label {
     font-size: 11px;
+    word-spacing: 5px;
     letter-spacing: 1px;
     color: #2b2929;
     font-weight: 300;
-    margin-bottom: 20px; 
-    
+    margin-bottom: 20px;
     display: inline-block;
     width: 100%;
     text-transform: uppercase;
 }
 
-
-
 .finishing-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 80px 40px; /* Khoảng cách dọc cực thoáng [cite: 2025-12-29] */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px 25px;
+}
+
+#surface-group-1 {
+    margin-bottom: 80px; /* Giữ đúng con số 80px vàng của mày */
 }
 
 .finishing-card {
@@ -171,7 +176,7 @@
 
 .finishing-img-box {
     width: 100%;
-    aspect-ratio: 6/7; /* Ảnh Portrait sâu thăm thẳm [cite: 2025-12-29] */
+    aspect-ratio: 6/7;
     margin-bottom: 25px;
     overflow: hidden;
 }
@@ -183,35 +188,290 @@
     transition: transform 0.6s ease;
 }
 
-/* TYPOGRAPHY CHUẨN MẪU image_bc569a.jpg [cite: 2025-12-29] */
 .finishing-title {
     font-family: var(--font-body);
-    font-size: 17px; 
-    line-height: 1.4;
-    margin-bottom: 12px;
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 20px;
     font-weight: 500;
     color: var(--black);
+    text-transform: none;
 }
 
 .finishing-text {
-    font-size: 12.5px; 
+    font-size: 13px;
     line-height: 1.6;
     color: var(--black);
-    max-width: 95%; 
+    max-width: 95%;
 }
 
-/* MOBILE [cite: 2026-02-07] */
-@media (max-width: 1024px) {
+/* Các class hỗ trợ Slider (Ẩn thanh Progress trên Desktop) */
+.surface-slider-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.surface-progress-wrap {
+    display: none;
+}
+
+/*===================================================================
+   2. LAYER TABLET LARGE (992px - 1199px)
+===================================================================*/
+@media (min-width: 992px) and (max-width: 1199px) {
     .surface-finishing-section {
-        padding-top: 40px !important; /* Chuẩn 40px Casa Mobile [cite: 2026-02-07] */
+        padding-top: 60px;
+        padding-bottom: 80px;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }  
+    
+    .finishing-card {
+        flex: 0 0 55% !important; /* Tablet để lộ nửa card tiếp theo */
+        min-width: 55% !important;
+        scroll-snap-align: start !important;
+    }
+
+    .finishing-title {
+        font-size: 25px !important; 
+        line-height: 1.4 !important; 
+        color: var(--color-h3) !important; 
+        margin-bottom: 25px !important; 
+        font-weight: 500;
+    }
+
+    .finishing-text {
+        font-size: 12px !important; 
+        line-height: 1.6 !important; 
+        color: var(--black) !important; 
+        margin-bottom: 20px;
+    } 
+
+    .finishing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0 15px;
+    }
+
+    #surface-group-1 {
+    margin-bottom: 40px; /* Giữ đúng con số 80px vàng của mày */
+    }
+
+    .finishing-img-box {
+        aspect-ratio: 7 / 8 !important;
+        margin-bottom: 20px !important;
+    }
+}
+
+/*===================================================================
+   3. LAYER TABLET SMALL (768px - 991px)
+===================================================================*/
+@media (min-width: 768px) and (max-width: 991px) {
+    /* --- BẢN GỐC CỦA MÀY --- */
+    .surface-finishing-section {
+        padding-top: 40px !important;
         padding-bottom: 40px !important;
-        padding-left: 20px !important; /* Chuẩn lề 20px [cite: 2026-02-07] */
+        padding-left: 20px !important;
         padding-right: 20px !important;
     }
-    
+
+
     .finishing-grid {
-        grid-template-columns: 1fr; /* Mobile dồn 1 cột dọc [cite: 2025-12-29] */
+        grid-template-columns: 1fr;
         gap: 50px 0;
+    }
+
+    
+    .slider-main {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        scroll-snap-stop: always !important;
+        scroll-padding-left: 20px !important;
+        gap: 10px !important;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .slider-main::-webkit-scrollbar {
+        display: none;
+    }
+
+    .finishing-card {
+        flex: 0 0 44% !important; 
+        min-width: 44% !important;
+        scroll-snap-align: start !important;
+    }
+
+    .finishing-img-box {
+        aspect-ratio: 6 / 7 !important;
+        margin-bottom: 20px !important;
+    }
+
+
+    .finishing-title {
+        font-size: 25px !important; 
+        line-height: 1.4 !important; 
+        color: var(--color-h3) !important; 
+        margin-bottom: 25px !important; 
+        font-weight: 500;
+    }
+
+    .finishing-text {
+        font-size: 12px !important; 
+        line-height: 1.6 !important; 
+        color: var(--black) !important; 
+        margin-bottom: 20px;
+    } 
+
+    #surface-group-1 {
+    margin-bottom: 60px
+}
+
+
+  
+    .surface-progress-wrap {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: rgba(0,0,0,0.1);
+        margin: 0px 0 20px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .surface-progress-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: var(--black); 
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), width 0.4s ease;
+        will-change: transform;
+    }
+}
+
+/*===================================================================
+   4. LAYER MOBILE (< 767px)
+===================================================================*/
+@media (max-width: 767px) {
+.surface-finishing-section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+.surface-intro {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.surface-main-title {
+    font-size: 28px !important; 
+    line-height: 1.2;
+    margin-bottom: 25px;
+    max-width: 90%;
+    font-weight: 400;
+}
+
+.surface-description p {
+    font-size: 12px; 
+    line-height: 1.6;
+    max-width: 100%;
+    color: var(--color-black);
+}
+
+.surface-sub-label {
+    font-size: 11px;
+    word-spacing: 5px;
+    letter-spacing: 1px;
+    color: #2b2929;
+    font-weight: 300;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+
+    .finishing-grid {
+        grid-template-columns: 1fr;
+        gap: 50px 0;
+    }
+
+    .slider-main {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        scroll-snap-stop: always !important;
+        scroll-padding-left: 20px !important;
+        gap: 9px !important;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .slider-main::-webkit-scrollbar {
+        display: none;
+    }
+
+    .finishing-card {
+        flex: 0 0 85% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        scroll-snap-align: start !important; 
+        scroll-snap-stop: always !important;
+    }
+
+    .finishing-title {
+        font-size: 25px !important; 
+        line-height: 1.4 !important; 
+        color: var(--color-h3) !important; 
+        margin-bottom: 25px !important; 
+        font-weight: 500;
+    }
+
+    .finishing-text {
+        font-size: 12px !important; 
+        line-height: 1.6 !important; 
+        color: var(--black) !important; 
+        margin-bottom: 20px;
+    } 
+
+    #surface-group-1 {
+    margin-bottom: 60px; 
+}
+
+
+    .surface-progress-wrap {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: rgba(0,0,0,0.1); 
+        margin: 30px 0 40px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .surface-progress-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: var(--black);
+        width: 0;
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), width 0.4s ease;
+        will-change: transform;
     }
 }
 
@@ -222,7 +482,7 @@
 
 
 
-/* Container tổng của Section */
+
 .faq-wrapper {
     width: 100%;
     padding: var(--section-gap);
@@ -233,22 +493,22 @@
     margin-bottom: 20px;
 }
 
-/* Tiêu đề FAQ căn giữa */
+
 .faq-title {
     font-size: 32px;
     font-weight: 500;
     color: #000000;
     margin-bottom: 20px;
     letter-spacing: 0.5px;
-    text-transform: none; /* Giữ nguyên định dạng chữ */
+    text-transform: none; 
 }
 
-/* Khối nền xám nhạt chứa câu hỏi */
+
 .faq-content-block {
-    background-color: #f4f4f4; /* Màu xám rất nhạt đúng hình */
+    background-color: #f4f4f4;
     width: 100%;
-    max-width: 840px; /* Giới hạn độ rộng nội dung */
-    padding: 15px 50px; /* Padding rộng rãi tạo độ thoáng */
+    max-width: 840px; 
+    padding: 15px 50px; 
     box-sizing: border-box;
 }
 
@@ -256,38 +516,38 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer; /* Để người dùng biết là bấm được */
+    cursor: pointer; 
     padding: 22px 0;
 }
 
-/* Từng dòng câu hỏi */
+
 .faq-item {
     border-bottom: 1px solid var(--color-bar);
     transition: background-color 0.3s ease;
 }
 
 .faq-item:last-child {
-    border-bottom: none; /* Dòng cuối không có kẻ ngang */
+    border-bottom: none; 
 }
 
-/* Typography cho câu hỏi */
+
 .faq-question {
     font-size: 13px;
-    font-weight: 800; /* Độ đậm vừa phải */
-    color: #1a1a1a; /* Màu gần đen */
+    font-weight: 800; 
+    color: #1a1a1a;
     line-height: 1.4;
 }
 
 
-/* PHẦN MỚI: Câu trả lời */
+
 .faq-answer-wrapper {
     display: grid;
-    grid-template-rows: 0fr; /* Mặc định là 0 */
-    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Hiệu ứng dòng chảy của QUOC */
+    grid-template-rows: 0fr; 
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
     overflow: hidden;
 }
 
-/* Nội dung bên trong Grid */
+
 .faq-answer-content {
     min-height: 0;
 }
@@ -297,15 +557,15 @@
     color: #666;
     line-height: 1.6;
     margin: 0;
-    padding-bottom: 20px; /* Tạo khoảng trống khi mở */
+    padding-bottom: 20px; 
 }
 
-/* KHI ACTIVE: Bung Grid ra */
+
 .faq-item.active .faq-answer-wrapper {
-    grid-template-rows: 1fr; /* Mở ra đúng bằng nội dung chữ */
+    grid-template-rows: 1fr; 
 }
 
-/* Nút tròn chứa icon */
+
     .ed-faq-icon-btn {
         display: flex;
         justify-content: center;
@@ -329,9 +589,8 @@
     transform: rotate(180deg);
 }
 
-    /* Icon SVG */
     .ed-faq-chevron {
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Đồng bộ thời gian với slide */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
     width: 11px;
     height: 11px;
     stroke: currentColor;
@@ -342,61 +601,55 @@
 
 
 
-/* --- RESPONSIVE CHO FAQ (MOBILE & TABLET) --- */
+
 @media (max-width: 1024px) {
-    /* Container tổng */
     .faq-wrapper {
-        padding: 60px 20px; /* Lề trái phải 20px đúng yêu cầu của mày */
+        padding: 60px 20px;
     }
 
     .faq-title {
-        font-size: 28px; /* Giảm nhẹ tiêu đề cho cân đối */
+        font-size: 28px;
         margin-bottom: 30px;
     }
 
-    /* Khối nền xám: Bỏ giới hạn max-width và chỉnh lại padding */
     .faq-content-block {
         max-width: 100%;
-        padding: 5px 20px; /* Thu hẹp padding nội bộ để ưu tiên không gian chữ */
-        background-color: #f4f4f4; /* Giữ nguyên màu xám nhạt chuẩn QUOC */
+        padding: 5px 20px;
+        background-color: #f4f4f4;
     }
 
-    /* Từng dòng câu hỏi */
     .faq-header-row {
         display: flex !important;
         justify-content: space-between !important;
         width: 100% !important;
-        flex-direction: row !important; /* Giữ câu hỏi và icon nằm ngang */
+        flex-direction: row !important;
     }
 
     .faq-item {
         display: flex !important;
-        flex-direction: column !important; /* Ép câu trả lời phải xuống dưới câu hỏi [cite: 2026-02-11] */
+        flex-direction: column !important;
         width: 100% !important;
     }
 
-    /* Font chữ trên mobile: Cần rõ ràng nhưng không quá to */
     .faq-question {
-        font-size: 14px; /* Tăng 1px so với desktop để dễ đọc trên điện thoại */
+        font-size: 14px;
         letter-spacing: -0.01em;
-        padding-right: 15px; /* Tránh chữ đè lên icon */
+        padding-right: 15px;
     }
 
     .faq-answer-content {
         width: 100% !important;
-        display: block !important; /* Triệt tiêu hoàn toàn việc bị ép sang phải [cite: 2026-02-11] */
+        display: block !important;
     }
 
-    /* Câu trả lời */
     .faq-answer-content p {
         font-size: 12px;
         line-height: 1.4;
         padding-bottom: 15px;
     }
 
-    /* Icon nút tròn: Giữ nguyên kích thước để dễ chạm (Touch target) */
     .ed-faq-icon-btn {
-        width: 28px; /* Tăng nhẹ để ngón tay dễ bấm */
+        width: 28px;
         height: 28px;
     }
 
@@ -406,13 +659,12 @@
     }
 }
 
-/* Tinh chỉnh cho màn hình siêu nhỏ */
 @media (max-width: 480px) {
     .faq-title {
         font-size: 24px;
     }
     
     .faq-question {
-        font-size: 13px; /* Quay lại 13px nếu màn hình quá hẹp */
+        font-size: 13px;
     }
 }

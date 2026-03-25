@@ -163,9 +163,13 @@
     .philo-description p {
         font-size: 13px;
         line-height: 1.6;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         max-width: 670px;
         color: var(--color-black);
+    }
+
+    .btn-casa {
+        margin-top: 5px;
     }
 }
 
@@ -661,7 +665,7 @@
     .nhiemvu-grid {
         display: flex !important;
         overflow-x: auto !important;
-        gap: 20px !important;
+        gap: 15px !important;
         padding-bottom: 10px;
         scrollbar-width: none; /* ẨN TRÊN FIREFOX */
         -ms-overflow-style: none; /* ẨN TRÊN IE/EDGE */
@@ -672,7 +676,7 @@
     }
 
     .nhiemvu-item {
-        flex: 0 0 32% !important; /* Ép 3 cột cùng hiện trên Tablet L */
+        flex: 0 0 calc((100% - 30px) / 3) !important; 
         min-width: 300px;
     }
 
@@ -692,6 +696,29 @@
     .nhiemvu-item {
         flex: 0 0 45% !important; /* Hiện 2 cột rưỡi để biết đường lướt */
     }
+    
+    .nhiemvu-main-text {
+        font-size: 33px !important; 
+        color: var(--black);
+        line-height: 1.3 !important; 
+        padding-bottom: 20px;
+    }
+
+    .nhiemvu-title {
+        font-size: 25px !important; 
+        line-height: 1.4 !important; 
+        color: var(--color-h3) !important; 
+        margin-bottom: 25px !important; 
+        font-weight: 500;
+    }
+
+    .nhiemvu-desc {
+        font-size: 12px !important; 
+        line-height: 1.6 !important; 
+        color: var(--black) !important; 
+        margin-bottom: 20px;
+    }   
+
 }
 
 /* 4. MOBILE (< 767px) - GIỮ NGUYÊN DỌC NHƯ MÀY MUỐN */
@@ -725,18 +752,19 @@
     }
 
     .nhiemvu-title {
-    font-size: 22px !important;
-    font-weight: 500;
-    margin-bottom: 18px;
-    color: var(--color-dark);
-}
+        font-size: 25px !important; 
+        line-height: 1.4 !important; 
+        color: var(--color-h3) !important; 
+        margin-bottom: 25px !important; 
+        font-weight: 500;
+    }
 
-.nhiemvu-desc {
-    font-size: 13px;
-    line-height: 1.6; 
-    word-spacing: 1px;
-    color: var(--black);
-}
+    .nhiemvu-desc {
+        font-size: 12px !important; 
+        line-height: 1.6 !important; 
+        color: var(--black) !important; 
+        margin-bottom: 20px;
+    }
 }
 
 

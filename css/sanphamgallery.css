@@ -78,7 +78,7 @@
 
     .sanpham-info { padding: 7px 0; }
    
-    .sanpham-info .name { font-size: 20px; margin: 10px 0; font-weight: 500; color: #1a1a1a; }
+    .sanpham-info .name { font-size: 28px !important; margin: 10px 0; font-weight: 500; color: #1a1a1a; }
     .sanpham-info .desc { font-size: 13px !important; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 15px; }
 
    .luot-footer {

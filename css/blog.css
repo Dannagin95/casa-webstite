@@ -440,9 +440,25 @@
         flex: 0 0 calc((100vw - 40px - 20px) / 2) !important;
         flex-shrink: 0 !important;
     }
-    .blog-card-image { aspect-ratio: 6/7 !important; margin-bottom: 20px !important; }
-    .blog-card-title h3 { font-size: 20px !important; line-height: 1.5 !important; color: var(--color-h3) !important; margin-bottom: 10px !important; }
-    .blog-card-desc { font-size: 13px !important; line-height: 1.6 !important; color: var(--black) !important; }
+    .blog-card-image { 
+        aspect-ratio: 6/7 !important; 
+        margin-bottom: 20px !important; 
+    }
+
+    .blog-card-title h3 { 
+        font-size: 25px !important; 
+        line-height: 1.4 !important; 
+        color: var(--color-h3) !important; 
+        margin-bottom: 25px !important; 
+        font-weight: 500;
+    }
+
+    .blog-card-desc { 
+        font-size: 12px !important; 
+        line-height: 1.6 !important; 
+        color: var(--black) !important; 
+        margin-bottom: 20px;
+    }
 }
 
 
@@ -455,10 +471,28 @@
         gap: 40px !important;
         padding: 0 20px !important;
     }
-    .blog-card-image { aspect-ratio: 6/7 !important; margin-bottom: 20px !important; }
-    .blog-card-title h3 { font-size: 22px !important; line-height: 1.6 !important; color: var(--color-h3) !important; margin-bottom: 12px !important; }
-    .blog-card-desc { font-size: 13px !important; line-height: 1.6 !important; color: var(--black) !important; }
+    .blog-card-image { 
+        aspect-ratio: 6/7 !important; 
+        margin-bottom: 20px !important; 
+    }
+
+    .blog-card-title h3 { 
+        font-size: 25px !important; 
+        line-height: 1.4 !important; 
+        color: var(--color-h3) !important; 
+        margin-bottom: 25px !important; 
+        font-weight: 500;
+    }
+
+    .blog-card-desc { 
+        font-size: 12px !important; 
+        line-height: 1.6 !important; 
+        color: var(--black) !important; 
+        margin-bottom: 20px;
+    }
 }
+
+
 
 /* --- 5. PAGINATION --- */
 .blog-pagination { 
@@ -1438,7 +1472,7 @@
 
     .sanpham-info { padding: 7px 0; }
    
-    .sanpham-info .name { font-size: 20px; margin: 10px 0; font-weight: 500; color: #1a1a1a; }
+    .sanpham-info .name { font-size: 28px; margin: 10px 0; font-weight: 500; color: #1a1a1a; }
     .sanpham-info .desc { font-size: 13px !important; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 15px; }
 
    .luot-footer {
