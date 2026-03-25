@@ -813,7 +813,7 @@ SECTION 1
 
 /* --- DESKTOP FIX --- */
 .khamphaalbum-section {
-    padding-top: 0px;
+    padding-top: 80px;
     padding-bottom: 100px;
     background-color: var(--color-white);
     /* Giữ section ổn định */
