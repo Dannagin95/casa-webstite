@@ -463,8 +463,14 @@
 
 
 
-/* --- 1. PHẦN INTRO (CĂN GIỮ 720PX) --- */
-.italy90-info, .french30-info, .hungary45-info {
+/*===================================================================
+   1. LAYER DESKTOP (> 1200px)
+===================================================================*/
+
+/* --- SECTION SHARED --- */
+.italy90-info, 
+.french30-info, 
+.hungary45-info {
     width: 100%;
     margin: 40px auto;
     padding: 80px var(--side-padding) 10px;
@@ -472,6 +478,16 @@
     text-align: center;
 }
 
+.italy90-specifications, 
+.french30-specifications, 
+.hungary45-specifications {
+    max-width: var(--container-max); 
+    margin: 40px auto; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- INTRO CONTENT --- */
 .italy90-container, .french30-container, .hungary45-container {
     max-width: 720px;
     margin: 0 auto;
@@ -494,28 +510,23 @@
     font-weight: 400;
 }
 
-
-
-/* --- 2. PHẦN SPECIFICATIONS (COLLAGE) --- */
-.italy90-specifications, .french30-specifications, .hungary45-specifications {
-    max-width: var(--container-max); 
-    margin: 40px auto; 
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.italy90-spec-inner, .french30-spec-inner, .hungary45-spec-inner {
+/* --- SPECIFICATION LAYOUT --- */
+.italy90-spec-inner, 
+.french30-spec-inner, 
+.hungary45-spec-inner {
     display: flex;
     align-items: stretch;
     gap: 60px;
 }
 
-.spec-visual {
-    flex: 1.2;
-    display: flex;
+.spec-visual { 
+    flex: 1.2; 
+    display: flex; 
 }
 
-.italy90-technical-collage, .french30-technical-collage, .hungary45-technical-collage {
+.italy90-technical-collage, 
+.french30-technical-collage, 
+.hungary45-technical-collage {
     width: 100%;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -523,38 +534,15 @@
     gap: 10px;
 }
 
-.collage-item {
-    overflow: hidden;
-    background: transparent;
-}
+/* --- COLLAGE ITEMS --- */
+.collage-item { overflow: hidden; background: transparent; }
+.collage-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.collage-item-large { grid-column: 1 / 2; grid-row: 1 / 3; }
+.collage-item-square-top { grid-column: 2 / 3; grid-row: 1 / 2; }
+.collage-item-square-bottom { grid-column: 2 / 3; grid-row: 2 / 3; }
+.collage-item-square img { object-fit: contain; padding: 0; }
 
-.collage-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.collage-item-large {
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-}
-
-.collage-item-square-top {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-}
-
-.collage-item-square-bottom {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-}
-
-.collage-item-square img {
-    object-fit: contain; 
-    padding: 0;
-}
-
+/* --- SPEC TEXT CONTENT --- */
 .spec-content {
     flex: 1;
     display: flex;
@@ -579,76 +567,176 @@
     margin-bottom: 30px;
 }
 
-.spec-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    border-top: 1px solid #eee;
+/* --- SPEC LIST & LINES --- */
+.spec-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid #eee; }
+.spec-list li { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #eee; }
+.spec-label { font-size: 11px; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; color: #888; }
+.spec-value { font-size: 13px; font-weight: 600; color: #1a1a1a; }
+
+/*===================================================================
+   2. LAYER TABLET LARGE (992px - 1199px)
+===================================================================*/
+@media (min-width: 992px) and (max-width: 1199px) {
+    .italy90-specifications, 
+    .french30-specifications, 
+    .hungary45-specifications {
+        padding: 0 0px;
+    }
+
+    .italy90-spec-inner, 
+    .french30-spec-inner, 
+    .hungary45-spec-inner {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .italy90-info, .french30-info, .hungary45-info {
+        padding-top: 40px !important;
+        padding-bottom: 10px !important;
+        max-width: 780px !important;
+    }
+
+
+    .italy90-title, .french30-title, .hungary45-title { 
+        font-size: 22px !important; 
+        line-height: 1.2;
+        margin-bottom: 25px;
+        max-width: 100%;
+        font-weight: 400;    
+    }
+
+    .italy90-description p, .french30-description p, .hungary45-description p {
+        font-size: 12px; 
+        line-height: 1.6;
+        max-width: 100%;
+        color: var(--color-black);
+    }
 }
 
-.spec-list li {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 0; 
-    border-bottom: 1px solid #eee;
-}
-
-.spec-label {
-    font-size: 11px;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #888;
-}
-
-.spec-value {
-    font-size: 13px;
-    font-weight: 600;
-    color: #1a1a1a;
-}
-
-/* --- 3. RESPONSIVE CHUNG CHO CẢ 2 PHẦN (LỀ 20PX) --- */
-@media (max-width: 1024px) {
-    /* Ép tất cả section cha vào lề 20px */
+/*===================================================================
+   3. LAYER TABLET SMALL (768px - 991px)
+===================================================================*/
+@media (min-width: 768px) and (max-width: 991px) {
     .italy90-info, .french30-info, .hungary45-info,
     .italy90-specifications, .french30-specifications, .hungary45-specifications {
         margin: 40px auto;
-        padding: 0;
+        padding: 0  !important;
     }
 
-    /* Chỉnh riêng padding top cho phần Info trên mobile */
+    .italy90-spec-inner, 
+    .french30-spec-inner, 
+    .hungary45-spec-inner {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .italy90-info, .french30-info, .hungary45-info {
+        padding-top: 40px !important;
+        padding-bottom: 10px !important;
+        max-width: 480px;
+    }
+
+    .italy90-title, .french30-title, .hungary45-title { 
+        font-size: 22px !important; 
+        line-height: 1.2;
+        margin-bottom: 25px;
+        max-width: 100%;
+        font-weight: 400;    
+    }
+    
+    .spec-visual { 
+        height: auto; 
+        aspect-ratio: 4/3; 
+    }
+
+    .spec-content { 
+        padding: 0; 
+    }
+
+    .spec-title {
+        font-size: 12px !important; 
+        line-height: 1.2;
+        color: #888;
+        margin-bottom: 20px;
+        max-width: 100%;
+        font-weight: 500;
+    }
+
+    .spec-desc { 
+        font-size: 12px; 
+        line-height: 1.6; 
+        padding: 0; 
+    }
+
+    .collage-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+}
+
+
+
+
+/*===================================================================
+   4. LAYER MOBILE (< 767px)
+===================================================================*/
+@media (max-width: 767px) {
+    .italy90-info, .french30-info, .hungary45-info,
+    .italy90-specifications, .french30-specifications {
+        margin: 20px auto;
+        padding: 0  !important;
+    }
+
+    .hungary45-specifications {
+        margin: 0 auto;
+        padding: 0  !important;
+    }
+    
     .italy90-info, .french30-info, .hungary45-info {
         padding-top: 40px !important;
         padding-bottom: 10px !important;
     }
 
-    .italy90-title, .french30-title, .hungary45-title {
-        font-size: 13px;
+    .italy90-title, .french30-title, .hungary45-title { 
+        font-size: 22px !important; 
+        line-height: 1.2;
+        margin-bottom: 25px;
+        max-width: 100%;
+        font-weight: 400;    
     }
 
     .italy90-description p, .french30-description p, .hungary45-description p {
-        font-size: 12px;
+        font-size: 12px; 
         line-height: 1.6;
+        max-width: 100%;
+        color: var(--color-black);
     }
 
-    /* Chỉnh Layout Spec rớt dòng */
-    .italy90-spec-inner, .french30-spec-inner, .hungary45-spec-inner {
+    .italy90-spec-inner, 
+    .french30-spec-inner, 
+    .hungary45-spec-inner {
         flex-direction: column;
-        gap: 30px;
+        gap: 10px;
     }
 
-    /* Ép khung ảnh hiển thị cân đối trên mobile */
-    .spec-visual {
-        height: auto;
-        aspect-ratio: 4/3;
+    .spec-visual { 
+        height: auto; 
+        aspect-ratio: 4/3; 
+    }
+    
+    .spec-title {
+        font-size: 12px !important; 
+        line-height: 1.2;
+        color: #888;
+        margin-bottom: 20px;
+        max-width: 100%;
+        font-weight: 500;
     }
 
-    /* Để text bám sát lề 20px của cha, không thụt thêm padding */
-    .spec-content {
-        font-size: 12px;
-        line-height: 1.6;
-        padding: 0;
+    .spec-desc { 
+        font-size: 12px; 
+        line-height: 1.6; 
+        padding: 0; 
     }
+
+    .collage-item-square img { width: 100%; height: 100%; object-fit: cover; display: block; }
 }
 
 
@@ -748,7 +836,6 @@
 /* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
     .features-bar {
-        margin-top: 40px;
         padding: 40px 0; /* Giữ khoảng cách trên dưới vừa phải */
         overflow: hidden; /* Tránh bị tràn trang */
     }
