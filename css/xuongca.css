@@ -754,10 +754,217 @@
 
 
 
+/* Container tổng của Section */
+.faq-wrapper {
+    width: 100%;
+    padding: var(--section-gap);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff; /* Nền trang trắng */
+    margin-bottom: 20px;
+}
+
+/* Tiêu đề FAQ căn giữa */
+.faq-title {
+    font-size: 32px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    text-transform: none; /* Giữ nguyên định dạng chữ */
+}
+
+/* Khối nền xám nhạt chứa câu hỏi */
+.faq-content-block {
+    background-color: #f4f4f4; /* Màu xám rất nhạt đúng hình */
+    width: 100%;
+    max-width: 840px; /* Giới hạn độ rộng nội dung */
+    padding: 15px 50px; /* Padding rộng rãi tạo độ thoáng */
+    box-sizing: border-box;
+}
+
+.faq-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer; /* Để người dùng biết là bấm được */
+    padding: 22px 0;
+}
+
+/* Từng dòng câu hỏi */
+.faq-item {
+    border-bottom: 1px solid var(--color-bar);
+    transition: background-color 0.3s ease;
+}
+
+.faq-item:last-child {
+    border-bottom: none; /* Dòng cuối không có kẻ ngang */
+}
+
+/* Typography cho câu hỏi */
+.faq-question {
+    font-size: 13px;
+    font-weight: 800; /* Độ đậm vừa phải */
+    color: #1a1a1a; /* Màu gần đen */
+    line-height: 1.4;
+}
+
+
+/* PHẦN MỚI: Câu trả lời */
+.faq-answer-wrapper {
+    display: grid;
+    grid-template-rows: 0fr; /* Mặc định là 0 */
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Hiệu ứng dòng chảy của QUOC */
+    overflow: hidden;
+}
+
+/* Nội dung bên trong Grid */
+.faq-answer-content {
+    min-height: 0;
+}
+
+.faq-answer-content p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+    padding-bottom: 20px; /* Tạo khoảng trống khi mở */
+}
+
+/* KHI ACTIVE: Bung Grid ra */
+.faq-item.active .faq-answer-wrapper {
+    grid-template-rows: 1fr; /* Mở ra đúng bằng nội dung chữ */
+}
+
+/* Nút tròn chứa icon */
+    .ed-faq-icon-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+        background-color: #e0e0e0;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .faq-header-row:hover .ed-faq-icon-btn {
+    background-color: var(--color-dark);
+    }
+
+    .faq-header-row:hover .ed-faq-chevron {
+    stroke: #ffffff;
+    }
+
+    .faq-item.active .ed-faq-chevron {
+    transform: rotate(180deg);
+}
+
+    /* Icon SVG */
+    .ed-faq-chevron {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Đồng bộ thời gian với slide */
+    width: 11px;
+    height: 11px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 3;
+}
+    
+
+
+
+/* --- RESPONSIVE CHO FAQ (MOBILE & TABLET) --- */
+@media (max-width: 1024px) {
+    /* Container tổng */
+    .faq-wrapper {
+        padding: 40px 20px; /* Lề trái phải 20px đúng yêu cầu của mày */
+        margin-top: 20px;
+    }
+
+    .faq-title {
+        font-size: 28px; /* Giảm nhẹ tiêu đề cho cân đối */
+        margin-bottom: 30px;
+    }
+
+    /* Khối nền xám: Bỏ giới hạn max-width và chỉnh lại padding */
+    .faq-content-block {
+        max-width: 100%;
+        padding: 5px 20px; /* Thu hẹp padding nội bộ để ưu tiên không gian chữ */
+        background-color: #f4f4f4; /* Giữ nguyên màu xám nhạt chuẩn QUOC */
+    }
+
+    /* Từng dòng câu hỏi */
+    .faq-header-row {
+        display: flex !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        flex-direction: row !important; /* Giữ câu hỏi và icon nằm ngang */
+    }
+
+    .faq-item {
+        display: flex !important;
+        flex-direction: column !important; /* Ép câu trả lời phải xuống dưới câu hỏi [cite: 2026-02-11] */
+        width: 100% !important;
+    }
+
+    /* Font chữ trên mobile: Cần rõ ràng nhưng không quá to */
+    .faq-question {
+        font-size: 14px; /* Tăng 1px so với desktop để dễ đọc trên điện thoại */
+        letter-spacing: -0.01em;
+        padding-right: 15px; /* Tránh chữ đè lên icon */
+    }
+
+    .faq-answer-content {
+        width: 100% !important;
+        display: block !important; /* Triệt tiêu hoàn toàn việc bị ép sang phải [cite: 2026-02-11] */
+    }
+
+    /* Câu trả lời */
+    .faq-answer-content p {
+        font-size: 12px;
+        line-height: 1.4;
+        padding-bottom: 15px;
+    }
+
+    /* Icon nút tròn: Giữ nguyên kích thước để dễ chạm (Touch target) */
+    .ed-faq-icon-btn {
+        width: 28px; /* Tăng nhẹ để ngón tay dễ bấm */
+        height: 28px;
+    }
+
+    .ed-faq-chevron {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Tinh chỉnh cho màn hình siêu nhỏ */
+@media (max-width: 480px) {
+    .faq-title {
+        font-size: 24px;
+    }
+    
+    .faq-question {
+        font-size: 13px; /* Quay lại 13px nếu màn hình quá hẹp */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* --- FEATURES BAR --- */
 .features-bar {
-        margin-top: 40px;
         padding: 80px 0 !important; 
         background-color: #f6f6f6;
         border-top: 1px solid #f6f6f6;
@@ -843,7 +1050,7 @@
 /* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
     .features-bar {
-        padding: 40px 0; /* Giữ khoảng cách trên dưới vừa phải */
+        padding: 0px 0; /* Giữ khoảng cách trên dưới vừa phải */
         overflow: hidden; /* Tránh bị tràn trang */
     }
 

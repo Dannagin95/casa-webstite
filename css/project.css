@@ -188,11 +188,15 @@
 
 
 
+
+
+
+
 /* TẦNG 4: GRID 3 DỰ ÁN [cite: 2025-12-29] */
 .duan-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 45px; /* Khoảng cách giữa 3 cột [cite: 2025-12-29] */
+    gap: 30px; /* Khoảng cách giữa 3 cột [cite: 2025-12-29] */
 }
 
 .duan-card {
@@ -344,6 +348,19 @@
         gap: 60px !important;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

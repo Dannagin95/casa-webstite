@@ -1,5 +1,6 @@
 /* Container tổng của Section */
 .faq-wrapper {
+    margin-top: 80px;
     width: 100%;
     padding: var(--section-gap);
     display: flex;
@@ -122,7 +123,7 @@
 @media (max-width: 1024px) {
     /* Container tổng */
     .faq-wrapper {
-        padding: 60px 20px; /* Lề trái phải 20px đúng yêu cầu của mày */
+        padding: 40px 20px; /* Lề trái phải 20px đúng yêu cầu của mày */
     }
 
     .faq-title {

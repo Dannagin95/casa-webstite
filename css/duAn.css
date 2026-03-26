@@ -228,7 +228,7 @@ IPAD/TABLET SYNC (768px - 1024px)
         margin-top: -1%;
         display: grid;
         grid-template-columns: repeat(3, 1fr); 
-        gap: 24px; 
+        gap: 30px; 
     }
 
     .project-card {
