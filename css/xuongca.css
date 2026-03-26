@@ -145,8 +145,9 @@
     }
 
     .herringbone-description p {
-        font-size: 13px;
-        max-width: 670px;
+        font-size: 12px;
+        max-width: 680px;
+        color: var(--color-black);
     }
 }
 

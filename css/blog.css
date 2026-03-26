@@ -793,7 +793,7 @@
 .secondblog-gallery-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 13px; 
+    gap: 20px; 
     width: 100%;
     max-width: 1120px; 
     margin: 40px auto !important; 
@@ -835,6 +835,7 @@
         max-width: 720px !important; 
         margin-left: auto; 
         margin-right: auto;
+        margin-bottom: 20px;
     }
     
     /* 1. ĐẶC TRỊ SINGLE IMAGE - ÉP NÓ RA GIỮA VÀ TRÀN 2 BÊN */
@@ -873,16 +874,13 @@
     .secondblog-gallery-grid {
         display: flex !important;
         flex-wrap: wrap !important;
-        column-gap: 20px !important; 
-        row-gap: 40px !important; 
+        column-gap: 15px !important; 
         width: 100% !important;
         margin: 20px 0 !important;
         justify-content: center !important; 
     }
 
 
-    /* 3. Gallery 2x2 giữ nguyên phong độ */
-    /* 3. Gallery 2x2 - Chỉnh lại item cho Tablet nhỏ */
     .secondblog-gallery-item {
         /* Tính toán bề ngang khớp với lề 20px và gap 30px */
         width: calc((100vw - 40px - 20px) / 2) !important;
@@ -905,12 +903,30 @@
 @media (max-width: 767px) {
     .secondblog-header {
         padding: 0 20px;
+        margin-top: 10px;
     }
 
     .secondblog-main-title { 
-        font-size: 36px; 
-        margin-bottom: 20px; 
+        font-size: 28px !important; 
+        line-height: 1.2;
+        margin-bottom: 25px;
+        max-width: 90%;
+        font-weight: 400;
     }
+
+    .secondblog-subtitle {
+        font-size: 12px; 
+        line-height: 1.6;
+        max-width: 100%;
+        color: var(--color-black);
+    }
+
+    .secondblog-text-container p {
+        font-size: 12px; 
+        line-height: 1.6;
+        max-width: 100%;
+        color: var(--color-black);
+    } 
 
     .secondblog-single-image {
         width: 100vw;
