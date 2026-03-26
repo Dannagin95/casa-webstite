@@ -273,18 +273,26 @@
 
     .vanthang1st-description, 
     .vanthang1st-text-container p {
-        font-size: 12px; /* Chuẩn mobile xương cá */
+        font-size: 12px !important; 
+        line-height: 1.6 !important; 
+        color: var(--black) !important; 
+        margin-bottom: 20px;
     }
 
+
+    
+
     .vanthang1st-eyebrow {
+        font-size: 12px !important; 
+        line-height: 1.6 !important; 
+        color: var(--black) !important; 
         margin-bottom: 30px;
-        font-size: 11px;
     }
 
     .vanthang1st-gallery-grid {
         grid-template-columns: 1fr; /* Về dọc hoàn toàn cho sạch */
         gap: 10px;
-        margin: 40px 0 !important;
+        margin: 0 0 !important;
     }
 
     .vanthang1st-gallery-item {
