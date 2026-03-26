@@ -1,0 +1,551 @@
+/*===================================================================
+    TẦNG 1: BASE & FIX HERO TRÀN VIỀN
+===================================================================*/
+:root {
+    --side-dt: 55px;
+    --side-mb: 20px;
+    --gap-section: 80px;
+}
+
+.riva-product-section {
+    width: 100%;
+    margin: 0;
+    /* ĐÃ XÓA overflow-x: hidden ở đây để CỨU LẠI hiệu ứng Sticky lướt chuột Desktop! */
+}
+
+.riva-photo {
+    aspect-ratio: 6 / 7;
+    overflow: hidden;
+}
+
+.riva-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* BẮT ĐẦU: CSS CHO HÌNH LỚN TRÀN VIỀN */
+.riva-hero-fullwidth {
+    width: 100%; /* Trả về 100% của container */
+    max-width: 100%;
+    margin-left: 0; /* Xóa bỏ phần âm lề */
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+.riva-hero-container {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    background: #eee;
+    overflow: hidden; /* Đảm bảo hình không tràn ra ngoài bo góc nếu có */
+}
+
+.riva-hero-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.riva-slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+}
+
+.riva-slider-nav span {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.riva-slider-nav span:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* KẾT THÚC: CSS HÌNH LỚN */
+
+/* Styles cho bảng thông số */
+.riva-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #2b2929;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.riva-list,
+.riva-dot-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.riva-list li,
+.riva-dot-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.riva-list li:first-child {
+    border-top: 1px solid #eee;
+}
+
+.riva-dot-list li:first-child {
+    border-top: 1px solid #eee;
+}
+
+.riva-size-row {
+    display: flex;
+    align-items: center; /* Căn giữa ảnh và chữ theo chiều dọc */
+    gap: 100px;           /* Khoảng cách giữa ảnh và khối chữ, không dùng between */
+    margin-top: 40px;
+}
+
+.riva-icon-circle {
+    width: 200px;           /* Tăng size theo ý mày */
+    height: 200px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff; 
+    margin-bottom: 40px;
+}
+
+.riva-icon-circle img {
+    width: 100%;
+    height: 100%;
+    /* Dùng 'contain' nếu cái ảnh gốc của mày đã là hình tròn và có khoảng trắng, 
+       nó sẽ không bị mất chi tiết nào ở rìa.
+    */
+    object-fit: contain; 
+    
+    /* Thêm dòng này để trình duyệt xử lý làm mượt ảnh hơn một chút */
+    image-rendering: -webkit-optimize-contrast; 
+}
+
+.riva-size-info p {
+    font-size: 14px;
+    margin: 4px 0;       /* Chỉnh khoảng cách dòng cho các thông số */
+    color: var(--black);
+}
+
+.riva-size-info .riva-label {
+    margin-bottom: 10px; /* Khoảng cách từ tiêu đề xuống các dòng thông số */
+}
+
+.riva-size-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.riva-size-text p {
+    font-size: 13px;
+    margin: 3px 0;
+    color: #666;
+}
+
+.riva-cert-box {
+    background: #ffffff;
+    padding: 30px 0; 
+    text-align: center;
+    border: 2px solid #eee;
+    margin-top: 40px;
+    
+    /* Chặn đứng mọi sự phình ra bên ngoài */
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden !important; 
+    display: block;
+    box-sizing: border-box;
+}
+
+/* 3. DẢI LOGO (BĂNG CHUYỀN) */
+.riva-logo-strip {
+    display: flex;
+    flex-wrap: nowrap !important; /* Tuyệt đối không xuống hàng */
+    flex-direction: row !important;
+    justify-content: flex-start !important; /* Neo vào lề trái để phần thừa lòi sang phải */
+    align-items: center;
+    gap: 20px; /* Khoảng cách rộng cho sang */
+    padding: 0 20px;
+    width: 100% !important;
+    overflow-x: auto !important; /* Cho phép cuộn/kéo nội bộ */
+
+    /* Ẩn thanh cuộn thanh lịch */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: grab;
+    user-select: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: auto !important;
+}
+
+/* Ẩn scroll cho Chrome/Safari */
+.riva-logo-strip::-webkit-scrollbar {
+    display: none;
+}
+
+.riva-logo-strip:active {
+    cursor: grabbing;
+}
+
+/* 4. HÌNH ẢNH LOGO */
+.riva-logo-strip img {
+    height: 55px; 
+    width: auto;
+    flex: 0 0 auto !important; /* ÉP LOGO GIỮ NGUYÊN SIZE, KHÔNG CHO CO LẠI */
+    object-fit: contain !important; /* Giữ nguyên tỉ lệ logo không bị cắt */
+    opacity: 0.8;
+    transition: 0.3s;
+    pointer-events: none; /* Giúp JS kéo mượt hơn, không bị dính kéo ảnh của trình duyệt */
+}
+
+.riva-logo-strip img:hover {
+    opacity: 1;
+}
+
+
+
+
+/*===================================================================
+    TẦNG 2: DESKTOP (>= 1200px) - GRID 2 CỘT
+===================================================================*/
+@media (min-width: 1200px) {
+    .riva-container {
+        padding: 60px 55px;
+        max-width: 1650px;
+        margin: 0 auto;
+    }
+
+    .riva-intro {
+        margin: 10px 0 80px;
+    }
+
+    .riva-title {
+        font-size: clamp(38px, 5vw, 50px);
+        line-height: 1.4;
+        font-weight: 400;
+        margin-bottom: 30px;
+        max-width: 1100px;
+    }
+
+    .riva-desc {
+        font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        max-width: 670px;
+        color: var(--color-black);
+    }
+
+    .riva-main-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 50px;
+        align-items: start;
+    }
+
+    .riva-gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    /* GIA CỐ STICKY SCROLL CHUẨN XÁC */
+    .riva-sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    
+    /* CHIÊU KHÓA CHẾT CHIỀU RỘNG [cite: 2026-03-27] */
+    width: 100% !important;
+    min-width: 0 !important; 
+    flex: 0 0 380px !important; 
+}
+
+    .riva-sticky-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .riva-progress-container {
+        display: none;
+    }
+}
+
+/*===================================================================
+    TẦNG 3: TABLET LỚN (992px - 1199px) - Lề 20px
+===================================================================*/
+@media (min-width: 992px) and (max-width: 1199px) {
+    .riva-container {
+        padding: 0 var(--side-mb);
+    }
+
+    .riva-main-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    .riva-gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .riva-sidebar {
+        position: sticky;
+        top: 80px;
+        height: fit-content;
+    }
+
+    .riva-sticky-content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .riva-progress-container {
+        display: none;
+    }
+}
+
+/*===================================================================
+    TẦNG 4: TABLET NHỎ (768px - 991px) - Ép 1 cột, Hiện Slider
+===================================================================*/
+@media (min-width: 768px) and (max-width: 991px) {
+    .riva-container {
+        padding: 0 var(--side-mb);
+    }
+
+    .riva-main-grid {
+        display: block;
+    }
+
+    .riva-gallery-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        scroll-snap-type: x mandatory;
+        margin: 0 -20px var(--gap-section) -20px;
+        padding: 0 20px;
+        scrollbar-width: none;
+    }
+
+    .riva-photo {
+        min-width: 45%;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+
+    .riva-progress-container {
+        width: 100%;
+        height: 2px;
+        background: #eee;
+        position: relative;
+        margin-bottom: 40px;
+    }
+
+    .riva-progress-bar {
+        width: 40%;
+        height: 100%;
+        background: #000;
+    }
+
+    .riva-sidebar {
+        position: static;
+        width: 100%;
+    }
+
+    .riva-sticky-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-top: 40px;
+    }
+}
+
+/*===================================================================
+    TẦNG 5: MOBILE (< 767px) - BẢN FIX CUỐI CÙNG (NO GRID)
+===================================================================*/
+@media (max-width: 767px) {
+    /* 1. RESET GIỚI HẠN TOÀN TRANG */
+    .riva-product-section {
+        overflow-x: hidden !important;
+        width: 100%;
+    }
+
+    /* Đảm bảo thằng cha bao ngoài cùng giữ lề 20px */
+    .riva-container {
+        padding: 0 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    .riva-intro {
+        padding: 40px 0; /* Bỏ padding 20px ở đây vì cha đã có */
+    }
+
+    .riva-title {
+        font-size: 28px !important;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .riva-desc {
+        font-size: 12px;
+        line-height: 1.6;
+        color: var(--black);
+    }
+
+    /* 2. RESET KHUNG LƯỚI */
+    .riva-main-grid {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 3. HÌNH LỚN HERO: KHÍT LỀ 20PX */
+    .riva-hero-fullwidth {
+        width: 100% !important;
+        margin: 10px 0 40px 0 !important; /* Xóa margin-left/right để không bị lệch */
+    }
+
+    .riva-hero-container {
+        width: 100% !important;
+        height: 50vh !important;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .riva-slider-nav span {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 14px !important;
+    }
+
+    /* 4. GALLERY SLIDER: CHUẨN LỀ 20PX & TỈ LỆ 6/7 */
+    .riva-gallery-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        gap: 10px !important; 
+        
+        /* Trick: Margin âm để phá lề cha khi vuốt, Padding dương để lề ban đầu vẫn là 20px */
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        
+        scroll-padding-left: 20px !important; 
+        scroll-snap-type: x mandatory !important; 
+        scrollbar-width: none;
+    }
+
+    .riva-gallery-grid::-webkit-scrollbar { display: none; }
+
+    .riva-photo {
+        flex: 0 0 85% !important; 
+        scroll-snap-align: start !important; 
+        scroll-snap-stop: always !important;
+    }
+
+    /* Đã sửa chính tả từ river -> riva */
+    .riva-photo img {
+        width: 100%;
+        display: block;
+        aspect-ratio: 6/7 !important; 
+        object-fit: cover;
+        margin-bottom: 15px !important;
+    }
+
+    /* 5. SIDEBAR & THÔNG SỐ: ĐỔ DỌC */
+    .riva-sidebar {
+        width: 100% !important;
+        position: static !important;
+        display: block !important;
+        margin-top: 30px;
+        padding: 0 !important; /* Tuyệt đối không thêm padding ở đây */
+    }
+
+    .riva-sticky-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    .riva-spec-block h4 {
+        font-size: 10px;
+        word-spacing: 5px;
+        font-weight: 300;
+        line-height: 1.2;
+    }
+
+    .riva-size-row {
+        margin-top: 0;
+        gap: 25px;
+}
+
+    .riva-size-info h4 {
+        font-size: 10px;
+        word-spacing: 5px;
+        font-weight: 300;
+        line-height: 1.2;
+        margin-bottom: 30px;
+    }
+
+    .riva-size-info p {
+        font-size: 11px;
+        font-weight: 400;
+        word-spacing: 1px;
+        line-height: 1.4;
+        color: var(--black);
+    }
+
+    .riva-icon-circle {
+        width: 130px;          
+        height: 130px;
+        margin-top: 40px;
+    }
+
+    .riva-icon-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; 
+    }
+
+    .riva-spec-list li, 
+    .riva-tech-list li {
+        display: flex !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
