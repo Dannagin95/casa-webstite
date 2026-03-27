@@ -127,6 +127,9 @@ HÌNH NGANG LỚN
     font-size: 14px;
 }
 
+.riva-dot-list li strong {
+    font-size: 20px;
+}
 
 .riva-list li:first-child {
     border-top: 1px solid #eee;
@@ -331,6 +334,10 @@ HÌNH NGANG LỚN
     .riva-progress-container {
         display: none;
     }
+
+    .logo-strip-section {
+        display: none;
+    }
 }
 
 /*===================================================================
@@ -369,7 +376,12 @@ HÌNH NGANG LỚN
     .riva-progress-container {
         display: none;
     }
+
+    .logo-strip-section {
+        display: none;
+    }
 }
+
 
 /*===================================================================
     TẦNG 4: TABLET NHỎ (768px - 991px) - Ép 1 cột, Hiện Slider
@@ -426,6 +438,10 @@ HÌNH NGANG LỚN
         gap: 40px;
         margin-top: 40px;
     }
+
+    .logo-strip-section {
+        display: none;
+    }
 }
 
 /*===================================================================
@@ -442,6 +458,7 @@ HÌNH NGANG LỚN
     .riva-container {
         padding: 0 20px !important;
         box-sizing: border-box !important;
+        margin-bottom: 60px;
     }
 
     .riva-intro {
@@ -451,7 +468,8 @@ HÌNH NGANG LỚN
     .riva-title {
         font-size: 28px !important;
         line-height: 1.2;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
+        margin-top: 10px
     }
 
     .riva-desc {
@@ -468,10 +486,10 @@ HÌNH NGANG LỚN
         margin: 0 !important;
     }
 
-    /* 3. HÌNH LỚN HERO: KHÍT LỀ 20PX */
+    
     .riva-hero-fullwidth {
         width: 100% !important;
-        margin: 10px 0 40px 0 !important; /* Xóa margin-left/right để không bị lệch */
+        margin: 10px 0 40px 0 !important; 
     }
 
     .riva-hero-container {
@@ -593,4 +611,12 @@ HÌNH NGANG LỚN
     .riva-smallprogress-container {
         display: none;
     }
+
+    .riva-cert-box {
+        display: none;
+    }
 }
+
+
+
+
