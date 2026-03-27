@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { type: 'image', src: 'imagesRiva/Rivahero01.jpg' },
         { type: 'image', src: 'imagesRiva/Rivahero02.jpg' },
         { type: 'image', src: 'imagesRiva/Rivahero07.webp' },
-        { type: 'image', src: 'imagesRiva/Rivahero05.webp' }
+        { type: 'image', src: 'imagesRiva/Rivahero05.jpg' }
     ];
 
     let currentIndex = 0;

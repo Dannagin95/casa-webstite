@@ -211,9 +211,6 @@ HÌNH NGANG LỚN
     padding: 0 20px;
     width: 100% !important;
     overflow-x: auto !important; 
-
-   
-
     cursor: grab;
     user-select: none;
     -webkit-overflow-scrolling: touch;
@@ -264,8 +261,7 @@ HÌNH NGANG LỚN
     left: 0;
     height: 100%;
     width: 30%;
-    
-    background-color: #000000; /* Đen */
+    background-color: #000000; 
     transform: translateX(0);
 }
 
@@ -412,9 +408,7 @@ HÌNH NGANG LỚN
     }
 
     .riva-progress-bar {
-        width: 40%;
-        height: 100%;
-        background: #000;
+        dislay: none;
     }
 
     .riva-sidebar {
