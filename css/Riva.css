@@ -393,6 +393,10 @@ HÌNH NGANG LỚN
         scrollbar-width: none;
     }
 
+    .riva-smallprogress-container {
+        display: none;
+    }
+
     .riva-photo {
         min-width: 45%;
         flex-shrink: 0;
@@ -477,10 +481,16 @@ HÌNH NGANG LỚN
         overflow: hidden;
     }
 
+    .riva-slider-nav {
+        padding: 0 10px;
+    }
+
     .riva-slider-nav span {
-        width: 32px !important;
-        height: 32px !important;
-        font-size: 14px !important;
+        width: 25px !important;
+        height: 25px !important;
+        font-size: 12px !important;
+        align-items: center;
+        justify-content: center;
     }
 
     /* 4. GALLERY SLIDER: CHUẨN LỀ 20PX & TỈ LỆ 6/7 */
@@ -578,5 +588,9 @@ HÌNH NGANG LỚN
         justify-content: space-between !important;
         width: 100% !important;
         box-sizing: border-box !important;
+    }
+    
+    .riva-smallprogress-container {
+        display: none;
     }
 }
