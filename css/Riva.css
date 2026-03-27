@@ -81,18 +81,19 @@ HÌNH NGANG LỚN
 
 .riva-slider-nav span {
     pointer-events: auto; /* Để nút vẫn bấm được */
+    border: 2px solid #ffffff !important;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
-    background: #fff;
+    width: 55px;
+    height: 55px;
+    background: none;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    color: #000;
+    color: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
+    backdrop-filter: blur(3px);
 }
 
 .riva-slider-nav span:hover {
@@ -270,6 +271,11 @@ HÌNH NGANG LỚN
 
 
 
+
+
+
+
+
 /*===================================================================
     TẦNG 2: DESKTOP (>= 1200px) - GRID 2 CỘT
 ===================================================================*/
@@ -340,6 +346,13 @@ HÌNH NGANG LỚN
     }
 }
 
+
+
+
+
+
+
+
 /*===================================================================
     TẦNG 3: TABLET LỚN (992px - 1199px) - Lề 20px
 ===================================================================*/
@@ -383,66 +396,183 @@ HÌNH NGANG LỚN
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
 /*===================================================================
     TẦNG 4: TABLET NHỎ (768px - 991px) - Ép 1 cột, Hiện Slider
 ===================================================================*/
 @media (min-width: 768px) and (max-width: 991px) {
     .riva-container {
-        padding: 0 var(--side-mb);
+        padding: 0 20px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 
-    .riva-main-grid {
-        display: block;
+    .riva-intro {
+        padding: 40px 0; /* Bỏ padding 20px ở đây vì cha đã có */
     }
 
+    .riva-title {
+        font-size: 40px !important; 
+        line-height: 1.2 !important; 
+        color: var(--black) !important; 
+        margin-bottom: 25px !important; 
+        font-weight: 400;
+        max-width: 680px;
+    }
+
+    .riva-desc {
+        font-size: 12px !important; 
+        line-height: 1.6 !important; 
+        color: var(--black) !important; 
+        margin-bottom: 20px;
+        max-width: 670px;
+    }
+
+
+
+    .riva-slider-nav {
+        display: none;
+}
+    
+    .riva-hero-fullwidth {
+    margin-top: 60px; /* Nhớ thêm đơn vị px nhé */
+    margin-bottom: 20px;
+    
+    width: 100vw; /* Ép nó rộng bằng đúng chiều rộng màn hình */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    /* Đảm bảo bên trong không bị lòi ra ngoài */
+    max-width: 100vw; 
+    overflow: hidden;
+}
+
+    .riva-hero-container {
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+    }
+
+    #riva-hero-video, 
+    #riva-hero-image {
+        object-fit: cover;
+    }
+
+    .riva-slider-dots {
+        position: absolute;
+        bottom: 20px; 
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px; 
+        z-index: 10;
+    }
+    
+    .riva-dot {
+        width: 8px; /* Giữ thông số cứng mày đã lock cho chấm */
+        height: 8px;
+        border-radius: 50%;
+        background-color: #ffffff; /* Màu xám chuẩn mày đã lock [cite: 2026-03-27] */
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }    
+
+    .riva-dot.active {
+        background-color: #000000; /* Màu đen chuẩn mày đã lock [cite: 2026-03-27] */
+    }
+
+
+    
     .riva-gallery-grid {
         display: flex;
+        flex-wrap: nowrap;
         overflow-x: auto;
-        gap: 15px;
+        gap: 10px;
         scroll-snap-type: x mandatory;
-        margin: 0 -20px var(--gap-section) -20px;
-        padding: 0 20px;
+        width: 100vw; 
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        margin-bottom: 40px;
+        padding: 40px 20px;
+        box-sizing: border-box;
         scrollbar-width: none;
-    }
-
-    .riva-smallprogress-container {
-        display: none;
+        -webkit-overflow-scrolling: touch;
     }
 
     .riva-photo {
-        min-width: 45%;
-        flex-shrink: 0;
+        flex: 0 0 44%; 
         scroll-snap-align: start;
+        aspect-ratio: 6 / 7;
     }
 
-    .riva-progress-container {
+    .riva-photo img {
         width: 100%;
-        height: 2px;
-        background: #eee;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .riva-smallprogress-container {
+        display: block !important;
         position: relative;
-        margin-bottom: 40px;
+        width: calc(100% - 160px); 
+        height: 2px;
+        background-color: #eeeeee;
+        overflow: hidden;
     }
 
-    .riva-progress-bar {
-        dislay: none;
+    .riva-smallprogress-bar {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 30px;
+        background-color: #000000;
+        transform: translateX(0);
     }
 
     .riva-sidebar {
-        position: static;
-        width: 100%;
+        padding: 0;
     }
 
     .riva-sticky-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
+        display: block;
         margin-top: 40px;
     }
 
+    .riva-info-section {
+        margin-bottom: 40px;
+    }
+    
     .logo-strip-section {
         display: none;
     }
 }
+
+
+
+
+
+
+
+
+
 
 /*===================================================================
     TẦNG 5: MOBILE (< 767px) - BẢN FIX CUỐI CÙNG (NO GRID)
