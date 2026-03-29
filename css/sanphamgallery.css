@@ -1,7 +1,6 @@
 
-@media (min-width: 769px) {
+@media (min-width: 1440px) {
     .sanpham-gallery {
-       
         padding: 80px 55px; 
         background-color: #fff;
         overflow: hidden;
@@ -93,7 +92,7 @@
         flex-grow: 1;
         height: 1px;
         background-color: #e5e5e5 !important;
-        margin-right: 60px;
+        margin-right: 50px;
         position: relative;
     }
 
