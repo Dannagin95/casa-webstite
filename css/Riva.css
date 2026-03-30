@@ -143,7 +143,7 @@ HÌNH NGANG LỚN
 .riva-size-row {
     display: flex;
     align-items: center;
-    gap: 100px;         
+    gap: 45px;         
     margin-top: 40px;
 }
 
@@ -308,7 +308,7 @@ HÌNH NGANG LỚN
 
     .riva-main-grid {
         display: grid;
-        grid-template-columns: 1.25fr 0.75fr;
+        grid-template-columns: 1.4fr 0.65fr;
         gap: 50px;
         align-items: start;
     }
