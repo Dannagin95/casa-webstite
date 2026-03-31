@@ -1,7 +1,7 @@
 
 :root {
-    --font-heading: 'Quicksand', sans-serif;
-    --font-body: 'Quicksand', sans-serif;
+    --font-heading: 'Be Vietnam Pro', sans-serif;
+    --font-body: 'Be Vietnam Pro', sans-serif;
 
     --black: #000000;
     --white: #ffffff;
@@ -65,7 +65,7 @@ body {
 
 h1, h2, h3, h4, .urbanist {
     font-family: var(--font-heading);
-    font-weight: 400;
+    font-weight: 300;
 }
 
 
@@ -79,11 +79,12 @@ h1, h2, h3, h4, .urbanist {
 
 
 
-
+/*
 img {
     filter: sepia(12%) saturate(90%) contrast(100%) brightness(103%);
     transition: filter 0.3s ease;
 }
+*/    
 
 .logo img, 
 .icon img, 

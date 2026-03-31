@@ -232,7 +232,7 @@
     .hero-dots {
         position: absolute !important;
     right: 20px !important; 
-    top: 150px !important; 
+    top: 100px !important; 
     left: auto !important;
     
     /* FIX GIẬT: Xóa transform và will-change */
@@ -244,13 +244,13 @@
     
     display: flex !important;
     flex-direction: column !important;
-    gap: 15px !important;
+    gap: 10px !important;
     z-index: 9999 !important;
     }
 
     .hero-dot {
-        width: 8px !important; 
-    height: 8px !important;
+        width: 6px !important; 
+    height: 6px !important;
     border: 1.5px solid #fff !important;
     background: transparent !important;
     /* Giữ backface để render mượt trên iOS */
