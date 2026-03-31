@@ -630,15 +630,7 @@ HÌNH NGANG LỚN
     }
 
     .riva-slider-nav {
-        padding: 0 10px;
-    }
-
-    .riva-slider-nav span {
-        width: 25px !important;
-        height: 25px !important;
-        font-size: 12px !important;
-        align-items: center;
-        justify-content: center;
+        display: none;
     }
 
     /* 4. GALLERY SLIDER: CHUẨN LỀ 20PX & TỈ LỆ 6/7 */
