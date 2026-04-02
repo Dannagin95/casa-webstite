@@ -1,0 +1,264 @@
+/* ==========================================
+   1. GLOBAL VARIABLES (Dễ dàng tùy biến để bán)
+   ========================================== */
+:root {
+    --auth-bg: #ffffff;
+    --auth-body-bg: #f9f9f9;
+    --auth-text-main: #000000;
+    --auth-text-sub: #757575;
+    --auth-primary-btn: rgb(23, 26, 27); 
+    --auth-secondary-btn: #ffffff; 
+    --auth-accent-gold: #c5a059;
+    --auth-border: #e3e3e3;
+    --auth-radius: 12px;        
+    --auth-input-radius: 4px;
+    --auth-font-size: 12px;
+}
+
+/* ==========================================
+   2. BASE & MOBILE FIRST (< 767px)
+   ========================================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--auth-body-bg);
+    color: var(--auth-text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.auth-wrapper {
+    width: 100%;
+    padding: 20px; /* Lề 20px chuẩn Mobile */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth-card {
+    background: var(--auth-bg);
+    width: 100%;
+    max-width: 440px;
+    padding: 32px 24px;
+    border-radius: var(--auth-radius);
+    border: 1px solid var(--auth-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    text-align: center;
+}
+
+/* Header & Logo */
+.auth-header { margin-bottom: 24px; }
+.auth-logo { margin-bottom: 50px; text-align: center;}
+.auth-logo img { height: 62px; 
+    width: auto; 
+    object-fit: contain; 
+    display: block; 
+    margin: 0 auto; 
+}
+.auth-title { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+.auth-subtitle { font-size: var(--auth-font-size); color: var(--auth-text-sub); }
+
+/* Buttons & Social */
+.btn-social {
+    width: 100%;
+    background-color: var(--auth-social-btn);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.auth-form {
+    margin-bottom: 12px;
+}
+
+.auth-divider {
+    position: relative;
+    margin: 25px 0;
+    border-bottom: 1px solid var(--auth-border);
+}
+.divider-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--auth-bg);
+    padding: 0 12px;
+    font-size: 12px;
+    color: var(--auth-text-sub);
+}
+
+/* Form & Input */
+.form-group { margin-bottom: 12px; }
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--auth-border);
+    border-radius: var(--auth-input-radius);
+    font-size: 12px; /* Chặn auto-zoom trên iOS */
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: var(--auth-primary-btn);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: var(--auth-input-radius);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Options & Checkbox */
+.auth-options { margin: 16px 0; text-align: left; }
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    cursor: pointer;
+}
+.checkbox-container input { margin-right: 8px; width: 16px; height: 16px; }
+
+
+
+/* Footers */
+.auth-card-footer { margin-top: 24px; font-size: 12px; color: var(--auth-text-sub); }
+.auth-card-footer a { color: var(--auth-text-main); text-decoration: underline; }
+
+.auth-external-footer { margin-top: 40px; } /* Gap 40px chuẩn */
+.footer-link { font-size: 12px; color: var(--auth-text-sub); text-decoration: none; }
+
+/* ==========================================
+   3. TABLET SMALL (768px - 1023px)
+   ========================================== */
+@media (min-width: 768px) {
+    .auth-card { padding: 40px 32px; }
+    .auth-title { font-size: 24px; }
+}
+
+/* ==========================================
+   4. TABLET LARGE (1024px - 1199px)
+   ========================================== */
+@media (min-width: 1024px) {
+    /* Giữ nguyên layout nhưng tăng khoảng cách cho thoáng */
+    .auth-external-footer { margin-top: 60px; }
+}
+
+/* ==========================================
+   5. DESKTOP (> 1200px)
+   ========================================== */
+@media (min-width: 1200px) {
+    /* Đảm bảo trải nghiệm chuột mượt mà */
+    .btn-primary:hover, .btn-social:hover { opacity: 0.9; transition: 0.2s; }
+}
+
+
+
+
+
+/*=========
+RESULT
+=========*/
+/* ==========================================
+   WARRANTY RESULT SPECIFIC (Dán nối tiếp)
+   ========================================== */
+
+/* State Container & Loader */
+.state-container { 
+    text-align: center; 
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.simple-loader {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid var(--auth-primary-btn);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Result Layout */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: #f0fff4; /* Xanh lá cực nhẹ */
+    color: #1a7f37;
+    border: 1px solid #dcfce7;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+}
+
+.warranty-info-group {
+    margin: 32px 0;
+    text-align: left;
+    border-top: 1px solid var(--auth-border);
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.info-row .label {
+    font-size: 13px;
+    color: var(--auth-text-sub);
+}
+
+.info-row .value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--auth-text-main);
+}
+
+.expiry-highlight {
+    color: #d93025; /* Đỏ chuyên nghiệp cho ngày hết hạn */
+}
+
+/* Actions Group */
+.result-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-outline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid var(--auth-border);
+    border-radius: var(--auth-input-radius);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--auth-text-main);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+    background: #fafafa;
+    border-color: var(--auth-text-main);
+}

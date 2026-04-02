@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Status</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Urbanist:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/tracuubaohanh.css">
+</head>
+<body>
+
+    <main class="auth-wrapper">
+    <div class="auth-card">
+        
+        <div id="loading-state" class="state-container">
+            <div class="simple-loader"></div>
+            <p>Retrieving data from [Your Brand] systems...</p>
+        </div>
+
+        <div id="result-content" class="state-container" style="display:none;">
+            </div>
+
+        <div id="error-state" class="state-container" style="display:none;">
+            <h2 class="auth-title">Thông tin không tồn tại</h2>
+            <p class="auth-subtitle">Thông tin không tồn tại. Mã đơn hàng hoặc Số điện thoại chưa được đăng ký trong hệ thống bảo hành của chúng tôi.</p>
+            <div class="result-actions">
+                <a href="tracuubaohanh.html" class="btn-primary">Back to Lookup</a>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const customerID = urlParams.get('id');
+    
+    if (!customerID) {
+        window.location.href = 'warrantyinquiry.html';
+        return;
+    }
+
+    // GỌI APP SCRIPTS THẬT
+    try {
+        // Mày thay cái link này bằng link Web App của mày sau khi Deploy App Scripts nhé
+        const API_URL = `https://script.google.com/macros/s/XXX_YOUR_ID_XXX/exec?action=getWarranty&id=${customerID}`;
+        
+        const response = await fetch(API_URL);
+        const result = await response.json(); // Kết quả trả về từ Google Sheet
+
+        if (result.status === "success") {
+            // CÓ DATA -> HIỆN KẾT QUẢ
+            showResult(result.data);
+        } else {
+            // KHÔNG CÓ DATA -> BÁO LỖI
+            showError();
+        }
+    } catch (e) {
+        showError();
+    }
+});
+
+function showResult(data) {
+    const resultContent = document.getElementById('result-content');
+    document.getElementById('loading-state').style.display = 'none';
+    resultContent.style.display = 'block';
+
+    // Lúc này JS mới vẽ giao diện dựa trên data thật của khách
+    resultContent.innerHTML = `
+        <div class="status-badge">● ${data.warrantyStatus}</div>
+        <h1 class="auth-title">Warranty Certified</h1>
+        <p class="auth-subtitle">CASA Parquet - European Excellence</p>
+
+        <div class="warranty-info-group">
+            <div class="info-row"><span class="label">Khách hàng</span><span class="value">${data.customerName}</span></div>
+            <div class="info-row"><span class="label">Sản phẩm</span><span class="value">${data.productName}</span></div>
+            <div class="info-row"><span class="label">Ngày lắp đặt</span><span class="value">${data.installDate}</span></div>
+            <div class="info-row"><span class="label">Hạn bảo hành</span><span class="value expiry-highlight">${data.expiryDate}</span></div>
+        </div>
+
+        <div class="result-actions">
+            <a href="${data.pdfLink}" class="btn-primary" target="_blank">Tải chứng chỉ CO/CQ (PDF)</a>
+            <a href="index.html" class="btn-outline">Về trang chủ</a>
+        </div>
+    `;
+}
+
+function showError() {
+    document.getElementById('loading-state').style.display = 'none';
+    document.getElementById('error-state').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
