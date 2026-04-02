@@ -631,11 +631,10 @@
 }
 
 .blog-scroll-indicator {
-    display: none; /* Mặc định ẩn hết */
+    display: none;
     width: 100%;
-    height: 2px;
-    background: var(--color-border); /* Màu nhạt của web */
-    margin-top: 20px;
+    height: 1px;
+    background: var(--color-border); 
     position: relative;
 }
 
@@ -644,7 +643,7 @@
     .firstblog-gallery-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 13px;
+        gap: 10px;
         padding-top: 40px;
     }
 }
@@ -684,20 +683,36 @@
         aspect-ratio: 1 / 1.2 !important;
     }
 
-    /* Thanh Taskbar cho Tablet lớn */
+
+    .indicator-wrapper {
+        display: block !important;
+        width: 100%;
+        display: flex;
+        justify-content: center; 
+        margin: 0;
+    }
+
     .blog-scroll-indicator {
         display: block !important;
+        width: 100%;
         max-width: 678px;
-        height: 1px;
-        background: #e0e0e0;
-        margin: 40px auto !important;
+        height: 1px !important;
+        background: var(--color-border) !important;
         position: relative;
+        overflow: visible; 
+        transform: scaleY(0.5);
+        transform-origin: center;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
+
     .scroll-progress {
-        width: 60%;
+        width: 60%; /* Hoặc px cố định như mobile */
         height: 100%;
-        background: var(--black);
+        background: var(--black) !important;
         position: absolute;
+        top: 0;
+        left: 0;
         will-change: transform;
     }
 }
@@ -728,8 +743,7 @@
         /* KHOẢNG CÁCH DỌC: Mày muốn thưa bao nhiêu thì chỉnh ở đây */
         row-gap: 8px !important;    
         
-        margin: 20px 0 !important; 
-        margin-bottom: 40px !important;
+        margin: 20px 0 -20px !important; 
         justify-content: center !important;
     }
     
@@ -757,13 +771,68 @@
     .firstblog-main-title { font-size: 36px; margin-bottom: 20px; }
 
     .firstblog-gallery-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 5px !important;
-        margin: 20px 20px 40px 20px !important;
+        padding: 20px 20px !important; 
+        scroll-padding-left: 20px !important; 
+        gap: 9px !important; 
+        scroll-snap-type: x mandatory !important; 
+        display: flex !important;
+        overflow-x: auto !important;
+        margin-right: 0;
+
+        scrollbar-width: none; /* Firefox */
+       -ms-overflow-style: none; /* IE/Edge */
+       -webkit-overflow-scrolling: touch;
     }
 
-    .firstblog-gallery-item { aspect-ratio: 1 / 1.1 !important; }
+    .firstblog-gallery-grid::-webkit-scrollbar {
+        display: none !important;
+}
+
+    .firstblog-gallery-item { 
+        flex: 0 0 85% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        scroll-snap-align: start !important; 
+        scroll-snap-stop: always !important;
+    }
+    
+    .firstblog-gallery-item img {
+        aspect-ratio: 6/7 !important; 
+        margin-bottom: 15px !important;
+    }
+    
+    .indicator-wrapper {
+        display: block !important;
+        width: 100%;
+        display: flex;
+        justify-content: center; 
+        margin: 0 0 -20px;
+    }
+
+    .blog-scroll-indicator {
+        max-width: 670px;
+        display: block !important;
+        width: 100%;
+        height: 1px !important; /* Giữ nguyên */
+        background: var(--color-border);
+        position: relative;
+        overflow: hidden;
+        /* THÊM DÒNG NÀY ĐỂ NÓ MẢNH NHƯ SỢI CHỈ */
+        transform: scaleY(0.5); 
+        transform-origin: center;
+    }
+    
+   
+    .scroll-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 80px; 
+        background-color: var(--black) !important;
+        transition: transform 0.1s linear; 
+        will-change: transform;
+    }
     
     .firstblog-text-container { max-width: 100%; padding: 20px 20px; }
     .casa-container { padding: 0 20px !important; }
@@ -1059,7 +1128,7 @@
     .thirdblog-gallery-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 13px;
+        gap: 10px;
         padding-top: 40px;
         padding-bottom: 60px;
     }
@@ -1069,37 +1138,6 @@
 @media screen and (min-width: 992px) and (max-width: 1024px) {
     .thirdblog-header { padding: 20px 0;}
 
-    /* --- 1. CSS MẶC ĐỊNH: ẨN THANH TASKBAR --- */
-.blog-scroll-indicator {
-    display: block !important;
-    max-width: 678px;
-    height: 1px; /* Mỏng lại tối đa cho sang */
-    background: #e0e0e0; /* Màu xám nhạt, nhẹ nhàng */
-    margin: 40px auto !important; 
-    
-    position: relative;
-    overflow: hidden;
-}
-
-.scroll-progress {
-    width: 60%; /* Độ dài thanh đen */
-    height: 100%;
-    background: var(--black); 
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* transition: 0.1s linear; -> Nếu muốn nó bám sát sạt ngón tay thì để linear hoặc bỏ luôn transition */
-    will-change: transform;
-}
-
-    .blog-scroll-indicator {
-        display: block !important; /* Hiện ra */
-        max-width: 678px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* Giữ nguyên cái CSS cũ của mày bên dưới */
     .thirdblog-gallery-grid {
         display: flex !important;
         overflow-x: auto !important;
@@ -1115,6 +1153,38 @@
         flex: 0 0 calc((100vw - 40px - 20px) / 2) !important;
         flex-shrink: 0 !important;
         scroll-snap-align: start !important;
+    }
+
+    .thirdblog-indicator-wrapper {
+        display: block !important;
+        width: 100%;
+        display: flex;
+        justify-content: center; 
+        margin-bottom: 60px;
+    }
+
+    .thirdblog-scroll-indicator {
+        display: block !important;
+        width: 100%;
+        max-width: 678px;
+        height: 1px !important;
+        background: var(--color-border) !important;
+        position: relative;
+        overflow: visible; 
+        transform: scaleY(0.5);
+        transform-origin: center;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .scroll-progress {
+        width: 60%; /* Hoặc px cố định như mobile */
+        height: 100%;
+        background: var(--black) !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        will-change: transform;
     }
 }
     
@@ -1157,6 +1227,9 @@
         aspect-ratio: 1 / 1.1 !important;
     }
     
+    
+
+
     .thirdblog-main-title { font-size: 48px; }
     .thirdblog-text-container { max-width: 100%; padding: 20px 0; }
     .casa-container { padding: 0 20px !important; } 
@@ -1170,16 +1243,72 @@
     .thirdblog-header {
         padding: 0 20px;
     }
+
     .thirdblog-main-title { font-size: 36px; margin-bottom: 20px; }
 
     .thirdblog-gallery-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 5px !important;
-        margin: 20px 20px 40px 20px !important;
+        padding: 20px 20px !important; 
+        scroll-padding-left: 20px !important; 
+        gap: 9px !important; 
+        scroll-snap-type: x mandatory !important; 
+        display: flex !important;
+        overflow-x: auto !important;
+        margin-right: 0;
+
+        scrollbar-width: none; /* Firefox */
+       -ms-overflow-style: none; /* IE/Edge */
+       -webkit-overflow-scrolling: touch;
     }
 
-    .thirdblog-gallery-item { aspect-ratio: 1 / 1.1 !important; }
+    .thirdblog-gallery-grid::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .thirdblog-gallery-item { 
+        flex: 0 0 85% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        scroll-snap-align: start !important; 
+        scroll-snap-stop: always !important;
+    }
+    
+    .thirdblog-gallery-item img {
+        aspect-ratio: 6/7 !important; 
+        margin-bottom: 15px !important;
+    }
+
+    .thirdblog-indicator-wrapper {
+        display: block !important;
+        width: 100%;
+        display: flex;
+        justify-content: center; 
+        margin: 20px 0 40px;
+    }
+
+    .thirdblog-scroll-indicator {
+        max-width: 670px;
+        display: block !important;
+        width: 100%;
+        height: 1px !important; /* Giữ nguyên */
+        background: var(--color-border);
+        position: relative;
+        overflow: hidden;
+        /* THÊM DÒNG NÀY ĐỂ NÓ MẢNH NHƯ SỢI CHỈ */
+        transform: scaleY(0.5); 
+        transform-origin: center;
+    }
+    
+   
+    .scroll-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 80px; 
+        background-color: var(--black) !important;
+        transition: transform 0.1s linear; 
+        will-change: transform;
+    }
     
     .thirdblog-text-container { max-width: 100%; padding: 20px 20px; }
     .casa-container { padding: 0 20px !important; }
@@ -1220,6 +1349,13 @@
     max-width: 680px;
     margin: 0 auto;
     padding: 30px 0;
+}
+
+.fourthblog-text-container h2 {
+    font-size: clamp(11px, 5vw, 26px);
+    line-height: 1.4;
+    margin: 0 0 30px;
+    font-weight: 400;
 }
 
 .fourthblog-text-container p {
@@ -1276,7 +1412,7 @@
     .fourthblog-gallery-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 13px;
+        gap: 10px;
         padding-top: 40px;
         padding-bottom: 60px;
     }
@@ -1285,36 +1421,6 @@
 /* --- 3. TABLET LỚN ( 992px - 1024px ): DẠNG LƯỚT NGANG --- */
 @media screen and (min-width: 992px) and (max-width: 1024px) {
     .fourthblog-header { padding: 20px 0;}
-
-    /* --- 1. CSS MẶC ĐỊNH: ẨN THANH TASKBAR --- */
-.blog-scroll-indicator {
-    display: block !important;
-    max-width: 678px;
-    height: 1px; /* Mỏng lại tối đa cho sang */
-    background: #e0e0e0; /* Màu xám nhạt, nhẹ nhàng */
-    margin: 40px auto !important; 
-    
-    position: relative;
-    overflow: hidden;
-}
-
-.scroll-progress {
-    width: 60%; /* Độ dài thanh đen */
-    height: 100%;
-    background: var(--black); 
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* transition: 0.1s linear; -> Nếu muốn nó bám sát sạt ngón tay thì để linear hoặc bỏ luôn transition */
-    will-change: transform;
-}
-
-    .blog-scroll-indicator {
-        display: block !important; /* Hiện ra */
-        max-width: 678px;
-        margin-left: auto;
-        margin-right: auto;
-    }
 
     /* Giữ nguyên cái CSS cũ của mày bên dưới */
     .fourthblog-gallery-grid {
@@ -1333,7 +1439,40 @@
         flex-shrink: 0 !important;
         scroll-snap-align: start !important;
     }
+
+    .fourthblog-indicator-wrapper {
+        display: block !important;
+        width: 100%;
+        display: flex;
+        justify-content: center; 
+        margin-bottom: 60px;
+    }
+
+    .fourthblog-scroll-indicator {
+        display: block !important;
+        width: 100%;
+        max-width: 678px;
+        height: 1px !important;
+        background: var(--color-border) !important;
+        position: relative;
+        overflow: visible; 
+        transform: scaleY(0.5);
+        transform-origin: center;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .scroll-progress {
+        width: 60%; /* Hoặc px cố định như mobile */
+        height: 100%;
+        background: var(--black) !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        will-change: transform;
+    }
 }
+
     
 
 
@@ -1390,13 +1529,68 @@
     .fourthblog-main-title { font-size: 36px; margin-bottom: 20px; }
 
     .fourthblog-gallery-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 5px !important;
-        margin: 20px 20px 40px 20px !important;
+        padding: 20px 20px !important; 
+        scroll-padding-left: 20px !important; 
+        gap: 9px !important; 
+        scroll-snap-type: x mandatory !important; 
+        display: flex !important;
+        overflow-x: auto !important;
+        margin-right: 0;
+
+        scrollbar-width: none; /* Firefox */
+       -ms-overflow-style: none; /* IE/Edge */
+       -webkit-overflow-scrolling: touch;
     }
 
-    .fourthblog-gallery-item { aspect-ratio: 1 / 1.1 !important; }
+    .fourthblog-gallery-grid::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .fourthblog-gallery-item { 
+        flex: 0 0 85% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        scroll-snap-align: start !important; 
+        scroll-snap-stop: always !important;
+    }
+    
+    .fourthblog-gallery-item img {
+        aspect-ratio: 6/7 !important; 
+        margin-bottom: 15px !important;
+    }
+
+    .fourthblog-indicator-wrapper {
+        display: block !important;
+        width: 100%;
+        display: flex;
+        justify-content: center; 
+        margin: 20px 0 40px;
+    }
+
+    .fourthblog-scroll-indicator {
+        max-width: 670px;
+        display: block !important;
+        width: 100%;
+        height: 1px !important; /* Giữ nguyên */
+        background: var(--color-border);
+        position: relative;
+        overflow: hidden;
+        /* THÊM DÒNG NÀY ĐỂ NÓ MẢNH NHƯ SỢI CHỈ */
+        transform: scaleY(0.5); 
+        transform-origin: center;
+    }
+    
+   
+    .scroll-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 80px; 
+        background-color: var(--black) !important;
+        transition: transform 0.1s linear; 
+        will-change: transform;
+    }
     
     .fourthblog-text-container { max-width: 100%; padding: 20px 20px; }
     .casa-container { padding: 0 20px !important; }

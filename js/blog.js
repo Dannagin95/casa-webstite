@@ -4,7 +4,7 @@
 const initGalleryScroll = () => {
     const gallery = document.querySelector('.firstblog-gallery-grid, .thirdblog-gallery-grid, .fourthblog-gallery-grid');
     const progress = document.querySelector('.scroll-progress');
-    const indicator = document.querySelector('.blog-scroll-indicator');
+    const indicator = document.querySelector('.blog-scroll-indicator, .thirdblog-scroll-indicator, .fourthblog-scroll-indicator');
 
     if (gallery && progress && indicator) {
         gallery.addEventListener('scroll', () => {
