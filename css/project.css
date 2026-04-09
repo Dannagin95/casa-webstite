@@ -93,8 +93,6 @@
         margin-bottom: 0px;
     }
 }
-
-
 /* TABLET: Dàn ngang ra tối ưu */
 @media (min-width: 768px) and (max-width: 1024px) {
     .duannhero {
@@ -333,7 +331,7 @@
         margin: 0 !important; 
         padding: 0 !important;
         left: 0 !important; 
-        aspect-ratio: 16 / 6; 
+        aspect-ratio: 16 / 12; 
     }
 
     .duan-hero-wrapper img {

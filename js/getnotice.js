@@ -1,7 +1,7 @@
-// Cấu hình URL chung - Thay URL mới sau khi mày Deploy Apps Script ở trên
+
 const scriptURL = 'https://script.google.com/macros/s/AKfycbx8i3OoHl5eEWvl3BFJT1JTtuM1rqhmmf3KLY0INkCjpLMbjXGiH00oMj7A_SfD-eHhKg/exec';
 
-// --- PHẦN 1: NEWSLETTER (Giữ nguyên logic của mày, không đổi ID) ---
+
 const newsletterForm = document.querySelector('#casa-newsletter-form');
 const successBox = document.querySelector('#newsletter-success-msg');
 

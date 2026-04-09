@@ -279,3 +279,946 @@ IPAD/TABLET SYNC (768px - 1024px)
         line-height: 1.2;
     }
 }
+
+
+
+/*==================
+==================*/
+
+/* ============================================================
+   PAGE: duan01 - GLOBAL STRUCTURE
+   ============================================================ */
+
+.duan01-page-body {
+    padding-top: var(--section-gap); 
+    padding-bottom: var(--section-gap);
+}
+
+/* --- TIER 1: INTRO SECTION --- */
+.duan01-intro-minimal {
+    padding-bottom: 50px;
+}
+
+.duan01-intro-text-wrapper,
+.duan01-outro-text-wrapper {
+    /* Fixed width container centered for editorial focus */
+    max-width: 720px; 
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* KEY: Left-aligned text within the centered 720px block */
+    text-align: left; 
+}
+
+.duan01-intro-text-wrapper p {
+    font-family: var(--font-body);
+    font-size: 13px; /* Standard 12px luxury scale */
+    line-height: 1.6;
+    color: var(--black);
+    margin-bottom: 25px;
+    
+    /* Maintains text integrity during scaling */
+    word-break: keep-all;
+}
+
+/* --- TIER 2: FULL-WIDTH HERO IMAGE --- */
+.duan01-hero-image,
+.duan01nd-hero-image,
+.duan01rd-hero-image,
+.duan01fth-hero-image {
+    /* Full viewport breakout strategy */
+    width: 100%;
+    position: relative;
+    margin: 30px 0;
+    overflow: hidden;
+}
+
+.duan01-hero-wrapper,
+.duan01nd-hero-wrapper,
+.duan01rd-hero-wrapper,
+.duan01fth-hero-wrapper  {
+    width: 100%;
+    max-width: 100%; 
+    aspect-ratio: 16 / 12;
+}
+
+.duan01-hero-wrapper img,
+.duan01nd-hero-wrapper img,
+.duan01rd-hero-wrapper img,
+.duan01fth-hero-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    /* pointer-events: none is handled by base.css */
+}
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   TIER 4: PROJECT GRID (3-COLUMN DESKTOP)
+   ============================================================ */
+
+.duan01-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px; /* Precise gap for desktop editorial layout */
+    margin: 30px 0 0;
+}
+
+.duan01-card {
+    text-decoration: none;
+    color: inherit;
+}
+
+.duan01-card-img {
+    width: 100%;
+    aspect-ratio: 6 / 7; /* Portrait ratio standard */
+    overflow: hidden;
+}
+
+.duan01-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+
+
+
+/* ============================================================
+   SECTION: duan01 OUTRO
+   ============================================================ */
+
+.duan01-outro-text {
+    padding-top: 50px;
+}
+
+.duan01-outro-wrapper {
+    /* Maintained 720px vertical axis for content symmetry */
+    max-width: 720px; 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; 
+}
+
+.duan01-outro-main p {
+    font-family: var(--font-body);
+    font-size: 13px; /* Standard 12px luxury scale */
+    line-height: 1.6;
+    color: var(--black);
+    margin-bottom: 25px;
+    
+    /* Maintains text integrity during scaling */
+    word-break: keep-all;
+}
+
+.duan01-outro-closing p {
+    font-family: var(--font-body);
+    font-size: 13px; /* Standard 12px luxury scale */
+    line-height: 1.6;
+    color: var(--black);
+    margin-bottom: 25px;
+    font-weight: 700;
+    /* Maintains text integrity during scaling */
+    word-break: keep-all;
+}
+
+
+/*===================================================================
+    3. LAYER TABLET LARGE (992px - 1199px)
+===================================================================*/
+@media (min-width: 992px) and (max-width: 1199px) {
+    .duan01-page-body {
+        padding: 60px 0;
+        overflow: hidden;
+    }
+
+    .duan01-page-body .casa-container {
+        padding: 0  20px;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .duan01-intro-text-wrapper,
+    .duan01-mid-content,
+    .duan01-outro-wrapper {
+        width: 100% !important;
+        max-width: 670px !important;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .duan01-intro-minimal {
+        padding: 0 0 20px;
+    }
+
+
+    .duan01-intro-text-wrapper p,
+    .duan01-mid-content p,
+    .duan01-outro-wrapper p {
+        font-size: 12px; 
+        line-height: 1.6;
+        max-width: 100%;
+        color: var(--black);
+    }
+ 
+    .duan01-hero-image {
+        margin: 0;
+    }
+
+    .duan01nd-hero-image {
+        margin:0;
+    }
+    
+    .duan01rd-hero-image {
+        margin:13px 0 0;
+    }
+
+    .duan01fth-hero-image {
+        margin:13px 0 0;
+    }
+
+
+    .duan01-outro-text {
+        padding-top: 60px !important;
+    }
+
+    .duan01-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px; 
+        margin: 15px 0;
+    }
+
+    .duan01-grid::-webkit-scrollbar { 
+        display: none; 
+    }
+
+    .duan01-card {
+        aspect-ratio: 6 / 7; 
+        position: relative;
+        text-decoration: none;
+    }
+
+    .duan01-card-img {
+        height: 100% !important;
+        width: 100%;
+        
+    }
+
+    .duan01-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+
+
+
+
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* 1. Global Page Body Reset */
+    .duan01-page-body {
+        padding: 0 var(--sp-5);
+        overflow: hidden;
+    }
+
+
+    .duan01-page-body .casa-container {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+  
+    .duan01-intro-text-wrapper,
+    .duan01-mid-content,
+    .duan01-outro-wrapper {
+        max-width: 600px !important;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+
+    .duan01-intro-text-wrapper p,
+    .duan01-mid-content p,
+    .duan01-outro-wrapper p {
+        font-size: 12px; 
+        line-height: 1.6;
+        max-width: 100%;
+        color: var(--black);
+    }
+
+
+    .duan01-intro-minimal {
+        padding: 60px 0 20px;
+    }
+
+
+    .duan01-outro-text {
+        padding-top: 60px !important;
+    }
+
+    .duan01-outro-main p {
+        padding: 0; 
+    }
+
+ 
+    .duan01-hero-image {
+        margin: 0 0;
+    }
+
+    .duan01nd-hero-image {
+        margin:0;
+    }
+    
+    .duan01rd-hero-image {
+        margin:13px 0 0;
+    }
+
+    .duan01fth-hero-image {
+        margin:13px 0 0;
+    }
+
+    .duan01-hero-wrapper {
+        width: 100% !important; 
+        position: relative !important;
+        display: block !important;
+    }
+
+    .duan01-hero-wrapper img {
+        aspect-ratio: 16 / 9 !important;
+    }
+
+   
+
+  
+    .duan01-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 13px; 
+        margin: 15px 0;
+    }
+
+
+
+    .duan01-card {
+        aspect-ratio: 6 / 7; 
+        position: relative;
+        text-decoration: none;
+       
+    }
+
+    .duan01-card-img {
+        height: 100% !important;
+        width: 100%;
+    }
+
+    .duan01-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+
+
+
+@media (max-width: 767px) {
+    .duan01-page-body .casa-container {
+        padding: 0 20px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .duan01-intro-minimal {
+        padding-bottom: 40px;
+    }
+
+    .duan01-intro-text-wrapper {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .duan01-intro-text-wrapper p,
+    .duan01-outro-text-wrapper p {
+        font-size: 12px; 
+        word-spacing: 1px;
+        line-height: 1.6;
+        max-width: 100%;
+        color: var(--color-black);
+    }
+
+    
+
+    .duan01-hero-image {
+        width: 100%;
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .duan01-hero-image img {
+        width: 100% !important; 
+        height: auto !important; 
+        display: block !important;
+        object-fit: cover !important; 
+        aspect-ratio: 16 / 12 !important; 
+    }
+
+    .duan01-grid {
+        padding: 0 var(--sp-5);
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin: 0;
+    }
+
+    .duan01-grid:last-of-type {
+        margin-top: 20px !important;
+    }
+
+    .duan01-outro-text {
+        padding: 20px 0 0 !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- DESKTOP FIX --- */
+.khamphaalbum-section {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    background-color: var(--color-white);
+    /* Giữ section ổn định */
+    overflow: hidden; 
+}
+
+    .khamphaalbum-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 13px;
+    }
+
+    .section-title {
+        font-size: 1.9rem; /* Giảm size xuống một chút cho tinh tế */
+        font-weight: 500;
+        text-transform: none;
+        letter-spacing: -0.5px; /* QUOC dùng letter-spacing hẹp cho title */
+        color: var(--text-color);
+    }
+
+    /* Label "Hành trình" */
+    .khamphaalbum-header .section-label {
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 200;
+        letter-spacing: 0.1em;
+        color: var(--color-text-muted);
+    }
+
+    /* Cụm 2 nút điều hướng */
+    .khamphaalbum-controls {
+        display: flex;
+        gap: 12px;
+    }
+
+    .ctrl-btn {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 1px solid var(--black); /* Màu dark từ footer nhưng nhạt đi */
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: var(--color-dark); /* Màu hắc ín của mày */
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        padding: 0;
+    }
+
+
+.khamphaalbum-slider {
+    display: flex;
+    /* Tăng gap lên một chút cho thoáng giống QUOC */
+    gap: 20px; 
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scroll-behavior: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    /* Quan trọng: Padding này phải khớp với container của mày để đồng nhất lề */
+    padding: 0; 
+}
+
+/* Ép lề chuẩn cho toàn bộ section khamphaalbum */
+.khamphaalbum-section .casa-container {
+    max-width: 1200px; /* Hoặc con số chuẩn của các section khác mày đang dùng */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 55px !important;
+    padding-right: 55px !important;
+    box-sizing: border-box !important;
+}
+
+/* Sửa lại kích thước item để không làm bung lề container */
+.khamphaalbum-item {
+    flex: 0 0 calc((100% - 40px) / 3) !important; /* 24px là tổng gap: 12px * 2 */
+    min-width: calc((100% - 40px) / 3) !important;
+    scroll-snap-stop: always !important;
+    scroll-snap-align: start !important;
+
+}
+
+.khamphaalbum-item img {
+    width: 100%;
+    aspect-ratio: 11/12;
+    object-fit: cover;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.item-info {
+        position: relative; /* Đảm bảo nó nằm theo luồng tự nhiên */
+        padding: 0 10px 20px 0;
+        text-align: left;
+    }
+
+    .item-title {
+        font-size: 1.9rem;
+        font-weight: 500;
+        margin-bottom: 20px;
+        color: #000000;
+        display: block;
+    }
+
+    .item-desc {
+        font-size: 13px;
+        line-height: 1.6;
+        color: #000000;
+        margin-bottom: 15px;
+        /* Giới hạn 3 dòng để các card đều nhau */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+
+    .card-link {
+    display: inline-block;
+    background-color: #1a1a1a; /* Màu đen đặc trưng */
+    color: #ffffff;
+    padding: 12px 28px; /* Độ rộng vừa phải để nút nhìn cân đối */
+    border-radius: 100px; /* Bo tròn hoàn toàn hai đầu */
+    font-size: 1.1rem;
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: none; /* QUOC thường không viết hoa hết, để chữ tự nhiên */
+    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid #1a1a1a;
+    margin-top: 5px; /* Tạo khoảng cách nhẹ với đoạn mô tả */
+}
+
+/* Hiệu ứng Hover - Đảo màu nhẹ nhàng */
+.card-link:hover {
+    background-color: transparent;
+    color: #1a1a1a;
+}
+
+    .khamphaalbum-progress-container {
+        width: 100%;
+        height: 1px;
+        transform: scaleY(0.8);
+        background-color:var(--color-bar); /* Nền thanh mảnh, nhạt */
+        margin-top: 30px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .khamphaalbum-progress-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 101%;
+        width: 0%; /* Bắt đầu từ 0 */
+        background-color: #000000; 
+        opacity: 1 !important;
+        transition: width 0.2s ease-out; 
+    }
+
+
+
+/* ==========================================================================
+   MOBILE & TABLET FIX (Danna's Golden Rule: Lề 20px, Section 40px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .khamphaalbum-section .casa-container {
+        padding-top: 40px;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .khamphaalbum-section {
+        padding: 0 !important; 
+        overflow: hidden; 
+    }
+
+    /* 2. Header: Căn thẳng hàng lề 20px [cite: 2026-02-07] */
+    .khamphaalbum-header {
+        padding: 0 20px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .section-title {
+        font-size: 1.8rem !important;
+        max-width: 300px;
+    }
+
+
+    .khamphaalbum-controls {
+        display: none;
+    }
+
+    
+    .khamphaalbum-slider {
+        padding: 0 20px !important; /* Tạo lề 20px cho ảnh đầu [cite: 2026-02-07] */
+        scroll-padding: 0 20px !important; /* BUỘC trình duyệt dừng đúng vạch 20px */
+        gap: 7px !important;
+        scroll-snap-type: x mandatory !important;
+        display: flex !important;
+        margin-right: 0 !important;
+    }
+
+    /* 4. Item: Tỷ lệ 85% sang chảnh, hở đuôi ảnh sau */
+    .khamphaalbum-item {
+        flex: 0 0 85% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        scroll-snap-align: start !important; /* Hít chặt lề trái khi vuốt */
+    }
+
+    
+    /* 3. Đảm bảo item cuối không mang theo margin thừa */
+    .khamphaalbum-item:last-child {
+        margin-right: 0 !important;
+    }
+
+    .khamphaalbum-item img {
+        aspect-ratio: 7/8 !important; 
+        margin-bottom: 15px !important;
+    }
+
+    /* 5. Fix Text: Không bị chìm, không bị lệch */
+    .item-info {
+        padding: 0 !important;
+    }
+
+    .item-title {
+        font-size: 22px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .item-desc {
+        font-size: 0.95rem !important;
+        -webkit-line-clamp: 3 !important;
+    }
+
+    .khamphaalbum-progress-container {
+        margin: 30px 0 0 0 !important;
+        margin-bottom: 80px !important;
+        width: 100%;
+    }
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 819px) {
+    /* Ép container bung lề */
+    .khamphaalbum-section .casa-container {
+        padding: 40px 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin-bottom: 40px;
+    }
+
+    /* Ép Slider nhận lề 20px và không xuống hàng */
+    .khamphaalbum-section .khamphaalbum-slider {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        padding: 0 20px !important;
+        gap: 10px !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Ép Card thu nhỏ lại để thấy card sau */
+    .khamphaalbum-section .khamphaalbum-item {
+        flex: 0 0 44% !important; 
+        min-width: 44% !important; /* PHÁ KHÓA: Đè bệt cái 100% cũ */
+        max-width: 44% !important;
+        scroll-snap-align: start !important;
+    }
+
+    .khamphaalbum-section .khamphaalbum-item img {
+        aspect-ratio: 6/7 !important;
+        width: 100% !important;
+    }
+
+    .khamphaalbum-section .khamphaalbum-progress-container {
+        display: block !important; /* Đảm bảo không bị ẩn */
+        margin: 30px 20px 0 20px !important; /* Lề 20px chuẩn Danna [cite: 2026-02-07] */
+        width: calc(100% - 40px) !important; /* Trừ đi 2 bên lề 20px */
+        background-color: var(--color-bar) !important;
+        height: 1px !important;
+        position: relative !important;
+        overflow: visible !important;
+    }
+
+    .khamphaalbum-section .khamphaalbum-progress-bar {
+        background-color: #000000 !important;
+        height: 100% !important;
+        display: block !important;
+    }
+
+
+}
+
+
+
+
+
+
+/* 2. TABLET LỚN (820px - 1439px) - Fix dính lề trái */
+@media screen and (min-width: 820px) and (max-width: 1439px) {
+    .khamphaalbum-section { padding: 40px 0 !important; overflow: hidden !important; margin-bottom: 60px; }
+    
+    .khamphaalbum-section .casa-container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 100% !important;
+    }
+    
+    .khamphaalbum-header { 
+        padding: 10px 20px !important; 
+        box-sizing: border-box !important;
+        width: 100% !important; /* Chống tràn, nhả lề trái 20px ra */
+    }
+    .khamphaalbum-controls { display: none !important; } 
+    
+    .khamphaalbum-slider {
+        padding: 0 20px !important; 
+        scroll-padding: 0 20px !important; /* Hít lề 20px khi vuốt */
+        display: flex !important;
+        flex-wrap: nowrap !important; 
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 20px !important;
+    }
+    
+    .khamphaalbum-item {
+        flex: 0 0 45% !important; /* Set 38% để hiện cỡ 2.5 card cho đẹp */
+        min-width: 45% !important;
+        max-width: 45% !important;
+        scroll-snap-align: start !important;
+    }
+    
+    .item-info { padding-right: 0 !important; }
+    .khamphaalbum-progress-container { margin: 20px 20px 0 20px !important; width: calc(100% - 40px) !important; margin-bottom: -20px !important; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- FEATURES BAR --- */
+.features-bar {
+        padding: 80px 0 !important; 
+        background-color: #f6f6f6;
+        border-top: 1px solid #f6f6f6;
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Đẩy cái container vào giữa */
+    }
+
+
+.features-bar .container {
+        /* [MỎ NEO] Khóa chặt khung xương 1650px */
+        width: 100% !important;
+        max-width: var(--container-max) !important; 
+        margin: 0 auto !important;
+        /* Padding trái phải 55px để icon ngoài cùng không bị chạm mép 1650px */
+        padding: 0 var(--side-padding) !important;
+        box-sizing: border-box;
+    }
+    
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cột đều nhau */
+    gap: 40px;
+    max-width: 100%; /* Giới hạn chiều rộng để không bị loãng */
+    margin: 0 auto; /* Căn giữa màn hình */
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.features-dots {
+    display: none; /* Desktop vẫn ẩn */
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 0; /* Tạo khoảng cách với vùng lướt */
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+/* Style cho Icon SVG */
+.feature-icon {
+    margin-bottom: 20px;
+    color: #000;
+}
+.feature-icon svg {
+    width: 32px;  /* Kích thước icon giống QUOC (nhỏ gọn) */
+    height: 32px;
+}
+
+/* Tiêu đề mục */
+.feature-item h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    margin: 0 0 10px 0;
+    text-transform: none;
+    letter-spacing: 1px;
+}
+
+/* Link bên dưới */
+.feature-item a {
+    font-family: 'Barlow', sans-serif; /* Font thường cho dễ đọc */
+    font-size: 13px;
+    color: #555;
+    text-decoration: underline; /* Gạch chân giống QUOC */
+    text-underline-offset: 4px; /* Gạch chân cách chữ ra một chút cho đẹp */
+    transition: 0.3s;
+}
+
+.feature-item a:hover {
+    color: #000; /* Rê chuột vào đen đậm lên */
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .features-bar {
+        padding: 40px 0; /* Giữ khoảng cách trên dưới vừa phải */
+        overflow: hidden; /* Tránh bị tràn trang */
+    }
+
+    .features-grid {
+        display: flex; /* Chuyển từ Grid sang Flex để các mục nằm trên 1 hàng ngang */
+        overflow-x: auto; /* Cho phép cuộn ngang */
+        scroll-snap-type: x mandatory; /* Hiệu ứng "hít" vào giữa mỗi mục khi lướt */
+        gap: 0; /* Xóa khoảng cách grid */
+        padding-bottom: 20px; /* Chừa chỗ cho thanh cuộn (nếu có) */
+        
+        /* Ẩn thanh cuộn (scrollbar) để nhìn cho sạch */
+        -ms-overflow-style: none;  /* IE/Edge */
+        scrollbar-width: none;  /* Firefox */
+        -webkit-overflow-scrolling: touch; /* Giúp lướt trên iPhone mượt hơn */
+    }
+
+    /* Ẩn thanh cuộn trên Chrome/Safari */
+    .features-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .feature-item {
+        flex: 0 0 100%; /* Quan trọng: Mỗi mục chiếm đúng 100% chiều rộng màn hình */
+        scroll-snap-align: center; 
+        scroll-snap-stop: always;
+        padding: 0 30px; 
+        box-sizing: border-box;
+    }
+
+    .feature-icon svg {
+        width: 28px; /* Cho icon nhỏ lại một chút trên mobile */
+        height: 28px;
+    }
+
+
+    .features-dots {
+        display: flex !important; 
+    }
+
+    .dot {
+        width: 7px; /* To lên một chút cho dễ thấy */
+        height: 7px;
+        border-radius: 50%;
+        background-color: #817c7c; /* Màu xám nhạt */
+        display: block;
+        transition: all 0.3s ease;
+    }
+
+    .dot.active {
+        background-color: #000; /* Chấm đang chọn màu đen */
+        transform: scale(1.3);
+    }
+}

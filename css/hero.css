@@ -394,3 +394,89 @@
 
 
 
+
+.duan01hero {
+    height: 93vh; 
+    position: relative; 
+    display: flex;
+    align-items: flex-end; 
+    padding: 0; 
+    justify-content: center; 
+    width: 100%;
+}
+
+.duan01hero-bg { position: absolute; inset: 0; z-index: -1; }
+.duan01hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+
+.duan01hero-text { 
+    color: #fff; 
+    width: 100%;
+    max-width: var(--container-max); /* Khóa chặt ở 1650px */
+    margin: 0 auto; /* Ép vào giữa màn hình */
+    padding: 0 var(--side-padding); /* Trả lại đúng 55px padding để chữ đứng đúng vị trí cũ */
+    margin-bottom: 48px;
+    z-index: 2;
+    text-align: left; /* Đảm bảo chữ vẫn canh trái bên trong cái lồng 1650px */
+}
+
+.duan01hero-text h1
+ { font-size: 60px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
+.duan01hero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
+.mobile-only { 
+    display: none !important; 
+}
+.mobile-menu-btn, .mobile-overlay { display: none; }
+
+
+
+@media (max-width: 1024px) {
+    .duan01hero {
+        height: auto !important; 
+        min-height: 120vw !important; 
+        background-size: cover !important;
+        background-position: center !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; 
+        align-items: center;    
+        text-align: center;
+        padding: 0 20px;
+        padding-bottom: 20px !important; 
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        border-top: 1px solid #ffffff;
+    }
+
+   .duan01hero-text {
+        padding: 0 !important; 
+        margin: 0 auto !important;
+        max-width: 100% !important; 
+        width: 100% !important;
+        
+        /* Đảm bảo căn giữa tuyệt đối */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+
+    .duan01hero-text h1 {
+        font-size: 28px; 
+        font-weight: 400;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .duan01hero-text p {
+        font-size: 12px;
+        letter-spacing: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .duan01hero {
+        min-height: 56vw !important;
+    }
+}
