@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASA Parquet | Dự Án của CASA</title>
+    <title>CASA Parquet | Cấu trúc kỹ thuật</title>
 
     <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
@@ -15,20 +15,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/project.css">
     <link rel="stylesheet" href="./css/topbarheader.css">
     <link rel="stylesheet" href="./css/siteheader.css">
     <link rel="stylesheet" href="./css/megamenu.css">
     <link rel="stylesheet" href="./css/search.css">
     <link rel="stylesheet" href="./css/mobileovlay.css">
-    <link rel="stylesheet" href="./css/hero.css">
+    <link rel="stylesheet" href="./css/structure.css">
+    <link rel="stylesheet" href="./css/featurebars.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
-    <div class="top-bar">
+<div class="top-bar">
     <div class="top-bar-inner">
         <button class="top-bar-btn" onclick="toggleTopbar()"><i class="fa-solid fa-chevron-left"></i></button>
         <div class="top-bar-content">
@@ -44,7 +44,7 @@
 
 
 
-   <header class="site-header">
+<header class="site-header">
     <div class="header-inner">
         <div class="nav-col trai">
             <div class="m-nav-group">
@@ -63,8 +63,8 @@
                 <div class="nav-link has-dropdown" data-menu="company">CASA <i class="fa-solid fa-chevron-down"></i></div>
                 <div class="nav-link has-dropdown" data-menu="product">Sản phẩm <i class="fa-solid fa-chevron-down"></i></div>
                 <div class="nav-link has-dropdown" data-menu="system">Hệ <i class="fa-solid fa-chevron-down"></i></div>
-                <a href="duan.html" class="nav-link">Dự án</a>
-                <a href="duan.html" class="nav-link">Catalogue</a>
+                <a href="Dự án.html" class="nav-link">Dự án</a>
+                <a href="Dự án.html" class="nav-link">Catalogue</a>
 
             </nav>
         </div>
@@ -172,7 +172,7 @@
                 <div class="mega-links">
                     <span class="mega-subtitle">Thành phần</span>
                     <a href="wood.html">Gỗ</a>
-                    <a href="structure.html">Cấu trúc</a>
+                    <a href="Cấu trúc.html">Cấu trúc</a>
                     <a href="surface.html">Bề mặt</a>
                 </div>    
                 <div class="mega-links">
@@ -187,8 +187,11 @@
     </div>
 </header>
 
+
+
 <div id="search-drawer" class="search-drawer">
     <div class="search-backdrop" id="search-backdrop"></div>
+    
     <div class="search-container">
         <div class="search-panel">
             <div class="search-header">
@@ -201,16 +204,16 @@
                 <li><a href="lichsu.html">CASA</a></li>
                 <li><a href="chungchi.html">Chứng chỉ</a></li>
                 <li><a href="wood.html">Gỗ</a></li>
-                <li><a href="duan.html">Dự Án</a></li>
+                <li><a href="Dự án.html">Dự Án</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
         </div>
     </div>
 </div>
 
+    
 
-
-    <div class="mobile-overlay" id="mobileMenu">
+<div class="mobile-overlay" id="mobileMenu">
     <div class="mobile-header">
         <div class="close-menu"><i class="fa-solid fa-xmark"></i></div>
         <div class="sub-back-trigger" style="display: none;">
@@ -233,7 +236,7 @@
         </div>
 
         <div class="no-sub">
-            <a href="duan.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; width: 100%; height: 100%;">
+            <a href="Dự án.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; width: 100%; height: 100%;">
                 Dự án
             </a>
         </div>
@@ -299,7 +302,7 @@
 
             <div class="sub-menu-layer" id="system-sub">
                 <a href="wood.html" class="sub-nav-item">Gỗ</a>
-                <a href="structure.html" class="sub-nav-item">Cấu trúc</a>
+                <a href="Cấu trúc.html" class="sub-nav-item">Cấu trúc</a>
                 <a href="surface.html" class="sub-nav-item">Bề mặt</a>
                 <a href="xuongca.html" class="sub-nav-item">Hệ xương cá</a>
                 <a href="hethang.html" class="sub-nav-item">Hệ thẳng</a>
@@ -352,89 +355,203 @@
 
 
 
-    <section class="duannhero">
-        <div class="duannhero-bg">
-            <img src="imagesduan/duanhero.jpg" alt="Background">
+
+
+<section class="cautruchero">
+        <div class="cautruchero-bg">
+            <img src="imagescautruc/structurebg.jpg" alt="Background">
         </div>
-        <div class="duannhero-text">
-            <h1>Dấu Ấn Kiến Trúc</h1>
-            <p>CASA Parquet đưa vẻ đẹp tự nhiên của gỗ trở thành một phần bền vững trong ngôn ngữ kiến trúc.</p>
+        <div class="cautruchero-text">
+            <h1>Cốt lõi của sàn gỗ</h1>
+            <p>CASA tập trung vào cấu trúc cốt lõi của sàn gỗ — từ vật liệu, liên kết đến độ ổn định lâu dài.
+Mọi chi tiết đều được tính toán để đảm bảo hiệu năng sử dụng và sự bền vững theo thời gian.</p>
         </div>
-    </section>
-
-
-   
+</section>
 
 
 
 
-<main class="duan-page-body section-space-custom">
+
+
+<section class="tech-structure-section">
     <div class="casa-container">
-        
-        <section class="duan-intro-minimal">
-            <div class="duan-intro-text-wrapper">
-                <p>Mỗi công trình là nơi vẻ đẹp tự nhiên của gỗ được bộc lộ trọn vẹn.</p>
-                <p>Tại Casa Parquet, chúng tôi tin rằng sàn gỗ không chỉ là một lớp vật liệu hoàn thiện, mà là nền tảng định hình cảm xúc của không gian sống. Qua từng dự án, chúng tôi quan sát cách gỗ tương tác với kiến trúc, ánh sáng và nhịp sống hằng ngày. Từ những căn hộ riêng tư đến các không gian nội thất được thiết kế tỉ mỉ, mỗi công trình đều là sự kết hợp giữa tay nghề thi công, lựa chọn vật liệu và sự thấu hiểu về không gian. Với chúng tôi, một dự án hoàn thiện không chỉ nằm ở độ chính xác của kỹ thuật, mà còn ở cách vẻ đẹp tự nhiên của gỗ góp phần tạo nên bản sắc riêng cho nơi đó.</p>
-            </div>
-        </section>
-
-        <section class="duan-hero-image">
-            <div class="duan-hero-wrapper">
-                <img src="imagesduan/duanlongcard.jpg" alt="Featured Space">
-            </div>
-        </section>
-
-        <section class="duan-mid-content">
-            <p>Mỗi công trình là một minh chứng cho sự kết hợp hoàn hảo giữa tay nghề thủ công và tư duy thiết kế đương đại.</p>
-        </section>
-
-        <div class="duan-grid">
-            <a href="projects/Penthouse-District2.html" class="duan-card">
-                <div class="duan-card-img">
-                    <img src="imagesduan/thi-cong-san-go-xuong-ca-CASA-Parquet-tai-biet-thu-cao-cap.webp" alt="Thi công sàn gỗ xương cá CASA Parquet tại biệt thự cao cấp">
-                </div>
-                <div class="duan-card-info">
-                    <h3 class="duan-card-title">DỰ ÁN 1</h3>
-                    <p class="duan-card-desc">Căn hộ Penthouse - Quận 2</p>
-                </div>
-            </a>
-            <a href="/du-an-2" class="duan-card">
-                <div class="duan-card-img">
-                    <img src="imagesduan/san-go-cong-nghiep-Casa-Parquet.webp" alt="Sàn gỗ công nghiệp CASA Parquet cho khách sạn cao cấp">
-                </div>
-                <div class="duan-card-info">
-                    <h3 class="duan-card-title">DỰ ÁN 2</h3>
-                    <p class="duan-card-desc">Villa Riverside - Thủ Đức</p>
-                </div>
-            </a>
-            <a href="/du-an-3" class="duan-card">
-                <div class="duan-card-img">
-                    <img src="imagesduan/thi-cong-san-go-lap-thang-tai-trien-lam.jpg" alt="thi công sàn gỗ cao cấp tại bảo tàng đồ cổ mỹ nghệ">
-                </div>
-                <div class="duan-card-info">
-                    <h3 class="duan-card-title">DỰ ÁN 3</h3>
-                    <p class="duan-card-desc">Bảo tàng cổ vật</p>
-                </div>
-            </a>
+        <div class="tech-label">
+            <span class="section-subtitle">NỀN TẢNG</span>
+        </div>
+        <div class="tech-intro">
+            <h2 class="tech-main-title">Cấu trúc kỹ thuật</h2>
+            <p class="tech-main-desc">CASA Parquet là ván gỗ hai lớp lý tưởng cho sàn nhà, trần thả và ốp tường. Được kế thừa từ kỹ thuật thủ công kết hợp máy móc hiện đại công nghệ Châu Âu. Bề mặt được hoàn thiện thủ công bằng dòng sơn made in ITALY, tạo nên một chất cảm riêng cho mọi gu thẩm mỹ.</p>
         </div>
 
-        <section class="duan-outro-text">
-    <div class="duan-outro-wrapper">
-        <div class="duan-outro-main">
-            <p>Từ những căn hộ đương đại đến những công trình di sản, CASA Parquet luôn nỗ lực kiến tạo những giá trị hữu hình, nơi mỗi bước chân đều chạm vào sự tĩnh lặng và chiều sâu của vật liệu. Mỗi dự án là một quá trình lắng nghe — từ cấu trúc kiến trúc, ánh sáng tự nhiên cho đến nhịp sống diễn ra trong không gian đó. Từ sự thấu hiểu ấy, chúng tôi lựa chọn loại gỗ, quy cách ván và bề mặt hoàn thiện sao cho hài hòa với tinh thần tổng thể của công trình, để vật liệu không chỉ hiện diện như một lớp hoàn thiện, mà thực sự trở thành một phần của kiến trúc. Theo thời gian, khi ánh sáng thay đổi và dấu vết của đời sống dần in lên bề mặt gỗ, giá trị của vật liệu cũng được bồi đắp, tạo nên chiều sâu riêng cho mỗi không gian.</p>
+        <div class="tech-hero-image">
+            <img src="imagescautruc/mainlayer.png" alt="Casa Main Plank View">
         </div>
-        
-        <div class="duan-outro-closing">
-            <p>Chúng tôi tin rằng một công trình đẹp không chỉ được cảm nhận trong khoảnh khắc hoàn thiện, mà còn ở cách nó âm thầm đồng hành cùng con người qua nhiều năm tháng.</p>
+
+        <div class="tech-details-list">
+            
+            <div class="detail-row">
+                <div class="detail-img-col">
+                    <img src="imagescautruc/corner.jpg" alt="Structure 2 layers">
+                </div>
+                <div class="detail-text-col">
+                    <h3>Cấu trúc ván 2 lớp</h3>
+                    <p>Một sàn gỗ tiền chế hai lớp duy trì chất lượng, sự sang trọng và tự nhiên theo thời gian. Gồm lớp gỗ quý và lớp đế gỗ dán bạch dương.</p>
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-img-col">
+                    <img src="imagescautruc/Layer A.PNG" alt="A">
+                </div>
+                <div class="detail-text-col">
+                    <h3>Lớp A - Lớp hoàn thiện</h3>
+                    <p>Bề mặt ván sàn được xử lý bằng hệ sơn gốc dầu cao cấp, thẩm thấu trực tiếp vào thớ gỗ để bảo vệ và duy trì cảm giác chạm chân thực nhất.</p>
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-img-col">
+                    <img src="imagescautruc/Layer-B.jpg" alt="B">
+                </div>
+                <div class="detail-text-col">
+                    <h3>Lớp B - Lớp gỗ quý</h3>
+                    <p>Gỗ tự nhiên quý hiếm có độ dày 3 mm ±0.5, đảm bảo vẻ đẹp thẩm mỹ và độ bền bề mặt.</p>
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-img-col">
+                    <img src="imagescautruc/Layer-C.jpg" alt="C">
+                </div>
+                <div class="detail-text-col">
+                    <h3>Lớp C - Lớp đế Plywood</h3>
+                    <p>Hỗ trợ trung tâm bằng gỗ dán bạch dương với keo vinyl lớp D3, tăng cường sự ổn định về kích thước.</p>
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-img-col">
+                    <img src="imagescautruc/Dimension.jpg" alt="Dimensions">
+                </div>
+                <div class="detail-text-col">
+                    <h3>Thông số kích thước</h3>
+                    <div class="specs-mini-grid">
+                        <p><strong>Dài:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;450 / 600 / 750 / 900 / 1200 / 1820 mm</p>
+                        <p><strong>Rộng:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;90 / 120 / 130 / 150 / 189 / 240 mm</p>
+                        <p><strong>Dày:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15/3 mm và 17/5 mm</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 
-    </div> </main>
 
 
 
 
+
+<section class="tech-dark-gallery">
+    <div class="casa-container">
+        <div class="tech-header-top">
+            <div class="header-text-group">
+    <div class="tech-main-desc-long">
+        <p>
+            Ẩn dưới bề mặt gỗ là cấu trúc được tính toán để thích nghi với môi trường, duy trì hình thái và bảo toàn cảm giác tự nhiên theo thời gian. Với CASA Parquet, bề mặt là điểm giao thoa giữa vẻ đẹp nguyên bản của gỗ và sự ổn định được kiểm soát bằng công nghệ — nơi thẩm mỹ không tách rời hiệu năng, và cảm xúc luôn song hành cùng độ bền.
+            <span id="dots-tech">... </span>
+            <a href="javascript:void(0)" onclick="toggleTechRead()" id="btn-tech-read" class="read-more-link">Xem thêm</a>
+        </p>
+
+        <div id="more-tech" style="display: none;">
+            <p>Mỗi cấu trúc bề mặt được phát triển như một phần cốt lõi của hệ ván, phản hồi linh hoạt trước sự thay đổi của nhiệt độ và độ ẩm trong không gian sống. Thớ gỗ được xử lý có chủ đích, tạo nên chiều sâu thị giác đồng thời góp phần hạn chế biến dạng, giữ cho từng tấm ván vận hành ổn định trong suốt vòng đời sử dụng.</p>
+            
+            <p>
+                Ẩn sau cảm giác chạm chân tự nhiên là những lớp công nghệ được tích hợp một cách tinh giản nhưng chính xác — tăng khả năng bảo vệ bề mặt, duy trì sự liền mạch giữa các tấm ván và giảm thiểu tác động của sử dụng hằng ngày. Không phô trương, không áp đặt, công nghệ tại CASA tồn tại để nâng đỡ trải nghiệm, để vẻ đẹp của gỗ được bộc lộ một cách bền vững và lâu dài.
+                <a href="javascript:void(0)" onclick="toggleTechRead()" id="btn-read-less" class="read-more-link" style="display: none; margin-left: 10px;">Thu gọn</a>
+            </p>
+        </div>
+    </div>
+
+    
+
+    <div class="tech-slider-controls">
+        <button class="tech-ctrl-btn prev-btn" id="techPrev">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M15 18l-6-6 6-6" /></svg>
+        </button>
+        <button class="tech-ctrl-btn next-btn" id="techNext">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M9 18l6-6-6-6" /></svg>
+        </button>
+    </div>
+</div>
+        </div>
+
+        <div class="tech-slider-main" id="techSliderMain">
+            <div class="tech-slide-item">
+                <div class="tech-image-box">
+                    <img src="imagescautruc/slider3.jpg" alt="Lớp hoàn thiện">
+                </div>
+            </div>
+
+            <div class="tech-slide-item">
+                <div class="tech-image-box">
+                    <img src="imagescolor/darkbrown.jpg" alt="Lớp gỗ quý">
+                </div>
+            </div>
+
+            <div class="tech-slide-item">
+                <div class="tech-image-box">
+                    <img src="imagescolor/honey.jpg" alt="Đế Plywood">
+                </div>
+            </div>
+
+            <div class="tech-slide-item">
+                <div class="tech-image-box">
+                    <img src="imagescolor/grey.webp" alt="Đế Plywood">
+                </div>
+            </div>
+
+            <div class="tech-slide-item">
+                <div class="tech-image-box">
+                    <img src="imagescautruc/slider5.webp" alt="Đế Plywood">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="tech-progress-wrap">
+            <div class="tech-progress-bar" id="techProgressBar"></div>
+        </div>
+
+        <div class="tech-footer-info">
+            <div class="footer-col-blue">
+                <div class="stat-line"><span>Tính ổn định cấu trúc</span> <div class="stars"><span class="techdot active"></span><span class="techdot active"></span><span class="techdot active"></span><span class="techdot active"></span><span class="techdot active"></span></div></div>
+                <div class="stat-line"><span>Độ bền</span> <div class="stars"><span class="techdot active"></span><span class="techdot active"></span><span class="techdot active"></span><span class="techdot active"></span><span class="techdot active"></span></div></div>
+                <div class="stat-line"><span>Độ chính xác ghép nối</span> <div class="stars"><span class="techdot active"></span><span class="techdot active"></span><span class="techdot active"></span><span class="techdot active"></span><span class="techdot active"></span></div></div>
+                <div class="stat-line"><span>An toàn sức khỏe</span> <div class="stars"><span class="techdot active"></span><span class="techdot active"></span><span class="techdot active"></span><span class="techdot active"></span><span class="techdot active"></span></div></div>
+            </div>
+
+            <div class="footer-col-red">
+                <div class="tech-box">
+                    <h4>Hỗ trợ công nghệ Birch</h4>
+                    <p>Ván ép bạch dương chịu lực cơ học và bền liên kết nhờ keo vượt trội.</p>
+                </div>
+                <div class="tech-box">
+                    <h4>Độ chính xác khớp nối</h4>
+                    <p>Định hình bằng lưỡi cắt kim cương đảm bảo độ phẳng hoàn hảo.</p>
+                </div>
+                <div class="tech-box">
+                    <h4>Các vết rạch dọc</h4>
+                    <p>Cải thiện tính linh hoạt, thích ứng tốt với bề mặt sàn và tường.</p>
+                </div>
+                <div class="tech-box">
+                    <h4>Độ bền liên kết tối đa</h4>
+                    <p>Phương pháp ép công nghệ Châu Âu cho độ bền và đàn hồi vượt trội.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
@@ -521,10 +638,6 @@
 
 
 
-
-
-
-
 <section class="features-bar">
     <div class="container">
         <div class="features-grid">
@@ -548,7 +661,7 @@
                     </svg>
                 </div>
                 <h3>Cấu trúc kỹ thuật</h3>
-                <a href="structure.html">Khám phá lớp gỗ Engineering</a>
+                <a href="Cấu trúc.html">Khám phá lớp gỗ Engineering</a>
             </div>
 
             <div class="feature-item">
@@ -566,13 +679,15 @@
                 <a href="index.html">Xem bảng kích thước chuẩn</a>
             </div>
           </div>
+
 <div class="features-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+            <span class="feat-dot active"></span>
+            <span class="feat-dot"></span>
+            <span class="feat-dot"></span>
         </div>
     </div>
 </section>
+
 
 
 <footer class="footer">
@@ -669,7 +784,7 @@
                 <img src="https://flagcdn.com/w80/vn.png"> <span>Vietnam (VIE)</span>
             </li>
             <li data-lang="EN" data-flag="https://flagcdn.com/w80/us.png">
-                <img src="https://flagcdn.com/w80/us.png"> <span>English(ENG)</span>
+                <img src="https://flagcdn.com/w80/us.png"> <span>English (ENG)</span>
             </li>
         </ul>
     </div>
@@ -703,12 +818,13 @@
 
     <script src="js/index.js"></script>
     <script src="js/topbar.js"></script>
-    <script src="js/project.js"></script>
     <script src="js/getnotice.js"></script>
+    <script src="js/structure.js    "></script>
     <script src="js/search.js"></script>
+    <script type="module" src="js/search-logic.js"></script>
+    <script src="js/techslider.js"></script>
+    <script src="js/mobilemenu.js"></script>
     <script src="js/khamphaaaa.js"></script>
     <script src="js/footerlang.js"></script>
-    <script type="module" src="js/search-logic.js"></script>
-    <script src="js/mobilemenu.js"></script>
 </body>
 </html>

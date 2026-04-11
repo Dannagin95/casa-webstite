@@ -143,13 +143,13 @@ HÌNH NGANG LỚN
 .riva-size-row {
     display: flex;
     align-items: center;
-    gap: 45px;         
+    gap: 20px;         
     margin-top: 40px;
 }
 
 .riva-icon-circle {
-    width: 200px;         
-    height: 200px;
+    width: 150px;         
+    height: 150px;
     border-radius: 50%;
     flex-shrink: 0;
     overflow: hidden;
@@ -168,7 +168,7 @@ HÌNH NGANG LỚN
 }
 
 .riva-size-info p {
-    font-size: 14px;
+    font-size: 11px;
     margin: 4px 0;      
     color: var(--black);
 }
