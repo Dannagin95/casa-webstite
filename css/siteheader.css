@@ -109,7 +109,7 @@
 /* KHI MENU MỞ (Header chuyển sang nền trắng) */
 .header-is-white .logo img {
     /* Mày chỉ cần thay đường dẫn file logo màu đen của mày vào đây */
-    content: url('../images/logoblack.png');
+    content: url('../image/images/logoblack.png');
 }
 
 
