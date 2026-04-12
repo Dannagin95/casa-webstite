@@ -45,11 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================== */
     const initHeroSlider = () => {
         const gallery = [
-            { type: 'video', src: 'imagesRiva/Rivaherovd1.mp4' },
-            { type: 'image', src: 'imagesRiva/Rivahero01.jpg' },
-            { type: 'image', src: 'imagesRiva/Rivahero02.jpg' },
-            { type: 'image', src: 'imagesRiva/Rivahero07.webp' },
-            { type: 'image', src: 'imagesRiva/Rivahero05.jpg' }
+            { type: 'video', src: '../image/imagesRiva/Rivaherovd1.mp4' },
+            { type: 'image', src: '../image/imagesRiva/Rivahero01.jpg' },
+            { type: 'image', src: '../image/imagesRiva/Rivahero02.jpg' },
+            { type: 'image', src: '../image/imagesRiva/Rivahero07.webp' },
+            { type: 'image', src: '../image/imagesRiva/Rivahero05.jpg' }
         ];
 
         let currentIndex = 0;
