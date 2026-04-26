@@ -225,6 +225,9 @@
 
 /* 3. MOBILE (< 767px) */
 @media (max-width: 767px) {
+    .casa-container{
+        padding: 0 20px !important;
+    }
     .resource-grid { 
         grid-template-columns: 1fr; /* 1 cột [cite: 2026-02-07] */
     }
