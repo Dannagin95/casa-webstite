@@ -652,6 +652,43 @@
     position: relative;
 }
 
+
+.article-cta-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none; /* [cite: 2026-02-11] */
+    margin: 0;
+    color: var(--color-h3);
+    transition: all 0.3s ease;
+}
+
+.cta-text {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.cta-arrow {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.2; /* Nét mảnh đúng gu luxury */
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng Hover */
+.article-cta-box:hover {
+    color: var(--black);
+}
+
+.article-cta-box:hover .cta-arrow {
+    transform: translateX(5px); /* Mũi tên nhích nhẹ sang phải khi hover */
+}
+
+
 /* --- 2. DESKTOP ( > 1024px ) --- */
 @media screen and (min-width: 1025px) {
     .firstblog-gallery-grid {
