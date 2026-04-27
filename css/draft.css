@@ -1,0 +1,52 @@
+/*tablet nhỏ*/
+
+.fifthblog-gallery-grid {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        column-gap: 15px !important; 
+        width: 100% !important;
+        margin: 20px 0 !important;
+        justify-content: center !important; 
+    }
+
+
+    .fifthblog-gallery-item {
+        /* Tính toán bề ngang khớp với lề 20px và gap 30px */
+        width: calc((100vw - 40px - 20px) / 2) !important;
+        flex: 0 0 calc((100vw - 40px - 20px) / 2) !important;
+        aspect-ratio: 1 / 1.1 !important; 
+        overflow: hidden !important;
+        display: block !important;
+        margin-bottom: 20px;
+    }
+
+    .fifthblog-gallery-item img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+
+    /*tablet lớn*/
+    .fifthblog-gallery-grid {
+        display: flex !important;
+        gap: 20px !important;
+        margin: 40px -20px !important; 
+        padding: 0 20px 0 20px !important; 
+        scrollbar-width: none !important;
+    }
+
+    
+    .fifthblog-gallery-item {
+        width: calc((100vw - 40px - 20px) / 2) !important;
+        flex: 0 0 calc((100vw - 40px - 20px) / 2) !important;
+    }
+
+    /*Mobile*/
+    .fifthblog-gallery-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 5px !important;
+        margin: 20px 0 !important;
+    }
+    .casa-container { padding: 0 20px !important; }
+    .fifthblog-gallery-item { aspect-ratio: 1 / 1.8 !important; }
