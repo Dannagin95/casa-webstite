@@ -80,7 +80,7 @@ h1, h2, h3, h4, .urbanist {
 
 
 /*
-img {
+.img {
     filter: sepia(12%) saturate(90%) contrast(100%) brightness(103%);
     transition: filter 0.3s ease;
 }
