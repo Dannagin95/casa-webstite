@@ -462,6 +462,30 @@
 
 .sixblog-gallery-item:hover img { transform: scale(1.1); }
 
+
+
+.sixblog-gallery2-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Tăng từ 13px lên 20px cho sang */
+    width: 100%;
+    max-width: 1120px; 
+    margin: 60px auto !important; 
+}
+
+.sixblog-gallery2-item {
+    aspect-ratio: 1 / 1.2; 
+    overflow: hidden;
+    background-color: var(--gray);
+}
+
+.sixblog-gallery2-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
 .sixblog-photography-credit {
     font-style: italic;
     color: var(--color-text-muted);
@@ -522,18 +546,6 @@
         gap: 10px;
         padding-top: 40px;
     }
-
-        /* Gallery Desktop */
-    .sixblog-gallery2-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px; 
-        width: 100%;
-        max-width: 1120px; 
-        margin: 40px auto 0 !important; 
-    }
-    .sixblog-gallery2-item { aspect-ratio: 1 / 1.2; overflow: hidden; background-color: var(--gray); }
-    .sixblog-gallery2-item img { width: 100%; height: 100%; object-fit: cover; }
 }
 
 
@@ -571,6 +583,10 @@
         aspect-ratio: 1 / 1.2 !important;
     }
 
+    .sixblog-gallery2-grid {
+        margin: 40px 0 !important;
+        margin-bottom: 60px !important;
+    }
 
     .indicator-wrapper {
         display: block !important;
@@ -642,6 +658,29 @@
         flex-shrink: 0 !important;
         aspect-ratio: 1 / 1.1 !important;
     }
+
+    .sixblog-gallery2-grid {
+        grid-template-columns: 1fr 1fr; /* Giữ 2 cột cho tablet */
+        gap: 15px;
+        margin: 40px 0 !important;
+        margin-bottom: 20px !important;
+    }
+
+    .sixblog-gallery2-item {
+        width: calc((100vw - 40px - 15px) / 2) !important;
+        flex: 0 0 calc((100vw - 40px - 15px) / 2) !important;
+        aspect-ratio: 1 / 1.1 !important; 
+        overflow: hidden !important;
+        display: block !important;
+        margin-bottom: 20px;
+    }
+
+    .sixblog-gallery2-item img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    
     
     .sixblog-main-title { font-size: 48px; }
     .sixblog-text-container { max-width: 100%; padding: 20px 0; }
@@ -709,8 +748,8 @@
         left: 50% !important;
         margin-left: -50vw !important;
         
-        margin-top: 80px !important;
-        margin-bottom: 60px !important;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
         padding: 0 !important; 
     }
     
