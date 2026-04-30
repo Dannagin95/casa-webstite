@@ -77,6 +77,12 @@ h1, h2, h3, h4, .urbanist {
 }
 
 
+a, button, .clickable-area {
+    pointer-events: auto !important;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease;
+}
 
 
 /*

@@ -1,0 +1,83 @@
+
+.mainproducthero {
+    height: 93vh; 
+    position: relative; 
+    display: flex;
+    align-items: flex-end; 
+    /* Thay đổi quan trọng: Bỏ padding cố định, dùng flex để căn giữa khối nội dung */
+    padding: 0; 
+    justify-content: center; 
+    width: 100%;
+}
+
+.mainproducthero-bg { position: absolute; inset: 0; z-index: -1; }
+.mainproducthero-bg img { width: 100%; height: 100%; object-fit: cover; }
+
+.mainproducthero-text { 
+    color: #fff; 
+    width: 100%;
+    max-width: var(--container-max); /* Khóa chặt ở 1650px */
+    margin: 0 auto; /* Ép vào giữa màn hình */
+    padding: 0 var(--side-padding); /* Trả lại đúng 55px padding để chữ đứng đúng vị trí cũ */
+    margin-bottom: 48px;
+    z-index: 2;
+    text-align: left; /* Đảm bảo chữ vẫn canh trái bên trong cái lồng 1650px */
+}
+.mainproducthero-text h1 { font-size: 50px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
+.mainproducthero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
+
+
+
+
+@media (max-width: 1024px) {
+    .mainproducthero {
+        height: auto !important; 
+        min-height: 120vw !important; 
+        background-size: cover !important;
+        background-position: center !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; 
+        align-items: center;    
+        text-align: center;
+        padding: 0 20px;
+        padding-bottom: 20px !important; 
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        border-top: 1px solid #ffffff;
+    }
+
+    .mainproducthero-text {
+        padding: 0 !important; 
+        margin: 0 auto !important;
+        max-width: 100% !important; 
+        width: 100% !important;
+        
+        /* Đảm bảo căn giữa tuyệt đối */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center !important;
+        margin-bottom: 20px !important; /* Khoảng cách so với đáy section 20px */
+    }
+
+    .mainproducthero-text h1 {
+        font-size: 28px; 
+        font-weight: 400;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .mainproducthero-text p {
+        font-size: 12px;
+        letter-spacing: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+/* TABLET: Dàn ngang ra tối ưu */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .mainproducthero {
+        min-height: 56vw !important; /* Tỉ lệ ngang cho Tablet [cite: 2026-02-07] */
+    }
+}

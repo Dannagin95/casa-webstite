@@ -1,0 +1,677 @@
+.mainproducthero {
+    height: 93vh; 
+    position: relative; 
+    display: flex;
+    align-items: flex-end; 
+    padding: 0; 
+    justify-content: center; 
+    width: 100%;
+}
+
+.mainproducthero-bg { position: absolute; inset: 0; z-index: -1; }
+.mainproducthero-bg img { width: 100%; height: 100%; object-fit: cover; }
+
+.mainproducthero-text .sub-title {
+    font-size: 11px;
+    word-spacing: 5px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.mainproducthero-text { 
+    color: #fff; 
+    width: 100%;
+    max-width: var(--container-max); 
+    margin: 0 auto; 
+    padding: 0 var(--side-padding); 
+    margin-bottom: 48px;
+    z-index: 2;
+    text-align: left; 
+}
+.mainproducthero-text h1 { font-size: 50px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
+.mainproducthero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
+
+.mobile-only { 
+    display: none !important; 
+}
+
+
+.mobile-menu-btn, .mobile-overlay { display: none; }
+
+
+
+@media (max-width: 1024px) {
+    .mainproducthero {
+        height: auto !important; 
+        min-height: 120vw !important; 
+        background-size: cover !important;
+        background-position: center !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; 
+        align-items: center;    
+        text-align: center;
+        padding: 0 20px;
+        padding-bottom: 20px !important; 
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        border-top: 1px solid #ffffff;
+    }
+
+    .mainproducthero-text {
+        padding: 0 !important; 
+        margin: 0 auto !important;
+        max-width: 100% !important; 
+        width: 100% !important;
+        
+        /* Đảm bảo căn giữa tuyệt đối */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center !important;
+        margin-bottom: 20px !important; /* Khoảng cách so với đáy section 20px */
+    }
+
+    .mainproducthero-text h1 {
+        font-size: 28px; 
+        font-weight: 400;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .mainproducthero-text p {
+        font-size: 12px;
+        letter-spacing: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+/* TABLET: Dàn ngang ra tối ưu */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .mainproducthero {
+        min-height: 56vw !important; /* Tỉ lệ ngang cho Tablet [cite: 2026-02-07] */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.mainproduct-page-body {
+    padding-top: var(--section-gap); 
+    padding-bottom: var(--section-gap);
+}
+
+/* --- TIER 1: INTRO SECTION --- */
+.mainproduct-intro-minimal {
+    padding-bottom: var(--sp-20); /* 80px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.mainproduct-intro-text-wrapper {
+    /* Fixed width container centered for editorial focus */
+    max-width: 1020px; 
+    margin: 0;
+}
+
+.mainproduct-intro-text-wrapper p {
+    font-size: clamp(24px, 3.5vw, 30px);
+    line-height: 1.7;
+    font-weight: 400;
+    color: #1a1a1a;
+    letter-spacing: -0.01em;
+    margin-bottom: 25px;
+}
+
+.mainproduct-intro-text-wrapper .intro-signature {
+    max-width: 720px; 
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.8;
+    word-spacing: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-muted);
+    margin: 60px auto 0;
+
+}
+
+
+
+/* ============================================================
+   TIER 4: PROJECT GRID (3-COLUMN DESKTOP)
+   ============================================================ */
+.mainproduct-subtitle {
+    border-top: 1px solid rgba(0,0,0,0.1);
+    grid-column: 1 / -1; 
+    word-spacing: 5px;
+    font-size: 29px;
+    font-weight: 400;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+    text-transform: none;
+    width: 100%; 
+    margin: 40px 0 5px;
+    padding-top: 20px;
+}
+
+
+.mainproduct-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Precise gap for desktop editorial layout */
+}
+
+.mainproduct-card {
+    text-decoration: none;
+    color: inherit;
+}
+
+.mainproduct-card-img {
+    width: 100%;
+    aspect-ratio: 6 / 7; /* Portrait ratio standard */
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.mainproduct-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.mainproduct-card:hover .mainproduct-card-img img {
+    transform: scale(1.05); /* Smooth premium zoom effect */
+}
+
+.mainproduct-card-title {
+    font-size: 28px !important; 
+    margin: 10px 0; 
+    font-weight: 500; 
+    color: #1a1a1a; 
+}
+
+.mainproduct-card-desc {
+    font-size: 13px !important; 
+    color: var(--color-text-muted); 
+    line-height: 1.6; 
+    margin-bottom: 15px; 
+}
+
+/* ============================================================
+   SECTION: mainproduct OUTRO
+   ============================================================ */
+
+.mainproduct-outro-text {
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin-top: 60px;
+    padding: 80px 0 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.mainproduct-outro-wrapper {
+    /* Maintained 720px vertical axis for content symmetry */
+    max-width: 1020px; 
+    margin: 0;
+}
+
+.mainproduct-outro-main p {
+    font-size: clamp(24px, 3.5vw, 30px);
+    line-height: 1.7;
+    font-weight: 400;
+    color: #1a1a1a;
+    letter-spacing: -0.01em;
+    margin-bottom: 25px;
+}
+
+.mainproduct-outro-closing p {
+    max-width: 720px; 
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.8;
+    word-spacing: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-muted);
+    margin: 60px auto -60px;
+}
+
+.collection-group, .mainproduct-slider {
+    display: contents; 
+}
+
+
+
+
+/*===================================================================
+    3. LAYER TABLET LARGE (992px - 1199px)
+===================================================================*/
+@media (min-width: 992px) and (max-width: 1199px) {
+
+
+    .mainproduct-page-body {
+        padding: 60px 0 0;
+        overflow: hidden;
+    }
+
+    .mainproduct-page-body .casa-container {
+        padding: 0 var(--sp-5);
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .mainproduct-intro-text-wrapper,
+    .mainproduct-mid-content,
+    .mainproduct-outro-wrapper {
+        width: 100% !important;
+        max-width: 670px !important;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .mainproduct-intro-minimal {
+        padding: 0 0 40px;
+    }
+
+
+    .mainproduct-intro-text-wrapper p,
+    .mainproduct-outro-wrapper p {
+        font-size: 22px; 
+        line-height: 1.6;
+        max-width: 100%;
+        color: var(--black);
+        margin-bottom: 20px;
+    }
+ 
+    .mainproduct-intro-text-wrapper .intro-signature {
+        font-size: 10px;
+        max-width: 680px;
+        margin: 0 auto;
+        margin: 60px auto 0;
+    }
+
+
+    .mainproduct-outro-text {
+        padding: 60px 0 0 !important;
+    }
+
+    .mainproduct-grid {
+        display: block !important; /* Switch to block to stack collections vertically */
+        overflow: visible !important;
+    }
+
+    .collection-group {
+        display: block;
+        margin-bottom: 40px; /* Golden Parameter: Section gap */
+    }
+
+    .mainproduct-subtitle {
+        display: block;
+        margin-bottom: 20px !important;
+        /* Now stays fixed naturally because it's outside the slider wrapper */
+        font-size: 1.1rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    /* New Slider Logic: Only the cards slide inside this wrapper */
+    .mainproduct-slider {
+        display: block;
+        white-space: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        
+        /* Golden Parameters: Force the track to edge-to-edge */
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+        scroll-padding-left: 20px;
+        scroll-padding-right: 20px;
+        
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .mainproduct-slider::-webkit-scrollbar { display: none; }
+
+    .mainproduct-slider::after {
+        content: '';
+        display: inline-block;
+        width: 7px; 
+    }
+
+    .mainproduct-card:first-child {
+        margin-left: 20px !important;
+    }
+
+    .mainproduct-card {
+        display: inline-block;
+        vertical-align: top;
+        white-space: normal;
+        
+        /* Golden Parameters: 38vw size */
+        flex: 0 0 38vw !important;
+        width: 38vw !important;
+        aspect-ratio: 6 / 7;
+        
+        margin-right: 13px;
+        position: relative;
+        text-decoration: none;
+        overflow: hidden;
+        scroll-snap-align: start;
+        scroll-snap-stop: always !important;
+    }
+
+    .mainproduct-card-img {
+        height: 100% !important;
+        width: 100%;
+    }
+
+    .mainproduct-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Gradient overlay */
+    .mainproduct-card-img::after {
+        content: "";
+        position: absolute;
+        bottom: 0; left: 0;
+        width: 100%; height: 50%;
+        background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+        z-index: 1;
+    }
+
+    /* Right padding buffer */
+    .mainproduct-slider::after {
+        content: '';
+        display: inline-block;
+        width: 7px;
+    }
+
+    .mainproduct-outro-closing p {
+        font-size: 10px;
+        max-width: 680px;
+        margin: 0 auto;
+        margin: 60px auto 0;
+    }    
+}
+
+
+
+
+
+
+
+/* =========================================
+   2. IPAD/TABLET SYNC (768px - 991px)
+   ========================================= */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* 1. Global Page Body Reset */
+    .mainproduct-page-body {
+        padding: 0 var(--sp-5);
+        overflow: hidden;
+    }
+
+    /* 2. Container Padding Synchronization */
+    .mainproduct-page-body .casa-container {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* 3. Text Blocks: Full-width adaptation */
+    .mainproduct-intro-text-wrapper,
+    .mainproduct-outro-wrapper {
+        max-width: 600px !important;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+
+    .mainproduct-intro-text-wrapper p,
+    .mainproduct-outro-wrapper p {
+        font-size: 22px;
+        line-height: 1.6;
+    }
+
+
+    .mainproduct-intro-minimal {
+        padding: 60px 0 20px;
+    }
+
+
+
+    .mainproduct-outro-text {
+        padding-top: 60px !important;
+    }
+
+    .mainproduct-outro-main p {
+        margin-bottom: 15px !important;
+    }
+
+    .mainproduct-intro-text-wrapper .intro-signature {
+        font-size: 10px;
+        max-width: 480px;
+    }
+
+    .mainproduct-grid {
+        display: block !important; /* Switch to block to stack collections vertically */
+        overflow: visible !important;
+    }
+
+    .collection-group {
+        display: block;
+        margin-bottom: 40px; /* Golden Parameter: Section gap */
+    }
+
+    .mainproduct-subtitle {
+        display: block;
+        margin-bottom: 20px !important;
+        /* Now stays fixed naturally because it's outside the slider wrapper */
+        font-size: 1.1rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    /* New Slider Logic: Only the cards slide inside this wrapper */
+    .mainproduct-slider {
+        display: block;
+        white-space: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        
+        /* Golden Parameters: Force the track to edge-to-edge */
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+        scroll-padding-left: 20px;
+        scroll-padding-right: 20px;
+        
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .mainproduct-slider::-webkit-scrollbar { display: none; }
+
+    .mainproduct-slider::after {
+        content: '';
+        display: inline-block;
+        width: 7px; 
+    }
+
+    .mainproduct-card:first-child {
+        margin-left: 20px !important;
+    }
+
+    .mainproduct-card {
+        display: inline-block;
+        vertical-align: top;
+        white-space: normal;
+        
+        /* Golden Parameters: 38vw size */
+        flex: 0 0 38vw !important;
+        width: 38vw !important;
+        aspect-ratio: 6 / 7;
+        
+        margin-right: 13px;
+        position: relative;
+        text-decoration: none;
+        overflow: hidden;
+        scroll-snap-align: start;
+        scroll-snap-stop: always !important;
+    }
+
+    .mainproduct-card-img {
+        height: 100% !important;
+        width: 100%;
+    }
+
+    .mainproduct-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Gradient overlay */
+    .mainproduct-card-img::after {
+        content: "";
+        position: absolute;
+        bottom: 0; left: 0;
+        width: 100%; height: 50%;
+        background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+        z-index: 1;
+    }
+
+    /* Right padding buffer */
+    .mainproduct-slider::after {
+        content: '';
+        display: inline-block;
+        width: 7px;
+    }
+
+    .mainproduct-card-info {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px; 
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .mainproduct-card-title {
+        color: #ffffff !important;
+        font-family: 'Urbanist', sans-serif !important;
+        font-weight: 500 !important;
+        font-size: 24px !important; 
+        line-height: 1.2 !important;
+        margin: 0 !important;
+    }
+
+    .mainproduct-card-desc {
+        display:  none;
+    }
+
+    .mainproduct-outro-closing p {
+        font-size: 10px;
+        max-width: 480px;
+    }    
+}
+
+
+
+
+
+
+
+/* =========================================
+   3. MOBILE VERSION - MARGIN SYNC
+   ========================================= */
+@media (max-width: 767px) {
+    .mainproduct-page-body .casa-container {
+        padding: 0 20px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .mainproduct-intro-minimal {
+        padding: 0 0 60px;
+    }
+
+    .mainproduct-intro-text-wrapper {
+        /* On mobile, use side padding instead of fixed max-width for legibility */
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .mainproduct-intro-text-wrapper p,
+    .mainproduct-outro-text-wrapper p {
+        font-size: 12px; 
+        word-spacing: 1px;
+        line-height: 1.6;
+        max-width: 100%;
+        color: var(--color-black);
+    }
+
+    .mainproduct-subtitle {
+        margin: 0;
+    }
+
+    .mainproduct-grid {
+        padding: 0;
+        grid-template-columns: 1fr !important;
+    }
+
+    .mainproduct-card-img {
+        margin: 0;
+    }
+
+    .mainproduct-card-info {
+        margin-bottom: 30px;
+    }
+
+    .mainproduct-card-title {
+        font-size: 22px !important;
+        font-weight: 600;
+        color: #000;
+        margin: 10px 0;
+    }
+
+    .mainproduct-card-desc {
+        font-size: 12px;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 15px; 
+    }
+
+    .mainproduct-outro-text {
+        border-top: 1px solid rgba(0,0,0,0.1);
+        margin-top: 40px;
+        padding: 60px 0 80px 0;
+    }
+}
