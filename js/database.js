@@ -11,6 +11,7 @@ export const searchDatabase = [
     { title: "Trung tâm trợ giúp", url: "help.html", keywords: "trung tam tro giup support help center faq" },
 
    
+    { title: "Sản phẩm", url: "san-pham.html", keywords: "san pham sản phẩm" },
     { title: "Riva", url: "riva.html", keywords: "bo suu tap Riva" },
     { title: "Alpi", url: "alpi.html", keywords: "bo suu tap Alpi" },
     { title: "Mastro", url: "mastro.html", keywords: "bo suu tap Mastro" },
