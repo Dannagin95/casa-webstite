@@ -57,8 +57,8 @@
     @media (max-width: 1439px) and (min-width: 820px) {
         .fixed-contact-buttons { right: 20px; bottom: 60px; gap: 15px; }
         .contact-btn { width: 50px; height: 50px; }
-        .zalo-btn { background: #0084FF; padding: 10px; } 
-        .call-btn { background: #D60000; padding: 14px; }
+        .zalo-btn { background: #1e73be; padding: 10px; } 
+        .call-btn { background: #8B0000; padding: 14px; }
         .white-icon { filter: brightness(0) invert(1); }
     }
 
@@ -72,8 +72,8 @@
             gap: 12px; 
         }
         .contact-btn { width: 52px; height: 52px; }
-        .zalo-btn { background: #0084FF; padding: 10px; }
-        .call-btn { background: #D60000; padding: 14px; }
+        .zalo-btn { background: #1e73be; padding: 10px; }
+        .call-btn { background: #8B0000; padding: 14px; }
         .white-icon { filter: brightness(0) invert(1); }
     }
 
@@ -86,11 +86,11 @@
             bottom: 40px !important; 
             gap: 12px; 
         }
-        .contact-btn { width: 50px; height: 50px; }
-        .zalo-btn { background: #0084FF; padding: 10px; }
+        .contact-btn { width: 40px; height: 40px; }
+        .zalo-btn { background: #1e73be; padding: 4px; }
         .call-btn { 
-            background: #D60000; 
-            padding: 13px; 
+            background: #8B0000; 
+            padding: 8px; 
             animation: quick-shake 0.5s infinite; 
         }
         .white-icon { filter: brightness(0) invert(1); }
