@@ -1,0 +1,103 @@
+/* --- CẤU HÌNH CHUNG --- */
+    .fixed-contact-buttons {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        z-index: 100;
+    }
+
+    .contact-btn {
+        position: relative;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        box-sizing: border-box; 
+    }
+
+    .contact-btn::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        border-radius: 50%;
+        background: inherit;
+        opacity: 0.4;
+        z-index: -1;
+        animation: pulse-wave 2s infinite;
+    }
+
+    @keyframes pulse-wave {
+        0% { transform: scale(1); opacity: 0.4; }
+        100% { transform: scale(1.8); opacity: 0; }
+    }
+
+    .contact-btn img {
+        width: 100%; 
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
+
+    /* --------------------------------------------------
+       TẦNG 1: DESKTOP (> 1440px)
+    -------------------------------------------------- */
+    @media (min-width: 1440px) {
+        .fixed-contact-buttons { right: 55px; bottom: 55px; gap: 15px; }
+        .contact-btn { width: 45px; height: 45px; opacity: 0.8; }
+        .zalo-btn { background: #1e73be; padding: 4px; } 
+        .call-btn { background: #8B0000; padding: 8px; }
+        .white-icon { filter: brightness(0) invert(1); }
+    }
+
+    /* --------------------------------------------------
+       TẦNG 2: TABLET LỚN (820px - 1439px)
+    -------------------------------------------------- */
+    @media (max-width: 1439px) and (min-width: 820px) {
+        .fixed-contact-buttons { right: 20px; bottom: 60px; gap: 15px; }
+        .contact-btn { width: 50px; height: 50px; }
+        .zalo-btn { background: #0084FF; padding: 10px; } 
+        .call-btn { background: #D60000; padding: 14px; }
+        .white-icon { filter: brightness(0) invert(1); }
+    }
+
+    /* --------------------------------------------------
+       TẦNG 3: TABLET NHỎ (768px - 819px) - GOLDEN PARAMETER
+    -------------------------------------------------- */
+    @media (max-width: 819px) and (min-width: 768px) {
+        .fixed-contact-buttons { 
+            right: 20px !important; 
+            bottom: 40px !important;
+            gap: 12px; 
+        }
+        .contact-btn { width: 52px; height: 52px; }
+        .zalo-btn { background: #0084FF; padding: 10px; }
+        .call-btn { background: #D60000; padding: 14px; }
+        .white-icon { filter: brightness(0) invert(1); }
+    }
+
+    /* --------------------------------------------------
+       TẦNG 4: MOBILE (< 767px) - GOLDEN PARAMETER
+    -------------------------------------------------- */
+    @media (max-width: 767px) {
+        .fixed-contact-buttons { 
+            right: 20px !important; 
+            bottom: 40px !important; 
+            gap: 12px; 
+        }
+        .contact-btn { width: 50px; height: 50px; }
+        .zalo-btn { background: #0084FF; padding: 10px; }
+        .call-btn { 
+            background: #D60000; 
+            padding: 13px; 
+            animation: quick-shake 0.5s infinite; 
+        }
+        .white-icon { filter: brightness(0) invert(1); }
+    }
+
+    @keyframes quick-shake {
+        0%, 100% { transform: rotate(0); }
+        25% { transform: rotate(5deg); }
+        75% { transform: rotate(-5deg); }
+    }
