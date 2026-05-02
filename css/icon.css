@@ -44,7 +44,7 @@
        TẦNG 1: DESKTOP (> 1440px)
     -------------------------------------------------- */
     @media (min-width: 1440px) {
-        .fixed-contact-buttons { right: 55px; bottom: 55px; gap: 15px; }
+        .fixed-contact-buttons { right: 35px; bottom: 90px; gap: 15px; }
         .contact-btn { width: 45px; height: 45px; opacity: 0.8; }
         .zalo-btn { background: #1e73be; padding: 4px; } 
         .call-btn { background: #8B0000; padding: 8px; }
