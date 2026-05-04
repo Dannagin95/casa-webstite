@@ -218,7 +218,8 @@
 .thirdbloghero,
 .fourthbloghero,
 .fifthbloghero,
-.sixbloghero {
+.sixbloghero,
+.seventhbloghero {
     height: 93vh; 
     position: relative; 
     display: flex;
@@ -236,7 +237,8 @@
 .thirdbloghero-bg::after,
 .fourthbloghero-bg::after,
 .fifthbloghero-bg::after,
-.sixbloghero-bg {
+.sixbloghero-bg::after
+.seventhbloghero-bg::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -250,7 +252,8 @@
 .thirdbloghero-bg,
 .fourthbloghero-bg,
 .fifthbloghero-bg,
-.sixbloghero-bg { 
+.sixbloghero-bg,
+.seventhbloghero-bg { 
     position: absolute; 
     inset: 0; 
     z-index: -1; 
@@ -263,7 +266,8 @@
 .thirdbloghero-bg img,
 .fourthbloghero-bg img,
 .fifthbloghero-bg img,
-.sixbloghero-bg img {
+.sixbloghero-bg img,
+.seventhbloghero-bg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -313,7 +317,8 @@
     .thirdbloghero,
     .fourthbloghero,
     .fifthbloghero,
-    .sixbloghero {
+    .sixbloghero,
+    .seventhbloghero {
        
         height: auto !important; 
         
@@ -343,7 +348,8 @@
     .thirdbloghero-text,
     .fourthbloghero-text,
     .fifthbloghero-text,
-    .sixbloghero-text {
+    .sixbloghero-text,
+    .seventhbloghero-text {
         padding: 0 !important; 
         margin: 0 auto !important;
         max-width: 100% !important; 
@@ -368,7 +374,8 @@
     .thirdbloghero,
     .fourthbloghero,
     .fifthbloghero,
-    .sixbloghero {
+    .sixbloghero,
+    .seventhbloghero {
         min-height: 56vw !important; 
     }
 }

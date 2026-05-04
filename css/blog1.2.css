@@ -1,0 +1,416 @@
+
+/* ==========================================================================
+   six BLOG SECTION - FULL RESPONSIVE SEPARATED
+   ========================================================================== */
+
+/* --- 1. BASE STYLES (DÙNG CHUNG) --- */
+.seventhblog-header { margin-bottom: 60px; max-width: 1000px; }
+
+.seventhblog-main-title {
+    font-size: clamp(38px, 5vw, 50px);
+    line-height: 1.4;
+    margin-bottom: 30px;
+    color: var(--black);
+    font-family: var(--font-heading);
+}
+
+.seventhblog-subtitle {
+    font-size: 13px;
+    color: var(--black);
+    max-width: 650px;
+    line-height: 1.6;
+}
+
+.seventhblog-text-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.blog-text-eyebrow {
+    display: block;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--black);
+    margin-bottom: 80px; 
+}
+
+.seventhblog-text-container h2 {
+    font-size: clamp(11px, 5vw, 26px);
+    line-height: 1.4;
+    margin: 60px 0 30px;
+    font-weight: 400;
+}
+
+.seventhblog-text-container p {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--black);
+}
+
+.seventhblog-middletext {
+    display: block;
+    font-size: 11px;
+    font-weight: 200;
+    color: var(--color-text-muted);
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+    text-transform: uppercase;    
+}
+
+.seventhblog-gallery-item {
+    aspect-ratio: 1/1.2;
+    overflow: hidden !important; /* Khóa khung zoom */
+    background-color: var(--gray);
+}
+
+.seventhblog-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: zoom-in;
+}
+
+.seventhblog-gallery-item:hover img { transform: scale(1.1); }
+
+
+
+.seventhblog-gallery2-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Tăng từ 13px lên 20px cho sang */
+    width: 100%;
+    max-width: 1120px; 
+    margin: 60px auto !important; 
+}
+
+.seventhblog-gallery2-item {
+    aspect-ratio: 1 / 1.2; 
+    overflow: hidden;
+    background-color: var(--gray);
+}
+
+.seventhblog-gallery2-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.seventhblog-photography-credit {
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+.blog-scroll-indicator {
+    display: none;
+    width: 100%;
+    height: 1px;
+    background: var(--color-border); 
+    position: relative;
+}
+
+.article-cta-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none; /* [cite: 2026-02-11] */
+    margin: 0;
+    color: var(--color-h3);
+    transition: all 0.3s ease;
+}
+
+.cta-text {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.cta-arrow {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.2; /* Nét mảnh đúng gu luxury */
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng Hover */
+.article-cta-box:hover {
+    color: var(--black);
+}
+
+.article-cta-box:hover .cta-arrow {
+    transform: translateX(5px); /* Mũi tên nhích nhẹ sang phải khi hover */
+}
+
+
+
+/* --- 2. DESKTOP ( > 1024px ) --- */
+@media screen and (min-width: 1025px) {
+    .seventhblog-gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding-top: 40px;
+    }
+}
+
+
+
+/* --- TẦNG 3. TABLET LỚN ( 992px - 1024px ): DẠNG LƯỚT SNAP CHUẨN LỀ --- */
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+    .casa-container {padding: 40px 20px !important;}
+
+    .seventhblog-header { padding: 20px 0; }
+
+    .seventhblog-gallery-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        /* Gap 20px đồng bộ với lề mặc định của mày [cite: 2026-02-07] */
+        gap: 20px !important; 
+        
+        /* Reset hoàn toàn margin âm để hít đúng lề 20px của container */
+        width: 100% !important;
+        margin: 40px 0 !important; 
+        padding: 0 0 20px 0 !important; 
+        
+        /* Bật tính năng lướt "khựng" (Snap) cho sang */
+        scroll-snap-type: x mandatory !important;
+        scrollbar-width: none !important;
+    }
+    .seventhblog-gallery-grid::-webkit-scrollbar { display: none !important; }
+
+    .seventhblog-gallery-item {
+        /* Công thức: (100% container - 20px gap) / 2 */
+        width: calc((100% - 20px) / 2) !important;
+        flex: 0 0 calc((100% - 20px) / 2) !important;
+        
+        flex-shrink: 0 !important;
+        scroll-snap-align: start !important;
+        aspect-ratio: 1 / 1.2 !important;
+    }
+
+    .seventhblog-gallery2-grid {
+        margin: 40px 0 !important;
+        margin-bottom: 60px !important;
+    }
+
+    .indicator-wrapper {
+        display: block !important;
+        width: 100%;
+        display: flex;
+        justify-content: center; 
+        margin: 0;
+    }
+
+    .blog-scroll-indicator {
+        display: block !important;
+        width: 100%;
+        max-width: 678px;
+        height: 1px !important;
+        background: var(--color-border) !important;
+        position: relative;
+        overflow: visible; 
+        transform: scaleY(0.5);
+        transform-origin: center;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .scroll-progress {
+        width: 60%; /* Hoặc px cố định như mobile */
+        height: 100%;
+        background: var(--black) !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        will-change: transform;
+    }
+}
+    
+
+
+
+
+
+
+
+/* --- 4. TABLET NHỎ ( 768px - 991px ): CỤM 2 TRÊN 2 DƯỚI (FIXED) --- */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .seventhblog-header { padding: 60px 0; max-width: 720px !important;}
+    .seventhblog-text-container {
+        max-width: 480px !important;
+        margin-bottom: 0;
+}
+
+    .seventhblog-gallery-grid {
+        /* Chuyển sang Flex để nuông chiều cái calc width của mày */
+        display: flex !important;
+        flex-wrap: wrap !important;
+        
+        /* KHOẢNG CÁCH NGANG: Phải khớp với con số 30px trong hàm calc của mày */
+        column-gap: 8px !important; 
+        
+        /* KHOẢNG CÁCH DỌC: Mày muốn thưa bao nhiêu thì chỉnh ở đây */
+        row-gap: 8px !important;    
+        
+        margin: 20px 0 -20px !important; 
+        justify-content: center !important;
+    }
+    
+    .seventhblog-gallery-item {
+        /* GIỮ NGUYÊN HIỆN TRẠNG ĐỂ ĐỒNG BỘ SLIDE */
+        width: calc((100vw - 40px - 8px) / 2) !important;
+        flex: 0 0 calc((100vw - 40px - 8px) / 2) !important;
+        flex-shrink: 0 !important;
+        aspect-ratio: 1 / 1.1 !important;
+    }
+
+    .seventhblog-gallery2-grid {
+        grid-template-columns: 1fr 1fr; /* Giữ 2 cột cho tablet */
+        gap: 15px;
+        margin: 40px 0 !important;
+        margin-bottom: 20px !important;
+    }
+
+    .seventhblog-gallery2-item {
+        width: calc((100vw - 40px - 15px) / 2) !important;
+        flex: 0 0 calc((100vw - 40px - 15px) / 2) !important;
+        aspect-ratio: 1 / 1.1 !important; 
+        overflow: hidden !important;
+        display: block !important;
+        margin-bottom: 20px;
+    }
+
+    .seventhblog-gallery2-item img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    
+    .seventhblog-main-title { font-size: 48px; }
+    .seventhblog-text-container { max-width: 100%; padding: 20px 0; }
+  
+}
+
+
+
+
+/* --- 5. MOBILE ( < 767px ) --- */
+@media screen and (max-width: 767px) {
+    .seventhblog-header {
+        padding: 0 20px;
+    }
+
+    .seventhblog-main-title { 
+        font-size: 36px; 
+        margin-bottom: 20px; 
+    }
+
+    .seventhblog-text-container h2 {
+        font-size: 28px; 
+    }
+
+    .seventhblog-gallery-grid {
+        padding: 20px 20px !important; 
+        scroll-padding-left: 20px !important; 
+        gap: 9px !important; 
+        scroll-snap-type: x mandatory !important; 
+        display: flex !important;
+        overflow-x: auto !important;
+        margin-right: 0;
+
+        scrollbar-width: none; /* Firefox */
+       -ms-overflow-style: none; /* IE/Edge */
+       -webkit-overflow-scrolling: touch;
+    }
+
+    .seventhblog-gallery-grid::-webkit-scrollbar {
+        display: none !important;
+}
+
+    .seventhblog-gallery-item { 
+        flex: 0 0 85% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        scroll-snap-align: start !important; 
+        scroll-snap-stop: always !important;
+    }
+    
+    .seventhblog-gallery-item img {
+        aspect-ratio: 6/7 !important; 
+        margin-bottom: 15px !important;
+    }
+    
+
+    .seventhblog-gallery2-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 5px !important; /* Gap nhỏ cho tinh tế trên mobile */
+        
+        /* CHIÊU THỨC TRÀN VIỀN */
+        width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        margin-left: -50vw !important;
+        
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding: 0 !important; 
+    }
+    
+    .seventhblog-gallery2-item {
+        aspect-ratio: 1 / 1.8 !important; /* Giữ tỉ lệ cao gầy mày thích */
+        width: 100% !important;
+    }
+
+    .seventhblog-gallery2-item img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    .indicator-wrapper {
+        display: block !important;
+        width: 100%;
+        display: flex;
+        justify-content: center; 
+        margin: 0 0 -20px;
+    }
+
+    .blog-scroll-indicator {
+        max-width: 670px;
+        display: block !important;
+        width: 100%;
+        height: 1px !important; /* Giữ nguyên */
+        background: var(--color-border);
+        position: relative;
+        overflow: hidden;
+        /* THÊM DÒNG NÀY ĐỂ NÓ MẢNH NHƯ SỢI CHỈ */
+        transform: scaleY(0.5); 
+        transform-origin: center;
+    }
+    
+   
+    .scroll-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 80px; 
+        background-color: var(--black) !important;
+        transition: transform 0.1s linear; 
+        will-change: transform;
+    }
+    
+    .seventhblog-text-container { max-width: 100%; padding: 20px 20px; }
+    .casa-container { padding: 0 20px !important; }
+    .section-space { padding: 40px 0 !important; } /* Thông số vàng [cite: 2026-02-07] */
+}
