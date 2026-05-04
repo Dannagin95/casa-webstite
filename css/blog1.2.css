@@ -1,3 +1,132 @@
+/*BLOGPAGE*/
+.eighthbloghero {
+    height: 93vh; 
+    position: relative; 
+    display: flex;
+    align-items: flex-end; 
+    /* Thay đổi quan trọng: Bỏ padding cố định, dùng flex để căn giữa khối nội dung */
+    padding: 0; 
+    justify-content: center; 
+    width: 100%;
+}
+
+/* Thêm lớp phủ sẫm màu */
+.eighthbloghero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1); /* Độ sẫm 25%, mày có thể tăng lên 0.3 nếu muốn tối hơn */
+    z-index: 1;
+}
+
+.eighthbloghero-bg { 
+    position: absolute; 
+    inset: 0; 
+    z-index: -1; 
+}
+
+
+.eighthbloghero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 0;
+}
+
+
+.eighthbloghero-text { 
+    color: #fff; 
+    width: 100%;
+    max-width: var(--container-max); /* Khóa chặt ở 1650px */
+    margin: 0 auto; /* Ép vào giữa màn hình */
+    padding: 0 var(--side-padding); /* Trả lại đúng 55px padding để chữ đứng đúng vị trí cũ */
+    margin-bottom: 48px;
+    z-index: 2;
+    text-align: left; /* Đảm bảo chữ vẫn canh trái bên trong cái lồng 1650px */
+}
+
+.sub-title {
+    font-size: 11px;
+    word-spacing: 5px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.eighthbloghero-text h1
+ { font-size: 58px; line-height: 1.1; margin-bottom: 30px; font-weight: 400; }
+
+
+.mobile-only { 
+    display: none !important; 
+}
+
+/* Mặc định trên Desktop: Giấu nút Mobile */
+.mobile-menu-btn, .mobile-overlay { display: none; }
+
+
+
+
+
+@media (max-width: 1024px) {
+    .eighthbloghero {
+       
+        height: auto !important; 
+        
+       
+        min-height: 120vw !important; 
+        
+    
+        background-size: cover !important;
+        background-position: center !important;
+
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; 
+        align-items: center;    
+        text-align: center;
+        padding: 0 20px;
+        padding-bottom: 20px !important; 
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        border-top: 1px solid #ffffff;
+    }
+
+    .eighthbloghero-text {
+        padding: 0 !important; 
+        margin: 0 auto !important;
+        max-width: 100% !important; 
+        width: 100% !important;
+        
+        /* Đảm bảo căn giữa tuyệt đối */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center !important;
+        margin-bottom: 20px !important; 
+    }
+
+}
+
+
+/* TABLET: Dàn ngang ra tối ưu */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .eighthbloghero {
+        min-height: 56vw !important; 
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 /* ==========================================================================
    six BLOG SECTION - FULL RESPONSIVE SEPARATED
@@ -411,6 +540,429 @@
     }
     
     .seventhblog-text-container { max-width: 100%; padding: 20px 20px; }
+    .casa-container { padding: 0 20px !important; }
+    .section-space { padding: 40px 0 !important; } /* Thông số vàng [cite: 2026-02-07] */
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   six BLOG SECTION - FULL RESPONSIVE SEPARATED
+   ========================================================================== */
+
+/* --- 1. BASE STYLES (DÙNG CHUNG) --- */
+.eighthblog-header { margin-bottom: 60px; max-width: 1000px; }
+
+.eighthblog-main-title {
+    font-size: clamp(38px, 5vw, 50px);
+    line-height: 1.4;
+    margin-bottom: 30px;
+    color: var(--black);
+    font-family: var(--font-heading);
+}
+
+.eighthblog-subtitle {
+    font-size: 13px;
+    color: var(--black);
+    max-width: 650px;
+    line-height: 1.6;
+}
+
+.eighthblog-text-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.blog-text-eyebrow {
+    display: block;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--black);
+    margin-bottom: 80px; 
+}
+
+.eighthblog-text-container h2 {
+    font-size: clamp(11px, 5vw, 26px);
+    line-height: 1.4;
+    margin: 60px 0 30px;
+    font-weight: 400;
+}
+
+.eighthblog-text-container p {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--black);
+}
+
+.eighthblog-middletext {
+    display: block;
+    font-size: 11px;
+    font-weight: 200;
+    color: var(--color-text-muted);
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+    text-transform: uppercase;    
+}
+
+.eighthblog-gallery-item {
+    aspect-ratio: 1/1.2;
+    overflow: hidden !important; /* Khóa khung zoom */
+    background-color: var(--gray);
+}
+
+.eighthblog-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: zoom-in;
+}
+
+.eighthblog-gallery-item:hover img { transform: scale(1.1); }
+
+
+
+.eighthblog-gallery2-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Tăng từ 13px lên 20px cho sang */
+    width: 100%;
+    max-width: 1120px; 
+    margin: 60px auto !important; 
+}
+
+.eighthblog-gallery2-item {
+    aspect-ratio: 1 / 1.2; 
+    overflow: hidden;
+    background-color: var(--gray);
+}
+
+.eighthblog-gallery2-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.eighthblog-photography-credit {
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+.blog-scroll-indicator {
+    display: none;
+    width: 100%;
+    height: 1px;
+    background: var(--color-border); 
+    position: relative;
+}
+
+.article-cta-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none; /* [cite: 2026-02-11] */
+    margin: 0;
+    color: var(--color-h3);
+    transition: all 0.3s ease;
+}
+
+.cta-text {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.cta-arrow {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.2; /* Nét mảnh đúng gu luxury */
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng Hover */
+.article-cta-box:hover {
+    color: var(--black);
+}
+
+.article-cta-box:hover .cta-arrow {
+    transform: translateX(5px); /* Mũi tên nhích nhẹ sang phải khi hover */
+}
+
+
+
+/* --- 2. DESKTOP ( > 1024px ) --- */
+@media screen and (min-width: 1025px) {
+    .eighthblog-gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding-top: 40px;
+    }
+}
+
+
+
+/* --- TẦNG 3. TABLET LỚN ( 992px - 1024px ): DẠNG LƯỚT SNAP CHUẨN LỀ --- */
+@media screen and (min-width: 992px) and (max-width: 1024px) {
+    .casa-container {padding: 40px 20px !important;}
+
+    .eighthblog-header { padding: 20px 0; }
+
+    .eighthblog-gallery-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        /* Gap 20px đồng bộ với lề mặc định của mày [cite: 2026-02-07] */
+        gap: 20px !important; 
+        
+        /* Reset hoàn toàn margin âm để hít đúng lề 20px của container */
+        width: 100% !important;
+        margin: 40px 0 !important; 
+        padding: 0 0 20px 0 !important; 
+        
+        /* Bật tính năng lướt "khựng" (Snap) cho sang */
+        scroll-snap-type: x mandatory !important;
+        scrollbar-width: none !important;
+    }
+    .eighthblog-gallery-grid::-webkit-scrollbar { display: none !important; }
+
+    .eighthblog-gallery-item {
+        /* Công thức: (100% container - 20px gap) / 2 */
+        width: calc((100% - 20px) / 2) !important;
+        flex: 0 0 calc((100% - 20px) / 2) !important;
+        
+        flex-shrink: 0 !important;
+        scroll-snap-align: start !important;
+        aspect-ratio: 1 / 1.2 !important;
+    }
+
+    .eighthblog-gallery2-grid {
+        margin: 40px 0 !important;
+        margin-bottom: 60px !important;
+    }
+
+    .indicator-wrapper {
+        display: block !important;
+        width: 100%;
+        display: flex;
+        justify-content: center; 
+        margin: 0;
+    }
+
+    .blog-scroll-indicator {
+        display: block !important;
+        width: 100%;
+        max-width: 678px;
+        height: 1px !important;
+        background: var(--color-border) !important;
+        position: relative;
+        overflow: visible; 
+        transform: scaleY(0.5);
+        transform-origin: center;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .scroll-progress {
+        width: 60%; /* Hoặc px cố định như mobile */
+        height: 100%;
+        background: var(--black) !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        will-change: transform;
+    }
+}
+    
+
+
+
+
+
+
+
+/* --- 4. TABLET NHỎ ( 768px - 991px ): CỤM 2 TRÊN 2 DƯỚI (FIXED) --- */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .eighthblog-header { padding: 60px 0; max-width: 720px !important;}
+    .eighthblog-text-container {
+        max-width: 480px !important;
+        margin-bottom: 0;
+}
+
+    .eighthblog-gallery-grid {
+        /* Chuyển sang Flex để nuông chiều cái calc width của mày */
+        display: flex !important;
+        flex-wrap: wrap !important;
+        
+        /* KHOẢNG CÁCH NGANG: Phải khớp với con số 30px trong hàm calc của mày */
+        column-gap: 8px !important; 
+        
+        /* KHOẢNG CÁCH DỌC: Mày muốn thưa bao nhiêu thì chỉnh ở đây */
+        row-gap: 8px !important;    
+        
+        margin: 20px 0 -20px !important; 
+        justify-content: center !important;
+    }
+    
+    .eighthblog-gallery-item {
+        /* GIỮ NGUYÊN HIỆN TRẠNG ĐỂ ĐỒNG BỘ SLIDE */
+        width: calc((100vw - 40px - 8px) / 2) !important;
+        flex: 0 0 calc((100vw - 40px - 8px) / 2) !important;
+        flex-shrink: 0 !important;
+        aspect-ratio: 1 / 1.1 !important;
+    }
+
+    .eighthblog-gallery2-grid {
+        grid-template-columns: 1fr 1fr; /* Giữ 2 cột cho tablet */
+        gap: 15px;
+        margin: 40px 0 !important;
+        margin-bottom: 20px !important;
+    }
+
+    .eighthblog-gallery2-item {
+        width: calc((100vw - 40px - 15px) / 2) !important;
+        flex: 0 0 calc((100vw - 40px - 15px) / 2) !important;
+        aspect-ratio: 1 / 1.1 !important; 
+        overflow: hidden !important;
+        display: block !important;
+        margin-bottom: 20px;
+    }
+
+    .eighthblog-gallery2-item img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    
+    .eighthblog-main-title { font-size: 48px; }
+    .eighthblog-text-container { max-width: 100%; padding: 20px 0; }
+  
+}
+
+
+
+
+/* --- 5. MOBILE ( < 767px ) --- */
+@media screen and (max-width: 767px) {
+    .eighthblog-header {
+        padding: 0 20px;
+    }
+
+    .eighthblog-main-title { 
+        font-size: 36px; 
+        margin-bottom: 20px; 
+    }
+
+    .eighthblog-text-container h2 {
+        font-size: 28px; 
+    }
+
+    .eighthblog-gallery-grid {
+        padding: 20px 20px !important; 
+        scroll-padding-left: 20px !important; 
+        gap: 9px !important; 
+        scroll-snap-type: x mandatory !important; 
+        display: flex !important;
+        overflow-x: auto !important;
+        margin-right: 0;
+
+        scrollbar-width: none; /* Firefox */
+       -ms-overflow-style: none; /* IE/Edge */
+       -webkit-overflow-scrolling: touch;
+    }
+
+    .eighthblog-gallery-grid::-webkit-scrollbar {
+        display: none !important;
+}
+
+    .eighthblog-gallery-item { 
+        flex: 0 0 85% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        scroll-snap-align: start !important; 
+        scroll-snap-stop: always !important;
+    }
+    
+    .eighthblog-gallery-item img {
+        aspect-ratio: 6/7 !important; 
+        margin-bottom: 15px !important;
+    }
+    
+
+    .eighthblog-gallery2-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 5px !important; /* Gap nhỏ cho tinh tế trên mobile */
+        
+        /* CHIÊU THỨC TRÀN VIỀN */
+        width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        margin-left: -50vw !important;
+        
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        padding: 0 !important; 
+    }
+    
+    .eighthblog-gallery2-item {
+        aspect-ratio: 1 / 1.8 !important; /* Giữ tỉ lệ cao gầy mày thích */
+        width: 100% !important;
+    }
+
+    .eighthblog-gallery2-item img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    .indicator-wrapper {
+        display: block !important;
+        width: 100%;
+        display: flex;
+        justify-content: center; 
+        margin: 0 0 -20px;
+    }
+
+    .blog-scroll-indicator {
+        max-width: 670px;
+        display: block !important;
+        width: 100%;
+        height: 1px !important; /* Giữ nguyên */
+        background: var(--color-border);
+        position: relative;
+        overflow: hidden;
+        /* THÊM DÒNG NÀY ĐỂ NÓ MẢNH NHƯ SỢI CHỈ */
+        transform: scaleY(0.5); 
+        transform-origin: center;
+    }
+    
+   
+    .scroll-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 80px; 
+        background-color: var(--black) !important;
+        transition: transform 0.1s linear; 
+        will-change: transform;
+    }
+    
+    .eighthblog-text-container { max-width: 100%; padding: 20px 20px; }
     .casa-container { padding: 0 20px !important; }
     .section-space { padding: 40px 0 !important; } /* Thông số vàng [cite: 2026-02-07] */
 }

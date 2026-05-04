@@ -237,7 +237,7 @@
 .thirdbloghero-bg::after,
 .fourthbloghero-bg::after,
 .fifthbloghero-bg::after,
-.sixbloghero-bg::after
+.sixbloghero-bg::after,
 .seventhbloghero-bg::after {
     content: "";
     position: absolute;
