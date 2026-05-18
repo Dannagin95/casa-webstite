@@ -28,7 +28,7 @@
             <h2 class="auth-title">Thông tin không tồn tại</h2>
             <p class="auth-subtitle">Thông tin không tồn tại. Mã đơn hàng hoặc Số điện thoại chưa được đăng ký trong hệ thống bảo hành của chúng tôi.</p>
             <div class="result-actions">
-                <a href="tracuubaohanh.html" class="btn-primary">Back to Lookup</a>
+                <a href="tracuubaohanh.html" class="btn-primary">Quay lại tra cứu</a>
             </div>
         </div>
 
@@ -41,13 +41,13 @@
     const customerID = urlParams.get('id');
     
     if (!customerID) {
-        window.location.href = 'warrantyinquiry.html';
+        window.location.href = 'tracuubaohanh.html';
         return;
     }
 
     // GỌI APP SCRIPTS THẬT
     try {
-        // Mày thay cái link này bằng link Web App của mày sau khi Deploy App Scripts nhé
+
         const API_URL = `https://script.google.com/macros/s/XXX_YOUR_ID_XXX/exec?action=getWarranty&id=${customerID}`;
         
         const response = await fetch(API_URL);
@@ -70,7 +70,7 @@ function showResult(data) {
     document.getElementById('loading-state').style.display = 'none';
     resultContent.style.display = 'block';
 
-    // Lúc này JS mới vẽ giao diện dựa trên data thật của khách
+
     resultContent.innerHTML = `
         <div class="status-badge">● ${data.warrantyStatus}</div>
         <h1 class="auth-title">Warranty Certified</h1>
