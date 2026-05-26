@@ -279,7 +279,8 @@
 
 
 .certificatehero,
-.rivahero {
+.rivahero,
+.alpihero {
     height: 93vh; 
     position: relative; 
     display: flex;
@@ -290,13 +291,14 @@
     width: 100%;
 }
 
-.certificatehero-bg, .rivahero-bg { position: absolute; inset: 0; z-index: -1; }
+.certificatehero-bg, .rivahero-bg, .alpihero-bg { position: absolute; inset: 0; z-index: -1; }
 
-.certificatehero-bg img, .rivahero-bg img { width: 100%; height: 100%; object-fit: cover; }
+.certificatehero-bg img, .rivahero-bg img, .alpihero-bg img { width: 100%; height: 100%; object-fit: cover; }
 
 
 .certificatehero-text, 
-.rivahero-text { 
+.rivahero-text,
+.alpihero-text { 
     color: #fff; 
     width: 100%;
     max-width: var(--container-max); /* Khóa chặt ở 1650px */
@@ -309,11 +311,13 @@
 
 
 .certificatehero-text h1,
-.rivahero-text h1
+.rivahero-text h1,
+.alpihero-text h1
  { font-size: 60px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
 
 .certificatehero-text p,
-.rivahero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
+.rivahero-text p, 
+.alpihero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
 
 .mobile-only { 
     display: none !important; 
@@ -326,7 +330,8 @@
 
 @media (max-width: 1024px) {
     .certificatehero,
-    .rivahero {
+    .rivahero,
+    .alpihero {
         /* 1. Xóa bỏ chiều cao 75vh cũ */
         height: auto !important; 
         
@@ -352,7 +357,8 @@
     }
 
     .certificatehero-text,
-    .rivahero-text {
+    .rivahero-text,
+    .alpihero-text {
         padding: 0 !important; 
         margin: 0 auto !important;
         max-width: 100% !important; 
@@ -363,11 +369,12 @@
         flex-direction: column;
         align-items: center;
         text-align: center !important;
-        margin-bottom: 20px !important; /* Khoảng cách so với đáy section 20px */
+        margin-bottom: 20px !important;
     }
 
     .certificatehero-text h1,
-    .rivahero-text h1 {
+    .rivahero-text h1,
+    .alpihero-text h1 {
         font-size: 28px; 
         font-weight: 400;
         margin-bottom: 20px;
@@ -375,7 +382,8 @@
     }
 
     .certificatehero-text p,
-    .rivahero-text p {
+    .rivahero-text p,
+    .alpihero-text p {
         font-size: 12px;
         letter-spacing: 0px;
         margin-bottom: 0px;
@@ -386,7 +394,8 @@
 /* TABLET: Dàn ngang ra tối ưu */
 @media (min-width: 768px) and (max-width: 1024px) {
     .certificatehero,
-    .rivahero {
+    .rivahero,
+    .alpihero {
         min-height: 56vw !important; /* Tỉ lệ ngang cho Tablet [cite: 2026-02-07] */
     }
 }

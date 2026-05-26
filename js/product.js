@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
        SECTION 1: PROGRESS BAR (STRIP) - CHẠY MỌI NƠI
        ========================================== */
     const initProgressBar = () => {
-        const slider = document.querySelector('.riva-logo-strip');
-        const thumb = document.querySelector('.riva-smallprogress-bar');
-        const track = document.querySelector('.riva-smallprogress-container');
+        const slider = document.querySelector('.riva-logo-strip, .alpi-logo-strip');
+        const thumb = document.querySelector('.riva-smallprogress-bar, .alpi-smallprogress-bar');
+        const track = document.querySelector('.riva-smallprogress-container, .alpi-smallprogress-container');
         if (!slider || !thumb || !track) return;
 
         const update = () => {
