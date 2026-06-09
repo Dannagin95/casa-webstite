@@ -5,6 +5,7 @@ const topBarData = [
 
 let currentIndex = 0;
 let isAnimating = false; // Chặn spam click liên tục
+let autoFlipTimer;
 
 function toggleTopbar() {
     if (isAnimating) return;
@@ -31,3 +32,38 @@ function toggleTopbar() {
         setTimeout(() => { isAnimating = false; }, 400);
     }, 400);
 }
+
+
+/**
+ * START AUTO PLAY
+ * Sets an interval to trigger the toggle every 4 seconds.
+ */
+const startAutoFlip = () => {
+    // Clear any existing timer to prevent duplicates
+    if (autoFlipTimer) clearInterval(autoFlipTimer);
+    
+    autoFlipTimer = setInterval(() => {
+        toggleTopbar();
+    }, 4000); // 4000ms = 4 seconds
+};
+
+// INITIALIZATION
+document.addEventListener('DOMContentLoaded', () => {
+    // Start the auto-flip immediately on page load
+    startAutoFlip();
+
+    // OPTIONAL: Reset timer when user manually clicks (Next/Prev buttons)
+    // Assuming your buttons have these classes:
+    const nextBtn = document.querySelector('.top-bar-next'); 
+    const prevBtn = document.querySelector('.top-bar-prev');
+
+    [nextBtn, prevBtn].forEach(btn => {
+        if (btn) {
+            btn.addEventListener('click', () => {
+                toggleTopbar();
+                startAutoFlip(); // Reset the 4s countdown
+            });
+        }
+    });
+});
+// ==== topbar.js =====
