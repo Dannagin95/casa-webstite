@@ -57,25 +57,23 @@
     }
 
     .mission .container {
-        /* [MỎ NEO] Khóa chặt khung xương 1650px */
         max-width: var(--container-max) !important; 
         width: 100% !important;
         margin: 0 auto !important;
-        /* Dùng đúng side-padding 55px để chữ SỨ MỆNH thẳng hàng với Logo Header */
         padding: 0 var(--side-padding) !important; 
         box-sizing: border-box;
     }
 
     .mission .mission-content {
-        /* Bỏ cái margin 55px cũ đi vì đã có padding của container lo */
+     
         margin: 0 !important; 
-        /* Khống chế độ rộng nội dung để ngắt dòng cho đẹp (giống ý mày muốn ở phần About) */
         max-width: 1200px !important; 
         text-align: left;
     }
 
     .mission .main-heading {
         font-size: clamp(42px, 4vw, 56px) !important;
+        font-weight: 400 !important;
         max-width: 90% !important;
         letter-spacing: -1px !important;
         line-height: 1.1;
