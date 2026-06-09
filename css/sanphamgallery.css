@@ -47,8 +47,8 @@
     }
     
     .luot-viewport {
-        margin-left: -60px; 
-        padding-left: 60px; 
+        margin-left: -55px; 
+        padding-left: 55px; 
         
         overflow: visible;
         margin-right: -10px; 
@@ -59,7 +59,9 @@
         gap: 20px !important; 
         transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); 
     }
-    .sanpham-card { flex: 0 0 calc(33.333% - 20px); }
+    .sanpham-card { 
+        flex: 0 0 calc((100% - 40px) / 3) !important; 
+    }
 
     .sanpham-image { 
         position: relative; background-color: #f8f8f8; aspect-ratio: 7/8; 

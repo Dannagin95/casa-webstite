@@ -1,17 +1,17 @@
 /* --- MOBILE CSS cho .sanpham-gallery --- */
 @media (max-width: 768px) {
     
-    /* 1. Layout chung của Section */
+
     .sanpham-gallery {
-        /* Giữ lề mặc định cho toàn section (text sẽ ăn theo lề này) */
+
         padding: 40px 20px; 
-        overflow: hidden; /* Đảm bảo không bị vỡ khung khi dùng margin âm */
+        overflow: hidden; 
     }
 
     /* 2. Header (Tiêu đề) */
     .luot-header {
         margin-bottom: 25px;
-        text-align: left; /* Canh trái cho giống phong cách tạp chí */
+        text-align: left;
     }
 
     .luot-header .sub-title {
@@ -33,7 +33,7 @@
         font-family: 'Be Vietnam pro', sans-serif;
     }
 
-    /* 3. Slider Container & Track (Cốt lõi của việc vuốt) */
+
     .luot-viewport {
         display: flex;
         overflow-x: auto;
