@@ -91,8 +91,32 @@ body.search-open {
     font-weight: bold;
     background: transparent; /* Hoặc thêm background nếu muốn nổi bật hơn */
 }
-.search-list a { text-decoration: none; color: #000000; font-size: 22px; font-weight: 500; transition: 0.3s; display: inline-block; }
-.search-list a:hover { transform: translateX(5px); color: #000; opacity: 0.6; }
+.search-list a { 
+    text-decoration: none; 
+    text-transform: none;
+    color: #000000; 
+    font-size: 22px; 
+    font-weight: 500; 
+    transition: 0.3s; 
+    display: inline-block; 
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.search-list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px; 
+    background-color: #000000;
+    transition: width 0.5s ease;
+}
+
+.search-list a:hover::after {
+    width: 100%; 
+}
 
 
 

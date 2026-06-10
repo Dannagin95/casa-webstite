@@ -50,7 +50,7 @@
 .mega-links {
     display: flex;
     flex-direction: column;
-    gap: 17px;
+    gap: 8px;
     align-items: flex-start;
     
     flex: 0 0 250px; 
@@ -67,7 +67,7 @@
 .mega-links a {
     color: #000000 !important;
     font-size: 25px;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: -0.05em;
     text-transform: none !important;
     text-decoration: none;
@@ -105,18 +105,18 @@
 
 
 .mega-image {
-    flex: 0 0 300px; 
+    flex: 0 0 350px; 
     max-width: 420px;
     min-height: 100px;
 }
 
 .mega-image img {
     width: 100%;       
-    height: 336px;     
+    height: 400px;     
     object-fit: cover; 
     display: block;
 }
 
 .mega-image + .mega-image {
-margin-left: -44px;
+    margin-left: -44px;
 }
