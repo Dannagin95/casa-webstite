@@ -47,155 +47,27 @@
 
 
 
-<header class="site-header">
-    <div class="header-inner">
-        <div class="nav-col trai">
-            <div class="m-nav-group">
-                <button class="m-trigger-btn" aria-label="Menu">
-                    <i class="fa-solid fa-bars"></i>
+<div id="search-drawer" class="search-drawer">
+    <div class="search-backdrop" id="search-backdrop"></div>
+    
+    <div class="search-container">
+        <div class="search-panel">
+            <div class="search-header">
+                <input type="text" placeholder="Tìm kiếm..." id="search-input" autocomplete="off">
+                <button id="search-close-btn" class="close-x">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                 </button>
-                <div id="m-search-trigger" class="m-trigger-search">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                </div>
             </div>
-
-            <nav class="nav-list desktop-only">
-                <div class="nav-link has-dropdown" data-menu="company">
-                    <a href="index.html" class="nav-text-link"><strong>CASA</strong></a>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                
-                <div class="nav-link has-dropdown" data-menu="product">
-                    <a href="san-pham.html" class="nav-text-link">Sản phẩm</a> 
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="nav-link has-dropdown" data-menu="system">Hệ <i class="fa-solid fa-chevron-down"></i></div>
-                <a href="Du_an.html" class="nav-link">Dự án</a>
-                <a href="Tai_lieu.html" class="nav-link">Catalogue</a>
-
-            </nav>
-        </div>
-
-        <div class="nav-col giua">
-            <a href="index.html" class="logo">
-                <img src="image/images/logowhite.png" alt="CASA Parquet">
-            </a>
-        </div>
-
-        <div class="nav-col phai">
-            <div class="m-nav-group">
-                <div class="util-item sample-box-icon">
-                    <a href="/maintainance.html" class="util-item sample-box-icon" title="request-samples">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                         <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
-                         <path d="m3.3 7 8.7 5 8.7-5"></path>
-                         <path d="M12 22V12"></path>
-                    </svg>
-                </a>
-                </div>  
-            </div>
-
-            <nav class="nav-list desktop-only">
-                <div class="nav-link lang-switch" id="lang-trigger">
-                    <img src="https://flagcdn.com/w40/vn.png" alt="VN Flag" class="flag-icon">
-                    <span>VIE</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                    <div class="lang-dropdown">
-                        <ul class="lang-list">
-                            <li class="lang-item active">
-                                <img src="https://flagcdn.com/w40/vn.png" class="flag-icon-small">
-                                <span>Vietnam (VIE)</span>
-                            </li>
-                            <li class="lang-item">
-                                <img src="https://flagcdn.com/w40/us.png" class="flag-icon-small">
-                                <span>English (ENG)</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="util-item search-icon" id="search-trigger">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                </div>
-
-                <div class="util-item warranty-icon">
-                <a href="/tracuubaohanh.html" class="util-item warranty-icon" title="warranty look-up">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                    </svg>
-                </a>
-                </div>
-
-                <div class="util-item sample-box-icon">
-                <a href="/maintainance.html" class="util-item sample-box-icon" title="request-samples">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                         <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
-                         <path d="m3.3 7 8.7 5 8.7-5"></path>
-                         <path d="M12 22V12"></path>
-                    </svg>
-                </a>
-                </div>
-            </nav>
+            <ul class="search-list">
+                <li><a href="lichsu.html"><strong>CASA</strong></a></li>
+                <li><a href="chungchi.html">Chứng chỉ</a></li>
+                <li><a href="wood.html">Gỗ</a></li>
+                <li><a href="Du_an.html">Dự Án</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
         </div>
     </div>
-
-    <div class="mega-menu" id="megaMenu">
-        <div class="mega-content-container">
-            <div class="mega-section" id="menu-company">
-                <div class="mega-links">
-                    <span class="mega-subtitle">Về CASA</span>
-                    <a href="lichsu.html">Chúng tôi là ai</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="quytrinh.html">Quy trình</a>
-                    <a href="chungchi.html">Chứng chỉ</a>
-                </div>
-                <div class="mega-links">
-                    <span class="mega-subtitle">Hỗ trợ</span>
-                    <a href="contactus.html">Liên hệ</a>
-                    <a href="index.html">Trung tâm trợ giúp</a>
-                    <a href="showroom.html">Showroom</a>
-                </div>
-                <div class="mega-image"><img src="image/images/tieuchuan.jpg"></div>
-                <div class="mega-image"><img src="image/images/sizing.jpg"></div>
-            </div>
-            
-            <div class="mega-section" id="menu-product">
-                <div class="mega-links">
-                    <span class="mega-subtitle">Bộ sưu tập</span>
-                    <a href="San_pham/Riva.html">Riva</a>
-                    <a href="#">Alpi</a>
-                    <a href="#">Mastro</a>
-                    <a href="#">La Dolce</a>
-                    <a href="#">Parma</a>
-                </div>
-                <div class="mega-image"><img src="image/imagessanpham/sp2.webp"></div>
-                <div class="mega-image"><img src="image/imagessanpham/sp1.webp"></div>
-            </div>
-
-            <div class="mega-section" id="menu-system">
-                <div class="mega-links">
-                    <span class="mega-subtitle">Thành phần</span>
-                    <a href="wood.html">Gỗ</a>
-                    <a href="Cau_truc.html">Cấu trúc</a>
-                    <a href="surface.html">Bề mặt</a>
-                </div>    
-                <div class="mega-links">
-                    <span class="mega-subtitle">Kiểu</span>
-                    <a href="xuongca.html">Hệ xương cá</a>
-                    <a href="hethang.html">Hệ thẳng</a>
-                </div>
-                <div class="mega-image"><img src="image/imageswood/go-soi(OAK)-tu-nhien.jpg"></div>
-                <div class="mega-image"><img src="image/imageswood/Teak.jpg"></div>
-            </div>
-        </div>
-    </div>
-</header>
+</div>
 
 
 
