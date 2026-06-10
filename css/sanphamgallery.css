@@ -24,12 +24,13 @@
 
     .luot-header .sub-title {
         display: block;
-        font-size: 11px;
-        font-weight: 200 !important;
+        word-spacing: 3px;
+        font-size: 14px !important;
+        font-weight: 200;
         color: #2b2929;
-        margin-bottom: 30px !important;
-        letter-spacing: 1px;
+        letter-spacing: -0.01em;
         text-transform: uppercase;
+        margin-bottom: 40px !important;
     }
 
     .luot-header .main-title {

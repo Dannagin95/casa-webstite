@@ -187,26 +187,23 @@ IPAD/TABLET SYNC (768px - 1024px)
    ========================================= */
 @media (min-width: 1025px) {
     .projects {
-        /* [QUAN TRỌNG] Trả lại sự tự do cho section, không dùng padding trái phải để đẩy lề */
         padding: 80px 0 !important; 
         background: #fff;
         width: 100%;
         display: flex;
-        justify-content: center; /* Luôn gom nội dung vào giữa màn hình */
+        justify-content: center; 
     }
 
     .projects .container {
-        /* [MỎ NEO] Khóa chặt khung xương 1650px giống Header và Hero */
         max-width: var(--container-max) !important; 
         width: 100% !important;
         margin: 0 auto !important;
-        /* Dùng đúng side-padding 55px từ biến hệ thống để thẳng hàng lề trái */
         padding-left: var(--side-padding) !important; 
         padding-right: var(--side-padding) !important;
         box-sizing: border-box;
     }
 
-    /* Giữ nguyên toàn bộ Style Header và Grid của mày */
+
     .section-header {
         margin-bottom: 36px;
         text-align: left; 
@@ -214,11 +211,11 @@ IPAD/TABLET SYNC (768px - 1024px)
 
     .section-subtitle {
         display: block;
-        word-spacing: 5px;
-        font-size: 11px;
+        word-spacing: 3px;
+        font-size: 14px;
         font-weight: 200;
         color: #2b2929;
-        letter-spacing: 1px;
+        letter-spacing: -0.01em;
         text-transform: uppercase;
         margin-bottom: 40px !important;
     }
