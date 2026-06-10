@@ -40,8 +40,8 @@
 
 .top-bar-content p {
     font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-weight: 800;
+    letter-spacing: 0em;
     text-transform: none;
     margin: 0; /* Fix lỗi mặc định của thẻ P */
 }

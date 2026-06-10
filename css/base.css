@@ -66,8 +66,14 @@ body {
 h1, h2, h3, h4, .urbanist {
     font-family: var(--font-heading);
     font-weight: 400;
+    letter-spacing: -0.02em;
 }
 
+p {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+}
 
 
 

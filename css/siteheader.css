@@ -28,7 +28,7 @@
 
 
 .header-is-white::after {
-    width: calc(100%); /* Để hở 2 đầu 60px cho sang, hoặc 100% tùy mày */
+    width: calc(100%); 
 }
 
 
@@ -36,14 +36,13 @@
 .header-inner {
     display: flex; 
     align-items: center; 
-    /* Thay đổi: Không dùng space-between tự do nữa */
     justify-content: center; 
     width: 100%;
-    max-width: var(--container-max); /* Chuẩn 1650px của mày */
+    max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--side-padding);
     pointer-events: auto;
-    position: relative; /* Để làm mỏ neo cho 3 cột */
+    position: relative; 
 }
 
 .nav-list { display: flex; align-items: center; gap: 38px; }
@@ -52,10 +51,14 @@
     text-decoration: none;
     font-size: 14px;
     font-weight: 900;
-    letter-spacing: 0em;
+    letter-spacing: -0.02em;
     text-transform: none;
     cursor: pointer;
     white-space: nowrap;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .nav-col { flex: 1; display: flex; align-items: center; }

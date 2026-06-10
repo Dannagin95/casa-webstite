@@ -50,16 +50,34 @@ body {
 }
 
 /* Header & Logo */
-.auth-header { margin-bottom: 24px; }
-.auth-logo { margin-bottom: 50px; text-align: center;}
-.auth-logo img { height: 62px; 
+.auth-header { 
+    margin-bottom: 24px; 
+}
+
+.auth-logo { 
+    margin-bottom: 50px; 
+    text-align: center;
+}
+
+.auth-logo img { 
+    height: 52px; 
     width: auto; 
     object-fit: contain; 
     display: block; 
     margin: 0 auto; 
 }
-.auth-title { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
-.auth-subtitle { font-size: var(--auth-font-size); color: var(--auth-text-sub); }
+
+.auth-title { 
+    font-size: 20px; 
+    font-weight: 600; 
+    margin-bottom: 8px; 
+}
+
+.auth-subtitle { 
+    font-size: var(--auth-font-size); 
+    color: var(--auth-text-sub); 
+}
+
 
 /* Buttons & Social */
 .btn-social {
