@@ -49,9 +49,10 @@
 .nav-link, .util-item, .lang-switch {
     color: #fff;
     text-decoration: none;
+    font-family: "Alata", sans-serif;
     font-size: 14px;
     font-weight: 900;
-    letter-spacing: -0.02em;
+    letter-spacing: 0em;
     text-transform: none;
     cursor: pointer;
     white-space: nowrap;
