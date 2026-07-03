@@ -406,7 +406,8 @@
 
 
 
-.duan01hero {
+.duan01hero,
+.duan02hero {
     height: 93vh; 
     position: relative; 
     display: flex;
@@ -416,10 +417,10 @@
     width: 100%;
 }
 
-.duan01hero-bg { position: absolute; inset: 0; z-index: -1; }
-.duan01hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+.duan01hero-bg, .duan02hero-bg { position: absolute; inset: 0; z-index: -1; }
+.duan01hero-bg img, .duan02hero-bg img { width: 100%; height: 100%; object-fit: cover; }
 
-.duan01hero-text { 
+.duan01hero-text, .duan02hero-text { 
     color: #fff; 
     width: 100%;
     max-width: var(--container-max); /* Khóa chặt ở 1650px */
@@ -430,9 +431,9 @@
     text-align: left; /* Đảm bảo chữ vẫn canh trái bên trong cái lồng 1650px */
 }
 
-.duan01hero-text h1
+.duan01hero-text, .duan02hero-text h1
  { font-size: 60px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
-.duan01hero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
+.duan01hero-text p, .duan02hero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
 .mobile-only { 
     display: none !important; 
 }
@@ -441,7 +442,7 @@
 
 
 @media (max-width: 1024px) {
-    .duan01hero {
+    .duan01hero, .duan02hero {
         height: auto !important; 
         min-height: 120vw !important; 
         background-size: cover !important;
@@ -458,7 +459,7 @@
         border-top: 1px solid #ffffff;
     }
 
-   .duan01hero-text {
+   .duan01hero-text, .duan02hero-text {
         padding: 0 !important; 
         margin: 0 auto !important;
         max-width: 100% !important; 
@@ -472,14 +473,14 @@
         margin-bottom: 20px !important;
     }
 
-    .duan01hero-text h1 {
+    .duan01hero-text h1, .duan02hero-text h1 {
         font-size: 28px; 
         font-weight: 400;
         margin-bottom: 20px;
         line-height: 1.2;
     }
 
-    .duan01hero-text p {
+    .duan01hero-text p, .duan02hero-text p {
         font-size: 12px;
         letter-spacing: 0px;
         margin-bottom: 0px;
@@ -487,7 +488,7 @@
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    .duan01hero {
+    .duan01hero, .duan02hero {
         min-height: 56vw !important;
     }
 }
