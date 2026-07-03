@@ -46,10 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const initHeroSlider = () => {
         const gallery = [
             { type: 'video', src: '../image/imagesAlpi/Alpiherovideo.mp4' },
-            { type: 'image', src: '../image/imagesalpi/alpihero01.jpg' },
-            { type: 'image', src: '../image/imagesalpi/alpihero02.jpg' },
-            { type: 'image', src: '../image/imagesalpi/alpihero03.jpg' },
-            { type: 'image', src: '../image/imagesalpi/alpihero04.jpg' }
+            { type: 'image', src: '../image/imagesAlpi/alpihero01.jpg' },
+            { type: 'image', src: '../image/imagesAlpi/alpihero02.jpg' },
+            { type: 'image', src: '../image/imagesAlpi/alpihero03.jpg' },
+            { type: 'image', src: '../image/imagesAlpi/alpihero04.jpg' }
         ];
 
         let currentIndex = 0;
