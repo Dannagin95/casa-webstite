@@ -244,7 +244,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.1); /* Độ sẫm 25%, mày có thể tăng lên 0.3 nếu muốn tối hơn */
+    background: rgba(0, 0, 0, 0.3); /* Độ sẫm 25%, mày có thể tăng lên 0.3 nếu muốn tối hơn */
     z-index: 1;
 }
 
