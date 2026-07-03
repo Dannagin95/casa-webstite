@@ -633,6 +633,32 @@ HÌNH NGANG LỚN
         display: none;
     }
 
+    
+    .riva-slider-dots {
+        position: absolute;
+        bottom: 20px; 
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px; 
+        z-index: 10;
+    }
+    
+    .riva-dot {
+        width: 6px; 
+        height: 6px;
+        border-radius: 50%;
+        background-color: #ffffff; 
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }    
+
+    .riva-dot.active {
+        background-color: #000000; 
+    }
+
+
+
     /* 4. GALLERY SLIDER: CHUẨN LỀ 20PX & TỈ LỆ 6/7 */
     .riva-gallery-grid {
         display: flex !important;
