@@ -29,7 +29,7 @@
 .tailieuhero-text h1
  { font-size: 60px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
 
-.tailieuhero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
+.tailieuhero-text p { letter-spacing: 0px; font-size: 15px; margin-bottom: 35px; }
 
 .mobile-only { 
     display: none !important; 

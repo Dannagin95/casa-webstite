@@ -13,7 +13,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 2; /* Nằm trên ảnh */
     pointer-events: none;
 }
@@ -107,7 +107,7 @@
 
 
 .hero-text h1 { font-size: 33px; line-height: 1.1; margin-bottom: 40px; font-weight: 500; }
-.hero-text p { letter-spacing: -0.01em; font-size: 14px; margin-bottom: 35px; font-weight: 400; }
+.hero-text p { letter-spacing: -0.01em; font-size: 15px; margin-bottom: 35px; font-weight: 400; }
 
 
 .shop-btn-group {
@@ -293,7 +293,16 @@
     width: 100%;
 }
 
-.certificatehero-bg, .rivahero-bg, .alpihero-bg { position: absolute; inset: 0; z-index: -1; }
+.certificatehero-bg, .rivahero-bg, .alpihero-bg { position: absolute; inset: 0; z-index: 0; }
+
+.certificatehero-bg::after, .rivahero-bg::after, .alpihero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0; /* Nằm trên ảnh */
+    pointer-events: none;
+}
 
 .certificatehero-bg img, .rivahero-bg img, .alpihero-bg img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -319,7 +328,7 @@
 
 .certificatehero-text p,
 .rivahero-text p, 
-.alpihero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
+.alpihero-text p { letter-spacing: 0px; font-size: 15px; margin-bottom: 35px; }
 
 .mobile-only { 
     display: none !important; 
@@ -418,6 +427,16 @@
 }
 
 .duan01hero-bg, .duan02hero-bg { position: absolute; inset: 0; z-index: -1; }
+
+.hero-bg::after, .duan01hero-bg::after, .duan02hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2; /* Nằm trên ảnh */
+    pointer-events: none;
+}
+
 .duan01hero-bg img, .duan02hero-bg img { width: 100%; height: 100%; object-fit: cover; }
 
 .duan01hero-text, .duan02hero-text { 
@@ -431,9 +450,12 @@
     text-align: left; /* Đảm bảo chữ vẫn canh trái bên trong cái lồng 1650px */
 }
 
-.duan01hero-text, .duan02hero-text h1
+.duan01hero-text h1, .duan02hero-text h1
  { font-size: 60px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
-.duan01hero-text p, .duan02hero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
+
+
+.duan01hero-text p, .duan02hero-text p { letter-spacing: 0px; font-size: 15px; margin-bottom: 35px; }
+
 .mobile-only { 
     display: none !important; 
 }

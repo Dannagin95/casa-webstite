@@ -9,7 +9,17 @@
     width: 100%;
 }
 
-.lichsuhero-bg { position: absolute; inset: 0; z-index: -1; }
+.lichsuhero-bg { position: absolute; inset: 0; z-index: 0; }
+
+.lichsuhero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2; /* Nằm trên ảnh */
+    pointer-events: none;
+}
+
 .lichsuhero-bg img { width: 100%; height: 100%; object-fit: cover; }
 
 .lichsuhero-text .sub-title {
@@ -30,8 +40,8 @@
     z-index: 2;
     text-align: left; 
 }
-.lichsuhero-text h1 { font-size: 30px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
-.lichsuhero-text p { letter-spacing: 0px; font-size: 13px; margin-bottom: 35px; }
+.lichsuhero-text h1 { font-size: 60px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
+.lichsuhero-text p { letter-spacing: 0px; font-size: 15px; margin-bottom: 35px; }
 
 .mobile-only { 
     display: none !important; 
