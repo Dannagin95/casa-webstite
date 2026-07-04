@@ -11,6 +11,15 @@
 
 .tailieuhero-bg { position: absolute; inset: 0; z-index: -1; }
 
+.tailieuhero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2; /* Nằm trên ảnh */
+    pointer-events: none;
+}
+
 .tailieuhero-bg img { width: 100%; height: 100%; object-fit: cover; }
 
 
