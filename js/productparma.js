@@ -45,10 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================== */
     const initHeroSlider = () => {
         const gallery = [
-            { type: 'video', src: '../image/imagesParma/parmaherovd1.mp4' },
-            { type: 'image', src: '../image/imagesParma/parmahero03.jpg' },
-            { type: 'image', src: '../image/imagesParma/parmahero01.jpg' },
+            { type: 'video', src: '../image/imagesParma/parmaherovd01.mp4' },
             { type: 'image', src: '../image/imagesParma/parmahero02.jpg' },
+            { type: 'image', src: '../image/imagesParma/parmahero01.jpg' },
+            { type: 'image', src: '../image/imagesParma/parmahero03.jpg' },
             { type: 'image', src: '../image/imagesParma/parmahero04.jpg' }
         ];
 
