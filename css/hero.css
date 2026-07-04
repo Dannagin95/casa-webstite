@@ -283,7 +283,8 @@
 .certificatehero,
 .rivahero,
 .alpihero,
-.mastrohero {
+.mastrohero,
+.ladolcehero {
     height: 93vh; 
     position: relative; 
     display: flex;
@@ -294,9 +295,9 @@
     width: 100%;
 }
 
-.certificatehero-bg, .rivahero-bg, .alpihero-bg, .mastrohero-bg { position: absolute; inset: 0; z-index: 0; }
+.certificatehero-bg, .rivahero-bg, .alpihero-bg, .mastrohero-bg, .ladolcehero-bg { position: absolute; inset: 0; z-index: 0; }
 
-.certificatehero-bg::after, .rivahero-bg::after, .alpihero::after, .mastrohero::after {
+.certificatehero-bg::after, .rivahero-bg::after, .alpihero::after, .mastrohero::after, .ladolcehero::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -305,13 +306,22 @@
     pointer-events: none;
 }
 
-.certificatehero-bg img, .rivahero-bg img, .alpihero-bg img, .mastrohero-bg img { width: 100%; height: 100%; object-fit: cover; }
+.certificatehero-bg img, 
+.rivahero-bg img, 
+.alpihero-bg img, 
+.mastrohero-bg img, 
+.ladolcehero-bg img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
 
 
 .certificatehero-text, 
 .rivahero-text,
 .alpihero-text,
-.mastrohero-text { 
+.mastrohero-text, 
+.ladolcehero-text { 
     color: #fff; 
     width: 100%;
     max-width: var(--container-max); /* Khóa chặt ở 1650px */
@@ -326,14 +336,23 @@
 .certificatehero-text h1,
 .rivahero-text h1,
 .alpihero-text h1,
-.mastrohero-text h1
- { font-size: 60px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
+.mastrohero-text h1, 
+.ladolcehero-text h1 { 
+    font-size: 60px; 
+    line-height: 1.1; 
+    margin-bottom: 40px; 
+    font-weight: 400; 
+}
 
 .certificatehero-text p,
 .rivahero-text p, 
 .alpihero-text p, 
-.mastrohero-text p 
-{ letter-spacing: 0px; font-size: 15px; margin-bottom: 35px; }
+.mastrohero-text p, 
+.ladolcehero-text p { 
+    letter-spacing: 0px; 
+    font-size: 15px; 
+    margin-bottom: 35px; 
+}
 
 .mobile-only { 
     display: none !important; 
@@ -348,7 +367,8 @@
     .certificatehero,
     .rivahero,
     .alpihero,
-    .mastrohero {
+    .mastrohero,
+    .ladolcehero {
         /* 1. Xóa bỏ chiều cao 75vh cũ */
         height: auto !important; 
         
@@ -376,7 +396,8 @@
     .certificatehero-text,
     .rivahero-text,
     .alpihero-text,
-    .mastrohero-text {
+    .mastrohero-text,
+    .ladolcehero-text {
         padding: 0 !important; 
         margin: 0 auto !important;
         max-width: 100% !important; 
@@ -393,7 +414,8 @@
     .certificatehero-text h1,
     .rivahero-text h1,
     .alpihero-text h1,
-    .mastrohero-text h1 {
+    .mastrohero-text h1,
+    .ladolcehero-text h1 {
         font-size: 28px; 
         font-weight: 500;
         margin-bottom: 20px;
@@ -403,7 +425,8 @@
     .certificatehero-text p,
     .rivahero-text p,
     .alpihero-text p,
-    .mastrohero-text p {
+    .mastrohero-text p, 
+    .ladolcehero-text p {
         font-size: 12px;
         letter-spacing: 0px;
         margin-bottom: 0px;
@@ -416,7 +439,8 @@
     .certificatehero,
     .rivahero,
     .alpihero,
-    .mastrohero {
+    .mastrohero,
+    .ladolcehero {
         min-height: 56vw !important; /* Tỉ lệ ngang cho Tablet [cite: 2026-02-07] */
     }
 }
