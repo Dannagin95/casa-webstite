@@ -156,3 +156,33 @@ document.addEventListener('DOMContentLoaded', () => {
     initProgressBar();
     initHeroSlider();
 });
+
+
+
+
+const initGalleryScroll = () => {
+    const grid = document.querySelector('.mastro-gallery-grid');
+    const progressBar = document.querySelector('.mastro-progress-bar');
+    const container = document.querySelector('.mastro-progress-container');
+
+    if (!grid || !progressBar || !container) return;
+
+    grid.addEventListener('scroll', () => {
+        // 1. Calculate how much the user can actually scroll
+        const maxScroll = grid.scrollWidth - grid.clientWidth;
+        
+        // 2. Calculate how much the bar can actually move
+        const maxTravel = container.offsetWidth - progressBar.offsetWidth;
+        
+        // 3. Get current scroll position as a percentage (0 to 1)
+        const scrollPercent = grid.scrollLeft / maxScroll;
+        
+        // 4. Move the bar based on that percentage
+        const moveX = scrollPercent * maxTravel;
+
+        // Apply transform for high performance
+        progressBar.style.transform = `translateX(${moveX}px)`;
+    }, { passive: true });
+};
+// Call it
+initGalleryScroll();

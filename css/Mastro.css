@@ -694,6 +694,31 @@ HÌNH NGANG LỚN
         margin-bottom: 15px !important;
     }
 
+
+    .mastro-progress-container {
+        display: block !important;
+        position: relative; /* Follows the natural flow after the grid */
+        /* 20px top, auto left/right to center the bar */
+        margin: 20px auto 0 auto !important;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.1);
+        left: 0 !important;
+        transform: none !important;
+    }    
+
+
+    .mastro-progress-bar {
+        width: 20%; 
+        height: 100%;
+        background-color: var(--black);
+        transition: width 0.3s linear;
+        position: absolute;
+        left: 0;
+        transition: transform 0.1s linear; 
+    }
+    
+
     /* 5. SIDEBAR & THÔNG SỐ: ĐỔ DỌC */
     .mastro-sidebar {
         width: 100% !important;
