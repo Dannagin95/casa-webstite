@@ -122,7 +122,7 @@ img[src*="imagescautruc"] {
 
 
 img {
-    pointer-events: none;
+    pointer-events: auto !important;
     user-select: none;
     -webkit-user-drag: none;
 }

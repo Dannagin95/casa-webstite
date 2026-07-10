@@ -1121,7 +1121,173 @@ IPAD/TABLET SYNC (768px - 1024px)
 
 
 
+/* Khung nền đen bao phủ toàn màn hình */
+.casa-lightbox {
+    display: none; 
+    position: fixed; 
+    z-index: 99999; 
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
 
+/* Khung bọc giới hạn dải trượt ảnh */
+.lightbox-track-wrapper {
+    width: calc(100% - 200px);
+    height: 85vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 100001;
+}
+
+/* Dải ảnh nằm ngang liên tục */
+.lightbox-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    will-change: transform;
+}
+
+/* Từng tấm ảnh trong dải trượt */
+.lightbox-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.lightbox-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    cursor: zoom-in !important;
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), transform-origin 0.1s ease;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.casa-lightbox.active .lightbox-slide img {
+    transform: scale(1);
+}
+
+/* Trạng thái ảnh khi được ZOOM TO */
+.lightbox-slide img.zoomed {
+    transform: scale(2) !important;
+    cursor: zoom-out !important;
+    z-index: 100005;
+}
+
+/* Nút Đóng (Dấu X) */
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 200;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    line-height: 1;
+    z-index: 100003;
+}
+.lightbox-close:hover { opacity: 0.6; }
+
+/* 🌟 GIỮ NGUYÊN GỐC 100% THÔNG SỐ NÚT TRÒN TRÊN DESKTOP CỦA MÀY */
+.lightbox-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffffff; /* Màu trắng của mày */
+    width: 40px; /* Kích thước 40px của mày */
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 100002;
+    user-select: none;
+}
+.lightbox-btn svg {
+    width: 13px; /* Icon 13px của mày */
+    height: 13px;
+    color: #000000; /* Màu đen của mày */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.lightbox-btn:hover {
+    border-color: #ffffff;
+    background-color: rgba(19, 19, 19, 0.95); /* Màu nền hover của mày */
+}
+.lightbox-btn:hover svg { color: #ffffff; } /* Đổi màu mũi tên sang trắng của mày */
+.lightbox-prev { left: 40px; }
+.lightbox-next { right: 40px; }
+
+/* HÀNG CHẤM: Kén nền trắng mờ ôm lấy các chấm tròn */
+.lightbox-dots {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .lightbox-track-wrapper {
+        width: 100%;
+        height: 70vh;
+        padding: 0 20px; /* Lề vàng mặc định 20px */
+    }
+    
+    .lightbox-slide {
+        padding: 0 12px; /* Khoảng hở nhỏ để lướt thấy rìa ảnh cạnh bên */
+    }
+
+    .lightbox-btn {
+        display: none !important;
+    }
+    
+    .lightbox-dots {
+        display: flex;
+        position: absolute;
+        bottom: 40px; /* Thụt lề section mặc định 40px */
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 8px;
+        padding: 8px 14px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        z-index: 100003;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+    
+    /* GIỮ NGUYÊN GỐC: Tất cả các chấm luôn TRÒN XOE bằng nhau của mày */
+    .lightbox-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5); /* Trắng mờ */
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+    }
+    
+    /* GIỮ NGUYÊN GỐC: Chấm hiện tại chỉ đổi màu ĐEN SÂU, không đổi kích thước của mày */
+    .lightbox-dot.active {
+        background-color: #000000 !important;
+    }
+}
 
 
 

@@ -1,19 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const grid = document.querySelector('.features-grid');
     const dots = document.querySelectorAll('.features-dots .dot');
