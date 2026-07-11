@@ -44,10 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================== */
     const heroGallery = [
         { type: 'video', src: '../image/imagesRiva/Rivaherovd1.mp4' },
-        { type: 'image', src: '../image/imagesRiva/rivahero01.jpg' },
-        { type: 'image', src: '../image/imagesRiva/rivahero02.jpg' },
-        { type: 'image', src: '../image/imagesRiva/rivahero07.webp' },
-        { type: 'image', src: '../image/imagesRiva/rivahero05.jpg' }
+        { type: 'image', src: '../image/imagesRiva/Rivahero01.jpg' },
+        { type: 'image', src: '../image/imagesRiva/Rivahero02.jpg' },
+        { type: 'image', src: '../image/imagesRiva/Rivahero07.webp' },
+        { type: 'image', src: '../image/imagesRiva/Rivahero05.jpg' }
     ];
     let currentHeroIndex = 0;
 
