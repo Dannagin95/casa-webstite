@@ -392,10 +392,6 @@
 
 
 
-
-
-
-
 <section class="alpi-product-section">
     <div class="alpi-container">
         
@@ -405,22 +401,27 @@
             <p class="alpi-desc">Tinh thần ấy được chuyển hoá vào từng vân gỗ, tạo nên một cảm giác liền mạch, mềm mại và gần như xoá đi ranh giới giữa vật liệu và không gian.</p>
         </div>
 
-        <div class="alpi-hero-fullwidth">
-            <div class="alpi-hero-container">
-                <video id="alpi-hero-video" autoplay muted loop playsinline poster>
-                  <source src="../image/imagesAlpi/Alpiherovideo.mp4" type="video/mp4">
-                </video>
-                
-                <img id="alpi-hero-image" src="../imagesalpi/alpihero01.jpg" alt="alpi View" style="opacity: 0;">
+    <div class="alpi-hero-fullwidth">
+        <div class="alpi-hero-container">
+            <video id="alpi-hero-video" autoplay muted loop playsinline poster>
+                <source src="../image/imagesAlpi/Alpiherovideo.mp4" type="video/mp4">
+            </video>
+            
+            <img id="alpi-hero-image" src="../imagesalpi/alpihero01.jpg" alt="alpi View" style="opacity: 0;">
 
-                <div id="alpi-hero-dots" class="alpi-slider-dots"></div>
+            <button id="alpi-video-play-btn" aria-label="Play/Pause Video"></button>
 
-                <div class="alpi-slider-nav">   
-                    <span class="alpi-prev">‹</span>
-                    <span class="alpi-next">›</span>
-                </div>
+            <div id="alpi-video-progress-container">
+                <div id="alpi-video-progress-bar"></div>
+            </div>
+            <div id="alpi-hero-dots" class="alpi-slider-dots"></div>
+
+            <div class="alpi-slider-nav">   
+                <span class="alpi-prev">‹</span>
+                <span class="alpi-next">›</span>
             </div>
         </div>
+    </div>
 
         <div class="alpi-main-grid">
             
@@ -772,6 +773,37 @@
         </div>
     </div>
 </footer>
+
+
+<div id="casaLightbox" class="casa-lightbox">
+    <!-- Nút đóng dấu X -->
+    <span class="lightbox-close">&times;</span>
+
+    <!-- Khung giới hạn dải trượt -->
+    <div class="lightbox-track-wrapper">
+        <div id="lightboxTrack" class="lightbox-track">
+            <!-- JS tự động render các thẻ img hoặc video kèm clone ở đây -->
+        </div>
+    </div>
+
+    <!-- Cụm nút điều hướng Desktop (Giữ nguyên cấu trúc SVG) -->
+    <button id="lightboxPrev" class="lightbox-btn lightbox-prev">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+    </button>
+    <button id="lightboxNext" class="lightbox-btn lightbox-next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+    </button>
+
+    <!-- Cụm chấm tròn Mobile -->
+    <div id="lightboxDots" class="lightbox-dots">
+        <!-- JS tự động sinh số lượng chấm -->
+    </div>
+</div>
+
 
     <script src="../js/index.js"></script>
     <script src="../js/productalpi.js"></script>
