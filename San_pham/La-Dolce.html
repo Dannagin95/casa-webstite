@@ -412,14 +412,19 @@
                 
                 <img id="ladolce-hero-image" src="../imagesLaDolce/ladolcehero01.jpg" alt="ladolce View" style="opacity: 0;">
 
-                <div id="ladolce-hero-dots" class="ladolce-slider-dots"></div>
+                <button id="ladolce-video-play-btn" aria-label="Play/Pause Video"></button>
 
-                <div class="ladolce-slider-nav">   
-                    <span class="ladolce-prev">‹</span>
-                    <span class="ladolce-next">›</span>
-                </div>
+            <div id="ladolce-video-progress-container">
+                <div id="ladolce-video-progress-bar"></div>
+            </div>
+            <div id="ladolce-hero-dots" class="ladolce-slider-dots"></div>
+
+            <div class="ladolce-slider-nav">   
+                <span class="ladolce-prev">‹</span>
+                <span class="ladolce-next">›</span>
             </div>
         </div>
+    </div>
 
         <div class="ladolce-main-grid">
             
@@ -769,6 +774,36 @@
         </div>
     </div>
 </footer>
+
+
+<div id="casaLightbox" class="casa-lightbox">
+    <!-- Nút đóng dấu X -->
+    <span class="lightbox-close">&times;</span>
+
+    <!-- Khung giới hạn dải trượt -->
+    <div class="lightbox-track-wrapper">
+        <div id="lightboxTrack" class="lightbox-track">
+            <!-- JS tự động render các thẻ img hoặc video kèm clone ở đây -->
+        </div>
+    </div>
+
+    <!-- Cụm nút điều hướng Desktop (Giữ nguyên cấu trúc SVG) -->
+    <button id="lightboxPrev" class="lightbox-btn lightbox-prev">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+    </button>
+    <button id="lightboxNext" class="lightbox-btn lightbox-next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+    </button>
+
+    <!-- Cụm chấm tròn Mobile -->
+    <div id="lightboxDots" class="lightbox-dots">
+        <!-- JS tự động sinh số lượng chấm -->
+    </div>
+</div>
 
     <script src="../js/index.js"></script>
     <script src="../js/productladolce.js"></script>
