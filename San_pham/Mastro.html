@@ -412,6 +412,11 @@
                 
                 <img id="mastro-hero-image" src="../imagesmastro/mastrohero01.jpg" alt="mastro View" style="opacity: 0;">
 
+                <button id="mastro-video-play-btn" aria-label="Play/Pause Video"></button>
+
+                <div id="mastro-video-progress-container">
+                    <div id="mastro-video-progress-bar"></div>
+                </div>
                 <div id="mastro-hero-dots" class="mastro-slider-dots"></div>
 
                 <div class="mastro-slider-nav">   
@@ -771,6 +776,39 @@
         </div>
     </div>
 </footer>
+
+
+<div id="casaLightbox" class="casa-lightbox">
+    <!-- Nút đóng dấu X -->
+    <span class="lightbox-close">&times;</span>
+
+    <!-- Khung giới hạn dải trượt -->
+    <div class="lightbox-track-wrapper">
+        <div id="lightboxTrack" class="lightbox-track">
+            <!-- JS tự động render các thẻ img hoặc video kèm clone ở đây -->
+        </div>
+    </div>
+
+    <!-- Cụm nút điều hướng Desktop (Giữ nguyên cấu trúc SVG) -->
+    <button id="lightboxPrev" class="lightbox-btn lightbox-prev">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+    </button>
+    <button id="lightboxNext" class="lightbox-btn lightbox-next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+    </button>
+
+    <!-- Cụm chấm tròn Mobile -->
+    <div id="lightboxDots" class="lightbox-dots">
+        <!-- JS tự động sinh số lượng chấm -->
+    </div>
+</div>
+
+
+
 
     <script src="../js/index.js"></script>
     <script src="../js/productmastro.js"></script>

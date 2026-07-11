@@ -694,7 +694,7 @@ HÌNH NGANG LỚN
         margin-bottom: 15px !important;
     }
 
-
+  
     .parma-progress-container {
         display: block !important;
         position: relative; /* Follows the natural flow after the grid */
@@ -717,7 +717,8 @@ HÌNH NGANG LỚN
         left: 0;
         transition: transform 0.1s linear; 
     }
-    
+
+
 
     /* 5. SIDEBAR & THÔNG SỐ: ĐỔ DỌC */
     .parma-sidebar {
@@ -794,3 +795,370 @@ HÌNH NGANG LỚN
 
 
 
+/* Khung nền đen bao phủ toàn màn hình */
+.casa-lightbox {
+    display: none; 
+    position: fixed; 
+    z-index: 99999; 
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Khung bọc giới hạn dải trượt */
+.lightbox-track-wrapper {
+    width: calc(100% - 200px);
+    height: 85vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 100001;
+}
+
+/* Dải nội dung nằm ngang liên tục */
+.lightbox-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    will-change: transform;
+}
+
+/* Từng tấm slide (Chứa ảnh hoặc video) */
+.lightbox-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+/* Định dạng hiển thị đồng bộ cho cả Ảnh và Video */
+.lightbox-slide img,
+.lightbox-slide video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), transform-origin 0.1s ease;
+}
+
+.lightbox-slide img {
+    cursor: zoom-in !important;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.casa-lightbox.active .lightbox-slide img,
+.casa-lightbox.active .lightbox-slide video {
+    transform: scale(1);
+}
+
+/* Trạng thái ảnh khi được ZOOM TO (Chỉ áp dụng riêng cho img, không zoom video) */
+.lightbox-slide img.zoomed {
+    transform: scale(2) !important;
+    cursor: zoom-out !important;
+    z-index: 100005;
+}
+
+/* Nút Đóng (Dấu X) */
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: 200;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    line-height: 1;
+    z-index: 100003;
+}
+.lightbox-close:hover { opacity: 0.6; }
+
+/* 🌟 GIỮ NGUYÊN GỐC 100% THÔNG SỐ NÚT TRÒN TRÊN DESKTOP CỦA MÀY */
+.lightbox-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffffff; /* Nền trắng */
+    width: 40px; /* Kích thước 40px */
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 100002;
+    user-select: none;
+}
+.lightbox-btn svg {
+    width: 13px; /* Icon mũi tên 13px */
+    height: 13px;
+    color: #000000; /* Màu đen mặc định */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.lightbox-btn:hover {
+    border-color: #ffffff;
+    background-color: rgba(19, 19, 19, 0.95); /* Màu nền khi hover */
+}
+.lightbox-btn:hover svg { 
+    color: #ffffff; /* Mũi tên chuyển trắng khi hover */
+}
+.lightbox-prev { left: 40px; }
+.lightbox-next { right: 40px; }
+
+/* HÀNG CHẤM: Ẩn mặc định trên desktop */
+.lightbox-dots {
+    display: none;
+}
+
+/* 📱 RESPONSIVE - Áp dụng lề mặc định dự án của mày */
+@media (max-width: 768px) {
+    .lightbox-track-wrapper {
+        width: 100%;
+        height: 70vh;
+        padding: 0 20px; /* Lề lướt 2 bên mặc định 20px */
+    }
+    
+    .lightbox-slide {
+        padding: 0 12px; /* Tạo khoảng hở nhỏ giữa các slide khi vuốt */
+    }
+
+    .lightbox-btn {
+        display: none !important; /* Ẩn nút cơ học trên mobile */
+    }
+    
+    .lightbox-dots {
+        display: flex;
+        position: absolute;
+        bottom: 40px; /* Ngăn cách section mặc định 40px */
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 8px;
+        padding: 8px 14px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        z-index: 100003;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+    
+    /* Các chấm luôn luôn tròn xoe bằng nhau */
+    .lightbox-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+    }
+    
+    /* Chấm active chỉ đổi màu đen sâu, giữ nguyên kích cỡ tròn xoe */
+    .lightbox-dot.active {
+        background-color: #000000 !important;
+    }
+}
+
+
+/*===================================================================
+    TẦNG BỔ SUNG: ĐIỀU KHIỂN VIDEO (DESKTOP & MOBILE)
+===================================================================*/
+
+/* --- Định vị nút Play/Pause và Thanh tiến trình trong Hero --- */
+.parma-hero-container {
+    position: relative;
+}
+
+#parma-video-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 15; /* Nằm trên cả video và image */
+    
+    /* Trạng thái ẩn mờ mặc định */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    
+    /* Thiết kế nút bấm */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+#parma-video-play-btn svg {
+    width: 20px !important;
+    height: 20px !important;
+    color: #ffffff;
+}
+
+#parma-video-progress-container {
+    position: absolute;
+    bottom: 20px;
+    left: 55px;  /* Khớp với khoảng cách --side-dt của mày */
+    right: 55px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 15;
+    
+    /* Trạng thái ẩn mờ mặc định */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    cursor: pointer;
+}
+
+#parma-video-progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #ffffff;
+    transition: width 0.1s linear;
+}
+
+/* --- Class ép ẩn lập tức khi slide chuyển sang Hình Ảnh --- */
+.hero-is-image #parma-video-play-btn,
+.hero-is-image #parma-video-progress-container {
+    display: none !important;
+}
+
+/* --- Trạng thái hiển thị điều khiển bằng JS (dành cho cả Desktop và Mobile) --- */
+.show-video-controls #parma-video-play-btn,
+.show-video-controls #parma-video-progress-container {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+/* --- Tinh chỉnh Giao diện Mobile (< 1023px) --- */
+@media (max-width: 1023px) {
+    /* ẨN thanh tiến trình ngoài trang chủ trên Mobile theo đúng ý mày */
+    #parma-video-progress-container {
+        display: none !important;
+    }
+    
+    #parma-video-play-btn {
+        width: 50px !important;  /* Thu nhỏ nút bấm trên mobile một chút */
+        height: 50px !important;
+    }
+    #parma-video-play-btn svg {
+        width: 20px !important;
+        height: 20px !important;
+    }
+}
+
+
+/*===================================================================
+    NEW: BỘ ĐIỀU KHIỂN RIÊNG BIỆT KHI XEM CHI TIẾT (LIGHTBOX)
+===================================================================*/
+.lightbox-video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-custom-controls {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 10px 18px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 100006;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.v-controls-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.v-play-pause-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+.v-play-pause-btn svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+
+.v-time-display {
+    color: #ffffff;
+    font-size: 12px;
+    font-family: sans-serif;
+    min-width: 35px;
+    opacity: 0.8;
+}
+
+.v-progress-container {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.v-progress-bar {
+    height: 100%;
+    background: #ffffff;
+    width: 0%;
+    border-radius: 2px;
+}
+
+/* Tinh chỉnh vị trí controls trong chi tiết riêng cho Mobile */
+@media (max-width: 768px) {
+    .lightbox-custom-controls {
+        bottom: 80px; /* Đẩy cao hơn hàng dấu chấm trên Mobile */
+        width: 65%;   /* Thu hẹp độ rộng từ 85% xuống 65% để không bị quá to */
+        padding: 8px 14px; /* Thu nhỏ padding cho thanh mỏng gọn */
+        gap: 10px;
+    }
+    
+    .v-time-display {
+        font-size: 11px; /* Hạ size chữ thời gian xuống một chút */
+        min-width: 30px;
+    }
+}
