@@ -1,0 +1,414 @@
+/* ============================================================
+   PAGE: duan03 - GLOBAL STRUCTURE
+   ============================================================ */
+
+.duan03-page-body {
+    padding-top: var(--section-gap); 
+    padding-bottom: var(--section-gap);
+}
+
+/* --- TIER 1: INTRO SECTION --- */
+.duan03-intro-minimal {
+    padding-bottom: 50px;
+}
+
+.duan03-intro-text-wrapper,
+.duan03-outro-text-wrapper {
+    /* Fixed width container centered for editorial focus */
+    max-width: 720px; 
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* KEY: Left-aligned text within the centered 720px block */
+    text-align: left; 
+}
+
+.duan03-intro-text-wrapper p {
+    font-family: var(--font-body);
+    font-size: 13px; /* Standard 12px luxury scale */
+    line-height: 1.6;
+    color: var(--black);
+    margin-bottom: 25px;
+    
+    /* Maintains text integrity during scaling */
+    word-break: keep-all;
+}
+
+/* --- TIER 2: FULL-WIDTH HERO IMAGE --- */
+.duan03-hero-image,
+.duan03nd-hero-image,
+.duan03rd-hero-image,
+.duan03fth-hero-image {
+    /* Full viewport breakout strategy */
+    width: 100%;
+    position: relative;
+    margin: 30px 0;
+    overflow: hidden;
+}
+
+.duan03-hero-wrapper,
+.duan03nd-hero-wrapper,
+.duan03rd-hero-wrapper,
+.duan03fth-hero-wrapper  {
+    width: 100%;
+    max-width: 100%; 
+    aspect-ratio: 16 / 12;
+}
+
+.duan03-hero-wrapper img,
+.duan03nd-hero-wrapper img,
+.duan03rd-hero-wrapper img,
+.duan03fth-hero-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    /* pointer-events: none is handled by base.css */
+}
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   TIER 4: PROJECT GRID (3-COLUMN DESKTOP)
+   ============================================================ */
+
+.duan03-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px; /* Precise gap for desktop editorial layout */
+    margin: 30px 0 0;
+}
+
+.duan03-card {
+    text-decoration: none;
+    color: inherit;
+}
+
+.duan03-card-img {
+    width: 100%;
+    aspect-ratio: 6 / 7; /* Portrait ratio standard */
+    overflow: hidden;
+}
+
+.duan03-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+
+
+
+/* ============================================================
+   SECTION: duan03 OUTRO
+   ============================================================ */
+
+.duan03-outro-text {
+    padding-top: 100px;
+}
+
+.duan03-outro-wrapper {
+    /* Maintained 720px vertical axis for content symmetry */
+    max-width: 720px; 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; 
+}
+
+.duan03-outro-main p {
+    font-family: var(--font-body);
+    font-size: 13px; /* Standard 12px luxury scale */
+    line-height: 1.6;
+    color: var(--black);
+    margin-bottom: 25px;
+    
+    /* Maintains text integrity during scaling */
+    word-break: keep-all;
+}
+
+.duan03-outro-closing p {
+    font-family: var(--font-body);
+    font-size: 13px; /* Standard 12px luxury scale */
+    line-height: 1.6;
+    color: var(--black);
+    margin-bottom: 25px;
+    font-weight: 700;
+    /* Maintains text integrity during scaling */
+    word-break: keep-all;
+}
+
+
+/*===================================================================
+    3. LAYER TABLET LARGE (992px - 1199px)
+===================================================================*/
+@media (min-width: 992px) and (max-width: 1199px) {
+    .duan03-page-body {
+        padding: 60px 0;
+        overflow: hidden;
+    }
+
+    .duan03-page-body .casa-container {
+        padding: 0  20px;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .duan03-intro-text-wrapper,
+    .duan03-mid-content,
+    .duan03-outro-wrapper {
+        width: 100% !important;
+        max-width: 670px !important;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .duan03-intro-minimal {
+        padding: 0 0 20px;
+    }
+
+
+    .duan03-intro-text-wrapper p,
+    .duan03-mid-content p,
+    .duan03-outro-wrapper p {
+        font-size: 12px; 
+        line-height: 1.6;
+        max-width: 100%;
+        color: var(--black);
+    }
+ 
+    .duan03-hero-image {
+        margin: 0;
+    }
+
+    .duan03nd-hero-image {
+        margin:0;
+    }
+    
+    .duan03rd-hero-image {
+        margin:13px 0 0;
+    }
+
+    .duan03fth-hero-image {
+        margin:13px 0 0;
+    }
+
+
+    .duan03-outro-text {
+        padding-top: 60px !important;
+    }
+
+    .duan03-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px; 
+        margin: 15px 0;
+    }
+
+    .duan03-grid::-webkit-scrollbar { 
+        display: none; 
+    }
+
+    .duan03-card {
+        aspect-ratio: 6 / 7; 
+        position: relative;
+        text-decoration: none;
+    }
+
+    .duan03-card-img {
+        height: 100% !important;
+        width: 100%;
+        
+    }
+
+    .duan03-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+
+
+
+
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /* 1. Global Page Body Reset */
+    .duan03-page-body {
+        padding: 0 var(--sp-5);
+        overflow: hidden;
+    }
+
+
+    .duan03-page-body .casa-container {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+  
+    .duan03-intro-text-wrapper,
+    .duan03-mid-content,
+    .duan03-outro-wrapper {
+        max-width: 600px !important;
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+
+    .duan03-intro-text-wrapper p,
+    .duan03-mid-content p,
+    .duan03-outro-wrapper p {
+        font-size: 12px; 
+        line-height: 1.6;
+        max-width: 100%;
+        color: var(--black);
+    }
+
+
+    .duan03-intro-minimal {
+        padding: 60px 0 20px;
+    }
+
+
+    .duan03-outro-text {
+        padding-top: 60px !important;
+    }
+
+    .duan03-outro-main p {
+        padding: 0; 
+    }
+
+ 
+    .duan03-hero-image {
+        margin: 0 0;
+    }
+
+    .duan03nd-hero-image {
+        margin:0;
+    }
+    
+    .duan03rd-hero-image {
+        margin:13px 0 0;
+    }
+
+    .duan03fth-hero-image {
+        margin:13px 0 0;
+    }
+
+    .duan03-hero-wrapper {
+        width: 100% !important; 
+        position: relative !important;
+        display: block !important;
+    }
+
+    .duan03-hero-wrapper img {
+        aspect-ratio: 16 / 9 !important;
+    }
+
+   
+
+  
+    .duan03-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 13px; 
+        margin: 15px 0;
+    }
+
+
+
+    .duan03-card {
+        aspect-ratio: 6 / 7; 
+        position: relative;
+        text-decoration: none;
+       
+    }
+
+    .duan03-card-img {
+        height: 100% !important;
+        width: 100%;
+    }
+
+    .duan03-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+
+
+
+@media (max-width: 767px) {
+    .duan03-page-body .casa-container {
+        padding: 0 20px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .duan03-intro-minimal {
+        padding-bottom: 40px;
+    }
+
+    .duan03-intro-text-wrapper {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .duan03-intro-text-wrapper p,
+    .duan03-outro-text-wrapper p {
+        font-size: 12px; 
+        word-spacing: 1px;
+        line-height: 1.6;
+        max-width: 100%;
+        color: var(--color-black);
+    }
+
+    
+
+    .duan03-hero-image {
+        width: 100%;
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .duan03-hero-image img {
+        width: 100% !important; 
+        height: auto !important; 
+        display: block !important;
+        object-fit: cover !important; 
+        aspect-ratio: 16 / 12 !important; 
+    }
+
+    .duan03-grid {
+        padding: 0 var(--sp-5);
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin: 0;
+    }
+
+    .duan03-grid:last-of-type {
+        margin-top: 20px !important;
+    }
+
+    .duan03-outro-text {
+        padding: 60px 0 0 !important;
+    }
+}

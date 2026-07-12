@@ -9,6 +9,11 @@
     width: 100%;
 }
 
+
+
+
+
+
 .hero-bg::after {
     content: "";
     position: absolute;
@@ -18,6 +23,12 @@
     pointer-events: none;
 }
 
+
+
+
+
+
+
 .hero-bg { 
     position: absolute; 
     inset: 0; 
@@ -26,9 +37,12 @@
     cursor: grab;
 }
 
+
+
 .hero-bg:active {
     cursor: grabbing !important; 
 }
+
 
 
 .hero-track {
@@ -42,6 +56,11 @@
     will-change: transform;
     transform: translateZ(0);
 }
+
+
+
+
+
 
 .hero-track img {
     width: 100%;
@@ -60,6 +79,10 @@
 }
 
 
+
+
+
+
 /*Hero dot*/
 .hero-dots {
     position: absolute;
@@ -73,6 +96,11 @@
     z-index: 10;
 }
 
+
+
+
+
+
 .hero-dot {
     width: 12px;
     height: 12px;
@@ -82,6 +110,11 @@
     cursor: pointer;
     transition: background 0.3s ease;
 }
+
+
+
+
+
 
 .hero-dot.active {
     background: #fff;
@@ -460,7 +493,8 @@
 
 
 .duan01hero,
-.duan02hero {
+.duan02hero,
+.duan03hero {
     height: 93vh; 
     position: relative; 
     display: flex;
@@ -470,9 +504,9 @@
     width: 100%;
 }
 
-.duan01hero-bg, .duan02hero-bg { position: absolute; inset: 0; z-index: -1; }
+.duan01hero-bg, .duan02hero-bg, .duan03hero-bg { position: absolute; inset: 0; z-index: -1; }
 
-.hero-bg::after, .duan01hero-bg::after, .duan02hero-bg::after {
+.hero-bg::after, .duan01hero-bg::after, .duan02hero-bg::after, .duan03hero-bg::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -481,9 +515,9 @@
     pointer-events: none;
 }
 
-.duan01hero-bg img, .duan02hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+.duan01hero-bg img, .duan02hero-bg img, .duan03hero-bg img { width: 100%; height: 100%; object-fit: cover; }
 
-.duan01hero-text, .duan02hero-text { 
+.duan01hero-text, .duan02hero-text, .duan03hero-text { 
     color: #fff; 
     width: 100%;
     max-width: var(--container-max); /* Khóa chặt ở 1650px */
@@ -494,11 +528,11 @@
     text-align: left; /* Đảm bảo chữ vẫn canh trái bên trong cái lồng 1650px */
 }
 
-.duan01hero-text h1, .duan02hero-text h1
+.duan01hero-text h1, .duan02hero-text h1, .duan03hero-text h1
  { font-size: 60px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
 
 
-.duan01hero-text p, .duan02hero-text p { letter-spacing: 0px; font-size: 15px; margin-bottom: 35px; }
+.duan01hero-text p, .duan02hero-text p, .duan03hero-text p { letter-spacing: 0px; font-size: 15px; margin-bottom: 35px; }
 
 .mobile-only { 
     display: none !important; 
@@ -508,7 +542,7 @@
 
 
 @media (max-width: 1024px) {
-    .duan01hero, .duan02hero {
+    .duan01hero, .duan02hero, .duan03hero {
         height: auto !important; 
         min-height: 120vw !important; 
         background-size: cover !important;
@@ -525,7 +559,7 @@
         border-top: 1px solid #ffffff;
     }
 
-   .duan01hero-text, .duan02hero-text {
+   .duan01hero-text, .duan02hero-text, .duan03hero-text {
         padding: 0 !important; 
         margin: 0 auto !important;
         max-width: 100% !important; 
@@ -539,14 +573,14 @@
         margin-bottom: 20px !important;
     }
 
-    .duan01hero-text h1, .duan02hero-text h1 {
+    .duan01hero-text h1, .duan02hero-text h1, .duan03hero-text h1 {
         font-size: 28px; 
         font-weight: 400;
         margin-bottom: 20px;
         line-height: 1.2;
     }
 
-    .duan01hero-text p, .duan02hero-text p {
+    .duan01hero-text p, .duan02hero-text p, .duan03hero-text p {
         font-size: 12px;
         letter-spacing: 0px;
         margin-bottom: 0px;
@@ -554,7 +588,7 @@
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    .duan01hero, .duan02hero {
+    .duan01hero, .duan02hero, .duan03hero {
         min-height: 56vw !important;
     }
 }

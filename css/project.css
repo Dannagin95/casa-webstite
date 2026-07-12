@@ -195,6 +195,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px; /* Khoảng cách giữa 3 cột [cite: 2025-12-29] */
+    row-gap: 60px;
 }
 
 .duan-card {
@@ -225,12 +226,12 @@
     font-weight: 700;
     letter-spacing: 1.5px;
     margin-bottom: 10px;
-    text-transform: uppercase;
+    text-transform: normal;
 }
 
 .duan-card-desc {
-    font-size: 13px;
-    color: #777;
+    font-size: 18px;
+    color: #000000;
     line-height: 1.4;
 }
 
