@@ -80,6 +80,10 @@
         line-height: 1.2 !important;
         margin: 0 !important;
     }
+
+    .section-link-circle {
+        display: none !important;
+    }
 }
 
 /* =========================================
@@ -181,6 +185,10 @@ IPAD/TABLET SYNC (768px - 1024px)
         line-height: 1.2 !important;
         margin: 0 !important;
     }
+
+    .section-link-circle {
+        display: none !important;
+    }
 }
 
 /* =========================================
@@ -205,9 +213,14 @@ IPAD/TABLET SYNC (768px - 1024px)
     }
 
 
+
+
+    /*XEM TẤT CẢ DỰ ÁN*/
+
     .section-header {
         margin-bottom: 36px;
         text-align: left; 
+        position: relative;
     }
 
     .section-subtitle {
@@ -220,6 +233,67 @@ IPAD/TABLET SYNC (768px - 1024px)
         text-transform: uppercase;
         margin-bottom: 40px !important;
     }
+
+    .section-link-circle {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%); 
+        margin: 0 !important; 
+        
+        font-family: 'Be Vietnam Pro', sans-serif;
+        font-size: 14px;
+        font-weight: 200;
+        color: #2b2929;
+        text-decoration: none;
+        letter-spacing: -0.01em;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        line-height: 1;
+    }
+
+    /* Các thuộc tính vòng tròn và hover giữ nguyên để đảm bảo giao diện đẹp */
+    .section-link-circle .circle-btn {
+        width: 32px;
+        height: 32px;
+        background-color: #eeeeee;
+        border: 1px solid #e0e0e0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .section-link-circle .arrow-down path {
+        transition: stroke 0.3s ease;
+    }
+
+    .section-link-circle .arrow-down {
+        transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        transform: rotate(0deg);
+    }
+
+    /* ================= HOVER INTERACTION ================= */
+    .section-link-circle:hover .circle-btn {
+        background-color: #2b2929;
+        border-color: #2b2929;
+    }
+
+    .section-link-circle:hover .arrow-down {
+        transform: rotate(-90deg);
+    }
+
+    .section-link-circle:hover .arrow-down path {
+        stroke: #ffffff;
+    }
+
+    /*XEM TẤT CẢ DỰ ÁN*/
+    
+
+
 
     .project-grid {
         margin-top: -1%;
