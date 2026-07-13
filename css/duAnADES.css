@@ -8,12 +8,20 @@
 }
 
 /* --- TIER 1: INTRO SECTION --- */
-.duan03-intro-minimal {
+.duan03-intro-minimal,  
+.duan03-midtro-text {
+    padding-bottom: 50px;
+}
+
+
+.duan03-midtro-text {
+    padding-top: 50px;
     padding-bottom: 50px;
 }
 
 .duan03-intro-text-wrapper,
-.duan03-outro-text-wrapper {
+.duan03-outro-text-wrapper,
+.duan03-midtro-wrapper {
     /* Fixed width container centered for editorial focus */
     max-width: 720px; 
     margin-left: auto;
@@ -23,7 +31,8 @@
     text-align: left; 
 }
 
-.duan03-intro-text-wrapper p {
+.duan03-intro-text-wrapper p,
+.duan03-midtro-wrapper p {
     font-family: var(--font-body);
     font-size: 13px; /* Standard 12px luxury scale */
     line-height: 1.6;
@@ -52,7 +61,7 @@
 .duan03fth-hero-wrapper  {
     width: 100%;
     max-width: 100%; 
-    aspect-ratio: 16 / 12;
+    aspect-ratio: 16 / 10;
 }
 
 .duan03-hero-wrapper img,
