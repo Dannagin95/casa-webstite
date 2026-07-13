@@ -49,8 +49,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const prevLayer = document.getElementById(prevId);
-        prevLayer.classList.add('active');
-        prevLayer.style.display = (prevId === 'main-nav-level') ? 'flex' : 'flex';
+        if (prevLayer) {
+            prevLayer.classList.add('active');
+            prevLayer.style.display = 'flex';
+            
+
+            if (prevId === 'main-nav-level') {
+                backBtn.style.display = 'none';
+                subContainer.style.display = 'none';
+            } else if (prevId === 'casa-sub') {
+                backText.innerText = "CASA";
+            } else if (prevId === 'product-sub') {
+                
+                backText.innerText = "Sản phẩm";
+            } else {
+                backText.innerText = "Quay lại";
+            }
+        }
 
         if (menuHistory.length === 0) {
             backBtn.style.display = 'none';
@@ -92,9 +107,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 });
-
-
-
-
-
-
