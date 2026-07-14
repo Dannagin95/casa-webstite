@@ -12,21 +12,21 @@ export const searchDatabase = [
 
    
     { title: "Sản phẩm", url: "san-pham.html", keywords: "san pham sản phẩm" },
-    { title: "Riva", url: "riva.html", keywords: "bo suu tap Riva" },
-    { title: "Alpi", url: "alpi.html", keywords: "bo suu tap Alpi" },
-    { title: "Mastro", url: "mastro.html", keywords: "bo suu tap Mastro" },
-    { title: "La Dolce", url: "ladolce.html", keywords: "bo suu tap La Dolce" },
-    { title: "Parma", url: "parma.html", keywords: "bo suu tap Parma" },
+    { title: "Riva", url: "../San_pham/Riva.html", keywords: "bo suu tap Riva" },
+    { title: "Alpi", url: "../San_pham/Alpi.html", keywords: "bo suu tap Alpi" },
+    { title: "Mastro", url: "../San_pham/Mastro.html", keywords: "bo suu tap Mastro" },
+    { title: "La Dolce", url: "../San_pham/La-Dolce.html", keywords: "bo suu tap La Dolce" },
+    { title: "Parma", url: "../San_pham/Parma.html", keywords: "bo suu tap Parma" },
 
     
     { title: "Gỗ", url: "wood.html", keywords: "cau truc cấu trúc go gỗ sàn gỗ" },
-    { title: "Cấu trúc", url: "structure.html", keywords: "cau truc cấu trúc" },
-    { title: "Bề mặt", url: "bemat.html", keywords: "bề mặt" },
+    { title: "Cấu trúc", url: "Cau_truc.html", keywords: "cau truc cấu trúc" },
+    { title: "Bề mặt", url: "surface.html", keywords: "bề mặt" },
     { title: "Hệ Xương cá", url: "xuongca.html", keywords: "xương cá" },
     { title: "Hệ thẳng", url: "hethang.html", keywords: "sàn thẳng" },
 
 
     { title: "Liên hệ", url: "contactus.html", keywords: "liên hệ" },
-    { title: "Dự Án", url: "duan.html", keywords: "dự án" },
+    { title: "Dự Án", url: "Du_an.html", keywords: "dự án" },
     { title: "Blog" , url: "blog.html", keywords: "bl blog b"}
 ];
