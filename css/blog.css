@@ -394,6 +394,17 @@
     display: none !important;
 }
 
+    /* ==========================================================================
+    BOX TÌM KIẾM BÀI VIẾT - BLOG
+    ========================================================================== */
+
+
+
+    /* ==========================================================================
+    BOX TÌM KIẾM BÀI VIẾT - BLOG
+    ========================================================================== */   
+
+
 
 /* ==========================================================================
    BLOG GRID - BẢN TRÀN VIỀN TABLET (FULL PROFESSIONAL)
@@ -430,20 +441,24 @@
     .blog-grid {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
-        gap: 20px !important;
-        row-gap: 60px !important;
+        gap: 30px !important;
+        row-gap: 80px !important;
         padding: 0 !important;
         margin-bottom: 60px !important;
     }
     .blog-card-image { aspect-ratio: 6/7; margin-bottom: 24px; }
-    .blog-card-title h3 { font-size: 24px; font-weight: 500; line-height: 1.6; color: var(--color-h3); margin-bottom: 20px; }
-    .blog-card-desc { font-size: 13px; line-height: 1.6; color: var(--black); }
+    .blog-card-title h3 { font-size: 33px; font-weight: 600; line-height: 1.3; color: var(--color-h3); margin-bottom: 20px; }
+    .blog-card-desc { font-size: 13px; line-height: 1.6; color: var(--black); font-weight: 600; }
 }
 
 
 
 /* --- 3. TABLET MINI (768px - 1023px): TRÀN VIỀN CHUYÊN NGHIỆP --- */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .casa-filter-wrapper{
+        display: none;
+    }
+
     .blog-grid {
         display: flex !important;
         overflow-x: auto !important;
@@ -473,13 +488,14 @@
         font-size: 25px !important; 
         line-height: 1.4 !important; 
         color: var(--color-h3) !important; 
-        margin-bottom: 25px !important; 
-        font-weight: 500;
+        margin-bottom: 15px !important; 
+        font-weight: 600;
     }
 
     .blog-card-desc { 
-        font-size: 12px !important; 
-        line-height: 1.6 !important; 
+        font-size: 13px !important; 
+        font-weight: 500;
+        line-height: 1.3 !important; 
         color: var(--black) !important; 
         margin-bottom: 20px;
     }
@@ -489,6 +505,10 @@
 
 /* --- 4. MOBILE (< 767px) --- */
 @media screen and (max-width: 767px) {
+    .casa-filter-wrapper{
+        display: none;
+    }
+
     .blog-grid {
         display: grid !important;
         grid-template-columns: 1fr !important;
@@ -502,14 +522,15 @@
 
     .blog-card-title h3 { 
         font-size: 25px !important; 
-        line-height: 1.4 !important; 
+        line-height: 1.3 !important; 
         color: var(--color-h3) !important; 
-        margin-bottom: 25px !important; 
-        font-weight: 500;
+        margin-bottom: 15px !important; 
+        font-weight: 600;
     }
 
     .blog-card-desc { 
         font-size: 12px !important; 
+        font-weight: 600;
         line-height: 1.6 !important; 
         color: var(--black) !important; 
         margin-bottom: 20px;
@@ -544,6 +565,397 @@
     .blog-pagination { margin-top: 40px; gap: 15px; font-size: 15px; }
     .pag-btn { width: 40px; height: 40px; }
 }
+
+
+
+
+/* ==========================================================================
+   CASA FILTER SYSTEM - TRƯỢT TUẦN HOÀN GRID TRANSITION SIÊU MƯỢT
+   ========================================================================== */
+
+
+/* --- THIẾT LẬP TRÊN DESKTOP (>= 1024px) --- */
+@media screen and (min-width: 1024px) {
+    /* Trở lại Grid 3 cột chuẩn chỉ để kiểm soát layout cứng cáp */
+    .blog-grid {
+        position: relative !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 30px !important;
+        row-gap: 80px !important;
+        padding-top: 80px !important; /* Khoảng trống phía trên cho nút bộ lọc */
+    }
+
+    /* Đảm bảo wrapper phân trang không phá vỡ Grid */
+    .blog-page-wrapper {
+        display: contents !important;
+    }
+
+    /* ĐỊNH DẠNG TẤT CẢ CÁC CARD BÀI VIẾT */
+    .blog-page-wrapper > .blog-card {
+        position: relative !important;
+        width: 100% !important;
+        /* Chuyển động mượt mà tuyệt đối bằng transform được tối ưu GPU */
+        transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        will-change: transform;
+    }
+
+    /* BỘ LỌC ABSOLUTE: Nằm trên cùng góc trái */
+    .casa-filter-wrapper {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: calc((100% - 60px) / 3) !important; /* Rộng chuẩn bằng khít 1 cột */
+        z-index: 1005 !important;
+        display: block !important;
+    }
+
+    /* BOX LỌC TRƯỢT NHẸ XUỐNG */
+    .casa-filter-vertical-content {
+        position: absolute !important;
+        top: 65px !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: #ffffff !important;
+        border-radius: 16px !important; /* Bo góc luxury */
+        padding: 30px !important;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08) !important;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-sizing: border-box;
+        
+        /* Hiệu ứng trượt xuất hiện mềm mượt */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px) scale(0.97);
+        transform-origin: top left;
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                    opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                    visibility 0.4s !important;
+    }
+
+
+    /* NÚT TÌM KIẾM TRONG BOX BỘ LỌC */
+    .casa-filter-submit-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%; /* Ép rộng full box lọc cho cứng cáp */
+        background: #111111 !important; /* Màu đen sang trọng */
+        border: 1px solid #111111 !important; /* Viền đen đồng bộ lúc đầu */
+        border-radius: 999px !important; /* Bo tròn hoàn toàn dạng viên thuốc giống nút lọc chính */
+        padding: 14px 35px !important;
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #ffffff !important; /* Chữ trắng */
+        cursor: pointer;
+        outline: none;
+        
+        /* Chuyển động mượt mà tuyệt đối đúng tinh thần Casa */
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        margin-top: 10px; /* Tạo thêm khoảng cách nhẹ với ô danh mục phía trên */
+    }
+
+    /* HIỆU ỨNG HOVER CHUYỂN ĐỔI NGƯỢC (REVERSE HOVER) */
+    .casa-filter-submit-btn:hover {
+        background: transparent !important; /* Rê chuột vào sẽ trong suốt */
+        color: #111111 !important; /* Chữ chuyển thành màu đen */
+        border-color: #111111 !important; /* Border đen nổi bật trên nền trắng của box */
+    }
+
+
+
+
+    
+
+
+
+
+
+
+    /* Khi kích hoạt: Box trượt nhẹ xuống */
+    main.filter-activated .casa-filter-vertical-content {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(15px) scale(1) !important;
+    }
+
+    /* CỘT 1 & CỘT 2 (Card thứ 1, 2, 4, 5, 7, 8, 10, 11...): Tự động dạt sang phải 1 cột */
+    main.filter-activated .blog-page-wrapper > .blog-card:nth-child(3n+1),
+    main.filter-activated .blog-page-wrapper > .blog-card:nth-child(3n+2) {
+        transform: translate(calc(100% + 30px), 0) !important;
+    }
+
+    /* CỘT 3 (Card thứ 3, 6, 9, 12...): Tự động lùi trái 2 cột và trượt xuống dưới 1 hàng */
+    main.filter-activated .blog-page-wrapper > .blog-card:nth-child(3n) {
+        transform: translate(calc(-200% - 60px), calc(100% + 80px)) !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* --- DECOR NÚT BỘ LỌC KIỂU "QUOC" TỐI GIẢN --- */
+.casa-filter-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #ffffff !important;
+    border: 1px solid #b3b3b3 !important; /* Viền xám mảnh dẻ, tinh tế */
+    border-radius: 999px !important; /* Bo tròn hoàn toàn dạng viên thuốc */
+    padding: 14px 35px !important;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #111111;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+
+/* Icon SVG và các đường nét chuyển động mềm */
+.filter-icon-svg {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.filter-icon-svg path,
+.filter-icon-svg circle {
+    transition: stroke 0.4s ease, fill 0.4s ease !important;
+}
+
+/* Hiệu ứng tự đổi chữ bằng CSS */
+.filter-text::before {
+    content: attr(data-show);
+}
+main.filter-activated .filter-text::before {
+    content: attr(data-hide);
+}
+
+/* --- HIỆU ỨNG HOVER & ACTIVE ĐẲNG CẤP --- */
+.casa-filter-trigger:hover {
+    border-color: #111111 !important;
+    background: #111111 !important;
+    color: #ffffff !important;
+}
+/* Khi hover: biến các đường vẽ SVG sang màu trắng */
+.casa-filter-trigger:hover .filter-icon-svg path {
+    stroke: #ffffff !important;
+}
+.casa-filter-trigger:hover .filter-icon-svg circle {
+    stroke: #ffffff !important;
+    fill: #111111 !important; /* Tránh bị bóp méo hình tròn */
+}
+
+/* Khi bộ lọc đang được bật */
+main.filter-activated .casa-filter-trigger {
+    background: #111111 !important;
+    border-color: #111111 !important;
+    color: #ffffff !important;
+}
+main.filter-activated .casa-filter-trigger .filter-icon-svg {
+    transform: rotate(180deg); /* Xoay nhẹ icon tạo sự thú vị khi active */
+}
+main.filter-activated .casa-filter-trigger .filter-icon-svg path {
+    stroke: #ffffff !important;
+}
+main.filter-activated .casa-filter-trigger .filter-icon-svg circle {
+    stroke: #ffffff !important;
+    fill: #111111 !important;
+}
+
+
+
+
+
+/* Các ô input gạch dưới */
+.casa-filter-field {
+    position: relative !important;
+    width: 100%;
+}
+
+.casa-filter-field input,
+.casa-filter-field select {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #eeeeee;
+    padding: 12px 0;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 13px;
+    color: #111111;
+    outline: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+.casa-filter-field input:focus,
+.casa-filter-field select:focus {
+    border-bottom-color: #111111;
+}
+
+
+
+#blog-keyword {
+    width: 100%;
+    padding-right: 40px !important; /* Chừa khoảng trống bên phải để chữ không đè lên nút x */
+    box-sizing: border-box;
+}
+
+/* NÚT "X" XÓA NHANH */
+.casa-clear-btn {
+    position: absolute !important;
+    right: 0px !important;
+    top: 50% !important;
+    transform: translateY(-50%) scale(0.8) !important;
+    background: none !important;
+    border: none !important;
+    font-size: 25px !important;
+    line-height: 1 !important;
+    color: #999999 !important;
+    cursor: pointer !important;
+    padding: 0px !important;
+    outline: none !important;
+    
+    /* Hiệu ứng ẩn/hiện mượt mà */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                color 0.2s !important;
+}
+
+/* Hover chuyển màu đen luxury */
+.casa-clear-btn:hover {
+    color: #111111 !important;
+}
+
+/* Hiện nút "x" khi có ký tự */
+.casa-clear-btn.is-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(-50%) scale(1) !important;
+}
+
+
+
+
+
+/* ẨN THẺ SELECT GỐC ĐỂ CHẠY NGẦM */
+.casa-filter-field select {
+    display: none !important;
+}
+
+/* KHUNG HIỂN THỊ CHÍNH (TRIGGER) */
+.casa-custom-select-trigger {
+    position: relative !important; /* Tạo điểm neo cho mũi tên absolute */
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 15px 0 !important;
+    padding-right: 40px !important; /* Chừa khoảng trống bên phải để text không đè lên mũi tên */
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #111111 !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+    cursor: pointer !important;
+    transition: border-color 0.3s ease !important;
+}
+
+/* Khi dropdown đang mở thì viền dưới chuyển sang đen đậm */
+.casa-filter-field.is-open .casa-custom-select-trigger {
+    border-bottom-color: #111111 !important;
+}
+
+/* Mũi tên chữ V mảnh dẻ vuốt nhọn */
+.casa-custom-select-trigger::after {
+    content: "" !important;
+    position: absolute !important;
+    
+    /* Căn thẳng hàng hoàn hảo với nút "x" ở trên */
+    right: 4px !important; 
+    top: 50% !important;
+    
+    /* Vẽ mũi tên chữ V */
+    width: 5px !important;      
+    height: 5px !important;      
+    border-right: 1px solid #666666 !important;
+    border-bottom: 1px solid #666666 !important;
+    
+    /* Gốc tọa độ xoay từ tâm chuẩn và căn giữa chiều dọc */
+    transform-origin: center center !important;
+    transform: translateY(-50%) rotate(45deg) !important; 
+    
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Xoay ngược mũi tên lên khi mở dropdown */
+.casa-filter-field.is-open .casa-custom-select-trigger::after {
+    transform: translateY(-50%) rotate(225deg) !important; /* Xoay đúng 180 độ từ góc 45deg ban đầu */
+}
+
+/* HỘP DANH SÁCH DROPDOWN XỔ XUỐNG */
+.casa-custom-options-box {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    border: 1px solid #eef0f3 !important;
+    border-radius: 12px !important; /* Bo góc cực sang */
+    margin-top: 8px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important; /* Đổ bóng mịn màng */
+    z-index: 100 !important;
+    overflow: hidden !important;
+    
+    /* Hiệu ứng ẩn/hiện trượt nhẹ mượt mà */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) !important;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Trạng thái mở */
+.casa-filter-field.is-open .casa-custom-options-box {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+/* TỪNG MỤC LỰA CHỌN BÊN TRONG (OPTION) */
+.casa-custom-option-item {
+    padding: 12px 20px !important; /* Chỉnh lề lối thoải mái ở đây */
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #000000 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Rê chuột vào mục */
+.casa-custom-option-item:hover {
+    background: #f7f7f7 !important; /* Đổi nền xám cực nhẹ */
+    color: #111111 !important;
+}
+
+/* Mục đang được chọn */
+.casa-custom-option-item.active {
+    background: #f1f1f1 !important;
+    color: #111111 !important;
+    font-weight: 700 !important;
+}
+
+
 
 
 

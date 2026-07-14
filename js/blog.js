@@ -145,3 +145,134 @@ if (document.readyState === 'complete') {
 } else {
     window.addEventListener('load', initBlogPagination);
 }
+
+
+
+
+
+
+
+
+
+/*==================================
+BỌ LỌC TÌM KIẾM BLOG
+==================================*/
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('toggle-filter-btn');
+    const mainContainer = document.querySelector('main.casa-container');
+
+    if (toggleBtn && mainContainer) {
+        toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mainContainer.classList.toggle('filter-activated');
+        });
+
+        mainContainer.addEventListener('click', (e) => {
+            if (mainContainer.classList.contains('filter-activated') && !e.target.closest('.casa-filter-wrapper')) {
+                mainContainer.classList.remove('filter-activated');
+            }
+        });
+    }
+});   
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("blog-keyword");
+    const clearBtn = document.getElementById("casa-clear-search");
+
+    if (searchInput && clearBtn) {
+        // Lắng nghe khi gõ chữ
+        searchInput.addEventListener("input", function () {
+            if (this.value.trim().length > 0) {
+                clearBtn.classList.add("is-visible"); // Hiện nút "x"
+            } else {
+                clearBtn.classList.remove("is-visible"); // Ẩn nút "x"
+            }
+        });
+
+        // Click nút "x" để xóa sạch chữ và ẩn nút đi
+        clearBtn.addEventListener("click", function () {
+            searchInput.value = ""; // Xóa text
+            clearBtn.classList.remove("is-visible"); // Ẩn nút "x"
+            searchInput.focus(); // Focus lại vào input
+        });
+    }
+});
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const filterFields = document.querySelectorAll(".casa-filter-field");
+
+    filterFields.forEach(field => {
+        const selectEl = field.querySelector("select");
+        if (!selectEl) return; // Nếu div không chứa select thì bỏ qua (như ô Input tìm kiếm)
+
+        // 1. Tạo giao diện Trigger hiển thị lựa chọn hiện tại
+        const trigger = document.createElement("div");
+        trigger.className = "casa-custom-select-trigger";
+        trigger.innerHTML = `<span>${selectEl.options[selectEl.selectedIndex].text}</span>`;
+        field.appendChild(trigger);
+
+        // 2. Tạo hộp tùy chọn xổ xuống
+        const optionsBox = document.createElement("div");
+        optionsBox.className = "casa-custom-options-box";
+
+        // Duyệt qua các option gốc để tạo option custom tương ứng
+        Array.from(selectEl.options).forEach((opt, index) => {
+            const optItem = document.createElement("div");
+            optItem.className = "casa-custom-option-item";
+            if (index === selectEl.selectedIndex) optItem.classList.add("active");
+            optItem.textContent = opt.text;
+            optItem.setAttribute("data-value", opt.value);
+
+            // Sự kiện khi click vào 1 option custom
+            optItem.addEventListener("click", function (e) {
+                e.stopPropagation();
+                
+                // Cập nhật text hiển thị trên trigger
+                trigger.querySelector("span").textContent = opt.text;
+                
+                // Cập nhật giá trị vào thẻ select gốc để phục vụ tìm kiếm/submit
+                selectEl.value = opt.value;
+                selectEl.dispatchEvent(new Event('change')); // Kích hoạt sự kiện change của select gốc nếu cần
+
+                // Đổi class active
+                optionsBox.querySelectorAll(".casa-custom-option-item").forEach(item => item.classList.remove("active"));
+                optItem.classList.add("active");
+
+                // Đóng dropdown
+                field.classList.remove("is-open");
+            });
+
+            optionsBox.appendChild(optItem);
+        });
+
+        field.appendChild(optionsBox);
+
+        // 3. Sự kiện Click để Đóng/Mở dropdown
+        trigger.addEventListener("click", function (e) {
+            e.stopPropagation();
+            
+            // Đóng tất cả các select khác đang mở trên trang trước khi mở cái này
+            document.querySelectorAll(".casa-filter-field").forEach(otherField => {
+                if (otherField !== field) otherField.classList.remove("is-open");
+            });
+
+            field.classList.toggle("is-open");
+        });
+    });
+
+    // Click ra ngoài bất kỳ đâu thì tự động đóng dropdown lại
+    document.addEventListener("click", function () {
+        document.querySelectorAll(".casa-filter-field").forEach(field => {
+            field.classList.remove("is-open");
+        });
+    });
+});
