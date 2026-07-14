@@ -276,3 +276,190 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("blog-keyword");
+    const selectEl = document.getElementById("blog-category");
+    const clearBtn = document.getElementById("casa-clear-search");
+    const suggestionsBox = document.getElementById("search-suggestions");
+    const submitBtn = document.querySelector(".casa-filter-submit-btn");
+    const blogCards = document.querySelectorAll(".blog-card");
+
+    // ==========================================
+    // 1. TỰ ĐỘNG QUÉT GRID ĐỂ TẠO DATABASE TÌM KIẾM NHANH
+    // ==========================================
+    function getBlogDatabase() {
+        const database = [];
+        blogCards.forEach(card => {
+            const titleLink = card.querySelector(".blog-card-title");
+            const titleEl = card.querySelector(".blog-card-title h3");
+            const category = card.getAttribute("data-category") || "all";
+            
+            if (titleEl && titleLink) {
+                database.push({
+                    title: titleEl.textContent.trim(),
+                    url: titleLink.getAttribute("href"),
+                    category: category
+                });
+            }
+        });
+        return database;
+    }
+
+    const blogDatabase = getBlogDatabase();
+
+    // ==========================================
+    // 2. LOGIC GỢI Ý TÌM KIẾM NHANH (INSTANT SUGGESTION)
+    // ==========================================
+    if (searchInput && suggestionsBox) {
+        searchInput.addEventListener("input", function () {
+            const query = this.value.trim().toLowerCase();
+            suggestionsBox.innerHTML = ""; // Xóa gợi ý cũ
+
+            if (query.length === 0) {
+                suggestionsBox.classList.remove("is-visible");
+                return;
+            }
+
+   
+            const matchedArticles = blogDatabase.filter(article => 
+                article.title.toLowerCase().includes(query)
+            );
+
+            if (matchedArticles.length > 0) {
+                matchedArticles.forEach(article => {
+                    const item = document.createElement("a");
+                    item.href = article.url;
+                    item.className = "suggestion-item";
+                    
+           
+                    let catName = "Danh mục khác";
+                    if (article.category === "Go") catName = "Gỗ & sàn gỗ";
+                    if (article.category === "ky-thuat") catName = "Kỹ thuật thi công";
+                    if (article.category === "hieu-ung") catName = "Màu sắc và bề mặt";
+
+                    item.innerHTML = `
+                        <span class="suggestion-title">${article.title}</span>
+                        <span class="suggestion-meta">${catName}</span>
+                    `;
+                    suggestionsBox.appendChild(item);
+                });
+            } else {
+                const noResult = document.createElement("div");
+                noResult.className = "suggestion-no-result";
+                noResult.textContent = "Không tìm thấy bài viết nào phù hợp.";
+                suggestionsBox.appendChild(noResult);
+            }
+
+            suggestionsBox.classList.add("is-visible");
+        });
+
+        // Click ra ngoài thì đóng bảng gợi ý
+        document.addEventListener("click", function (e) {
+            if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+                suggestionsBox.classList.remove("is-visible");
+            }
+        });
+    }
+
+    // ==========================================
+    // 3. LOGIC LỌC TẠI CHỖ TRÊN GRID (Khi bấm nút Tìm kiếm)
+    // ==========================================
+    if (submitBtn) {
+        submitBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            
+            const selectedCategory = selectEl.value; // 'all', 'xu-huong', 'ky-thuat'
+            const keywordValue = searchInput.value.trim().toLowerCase(); 
+
+            blogCards.forEach(card => {
+                const cardCategory = card.getAttribute("data-category") || "all";
+                
+             
+                const titleEl = card.querySelector(".blog-card-title h3");
+                const descEl = card.querySelector(".blog-card-desc");
+                
+                const cardTitle = titleEl ? titleEl.textContent.toLowerCase() : "";
+                const cardDesc = descEl ? descEl.textContent.toLowerCase() : "";
+
+               
+                const matchCategory = (selectedCategory === "all" || cardCategory === selectedCategory);
+                const matchKeyword = (keywordValue === "" || cardTitle.includes(keywordValue) || cardDesc.includes(keywordValue));
+
+                // Thỏa mãn cả 2 thì hiện, không thì ẩn
+                if (matchCategory && matchKeyword) {
+                    card.style.display = ""; 
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            // Đóng toàn bộ box lọc cho gọn gàng sau khi tìm kiếm xong
+            document.querySelector("main").classList.remove("filter-activated");
+            if (suggestionsBox) suggestionsBox.classList.remove("is-visible");
+        });
+    }
+
+
+    if (clearBtn && searchInput) {
+        clearBtn.addEventListener("click", function () {
+            searchInput.value = "";
+            clearBtn.classList.remove("is-visible");
+            if (suggestionsBox) {
+                suggestionsBox.innerHTML = "";
+                suggestionsBox.classList.remove("is-visible");
+            }
+            searchInput.focus();
+        });
+    }
+
+
+    window.addEventListener("pageshow", function (event) {
+    // Sự kiện pageshow chạy bất cứ khi nào trang được tải, 
+    // kể cả khi tải bình thường hoặc khi người dùng bấm nút BACK/FORWARD
+    const searchInput = document.getElementById("blog-keyword");
+    const clearBtn = document.getElementById("casa-clear-search");
+    const suggestionsBox = document.getElementById("search-suggestions");
+    const selectEl = document.getElementById("blog-category");
+    const blogCards = document.querySelectorAll(".blog-card");
+
+    if (searchInput) {
+        searchInput.value = ""; // Xóa sạch chữ sót lại trong ô tìm kiếm
+    }
+    
+    if (clearBtn) {
+        clearBtn.classList.remove("is-visible"); // Ẩn hoàn toàn nút "x"
+    }
+    
+    if (suggestionsBox) {
+        suggestionsBox.innerHTML = ""; // Xóa sạch danh sách gợi ý cũ
+        suggestionsBox.classList.remove("is-visible"); // Ẩn bảng gợi ý
+    }
+
+    if (selectEl) {
+        selectEl.value = "all"; // Đưa dropdown danh mục về lại "Tất cả danh mục"
+        // Nếu mày dùng Custom Select bằng Div từ bước trước, hãy kích hoạt dòng dưới để đồng bộ chữ hiển thị:
+        const triggerText = document.querySelector(".casa-custom-select-trigger span");
+        if (triggerText) triggerText.textContent = "Tất cả danh mục";
+    }
+
+    // Phục hồi lại toàn bộ các Card trên Grid hiển thị đầy đủ
+    blogCards.forEach(card => {
+        card.style.display = ""; 
+    });
+
+    // Đóng luôn box bộ lọc cho giao diện sạch sẽ, gọn gàng
+    const mainEl = document.querySelector("main");
+    if (mainEl) {
+        mainEl.classList.remove("filter-activated");
+    }
+});
+
+
+});

@@ -521,13 +521,17 @@
                     <input type="text" id="blog-keyword" placeholder="Tìm từ khóa...">
                     <!-- Nút "x" xóa nhanh được thêm vào cực kỳ sạch sẽ -->
                     <button type="button" id="casa-clear-search" class="casa-clear-btn" aria-label="Clear search">&times;</button>
+
+                    
+                    <div id="search-suggestions" class="search-suggestions-box"></div>
                 </div>
-                
+
                 <div class="casa-filter-field">
                     <select id="blog-category">
                         <option value="all">Tất cả danh mục</option>
-                        <option value="xu-huong">Xu hướng thiết kế</option>
+                        <option value="Go">Gỗ & sàn gỗ</option>
                         <option value="ky-thuat">Kỹ thuật thi công</option>
+                        <option value="hieu-ung">Màu sắc và bề mặt</option>
                     </select>
                 </div>
                 <button type="submit" class="casa-filter-submit-btn">Tìm kiếm</button>
@@ -536,7 +540,7 @@
 
 
         <div class="blog-page-wrapper" data-page="1">
-            <article class="blog-card">
+            <article class="blog-card" data-category="Go">
                 <a href="blog/Nhịp-điệu-của-vân-gỗ-tự-nhiên.html" class="blog-card-image">
                     <img src="image/imagesblog/woodgrainlongnhero3.jpg" alt="Woodgrain">
                 </a>
@@ -550,7 +554,7 @@
                 </div>
             </article>
 
-            <article class="blog-card">
+            <article class="blog-card" data-category="Go">
                 <a href="blog/San-go-ky-thuat.html" class="blog-card-image">
                     <img src="image/imagesblog1.1/Sàn gỗ kĩ thuật hero.jpg" alt="Chude2">
                 </a>
@@ -564,7 +568,7 @@
                 </div>
             </article>
 
-            <article class="blog-card">
+            <article class="blog-card" data-category="hieu-ung">
                 <a href="blog/Tam-anh-huong-cua-mau-san-go.html" class="blog-card-image">
                     <img src="image/imagesblog/chude3.jpg" alt="Chude3">
                 </a>
@@ -578,7 +582,7 @@
                 </div>
             </article>
 
-            <article class="blog-card">
+            <article class="blog-card" data-category="Go">
                 <a href="blog/Cac-kieu-lat-san-go.html" class="blog-card-image">
                     <img src="image/imagesblog1.1/Các-kiểu-lát-sàn.jpg" alt="Chude2">
                 </a>
@@ -592,7 +596,7 @@
                 </div>
             </article>
 
-            <article class="blog-card">
+            <article class="blog-card" data-category="Go">
                 <a href="blog/Cau-truc-va-dac-tinh-cua-go-tu-nhien.html" class="blog-card-image">
                     <img src="image/imagesblog1.2/Cấu trúc và đặc tính của gỗ tự nhiên trong ứng dụng sàn gỗ-hero-lớn.jpg" alt="Chude2">
                 </a>
@@ -606,7 +610,7 @@
                 </div>
             </article>
 
-            <article class="blog-card">
+            <article class="blog-card" data-category="Go">
                 <a href="blog/Cac-loai-san-go-tu-nhien-pho-bien-trong-san-go.html" class="blog-card-image">
                     <img src="image/imagesblog1.2/Các loại gỗ tự nhiên phổ biến trong sàn gỗ và cách lựa chọn phù hợp-hero lớn.jpg" alt="Chude2">
                 </a>
@@ -622,7 +626,7 @@
 
 
 
-            <article class="blog-card">
+            <article class="blog-card" data-category="Go">
                 <a href="blog/Điều-gì-khiến-sàn-gỗ-bị-cong-vênh.html" class="blog-card-image">
                     <img src="image/imagesblog1.3/Sàn-gỗ-cong-vênh.jpg" alt="Chude2">
                 </a>
@@ -639,7 +643,7 @@
 
 
 
-            <article class="blog-card">
+            <article class="blog-card" data-category="Go">
                 <a href="blog/So-sánh-gỗ-tự-nhiên(Veneer)-và-nhân-tạo(Laminate).html" class="blog-card-image">
                     <img src="image/imagesblog1.3/Venner & Laminate.png" alt="Chude2">
                 </a>
@@ -656,7 +660,7 @@
 
 
 
-            <article class="blog-card">
+            <article class="blog-card" data-category="Go">
                 <a href="blog/Vi-sao-engineered-wood-phu-hop-voi-khi-hau-nong-am.html" class="blog-card-image">
                     <img src="image/imagesblog1.4/hero.jpg" alt="Vì sao engineered wood phù hợp với khí hậu nóng ẩm?">
                 </a>
@@ -672,7 +676,7 @@
 
 
 
-            <article class="blog-card">
+            <article class="blog-card" data-category="hieu-ung">
                 <a href="blog.html" class="blog-card-image">
                     <img src="image/imagesblog1.5/Hero - Copy.jpg" alt="Chude2">
                 </a>

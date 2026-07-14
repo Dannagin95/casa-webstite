@@ -696,7 +696,76 @@
 
 
 
+/* BẢNG GỢI Ý TÌM KIẾM */
+.search-suggestions-box {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    border: 1px solid #eef0f3 !important;
+    border-radius: 12px !important;
+    margin-top: 8px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+    z-index: 110 !important;
+    max-height: 250px !important; /* Giới hạn chiều cao nếu có quá nhiều gợi ý */
+    overflow-y: auto !important; /* Hiện thanh cuộn nếu tràn */
+    
+    /* Hiệu ứng ẩn hiện mượt mà */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
 
+/* Kích hoạt khi có kết quả tìm kiếm */
+.search-suggestions-box.is-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+/* Từng dòng gợi ý bài viết */
+.suggestion-item {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 12px 20px !important;
+    border-bottom: 1px solid #f7f7f7 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    transition: background 0.2s ease !important;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none !important;
+}
+
+.suggestion-item:hover {
+    background: #f7f7f7 !important;
+}
+
+/* Tiêu đề bài viết trong gợi ý */
+.suggestion-title {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #111111 !important;
+    line-height: 1.4 !important;
+}
+
+/* Danh mục nhỏ đi kèm phía dưới tiêu đề */
+.suggestion-meta {
+    font-size: 11px !important;
+    color: #888888 !important;
+    margin-top: 4px !important;
+}
+
+/* Khi không tìm thấy bài viết nào */
+.suggestion-no-result {
+    padding: 15px 20px !important;
+    font-size: 13px !important;
+    color: #999999 !important;
+    text-align: center !important;
+}
 
 
 
