@@ -579,6 +579,15 @@
         gap: 30px !important;
         row-gap: 80px !important;
         padding-top: 80px !important; /* Khoảng trống phía trên cho nút bộ lọc */
+        
+        /* HIỆU ỨNG ĐẨY MƯỢT CÁC SECTION DƯỚI (FAQ, PAGINATION) */
+        margin-bottom: 60px !important;
+        transition: margin-bottom 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    /* Đẩy mượt mà FAQ và các nút chuyển trang khi phát sinh thêm hàng mới */
+    main.filter-activated .blog-grid.grid-expanded {
+        margin-bottom: calc(var(--casa-card-height, 550px) + 80px + 60px) !important; 
     }
 
     /* Đảm bảo wrapper phân trang không phá vỡ Grid */
@@ -660,16 +669,6 @@
         border-color: #111111 !important; /* Border đen nổi bật trên nền trắng của box */
     }
 
-
-
-
-    
-
-
-
-
-
-
     /* Khi kích hoạt: Box trượt nhẹ xuống */
     main.filter-activated .casa-filter-vertical-content {
         opacity: 1 !important;
@@ -677,14 +676,22 @@
         transform: translateY(15px) scale(1) !important;
     }
 
-    /* CỘT 1 & CỘT 2 (Card thứ 1, 2, 4, 5, 7, 8, 10, 11...): Tự động dạt sang phải 1 cột */
-    main.filter-activated .blog-page-wrapper > .blog-card:nth-child(3n+1),
-    main.filter-activated .blog-page-wrapper > .blog-card:nth-child(3n+2) {
+    /* ==========================================================================
+       HIỆU ỨNG TRƯỢT CUBE ĐỘNG (Xử lý mượt theo Class JS gán, không theo DOM index)
+       ========================================================================== */
+    
+    /* Card thuộc Cột 1 thực tế: Trượt sang Cột 2 */
+    main.filter-activated .blog-page-wrapper > .blog-card.casa-col-1 {
         transform: translate(calc(100% + 30px), 0) !important;
     }
 
-    /* CỘT 3 (Card thứ 3, 6, 9, 12...): Tự động lùi trái 2 cột và trượt xuống dưới 1 hàng */
-    main.filter-activated .blog-page-wrapper > .blog-card:nth-child(3n) {
+    /* Card thuộc Cột 2 thực tế: Trượt sang Cột 3 */
+    main.filter-activated .blog-page-wrapper > .blog-card.casa-col-2 {
+        transform: translate(calc(100% + 30px), 0) !important;
+    }
+
+    /* Card thuộc Cột 3 thực tế: Trượt lùi trái 2 cột và đẩy xuống hàng tiếp theo */
+    main.filter-activated .blog-page-wrapper > .blog-card.casa-col-3 {
         transform: translate(calc(-200% - 60px), calc(100% + 80px)) !important;
     }
 }
@@ -1018,6 +1025,8 @@ main.filter-activated .casa-filter-trigger .filter-icon-svg circle {
     color: #111111 !important;
     font-weight: 700 !important;
 }
+
+
 
 
 

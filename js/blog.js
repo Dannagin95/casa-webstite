@@ -154,100 +154,155 @@ if (document.readyState === 'complete') {
 
 
 
-/*==================================
-BỌ LỌC TÌM KIẾM BLOG
-==================================*/
-document.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.getElementById('toggle-filter-btn');
-    const mainContainer = document.querySelector('main.casa-container');
+/*==========================================================================
+   CASA BLOG FILTER SYSTEM - ENGINE CHIA CỘT ĐỘNG CHUẨN XÁC THEO VIEWPORT
+   ========================================================================== */
 
+document.addEventListener('DOMContentLoaded', () => {
+    // --- 1. KHAI BÁO DOM ELEMENTS ---
+    const mainContainer = document.querySelector('main') || document.querySelector('.casa-container');
+    const blogGrid = document.querySelector('.blog-grid');
+    const toggleBtn = document.getElementById('toggle-filter-btn');
+    const searchInput = document.getElementById("blog-keyword");
+    const clearBtn = document.getElementById("casa-clear-search");
+    const selectEl = document.getElementById("blog-category");
+    const suggestionsBox = document.getElementById("search-suggestions");
+    const submitBtn = document.querySelector(".casa-filter-submit-btn");
+    const blogCards = document.querySelectorAll(".blog-card");
+    const filterFields = document.querySelectorAll(".casa-filter-field");
+
+    let observer = null;
+
+    // --- 2. HÀM KIỂM TRA CARD CÓ THỰC SỰ HIỂN THỊ TRÊN MÀN HÌNH KHÔNG ---
+    const isCardActuallyVisible = (card) => {
+        // Kiểm tra nếu bản thân card bị ẩn bằng inline style hoặc class ẩn
+        if (card.style.display === 'none' || card.classList.contains('hidden') || card.classList.contains('is-hidden')) {
+            return false;
+        }
+
+        // KIỂM TRA THẰNG CHA (.blog-page-wrapper): Cực kỳ quan trọng để xử lý lỗi Phân Trang!
+        const parentWrapper = card.closest('.blog-page-wrapper');
+        if (parentWrapper) {
+            const isParentHiddenInline = parentWrapper.style.display === 'none' || parentWrapper.getAttribute('style')?.includes('display: none');
+            if (isParentHiddenInline) return false;
+
+            const computedParentStyle = window.getComputedStyle(parentWrapper);
+            if (computedParentStyle.display === 'none') return false;
+        }
+
+        // Cuối cùng: Kiểm tra kích thước vật lý hiển thị thực tế
+        return card.offsetWidth > 0 || card.offsetHeight > 0;
+    };
+
+    // --- 3. HÀM PHÂN CỘT ĐỘNG CHUẨN XÁC ---
+    const updateCardColumns = () => {
+        if (blogCards.length === 0 || !blogGrid) return;
+        
+        // Ngắt giám sát tạm thời để tránh lặp vô hạn khi JS sửa class trong DOM
+        if (observer) observer.disconnect();
+
+        // CHỈ lấy những card đang THỰC SỰ HIỂN THỊ trên trang hiện tại
+        const visibleCards = Array.from(blogCards).filter(card => isCardActuallyVisible(card));
+
+        // Clear toàn bộ class cột cũ của toàn bộ card
+        blogCards.forEach(card => {
+            card.classList.remove('casa-col-1', 'casa-col-2', 'casa-col-3');
+        });
+
+        // Gán lại class cột dựa trên đúng thứ tự của các card đang thực sự hiển thị
+        visibleCards.forEach((card, idx) => {
+            const colNum = (idx % 3) + 1; // 1, 2, hoặc 3
+            card.classList.add(`casa-col-${colNum}`);
+        });
+
+        // Đo chiều cao thực tế của Card hiện tại và set CSS Variable cho Grid
+        if (visibleCards.length > 0) {
+            const firstCard = visibleCards[0];
+            const cardHeight = firstCard.offsetHeight;
+            if (cardHeight > 0) {
+                blogGrid.style.setProperty('--casa-card-height', `${cardHeight}px`);
+            }
+        }
+
+        // Kiểm tra xem việc dịch chuyển Domino có làm tăng thêm hàng mới hay không
+        if (mainContainer) {
+            const isFilterActive = mainContainer.classList.contains('filter-activated');
+            // Nếu tổng số card hiển thị chia hết cho 3 (3, 6, 9...), khi đẩy dạt sẽ phát sinh thêm 1 hàng mới tinh
+            const needsExpansion = isFilterActive && (visibleCards.length % 3 === 0) && visibleCards.length > 0;
+            blogGrid.classList.toggle('grid-expanded', needsExpansion);
+        }
+
+        // Bật lại chế độ giám sát DOM
+        if (observer) observer.observe(blogGrid, observerConfig);
+    };
+
+    // --- 4. HỆ THỐNG GIÁM SÁT DOM TỰ ĐỘNG (MUTATION OBSERVER) ---
+    const observerConfig = {
+        attributes: true,
+        childList: true,
+        subtree: true,
+        attributeFilter: ['style', 'class']
+    };
+
+    observer = new MutationObserver(() => {
+        updateCardColumns();
+    });
+
+    if (blogGrid) {
+        observer.observe(blogGrid, observerConfig);
+    }
+
+    // Chạy lần đầu tiên để thiết lập cột ban đầu
+    updateCardColumns();
+
+    // --- 5. TOGGLE BỘ LỌC TÌM KIẾM ---
     if (toggleBtn && mainContainer) {
         toggleBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             mainContainer.classList.toggle('filter-activated');
+            updateCardColumns(); // Đồng bộ lại cột và khoảng đẩy FAQ ngay tức thì
         });
 
         mainContainer.addEventListener('click', (e) => {
             if (mainContainer.classList.contains('filter-activated') && !e.target.closest('.casa-filter-wrapper')) {
                 mainContainer.classList.remove('filter-activated');
+                updateCardColumns();
             }
         });
     }
-});   
 
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const searchInput = document.getElementById("blog-keyword");
-    const clearBtn = document.getElementById("casa-clear-search");
-
-    if (searchInput && clearBtn) {
-        // Lắng nghe khi gõ chữ
-        searchInput.addEventListener("input", function () {
-            if (this.value.trim().length > 0) {
-                clearBtn.classList.add("is-visible"); // Hiện nút "x"
-            } else {
-                clearBtn.classList.remove("is-visible"); // Ẩn nút "x"
-            }
-        });
-
-        // Click nút "x" để xóa sạch chữ và ẩn nút đi
-        clearBtn.addEventListener("click", function () {
-            searchInput.value = ""; // Xóa text
-            clearBtn.classList.remove("is-visible"); // Ẩn nút "x"
-            searchInput.focus(); // Focus lại vào input
-        });
-    }
-});
-
-
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const filterFields = document.querySelectorAll(".casa-filter-field");
-
+    // --- 6. KHỞI TẠO CUSTOM SELECT UI ---
     filterFields.forEach(field => {
-        const selectEl = field.querySelector("select");
-        if (!selectEl) return; // Nếu div không chứa select thì bỏ qua (như ô Input tìm kiếm)
+        const select = field.querySelector("select");
+        if (!select) return;
 
-        // 1. Tạo giao diện Trigger hiển thị lựa chọn hiện tại
+        // Tránh tạo trùng lặp nếu code chạy lại nhiều lần
+        if (field.querySelector(".casa-custom-select-trigger")) return;
+
         const trigger = document.createElement("div");
         trigger.className = "casa-custom-select-trigger";
-        trigger.innerHTML = `<span>${selectEl.options[selectEl.selectedIndex].text}</span>`;
+        trigger.innerHTML = `<span>${select.options[select.selectedIndex].text}</span>`;
         field.appendChild(trigger);
 
-        // 2. Tạo hộp tùy chọn xổ xuống
         const optionsBox = document.createElement("div");
         optionsBox.className = "casa-custom-options-box";
 
-        // Duyệt qua các option gốc để tạo option custom tương ứng
-        Array.from(selectEl.options).forEach((opt, index) => {
+        Array.from(select.options).forEach((opt, index) => {
             const optItem = document.createElement("div");
             optItem.className = "casa-custom-option-item";
-            if (index === selectEl.selectedIndex) optItem.classList.add("active");
+            if (index === select.selectedIndex) optItem.classList.add("active");
             optItem.textContent = opt.text;
             optItem.setAttribute("data-value", opt.value);
 
-            // Sự kiện khi click vào 1 option custom
-            optItem.addEventListener("click", function (e) {
+            optItem.addEventListener("click", (e) => {
                 e.stopPropagation();
                 
-                // Cập nhật text hiển thị trên trigger
                 trigger.querySelector("span").textContent = opt.text;
-                
-                // Cập nhật giá trị vào thẻ select gốc để phục vụ tìm kiếm/submit
-                selectEl.value = opt.value;
-                selectEl.dispatchEvent(new Event('change')); // Kích hoạt sự kiện change của select gốc nếu cần
+                select.value = opt.value;
+                select.dispatchEvent(new Event('change'));
 
-                // Đổi class active
                 optionsBox.querySelectorAll(".casa-custom-option-item").forEach(item => item.classList.remove("active"));
                 optItem.classList.add("active");
-
-                // Đóng dropdown
                 field.classList.remove("is-open");
             });
 
@@ -256,45 +311,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
         field.appendChild(optionsBox);
 
-        // 3. Sự kiện Click để Đóng/Mở dropdown
-        trigger.addEventListener("click", function (e) {
+        trigger.addEventListener("click", (e) => {
             e.stopPropagation();
-            
-            // Đóng tất cả các select khác đang mở trên trang trước khi mở cái này
-            document.querySelectorAll(".casa-filter-field").forEach(otherField => {
+            filterFields.forEach(otherField => {
                 if (otherField !== field) otherField.classList.remove("is-open");
             });
-
             field.classList.toggle("is-open");
         });
     });
 
-    // Click ra ngoài bất kỳ đâu thì tự động đóng dropdown lại
-    document.addEventListener("click", function () {
-        document.querySelectorAll(".casa-filter-field").forEach(field => {
-            field.classList.remove("is-open");
-        });
+    document.addEventListener("click", () => {
+        filterFields.forEach(field => field.classList.remove("is-open"));
     });
-});
 
-
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const searchInput = document.getElementById("blog-keyword");
-    const selectEl = document.getElementById("blog-category");
-    const clearBtn = document.getElementById("casa-clear-search");
-    const suggestionsBox = document.getElementById("search-suggestions");
-    const submitBtn = document.querySelector(".casa-filter-submit-btn");
-    const blogCards = document.querySelectorAll(".blog-card");
-
-    // ==========================================
-    // 1. TỰ ĐỘNG QUÉT GRID ĐỂ TẠO DATABASE TÌM KIẾM NHANH
-    // ==========================================
-    function getBlogDatabase() {
+    // --- 7. DATABASE SUGGEST NHANH ---
+    const getBlogDatabase = () => {
         const database = [];
         blogCards.forEach(card => {
             const titleLink = card.querySelector(".blog-card-title");
@@ -310,167 +341,149 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
         return database;
-    }
+    };
 
     const blogDatabase = getBlogDatabase();
 
-    // ==========================================
-    // 2. LOGIC GỢI Ý TÌM KIẾM NHANH (INSTANT SUGGESTION)
-    // ==========================================
-    if (searchInput && suggestionsBox) {
+    const getCategoryName = (catValue) => {
+        if (!selectEl) return "Danh mục khác";
+        const opt = selectEl.querySelector(`option[value="${catValue}"]`);
+        return opt ? opt.textContent.trim() : "Danh mục khác";
+    };
+
+    // --- 8. LOGIC Ô TÌM KIẾM ---
+    if (searchInput) {
         searchInput.addEventListener("input", function () {
             const query = this.value.trim().toLowerCase();
-            suggestionsBox.innerHTML = ""; // Xóa gợi ý cũ
 
-            if (query.length === 0) {
-                suggestionsBox.classList.remove("is-visible");
-                return;
+            if (clearBtn) {
+                clearBtn.classList.toggle("is-visible", query.length > 0);
             }
 
-   
-            const matchedArticles = blogDatabase.filter(article => 
-                article.title.toLowerCase().includes(query)
-            );
+            if (suggestionsBox) {
+                suggestionsBox.innerHTML = "";
 
-            if (matchedArticles.length > 0) {
-                matchedArticles.forEach(article => {
-                    const item = document.createElement("a");
-                    item.href = article.url;
-                    item.className = "suggestion-item";
-                    
-           
-                    let catName = "Danh mục khác";
-                    if (article.category === "Go") catName = "Gỗ & sàn gỗ";
-                    if (article.category === "ky-thuat") catName = "Kỹ thuật thi công";
-                    if (article.category === "hieu-ung") catName = "Màu sắc và bề mặt";
-
-                    item.innerHTML = `
-                        <span class="suggestion-title">${article.title}</span>
-                        <span class="suggestion-meta">${catName}</span>
-                    `;
-                    suggestionsBox.appendChild(item);
-                });
-            } else {
-                const noResult = document.createElement("div");
-                noResult.className = "suggestion-no-result";
-                noResult.textContent = "Không tìm thấy bài viết nào phù hợp.";
-                suggestionsBox.appendChild(noResult);
-            }
-
-            suggestionsBox.classList.add("is-visible");
-        });
-
-        // Click ra ngoài thì đóng bảng gợi ý
-        document.addEventListener("click", function (e) {
-            if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
-                suggestionsBox.classList.remove("is-visible");
-            }
-        });
-    }
-
-    // ==========================================
-    // 3. LOGIC LỌC TẠI CHỖ TRÊN GRID (Khi bấm nút Tìm kiếm)
-    // ==========================================
-    if (submitBtn) {
-        submitBtn.addEventListener("click", function (e) {
-            e.preventDefault();
-            
-            const selectedCategory = selectEl.value; // 'all', 'xu-huong', 'ky-thuat'
-            const keywordValue = searchInput.value.trim().toLowerCase(); 
-
-            blogCards.forEach(card => {
-                const cardCategory = card.getAttribute("data-category") || "all";
-                
-             
-                const titleEl = card.querySelector(".blog-card-title h3");
-                const descEl = card.querySelector(".blog-card-desc");
-                
-                const cardTitle = titleEl ? titleEl.textContent.toLowerCase() : "";
-                const cardDesc = descEl ? descEl.textContent.toLowerCase() : "";
-
-               
-                const matchCategory = (selectedCategory === "all" || cardCategory === selectedCategory);
-                const matchKeyword = (keywordValue === "" || cardTitle.includes(keywordValue) || cardDesc.includes(keywordValue));
-
-                // Thỏa mãn cả 2 thì hiện, không thì ẩn
-                if (matchCategory && matchKeyword) {
-                    card.style.display = ""; 
-                } else {
-                    card.style.display = "none";
+                if (query.length === 0) {
+                    suggestionsBox.classList.remove("is-visible");
+                    return;
                 }
-            });
 
-            // Đóng toàn bộ box lọc cho gọn gàng sau khi tìm kiếm xong
-            document.querySelector("main").classList.remove("filter-activated");
-            if (suggestionsBox) suggestionsBox.classList.remove("is-visible");
+                const matchedArticles = blogDatabase.filter(article => 
+                    article.title.toLowerCase().includes(query)
+                );
+
+                if (matchedArticles.length > 0) {
+                    matchedArticles.forEach(article => {
+                        const item = document.createElement("a");
+                        item.href = article.url;
+                        item.className = "suggestion-item";
+                        
+                        const catName = getCategoryName(article.category);
+
+                        item.innerHTML = `
+                            <span class="suggestion-title">${article.title}</span>
+                            <span class="suggestion-meta">${catName}</span>
+                        `;
+                        suggestionsBox.appendChild(item);
+                    });
+                } else {
+                    const noResult = document.createElement("div");
+                    noResult.className = "suggestion-no-result";
+                    noResult.textContent = "Không tìm thấy bài viết nào phù hợp.";
+                    suggestionsBox.appendChild(noResult);
+                }
+
+                suggestionsBox.classList.add("is-visible");
+            }
         });
     }
-
 
     if (clearBtn && searchInput) {
-        clearBtn.addEventListener("click", function () {
+        clearBtn.addEventListener("click", () => {
             searchInput.value = "";
             clearBtn.classList.remove("is-visible");
             if (suggestionsBox) {
                 suggestionsBox.innerHTML = "";
                 suggestionsBox.classList.remove("is-visible");
             }
+            blogCards.forEach(card => card.style.display = "");
+            updateCardColumns();
             searchInput.focus();
         });
     }
 
-
-    window.addEventListener("pageshow", function (event) {
-    // Sự kiện pageshow chạy bất cứ khi nào trang được tải, 
-    // kể cả khi tải bình thường hoặc khi người dùng bấm nút BACK/FORWARD
-    const searchInput = document.getElementById("blog-keyword");
-    const clearBtn = document.getElementById("casa-clear-search");
-    const suggestionsBox = document.getElementById("search-suggestions");
-    const selectEl = document.getElementById("blog-category");
-    const blogCards = document.querySelectorAll(".blog-card");
-
-    if (searchInput) {
-        searchInput.value = ""; // Xóa sạch chữ sót lại trong ô tìm kiếm
-    }
-    
-    if (clearBtn) {
-        clearBtn.classList.remove("is-visible"); // Ẩn hoàn toàn nút "x"
-    }
-    
-    if (suggestionsBox) {
-        suggestionsBox.innerHTML = ""; // Xóa sạch danh sách gợi ý cũ
-        suggestionsBox.classList.remove("is-visible"); // Ẩn bảng gợi ý
-    }
-
-    if (selectEl) {
-        selectEl.value = "all"; // Đưa dropdown danh mục về lại "Tất cả danh mục"
-        // Nếu mày dùng Custom Select bằng Div từ bước trước, hãy kích hoạt dòng dưới để đồng bộ chữ hiển thị:
-        const triggerText = document.querySelector(".casa-custom-select-trigger span");
-        if (triggerText) triggerText.textContent = "Tất cả danh mục";
-    }
-
-    // Phục hồi lại toàn bộ các Card trên Grid hiển thị đầy đủ
-    blogCards.forEach(card => {
-        card.style.display = ""; 
+    document.addEventListener("click", (e) => {
+        if (searchInput && suggestionsBox && !searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+            suggestionsBox.classList.remove("is-visible");
+        }
     });
 
-    // Đóng luôn box bộ lọc cho giao diện sạch sẽ, gọn gàng
-    const mainEl = document.querySelector("main");
-    if (mainEl) {
-        mainEl.classList.remove("filter-activated");
+    // --- 9. LOGIC LỌC BÀI VIẾT (SUBMIT) ---
+    const performFiltering = () => {
+        const selectedCategory = selectEl ? selectEl.value : "all";
+        const keywordValue = searchInput ? searchInput.value.trim().toLowerCase() : "";
+
+        blogCards.forEach(card => {
+            const cardCategory = card.getAttribute("data-category") || "all";
+            const titleEl = card.querySelector(".blog-card-title h3");
+            const descEl = card.querySelector(".blog-card-desc");
+            
+            const cardTitle = titleEl ? titleEl.textContent.toLowerCase() : "";
+            const cardDesc = descEl ? descEl.textContent.toLowerCase() : "";
+
+            const matchCategory = (selectedCategory === "all" || cardCategory === selectedCategory);
+            const matchKeyword = (keywordValue === "" || cardTitle.includes(keywordValue) || cardDesc.includes(keywordValue));
+
+            card.style.display = (matchCategory && matchKeyword) ? "" : "none";
+        });
+
+        updateCardColumns();
+    };
+
+    if (submitBtn) {
+        submitBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            performFiltering();
+
+            if (mainContainer) mainContainer.classList.remove("filter-activated");
+            if (suggestionsBox) suggestionsBox.classList.remove("is-visible");
+        });
     }
+
+    const syncCustomSelectsToNative = () => {
+        filterFields.forEach(field => {
+            const select = field.querySelector("select");
+            const triggerText = field.querySelector(".casa-custom-select-trigger span");
+            const customOptions = field.querySelectorAll(".casa-custom-option-item");
+
+            if (select && triggerText) {
+                const selectedOpt = select.options[select.selectedIndex];
+                triggerText.textContent = selectedOpt ? selectedOpt.text : "";
+
+                customOptions.forEach(optItem => {
+                    const val = optItem.getAttribute("data-value");
+                    optItem.classList.toggle("active", val === select.value);
+                });
+            }
+        });
+    };
+
+    // --- 10. BẢO VỆ KHI PAGESHOW (BFCACHE BACK BUTTON) ---
+    window.addEventListener("pageshow", () => {
+        if (searchInput) searchInput.value = "";
+        if (clearBtn) clearBtn.classList.remove("is-visible");
+        if (suggestionsBox) {
+            suggestionsBox.innerHTML = "";
+            suggestionsBox.classList.remove("is-visible");
+        }
+        if (selectEl) selectEl.value = "all";
+
+        syncCustomSelectsToNative();
+
+        blogCards.forEach(card => card.style.display = "");
+
+        if (mainContainer) mainContainer.classList.remove('filter-activated');
+        
+        updateCardColumns();
+    });
 });
-
-
-});
-
-
-
-
-
-
-
-
-
-
-
