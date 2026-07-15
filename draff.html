@@ -1,0 +1,257 @@
+
+
+<main class="casa-container section-space">
+    <div class="casa-blog-layout-container"></div>
+        <div class="casa-filter-wrapper">
+            <button id="toggle-filter-btn" class="casa-filter-trigger">
+                <!-- SVG Sliders tinh tế vẽ chuẩn theo hình của mày -->
+                <svg class="filter-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Thanh gạt 1 -->
+                    <path d="M3 8H9" stroke="#111111" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="11" cy="8" r="2" stroke="#111111" stroke-width="1.5" fill="#ffffff"/>
+                    <path d="M13 8H21" stroke="#111111" stroke-width="1.5" stroke-linecap="round"/>
+                    
+                    <!-- Thanh gạt 2 -->
+                    <path d="M3 16H11" stroke="#111111" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="13" cy="16" r="2" stroke="#111111" stroke-width="1.5" fill="#ffffff"/>
+                    <path d="M15 16H21" stroke="#111111" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <!-- Chữ tự động thay đổi bằng CSS -->
+                <span class="filter-text" data-show="Bộ lọc" data-hide="Đóng bộ lọc"></span>
+            </button>
+            <div class="casa-filter-vertical-content">
+
+                <div class="casa-filter-field">
+                    <input type="text" id="blog-keyword" placeholder="Tìm từ khóa...">
+                    <!-- Nút "x" xóa nhanh được thêm vào cực kỳ sạch sẽ -->
+                    <button type="button" id="casa-clear-search" class="casa-clear-btn" aria-label="Clear search">&times;</button>
+
+                    
+                    <div id="search-suggestions" class="search-suggestions-box"></div>
+                </div>
+
+                <div class="casa-filter-field">
+                    <select id="blog-category">
+                        <option value="all">Tất cả danh mục</option>
+                        <option value="Go">Gỗ & sàn gỗ</option>
+                        <option value="ky-thuat">Kỹ thuật thi công</option>
+                        <option value="hieu-ung">Màu sắc và bề mặt</option>
+                    </select>
+                </div>
+                <button type="submit" class="casa-filter-submit-btn">Tìm kiếm</button>
+            </div>
+        </div>
+    
+    <section class="blog-grid">
+        <div class="blog-page-wrapper" data-page="1">
+            <article class="blog-card" data-category="Go">
+                <a href="blog/Nhịp-điệu-của-vân-gỗ-tự-nhiên.html" class="blog-card-image">
+                    <img src="image/imagesblog/woodgrainlongnhero3.jpg" alt="Woodgrain">
+                </a>
+                <div class="blog-card-content">
+                    <a href="blog/Nhịp-điệu-của-vân-gỗ-tự-nhiên.html" class="blog-card-title">
+                        <h3>Nhịp điệu của vân gỗ tự nhiên: Ngôn ngữ hội họa từ tạo hóa</h3>
+                    </a>
+                    <p class="blog-card-desc">
+                        Mỗi thớ gỗ là một tác phẩm hội họa độc bản, được vẽ nên bởi dòng chảy của thời gian và những quy luật vận động của tự nhiên.
+                    </p>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="Go">
+                <a href="blog/San-go-ky-thuat.html" class="blog-card-image">
+                    <img src="image/imagesblog1.1/Sàn gỗ kĩ thuật hero.jpg" alt="Chude2">
+                </a>
+                <div class="blog-card-content">
+                    <a href="blog/San-go-ky-thuat.html" class="blog-card-title">
+                        <h3>Sàn gỗ kỹ thuật là gì? Cấu tạo, ưu nhược điểm và ứng dụng trong không gian cao cấp</h3>
+                    </a>
+                    <p class="blog-card-desc">
+                        Không chỉ giữ được vẻ đẹp tự nhiên của gỗ, loại sàn này còn được cải tiến về cấu trúc để phù hợp với điều kiện khí hậu và nhu cầu sử dụng hiện đại.
+                    </p>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="hieu-ung">
+                <a href="blog/Tam-anh-huong-cua-mau-san-go.html" class="blog-card-image">
+                    <img src="image/imagesblog/chude3.jpg" alt="Chude3">
+                </a>
+                <div class="blog-card-content">
+                    <a href="blog/Tam-anh-huong-cua-mau-san-go.html" class="blog-card-title">
+                        <h3>CASA Parquet: Vai trò của màu sàn gỗ trong việc định hình không gian sống</h3>
+                    </a>
+                    <p class="blog-card-desc">
+                        Tông màu của sàn gỗ ảnh hưởng trực tiếp đến cảm nhận về ánh sáng, tỷ lệ và bầu không khí của căn phòng, từ đó định hình cách một không gian được trải nghiệm.
+                    </p>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="Go">
+                <a href="blog/Cac-kieu-lat-san-go.html" class="blog-card-image">
+                    <img src="image/imagesblog1.1/Các-kiểu-lát-sàn.jpg" alt="Chude2">
+                </a>
+                <div class="blog-card-content">
+                    <a href="blog/Cac-kieu-lat-san-go.html" class="blog-card-title">
+                        <h3>Các kiểu lát sàn gỗ: xương cá, lát thẳng, chevron và hơn thế nữa</h3>
+                    </a>
+                    <p class="blog-card-desc">
+                       Từ lát thẳng cơ bản đến xương cá hay chevron, mỗi kiểu lát đều mang lại một ngôn ngữ thẩm mỹ riêng. 
+                    </p>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="Go">
+                <a href="blog/Cau-truc-va-dac-tinh-cua-go-tu-nhien.html" class="blog-card-image">
+                    <img src="image/imagesblog1.2/Cấu trúc và đặc tính của gỗ tự nhiên trong ứng dụng sàn gỗ-hero-lớn.jpg" alt="Chude2">
+                </a>
+                <div class="blog-card-content">
+                    <a href="blog/Cau-truc-va-dac-tinh-cua-go-tu-nhien.html" class="blog-card-title">
+                        <h3>Cấu trúc và đặc tính của gỗ tự nhiên trong ứng dụng sàn gỗ</h3>
+                    </a>
+                    <p class="blog-card-desc">
+                       Hiểu rõ cách gỗ vận hành - từ bên trong cấu trúc thớ gỗ đến phản ứng với môi trường - là điều cần thiết để đưa ra lựa chọn phù hợp, đặc biệt trong các ứng dụng sàn gỗ.
+                    </p>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="Go">
+                <a href="blog/Cac-loai-san-go-tu-nhien-pho-bien-trong-san-go.html" class="blog-card-image">
+                    <img src="image/imagesblog1.2/Các loại gỗ tự nhiên phổ biến trong sàn gỗ và cách lựa chọn phù hợp-hero lớn.jpg" alt="Chude2">
+                </a>
+                <div class="blog-card-content">
+                    <a href="blog/Cac-loai-san-go-tu-nhien-pho-bien-trong-san-go.html" class="blog-card-title">
+                        <h3>Các loại gỗ tự nhiên phổ biến trong sàn gỗ và cách lựa chọn phù hợp</h3>
+                    </a>
+                    <p class="blog-card-desc">
+                       Mỗi loại gỗ mang một đặc tính riêng, từ độ cứng, khả năng ổn định cho đến cách phản ứng với môi trường.  
+                    </p>
+                </div>
+            </article>
+
+
+
+            <article class="blog-card" data-category="Go">
+                <a href="blog/Điều-gì-khiến-sàn-gỗ-bị-cong-vênh.html" class="blog-card-image">
+                    <img src="image/imagesblog1.3/Sàn-gỗ-cong-vênh.jpg" alt="Chude2">
+                </a>
+                <div class="blog-card-content">
+                    <a href="blog/Điều-gì-khiến-sàn-gỗ-bị-cong-vênh.html" class="blog-card-title">
+                        <h3>Điều gì khiến sàn gỗ bị cong vênh?</h3>
+                    </a>
+                    <p class="blog-card-desc">
+                       Cong vênh không chỉ đến từ chất lượng gỗ, mà còn liên quan trực tiếp đến cấu trúc vật liệu, độ ẩm và điều kiện sử dụng thực tế.
+                    </p>
+                </div>
+            </article>
+
+
+
+
+            <article class="blog-card" data-category="Go">
+                <a href="blog/So-sánh-gỗ-tự-nhiên(Veneer)-và-nhân-tạo(Laminate).html" class="blog-card-image">
+                    <img src="image/imagesblog1.3/Venner & Laminate.png" alt="Chude2">
+                </a>
+                <div class="blog-card-content">
+                    <a href="blog/So-sánh-gỗ-tự-nhiên(Veneer)-và-nhân-tạo(Laminate).html" class="blog-card-title">
+                        <h3>Sự khác biệt giữa veneer gỗ tự nhiên (Natural Wood Veneer) và Laminate là gì?</h3>
+                    </a>
+                    <p class="blog-card-desc">
+                        Hai loại bề mặt có thể mang vẻ ngoài tương tự, nhưng lại khác nhau đáng kể về cấu trúc vật liệu, cảm giác sử dụng và cách tồn tại theo thời gian.
+                    </p>
+                </div>
+            </article>
+
+
+
+
+            <article class="blog-card" data-category="Go">
+                <a href="blog/Vi-sao-engineered-wood-phu-hop-voi-khi-hau-nong-am.html" class="blog-card-image">
+                    <img src="image/imagesblog1.4/hero.jpg" alt="Vì sao engineered wood phù hợp với khí hậu nóng ẩm?">
+                </a>
+                <div class="blog-card-content">
+                    <a href="blog/" class="blog-card-title">
+                        <h3>Vì sao engineered wood phù hợp với khí hậu nóng ẩm?</h3>
+                    </a>
+                    <p class="blog-card-desc">
+                       Khả năng ổn định của một hệ sàn không chỉ phụ thuộc vào loại gỗ sử dụng, mà còn nằm ở cách vật liệu được cấu trúc để thích nghi với môi trường thực tế.
+                    </p>
+                </div>
+            </article>
+
+
+
+            <article class="blog-card" data-category="hieu-ung">
+                <a href="blog.html" class="blog-card-image">
+                    <img src="image/imagesblog1.5/Hero - Copy.jpg" alt="Chude2">
+                </a>
+                <div class="blog-card-content">
+                    <a href="blog/" class="blog-card-title">
+                        <h3>Hiệu ứng bề mặt ảnh hưởng đến cảm giác sàn gỗ như thế nào?</h3>
+                    </a>
+                    <p class="blog-card-desc">
+                        Cách xử lý bề mặt có thể tạo ra những trải nghiệm thị giác và xúc giác hoàn toàn khác nhau.
+                    </p>
+                </div>
+            </article>
+        </div>
+
+
+
+
+
+
+<div class="blog-page-wrapper" data-page="2" style="display: none;">
+            <article class="blog-card">
+                <a href="blog/Herringbone-90°.html" class="blog-card-image">
+                    <img src="image/imagesblog/herringbone90hero.jpg" alt="Forth Blog">
+                </a>
+                <div class="blog-card-content">
+                    <a href="blog/Herringbone-90°.html" class="blog-card-title">
+                        <h3>CASA Parquet: Herringbone 90° – Di sản "Xương cá" Italy trong kiến trúc đương đại</h3>
+                    </a>
+                    <p class="blog-card-desc">
+                        Khám phá sự tinh tế trong từng góc cạnh của kiểu lắp đặt xương cá (Herringbone) – biểu tượng của sự sang trọng vượt thời gian.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="blog-card">
+                <a href="blog/" class="blog-card-image">
+                    <img src="image/imagesblog/FSCherocard.jpg" alt="Chude2">
+                </a>
+                <div class="blog-card-content">
+                    <a href="blog.html" class="blog-card-title">
+                        <h3>Sàn gỗ & Sức khỏe: Giải mã các tiêu chuẩn phát thải Formaldehyde (E1, CARB P2, F★★★★)</h3>
+                    </a>
+                    <p class="blog-card-desc">
+                        Trong kiến trúc ngày nay, gỗ được sử dụng như một yếu tố cân bằng giữa các vật liệu cứng và lạnh, mang lại cảm giác ấm áp và chiều sâu tự nhiên cho không gian.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="blog-card">
+                <a href="blog/Son-goc-dau-(Oil Finish)-va-son-goc-nuoc-(Water-Based Finish)-khac-nhau-nhu-the-nao.html" class="blog-card-image">
+                    <img src="image/imagesblog1.5/Hero - Copy.jpg" alt="Chude2">
+                </a>
+                <div class="blog-card-content">
+                    <a href="blog/Son-goc-dau-(Oil Finish)-va-son-goc-nuoc-(Water-Based Finish)-khac-nhau-nhu-the-nao.html" class="blog-card-title">
+                        <h3>Sơn gốc dầu (Oil Finish) và sơn gốc nước (Water-Based Finish) khác nhau như thế nào?</h3>
+                    </a>
+                    <p class="blog-card-desc">
+                        Cùng được sử dụng để hoàn thiện bề mặt gỗ, nhưng sơn gốc dầu và sơn gốc nước tạo ra cảm giác vật liệu, hiệu ứng ánh sáng và cách bề mặt thay đổi theo thời gian rất khác nhau.
+                    </p>
+                </div>
+            </article>
+        </div>
+
+    </section>
+</div>
+
+    <div class="blog-pagination">
+        <button class="pag-btn prev">❮</button>
+        <span class="pag-number">1 / 2</span>
+        <button class="pag-btn next">❯</button>
+    </div>
+</main>
