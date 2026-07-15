@@ -6,7 +6,6 @@ export const searchDatabase = [
     { title: "Chứng chỉ", url: "chungchi.html", keywords: "chung chi certifications brochure catalogue" },
     { title: "Chính sách bảo hành", url: "baohanh.html", keywords: "chinh sach bao hanh" },
     { title: "Quy trình", url: "quytrinh.html", keywords: "quy trinh thi cong lap dat" },
-    { title: "Sứ mệnh", url: "sumenh.html", keywords: "su menh tam nhin" },
     { title: "Showroom", url: "showroom.html", keywords: "địa chỉ showroom" },
     { title: "Trung tâm trợ giúp", url: "help.html", keywords: "trung tam tro giup support help center faq" },
 
@@ -19,7 +18,7 @@ export const searchDatabase = [
     { title: "Parma", url: "../San_pham/Parma.html", keywords: "bo suu tap Parma" },
 
     
-    { title: "Gỗ", url: "wood.html", keywords: "cau truc cấu trúc go gỗ sàn gỗ" },
+    { title: "Gỗ", url: "wood.html", keywords: "cau truc cấu trúc gỗ sàn gỗ" },
     { title: "Cấu trúc", url: "Cau_truc.html", keywords: "cau truc cấu trúc" },
     { title: "Bề mặt", url: "surface.html", keywords: "bề mặt" },
     { title: "Hệ Xương cá", url: "xuongca.html", keywords: "xương cá" },
