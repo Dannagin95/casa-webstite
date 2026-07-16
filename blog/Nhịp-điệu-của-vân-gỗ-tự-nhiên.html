@@ -478,6 +478,41 @@
 </section>
 
 
+<style>
+    .blog-section-title {
+        /* Desktop mặc định 60px, có thể chỉnh qua biến --mt-dt */
+        margin-top: var(--mt-dt, 0px) !important; 
+    }
+
+    .firstblog-gallery-grid {
+        margin-bottom: var(--mb-dt, 60px) !important; 
+    }
+
+    /* Giao diện Tablet lớn */
+    @media (max-width: 1439px) {
+        .blog-section-title { margin-top: var(--mt-tl, 50px); }
+    }
+
+    /* Giao diện Tablet nhỏ (Số vàng của mày) */
+    @media (max-width: 819px) {
+        .blog-section-title { margin-top: var(--mt-ts, 40px); }
+    }
+
+    /* Mobile (Đây là chỗ mày muốn thu hẹp nhất) */
+    @media (max-width: 767px) {
+        .blog-section-title { 
+            /* Mặc định trên mobile tao để 30px, mày có thể vặn nhỏ hơn nữa */
+            margin-top: var(--mt-mb, 40px) !important;
+            margin-bottom: var(--mb-mb, 40px) !important;
+        }
+
+        .firstblog-gallery-grid {
+            margin-bottom: var(--mb-dt, 40px) !important; 
+    }
+
+    }
+</style>
+
 
 <main class="casa-container section-space">
     

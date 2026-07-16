@@ -1322,7 +1322,7 @@ main.filter-activated .casa-filter-trigger .filter-icon-svg circle {
     }
 
     .firstblog-gallery-grid {
-        padding: 20px 20px !important; 
+        padding: 20px 20px 0 !important; 
         scroll-padding-left: 20px !important; 
         gap: 9px !important; 
         scroll-snap-type: x mandatory !important; 
@@ -1798,7 +1798,7 @@ main.filter-activated .casa-filter-trigger .filter-icon-svg circle {
     .thirdblog-main-title { font-size: 36px; margin-bottom: 20px; }
 
     .thirdblog-gallery-grid {
-        padding: 20px 20px !important; 
+        padding: 20px 20px 0 !important; 
         scroll-padding-left: 20px !important; 
         gap: 9px !important; 
         scroll-snap-type: x mandatory !important; 
@@ -1833,7 +1833,7 @@ main.filter-activated .casa-filter-trigger .filter-icon-svg circle {
         width: 100%;
         display: flex;
         justify-content: center; 
-        margin: 20px 0 40px;
+        margin: 20px 0 20px;
     }
 
     .thirdblog-scroll-indicator {
@@ -2115,7 +2115,7 @@ main.filter-activated .casa-filter-trigger .filter-icon-svg circle {
         width: 100%;
         display: flex;
         justify-content: center; 
-        margin: 20px 0 40px;
+        margin: 20px 0 0;
     }
 
     .fourthblog-scroll-indicator {
@@ -2143,7 +2143,7 @@ main.filter-activated .casa-filter-trigger .filter-icon-svg circle {
         will-change: transform;
     }
     
-    .fourthblog-text-container { max-width: 100%; padding: 20px 20px; }
+    .fourthblog-text-container { max-width: 100%; padding: 40px 20px 20px; }
     .casa-container { padding: 0 20px !important; }
     .section-space { padding: 40px 0 !important; } /* Thông số vàng [cite: 2026-02-07] */
 }

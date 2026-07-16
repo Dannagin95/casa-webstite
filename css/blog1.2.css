@@ -464,7 +464,7 @@
     }
 
     .seventhblog-gallery-grid {
-        padding: 20px 20px !important; 
+        padding: 20px 20px 0 !important; 
         scroll-padding-left: 20px !important; 
         gap: 9px !important; 
         scroll-snap-type: x mandatory !important; 
@@ -887,7 +887,7 @@
     }
 
     .eighthblog-gallery-grid {
-        padding: 20px 20px !important; 
+        padding: 20px 20px 0 !important; 
         scroll-padding-left: 20px !important; 
         gap: 9px !important; 
         scroll-snap-type: x mandatory !important; 
@@ -978,7 +978,7 @@
         will-change: transform;
     }
     
-    .eighthblog-text-container { max-width: 100%; padding: 20px 20px; }
+    .eighthblog-text-container { max-width: 100%; padding: 40px 20px 20px; }
     .casa-container { padding: 0 20px !important; }
     .section-space { padding: 40px 0 !important; } /* Thông số vàng [cite: 2026-02-07] */
 }
@@ -1314,7 +1314,7 @@
     }
 
     .ninthblog-gallery-grid {
-        padding: 20px 20px !important; 
+        padding: 20px 20px 0 !important; 
         scroll-padding-left: 20px !important; 
         gap: 9px !important; 
         scroll-snap-type: x mandatory !important; 
@@ -1739,7 +1739,7 @@
     }
 
     .tenthblog-gallery-grid {
-        padding: 20px 20px !important; 
+        padding: 20px 20px 0 !important; 
         scroll-padding-left: 20px !important; 
         gap: 9px !important; 
         scroll-snap-type: x mandatory !important; 
@@ -1830,7 +1830,7 @@
         will-change: transform;
     }
     
-    .tenthblog-text-container { max-width: 100%; padding: 20px 20px; }
+    .tenthblog-text-container { max-width: 100%; padding: 40px 20px 20px; }
     .casa-container { padding: 0 20px !important; }
     .section-space { padding: 40px 0 !important; } /* Thông số vàng [cite: 2026-02-07] */
 }

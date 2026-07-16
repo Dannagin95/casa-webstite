@@ -279,7 +279,7 @@
     }
 
     .fifthblog-gallery-grid {
-        padding: 20px 20px !important; 
+        padding: 20px 20px 0 !important; 
         scroll-padding-left: 20px !important; 
         gap: 9px !important; 
         scroll-snap-type: x mandatory !important; 
@@ -706,7 +706,7 @@
     }
 
     .sixblog-gallery-grid {
-        padding: 20px 20px !important; 
+        padding: 20px 20px 0 !important; 
         scroll-padding-left: 20px !important; 
         gap: 9px !important; 
         scroll-snap-type: x mandatory !important; 
