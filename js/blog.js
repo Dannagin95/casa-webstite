@@ -175,12 +175,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 2. HÀM KIỂM TRA CARD CÓ THỰC SỰ HIỂN THỊ TRÊN MÀN HÌNH KHÔNG ---
     const isCardActuallyVisible = (card) => {
-        // Kiểm tra nếu bản thân card bị ẩn bằng inline style hoặc class ẩn
         if (card.style.display === 'none' || card.classList.contains('hidden') || card.classList.contains('is-hidden')) {
             return false;
         }
 
-        // KIỂM TRA THẰNG CHA (.blog-page-wrapper): Cực kỳ quan trọng để xử lý lỗi Phân Trang!
         const parentWrapper = card.closest('.blog-page-wrapper');
         if (parentWrapper) {
             const isParentHiddenInline = parentWrapper.style.display === 'none' || parentWrapper.getAttribute('style')?.includes('display: none');
@@ -190,7 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (computedParentStyle.display === 'none') return false;
         }
 
-        // Cuối cùng: Kiểm tra kích thước vật lý hiển thị thực tế
         return card.offsetWidth > 0 || card.offsetHeight > 0;
     };
 
@@ -198,24 +195,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateCardColumns = () => {
         if (blogCards.length === 0 || !blogGrid) return;
         
-        // Ngắt giám sát tạm thời để tránh lặp vô hạn khi JS sửa class trong DOM
         if (observer) observer.disconnect();
 
-        // CHỈ lấy những card đang THỰC SỰ HIỂN THỊ trên trang hiện tại
         const visibleCards = Array.from(blogCards).filter(card => isCardActuallyVisible(card));
 
-        // Clear toàn bộ class cột cũ của toàn bộ card
         blogCards.forEach(card => {
             card.classList.remove('casa-col-1', 'casa-col-2', 'casa-col-3');
         });
 
-        // Gán lại class cột dựa trên đúng thứ tự của các card đang thực sự hiển thị
         visibleCards.forEach((card, idx) => {
-            const colNum = (idx % 3) + 1; // 1, 2, hoặc 3
+            const colNum = (idx % 3) + 1;
             card.classList.add(`casa-col-${colNum}`);
         });
 
-        // Đo chiều cao thực tế của Card hiện tại và set CSS Variable cho Grid
         if (visibleCards.length > 0) {
             const firstCard = visibleCards[0];
             const cardHeight = firstCard.offsetHeight;
@@ -224,15 +216,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Kiểm tra xem việc dịch chuyển Domino có làm tăng thêm hàng mới hay không
         if (mainContainer) {
             const isFilterActive = mainContainer.classList.contains('filter-activated');
-            // Nếu tổng số card hiển thị chia hết cho 3 (3, 6, 9...), khi đẩy dạt sẽ phát sinh thêm 1 hàng mới tinh
             const needsExpansion = isFilterActive && (visibleCards.length % 3 === 0) && visibleCards.length > 0;
             blogGrid.classList.toggle('grid-expanded', needsExpansion);
         }
 
-        // Bật lại chế độ giám sát DOM
         if (observer) observer.observe(blogGrid, observerConfig);
     };
 
@@ -252,21 +241,28 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(blogGrid, observerConfig);
     }
 
-    // Chạy lần đầu tiên để thiết lập cột ban đầu
     updateCardColumns();
 
-    // --- 5. TOGGLE BỘ LỌC TÌM KIẾM ---
+    // --- 5. TOGGLE BỘ LỌC TÌM KIẾM (ĐÃ FIX DEAD-ZONE VÙNG ĐỎ) ---
     if (toggleBtn && mainContainer) {
+        const filterContent = document.querySelector('.casa-filter-vertical-content');
+
         toggleBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             mainContainer.classList.toggle('filter-activated');
-            updateCardColumns(); // Đồng bộ lại cột và khoảng đẩy FAQ ngay tức thì
+            updateCardColumns();
         });
 
-        mainContainer.addEventListener('click', (e) => {
-            if (mainContainer.classList.contains('filter-activated') && !e.target.closest('.casa-filter-wrapper')) {
-                mainContainer.classList.remove('filter-activated');
-                updateCardColumns();
+        document.addEventListener('click', (e) => {
+            if (mainContainer.classList.contains('filter-activated')) {
+                const isClickInsideBtn = toggleBtn.contains(e.target);
+                const isClickInsideContent = filterContent && filterContent.contains(e.target);
+
+                // Bấm ngoài nút VÀ ngoài box nội dung (kể cả vùng đỏ) -> TẮT NGAY
+                if (!isClickInsideBtn && !isClickInsideContent) {
+                    mainContainer.classList.remove('filter-activated');
+                    updateCardColumns();
+                }
             }
         });
     }
@@ -276,7 +272,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const select = field.querySelector("select");
         if (!select) return;
 
-        // Tránh tạo trùng lặp nếu code chạy lại nhiều lần
         if (field.querySelector(".casa-custom-select-trigger")) return;
 
         const trigger = document.createElement("div");

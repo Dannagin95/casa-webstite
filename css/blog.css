@@ -1032,7 +1032,133 @@ main.filter-activated .casa-filter-trigger .filter-icon-svg circle {
 
 
 
+/* ==========================================================================
+   CASA FILTER SYSTEM - BẢN MOBILE CHUẨN FLOATING OVERLAY (< 767px)
+   ========================================================================== */
 
+@media screen and (max-width: 767px) {
+    
+    /* 1. CHUYỂN GRID THÀNH FLEX DỌC & GIỮ LỀ 20PX CHUẨN */
+    .blog-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important; /* Khoảng cách giữa các bài viết */
+        padding: 0 20px !important; /* Lề 2 bên chuẩn 20px */
+        margin-bottom: 40px !important; /* Ngăn cách với section tiếp theo 40px */
+        position: relative !important;
+    }
+
+    /* 2. KHUNG NÚT LỌC (SÁT BÀI VIẾT ĐẦU TIÊN) */
+    .casa-filter-wrapper {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        margin-bottom: -10px !important; /* Triệt tiêu gap thừa, thu hẹp khoảng trống còn ~20px */
+        z-index: 1000 !important;
+    }
+
+    /* 3. NÚT BỘ LỌC GỌN GÀNG BÊN TRÁI */
+    .casa-filter-trigger {
+        display: inline-flex !important;
+        width: auto !important;
+        min-width: 120px !important;
+        max-width: 45% !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 10px 18px !important;
+        font-size: 13px !important;
+        background: #111111 !important;
+        border: 1px solid #111111 !important;
+        border-radius: 999px !important;
+        color: #ffffff !important;
+        margin: 0 !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    .casa-filter-trigger .filter-icon-svg path {
+        stroke: #ffffff !important;
+    }
+    .casa-filter-trigger .filter-icon-svg circle {
+        stroke: #ffffff !important;
+        fill: #111111 !important;
+    }
+
+    /* 4. BOX LỌC XỔ XUỐNG: NỔI TUYỆT ĐỐI (ĐÈ LÊN CARD, KHÔNG ĐẨY GRID) */
+    .casa-filter-vertical-content {
+        position: absolute !important;
+        top: calc(100% + 10px) !important;
+        left: 0 !important;
+        width: 100% !important; /* Khít 100% bề ngang card (ăn theo lề 20px của .blog-grid) */
+        background: #ffffff !important;
+        border-radius: 16px !important;
+        padding: 20px !important;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18) !important;
+        border: 1px solid #f0f0f0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+        box-sizing: border-box !important;
+        z-index: 9999 !important; /* Đảm bảo đè lên trên bài viết */
+
+        /* Hiệu ứng thả nhẹ không làm giật trang */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                    opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                    visibility 0.25s !important;
+    }
+
+    main.filter-activated .casa-filter-vertical-content {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+    }
+
+    /* 5. VÔ HIỆU HÓA HOÀN TOÀN HÀNH VI DỊCH CHUYỂN DOMINO DESKTOP TRÊN MOBILE */
+    main.filter-activated .blog-page-wrapper > .blog-card {
+        transform: none !important;
+    }
+
+    /* 6. CÁC Ô INPUT & DROPDOWN */
+    .casa-filter-field input {
+        font-size: 13px !important;
+        padding: 10px 0 !important;
+    }
+
+    .casa-custom-select-trigger {
+        font-size: 13px !important;
+        padding: 10px 0 !important;
+    }
+
+    .casa-custom-options-box {
+        max-height: 180px !important;
+        overflow-y: auto !important;
+        border-radius: 10px !important;
+    }
+
+    .casa-custom-option-item {
+        padding: 12px 16px !important;
+        font-size: 13px !important;
+    }
+
+    /* 7. NÚT TÌM KIẾM VIÊN THUỐC ĐỒNG BỘ */
+    .casa-filter-submit-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        background: #111111 !important;
+        color: #ffffff !important;
+        border: 1px solid #111111 !important;
+        border-radius: 999px !important;
+        padding: 12px 20px !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        cursor: pointer !important;
+        outline: none !important;
+    }
+}
 
 
 
