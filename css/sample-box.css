@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CASA PARQUET - SAMPLE BOX (CLEAN CSS - COMPLETE FINAL FIX)
+   CASA PARQUET - SAMPLE BOX (FINAL PERFECT FIX)
    ========================================================================== */
 
 /* 1. RESET NÚT KÍCH HOẠT TRÊN HEADER */
@@ -28,7 +28,8 @@
 /* 2. KHÓA CUỘN NỀN TRANG KHI MỞ MODAL */
 body.sample-open,
 body.modal-open {
-    overflow: hidden;
+    overflow: hidden !important;
+    touch-action: none; /* Ngăn cuộn trang nền trên mobile */
 }
 
 /* 3. LỚP PHỦ TỔNG THỂ & NỀN MỜ (OVERLAY + BACKDROP) */
@@ -38,8 +39,8 @@ body.modal-open {
     position: fixed;
     inset: 0 !important;
     z-index: 10000 !important;
-    background: rgba(0, 0, 0, 0.4); /* Nền tối mờ gán trực tiếp ở đây */
-    opacity: 0;                       /* Mặc định ẩn opacity */
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transition: opacity 0.4s ease, visibility 0.4s ease;
@@ -52,7 +53,7 @@ body.modal-open {
 .casa-modal-overlay.is-active,
 .casa-modal-overlay.is-open,
 .sample-modal-overlay.is-open {
-    opacity: 1;                       /* Hiện nền mờ mượt mà */
+    opacity: 1;
     visibility: visible;
     pointer-events: auto;
 }
@@ -76,7 +77,12 @@ body.modal-open {
     padding: 40px 32px;
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
     box-sizing: border-box;
+    
+    /* CHỐNG TRÀN CUỘN CHUỘT RA TRANG NỀN (SCROLL CHAINING) */
     overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+
     opacity: 0;
     transform: translateX(30px);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -127,15 +133,14 @@ body.modal-open {
 }
 
 .sample-panel .close-btn:hover,
-.casa-modal-container .casa-modal-close:hover {
+.casa-modal-container .casa-modal-close:hover,
+.casa-modal-close-btn:hover {
     opacity: 1;
 }
 
-
-
 /* HEADER MODAL GỌN SẠCH */
 .casa-modal-header {
-    margin-bottom: 40px; /* Khoảng cách vừa đẹp tới trường nhập liệu đầu tiên */
+    margin-bottom: 40px;
 }
 
 .casa-modal-header span {
@@ -164,9 +169,7 @@ body.modal-open {
     line-height: 1.5;
 }
 
-
-
-/* 8. FORM INPUT / SELECT / TEXTAREA (STYLE MINIMALISM BLOG) */
+/* 8. FORM INPUT / SELECT / TEXTAREA */
 .sample-panel input,
 .sample-panel select,
 .sample-panel textarea,
@@ -189,7 +192,6 @@ body.modal-open {
     font-family: inherit;
 }
 
-/* Hiệu ứng gạch dưới đổi màu khi active */
 .sample-panel input:focus,
 .sample-panel select:focus,
 .sample-panel textarea:focus,
@@ -199,7 +201,6 @@ body.modal-open {
     border-bottom-color: #000000;
 }
 
-/* Placeholder */
 .sample-panel input::placeholder,
 .sample-panel textarea::placeholder,
 .casa-modal-container input::placeholder,
@@ -208,9 +209,7 @@ body.modal-open {
     font-weight: 300;
 }
 
-/* ==========================================================================
-   CUSTOM DROPDOWN (CHUẨN STYLE BOX LỌC BLOG - SANG CHẢNH, MƯỢT MÀ)
-   ========================================================================== */
+/* CUSTOM DROPDOWN */
 .custom-select-wrapper {
     position: relative;
     margin-bottom: 20px;
@@ -223,7 +222,6 @@ body.modal-open {
     user-select: none;
 }
 
-/* Ô hiển thị chính (Đồng bộ với các ô input bên trên) */
 .casa-custom-select .select-selected {
     display: flex;
     align-items: center;
@@ -242,7 +240,6 @@ body.modal-open {
     border-bottom-color: #000000;
 }
 
-/* Mũi tên xoay mượt */
 .casa-custom-select .select-arrow {
     transition: transform 0.3s ease;
     color: #111111;
@@ -252,7 +249,6 @@ body.modal-open {
     transform: rotate(180deg);
 }
 
-/* Hộp danh sách xổ xuống (Y hệt Blog Filter: trắng tinh, bo góc, bóng đổ êm) */
 .casa-custom-select .select-options {
     position: absolute;
     top: calc(100% + 4px);
@@ -263,7 +259,11 @@ body.modal-open {
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     z-index: 999;
-    overflow: hidden;
+    
+    /* 🔥 FIX LỖI CUỘN LOẠN Ở ĐÂY 🔥 */
+    max-height: 240px;            /* Ép chiều cao tối đa (hiển thị tầm 5-6 dòng) */
+    overflow-y: auto;             /* Bật thanh cuộn riêng cho list gỗ */
+    overscroll-behavior: contain; /* Lăn hết list gỗ không bị lây lực cuộn ra form bên ngoài */
     
     opacity: 0;
     visibility: hidden;
@@ -271,12 +271,20 @@ body.modal-open {
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* (Tùy chọn) Làm đẹp thanh cuộn của dropdown cho luxury */
+.casa-custom-select .select-options::-webkit-scrollbar {
+    width: 4px;
+}
+.casa-custom-select .select-options::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border-radius: 4px;
+}
+
 .casa-custom-select.is-open .select-options {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
-
 
 .casa-custom-select .select-option {
     padding: 12px 16px;
@@ -296,10 +304,7 @@ body.modal-open {
     color: #000000;
 }
 
-
-
-
-/* 9. NÚT SUBMIT GỌN GÀNG GÓC TRÁI ("GỬI YÊU CẦU") */
+/* 9. NÚT SUBMIT GỌN GÀNG GÓC TRÁI */
 .sample-panel button[type="submit"],
 .casa-modal-container button[type="submit"],
 .casa-sample-submit-btn,
@@ -309,9 +314,9 @@ body.modal-open {
     align-items: center;
     justify-content: center;
     padding: 16px 35px !important;
-    background-color: var(--color-bg-dark);
+    background-color: var(--color-bg-dark, #111);
     color: #ffffff;
-    border: 2px solid var(--color-bg-dark) !important;
+    border: 2px solid var(--color-bg-dark, #111) !important;
     border-radius: 100px !important;
     cursor: pointer;
     font-size: 14px;
@@ -323,7 +328,7 @@ body.modal-open {
 
 .sample-panel button[type="submit"]:hover,
 .casa-modal-container button[type="submit"]:hover {
-    background: var(--white);
+    background: var(--white, #fff);
     color: #000000;  
 }
 
@@ -339,12 +344,6 @@ body.modal-open {
 
 /* 10. RESPONSIVE MOBILE (< 1024PX) */
 @media (max-width: 1024px) {
-    body.sample-open,
-    body.modal-open {
-        overflow: hidden;
-        touch-action: none;
-    }
-
     .sample-drawer,
     .casa-modal-overlay,
     .sample-modal-overlay {
@@ -363,10 +362,7 @@ body.modal-open {
     .casa-modal-container,
     .sample-modal-container {
         position: relative;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+        top: 0; right: 0; bottom: 0; left: 0;
         margin: 0;
         
         width: 100%; 
@@ -374,7 +370,6 @@ body.modal-open {
         max-width: none;
 
         height: auto;
-        height: fit-content;
         max-height: calc(100dvh - 16px);
 
         background: #ffffff;
@@ -391,6 +386,12 @@ body.modal-open {
         opacity: 0;
         transform: translateY(-10px);
         transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+        /* KHÓA CUỘN NỀN TRÊN MOBILE */
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
     }
 
     .sample-drawer.is-active .sample-panel,
@@ -403,7 +404,8 @@ body.modal-open {
     }
 
     .sample-panel .close-btn,
-    .casa-modal-container .casa-modal-close {
+    .casa-modal-container .casa-modal-close,
+    .casa-modal-close-btn {
         top: 16px;
         right: 16px;
     }

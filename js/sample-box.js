@@ -6,34 +6,34 @@
         const form = document.getElementById('casa-sample-form');
         const successMsg = document.getElementById('sample-success-msg');
 
-      
         const openModal = () => {
             if (modal) {
                 modal.classList.add('is-open');
-                document.body.style.overflow = 'hidden'; // Khóa cuộn trang
+                document.body.classList.add('modal-open', 'sample-open'); // Kích hoạt CSS khóa cuộn nền
+                document.body.style.overflow = 'hidden';
             }
         };
 
-      
         const closeModal = () => {
             if (modal) {
                 modal.classList.remove('is-open');
-                document.body.style.overflow = ''; // Mở lại cuộn trang
+                document.body.classList.remove('modal-open', 'sample-open'); // Gỡ class khóa cuộn
+                document.body.style.overflow = '';
             }
         };
 
-       
         document.addEventListener('click', (e) => {
-            // Click Nút Mở (Bắt theo ID #open-sample-modal hoặc Class .sample-box-icon)
-            const triggerBtn = e.target.closest('#open-sample-modal, .sample-box-icon');
+            // Click Nút Mở
+            const triggerBtn = e.target.closest('#open-sample-modal, .sample-box-icon, .open-sample-btn, .sample-trigger-btn, [data-sample-modal]');
             if (triggerBtn) {
                 e.preventDefault();
                 openModal();
                 return;
             }
 
-          
-            if (e.target.closest('#casa-modal-close')) {
+            // Click Nút Đóng
+            if (e.target.closest('#casa-modal-close, .casa-modal-close-btn, .casa-modal-close')) {
+                e.preventDefault();
                 closeModal();
                 return;
             }
@@ -44,14 +44,14 @@
             }
         });
 
-        // 2. BẤM PHÍM ESC ĐỂ ĐÓNG POPUP
+        // BẤM PHÍM ESC ĐỂ ĐÓNG POPUP
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal && modal.classList.contains('is-open')) {
                 closeModal();
             }
         });
 
-        // 3. XỬ LÝ SUBMIT FORM
+        // XỬ LÝ SUBMIT FORM
         if (form) {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
@@ -64,7 +64,6 @@
         }
     };
 
-    // Đảm bảo DOM đã tải xong mới khởi chạy
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initSampleBox);
     } else {
@@ -81,32 +80,34 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!customSelect) return;
 
     const selectedBtn = customSelect.querySelector(".select-selected");
+    const optionsContainer = customSelect.querySelector(".select-options"); // Bổ sung biến này
     const optionsList = customSelect.querySelectorAll(".select-option");
     const hiddenInput = document.getElementById("sample-wood-type");
     const selectedText = customSelect.querySelector(".selected-text");
 
-    // Click mở / đóng dropdown
     selectedBtn.addEventListener("click", function(e) {
         e.stopPropagation();
         customSelect.classList.toggle("is-open");
     });
 
-    // Chọn option trong danh sách
+    // 🔥 NGĂN CLICK/KÉO THANH CUỘN CỦA LIST LÀM ĐÓNG SẬP DROPDOWN 🔥
+    optionsContainer.addEventListener("click", function(e) {
+        e.stopPropagation();
+    });
+
+    // Chọn option trong danh sách (Giữ nguyên của mày)
     optionsList.forEach(option => {
         option.addEventListener("click", function(e) {
             e.stopPropagation();
             const value = this.getAttribute("data-value");
             const text = this.textContent;
 
-      
             selectedText.textContent = text;
             hiddenInput.value = value;
 
-            
             optionsList.forEach(opt => opt.classList.remove("is-selected"));
             this.classList.add("is-selected");
 
-           
             customSelect.classList.remove("is-open");
         });
     });
