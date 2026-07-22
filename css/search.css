@@ -10,7 +10,7 @@ body.search-open {
     z-index: 10000;
     visibility: hidden;
     pointer-events: none;
-    transition: visibility 0.4s; /* Đợi animation của panel xong mới ẩn hẳn */
+    transition: visibility 0.4s; 
 }
 
 .search-drawer.is-active {

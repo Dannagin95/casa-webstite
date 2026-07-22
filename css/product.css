@@ -155,12 +155,26 @@
     .product-main-text .description { font-size: 13px !important; line-height: 1.6 !important; margin-bottom: 40px !important; max-width: 100%; }
    
     .product-intro .btn-discover {
-        display: inline-block !important; width: fit-content !important; align-self: flex-start !important; 
-        background: #fff !important; color: #000 !important; padding: 14px 45px !important; border-radius: 50px !important; text-decoration: none; font-weight: 400; border: 1px solid transparent !important; transition: all 0.1s ease-in-out !important;
+        display: inline-block !important; 
+        width: fit-content !important; 
+        align-self: flex-start !important; 
+        background: #fff !important; 
+        color: #000 !important; 
+        padding: 14px 45px !important; 
+        border-radius: 50px !important; 
+        text-decoration: none; 
+        font-weight: 400; 
+        border: 1px solid transparent !important; 
+        transition: all 0.1s ease-in-out !important;
     }
 
     /* ĐÃ BỎ HOVER ZOOM CỦA MÀY THEO YÊU CẦU */
-    .product-intro .btn-discover:hover { background-color: #212120 !important; transition: none !important; box-shadow: inset 0 0 0 2px #ffffff !important; }
+    .product-intro .btn-discover:hover { 
+        background-color: #212120 !important; 
+        transition: none !important; 
+        box-shadow: inset 0 0 0 2px #ffffff !important; 
+    }
+    
     .product-intro .btn-discover:hover .text { transform: none; color:#ffffff; }
     .product-intro .btn-discover .line { display: none !important; }
 }

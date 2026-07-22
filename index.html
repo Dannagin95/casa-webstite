@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,6 +45,7 @@
     <link rel="stylesheet" href="./css/megamenu.css">
     <link rel="stylesheet" href="./css/mobileovlay.css">
     <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/sample-box.css">
     <link rel="stylesheet" href="./css/hero.css">
     <link rel="stylesheet" href="./css/duAn.css">
     <link rel="stylesheet" href="./css/product.css">
@@ -123,14 +123,14 @@
         <div class="nav-col phai">
             <div class="m-nav-group">
                 <div class="util-item sample-box-icon">
-                    <a href="/maintainance.html" class="util-item sample-box-icon" title="request-samples">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                         <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
-                         <path d="m3.3 7 8.7 5 8.7-5"></path>
-                         <path d="M12 22V12"></path>
-                    </svg>
-                </a>
-                </div>  
+                    <button type="button" id="open-sample-modal" class="util-item sample-box-icon" title="Yêu cầu gửi mẫu thử">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+                            <path d="m3.3 7 8.7 5 8.7-5"></path>
+                            <path d="M12 22V12"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
 
 
@@ -170,13 +170,13 @@
                 </div>
 
                 <div class="util-item sample-box-icon">
-                <a href="/maintainance.html" class="util-item sample-box-icon" title="request-samples">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                         <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
-                         <path d="m3.3 7 8.7 5 8.7-5"></path>
-                         <path d="M12 22V12"></path>
-                    </svg>
-                </a>
+                    <button type="button" id="open-sample-modal" class="util-item sample-box-icon" title="Yêu cầu gửi mẫu thử">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+                            <path d="m3.3 7 8.7 5 8.7-5"></path>
+                            <path d="M12 22V12"></path>
+                        </svg>
+                    </button>
                 </div>
             </nav>
         </div>
@@ -1087,9 +1087,76 @@
 
 
 
+
+<div id="casa-sample-modal" class="casa-modal-overlay">
+    <div class="casa-modal-container">
+        <button type="button" id="casa-modal-close" class="casa-modal-close-btn" aria-label="Close">&times;</button>
+        
+        <div class="casa-modal-header">
+            <span>SAMPLE BOX</span>
+            <h2>CASA Parquet - Sản phẩm mẫu</h2>
+            <p>Đăng ký nhận bộ sản phẩm mẫu sàn gỗ CASA Parquet.</p>
+        </div>
+
+        <form id="casa-sample-form" class="casa-sample-form">
+            <div class="form-group">
+                <input type="text" id="sample-name" name="name" placeholder="Họ và tên *" required>
+            </div>
+
+            <div class="form-group">
+                <input type="tel" id="sample-phone" name="phone" placeholder="Số điện thoại (Zalo) *" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="sample-address" name="address" placeholder="Địa chỉ nhận mẫu *" required>
+            </div>
+
+            <div class="form-group custom-select-wrapper">
+                <input type="hidden" id="sample-wood-type" name="wood_type" value="">
+                <div class="casa-custom-select" id="casaWoodSelect">
+                    <div class="select-selected">
+                        <span class="selected-text">Chọn loại gỗ / Tông màu quan tâm</span>
+                        <svg class="select-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="select-options">
+                        <div class="select-option" data-value="">Chọn loại gỗ / Tông màu quan tâm</div>
+                        <div class="select-option" data-value="Go-Soi-Oak">Gỗ Sồi (Oak) - Tông Sáng / Tự Nhiên</div>
+                        <div class="select-option" data-value="Go-Oc-Cho-Walnut">Gỗ Óc Chó (Walnut) - Tông Trầm Sang Trọng</div>
+                        <div class="select-option" data-value="San-Go-Xuong-Ca">Sàn Gỗ Xương Cá (Herringbone / Chevron)</div>
+                        <div class="select-option" data-value="Tu-Van-Theo-Thiet-Ke">Cần Tư Vấn Theo Bản Vẽ Thiết Kế</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <textarea id="sample-note" name="note" rows="2" placeholder="Ghi chú thêm (Diện tích dự án, thời gian thi công...)"></textarea>
+            </div>
+
+            <button type="submit" id="sample-submit-btn" class="casa-sample-submit-btn">
+                <span>Gửi yêu cầu nhận mẫu</span>
+            </button>
+        </form>
+
+        <div id="sample-success-msg" class="casa-sample-success" style="display: none;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="1.5">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="22 4 12 14.01 9 11.01" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3>Cảm ơn bạn đã đăng ký!</h3>
+            <p>Đội ngũ Casa Parquet sẽ liên hệ xác nhận và gửi Hộp Mẫu Thử đến địa chỉ của bạn trong vòng 24 - 48h.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
     <script src="js/index.js"></script>
     <script src="js/topbar.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/sample-box.js"></script>
     <script src="js/indexhero.js"></script>
     <script src="js/getnotice.js"></script>
     <script src="js/footerlang.js"></script>

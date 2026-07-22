@@ -243,12 +243,14 @@
 
 
 
-/* 1. Mặc định trên Desktop: Ẩn nhóm mobile mới này đi */
+
 .m-nav-group { 
     display: none; 
 }
 
-/* 2. Kích hoạt trên Tablet/Mobile (max-width: 1024px) */
+
+
+
 @media (max-width: 1024px) {
     /* Hiện nhóm mobile mới */
     .m-nav-group {
@@ -519,8 +521,3 @@
     .casa-sheet-item:last-child { border-bottom: none; }
     .account-link a { text-decoration: none !important; color: #000; font-size: 12px; font-weight: 600; }
 }
-
-
-
-
-
