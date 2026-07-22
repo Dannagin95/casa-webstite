@@ -11,6 +11,9 @@
                 modal.classList.add('is-open');
                 document.body.classList.add('modal-open', 'sample-open'); // Kích hoạt CSS khóa cuộn nền
                 document.body.style.overflow = 'hidden';
+
+                if (form) form.style.display = 'block'; 
+                if (successMsg) successMsg.style.display = 'none';
             }
         };
 
@@ -22,8 +25,26 @@
             }
         };
 
+
+        const nameInput = document.getElementById('sample-name');
+            const phoneInput = document.getElementById('sample-phone');
+
+            if (nameInput) {
+                nameInput.addEventListener('input', (e) => {
+                    e.target.value = e.target.value.replace(/[^\p{L}\s]/gu, '');
+                });
+            }
+
+            if (phoneInput) {
+                phoneInput.setAttribute('inputmode', 'numeric');
+                
+                phoneInput.addEventListener('input', (e) => {
+                    e.target.value = e.target.value.replace(/\D/g, '');
+                });
+            }
+
+
         document.addEventListener('click', (e) => {
-            // Click Nút Mở
             const triggerBtn = e.target.closest('#open-sample-modal, .sample-box-icon, .open-sample-btn, .sample-trigger-btn, [data-sample-modal]');
             if (triggerBtn) {
                 e.preventDefault();
@@ -31,27 +52,24 @@
                 return;
             }
 
-            // Click Nút Đóng
             if (e.target.closest('#casa-modal-close, .casa-modal-close-btn, .casa-modal-close')) {
                 e.preventDefault();
                 closeModal();
                 return;
             }
 
-            // Click ra ngoài vùng tối Overlay
             if (e.target === modal) {
                 closeModal();
             }
         });
 
-        // BẤM PHÍM ESC ĐỂ ĐÓNG POPUP
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal && modal.classList.contains('is-open')) {
                 closeModal();
             }
         });
 
-        // XỬ LÝ SUBMIT FORM
+  
         if (form) {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
