@@ -220,7 +220,7 @@
     gap: 20px; /* Tăng từ 13px lên 20px cho sang */
     width: 100%;
     max-width: 1120px; 
-    margin: 60px auto !important; 
+    margin: 20px auto 60px !important; 
 }
 
 .seventeenblog-gallery2-item {
@@ -263,7 +263,7 @@
 
 .cta-text {
     font-family: var(--font-body);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     font-style: italic;
 }
@@ -294,7 +294,7 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 10px;
-        padding-top: 40px;
+        padding-top: 20px;
     }
 }
 
@@ -546,6 +546,7 @@
         transition: transform 0.1s linear; 
         will-change: transform;
     }
+
     
     .seventeenblog-text-container { max-width: 100%; padding: 40px 20px 20px ; }
     .casa-container { padding: 0 20px !important; }
