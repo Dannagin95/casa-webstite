@@ -25,24 +25,34 @@
             }
         };
 
-
         const nameInput = document.getElementById('sample-name');
-            const phoneInput = document.getElementById('sample-phone');
+        const phoneInput = document.getElementById('sample-phone');
 
-            if (nameInput) {
-                nameInput.addEventListener('input', (e) => {
-                    e.target.value = e.target.value.replace(/[^\p{L}\s]/gu, '');
-                });
-            }
+        if (nameInput) {
+            nameInput.addEventListener('input', (e) => {
+                e.target.value = e.target.value.replace(/[^\p{L}\s]/gu, '');
+            });
+        }
 
-            if (phoneInput) {
-                phoneInput.setAttribute('inputmode', 'numeric');
-                
-                phoneInput.addEventListener('input', (e) => {
-                    e.target.value = e.target.value.replace(/\D/g, '');
-                });
-            }
+        if (phoneInput) {
+            phoneInput.setAttribute('inputmode', 'numeric');
+            
+            phoneInput.addEventListener('input', (e) => {
+                e.target.value = e.target.value.replace(/\D/g, '');
+            });
+        }
 
+        // ========================================================
+        // 🔥 CHẶN KÉO TRÔI CẢ CỤM MODAL TRÊN MOBILE (FIX TOUCHMOVE)
+        // ========================================================
+        if (modal) {
+            modal.addEventListener('touchmove', (e) => {
+                // Nếu người dùng vuốt trúng vùng nền tối ngoài (overlay) hoặc chính modal container mà không phải vùng nội dung đang cuộn, chặn đứng hành vi kéo trôi
+                if (e.target === modal || e.target.classList.contains('casa-modal-overlay') || e.target.classList.contains('sample-drawer')) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+        }
 
         document.addEventListener('click', (e) => {
             const triggerBtn = e.target.closest('#open-sample-modal, .sample-box-icon, .open-sample-btn, .sample-trigger-btn, [data-sample-modal]');
@@ -68,8 +78,7 @@
                 closeModal();
             }
         });
-
-  
+ 
         if (form) {
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
@@ -89,16 +98,12 @@
     }
 })();
 
-
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const customSelect = document.getElementById("casaWoodSelect");
     if (!customSelect) return;
 
     const selectedBtn = customSelect.querySelector(".select-selected");
-    const optionsContainer = customSelect.querySelector(".select-options"); // Bổ sung biến này
+    const optionsContainer = customSelect.querySelector(".select-options"); 
     const optionsList = customSelect.querySelectorAll(".select-option");
     const hiddenInput = document.getElementById("sample-wood-type");
     const selectedText = customSelect.querySelector(".selected-text");
@@ -113,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
         e.stopPropagation();
     });
 
-    // Chọn option trong danh sách (Giữ nguyên của mày)
+    // Chọn option trong danh sách
     optionsList.forEach(option => {
         option.addEventListener("click", function(e) {
             e.stopPropagation();

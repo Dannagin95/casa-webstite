@@ -145,7 +145,6 @@ body.search-open {
     }
 
     .search-panel {
-        /* 1. RESET TUYỆT ĐỐI - KHÔNG CHO DESKTOP LẤN SÂN */
         position: relative !important;
         top: 0 !important;
         right: 0 !important;
@@ -153,29 +152,28 @@ body.search-open {
         left: 0 !important;
         margin: 0 !important;
         
-        /* 2. CHẶN ĐỨNG VỆT TRẮNG: ÉP KÍCH THƯỚC CHUẨN MOBILE [cite: 2026-02-11] */
         width: 100% !important; 
-        min-width: 0 !important; /* Xóa bỏ cái 320px của desktop */
-        max-width: none !important; /* Xóa bỏ cái 780px của desktop */
+        min-width: 0 !important; 
+        max-width: none !important;
 
-        /* 3. CO GIÃN LINH HOẠT THEO TỪ KHÓA [cite: 2026-02-11] */
+   
         height: auto !important;
         height: fit-content !important;
-        max-height: calc(100dvh - 16px) !important; /* Lề trên 8px + dưới 8px */
+        max-height: calc(100dvh - 16px) !important; 
 
         background: #ffffff !important;
-        padding: 20px !important; /* Giữ thông số mày vừa sửa [cite: 2026-02-07] */
+        padding: 20px !important; 
         display: flex !important;
         flex-direction: column !important;
         border-radius: 0 !important;
         box-sizing: border-box !important;
         
-        /* 4. DIỆT TẬN GỐC BÓNG ĐỔ VÀ VIỀN LẠ */
-        box-shadow: none !important; /* Tạm thời tắt sạch bóng để xem còn vệt trắng không */
+    
+        box-shadow: none !important; 
         border: none !important;
         outline: none !important;
         
-        /* 5. HIỆU ỨNG MƯỢT */
+    
         opacity: 0;
         transform: translateY(-10px);
         transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
