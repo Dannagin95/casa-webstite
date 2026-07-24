@@ -482,3 +482,4 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCardColumns();
     });
 });
+

@@ -127,6 +127,13 @@ img {
     -webkit-user-drag: none;
 }
 
+.hero img,
+[class*="hero"] img,
+[id*="hero"] img {
+    pointer-events: none !important;
+    user-select: none !important;
+    -webkit-user-drag: none !important;
+}
 
 a, button, .clickable-area {
     pointer-events: auto !important;
