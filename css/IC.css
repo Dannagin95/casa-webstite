@@ -263,7 +263,7 @@
    ========================================================================== */
 @media (max-width: 1024px) {
     .world-projects-main {
-        padding: 30px 20px !important; /* Lề 2 bên chuẩn 20px */
+        padding: 50px 20px  !important; /* Lề 2 bên chuẩn 20px */
     }
     .bento-grid-container {
         grid-template-columns: 1fr !important;
@@ -276,6 +276,6 @@
     .bento-horizontal {
         grid-column: span 1 !important;
         grid-row: span 1 !important;
-        min-height: 340px !important;
+        min-height: 420px !important;
     }
 }
