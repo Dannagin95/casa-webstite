@@ -1,0 +1,281 @@
+.IChero {
+    height: 93vh; 
+    position: relative; 
+    display: flex;
+    align-items: flex-end; 
+    padding: 0; 
+    justify-content: center; 
+    width: 100%;
+}
+
+
+.IChero-bg { position: absolute; inset: 0; z-index: -1; }
+
+.IChero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2; /* Nằm trên ảnh */
+    pointer-events: none;
+}
+
+.IChero-bg img { width: 100%; height: 100%; object-fit: cover; }
+
+.IChero-text .sub-title {
+    font-size: 11px;
+    word-spacing: 5px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.IChero-text { 
+    color: #fff; 
+    width: 100%;
+    max-width: var(--container-max); 
+    margin: 0 auto; 
+    padding: 0 var(--side-padding); 
+    margin-bottom: 48px;
+    z-index: 2;
+    text-align: left; 
+}
+.IChero-text h1 { font-size: 60px; line-height: 1.1; margin-bottom: 40px; font-weight: 400; }
+.IChero-text p { letter-spacing: 0px; font-size: 15px; margin-bottom: 35px; }
+
+.mobile-only { 
+    display: none !important; 
+}
+
+
+.mobile-menu-btn, .mobile-overlay { display: none; }
+
+
+
+@media (max-width: 1024px) {
+    .IChero {
+        height: auto !important; 
+        min-height: 120vw !important; 
+        background-size: cover !important;
+        background-position: center !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; 
+        align-items: center;    
+        text-align: center;
+        padding: 0 20px;
+        padding-bottom: 20px !important; 
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        border-top: 1px solid #ffffff;
+    }
+
+    .IChero-text {
+        padding: 0 !important; 
+        margin: 0 auto !important;
+        max-width: 100% !important; 
+        width: 100% !important;
+        
+        /* Đảm bảo căn giữa tuyệt đối */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center !important;
+        margin-bottom: 20px !important; /* Khoảng cách so với đáy section 20px */
+    }
+
+    .IChero-text h1 {
+        font-size: 28px; 
+        font-weight: 500;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .IChero-text p {
+        font-size: 12px;
+        letter-spacing: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+/* TABLET: Dàn ngang ra tối ưu */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .IChero {
+        min-height: 56vw !important; /* Tỉ lệ ngang cho Tablet [cite: 2026-02-07] */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   WORLD PROJECTS - BENTO GRID LAYOUT
+   ========================================================================== */
+.world-projects-main {
+    max-width: 1650px;
+    margin: 0 auto;
+    padding: 80px var(--side-padding); 
+    box-sizing: border-box;
+}
+
+/* Thanh lọc danh mục (Filter Tabs) */
+.projects-filter-container {
+    margin-bottom: 36px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.projects-filter-container::-webkit-scrollbar {
+    display: none;
+}
+.projects-filter-list {
+    display: flex;
+    gap: 12px;
+    white-space: nowrap;
+}
+.filter-btn {
+    background: #f4f4f4;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #666666;
+}
+.filter-btn.active, 
+.filter-btn:hover {
+    background: #111111;
+    color: #ffffff;
+}
+
+/* Cấu trúc Bento Grid (Desktop 12 Cột) */
+.bento-grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 280px;
+    gap: 24px;
+}
+
+/* Thẻ dự án chung */
+.bento-item {
+    position: relative;
+    background: #eaeaea;
+    overflow: hidden;
+    border-radius: 0; /* Vuông vức theo ý mày */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.4s ease;
+}
+
+/* Phân chia kích thước các ô trong Bento */
+.bento-large {
+    grid-column: span 8;
+    grid-row: span 2;
+}
+.bento-vertical {
+    grid-column: span 4;
+    grid-row: span 2;
+}
+.bento-standard {
+    grid-column: span 4;
+    grid-row: span 1;
+}
+.bento-horizontal {
+    grid-column: span 8;
+    grid-row: span 1;
+}
+
+/* Hình ảnh dự án */
+.bento-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+.bento-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.bento-item:hover .bento-media img {
+    transform: scale(1.04);
+}
+
+/* Lớp phủ thông tin & nguồn */
+.bento-content {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+.bento-item:hover .bento-content {
+    opacity: 1;
+}
+
+.project-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.75;
+    font-weight: 500;
+}
+
+.project-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.project-source {
+    font-size: 12px;
+    opacity: 0.65;
+    font-weight: 300;
+}
+
+/* Trạng thái ẩn khi lọc danh mục */
+.bento-item.is-hidden {
+    display: none !important;
+}
+
+/* ==========================================================================
+   MOBILE & TABLET (< 1024PX): ÉP CỨNG LỀ 2 BÊN 20PX
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .world-projects-main {
+        padding: 30px 20px !important; /* Lề 2 bên chuẩn 20px */
+    }
+    .bento-grid-container {
+        grid-template-columns: 1fr !important;
+        grid-auto-rows: auto !important;
+        gap: 16px !important;
+    }
+    .bento-large,
+    .bento-vertical,
+    .bento-standard,
+    .bento-horizontal {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+        min-height: 340px !important;
+    }
+}
