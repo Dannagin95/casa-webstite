@@ -576,7 +576,7 @@
         position: relative !important;
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
-        gap: 30px !important;
+        gap: 40px !important;
         row-gap: 80px !important;
         padding-top: 80px !important; 
         
