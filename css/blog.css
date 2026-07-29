@@ -779,8 +779,8 @@
     align-items: center;
     gap: 12px;
     background: #ffffff !important;
-    border: 1px solid #b3b3b3 !important; /* Viền xám mảnh dẻ, tinh tế */
-    border-radius: 999px !important; /* Bo tròn hoàn toàn dạng viên thuốc */
+    border: 1px solid #b3b3b3 !important; 
+    border-radius: 999px !important; 
     padding: 14px 35px !important;
     font-family: "Be Vietnam Pro", sans-serif;
     font-size: 14px;
