@@ -523,6 +523,11 @@
         margin-top: var(--mt-dt)
     }
 
+    .eighteenblog-text-container {
+            margin-bottom: var(--mb-dt);
+        }
+
+
     /* Giao diện Tablet lớn */
     @media (max-width: 1439px) {
         .blog-section-title { margin-top: var(--mt-tl, 50px); }
@@ -548,6 +553,10 @@
         .eighteenblog-text-container {
             margin-bottom: var(--mb-mb, 0px) !important; 
             padding: var(--pd-mb,0px 20px);
+        }
+
+        a {
+            margin-bottom: var(--mb-mb, 20px) !important;
         }
     }
 </style>
@@ -683,7 +692,7 @@
 
 
     <section class="eighteenblog-content-row">
-            <div class="eighteenblog-text-container" style="--mb-mb: 20px;">
+            <div class="eighteenblog-text-container" style="--mb-mb: 20px; --mb-dt: -20px;">
                 <h4><strong>Loại bỏ bụi mịn thường xuyên</strong></h4>
                 <p style="line-height: 1.6; margin-bottom: 10px;">
                     •	Bụi và cát có thể hoạt động như những hạt mài nhỏ dưới đế giày hoặc đồ nội thất. Hút bụi hoặc quét nhẹ định kỳ sẽ giúp hạn chế những vết xước li ti tích lũy theo thời gian.
@@ -691,7 +700,7 @@
             </div>
         
 
-            <div class="eighteenblog-text-container" style="--pd-mb: 0px 20px; --mb-mb: 20px;">
+            <div class="eighteenblog-text-container" style="--pd-mb: 0px 20px; --mb-mb: 20px; --mb-dt: -20px;">
                 <h4><strong>Lau bằng khăn microfiber đã vắt khô</strong></h4>
                 <p style="line-height: 1.6; margin-bottom: 10px;">
                     •	Khăn microfiber giúp làm sạch bụi bẩn hiệu quả mà không để lượng nước dư thừa lưu lại trên bề mặt. Đây là phương pháp phù hợp cho việc vệ sinh định kỳ của <strong><a href="../blog/San-go-ky-thuat.html">sàn gỗ kỹ thuật</a></strong>.
@@ -732,7 +741,7 @@
                 </span>
             </a>
 
-            <a href="../Cau_truc.html" class="article-cta-box">
+            <a href="../Cau_truc.html" class="article-cta-box" style="--mb-mb: 40px;">
                 <svg class="cta-arrow" viewBox="0 0 24 24">
                     <path d="M5 12h14m-7-7 7 7-7 7"/>
                 </svg>

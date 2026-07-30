@@ -8,6 +8,7 @@ export const searchDatabase = [
     { title: "Quy trình", url: "quytrinh.html", keywords: "quy trinh thi cong lap dat" },
     { title: "Showroom", url: "showroom.html", keywords: "địa chỉ showroom" },
     { title: "Trung tâm trợ giúp", url: "help.html", keywords: "trung tam tro giup support help center faq" },
+    { title: "Cảm hứng & Góc nhìn" , url: "international-collection.html", keywords: "Cảm hứng Góc nhìn Dự án Quốc tế Sưu tầm Công trình"},
 
    
     { title: "Sản phẩm", url: "san-pham.html", keywords: "san pham sản phẩm" },
@@ -27,5 +28,5 @@ export const searchDatabase = [
 
     { title: "Liên hệ", url: "contactus.html", keywords: "liên hệ" },
     { title: "Dự Án", url: "Du_an.html", keywords: "dự án" },
-    { title: "Blog" , url: "blog.html", keywords: "bl blog b"}
+    { title: "Blog" , url: "blog.html", keywords: "bl blog b"},
 ];

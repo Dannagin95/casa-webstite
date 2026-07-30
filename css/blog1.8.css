@@ -579,6 +579,10 @@
         margin-bottom: 0px !important;
         padding: 0 !important; 
     }
+
+    .blog-text-quote {
+        font-size: 18px !important;
+    }
     
     .eighteenblog-gallery2-item {
         aspect-ratio: 1 / 1.8 !important; /* Giữ tỉ lệ cao gầy mày thích */
