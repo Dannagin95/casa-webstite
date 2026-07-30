@@ -11,12 +11,13 @@
     text-decoration: none !important;
 }
     
-    .has-sub, .no-sub, .sub-nav-item, .has-sub-level-3 {
+    .has-sub, .sub-nav-item, .has-sub-level-3{
         display: flex !important;
         justify-content: space-between !important;
         align-items: center;
-        padding: 8px 0 !important;
-        font-size: 21px !important;
+        padding: 5px 0 !important;
+        font-size: 22px !important;
+        font-weight: 600 !important;
         color: #000;
         cursor: pointer;
         width: 100%;
