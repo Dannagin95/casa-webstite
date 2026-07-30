@@ -4,7 +4,6 @@
     position: relative; 
     display: flex;
     align-items: flex-end; 
-    /* Thay đổi quan trọng: Bỏ padding cố định, dùng flex để căn giữa khối nội dung */
     padding: 0; 
     justify-content: center; 
     width: 100%;
@@ -16,8 +15,8 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.1); /* Độ sẫm 25%, mày có thể tăng lên 0.3 nếu muốn tối hơn */
-    z-index: 1;
+    background: rgba(0, 0, 0, 0.3); 
+    z-index: 2;
 }
 
 
@@ -167,6 +166,7 @@
     margin-bottom: 80px; 
 }
 
+
 .eighteenblog-text-container h2 {
     font-size: clamp(11px, 5vw, 26px);
     line-height: 1.4;
@@ -180,6 +180,31 @@
     margin-bottom: 20px;
     color: var(--black);
 }
+
+
+/* --- Media Elements --- */
+.eighteenblog-single-image {
+    width: 100vw; 
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    overflow: hidden;
+    background-color: var(--gray);
+}
+
+.eighteenblog-single-image img {
+    width: 100%; 
+    aspect-ratio: 16 / 8;
+    display: block; 
+    object-fit: cover; 
+    transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
 
 .eighteenblog-middletext {
     display: block;
@@ -395,6 +420,26 @@
         margin: 20px 0 -20px !important; 
         justify-content: center !important;
     }
+
+
+    .eighteenblog-single-image {
+        width: 100vw !important; /* Ép lấy toàn bộ chiều ngang màn hình */
+        position: relative !important;
+        left: 50% !important;
+        right: 50% !important;
+        margin-left: -50vw !important; /* Kéo nó về lại chính giữa từ tâm */
+        margin-right: -50vw !important;
+        
+        margin-top: 40px !important;
+        margin-bottom: 40px !important;
+        display: block !important;
+        overflow: hidden !important;
+    }
+
+    .eighteenblog-single-image img {
+        aspect-ratio: 16 / 9;
+    }
+
     
     .eighteenblog-gallery-item {
         /* GIỮ NGUYÊN HIỆN TRẠNG ĐỂ ĐỒNG BỘ SLIDE */
@@ -410,6 +455,25 @@
         margin: 40px 0 !important;
         margin-bottom: 20px !important;
     }
+
+
+    .eighteenblog-single-image {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        margin-left: -50vw;
+        margin-top: 80px;
+        margin-bottom: 60px;
+    }
+
+    .eighteenblog-single-image img {
+        width: 100% !important; 
+        height: auto !important; 
+        display: block !important;
+        object-fit: cover !important; 
+        aspect-ratio: 16 / 12 !important; 
+    }
+
 
     .eighteenblog-gallery2-item {
         width: calc((100vw - 40px - 15px) / 2) !important;
