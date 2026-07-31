@@ -122,7 +122,7 @@ body.search-open {
 
 
 
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
     body.search-open {
         overflow: hidden !important;
         touch-action: none;
@@ -185,6 +185,9 @@ body.search-open {
         font-weight: 700;
         transition: color 0.3s ease;
     }
+
+    
+
 
     .search-drawer.is-active .search-panel {
         opacity: 1;

@@ -1,10 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
 
 
 <url>
@@ -393,7 +389,7 @@
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/Nh%E1%BB%8Bp-%C4%91i%E1%BB%87u-c%E1%BB%A7a-v%C3%A2n-g%E1%BB%97-t%E1%BB%B1-nhi%C3%AAn.html</loc>
+  <loc>https://casa-parquet.vn/blog/Nh%E1%BB%8Bp-%C4%91i%E1%BB%87u-c%E1%BB%A7a-v%C3%A2n-g%E1%BB%97-t%E1%BB%B1-nhi%C3%AAn.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.51</priority>
 </url>
@@ -453,7 +449,7 @@
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/Riva.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/Riva.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.51</priority>
 </url>
@@ -628,17 +624,17 @@
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/Penthouse-District2.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/Penthouse-District2.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/Damsan-Tower.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/Damsan-Tower.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/Bao-tang.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/Bao-tang.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.51</priority>
 </url>
@@ -723,7 +719,7 @@
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/Riva.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/Riva.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
@@ -908,17 +904,17 @@
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/Du_an/Du_an/Penthouse-District2.html</loc>
+  <loc>https://casa-parquet.vn/blog/Du_an/Penthouse-District2.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/Du_an/Du_an/Damsan-Tower.html</loc>
+  <loc>https://casa-parquet.vn/blog/Du_an/Damsan-Tower.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/Du_an/Du_an/Bao-tang.html</loc>
+  <loc>https://casa-parquet.vn/blog/Du_an/Bao-tang.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
@@ -948,282 +944,282 @@
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/baohanh.html</loc>
+  <loc>https://casa-parquet.vn/blog/baohanh.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/san-pham.html</loc>
+  <loc>https://casa-parquet.vn/blog/san-pham.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/Du_an.html</loc>
+  <loc>https://casa-parquet.vn/blog/Du_an.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/Tai_lieu.html</loc>
+  <loc>https://casa-parquet.vn/blog/Tai_lieu.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/index.html</loc>
+  <loc>https://casa-parquet.vn/blog/index.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/lichsu.html</loc>
+  <loc>https://casa-parquet.vn/blog/lichsu.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/blog.html</loc>
+  <loc>https://casa-parquet.vn/blog/blog.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/quytrinh.html</loc>
+  <loc>https://casa-parquet.vn/blog/quytrinh.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/chungchi.html</loc>
+  <loc>https://casa-parquet.vn/blog/chungchi.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/contactus.html</loc>
+  <loc>https://casa-parquet.vn/blog/contactus.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/showroom.html</loc>
+  <loc>https://casa-parquet.vn/blog/showroom.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/San_pham/Riva.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/Riva.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/wood.html</loc>
+  <loc>https://casa-parquet.vn/blog/wood.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/Cau_truc.html</loc>
+  <loc>https://casa-parquet.vn/blog/Cau_truc.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/surface.html</loc>
+  <loc>https://casa-parquet.vn/blog/surface.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/xuongca.html</loc>
+  <loc>https://casa-parquet.vn/blog/xuongca.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/hethang.html</loc>
+  <loc>https://casa-parquet.vn/blog/hethang.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/sp2.html</loc>
+  <loc>https://casa-parquet.vn/blog/sp2.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/bst-2026.html</loc>
+  <loc>https://casa-parquet.vn/blog/bst-2026.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/tracuubaohanh.html</loc>
+  <loc>https://casa-parquet.vn/blog/tracuubaohanh.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/Du_an/Penthouse-District2.html</loc>
+  <loc>https://casa-parquet.vn/blog/Du_an/Penthouse-District2.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/Du_an/Damsan-Tower.html</loc>
+  <loc>https://casa-parquet.vn/blog/Du_an/Damsan-Tower.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/Du_an/Bao-tang.html</loc>
+  <loc>https://casa-parquet.vn/blog/Du_an/Bao-tang.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/alpi.html</loc>
+  <loc>https://casa-parquet.vn/blog/alpi.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/mastro.html</loc>
+  <loc>https://casa-parquet.vn/blog/mastro.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/la-dolce.html</loc>
+  <loc>https://casa-parquet.vn/blog/la-dolce.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/parma.html</loc>
+  <loc>https://casa-parquet.vn/blog/parma.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/blog/blog/Nh%E1%BB%8Bp-%C4%91i%E1%BB%87u-c%E1%BB%A7a-v%C3%A2n-g%E1%BB%97-t%E1%BB%B1-nhi%C3%AAn.html</loc>
+  <loc>https://casa-parquet.vn/blog/Nh%E1%BB%8Bp-%C4%91i%E1%BB%87u-c%E1%BB%A7a-v%C3%A2n-g%E1%BB%97-t%E1%BB%B1-nhi%C3%AAn.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/baohanh.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/baohanh.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/san-pham.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/san-pham.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/Du_an.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/Du_an.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/Tai_lieu.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/Tai_lieu.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/index.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/index.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/lichsu.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/lichsu.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/blog.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/blog.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/quytrinh.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/quytrinh.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/chungchi.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/chungchi.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/contactus.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/contactus.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/showroom.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/showroom.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/San_pham/Riva.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/Riva.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/wood.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/wood.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/Cau_truc.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/Cau_truc.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/surface.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/surface.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/xuongca.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/xuongca.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/hethang.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/hethang.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/sp2.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/sp2.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/bst-2026.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/bst-2026.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/tracuubaohanh.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/tracuubaohanh.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/Du_an/Penthouse-District2.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/Du_an/Penthouse-District2.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/Du_an/Damsan-Tower.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/Du_an/Damsan-Tower.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/Du_an/Bao-tang.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/Du_an/Bao-tang.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/alpi.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/alpi.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/mastro.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/mastro.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/la-dolce.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/la-dolce.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/parma.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/parma.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/San_pham/blog/Nh%E1%BB%8Bp-%C4%91i%E1%BB%87u-c%E1%BB%A7a-v%C3%A2n-g%E1%BB%97-t%E1%BB%B1-nhi%C3%AAn.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/blog/Nh%E1%BB%8Bp-%C4%91i%E1%BB%87u-c%E1%BB%A7a-v%C3%A2n-g%E1%BB%97-t%E1%BB%B1-nhi%C3%AAn.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
@@ -1328,17 +1324,17 @@
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/Du_an/Du_an/Penthouse-District2.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/Du_an/Penthouse-District2.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/Du_an/Du_an/Damsan-Tower.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/Du_an/Damsan-Tower.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/Du_an/Du_an/Bao-tang.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/Du_an/Bao-tang.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
@@ -1503,7 +1499,7 @@
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/San_pham/blog/blog/Nh%E1%BB%8Bp-%C4%91i%E1%BB%87u-c%E1%BB%A7a-v%C3%A2n-g%E1%BB%97-t%E1%BB%B1-nhi%C3%AAn.html</loc>
+  <loc>https://casa-parquet.vn/San_pham/blog/Nh%E1%BB%8Bp-%C4%91i%E1%BB%87u-c%E1%BB%A7a-v%C3%A2n-g%E1%BB%97-t%E1%BB%B1-nhi%C3%AAn.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
@@ -1563,7 +1559,7 @@
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/San_pham/San_pham/Riva.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/San_pham/Riva.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
@@ -1648,142 +1644,142 @@
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/baohanh.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/baohanh.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/san-pham.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/san-pham.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/Du_an.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/Du_an.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/Tai_lieu.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/Tai_lieu.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/index.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/index.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/lichsu.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/lichsu.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/blog.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/blog.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/quytrinh.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/quytrinh.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/chungchi.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/chungchi.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/contactus.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/contactus.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/showroom.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/showroom.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/San_pham/Riva.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/San_pham/Riva.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/wood.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/wood.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/Cau_truc.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/Cau_truc.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/surface.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/surface.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/xuongca.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/xuongca.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/hethang.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/hethang.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/sp2.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/sp2.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/bst-2026.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/bst-2026.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/tracuubaohanh.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/tracuubaohanh.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/Du_an/Penthouse-District2.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/Penthouse-District2.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/Du_an/Damsan-Tower.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/Damsan-Tower.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/Du_an/Bao-tang.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/Bao-tang.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/alpi.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/alpi.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/mastro.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/mastro.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/la-dolce.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/la-dolce.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/parma.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/parma.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/Du_an/blog/Nh%E1%BB%8Bp-%C4%91i%E1%BB%87u-c%E1%BB%A7a-v%C3%A2n-g%E1%BB%97-t%E1%BB%B1-nhi%C3%AAn.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/blog/Nh%E1%BB%8Bp-%C4%91i%E1%BB%87u-c%E1%BB%A7a-v%C3%A2n-g%E1%BB%97-t%E1%BB%B1-nhi%C3%AAn.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
@@ -1923,147 +1919,147 @@
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/Du_an/blog/blog/Nh%E1%BB%8Bp-%C4%91i%E1%BB%87u-c%E1%BB%A7a-v%C3%A2n-g%E1%BB%97-t%E1%BB%B1-nhi%C3%AAn.html</loc>
+  <loc>https://casa-parquet.vn/Du_an/blog/Nh%E1%BB%8Bp-%C4%91i%E1%BB%87u-c%E1%BB%A7a-v%C3%A2n-g%E1%BB%97-t%E1%BB%B1-nhi%C3%AAn.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.41</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/baohanh.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/baohanh.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/san-pham.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/san-pham.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/Du_an.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/Du_an.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/Tai_lieu.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/Tai_lieu.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/index.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/index.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/lichsu.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/lichsu.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/blog.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/blog.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/quytrinh.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/quytrinh.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/chungchi.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/chungchi.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/contactus.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/contactus.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/showroom.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/showroom.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/San_pham/Riva.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/Riva.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/wood.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/wood.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/Cau_truc.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/Cau_truc.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/surface.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/surface.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/xuongca.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/xuongca.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/hethang.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/hethang.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/sp2.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/sp2.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/bst-2026.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/bst-2026.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/tracuubaohanh.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/tracuubaohanh.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/Du_an/Penthouse-District2.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/Du_an/Penthouse-District2.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/Du_an/Damsan-Tower.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/Du_an/Damsan-Tower.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/Du_an/Bao-tang.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/Du_an/Bao-tang.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/alpi.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/alpi.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/mastro.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/mastro.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/la-dolce.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/la-dolce.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/parma.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/parma.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/San_pham/blog/Nh%E1%BB%8Bp-%C4%91i%E1%BB%87u-c%E1%BB%A7a-v%C3%A2n-g%E1%BB%97-t%E1%BB%B1-nhi%C3%AAn.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/blog/Nh%E1%BB%8Bp-%C4%91i%E1%BB%87u-c%E1%BB%A7a-v%C3%A2n-g%E1%BB%97-t%E1%BB%B1-nhi%C3%AAn.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
@@ -2168,17 +2164,17 @@
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/Du_an/Du_an/Penthouse-District2.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/Du_an/Penthouse-District2.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/Du_an/Du_an/Damsan-Tower.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/Du_an/Damsan-Tower.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/Du_an/Du_an/Bao-tang.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/Du_an/Bao-tang.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
@@ -2343,7 +2339,7 @@
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/San_pham/blog/blog/Nh%E1%BB%8Bp-%C4%91i%E1%BB%87u-c%E1%BB%A7a-v%C3%A2n-g%E1%BB%97-t%E1%BB%B1-nhi%C3%AAn.html</loc>
+  <loc>https://casa-parquet.vn/blog/San_pham/blog/Nh%E1%BB%8Bp-%C4%91i%E1%BB%87u-c%E1%BB%A7a-v%C3%A2n-g%E1%BB%97-t%E1%BB%B1-nhi%C3%AAn.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
@@ -2403,7 +2399,7 @@
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/Du_an/San_pham/San_pham/Riva.html</loc>
+  <loc>https://casa-parquet.vn/blog/Du_an/San_pham/Riva.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
@@ -2488,22 +2484,22 @@
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/Du_an/Du_an/baohanh.html</loc>
+  <loc>https://casa-parquet.vn/blog/Du_an/baohanh.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/Du_an/Du_an/san-pham.html</loc>
+  <loc>https://casa-parquet.vn/blog/Du_an/san-pham.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/Du_an/Du_an/Du_an.html</loc>
+  <loc>https://casa-parquet.vn/blog/Du_an/Du_an.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
 <url>
-  <loc>https://casa-parquet.vn/blog/Du_an/Du_an/Tai_lieu.html</loc>
+  <loc>https://casa-parquet.vn/blog/Du_an/Tai_lieu.html</loc>
   <lastmod>2026-05-26T05:21:34+00:00</lastmod>
   <priority>0.33</priority>
 </url>
