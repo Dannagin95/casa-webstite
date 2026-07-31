@@ -2,16 +2,16 @@
 
 export const searchDatabase = [
     
-    { title: "Lịch sử", url: "lichsu.html", keywords: "lich su" },
-    { title: "Chứng chỉ", url: "chungchi.html", keywords: "chung chi certifications brochure catalogue" },
-    { title: "Chính sách bảo hành", url: "baohanh.html", keywords: "chinh sach bao hanh" },
-    { title: "Quy trình", url: "quytrinh.html", keywords: "quy trinh thi cong lap dat" },
-    { title: "Showroom", url: "showroom.html", keywords: "địa chỉ showroom" },
-    { title: "Trung tâm trợ giúp", url: "help.html", keywords: "trung tam tro giup support help center faq" },
-    { title: "Cảm hứng & Góc nhìn" , url: "international-collection.html", keywords: "Cảm hứng Góc nhìn Dự án Quốc tế Sưu tầm Công trình"},
+    { title: "Lịch sử", url: "/lichsu.html", keywords: "lich su" },
+    { title: "Chứng chỉ", url: "/chungchi.html", keywords: "chung chi certifications brochure catalogue" },
+    { title: "Chính sách bảo hành", url: "/baohanh.html", keywords: "chinh sach bao hanh" },
+    { title: "Quy trình", url: "/quytrinh.html", keywords: "quy trinh thi cong lap dat" },
+    { title: "Showroom", url: "/showroom.html", keywords: "địa chỉ showroom" },
+    { title: "Trung tâm trợ giúp", url: "/help.html", keywords: "trung tam tro giup support help center faq" },
+    { title: "Cảm hứng & Góc nhìn" , url: "/international-collection.html", keywords: "Cảm hứng Góc nhìn Dự án Quốc tế Sưu tầm Công trình"},
 
    
-    { title: "Sản phẩm", url: "san-pham.html", keywords: "san pham sản phẩm" },
+    { title: "Sản phẩm", url: "/san-pham.html", keywords: "san pham sản phẩm" },
     { title: "Riva", url: "../San_pham/Riva.html", keywords: "bo suu tap Riva" },
     { title: "Alpi", url: "../San_pham/Alpi.html", keywords: "bo suu tap Alpi" },
     { title: "Mastro", url: "../San_pham/Mastro.html", keywords: "bo suu tap Mastro" },
@@ -19,14 +19,14 @@ export const searchDatabase = [
     { title: "Parma", url: "../San_pham/Parma.html", keywords: "bo suu tap Parma" },
 
     
-    { title: "Gỗ", url: "wood.html", keywords: "cau truc cấu trúc gỗ sàn gỗ" },
-    { title: "Cấu trúc", url: "Cau_truc.html", keywords: "cau truc cấu trúc" },
-    { title: "Bề mặt", url: "surface.html", keywords: "bề mặt" },
-    { title: "Hệ Xương cá", url: "xuongca.html", keywords: "xương cá" },
-    { title: "Hệ thẳng", url: "hethang.html", keywords: "sàn thẳng" },
+    { title: "Gỗ", url: "/wood.html", keywords: "cau truc cấu trúc gỗ sàn gỗ" },
+    { title: "Cấu trúc", url: "/Cau_truc.html", keywords: "cau truc cấu trúc" },
+    { title: "Bề mặt", url: "/surface.html", keywords: "bề mặt" },
+    { title: "Hệ Xương cá", url: "/xuongca.html", keywords: "xương cá" },
+    { title: "Hệ thẳng", url: "/hethang.html", keywords: "sàn thẳng" },
 
 
-    { title: "Liên hệ", url: "contactus.html", keywords: "liên hệ" },
-    { title: "Dự Án", url: "Du_an.html", keywords: "dự án" },
-    { title: "Blog" , url: "blog.html", keywords: "bl blog b"},
+    { title: "Liên hệ", url: "/contactus.html", keywords: "liên hệ" },
+    { title: "Dự Án", url: "/Du_an.html", keywords: "dự án" },
+    { title: "Blog" , url: "/blog.html", keywords: "bl blog b"},
 ];
