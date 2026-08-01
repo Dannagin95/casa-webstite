@@ -22,6 +22,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    if (overlay) {
+        const observer = new MutationObserver(() => {
+            const isVisible = window.getComputedStyle(overlay).display !== 'none';
+            if (isVisible) {
+                document.documentElement.classList.add('menu-open');
+                document.body.classList.add('menu-open');
+            } else {
+                document.documentElement.classList.remove('menu-open');
+                document.body.classList.remove('menu-open');
+            }
+        });
+        observer.observe(overlay, { attributes: true, attributeFilter: ['style', 'class'] });
+    }
+
     function switchLevel(targetId, title) {
         const currentActive = document.querySelector('.mobile-nav.active, .sub-menu-layer.active');
         const targetLayer = document.getElementById(targetId);
@@ -164,5 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         resetMenuState();
         document.body.classList.remove('sheet-open');
+        document.documentElement.classList.remove('menu-open');
+        document.body.classList.remove('menu-open');
     });
 });
