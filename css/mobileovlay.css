@@ -1,4 +1,4 @@
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
 
     .mobile-nav-viewport {
         flex: 1;
@@ -6,11 +6,9 @@
         overflow-x: hidden; 
     }
 
-
     .mobile-overlay a {
     text-decoration: none !important;
 }
-    
     .has-sub, .sub-nav-item, .has-sub-level-3{
         display: flex !important;
         justify-content: space-between !important;
@@ -24,9 +22,6 @@
     }
 
     
-    
-
-
 .sub-visual-layout {
     width: 100%;
     overflow: hidden;
@@ -123,3 +118,256 @@
         to { opacity: 1; transform: translateX(0); }
     }
 }
+
+
+
+
+
+/* ==========================================================================
+   2. TABLET NHỎ (min-width: 768px and max-width: 991px): Hiển thị 50% màn hình
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 991px) {
+    .mobile-overlay,
+    #mobileMenu {
+        width: 50% !important;
+        max-width: 50% !important;
+    }
+
+    .mobile-nav-viewport {
+        flex: 1;
+        position: relative;
+        overflow-x: hidden; 
+    }
+
+    .mobile-overlay a {
+        text-decoration: none !important;
+    }
+    
+    .has-sub, .sub-nav-item, .has-sub-level-3 {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center;
+        padding: 5px 0 !important;
+        font-size: 22px !important;
+        font-weight: 600 !important;
+        color: #000;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    .sub-visual-layout {
+        width: 100%;
+        overflow: hidden;
+        margin-top: 80px; 
+    }
+
+    .visual-card {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory; 
+        scroll-behavior: smooth;
+        gap: 7px;
+        padding: 0;
+        text-decoration: none !important;
+        scroll-snap-stop: always !important; 
+        -webkit-overflow-scrolling: touch !important;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none; 
+    }
+
+    .visual-card::-webkit-scrollbar {
+        display: none;
+    }
+
+    .visual-item {
+        flex: 0 0 50.1%;
+        position: relative;
+        scroll-snap-align: center;
+        aspect-ratio: 7/8;
+        min-width: 50.1%;
+    }
+
+    .visual-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-title {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: none;
+        letter-spacing: 1px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3); 
+    }
+
+    .has-sub i, .sub-nav-item i, .has-sub-level-3 i {
+        font-size: 14px;
+        color: #ccc;
+    }
+    
+    .sub-back-trigger {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        color: var(--color-text-muted);
+        font-weight: 400;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    
+    .mobile-nav, .sub-menu-layer {
+        display: none;
+        flex-direction: column;
+    }
+
+    .active {
+        display: flex !important;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .sub-group-title {
+        font-size: 11px;
+        color: #ccc;
+        text-transform: uppercase;
+        margin: 20px 0 10px 0;
+        letter-spacing: 1px;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateX(10px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+}
+
+
+/* ==========================================================================
+   3. TABLET LỚN (min-width: 992px and max-width: 1024px): Hiển thị 50% màn hình
+   ========================================================================== */
+@media (min-width: 992px) and (max-width: 1024px) {
+    .mobile-overlay,
+    #mobileMenu {
+        width: 50% !important;
+        max-width: 50% !important;
+    }
+
+    .mobile-nav-viewport {
+        flex: 1;
+        position: relative;
+        overflow-x: hidden; 
+    }
+
+    .mobile-overlay a {
+        text-decoration: none !important;
+    }
+    
+    .has-sub, .sub-nav-item, .has-sub-level-3 {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center;
+        padding: 5px 0 !important;
+        font-size: 22px !important;
+        font-weight: 600 !important;
+        color: #000;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    .sub-visual-layout {
+        width: 100%;
+        overflow: hidden;
+        margin-top: 80px; 
+    }
+
+    .visual-card {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory; 
+        scroll-behavior: smooth;
+        gap: 7px;
+        padding: 0;
+        text-decoration: none !important;
+        scroll-snap-stop: always !important; 
+        -webkit-overflow-scrolling: touch !important;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none; 
+    }
+
+    .visual-card::-webkit-scrollbar {
+        display: none;
+    }
+
+    .visual-item {
+        flex: 0 0 50.1%;
+        position: relative;
+        scroll-snap-align: center;
+        aspect-ratio: 7/8;
+        min-width: 50.1%;
+    }
+
+    .visual-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-title {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: none;
+        letter-spacing: 1px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3); 
+    }
+
+    .has-sub i, .sub-nav-item i, .has-sub-level-3 i {
+        font-size: 14px;
+        color: #ccc;
+    }
+    
+    .sub-back-trigger {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        color: var(--color-text-muted);
+        font-weight: 400;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    
+    .mobile-nav, .sub-menu-layer {
+        display: none;
+        flex-direction: column;
+    }
+
+    .active {
+        display: flex !important;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .sub-group-title {
+        font-size: 11px;
+        color: #ccc;
+        text-transform: uppercase;
+        margin: 20px 0 10px 0;
+        letter-spacing: 1px;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateX(10px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+}
+
+
+
+
