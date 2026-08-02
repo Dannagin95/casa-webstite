@@ -108,7 +108,7 @@ body.modal-open {
 .casa-modal-container .close,
 .casa-modal-close-btn {
     position: absolute;
-    top: 24px;
+    top: 34px;
     right: 24px;
     left: auto;
     bottom: auto;
@@ -412,7 +412,7 @@ body.modal-open {
 
     .casa-modal-container .casa-modal-close-btn {
         position: absolute;
-        top: 20px;
+        top: 26px;
         right: 20px;
         z-index: 10;
     }
