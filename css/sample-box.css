@@ -472,13 +472,13 @@ body.modal-open {
         position: relative !important;
         top: auto !important;
         left: auto !important;
-        right: 8px !important; /* Cách lề phải đúng 8px */
+        right: 16px !important; /* Cách lề phải đúng 8px */
         bottom: auto !important;
         transform: none !important;
         margin: 0 !important;
         width: calc(50% - 12px) !important;
         max-width: calc(50% - 12px) !important;
-        height: calc(100% - 16px) !important; /* Hở trên dưới mỗi đầu 8px */
+        height: calc(100% - 32px) !important; /* Hở trên dưới mỗi đầu 8px */
         max-height: none !important;
         background: #ffffff;
         padding: 40px 32px !important;
@@ -532,6 +532,8 @@ body.modal-open {
     }
 }
 
+
+
 /* ==========================================================================
    3. TABLET LỚN (992px - 1024px) - 50% WIDTH, NẰM PHẢI, CÓ LỀ 8PX ĐỀU
    ========================================================================== */
@@ -561,13 +563,13 @@ body.modal-open {
         position: relative !important;
         top: auto !important;
         left: auto !important;
-        right: 8px !important; /* Cách lề phải đúng 8px */
+        right: 16px !important; /* Cách lề phải đúng 8px */
         bottom: auto !important;
         transform: none !important;
         margin: 0 !important;
         width: calc(50% - 12px) !important;
         max-width: calc(50% - 12px) !important;
-        height: calc(100% - 16px) !important; /* Hở trên dưới mỗi đầu 8px */
+        height: calc(100% - 32px) !important; /* Hở trên dưới mỗi đầu 8px */
         max-height: none !important;
         background: #ffffff;
         padding: 44px 36px !important;

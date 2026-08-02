@@ -303,30 +303,39 @@
         top: 8px; left: 8px; right: 8px; bottom: 8px;
         background: #fff;
         z-index: 9999;
-        display: none; /* JS bật cái này lên đầu tiên */
+        display: none; 
         flex-direction: column;
         padding: 25px;
-        
-        /* Trạng thái ẩn */
         opacity: 0;
-        transform: translateY(10px); /* Hơi lệch xuống một chút để lúc hiện nó bay lên */
+        transform: translateY(10px); 
         box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0);
-
-        /* TÁCH BIỆT THỜI GIAN:
-           - box-shadow: 0s (Hiện ngay lập tức)
-           - opacity và transform: 0.3s (Hiện mượt mà) */
         transition: 
             box-shadow 0s linear, 
             opacity 0.3s ease, 
             transform 0.3s ease;
     }
 
+    /* Ghi đè riêng cho Tablet (từ 768px đến 1024px): Né 4 cạnh 16px, nằm bên phải, rộng 50% */
+    @media (min-width: 768px) {
+        .mobile-overlay {
+            top: 16px !important;
+            right: auto !important;
+            bottom: 16px !important;
+            left: 16px !important;
+            width: calc(50% - 16px) !important;
+            max-width: calc(50% - 16px) !important;
+            height: calc(100% - 32px) !important;
+            transform: none !important;
+        }
+        .mobile-overlay.active {
+            transform: none !important;
+        }
+    }
+
     .mobile-overlay.active {
         display: flex;
         opacity: 1;
-        transform: translateY(0); /* Bay về vị trí chuẩn */
-        
-        /* Shadow tối sầm lại ngay lập tức */
+        transform: translateY(0);
         box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0.5) !important;
     }
 
@@ -366,8 +375,8 @@
     /* PHẦN ĐÁY BOX */
     /* PHẦN ĐÁY MENU MOBILE */
 
-.mobile-footer {
-        /* Bỏ padding ngang ở đây để line có thể chạy full lề [cite: 2025-12-29] */
+    .mobile-footer {
+        /* Bỏ padding ngang ở đây để line có thể chạy full lề */
         padding: 0 0 0px 0 !important; 
         margin-top: auto;
         width: 100%;
@@ -383,43 +392,43 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        /* Chỉ đưa padding 20px vào phần nội dung chữ/icon [cite: 2026-02-07] */
+        /* Chỉ đưa padding 20px vào phần nội dung chữ/icon */
         padding: 0 20px; 
     }
 
-.casa-flag-box {
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 1px solid #eee;
-    display: flex; /* Căn giữa cái hình bên trong */
-    align-items: center;
-    justify-content: center;
-}
+    .casa-flag-box {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid #eee;
+        display: flex; /* Căn giữa cái hình bên trong */
+        align-items: center;
+        justify-content: center;
+    }
 
-.casa-current-flag {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Quan trọng: để nó cắt hình chữ nhật thành vuông */
-    aspect-ratio: 1/1; /* Ép tỉ lệ vuông [cite: 2025-12-29] */
-}
+    .casa-current-flag {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Quan trọng: để nó cắt hình chữ nhật thành vuông */
+        aspect-ratio: 1/1; /* Ép tỉ lệ vuông */
+    }
 
-.casa-current-text {
-    font-size: 12px;
-    font-weight: 600;
-}
+    .casa-current-text {
+        font-size: 12px;
+        font-weight: 600;
+    }
 
-/* Lá cờ trong bảng Bottom Sheet */
-.casa-sheet-item img {
+    /* Lá cờ trong bảng Bottom Sheet */
+    .casa-sheet-item img {
         width: 22px; height: 22px; border-radius: 50%;
-        object-fit: cover; aspect-ratio: 1/1; /* Tròn xoe [cite: 2025-12-29] */
+        object-fit: cover; aspect-ratio: 1/1; /* Tròn xoe */
     }
     
     .casa-lang-trigger { display: flex; align-items: center; gap: 8px; cursor: pointer; }
     .casa-arrow { transition: transform 0.3s ease; }
 
-    /* Khi mở bảng: Xoay mũi tên [cite: 2025-12-29] */
+    /* Khi mở bảng: Xoay mũi tên */
     body.sheet-open .casa-arrow { transform: rotate(180deg); }
 
     /* 2. Lớp phủ đen */
@@ -427,7 +436,7 @@
         position: fixed; top: 0; left: 0; width: 100%; height: 100%;
         background: rgba(0,0,0,0.5); z-index: 2000;
         opacity: 0; visibility: hidden;
-        /* Không để delay ở đây để nó hiện ngay [cite: 2026-02-11] */
+        /* Không để delay ở đây để nó hiện ngay */
         transition: opacity 0.4s ease, visibility 0.4s;
     }
 
@@ -438,14 +447,14 @@
         padding: 30px 20px 50px 20px; z-index: 2001;
         transform: translateY(110%); /* Giấu kỹ bên dưới */
         visibility: hidden;
-        /* Thêm delay 0.1s cho transform [cite: 2026-02-11] */
+        /* Thêm delay 0.1s cho transform */
         transition: transform 0.6s cubic-bezier(0.32, 1, 0.23, 1) 0.1s, visibility 0.6s 0.1s;
     }
 
 
     .casa-sheet-header {
         display: flex;
-        justify-content: center; /* Ép chữ Ngôn ngữ vào giữa [cite: 2025-12-29] */
+        justify-content: center; /* Ép chữ Ngôn ngữ vào giữa */
         width: 100%;
         margin-bottom: 20px;
     }
@@ -453,7 +462,7 @@
     .casa-sheet-header h3 {
         font-size: 17px; 
         font-weight: 600; 
-        margin: 0; /* Xóa margin mặc định có thể gây lệch [cite: 2025-12-29] */
+        margin: 0; /* Xóa margin mặc định có thể gây lệch */
         color: #000000;
         text-align: center;
     }
@@ -461,8 +470,8 @@
     .casa-sheet-line {
         height: 0.5px; 
         background: #eee; 
-        width: 100%; /* Line chạy full chiều ngang sheet [cite: 2025-12-29] */
-        margin: 0 auto 10px auto; /* Căn giữa line [cite: 2025-12-29] */
+        width: 100%; /* Line chạy full chiều ngang sheet */
+        margin: 0 auto 10px auto; /* Căn giữa line */
     }
     .casa-sheet-list {
         list-style: none; padding: 0; margin: 0;
@@ -471,8 +480,8 @@
 
 
 
-    /* 4. Nút X tròn - Ẩn mặc định [cite: 2025-12-29] */
-   .casa-sheet-close {
+    /* 4. Nút X tròn - Ẩn mặc định */
+    .casa-sheet-close {
         position: absolute; top: -65px; left: 50%; transform: translateX(-50%);
         width: 44px; height: 44px; background: #fff; border-radius: 50%;
         display: none; align-items: center; justify-content: center;
@@ -493,16 +502,16 @@
         transition: transform 0.4s ease, visibility 0.4s; /* Đóng nhanh hơn cho thoát */
     }
 
-   @keyframes fadeInXWithDelay {
+    @keyframes fadeInXWithDelay {
         from { opacity: 0; transform: translate(-50%, 20px); }
         to { opacity: 1; transform: translate(-50%, 0); }
     }
 
-    /* Style items [cite: 2026-02-11] */
+    /* Style items */
     .casa-sheet-item {
         display: flex; 
         align-items: center; 
-        justify-content: center; /* Ép nội dung ngôn ngữ vào giữa [cite: 2025-12-29] */
+        justify-content: center; /* Ép nội dung ngôn ngữ vào giữa */
         gap: 12px;
         padding: 18px 0;
         border-bottom: none !important;
@@ -515,7 +524,7 @@
     }
 
     .casa-sheet-item.active span {
-        font-weight: 700; /* Đậm lên khi được chọn [cite: 2025-12-29] */
+        font-weight: 700; /* Đậm lên khi được chọn */
         color: #000;
     }
     .casa-sheet-item:last-child { border-bottom: none; }
