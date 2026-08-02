@@ -140,7 +140,7 @@ body.modal-open {
 
 /* HEADER MODAL GỌN SẠCH */
 .casa-modal-header {
-    margin-bottom: 40px;
+    margin-bottom: 20px !important;
 }
 
 .casa-modal-header span {
