@@ -342,71 +342,281 @@ body.modal-open {
     background: #e0e0e0;
 }
 
-/* 10. RESPONSIVE MOBILE (< 1024PX) */
-@media (max-width: 1024px) {
-    .sample-drawer,
-    .casa-modal-overlay,
-    .sample-modal-overlay {
-        position: fixed;
-        inset: 0;
-        padding: 8px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        box-sizing: border-box;
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   1. MOBILE (< 768px) - GIỮ NGUYÊN CHUẨN 8PX ĐÃ OKE
+   ========================================================================== */
+@media (max-width: 767px) {
+    .casa-modal-overlay {
+        position: fixed !important;
+        top: 8px !important;
+        right: 8px !important;
+        bottom: 8px !important;
+        left: 8px !important;
+        inset: 8px !important;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex !important;
+        align-items: stretch !important;
+        justify-content: stretch !important;
         z-index: 100000;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
     }
 
-    .sample-panel,
-    .casa-modal-container,
-    .sample-modal-container {
-        position: relative;
-        top: 0; right: 0; bottom: 0; left: 0;
-        margin: 0;
-        
-        width: 100%; 
-        min-width: 0;
-        max-width: none;
+    .casa-modal-overlay.is-active,
+    .casa-modal-overlay.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
 
-        height: auto;
-        max-height: calc(100dvh - 16px);
-
+    .casa-modal-container {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        margin: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        max-height: none !important;
         background: #ffffff;
-        padding: 24px 20px;
+        padding: 32px 20px 40px 20px !important;
         display: flex;
         flex-direction: column;
-        border-radius: 0;
+        border-radius: 0 !important;
         box-sizing: border-box;
         
-        box-shadow: none;
-        border: none;
-        outline: none;
-        
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-
-        /* KHÓA CUỘN NỀN TRÊN MOBILE */
         overflow-y: auto;
-        overscroll-behavior: contain;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
         -webkit-overflow-scrolling: touch;
-        touch-action: pan-y;
+        overscroll-behavior: contain;
     }
 
-    .sample-drawer.is-active .sample-panel,
-    .sample-drawer.is-open .sample-panel,
-    .sample-drawer.active .sample-panel,
-    .casa-modal-overlay.is-active .casa-modal-container,
-    .casa-modal-overlay.is-open .casa-modal-container {
+    .casa-modal-container::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .casa-modal-container .casa-modal-close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 10;
+    }
+
+    .casa-modal-header {
+        margin-bottom: 24px;
+    }
+
+    .casa-modal-header span {
+        margin-bottom: 24px !important;
+    }
+
+    .sample-panel input,
+    .sample-panel select,
+    .sample-panel textarea,
+    .casa-modal-container input,
+    .casa-modal-container select,
+    .casa-modal-container textarea,
+    .custom-select-wrapper {
+        margin-bottom: 16px;
+    }
+
+    .casa-sample-submit-btn,
+    .sample-submit-btn {
+        margin-top: 8px;
+        margin-bottom: 12px;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ==========================================================================
+   2. TABLET NHỎ (768px - 991px) - 50% WIDTH, NẰM PHẢI, CÓ LỀ 8PX ĐỀU
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 991px) {
+    .casa-modal-overlay {
+        position: fixed !important;
+        inset: 0 !important;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+        z-index: 100000;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .casa-modal-overlay.is-active,
+    .casa-modal-overlay.is-open {
         opacity: 1;
-        transform: translateY(0);
+        visibility: visible;
+        pointer-events: auto;
     }
 
-    .sample-panel .close-btn,
-    .casa-modal-container .casa-modal-close,
-    .casa-modal-close-btn {
-        top: 16px;
-        right: 16px;
+    .casa-modal-container {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: 8px !important; /* Cách lề phải đúng 8px */
+        bottom: auto !important;
+        transform: none !important;
+        margin: 0 !important;
+        width: calc(50% - 12px) !important;
+        max-width: calc(50% - 12px) !important;
+        height: calc(100% - 16px) !important; /* Hở trên dưới mỗi đầu 8px */
+        max-height: none !important;
+        background: #ffffff;
+        padding: 40px 32px !important;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0 !important;
+        box-sizing: border-box;
+        
+        overflow-y: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+
+    .casa-modal-container::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .casa-modal-container .casa-modal-close-btn {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        z-index: 10;
+    }
+
+    .casa-modal-header {
+        margin-bottom: 30px;
+    }
+
+    .casa-modal-header span {
+        margin-bottom: 30px !important;
+    }
+
+    .sample-panel input,
+    .sample-panel select,
+    .sample-panel textarea,
+    .casa-modal-container input,
+    .casa-modal-container select,
+    .casa-modal-container textarea,
+    .custom-select-wrapper {
+        margin-bottom: 18px;
+    }
+
+    .casa-sample-submit-btn,
+    .sample-submit-btn {
+        margin-top: 10px;
+        margin-bottom: 0;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ==========================================================================
+   3. TABLET LỚN (992px - 1024px) - 50% WIDTH, NẰM PHẢI, CÓ LỀ 8PX ĐỀU
+   ========================================================================== */
+@media (min-width: 992px) and (max-width: 1024px) {
+    .casa-modal-overlay {
+        position: fixed !important;
+        inset: 0 !important;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+        z-index: 100000;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .casa-modal-overlay.is-active,
+    .casa-modal-overlay.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .casa-modal-container {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: 8px !important; /* Cách lề phải đúng 8px */
+        bottom: auto !important;
+        transform: none !important;
+        margin: 0 !important;
+        width: calc(50% - 12px) !important;
+        max-width: calc(50% - 12px) !important;
+        height: calc(100% - 16px) !important; /* Hở trên dưới mỗi đầu 8px */
+        max-height: none !important;
+        background: #ffffff;
+        padding: 44px 36px !important;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0 !important;
+        box-sizing: border-box;
+        
+        overflow-y: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+
+    .casa-modal-container::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .casa-modal-container .casa-modal-close-btn {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        z-index: 10;
+    }
+
+    .casa-modal-header {
+        margin-bottom: 36px;
+    }
+
+    .casa-modal-header span {
+        margin-bottom: 36px !important;
+    }
+
+    .sample-panel input,
+    .sample-panel select,
+    .sample-panel textarea,
+    .casa-modal-container input,
+    .casa-modal-container select,
+    .casa-modal-container textarea,
+    .custom-select-wrapper {
+        margin-bottom: 20px;
+    }
+
+    .casa-sample-submit-btn,
+    .sample-submit-btn {
+        margin-top: 12px;
+        margin-bottom: 0;
+        width: 100%;
+        justify-content: center;
     }
 }
