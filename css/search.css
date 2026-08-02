@@ -45,7 +45,7 @@ body.search-open {
 
     background: #fff;
     z-index: 10001;
-    padding: 40px;
+    padding: 30px 40px 40px 40px;
     box-shadow: -10px 0 30px rgba(0,0,0,0.05);
 
     /* Hiệu ứng Fade + Slide mượt */
@@ -78,14 +78,15 @@ body.search-open {
 
 #search-input::placeholder {
     color: #858585;
-    font-size: 25px;
+    font-family: var(--special-font);
+    font-size: 33px;
     font-weight: 700;
     transition: color 0.3s ease;
 }
 
 .close-x { background: none; border: none; cursor: pointer; padding: 5px; }
 .search-list { list-style: none; padding: 0; }
-.search-list li { margin-bottom: 15px; }
+.search-list li { margin-bottom: 10px; }
 .search-list li a .highlight {
     color: #FFD700;
     font-weight: bold;
@@ -95,7 +96,7 @@ body.search-open {
     text-decoration: none; 
     text-transform: none;
     color: #000000; 
-    font-size: 22px; 
+    font-size: 25px; 
     font-weight: 500; 
     transition: 0.3s; 
     display: inline-block; 
@@ -145,6 +146,7 @@ body.search-open {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    transform: translateY(4px) !important;
 }
 
 /* Đảm bảo input co giãn linh hoạt chiếm khoảng trống còn lại */
@@ -189,6 +191,7 @@ body.search-open {
         align-items: center !important;
         justify-content: center !important;
         flex-shrink: 0 !important;
+        transform: translateY(4px) !important;
     }
 
 
@@ -227,7 +230,7 @@ body.search-open {
         max-height: calc(100dvh - 16px) !important; 
 
         background: #ffffff !important;
-        padding: 20px !important; 
+        padding: 8px 20px 20px 20px !important;
         display: flex !important;
         flex-direction: column !important;
         border-radius: 0 !important;
@@ -248,7 +251,8 @@ body.search-open {
 
     #search-input::placeholder {
         color: #858585;
-        font-size: 15px;
+        font-family: 'Be Vietnam Pro';
+        font-size: 18px;
         font-weight: 700;
         transition: color 0.3s ease;
     }
@@ -262,7 +266,10 @@ body.search-open {
     }
 
     .search-list {
-        margin: 0 !important;
+        margin-top: -18px !important; 
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+        margin-left: 0 !important;
         padding: 0 !important;
         overflow-y: auto !important;
         flex-grow: 1;
@@ -271,6 +278,6 @@ body.search-open {
 
     .search-list::-webkit-scrollbar { display: none; }
     
-    .search-list li { margin-bottom: 8px !important; }
-    .search-list li a { font-size: 15px !important; }
+    .search-list li { margin-bottom: 6px !important; }
+    .search-list li a { font-size: 18px !important; }
 }

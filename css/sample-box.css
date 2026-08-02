@@ -167,6 +167,7 @@ body.modal-open {
     color: #666666;
     margin: 0;
     line-height: 1.5;
+    max-width: 200px;
 }
 
 /* 8. FORM INPUT / SELECT / TEXTAREA */
@@ -501,7 +502,7 @@ body.modal-open {
 
     .casa-modal-container .casa-modal-close-btn {
         position: absolute;
-        top: 24px;
+        top: 32px;
         right: 24px;
         z-index: 10;
     }
@@ -613,6 +614,13 @@ body.modal-open {
     .casa-modal-container textarea,
     .custom-select-wrapper {
         margin-bottom: 20px;
+    }
+
+    .casa-modal-container .casa-modal-close-btn {
+        position: absolute;
+        top: 35px;
+        right: 24px;
+        z-index: 10;
     }
 
     .casa-sample-submit-btn,

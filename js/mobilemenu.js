@@ -182,3 +182,104 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.remove('menu-open');
     });
 });
+
+
+
+
+
+
+
+
+
+function applyCasaFont() {
+    const className = "auto-casa-font";
+    const regex = /(CASA Parquet|CASA)/g;
+
+    if (!document.getElementById('casa-font-style')) {
+        const style = document.createElement('style');
+        style.id = 'casa-font-style';
+        style.innerHTML = `
+            /* Style mặc định áp dụng chung (cho Tiêu đề, Header, Menu, v.v...) */
+            .${className} { 
+                font-family: var(--CASA-Parquet-font, 'Cal Sans'), sans-serif !important; 
+                letter-spacing: 2px !important;
+                font-weight: 500 !important;
+                -webkit-font-smoothing: antialiased !important;
+                -moz-osx-font-smoothing: grayscale !important;
+            }
+
+            
+            p .${className} {
+                font-family: var(--CASA-Parquet-font, 'Cal Sans'), sans-serif !important; 
+                font-weight: 600 !important; 
+                letter-spacing: 1px !important; 
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    function walkAndWrap(root) {
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+            acceptNode: function(node) {
+                const parent = node.parentNode;
+                if (!parent) return NodeFilter.FILTER_REJECT;
+                const tag = parent.tagName ? parent.tagName.toLowerCase() : '';
+                
+                if (tag === 'script' || tag === 'style' || (parent.classList && parent.classList.contains(className))) {
+                    return NodeFilter.FILTER_REJECT;
+                }
+                
+                regex.lastIndex = 0;
+                if (regex.test(node.nodeValue)) {
+                    regex.lastIndex = 0;
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+                return NodeFilter.FILTER_SKIP;
+            }
+        });
+
+        let nodesToProcess = [];
+        while (walker.nextNode()) {
+            nodesToProcess.push(walker.currentNode);
+        }
+
+        nodesToProcess.forEach(node => {
+            const val = node.nodeValue;
+            const parent = node.parentNode;
+            if (!parent) return;
+
+            const frag = document.createDocumentFragment();
+            let lastIdx = 0;
+            let match;
+            
+            regex.lastIndex = 0;
+            while ((match = regex.exec(val)) !== null) {
+                const idx = match.index;
+                const matchedText = match[0];
+
+                if (idx > lastIdx) {
+                    frag.appendChild(document.createTextNode(val.substring(lastIdx, idx)));
+                }
+                const span = document.createElement('span');
+                span.className = className;
+                span.textContent = matchedText;
+                frag.appendChild(span);
+                lastIdx = idx + matchedText.length;
+            }
+
+            if (lastIdx < val.length) {
+                frag.appendChild(document.createTextNode(val.substring(lastIdx)));
+            }
+
+            parent.replaceChild(frag, node);
+        });
+    }
+
+    walkAndWrap(document.body);
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyCasaFont);
+} else {
+    applyCasaFont();
+}
