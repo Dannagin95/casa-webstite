@@ -47,6 +47,8 @@
     <link rel="stylesheet" href="./css/search.css">
     <link rel="stylesheet" href="./css/sample-box.css">
     <link rel="stylesheet" href="./css/mobileovlay.css">
+
+    <link rel="stylesheet" href="./css/duAn.css">
     <link rel="stylesheet" href="./css/product.css">
     <link rel="stylesheet" href="./css/featurebars.css">
     <link rel="stylesheet" href="./css/footer.css">
@@ -545,8 +547,17 @@
     
     
 
-<main class="world-projects-main">
-    
+<main class="world-projects-main">    
+    <div class="IC-intro">
+        <h2 class="IC-main-title">Material in Context</h2>
+        <div class="IC-description">
+            <p>Giữa nhiều cách tiếp cận trong kiến trúc, điều để lại ấn tượng lâu dài thường không nằm ở sự phô trương, mà ở cách vật liệu, ánh sáng và tỷ lệ hòa quyện thành một tổng thể. Có những công trình chỉ cần một vài chi tiết đúng chỗ cũng đủ tạo nên cảm giác cân bằng và bền vững theo thời gian.</p>
+            <p>Những góc nhìn được tuyển chọn, nơi vật liệu trở thành một phần của ngôn ngữ kiến trúc.</p>
+        </div>
+    </div>
+
+
+
     <div class="projects-filter-container">
         <div class="projects-filter-list">
             <button class="filter-btn active" data-filter="all">Tất cả</button>
@@ -558,7 +569,6 @@
     </div>
 
     <div class="bento-grid-container">
-        
         <article class="bento-item bento-large" data-category="minimalism">
             <div class="bento-media">
                 <img src="image/International Collection/Fritz Hansen Jing An Showroom/Main-thumbnail.jpg" alt="Fritz Hansen Jing An Showroom" loading="lazy">
@@ -603,44 +613,163 @@
             </div>
         </article>
 
-        <article class="bento-item bento-standard" data-category="minimalism">
-            <div class="bento-media">
-                <img src="image/International Collection/Aesop Central House 19/Main-thumb-Aesop Central House 19.jpg" alt="Aesop Central House 19" loading="lazy">
-            </div>
-            <div class="bento-content">
-                <span class="project-tag">Minimalism</span>
-                <h3 class="project-title">Aesop Central House 19</h3>
-                <span class="project-source">Nguồn: Atelier Suasua &mdash; Ảnh: Jonathan Leijonhufvud</span>
-            </div>
-        </article>
+        
+    </div>
 
-        <article class="bento-item bento-standard" data-category="minimalism">
-            <div class="bento-media">
-                <img src="image/International Collection/A Layered Sydney Home/Main-thumb-A Layered Sydney Home.webp" alt="A Layered Sydney Home" loading="lazy">
-            </div>
-            <div class="bento-content">
-                <span class="project-tag">Minimalism</span>
-                <h3 class="project-title">A Layered Sydney Home</h3>
-                <span class="project-source">Nguồn: Est Living &mdash; Ảnh: Anson Smart</span>
-            </div>
-        </article>
 
-        <article class="bento-item bento-standard" data-category="minimalism">
-            <div class="bento-media">
-                <img src="image/International Collection/Home Tour  Woodland House/Main-thumb-Home Tour  Woodland House.webp" alt="Home Tour  Woodland House" loading="lazy">
-            </div>
-            <div class="bento-content">
-                <span class="project-tag">Modern Luxury</span>
-                <h3 class="project-title">Home Tour | Woodland House</h3>
-                <span class="project-source">Nguồn: Est Living &mdash; Ảnh: Jake Curtis</span>
-            </div>
-        </article>
 
+
+
+    <div class="bottom-slider-outer">
+        <div class="ICsection-header">
+            <h2 class="ICsection-subtitle">XEM THÊM</h2>
+
+            <div class="slider-nav-controls">
+                <button class="slider-control-btn" id="sliderPrev" aria-label="Previous slide">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button class="slider-control-btn" id="sliderNext" aria-label="Next slide">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="bottom-slider-viewport">
+            <div class="bottom-slider-track" id="bottomSliderTrack">
+                <article class="bento-item bento-standard" data-category="minimalism">
+                    <div class="bento-media">
+                        <img src="image/International Collection/Aesop Central House 19/Main-thumb-Aesop Central House 19.jpg" alt="Aesop Central House 19" loading="lazy">
+                    </div>
+                    <div class="bento-content">
+                        <span class="project-tag">Minimalism</span>
+                        <h3 class="project-title">Aesop Central House 19</h3>
+                        <span class="project-source">Nguồn: Atelier Suasua &mdash; Ảnh: Jonathan Leijonhufvud</span>
+                    </div>
+                </article>
+
+                <article class="bento-item bento-standard" data-category="minimalism">
+                    <div class="bento-media">
+                        <img src="image/International Collection/A Layered Sydney Home/Main-thumb-A Layered Sydney Home.webp" alt="A Layered Sydney Home" loading="lazy">
+                    </div>
+                    <div class="bento-content">
+                        <span class="project-tag">Minimalism</span>
+                        <h3 class="project-title">A Layered Sydney Home</h3>
+                        <span class="project-source">Nguồn: Est Living &mdash; Ảnh: Anson Smart</span>
+                    </div>
+                </article>
+
+                <article class="bento-item bento-standard" data-category="minimalism">
+                    <div class="bento-media">
+                        <img src="image/International Collection/Home Tour  Woodland House/Main-thumb-Home Tour  Woodland House.webp" alt="Home Tour  Woodland House" loading="lazy">
+                    </div>
+                    <div class="bento-content">
+                        <span class="project-tag">Modern Luxury</span>
+                        <h3 class="project-title">Home Tour | Woodland House</h3>
+                        <span class="project-source">Nguồn: Est Living &mdash; Ảnh: Jake Curtis</span>
+                    </div>
+                </article>
+
+                <article class="bento-item bento-standard" data-category="minimalism">
+                    <div class="bento-media">
+                        <img src="image/images/sizing.jpg" alt="Home Tour  Woodland House" loading="lazy">
+                    </div>
+                    <div class="bento-content">
+                        <span class="project-tag">NEXT 1</span>
+                        <h3 class="project-title">TEX1 | LUC TRAN</h3>
+                        <span class="project-source">Nguồn: LUC &mdash; Ảnh: DANNA</span>
+                    </div>
+                </article>
+
+                <article class="bento-item bento-standard" data-category="minimalism">
+                    <div class="bento-media">
+                        <img src="image/imagesBaotang/baotanghero.jpg" alt="Home Tour  Woodland House" loading="lazy">
+                    </div>
+                    <div class="bento-content">
+                        <span class="project-tag">NEXT 2</span>
+                        <h3 class="project-title">TEX1 | LUC TRAN</h3>
+                        <span class="project-source">Nguồn: LUC &mdash; Ảnh: DANNA</span>
+                    </div>
+                </article>
+
+                <article class="bento-item bento-standard" data-category="minimalism">
+                    <div class="bento-media">
+                        <img src="image/imagesblogCraftmanship/Craftshero.jpg" alt="Home Tour  Woodland House" loading="lazy">
+                    </div>
+                    <div class="bento-content">
+                        <span class="project-tag">NEXT 3</span>
+                        <h3 class="project-title">TEX1 | LUC TRAN</h3>
+                        <span class="project-source">Nguồn: LUC &mdash; Ảnh: DANNA</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        
     </div>
 </main>
 
 
 
+
+
+
+<section id="projects" class="projects">
+  <div class="container">
+
+    <div class="section-header">
+        <h2 class="section-subtitle">DỰ ÁN CỦA CASA</h2>
+        <a href="Du_an.html" class="section-link-circle">
+            Xem tất cả dự án
+            <!-- Nút tròn xám chứa mũi tên -->
+            <span class="circle-btn">
+                <svg class="arrow-down" width="8" height="5" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="#2b2929" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </a>
+    </div>
+    
+    <div class="project-grid">
+        <a href="Du_an/Showroom-ADES-Lighting.html" class="project-card" title="thi công  sàn gỗ lắp thẳng tại Showroom ADES">
+        <div class="card-img">
+          <img src="image/imagesduanADES/1.jpg" alt="Thi công  sàn gỗ lắp thẳng tại Showroom ADES">
+        </div>
+        <div class="card-info">
+          <h3>Showroom ADES Lighting</h3>
+        </div>
+      </a>
+
+
+      <a href="Du_an/Penthouse-District2.html" class="project-card" title="thi công  sàn gỗ xương cá tại biệt thự cao cấp">
+        <div class="card-img">
+          <img src="image/imagesduan/thi-cong-san-go-xuong-ca-CASA-Parquet-tai-biet-thu-cao-cap.webp" alt="Thi công sàn gỗ xương cá CASA Parquet tại biệt thự cao cấp">
+        </div>
+        <div class="card-info">
+          <h3>Penthouse - Quận 2</h3>
+        </div>
+      </a>
+
+      <a href="Du_an/Du-an-khach-san-5-sao.html" class="project-card" title="Sàn gỗ công nghiệp CASA Parquet cho khách sạn kiểu Ý">
+        <div class="card-img">
+          <img src="image/imagesduan/san-go-cong-nghiep-Casa-Parquet.webp" alt="Sàn gỗ công nghiệp CASA Parquet cho khách sạn cao cấp">
+        </div>
+        <div class="card-info">
+          <h3>Khách sạn 5 sao</h3>
+        </div>
+      </a>
+
+      <a href="Du_an/Bao-tang.html" class="project-card" title="thi công sàn gỗ cao cấp tại bảo tàng đồ cổ mỹ nghệ">
+        <div class="card-img">
+          <img src="image/imagesduan/thi-cong-san-go-lap-thang-tai-trien-lam.jpg" alt="thi công sàn gỗ cao cấp tại bảo tàng đồ cổ mỹ nghệ">
+        </div>
+        <div class="card-info">
+          <h3>Bảo Tàng Cổ Vật</h3>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
 
 
 
@@ -933,6 +1062,7 @@
     <script src="js/index.js"></script>
     <script src="js/topbar.js"></script>
     <script src="js/history.js"></script>
+    <script src="js/IC.js"></script>
     <script src="js/getnotice.js"></script>
     <script src="js/search.js"></script>
     <script src="js/sample-box.js"></script>
