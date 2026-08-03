@@ -282,3 +282,45 @@ body.search-open {
     .search-list li { margin-bottom: 6px !important; }
     .search-list li a { font-size: 18px !important; }
 }
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   KHÓA CHẶT SEARCH DRAWER CHO TABLET (768px - 1024px)
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body.search-open {
+        position: fixed !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        touch-action: none !important;
+    }
+
+  
+    .search-drawer {
+        overscroll-behavior: none !important;
+    }
+
+  
+    .search-backdrop {
+        touch-action: none !important;
+    }
+
+ 
+    .search-panel {
+        max-height: calc(100vh - 32px) !important;
+        overflow-y: auto !important;
+        overscroll-behavior: contain !important; 
+    }
+
+
+    .search-list {
+        overflow-y: auto !important;
+        overscroll-behavior: contain !important;
+    }
+}
