@@ -119,17 +119,14 @@
 
 
 /* ==========================================================================
-   WORLD PROJECTS - BENTO GRID LAYOUT
+   1. LAYOUT CHÍNH & INTRO
    ========================================================================== */
 .world-projects-main {
     max-width: 1650px;
     margin: 0 auto;
-    padding: 80px var(--side-padding) 100px; 
+    padding: 80px var(--side-padding, 40px) 100px; 
     box-sizing: border-box;
 }
-
-
-
 
 .IC-intro {
     margin-bottom: 70px;
@@ -148,33 +145,34 @@
     font-size: 13px;
     line-height: 1.6;
     max-width: 670px;
-    color: var(--color-black);
+    color: var(--color-black, #000000);
     margin-bottom: 25px;
 }
 
-
-
-
-/* Thanh lọc danh mục (Filter Tabs) */
+/* ==========================================================================
+   2. THANH LỌC DANH MỤC (FILTER TABS)
+   ========================================================================== */
 .projects-filter-container {
     margin-bottom: 36px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
 }
+
 .projects-filter-container::-webkit-scrollbar {
     display: none;
 }
+
 .projects-filter-list {
     display: flex;
     gap: 12px;
     white-space: nowrap;
 }
+
 .filter-btn {
     background: #ffffff;
-    border: none;
+    border: 1px solid var(--color-bg-dark, #000000) !important; 
     padding: 14px 35px;
-    border: 1px solid var(--color-bg-dark) !important; 
     border-radius: 100px;
     font-family: "Be Vietnam Pro", sans-serif;
     font-size: 14px;
@@ -183,13 +181,16 @@
     transition: all 0.3s ease;
     color: #000000;
 }
+
 .filter-btn.active, 
 .filter-btn:hover {
-    background: var(--color-bg-dark);
+    background: var(--color-bg-dark, #000000);
     color: #ffffff;
 }
 
-/* Cấu trúc Bento Grid (Desktop 12 Cột) */
+/* ==========================================================================
+   3. CẤU TRÚC BENTO GRID (DESKTOP 12 CỘT)
+   ========================================================================== */
 .bento-grid-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -197,54 +198,65 @@
     gap: 30px;
 }
 
-/* Thẻ dự án chung */
+/* Thẻ bài chung */
 .bento-item {
     position: relative;
     background: #eaeaea;
     overflow: hidden;
-    border-radius: 0; /* Vuông vức theo ý mày */
+    border-radius: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    transition: transform 0.4s ease;
+    transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-/* Phân chia kích thước các ô trong Bento */
+/* Các kiểu tỉ lệ khung hình Bento theo ghi chú hình vẽ */
 .bento-large {
     grid-column: span 8;
     grid-row: span 2;
 }
+
 .bento-vertical {
     grid-column: span 4;
     grid-row: span 2;
 }
+
 .bento-standard {
     grid-column: span 4;
     grid-row: span 1;
 }
+
 .bento-horizontal {
     grid-column: span 8;
     grid-row: span 1;
 }
 
-/* Hình ảnh dự án */
+/* Thêm class cho Note (2): Full chiều ngang 100% (12 cột) */
+.bento-full {
+    grid-column: span 12;
+    grid-row: span 2;
+}
+
+/* Hình ảnh & Hover Effect */
 .bento-media {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
 }
+
 .bento-media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .bento-item:hover .bento-media img {
     transform: scale(1.04);
 }
 
-/* Lớp phủ thông tin & nguồn */
+/* Content & Overlay */
 .bento-content {
     position: relative;
     z-index: 2;
@@ -257,6 +269,7 @@
     opacity: 0.9;
     transition: opacity 0.3s ease;
 }
+
 .bento-item:hover .bento-content {
     opacity: 1;
 }
@@ -282,58 +295,25 @@
     font-weight: 300;
 }
 
-/* Trạng thái ẩn khi lọc danh mục */
 .bento-item.is-hidden {
     display: none !important;
 }
 
-
-
-
-
-
-
-
-
-
+/* ==========================================================================
+   4. BOTTOM SLIDER SECTION
+   ========================================================================== */
 .bottom-slider-outer {
     position: relative;
     padding-top: 80px;
 }
 
-
-/* Khung nhìn chuyên chứa overflow hidden để cắt phần thừa */
-.bottom-slider-viewport {
-    overflow: hidden;
-    width: 100%;
-}
-
-/* Đường ray trượt chứa toàn bộ item xếp ngang */
-.bottom-slider-track {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 15px;
-    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform;
-}
-
-/* Các item giữ chuẩn tỷ lệ 3.4 */
-.bottom-slider-track .bento-item {
-    flex: 0 0 calc((100% - (20px * 3)) / 3.5);
-    height: 280px;
-    grid-column: auto !important;
-    grid-row: auto !important;
-    flex-shrink: 0;
-}
-
 .ICsection-header {
     display: flex;
-    justify-content: space-between; /* Tiêu đề bên trái, nút bên phải */
-    align-items: center;            /* Gióng hàng đều chằn chặn theo trục ngang */
-    margin-bottom: 24px;            /* Khoảng cách từ Header xuống Slider */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
 }
 
-/* 2. Bỏ margin-bottom cũ của tiêu đề để không bị lệch khung */
 .ICsection-subtitle {
     display: block;
     word-spacing: 3px;
@@ -342,15 +322,14 @@
     color: #2b2929;
     letter-spacing: -0.01em;
     text-transform: uppercase;
-    margin-bottom: -20px !important; 
+    margin: 0 !important;
 }
 
-/* 3. Dọn dẹp lề của cụm nút nav */
 .slider-nav-controls {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-top: 0 !important; /* Bỏ margin-top 32px cũ nếu còn dính */
+    margin-top: 0 !important;
 }
 
 .slider-control-btn {
@@ -378,55 +357,71 @@
     transform: scale(0.95);
 }
 
-/* Trạng thái disabled: Khóa sạch sự kiện chuột & mờ viền + icon */
 .slider-control-btn.disabled {
     opacity: 0.2;
     cursor: not-allowed;
-    pointer-events: none; /* Khóa hoàn toàn tương tác chuột */
+    pointer-events: none;
 }
 
-/* Triệt tiêu triệt để hiệu ứng hover & active khi nút bị disabled */
-.slider-control-btn.disabled:hover,
-.slider-control-btn.disabled:active {
-    background: transparent !important;
-    color: #000000 !important;
-    border-color: rgba(0, 0, 0, 0.15) !important;
-    transform: none !important;
+.bottom-slider-viewport {
+    overflow: hidden;
+    width: 100%;
 }
 
-/* Responsive cho mobile/tablet */
-@media (max-width: 1024px) {
-    .bottom-slider-track .bento-item {
-        flex: 0 0 100% !important;
-        height: 420px !important;
-    }
+.bottom-slider-track {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
 }
 
-
-
-
-
-
-
+.bottom-slider-track .bento-item {
+    flex: 0 0 calc((100% - (15px * 3)) / 3.5);
+    height: 280px;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    flex-shrink: 0;
+}
 
 /* ==========================================================================
-   MOBILE & TABLET (< 1024PX): ÉP CỨNG LỀ 2 BÊN 20PX
+   5. RESPONSIVE (TABLET & MOBILE)
    ========================================================================== */
 @media (max-width: 1024px) {
     .world-projects-main {
-        padding: 50px 20px  !important; /* Lề 2 bên chuẩn 20px */
+        padding: 40px 20px 60px; /* Lề 2 bên 20px */
     }
+
+    .IC-intro {
+        margin-bottom: 40px; /* Ngăn cách section 40px */
+    }
+
+    .projects-filter-container {
+        margin-bottom: 30px;
+    }
+
     .bento-grid-container {
-        grid-template-columns: 1fr !important;
-        grid-auto-rows: auto !important;
-        gap: 16px !important;
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 20px;
     }
-    .bento-large,
-    .bento-vertical,
-    .bento-standard,
-    .bento-horizontal {
+
+    .bento-large, 
+    .bento-vertical, 
+    .bento-standard, 
+    .bento-horizontal,
+    .bento-full {
         grid-column: span 1 !important;
         grid-row: span 1 !important;
-        min-height: 420px !important;
+        height: 360px;
+    }
+
+    .bottom-slider-outer {
+        padding-top: 40px; /* Ngăn cách section 40px */
+    }
+
+    .bottom-slider-track .bento-item {
+        flex: 0 0 100% !important;
+        height: 360px !important;
     }
 }
