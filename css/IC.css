@@ -223,7 +223,7 @@
 
 .bento-standard {
     grid-column: span 4;
-    grid-row: span 1;
+    grid-row: span 2;
 }
 
 .bento-horizontal {
@@ -299,6 +299,13 @@
     display: none !important;
 }
 
+
+
+
+
+
+
+
 /* ==========================================================================
    4. BOTTOM SLIDER SECTION
    ========================================================================== */
@@ -306,6 +313,9 @@
     position: relative;
     padding-top: 80px;
 }
+
+
+
 
 .ICsection-header {
     display: flex;
@@ -346,7 +356,8 @@
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.slider-control-btn:hover {
+/* CHỈ áp dụng hover khi nút KHÔNG CÓ class .disabled */
+.slider-control-btn:not(.disabled):hover {
     background: #000000;
     color: #ffffff;
     border-color: #000000;
@@ -362,6 +373,7 @@
     cursor: not-allowed;
     pointer-events: none;
 }
+
 
 .bottom-slider-viewport {
     overflow: hidden;

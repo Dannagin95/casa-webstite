@@ -1,35 +1,36 @@
-document.addEventListener("DOMContentLoaded", () => {
-        const filterBtns = document.querySelectorAll(".filter-btn");
-        const bentoItems = document.querySelectorAll(".bento-item");
+document.addEventListener('DOMContentLoaded', function() {
 
+    /* ==========================================================================
+       1. XỬ LÝ LỌC DANH MỤC (FILTER TABS)
+       ========================================================================== */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    // FIX LỖI: Chỉ lấy các bento-item nằm trong GRID CHÍNH, KHÔNG lấy trong Slider!
+    const gridBentoItems = document.querySelectorAll('.bento-grid-container .bento-item');
+
+    if (filterBtns.length > 0 && gridBentoItems.length > 0) {
         filterBtns.forEach(btn => {
-            btn.addEventListener("click", () => {
+            btn.addEventListener('click', function() {
                 // Đổi trạng thái active của nút
-                filterBtns.forEach(b => b.classList.remove("active"));
-                btn.classList.add("active");
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
 
-                const filterValue = btn.getAttribute("data-filter");
+                const filterValue = this.getAttribute('data-filter');
 
-                bentoItems.forEach(item => {
-                    const category = item.getAttribute("data-category");
-                    if (filterValue === "all" || category === filterValue) {
-                        item.classList.remove("is-hidden");
+                gridBentoItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    if (filterValue === 'all' || category === filterValue) {
+                        item.classList.remove('is-hidden');
                     } else {
-                        item.classList.add("is-hidden");
+                        item.classList.add('is-hidden');
                     }
                 });
             });
         });
-    });
+    }
 
-
-
-
-
-
-    
-
-    document.addEventListener('DOMContentLoaded', function() {
+    /* ==========================================================================
+       2. XỬ LÝ BOTTOM SLIDER
+       ========================================================================== */
     const track = document.getElementById('bottomSliderTrack');
     const prevBtn = document.getElementById('sliderPrev');
     const nextBtn = document.getElementById('sliderNext');
@@ -51,26 +52,23 @@ document.addEventListener("DOMContentLoaded", () => {
             return { stepWidth, maxTranslate };
         }
 
-        // Cập nhật vị trí slider và trạng thái ẩn/mờ của nút
         function updateSliderPosition() {
             track.style.transform = `translateX(-${currentTranslate}px)`;
             updateButtonStates();
         }
 
-        // Hàm kiểm tra và bật/tắt class disabled cho 2 nút
         function updateButtonStates() {
             if (!prevBtn || !nextBtn) return;
             const { maxTranslate } = getMetrics();
 
-            // 1. Kiểm tra nút Prev (ở đầu trang thì mờ)
-            if (currentTranslate <= 0) {
+            // Kiểm tra nút Prev (ở đầu trang thì mờ)
+            if (currentTranslate <= 2) {
                 prevBtn.classList.add('disabled');
             } else {
                 prevBtn.classList.remove('disabled');
             }
 
-            // 2. Kiểm tra nút Next (ở cuối trang thì mờ)
-            // Trừ 2px để tránh sai số làm tròn pixel của trình duyệt
+            // Kiểm tra nút Next (ở cuối trang thì mờ)
             if (currentTranslate >= maxTranslate - 2) {
                 nextBtn.classList.add('disabled');
             } else {
@@ -102,10 +100,41 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        // Kích hoạt kiểm tra trạng thái nút ngay lần đầu tải trang
-        updateButtonStates();
+        /* ----- THÊM VUỐT TOUCH TRÊN MOBILE/TABLET ----- */
+        let startX = 0;
+        let isDragging = false;
+        let startTranslate = 0;
 
-        // Cân chỉnh lại khi người dùng resize trình duyệt
+        track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startTranslate = currentTranslate;
+            isDragging = true;
+            track.style.transition = 'none';
+        }, { passive: true });
+
+        track.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const currentX = e.touches[0].clientX;
+            const diff = startX - currentX;
+            const { maxTranslate } = getMetrics();
+
+            let targetTranslate = startTranslate + diff;
+            if (targetTranslate < 0) targetTranslate = 0;
+            if (targetTranslate > maxTranslate) targetTranslate = maxTranslate;
+
+            currentTranslate = targetTranslate;
+            track.style.transform = `translateX(-${currentTranslate}px)`;
+        }, { passive: true });
+
+        track.addEventListener('touchend', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            track.style.transition = 'transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
+            updateButtonStates();
+        });
+
+        // Cập nhật lại trạng thái nút sau khi ảnh load xong hoàn toàn & khi resize
+        window.addEventListener('load', updateButtonStates);
         window.addEventListener('resize', function() {
             const { maxTranslate } = getMetrics();
             if (currentTranslate > maxTranslate) {
@@ -113,5 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             updateSliderPosition();
         });
+
+        updateButtonStates();
     }
 });
