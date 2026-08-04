@@ -401,44 +401,307 @@
     flex-shrink: 0;
 }
 
+.slider-progress-container {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
 /* ==========================================================================
-   5. RESPONSIVE (TABLET & MOBILE)
+   1. TABLET LỚN (992px - 1024px)
    ========================================================================== */
-@media (max-width: 1024px) {
+@media (min-width: 992px) and (max-width: 1024px) {
+
+    /* Layout chính */
     .world-projects-main {
-        padding: 40px 20px 60px; /* Lề 2 bên 20px */
+        padding: 40px 20px 60px; /* Lề 2 bên 20px, section gap 40px */
     }
 
     .IC-intro {
-        margin-bottom: 40px; /* Ngăn cách section 40px */
+        margin-bottom: 40px;
+        max-width: 100%;
     }
 
+    .IC-main-title {
+        font-size: clamp(28px, 4vw, 42px);
+        margin-bottom: 24px;
+        max-width: 100%;
+    }
+
+    /* Filter Tabs */
     .projects-filter-container {
-        margin-bottom: 30px;
+        margin-bottom: 36px;
+        gap: 14px;
     }
 
+    .filter-row {
+        gap: 12px;
+    }
+
+    .filter-btn {
+        padding: 12px 28px;
+        font-size: 13.5px;
+    }
+
+    /* Bento Grid (Giữ 12 cột Desktop, scale tỉ lệ vừa màn 1024px) */
     .bento-grid-container {
-        grid-template-columns: 1fr;
-        grid-auto-rows: auto;
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: 230px; /* Hạ nhẹ chiều cao row xuống 230px */
         gap: 20px;
     }
 
-    .bento-large, 
-    .bento-vertical, 
-    .bento-standard, 
-    .bento-horizontal,
-    .bento-full {
-        grid-column: span 1 !important;
-        grid-row: span 1 !important;
-        height: 360px;
+    .bento-content {
+        padding: 22px;
     }
 
+    .project-title {
+        font-size: 18px;
+    }
+
+    /* Bottom Slider */
     .bottom-slider-outer {
         padding-top: 40px; /* Ngăn cách section 40px */
     }
 
+    .bottom-slider-track {
+        gap: 15px;
+    }
+
     .bottom-slider-track .bento-item {
-        flex: 0 0 100% !important;
-        height: 360px !important;
+        flex: 0 0 calc((100% - (15px * 2.2)) / 3.2); /* Hiện ~3.2 card */
+        height: 240px;
+    }
+}
+
+
+/* ==========================================================================
+   2. TABLET NHỎ (768px - 991px)
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    /* Layout chính */
+    .world-projects-main {
+        padding: 40px 20px 60px; /* Lề 2 bên 20px, section gap 40px */
+    }
+
+    .IC-intro {
+        margin-bottom: 40px;
+        max-width: 100%;
+    }
+
+    .IC-main-title {
+        font-size: clamp(24px, 3.8vw, 34px);
+        margin-bottom: 200px;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+
+    .IC-description p {
+        font-size: 12.5px;
+        margin-bottom: 20px;
+    }
+
+    /* Filter Tabs */
+    .projects-filter-container {
+        margin-bottom: 30px;
+        gap: 12px;
+    }
+
+    .filter-row {
+        gap: 10px;
+    }
+
+    .filter-btn {
+        padding: 10px 22px;
+        font-size: 13px;
+    }
+
+    /* Bento Grid (Giữ 12 cột Desktop, co nhỏ chiều cao & gap vừa màn ~800px) */
+    .bento-grid-container {
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: 185px; /* Hạ chiều cao row xuống 185px */
+        gap: 14px;
+    }
+
+    .bento-content {
+        padding: 16px;
+        gap: 3px;
+    }
+
+    .project-tag {
+        font-size: 10px;
+    }
+
+    .project-title {
+        font-size: 15px;
+    }
+
+    .project-source {
+        font-size: 11px;
+    }
+
+    /* Bottom Slider */
+    .bottom-slider-outer {
+        padding-top: 40px; /* Ngăn cách section 40px */
+    }
+
+    .ICsection-header {
+        margin-bottom: 18px;
+    }
+
+    .bottom-slider-track {
+        gap: 12px;
+    }
+
+    .bottom-slider-track .bento-item {
+        flex: 0 0 calc((100% - (12px * 1.8)) / 2.6); /* Hiện ~2.6 card */
+        height: 200px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   RESPONSIVE MOBILE (Max 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+
+    /* 1. LAYOUT CHÍNH & INTRO */
+    .world-projects-main {
+        /* Lề 2 bên chuẩn 20px | Top 40px | Bottom 50px */
+        padding: 40px 20px 50px; 
+    }
+
+    .IC-intro {
+        margin-bottom: 40px; /* Khoảng cách section 40px */
+        max-width: 100%;
+    }
+
+    .IC-main-title {
+        font-size: 24px;
+        line-height: 1.35;
+        margin-bottom: 16px;
+        max-width: 100%;
+    }
+
+    .IC-description p {
+        font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 16px;
+        max-width: 100%;
+    }
+
+    /* 2. THANH LỌC DANH MỤC (FILTER TABS) */
+    .projects-filter-container {
+        margin-bottom: 30px;
+        gap: 10px;
+    }
+
+    .filter-row {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 9px 18px;
+        font-size: 12.5px;
+    }
+
+    /* 3. BENTO GRID (Chuyển về dạng Card Dọc 1 Cột) */
+    .bento-grid-container {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 16px;
+    }
+
+    /* Reset toàn bộ các kiểu Bento về 1 cột thống nhất */
+    .bento-large,
+    .bento-vertical,
+    .bento-standard,
+    .bento-horizontal,
+    .bento-full {
+        grid-column: span 1 !important;
+        grid-row: auto !important;
+        height: 260px; /* Chiều cao chuẩn cho card dạng đứng trên mobile */
+    }
+
+    .bento-content {
+        padding: 16px;
+        gap: 4px;
+    }
+
+    .project-tag {
+        font-size: 10px;
+    }
+
+    .project-title {
+        font-size: 16px;
+    }
+
+    .project-source {
+        font-size: 11px;
+    }
+
+    /* 4. BOTTOM SLIDER SECTION */
+    .bottom-slider-outer {
+        padding-top: 40px; /* Ngăn cách section 40px */
+    }
+
+    .ICsection-header {
+        margin-bottom: 16px;
+    }
+
+    .slider-control-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    .bottom-slider-track {
+        gap: 12px;
+    }
+
+    .bottom-slider-track .bento-item {
+        /* Hiển thị 1 card chính + hé ~0.25 card tiếp theo để báo hiệu vuốt ngang */
+        flex: 0 0 calc((100% - 12px) / 1.25);
+        height: 220px;
+    }
+
+
+    /* Ẩn 2 nút Prev/Next */
+    .slider-nav-controls {
+        display: none !important;
+    }
+
+    /* Hiện thanh Progress */
+    .slider-progress-container {
+        display: block !important;
+        position: relative;
+        width: 100%;
+        height: 1.5px;
+        background-color: rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        overflow: hidden;
+    }
+
+    .slider-progress-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 20%; 
+        background-color: #000000;
+        transition: transform 0.2s ease-out;
+        will-change: transform;
     }
 }
