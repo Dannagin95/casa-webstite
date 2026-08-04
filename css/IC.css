@@ -653,44 +653,109 @@
         font-size: 11px;
     }
 
-    /* 4. BOTTOM SLIDER SECTION */
+    /* 4. BOTTOM SLIDER SECTION (FIX CHUẨN LỀ 20PX & KHÔNG OVER-SCROLL) */
     .bottom-slider-outer {
-        padding-top: 40px; /* Ngăn cách section 40px */
+        padding-top: 40px;
+        width: 100%;
+        overflow: hidden;
     }
 
     .ICsection-header {
         margin-bottom: 16px;
     }
 
-    .slider-control-btn {
-        width: 38px;
-        height: 38px;
-    }
-
-    .bottom-slider-track {
-        gap: 12px;
-    }
-
-    .bottom-slider-track .bento-item {
-        /* Hiển thị 1 card chính + hé ~0.25 card tiếp theo để báo hiệu vuốt ngang */
-        flex: 0 0 calc((100% - 12px) / 1.25);
-        height: 220px;
-    }
-
-
-    /* Ẩn 2 nút Prev/Next */
+    /* Ẩn 2 nút điều hướng Desktop */
     .slider-nav-controls {
         display: none !important;
     }
 
-    /* Hiện thanh Progress */
+    /* VIEWPORT: Khung chứa cuộn ngang (Dùng display: block chuẩn) */
+    .bottom-slider-outer {
+        padding-top: 40px;
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+        width: calc(100% + 40px) !important;
+        overflow: visible !important; /* Bắt buộc để không bị xén lề tràn viền */
+    }
+
+    /* Giữ tiêu đề "XEM THÊM" nằm thẳng hàng lề 20px của trang */
+    .ICsection-header {
+        margin-bottom: 16px;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    /* Ẩn 2 nút điều hướng Desktop */
+    .slider-nav-controls {
+        display: none !important;
+    }
+
+    /* VIEWPORT: Khung cuộn rộng tràn 100% viền màn hình */
+    .bottom-slider-viewport {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scroll-snap-type: x mandatory !important;
+        scroll-padding-left: 20px !important;
+        scroll-padding-right: 20px !important;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .bottom-slider-viewport::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    /* TRACK: Chứa các Card, đặt lề 20px ở 2 đầu track */
+    .bottom-slider-track {
+        display: flex !important;
+        gap: 12px !important;
+        width: max-content !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box !important;
+        transform: none !important; /* Dập tắt transform JS */
+        transition: none !important;
+    }
+
+    .bottom-slider-track::after {
+        display: none !important;
+    }
+
+    /* CARD CHUNG: Căn snap lề TRÁI */
+    .bottom-slider-track .bento-item {
+        flex: 0 0 calc((100vw - 52px) / 1.25) !important;
+        width: calc((100vw - 52px) / 1.25) !important;
+        height: 220px !important;
+        scroll-snap-align: start !important;
+        scroll-snap-stop: always !important;
+        position: relative !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    /* CARD CUỐI CÙNG: Snap lề PHẢI (end) -> Khóa cứng mép phải đúng lề 20px, tuyệt đối không kéo lố */
+    .bottom-slider-track .bento-item:last-child {
+        scroll-snap-align: end !important;
+    }
+
+    .bottom-slider-track .bento-item img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    /* THANH PROGRESS BAR: Căn lề 20px 2 bên */
     .slider-progress-container {
         display: block !important;
         position: relative;
-        width: 100%;
+        width: calc(100% - 40px) !important;
+        margin: 20px 20px 0 20px !important;
         height: 1.5px;
         background-color: rgba(0, 0, 0, 0.1);
-        margin-top: 20px;
         overflow: hidden;
     }
 
@@ -699,9 +764,9 @@
         top: 0;
         left: 0;
         height: 100%;
-        width: 20%; 
+        width: 20%;
         background-color: #000000;
-        transition: transform 0.2s ease-out;
         will-change: transform;
+        transition: transform 0.05s linear;
     }
 }

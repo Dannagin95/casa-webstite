@@ -27,9 +27,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    /* ==========================================================================
-       2. XỬ LÝ BOTTOM SLIDER
-       ========================================================================== */
+
+
+
+    
+/* ----- 1. THANH PROGRESS BAR CHO MOBILE (Thêm mới) ----- */
+    const viewport = document.querySelector('.bottom-slider-viewport');
+    const progressBar = document.getElementById('sliderProgressBar');
+
+    if (viewport && progressBar) {
+        viewport.addEventListener('scroll', function() {
+            if (window.innerWidth <= 767) {
+                const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+                if (maxScroll > 0) {
+                    const ratio = viewport.scrollLeft / maxScroll;
+                    progressBar.style.transform = `translateX(${ratio * 400}%)`;
+                }
+            }
+        });
+    }
+
+    /* ----- 2. CODE JS GỐC CỦA MÀY (GIỮ NGUYÊN 100% CHO DESKTOP & TABLET) ----- */
     const track = document.getElementById('bottomSliderTrack');
     const prevBtn = document.getElementById('sliderPrev');
     const nextBtn = document.getElementById('sliderNext');
@@ -105,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let startTranslate = 0;
 
         track.addEventListener('touchstart', (e) => {
+            if (window.innerWidth <= 767) return; // Bỏ qua mobile để nhường cho CSS Native
             startX = e.touches[0].clientX;
             startTranslate = currentTranslate;
             isDragging = true;
@@ -112,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { passive: true });
 
         track.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
+            if (window.innerWidth <= 767 || !isDragging) return; // Bỏ qua mobile
             const currentX = e.touches[0].clientX;
             const diff = startX - currentX;
             const { maxTranslate } = getMetrics();
@@ -126,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { passive: true });
 
         track.addEventListener('touchend', () => {
-            if (!isDragging) return;
+            if (window.innerWidth <= 767 || !isDragging) return; // Bỏ qua mobile
             isDragging = false;
             track.style.transition = 'transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
             updateButtonStates();
@@ -143,192 +162,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         updateButtonStates();
-    }
-});
-
-
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const track = document.getElementById('bottomSliderTrack');
-    const prevBtn = document.getElementById('sliderPrev');
-    const nextBtn = document.getElementById('sliderNext');
-    const progressBar = document.getElementById('sliderProgressBar');
-
-    if (track) {
-        let currentTranslate = 0;
-        const items = track.querySelectorAll('.bento-item');
-
-        // Hàm tính toán các thông số khoảng cách
-        function getMetrics() {
-            if (items.length === 0) return { stepWidth: 0, maxTranslate: 0 };
-            
-            const itemWidth = items[0].getBoundingClientRect().width;
-            
-            // Lấy gap thực tế từ CSS (trên Mobile là 12px)
-            const trackStyle = window.getComputedStyle(track);
-            const gap = parseFloat(trackStyle.gap) || 12;
-
-            const visibleWidth = track.parentElement.clientWidth;
-            const totalWidth = track.scrollWidth;
-            
-            const maxTranslate = Math.max(0, totalWidth - visibleWidth);
-            const stepWidth = itemWidth + gap;
-
-            return { stepWidth, maxTranslate };
-        }
-
-        // Cập nhật vị trí Slider & Progress Bar & Trạng thái Nút
-        function updateSliderPosition(animate = true) {
-            if (animate) {
-                // Trượt mượt & có độ đầm bằng cubic-bezier
-                track.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
-            } else {
-                track.style.transition = 'none';
-            }
-
-            track.style.transform = `translateX(-${currentTranslate}px)`;
-            updateButtonStates();
-            updateProgressBar();
-        }
-
-        // Cập nhật Progress Bar (Thanh đen 20% -> Khoảng trượt max = 400%)
-        function updateProgressBar() {
-            if (!progressBar) return;
-            const { maxTranslate } = getMetrics();
-
-            if (maxTranslate > 0) {
-                const ratio = currentTranslate / maxTranslate;
-                // Vạch đen 20%, khoảng trượt tối đa là (100% - 20%) / 20% = 400%
-                const translatePercent = ratio * 400; 
-                progressBar.style.transform = `translateX(${translatePercent}%)`;
-            } else {
-                progressBar.style.transform = `translateX(0)`;
-            }
-        }
-
-        // Cập nhật trạng thái mờ của nút Prev/Next (cho Desktop/Tablet)
-        function updateButtonStates() {
-            if (!prevBtn || !nextBtn) return;
-            const { maxTranslate } = getMetrics();
-
-            if (currentTranslate <= 2) {
-                prevBtn.classList.add('disabled');
-            } else {
-                prevBtn.classList.remove('disabled');
-            }
-
-            if (currentTranslate >= maxTranslate - 2) {
-                nextBtn.classList.add('disabled');
-            } else {
-                nextBtn.classList.remove('disabled');
-            }
-        }
-
-        // Xử lý Click Nút (Desktop / Tablet)
-        if (nextBtn && prevBtn) {
-            nextBtn.addEventListener('click', function() {
-                const { stepWidth, maxTranslate } = getMetrics();
-                currentTranslate += stepWidth;
-                if (currentTranslate > maxTranslate) currentTranslate = maxTranslate;
-                updateSliderPosition(true);
-            });
-
-            prevBtn.addEventListener('click', function() {
-                const { stepWidth, maxTranslate } = getMetrics();
-                currentTranslate -= stepWidth;
-                if (currentTranslate < 0) currentTranslate = 0;
-                updateSliderPosition(true);
-            });
-        }
-
-        /* ==========================================================================
-           VUỐT TOUCH MOBILE: CÓ ĐỘ NÍU (RESISTANCE) + TỰ SNAP VỀ THẺ NẰM GẦN NHẤT
-           ========================================================================== */
-        let startX = 0;
-        let isDragging = false;
-        let startTranslate = 0;
-        let startIndex = 0;
-
-        track.addEventListener('touchstart', (e) => {
-            const { stepWidth } = getMetrics();
-            startX = e.touches[0].clientX;
-            startTranslate = currentTranslate;
-            
-            // Lưu lại vị trí card ban đầu khi bắt đầu chạm
-            startIndex = stepWidth > 0 ? Math.round(startTranslate / stepWidth) : 0;
-            
-            isDragging = true;
-            track.style.transition = 'none'; // Phản hồi tức thì 100% theo tay
-        }, { passive: true });
-
-        track.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            const currentX = e.touches[0].clientX;
-            const diff = startX - currentX; // Khoảng cách tay kéo
-            const { maxTranslate } = getMetrics();
-
-            // Theo tay 1:1 nhẹ hều, không bị cản
-            let targetTranslate = startTranslate + diff;
-
-            // Giới hạn cản nhẹ ở 2 đầu biên
-            if (targetTranslate < 0) {
-                targetTranslate = targetTranslate * 0.2;
-            } else if (targetTranslate > maxTranslate) {
-                const overscroll = targetTranslate - maxTranslate;
-                targetTranslate = maxTranslate + (overscroll * 0.2);
-            }
-
-            currentTranslate = targetTranslate;
-            track.style.transform = `translateX(-${currentTranslate}px)`;
-            updateProgressBar();
-        }, { passive: true });
-
-        track.addEventListener('touchend', (e) => {
-            if (!isDragging) return;
-            isDragging = false;
-
-            const endX = e.changedTouches[0].clientX;
-            const diff = startX - endX; // Tổng quãng đường ngón tay đã lướt
-            const { stepWidth, maxTranslate } = getMetrics();
-
-            // Ngưỡng vuốt nhẹ: Chỉ cần nhích 40px là đủ để đổi slide
-            const swipeThreshold = 40; 
-            let targetIndex = startIndex;
-
-            if (diff > swipeThreshold) {
-                // Vuốt sang trái -> Nhảy card tiếp theo
-                targetIndex = startIndex + 1;
-            } else if (diff < -swipeThreshold) {
-                // Vuốt sang phải -> Quay lại card trước
-                targetIndex = startIndex - 1;
-            }
-
-            // Tính vị trí cần Snap tới
-            currentTranslate = targetIndex * stepWidth;
-
-            // Giới hạn 2 đầu không cho tuột ra ngoài
-            if (currentTranslate < 0) currentTranslate = 0;
-            if (currentTranslate > maxTranslate) currentTranslate = maxTranslate;
-
-            // Bật hiệu ứng trượt nhẹ nhàng vào vị trí mới
-            updateSliderPosition(true);
-        });
-
-        // Tải trang & Resize
-        window.addEventListener('load', () => updateSliderPosition(false));
-        window.addEventListener('resize', () => {
-            const { maxTranslate } = getMetrics();
-            if (currentTranslate > maxTranslate) {
-                currentTranslate = maxTranslate;
-            }
-            updateSliderPosition(false);
-        });
-
-        updateSliderPosition(false);
     }
 });
