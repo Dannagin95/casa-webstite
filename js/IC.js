@@ -252,29 +252,35 @@ document.addEventListener('DOMContentLoaded', function() {
         let startX = 0;
         let isDragging = false;
         let startTranslate = 0;
+        let startIndex = 0;
 
         track.addEventListener('touchstart', (e) => {
+            const { stepWidth } = getMetrics();
             startX = e.touches[0].clientX;
             startTranslate = currentTranslate;
+            
+            // Lưu lại vị trí card ban đầu khi bắt đầu chạm
+            startIndex = stepWidth > 0 ? Math.round(startTranslate / stepWidth) : 0;
+            
             isDragging = true;
-            track.style.transition = 'none'; // Phản hồi tức thì theo tay kéo
+            track.style.transition = 'none'; // Phản hồi tức thì 100% theo tay
         }, { passive: true });
 
         track.addEventListener('touchmove', (e) => {
             if (!isDragging) return;
             const currentX = e.touches[0].clientX;
-            const diff = startX - currentX; // Lực kéo của ngón tay
+            const diff = startX - currentX; // Khoảng cách tay kéo
             const { maxTranslate } = getMetrics();
 
-            // Áp hệ số 0.85 tạo độ níu/đầm tay khi kéo
-            let targetTranslate = startTranslate + (diff * 0.85);
+            // Theo tay 1:1 nhẹ hều, không bị cản
+            let targetTranslate = startTranslate + diff;
 
-            // Tạo lực cản lò xo (rubber-band) nếu kéo lố 2 đầu biên
+            // Giới hạn cản nhẹ ở 2 đầu biên
             if (targetTranslate < 0) {
-                targetTranslate = targetTranslate * 0.3;
+                targetTranslate = targetTranslate * 0.2;
             } else if (targetTranslate > maxTranslate) {
                 const overscroll = targetTranslate - maxTranslate;
-                targetTranslate = maxTranslate + (overscroll * 0.3);
+                targetTranslate = maxTranslate + (overscroll * 0.2);
             }
 
             currentTranslate = targetTranslate;
@@ -282,23 +288,34 @@ document.addEventListener('DOMContentLoaded', function() {
             updateProgressBar();
         }, { passive: true });
 
-        track.addEventListener('touchend', () => {
+        track.addEventListener('touchend', (e) => {
             if (!isDragging) return;
             isDragging = false;
 
+            const endX = e.changedTouches[0].clientX;
+            const diff = startX - endX; // Tổng quãng đường ngón tay đã lướt
             const { stepWidth, maxTranslate } = getMetrics();
 
-            // SNAP LOGIC: Tính toán và hút về mép card gần nhất
-            if (stepWidth > 0) {
-                const nearestIndex = Math.round(currentTranslate / stepWidth);
-                currentTranslate = nearestIndex * stepWidth;
+            // Ngưỡng vuốt nhẹ: Chỉ cần nhích 40px là đủ để đổi slide
+            const swipeThreshold = 40; 
+            let targetIndex = startIndex;
+
+            if (diff > swipeThreshold) {
+                // Vuốt sang trái -> Nhảy card tiếp theo
+                targetIndex = startIndex + 1;
+            } else if (diff < -swipeThreshold) {
+                // Vuốt sang phải -> Quay lại card trước
+                targetIndex = startIndex - 1;
             }
 
-            // Ép giới hạn không cho vượt quá biên
+            // Tính vị trí cần Snap tới
+            currentTranslate = targetIndex * stepWidth;
+
+            // Giới hạn 2 đầu không cho tuột ra ngoài
             if (currentTranslate < 0) currentTranslate = 0;
             if (currentTranslate > maxTranslate) currentTranslate = maxTranslate;
 
-            // Bật transition trượt đầm vào đúng vị trí card
+            // Bật hiệu ứng trượt nhẹ nhàng vào vị trí mới
             updateSliderPosition(true);
         });
 
