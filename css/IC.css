@@ -152,23 +152,23 @@
 /* ==========================================================================
    2. THANH LỌC DANH MỤC (FILTER TABS)
    ========================================================================== */
+/* Container chính chứa 3 hàng nút */
 .projects-filter-container {
-    margin-bottom: 36px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-}
-
-.projects-filter-container::-webkit-scrollbar {
-    display: none;
-}
-
-.projects-filter-list {
+    margin-bottom: 40px;
     display: flex;
-    gap: 12px;
-    white-space: nowrap;
+    flex-direction: column;
+    gap: 16px; /* Khoảng cách giữa các hàng trên/dưới */
 }
 
+/* Cấu trúc từng hàng nút */
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Khoảng cách giữa các nút trong cùng 1 hàng */
+    flex-wrap: wrap; /* Tự xuống hàng nếu màn hình điện thoại quá nhỏ */
+}
+
+/* Thẻ nút Filter */
 .filter-btn {
     background: #ffffff;
     border: 1px solid var(--color-bg-dark, #000000) !important; 
@@ -180,6 +180,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     color: #000000;
+    white-space: nowrap;
 }
 
 .filter-btn.active, 
@@ -187,6 +188,10 @@
     background: var(--color-bg-dark, #000000);
     color: #ffffff;
 }
+
+
+
+
 
 /* ==========================================================================
    3. CẤU TRÚC BENTO GRID (DESKTOP 12 CỘT)
