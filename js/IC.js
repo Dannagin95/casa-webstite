@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
        1. XỬ LÝ LỌC DANH MỤC (FILTER TABS)
        ========================================================================== */
     const filterBtns = document.querySelectorAll('.filter-btn');
-    // FIX LỖI: Chỉ lấy các bento-item nằm trong GRID CHÍNH, KHÔNG lấy trong Slider!
     const gridBentoItems = document.querySelectorAll('.bento-grid-container .bento-item');
 
     if (filterBtns.length > 0 && gridBentoItems.length > 0) {
