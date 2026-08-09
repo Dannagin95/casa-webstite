@@ -199,21 +199,26 @@ function applyCasaFont() {
         const style = document.createElement('style');
         style.id = 'casa-font-style';
         style.innerHTML = `
-            /* Style mặc định áp dụng chung (cho Tiêu đề, Header, Menu, v.v...) */
+            /* Style font chữ CASA */
             .${className} { 
                 font-family: var(--CASA-Parquet-font, 'Cal Sans'), sans-serif !important; 
                 letter-spacing: 2px !important;
                 font-weight: 500 !important;
+                display: inline !important;
+                white-space: nowrap !important;
                 -webkit-font-smoothing: antialiased !important;
                 -moz-osx-font-smoothing: grayscale !important;
             }
-
-            
 
             p .${className} {
                 font-family: var(--CASA-Parquet-font, 'Cal Sans'), sans-serif !important; 
                 font-weight: 600 !important; 
                 letter-spacing: 1px !important; 
+            }
+
+            /* FIX CỐT LÕI: Dùng display: inline để giữ nguyên khoảng trắng (dấu cách) */
+            .casa-wrapper-inline {
+                display: inline !important;
             }
         `;
         document.head.appendChild(style);
@@ -226,7 +231,7 @@ function applyCasaFont() {
                 if (!parent) return NodeFilter.FILTER_REJECT;
                 const tag = parent.tagName ? parent.tagName.toLowerCase() : '';
                 
-                if (tag === 'script' || tag === 'style' || (parent.classList && parent.classList.contains(className))) {
+                if (tag === 'script' || tag === 'style' || (parent.classList && (parent.classList.contains(className) || parent.classList.contains('casa-wrapper-inline')))) {
                     return NodeFilter.FILTER_REJECT;
                 }
                 
@@ -272,7 +277,11 @@ function applyCasaFont() {
                 frag.appendChild(document.createTextNode(val.substring(lastIdx)));
             }
 
-            parent.replaceChild(frag, node);
+            const wrapper = document.createElement('span');
+            wrapper.className = 'casa-wrapper-inline';
+            wrapper.appendChild(frag);
+
+            parent.replaceChild(wrapper, node);
         });
     }
 

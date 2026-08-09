@@ -90,15 +90,16 @@ body.menu-open {
 
     
     .sub-back-trigger {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 13px;
-        color: var(--color-text-muted);
-        font-weight: 400;
-        margin-bottom: 10px;
-        cursor: pointer;
-    }
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--color-text-muted);
+    font-weight: 400;
+    margin-bottom: 10px;
+    cursor: pointer;
+    white-space: nowrap !important; /* Chống tuyệt đối việc chữ bị rớt xuống dòng */
+}
 
     
     .mobile-nav, .sub-menu-layer {
