@@ -30,55 +30,55 @@ body.menu-open {
     }
 
     
-.sub-visual-layout {
-    width: 100%;
-    overflow: hidden;
-    margin-top: 80px; 
-}
+    .sub-visual-layout {
+        width: 100%;
+        overflow: hidden;
+        margin-top: 80px; 
+    }
 
-.visual-card {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory; 
-    scroll-behavior: smooth;
-    gap: 7px;
-    padding: 0;
-    text-decoration: none !important;
-    scroll-snap-stop: always !important; 
-    -webkit-overflow-scrolling: touch !important;
-    overscroll-behavior-x: contain;
-    scrollbar-width: none; 
-}
+    .visual-card {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory; 
+        scroll-behavior: smooth;
+        gap: 7px;
+        padding: 0;
+        text-decoration: none !important;
+        scroll-snap-stop: always !important; 
+        -webkit-overflow-scrolling: touch !important;
+        overscroll-behavior-x: contain;
+        scrollbar-width: none; 
+    }
 
-.visual-card::-webkit-scrollbar {
-    display: none;
-}
+    .visual-card::-webkit-scrollbar {
+        display: none;
+    }
 
-.visual-item {
-    flex: 0 0 50.1%;
-    position: relative;
-    scroll-snap-align: center;
-    aspect-ratio: 7/8;
-    min-width: 50.1%;
-}
+    .visual-item {
+        flex: 0 0 50.1%;
+        position: relative;
+        scroll-snap-align: center;
+        aspect-ratio: 7/8;
+        min-width: 50.1%;
+    }
 
-.visual-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+    .visual-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-.card-title {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: none;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3); 
-}
+    .card-title {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: none;
+        letter-spacing: 1px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3); 
+    }
 
 
 
@@ -90,16 +90,16 @@ body.menu-open {
 
     
     .sub-back-trigger {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    color: var(--color-text-muted);
-    font-weight: 400;
-    margin-bottom: 10px;
-    cursor: pointer;
-    white-space: nowrap !important; /* Chống tuyệt đối việc chữ bị rớt xuống dòng */
-}
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        color: var(--color-text-muted);
+        font-weight: 400;
+        margin-bottom: 10px;
+        cursor: pointer;
+        white-space: nowrap !important; /* Chống tuyệt đối việc chữ bị rớt xuống dòng */
+    }
 
     
     .mobile-nav, .sub-menu-layer {
