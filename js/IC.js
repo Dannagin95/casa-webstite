@@ -1,19 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
-
-    /* ==========================================================================
-       1. XỬ LÝ LỌC DANH MỤC (FILTER TABS)
-       ========================================================================== */
     const filterBtns = document.querySelectorAll('.filter-btn');
     const gridBentoItems = document.querySelectorAll('.bento-grid-container .bento-item');
+    const bentoContainer = document.querySelector('.bento-grid-container');
 
-    if (filterBtns.length > 0 && gridBentoItems.length > 0) {
+    if (filterBtns.length > 0 && gridBentoItems.length > 0 && bentoContainer) {
         filterBtns.forEach(btn => {
             btn.addEventListener('click', function() {
-                // Đổi trạng thái active của nút
                 filterBtns.forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
 
                 const filterValue = this.getAttribute('data-filter');
+
+                if (filterValue === 'all') {
+                    bentoContainer.classList.remove('is-filtered');
+                } else {
+                    bentoContainer.classList.add('is-filtered');
+                }
 
                 gridBentoItems.forEach(item => {
                     const category = item.getAttribute('data-category');
@@ -26,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
 
 
 

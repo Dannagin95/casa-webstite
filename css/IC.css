@@ -770,3 +770,28 @@
         transition: transform 0.05s linear;
     }
 }
+
+
+
+
+
+@media (min-width: 768px) {
+    .bento-grid-container.is-filtered {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        grid-auto-rows: auto !important;
+    }
+
+    .bento-grid-container.is-filtered .bento-item,
+    .bento-grid-container.is-filtered .bento-large,
+    .bento-grid-container.is-filtered .bento-vertical,
+    .bento-grid-container.is-filtered .bento-horizontal,
+    .bento-grid-container.is-filtered .bento-standard,
+    .bento-grid-container.is-filtered .bento-full {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 6 / 7 !important; 
+    }
+}
