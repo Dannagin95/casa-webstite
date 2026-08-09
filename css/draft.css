@@ -1,0 +1,265 @@
+/* ==========================================================================
+   1. GIAO DIỆN DESKTOP LARGE (> 1440px)
+   ========================================================================== */
+.editorial-page {
+    width: 100%;
+    background-color: #ffffff;
+    padding-top: 140px;
+    padding-bottom: 120px;
+}
+
+.editorial-intro,
+.editorial-gallery {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Intro Layout */
+.editorial-intro {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 80px;
+    margin-bottom: 80px;
+}
+
+.project-tag {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #888888;
+    margin-bottom: 16px;
+}
+
+.project-title {
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #111111;
+    margin-bottom: 24px;
+}
+
+.project-lead {
+    font-size: 17px;
+    line-height: 1.65;
+    color: #444444;
+}
+
+.project-meta {
+    border-left: 1px solid #eeeeee;
+    padding-left: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.meta-col {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.meta-col .label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #999999;
+}
+
+.meta-col .value {
+    font-size: 13px;
+    font-weight: 500;
+    color: #111111;
+}
+
+/* Gallery Rows Layout */
+.editorial-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Gap giữa các hàng trên Desktop Large */
+}
+
+.img-box {
+    width: 100%;
+    overflow: hidden;
+    background-color: #f7f7f7;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.img-box.vert { aspect-ratio: 3 / 4; }
+.img-box.horiz { aspect-ratio: 16 / 10; }
+
+/* Grid Patterns */
+.row-pair-vert {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.row-trio-vert {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+}
+
+.row-full-horiz {
+    width: 100%;
+}
+
+.row-asymmetric {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: center;
+}
+
+
+/* ==========================================================================
+   2. GIAO DIỆN STANDARD DESKTOP / LAPTOP (1025px - 1440px)
+   ========================================================================== */
+@media (max-width: 1440px) and (min-width: 1025px) {
+    .editorial-intro,
+    .editorial-gallery {
+        max-width: 1200px;
+        padding: 0 32px;
+    }
+
+    .editorial-intro {
+        grid-template-columns: 1fr 300px;
+        gap: 60px;
+        margin-bottom: 60px;
+    }
+
+    .project-title {
+        font-size: 40px;
+    }
+
+    .editorial-gallery {
+        gap: 48px;
+    }
+
+    .row-pair-vert { gap: 32px; }
+    .row-trio-vert { gap: 20px; }
+    .row-asymmetric { gap: 32px; }
+}
+
+
+/* ==========================================================================
+   3. GIAO DIỆN TABLET (768px - 1024px)
+   * Áp dụng Golden Rule: Lề 20px | Gap Section 40px
+   ========================================================================== */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .editorial-page {
+        padding-top: 100px;
+        padding-bottom: 80px;
+    }
+
+    /* Đảm bảo Lề 2 bên 20px */
+    .editorial-intro,
+    .editorial-gallery {
+        padding: 0 20px !important;
+    }
+
+    .editorial-intro {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-bottom: 40px; /* Gap section 40px */
+    }
+
+    .project-title {
+        font-size: 32px;
+    }
+
+    .project-meta {
+        border-left: none;
+        border-top: 1px solid #eeeeee;
+        padding-left: 0;
+        padding-top: 24px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    /* Spacing hàng ảnh chuẩn 40px */
+    .editorial-gallery {
+        gap: 40px;
+    }
+
+    .row-pair-vert {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .row-trio-vert {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 16px;
+    }
+
+    .row-asymmetric {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+
+/* ==========================================================================
+   4. GIAO DIỆN MOBILE (< 767px)
+   * Áp dụng Golden Rule: Lề 20px | Gap Section 40px
+   ========================================================================== */
+@media (max-width: 767px) {
+    .editorial-page {
+        padding-top: 80px;
+        padding-bottom: 60px;
+    }
+
+    /* Đảm bảo Lề 2 bên 20px */
+    .editorial-intro,
+    .editorial-gallery {
+        padding: 0 20px !important;
+    }
+
+    .editorial-intro {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 40px; /* Gap section 40px */
+    }
+
+    .project-title {
+        font-size: 28px;
+    }
+
+    .project-lead {
+        font-size: 15px;
+    }
+
+    .project-meta {
+        border-left: none;
+        border-top: 1px solid #eeeeee;
+        padding-left: 0;
+        padding-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    /* Mobile: Toàn bộ ảnh rớt thành 1 cột dọc liên tục, gap 40px */
+    .editorial-gallery {
+        gap: 40px;
+    }
+
+    .row-pair-vert,
+    .row-trio-vert,
+    .row-asymmetric {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
