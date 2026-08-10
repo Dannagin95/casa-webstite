@@ -210,6 +210,14 @@ function applyCasaFont() {
                 -moz-osx-font-smoothing: grayscale !important;
             }
 
+
+            span .${className} {
+                font-family: var(--CASA-Parquet-font, 'Cal Sans'), sans-serif !important; 
+                font-weight: 600 !important; 
+                letter-spacing: 1px !important; 
+            }
+
+
             p .${className} {
                 font-family: var(--CASA-Parquet-font, 'Cal Sans'), sans-serif !important; 
                 font-weight: 600 !important; 

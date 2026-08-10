@@ -284,3 +284,409 @@
         font-size: 13px;
     }
 }
+
+
+
+
+
+
+
+
+
+/*=================
+NÚT HỎI CASA
+=================*/
+/* WRAPPER CĂN PHẢI THẲNG HÀNG VỚI MÉP BẢNG FAQ */
+.faq-ask-trigger-wrapper {
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+    max-width: 840px;
+    margin: 40px auto 0 auto;
+    box-sizing: border-box;
+}
+
+/* NÚT HỎI CASA BO TRÒN + CHỮ THƯỜNG */
+.faq-ask-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    background-color: transparent;
+    border: 1px solid #1a1a1a;
+    border-radius: 50px; /* Bo tròn góc */
+    color: #1a1a1a;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: none; /* Chữ thường tự nhiên, không uppercase */
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.faq-ask-btn .faq-ask-arrow {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    fill: none;
+    transition: transform 0.3s ease;
+}
+
+.faq-ask-btn:hover {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.faq-ask-btn:hover .faq-ask-arrow {
+    transform: translateX(4px);
+}
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   ASKCASA POPUP MODAL STYLES (TRỌN BỘ - DESKTOP + MOBILE 767PX)
+   ========================================================================== */
+
+/* 1. LỚP NỀN TỐI (OVERLAY DESKTOP) */
+.askcasa-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.askcasa-modal-overlay.is-open,
+.askcasa-modal-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* 2. KHUNG THẺ NỀN TRẮNG (CARD DESKTOP) */
+.askcasa-modal-card {
+    position: relative;
+    width: 100%;
+    max-width: 580px;
+    background-color: #ffffff !important;
+    padding: 40px;
+    border-radius: 0 !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.askcasa-modal-overlay.is-open .askcasa-modal-card,
+.askcasa-modal-overlay.is-active .askcasa-modal-card {
+    transform: translateY(0);
+}
+
+/* 3. NÚT ĐÓNG (X) */
+.askcasa-modal-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: #666666;
+    transition: color 0.2s ease;
+}
+
+.askcasa-modal-close-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    fill: none;
+}
+
+.askcasa-modal-close-btn:hover {
+    color: #000000;
+}
+
+/* 4. HEADER MODAL */
+.askcasa-modal-header {
+    margin-bottom: 28px;
+    text-align: left;
+}
+
+.askcasa-modal-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0 0 8px 0;
+}
+
+.askcasa-modal-subtitle {
+    font-size: 0.85rem;
+    color: #666666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* 5. INPUT & FLOATING LABEL */
+.askcasa-modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.askcasa-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.askcasa-form-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.askcasa-form-input {
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    font-size: 0.85rem;
+    color: #1a1a1a;
+    outline: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.askcasa-form-textarea {
+    width: 100%;
+    padding: 0;
+    margin-top: -15px;
+    line-height: 1.8;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    font-size: 0.85rem;
+    color: #1a1a1a;
+    outline: none;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.askcasa-form-input:focus,
+.askcasa-form-textarea:focus {
+    border-bottom-color: #1a1a1a;
+}
+
+.askcasa-form-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 36px;
+    line-height: 36px;
+    font-size: 0.85rem;
+    color: #888888;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    opacity: 1;
+    visibility: visible;
+}
+
+.askcasa-form-textarea ~ .askcasa-form-label {
+    top: -15px;
+    height: auto;
+    line-height: 1.4;
+}
+
+.askcasa-form-input:not(:placeholder-shown) ~ .askcasa-form-label,
+.askcasa-form-textarea:not(:placeholder-shown) ~ .askcasa-form-label {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* 6. CHECKBOX CUSTOM */
+.askcasa-form-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.askcasa-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.askcasa-checkbox-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.askcasa-checkbox-custom {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #888888;
+    flex-shrink: 0;
+    margin-top: 2px;
+    position: relative;
+}
+
+.askcasa-checkbox-input:checked ~ .askcasa-checkbox-custom {
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
+}
+
+.askcasa-checkbox-input:checked ~ .askcasa-checkbox-custom::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+    border: solid #ffffff;
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(45deg);
+}
+
+.askcasa-checkbox-text {
+    font-size: 0.78rem;
+    color: #555555;
+    line-height: 1.4;
+}
+
+/* 7. NÚT SUBMIT */
+.askcasa-submit-btn {
+    width: auto; 
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 35px !important;
+    background-color: var(--color-bg-dark, #111);
+    color: #ffffff;
+    border: 2px solid var(--color-bg-dark, #111) !important;
+    border-radius: 100px !important;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    text-decoration: none !important; 
+    transition: all 0.2s ease;
+}
+
+.askcasa-submit-btn:hover {
+    background: var(--white, #fff);
+    color: #000000;  
+}
+
+/* ==========================================================================
+   RESPONSIVE MOBILE (< 767PX) - CHUẨN ĐÉT SAMPLE BOX
+   ========================================================================== */
+
+@media (max-width: 767px) {
+    .askcasa-modal-overlay {
+        position: fixed !important;
+        top: 8px !important;
+        right: 8px !important;
+        bottom: 8px !important;
+        left: 8px !important;
+        inset: 8px !important;
+        width: auto !important;
+        height: auto !important;
+        background: transparent !important;
+        display: flex !important;
+        align-items: stretch !important;
+        justify-content: stretch !important;
+        z-index: 100000 !important;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        padding: 0 !important;
+    }
+
+    .askcasa-modal-overlay.is-active,
+    .askcasa-modal-overlay.is-open {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .askcasa-modal-card {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        margin: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        max-height: none !important;
+        background: #ffffff !important;
+        padding: 32px 20px 40px 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        border-radius: 0 !important;
+        box-sizing: border-box !important;
+
+        overflow-y: auto !important;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+
+    .askcasa-modal-card::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .askcasa-modal-card .askcasa-modal-close-btn {
+        position: absolute !important;
+        top: 24px !important;
+        right: 20px !important;
+        z-index: 10 !important;
+    }
+
+    .askcasa-form-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+
+
+
+
