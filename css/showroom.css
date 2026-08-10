@@ -537,6 +537,7 @@ FAQ
     font-weight: 800;
     color: #1a1a1a;
     line-height: 1.4;
+    max-width: 93%;
 }
 
 .faq-answer-wrapper {
@@ -548,6 +549,7 @@ FAQ
 
 .faq-answer-content {
     min-height: 0;
+    max-width: 90%;
 }
 
 .faq-answer-content p {

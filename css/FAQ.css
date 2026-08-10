@@ -50,8 +50,9 @@
 .faq-question {
     font-size: 13px;
     font-weight: 800;
-    color: #1a1a1a;
+    color: #000000;
     line-height: 1.4;
+    max-width: 93%;
 }
 
 .faq-answer-wrapper {
@@ -63,6 +64,7 @@
 
 .faq-answer-content {
     min-height: 0;
+    max-width: 90%;
 }
 
 .faq-answer-content p {
@@ -175,7 +177,7 @@
 }
 
 .faq-load-more-btn:hover {
-    background-color: var(--color-dark, #000000);
+    background-color: var(--color-bg-dark, rgb(23, 26, 27));
 }
 
 .faq-load-more-btn:hover .faq-double-chevron {
@@ -185,7 +187,7 @@
 .faq-double-chevron {
     width: 14px;
     height: 14px;
-    stroke: #1a1a1a;
+    stroke: #000000;
     fill: none;
     stroke-width: 2.5;
     stroke-linecap: round;
