@@ -763,34 +763,33 @@
 
 
 
-
-/* Container tổng của Section */
+/*=========================
+FAQ
+=========================*/
 .faq-wrapper {
     width: 100%;
     padding: var(--section-gap);
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ffffff; /* Nền trang trắng */
+    background-color: #ffffff;
     margin-bottom: 20px;
 }
 
-/* Tiêu đề FAQ căn giữa */
 .faq-title {
     font-size: 32px;
     font-weight: 500;
     color: #000000;
     margin-bottom: 20px;
     letter-spacing: 0.5px;
-    text-transform: none; /* Giữ nguyên định dạng chữ */
+    text-transform: none;
 }
 
-/* Khối nền xám nhạt chứa câu hỏi */
 .faq-content-block {
-    background-color: #f4f4f4; /* Màu xám rất nhạt đúng hình */
+    background-color: #f4f4f4;
     width: 100%;
-    max-width: 840px; /* Giới hạn độ rộng nội dung */
-    padding: 15px 50px; /* Padding rộng rãi tạo độ thoáng */
+    max-width: 840px;
+    padding: 15px 50px 30px 50px;
     box-sizing: border-box;
 }
 
@@ -798,38 +797,37 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer; /* Để người dùng biết là bấm được */
+    cursor: pointer;
     padding: 22px 0;
 }
 
-/* Từng dòng câu hỏi */
 .faq-item {
-    border-bottom: 1px solid var(--color-bar);
+    border-bottom: 1px solid var(--color-bar, #e0e0e0);
     transition: background-color 0.3s ease;
 }
 
-.faq-item:last-child {
-    border-bottom: none; /* Dòng cuối không có kẻ ngang */
+.faq-content-block > .faq-item:nth-child(4) {
+    border-bottom: 1px solid var(--color-bar, #e0e0e0);
 }
 
-/* Typography cho câu hỏi */
+.faq-more-inner > .faq-item:last-child {
+    border-bottom: none;
+}
+
 .faq-question {
     font-size: 13px;
-    font-weight: 800; /* Độ đậm vừa phải */
-    color: #1a1a1a; /* Màu gần đen */
+    font-weight: 800;
+    color: #1a1a1a;
     line-height: 1.4;
 }
 
-
-/* PHẦN MỚI: Câu trả lời */
 .faq-answer-wrapper {
     display: grid;
-    grid-template-rows: 0fr; /* Mặc định là 0 */
-    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Hiệu ứng dòng chảy của QUOC */
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
 }
 
-/* Nội dung bên trong Grid */
 .faq-answer-content {
     min-height: 0;
 }
@@ -843,38 +841,36 @@
     padding-bottom: 20px; 
 }
 
-/* KHI ACTIVE: Bung Grid ra */
 .faq-item.active .faq-answer-wrapper {
-    grid-template-rows: 1fr; /* Mở ra đúng bằng nội dung chữ */
+    grid-template-rows: 1fr;
 }
 
-/* Nút tròn chứa icon */
 .ed-faq-icon-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 25px;
-        height: 25px;
-        background-color: #e0e0e0;
-        border-radius: 50%;
-        flex-shrink: 0;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease;
+}
 
 .faq-header-row:hover .ed-faq-icon-btn {
-    background-color: var(--color-dark);
-    }
+    background-color: var(--color-dark, #000000);
+}
 
 .faq-header-row:hover .ed-faq-chevron {
     stroke: #ffffff;
-    }
+}
 
-    .faq-item.active .ed-faq-chevron {
+.faq-item.active .ed-faq-chevron {
     transform: rotate(180deg);
 }
 
-    /* Icon SVG */
 .ed-faq-chevron {
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Đồng bộ thời gian với slide */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     width: 11px;
     height: 11px;
     stroke: currentColor;
@@ -882,110 +878,144 @@
     stroke-width: 3;
 }
 
-
-
-/*---faqlink---*/
-
 .faq-inline-link {
-    color: #000000; /* Giữ màu chữ đồng bộ với văn bản */
-    text-decoration: none; /* Khóa gạch chân mặc định thô kệch của trình duyệt */
+    color: #000000;
+    text-decoration: none;
     position: relative;
     display: inline-block;
-    font-weight: 500; /* Có thể tăng nhẹ font-weight nếu muốn chữ nổi bật hơn một chút */
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
-/* Tạo đường gạch chân custom siêu mảnh */
 .faq-inline-link::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 1px; /* Khoảng cách từ chân chữ xuống đường line */
+    bottom: 1px;
     width: 100%;
-    height: 1px; /* Độ mảnh của đường line gạch chân */
-    background-color: #000000; /* Màu đường line trùng màu chữ */
-    
-    /* Gốc biến đổi đặt bên TRÁI để khi thu nhỏ (scale về 0), phần bên PHẢI sẽ co về bên trái */
+    height: 1px;
+    background-color: #000000;
     transform-origin: left center;
-    transform: scaleX(1); /* Mặc định hiển thị nguyên vẹn đường line */
+    transform: scaleX(1);
     transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* ================= HOVER INTERACTION ================= */
-/* Khi rê chuột vào: Đường gạch chân biến mất dần từ phải sang trái */
 .faq-inline-link:hover::after {
-    transform: scaleX(0); /* Co lại bằng 0 và biến mất */
+    transform: scaleX(0);
 }
 
+.faq-more-container {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
 
+.faq-more-container.is-expanded {
+    grid-template-rows: 1fr;
+}
 
-/*---faqlink---*/
-    
+.faq-more-inner {
+    min-height: 0;
+    overflow: hidden;
+}
 
+.faq-actions-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
 
+.faq-load-more-btn {
+    background-color: #e0e0e0;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-/* --- RESPONSIVE CHO FAQ (MOBILE & TABLET) --- */
+.faq-load-more-btn:hover {
+    background-color: var(--color-dark, #000000);
+}
+
+.faq-load-more-btn:hover .faq-double-chevron {
+    stroke: #ffffff;
+}
+
+.faq-double-chevron {
+    width: 14px;
+    height: 14px;
+    stroke: #1a1a1a;
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.3s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-load-more-btn.is-active .faq-double-chevron {
+    transform: rotate(180deg);
+}
+
 @media (max-width: 1024px) {
-
     .faq-inline-link:hover::after {
         display: none;
     }
     
-    
-    /* Container tổng */
     .faq-wrapper {
-        padding: 40px 20px; /* Lề trái phải 20px đúng yêu cầu của mày */
-        margin-top: 20px;
+        padding: 40px 20px;
     }
 
     .faq-title {
-        font-size: 28px; /* Giảm nhẹ tiêu đề cho cân đối */
+        font-size: 28px;
         margin-bottom: 30px;
     }
 
-    /* Khối nền xám: Bỏ giới hạn max-width và chỉnh lại padding */
     .faq-content-block {
         max-width: 100%;
-        padding: 5px 20px; /* Thu hẹp padding nội bộ để ưu tiên không gian chữ */
-        background-color: #f4f4f4; /* Giữ nguyên màu xám nhạt chuẩn QUOC */
+        padding: 5px 20px 20px 20px;
+        background-color: #f4f4f4;
     }
 
-    /* Từng dòng câu hỏi */
     .faq-header-row {
         display: flex !important;
         justify-content: space-between !important;
         width: 100% !important;
-        flex-direction: row !important; /* Giữ câu hỏi và icon nằm ngang */
+        flex-direction: row !important;
     }
 
     .faq-item {
         display: flex !important;
-        flex-direction: column !important; /* Ép câu trả lời phải xuống dưới câu hỏi [cite: 2026-02-11] */
+        flex-direction: column !important;
         width: 100% !important;
     }
 
-    /* Font chữ trên mobile: Cần rõ ràng nhưng không quá to */
     .faq-question {
-        font-size: 14px; /* Tăng 1px so với desktop để dễ đọc trên điện thoại */
+        font-size: 14px;
         letter-spacing: -0.01em;
-        padding-right: 15px; /* Tránh chữ đè lên icon */
+        padding-right: 15px;
     }
 
     .faq-answer-content {
         width: 100% !important;
-        display: block !important; /* Triệt tiêu hoàn toàn việc bị ép sang phải [cite: 2026-02-11] */
+        display: block !important;
     }
 
-    /* Câu trả lời */
     .faq-answer-content p {
         font-size: 12px;
         line-height: 1.4;
         padding-bottom: 15px;
     }
 
-    /* Icon nút tròn: Giữ nguyên kích thước để dễ chạm (Touch target) */
     .ed-faq-icon-btn {
-        width: 28px; /* Tăng nhẹ để ngón tay dễ bấm */
+        width: 28px;
         height: 28px;
     }
 
@@ -993,19 +1023,35 @@
         width: 12px;
         height: 12px;
     }
+
+    .faq-actions-wrapper {
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .faq-load-more-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .faq-double-chevron {
+        width: 13px;
+        height: 13px;
+    }
 }
 
-/* Tinh chỉnh cho màn hình siêu nhỏ */
 @media (max-width: 480px) {
     .faq-title {
         font-size: 24px;
     }
     
     .faq-question {
-        font-size: 13px; /* Quay lại 13px nếu màn hình quá hẹp */
+        font-size: 13px;
     }
 }
-
+/*=========================
+FAQ
+=========================*/
 
 
 
