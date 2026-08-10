@@ -565,7 +565,7 @@ SITEHEADER
 
 
 
-.FritzHansenJingAnShowroomhero {
+.LostFoundhero {
     height: 93vh; 
     position: relative; 
     display: flex;
@@ -577,7 +577,7 @@ SITEHEADER
 }
 
 /* Thêm lớp phủ sẫm màu */
-.FritzHansenJingAnShowroomhero-bg ::after {
+.LostFoundhero-bg ::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -586,14 +586,14 @@ SITEHEADER
 }
 
 
-.FritzHansenJingAnShowroomhero-bg { 
+.LostFoundhero-bg { 
     position: absolute; 
     inset: 0; 
     z-index: -1; 
 }
 
 
-.FritzHansenJingAnShowroomhero-bg img {
+.LostFoundhero-bg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -603,7 +603,7 @@ SITEHEADER
 
 
 
-.FritzHansenJingAnShowroomhero-text { 
+.LostFoundhero-text { 
     color: #fff; 
     width: 100%;
     max-width: var(--container-max); /* Khóa chặt ở 1650px */
@@ -623,7 +623,7 @@ SITEHEADER
 }
 
 
-.FritzHansenJingAnShowroomhero-text h1
+.LostFoundhero-text h1
  { font-size: 30x; line-height: 1.1; margin-bottom: 30px; font-weight: 400; }
 
 
@@ -639,7 +639,7 @@ SITEHEADER
 
 
 @media (max-width: 1024px) {
-    .FritzHansenJingAnShowroomhero  {
+    .LostFoundhero  {
        
         height: auto !important; 
         
@@ -665,7 +665,7 @@ SITEHEADER
 
 
 
-    .FritzHansenJingAnShowroomhero-text {
+    .LostFoundhero-text {
         padding: 0 !important; 
         margin: 0 auto !important;
         max-width: 100% !important; 
@@ -684,7 +684,7 @@ SITEHEADER
 
 /* TABLET: Dàn ngang ra tối ưu */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .FritzHansenJingAnShowroomhero  {
+    .LostFoundhero  {
         min-height: 56vw !important; 
     }
 }
