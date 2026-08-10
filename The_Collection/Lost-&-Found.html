@@ -697,8 +697,9 @@
 
 
 <section class="faq-wrapper">
-    <h2 class="faq-title" style="font-family: var(--special-font) ;">FAQ</h2>
+    <h2 class="faq-title" style="font-family: var(--special-font);">FAQ</h2>
     
+    <!-- BOX FAQ (Khung xám) -->
     <div class="faq-content-block">
 
         <div class="faq-item">
@@ -927,7 +928,77 @@
             </button>
         </div>
 
+    </div> <!-- END BOX FAQ -->
+
+    <!-- NÚT HỎI CASA (Nằm HOÀN TOÀN NGOÀI Box FAQ xám) -->
+    <div class="faq-ask-trigger-wrapper">
+        <button class="faq-ask-btn" id="openFaqModal" type="button">
+            <span>Hỏi CASA</span>
+            <svg class="faq-ask-arrow" viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </button>
     </div>
+
+        <!-- POPUP MODAL FORM -->
+<div class="askcasa-modal-overlay" id="faqModal" aria-hidden="true">
+    <div class="askcasa-modal-card">
+        
+        <!-- Nút Đóng X -->
+        <button class="askcasa-modal-close-btn" id="closeFaqModal" aria-label="Đóng" type="button">
+            <svg viewBox="0 0 24 24">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <!-- Header Modal -->
+        <div class="askcasa-modal-header">
+            <h3 class="askcasa-modal-title" style="font-family: var(--special-font);">FAQ</h3>
+            <p class="askcasa-modal-subtitle">Giải đáp thắc mắc của bạn!</p>
+        </div>
+
+        <!-- Form Nội Dung -->
+        <form class="askcasa-modal-form" id="faqContactForm">
+            <div class="askcasa-form-grid">
+                <div class="askcasa-form-group">
+                    <input type="text" id="casaUserName" class="askcasa-form-input" placeholder=" " required />
+                    <label for="casaUserName" class="askcasa-form-label">Họ và tên*</label>
+                </div>
+
+                <div class="askcasa-form-group">
+                    <input type="email" id="casaUserEmail" class="askcasa-form-input" placeholder=" " required />
+                    <label for="casaUserEmail" class="askcasa-form-label">Email*</label>
+                </div>
+            </div>
+
+            <div class="askcasa-form-group">
+                <textarea id="casaUserQuestion" class="askcasa-form-textarea" placeholder=" " rows="3" required></textarea>
+                <label for="casaUserQuestion" class="askcasa-form-label">Nội dung câu hỏi*</label>
+            </div>
+
+            <div class="askcasa-form-checkboxes">
+                <label class="askcasa-checkbox-label">
+                    <input type="checkbox" class="askcasa-checkbox-input" required />
+                    <span class="askcasa-checkbox-custom"></span>
+                    <span class="askcasa-checkbox-text">(Bắt buộc) Tôi đã đọc và đồng ý với chính sách xử lý dữ liệu cá nhân.</span>
+                </label>
+
+                <label class="askcasa-checkbox-label">
+                    <input type="checkbox" class="askcasa-checkbox-input" />
+                    <span class="askcasa-checkbox-custom"></span>
+                    <span class="askcasa-checkbox-text">(Tùy chọn) Tôi đồng ý nhận thông tin, ưu đãi và cập nhật mới từ CASA Parquet.</span>
+                </label>
+            </div>
+
+            <div class="askcasa-form-submit-wrapper">
+                <button type="submit" class="askcasa-submit-btn">Gửi câu hỏi</button>
+            </div>
+        </form>
+
+    </div>
+</div>
 </section>
 
 
