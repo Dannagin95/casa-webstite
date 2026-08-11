@@ -390,7 +390,7 @@ NÚT HỎI CASA
     width: 100%;
     max-width: 580px;
     background-color: #ffffff !important;
-    padding: 40px;
+    padding: 30px;
     border-radius: 0 !important;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     transform: translateY(20px);
@@ -432,12 +432,12 @@ NÚT HỎI CASA
 
 /* 4. HEADER MODAL */
 .askcasa-modal-header {
-    margin-bottom: 28px;
+    margin-bottom: 38px;
     text-align: left;
 }
 
 .askcasa-modal-title {
-    font-size: 1.8rem;
+    font-size: 3rem;
     font-weight: 500;
     color: #1a1a1a;
     margin: 0 0 8px 0;
@@ -469,6 +469,12 @@ NÚT HỎI CASA
     flex-direction: column;
 }
 
+
+.askcasa-form-submit-wrapper {
+    margin: 20px 0 60px;
+}
+
+
 .askcasa-form-input {
     width: 100%;
     height: 36px;
@@ -489,7 +495,7 @@ NÚT HỎI CASA
     width: 100%;
     padding: 0;
     margin-top: -15px;
-    line-height: 1.8;
+    line-height: 2.2;
     border: none;
     border-bottom: 1px solid #ccc;
     background: transparent;
@@ -523,7 +529,7 @@ NÚT HỎI CASA
 .askcasa-form-textarea ~ .askcasa-form-label {
     top: -15px;
     height: auto;
-    line-height: 1.4;
+    line-height: 2.2;
 }
 
 .askcasa-form-input:not(:placeholder-shown) ~ .askcasa-form-label,
