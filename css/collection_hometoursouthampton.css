@@ -558,20 +558,19 @@ SITEHEADER
 
 
 
-
 /* ==========================================================================
-   LOST&FOUND — DESKTOP BASELINE (VERTICAL META & CENTERED SEO)
+   HOMETOUR SOUTHAMPTON — DESKTOP BASELINE (VERTICAL META & CENTERED SEO)
    ========================================================================== */
 
 /* --- SECTION 1: HEADER --- */
-.lost-found-header {
+.hometour-southampton-header {
     width: 100%;
     background-color: #ffffff;
     padding-top: 150px;
     padding-bottom: 40px;
 }
 
-.lost-found-container {
+.hometour-southampton-container {
     max-width: 1650px;
     margin: 0 auto;
     padding: 0 var(--side-padding);
@@ -581,7 +580,7 @@ SITEHEADER
     text-align: left;
 }
 
-.lost-found-subtitle {
+.hometour-southampton-subtitle {
     font-size: 11px;
     font-weight: 300;
     word-spacing: 5px;
@@ -592,7 +591,7 @@ SITEHEADER
     display: block;
 }
 
-.lost-found-title {
+.hometour-southampton-title {
     font-size: 33px;
     font-weight: 600;
     line-height: 1.15;
@@ -602,13 +601,13 @@ SITEHEADER
 }
 
 /* Cụm thông tin xếp dọc */
-.lost-found-meta {
+.hometour-southampton-meta {
     display: flex;
     flex-direction: column;
     gap: 3px;
 }
 
-.lost-found-meta-item {
+.hometour-southampton-meta-item {
     font-size: 22px;
     color: #888888;
     font-weight: 600;
@@ -617,14 +616,14 @@ SITEHEADER
 
 
 /* --- SECTION 2: SEO TEXT (CĂN GIỮA LỌT LÒNG) --- */
-.lost-found-seo-section {
+.hometour-southampton-seo-section {
     width: 100%;
     background-color: #ffffff;
     padding-top: 40px;
     padding-bottom: 80px;
 }
 
-.lost-found-seo-container {
+.hometour-southampton-seo-container {
     max-width: 720px;
     margin: 0 auto;
     display: flex;
@@ -633,7 +632,7 @@ SITEHEADER
     text-align: left;
 }
 
-.lost-found-seo-container p {
+.hometour-southampton-seo-container p {
     font-size: 13px;
     line-height: 1.7;
     color: var(--black, #111111);
@@ -641,7 +640,7 @@ SITEHEADER
     font-weight: 400;
 }
 
-.lost-found-seo-container p strong {
+.hometour-southampton-seo-container p strong {
     font-weight: 600;
     color: #000000;
 }   
@@ -651,17 +650,17 @@ SITEHEADER
 
 
 /* ==========================================================================
-   LOST&FOUND — DESKTOP BASELINE (17-IMAGE EDITORIAL GALLERY)
+   HOMETOUR SOUTHAMPTON — DESKTOP BASELINE (17-IMAGE EDITORIAL GALLERY)
    ========================================================================== */
 
-.lost-found-gallery-section {
+.hometour-southampton-gallery-section {
     width: 100%;
     background-color: #ffffff;
     padding-top: 40px;
     padding-bottom: 60px;
 }
 
-.lost-found-gallery-container {
+.hometour-southampton-gallery-container {
     max-width: 1650px;
     margin: 0 auto;
     padding: 0 var(--side-padding);
@@ -671,8 +670,8 @@ SITEHEADER
 }
 
 /* Base reset cho từng khung chứa hình */
-.lost-found-img-full,
-.lost-found-img-item {
+.hometour-southampton-img-full,
+.hometour-southampton-img-item {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -682,7 +681,7 @@ SITEHEADER
 
 
 /* Thẻ img hiển thị sắc nét */
-.lost-found-gallery-container img {
+.hometour-southampton-gallery-container img {
     width: 100%;
     height: auto;
     display: block;
@@ -690,12 +689,12 @@ SITEHEADER
 }
 
 /* Hình ngang Full-width */
-.lost-found-img-full {
+.hometour-southampton-img-full {
     width: 100%;
 }
 
 /* Lưới 2 hình dọc đi đôi */
-.lost-found-grid-2-vertical {
+.hometour-southampton-grid-2-vertical {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px; /* Gap ngang đúng bằng gap dọc */
@@ -709,78 +708,78 @@ SITEHEADER
 
 
 /* ==========================================================================
-   LOST&FOUND — MOBILE RESPONSIVE (MAX-WIDTH: 767PX)
+   HOMETOUR SOUTHAMPTON — MOBILE RESPONSIVE (MAX-WIDTH: 767PX)
    ========================================================================== */
 
 @media (max-width: 767px) {
 
     /* --- 1. HEADER SECTION --- */
-    .lost-found-header {
+    .hometour-southampton-header {
         padding-top: 100px;
         padding-bottom: 60px; /* Ngăn cách section 40px */
     }
 
-    .lost-found-container {
+    .hometour-southampton-container {
         padding: 0 20px; /* Lề 2 bên mặc định 20px */
     }
 
-    .lost-found-subtitle {
+    .hometour-southampton-subtitle {
         font-size: 10px;
         letter-spacing: 0.15em;
         margin-bottom: 16px;
     }
 
-    .lost-found-title {
+    .hometour-southampton-title {
         font-size: 22px; /* Scale nhẹ font title cho vừa màn hình mobile */
         line-height: 1.2;
         margin-bottom: 16px;
     }
 
-    .lost-found-meta {
+    .hometour-southampton-meta {
         gap: 4px;
     }
 
-    .lost-found-meta-item {
+    .hometour-southampton-meta-item {
         font-size: 12px;
     }
 
 
     /* --- 2. SEO TEXT SECTION --- */
-    .lost-found-seo-section {
+    .hometour-southampton-seo-section {
         padding-top: 0;
         padding-bottom: 40px; /* Ngăn cách section 40px */
     }
 
-    .lost-found-seo-container {
+    .hometour-southampton-seo-container {
         padding: 0 20px; /* Lề 2 bên mặc định 20px */
         gap: 16px;
     }
 
-    .lost-found-seo-container p {
+    .hometour-southampton-seo-container p {
         font-size: 13px;
         line-height: 1.65;
     }
 
 
     /* --- 3. GALLERY SECTION (17 HÌNH STACK DỌC) --- */
-    .lost-found-gallery-section {
+    .hometour-southampton-gallery-section {
         padding-top: 0;
         padding-bottom: 60px;
     }
 
-    .lost-found-gallery-container {
+    .hometour-southampton-gallery-container {
         padding: 0 20px; /* Lề 2 bên mặc định 20px */
         gap: 20px;       /* Khoảng cách giữa các khối ảnh 40px */
     }
 
     /* Chuyển toàn bộ lưới 2 cột thành 1 cột dọc thuần túy */
-    .lost-found-grid-2-vertical {
+    .hometour-southampton-grid-2-vertical {
         grid-template-columns: 1fr;
         gap: 20px; /* Khoảng cách giữa 2 hình trong cặp cũng là 40px */
     }
 
     /* Đảm bảo hình tự xả chiều cao chuẩn tỉ lệ gốc */
-    .lost-found-gallery-container img {
+    .hometour-southampton-gallery-container img {
         width: 100%;
         height: auto;
     }
@@ -798,73 +797,73 @@ SITEHEADER
 @media (min-width: 768px) and (max-width: 991px) {
 
     /* --- HEADER SECTION --- */
-    .lost-found-header {
+    .hometour-southampton-header {
         padding-top: 80px;
         padding-bottom: 40px; /* Gap section 40px */
     }
 
-    .lost-found-container {
+    .hometour-southampton-container {
         max-width: 100%;
         padding: 0 20px !important; /* Lề 2 bên chuẩn 20px */
     }
 
-    .lost-found-subtitle {
+    .hometour-southampton-subtitle {
         font-size: 10px;
         margin-bottom: 14px;
     }
 
-    .lost-found-title {
+    .hometour-southampton-title {
         font-size: 23px;
         margin-bottom: 16px;
     }
 
-    .lost-found-meta {
+    .hometour-southampton-meta {
         gap: 5px;
     }
 
-    .lost-found-meta-item {
+    .hometour-southampton-meta-item {
         font-size: 12px;
     }
 
 
     /* --- SEO TEXT SECTION --- */
-    .lost-found-seo-section {
+    .hometour-southampton-seo-section {
         padding-top: 0;
         padding-bottom: 40px; /* Gap section 40px */
     }
 
-    .lost-found-seo-container {
+    .hometour-southampton-seo-container {
         max-width: 600px;
         padding: 0 20px !important;
         gap: 16px;
     }
 
-    .lost-found-seo-container p {
+    .hometour-southampton-seo-container p {
         font-size: 13px;
         line-height: 1.6;
     }
 
 
     /* --- GALLERY SECTION --- */
-    .lost-found-gallery-section {
+    .hometour-southampton-gallery-section {
         padding-top: 0;
         padding-bottom: 60px;
     }
 
-    .lost-found-gallery-container {
+    .hometour-southampton-gallery-container {
         max-width: 100%;
         padding: 0 20px !important; /* Lề 2 bên chuẩn 20px */
         gap: 40px;                   /* Gap giữa các hàng ảnh 40px */
     }
 
-    .lost-found-grid-2-vertical {
+    .hometour-southampton-grid-2-vertical {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px; /* Gap ngang 2 hình dọc vừa vặn cho màn hình 768-991 */
         width: 100%;
     }
 
-    .lost-found-gallery-container img {
+    .hometour-southampton-gallery-container img {
         width: 100%;
         height: auto;
     }
@@ -884,73 +883,73 @@ SITEHEADER
 @media (min-width: 992px) and (max-width: 1024px) {
 
     /* --- HEADER SECTION --- */
-    .lost-found-header {
+    .hometour-southampton-header {
         padding-top: 100px;
         padding-bottom: 40px; /* Gap section 40px */
     }
 
-    .lost-found-container {
+    .hometour-southampton-container {
         max-width: 100%;
         padding: 0 20px !important; /* Lề 2 bên chuẩn 20px */
     }
 
-    .lost-found-subtitle {
+    .hometour-southampton-subtitle {
         font-size: 11px;
         margin-bottom: 18px;
     }
 
-    .lost-found-title {
+    .hometour-southampton-title {
         font-size: 25px;
         margin-bottom: 18px;
     }
 
-    .lost-found-meta {
+    .hometour-southampton-meta {
         gap: 6px;
     }
 
-    .lost-found-meta-item {
+    .hometour-southampton-meta-item {
         font-size: 13px;
     }
 
 
     /* --- SEO TEXT SECTION --- */
-    .lost-found-seo-section {
+    .hometour-southampton-seo-section {
         padding-top: 0;
         padding-bottom: 40px; /* Gap section 40px */
     }
 
-    .lost-found-seo-container {
+    .hometour-southampton-seo-container {
         max-width: 680px; /* Bóp khung chữ lọt lòng gọn gàng */
         padding: 0 20px !important;
         gap: 18px;
     }
 
-    .lost-found-seo-container p {
+    .hometour-southampton-seo-container p {
         font-size: 13px;
         line-height: 1.65;
     }
 
 
     /* --- GALLERY SECTION --- */
-    .lost-found-gallery-section {
+    .hometour-southampton-gallery-section {
         padding-top: 0;
         padding-bottom: 80px;
     }
 
-    .lost-found-gallery-container {
+    .hometour-southampton-gallery-container {
         max-width: 100%;
         padding: 0 20px !important; /* Lề 2 bên chuẩn 20px */
         gap: 40px;                   /* Gap giữa các hàng ảnh 40px */
     }
 
-    .lost-found-grid-2-vertical {
+    .hometour-southampton-grid-2-vertical {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 24px; /* Gap giữa 2 hình dọc vừa tầm màn hình 1024px */
         width: 100%;
     }
 
-    .lost-found-gallery-container img {
+    .hometour-southampton-gallery-container img {
         width: 100%;
         height: auto;
     }

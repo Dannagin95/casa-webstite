@@ -558,150 +558,8 @@ SITEHEADER
 
 
 
-
-
-
-
-
-
-
-.LostFoundhero {
-    height: 93vh; 
-    position: relative; 
-    display: flex;
-    align-items: flex-end; 
-    /* Thay đổi quan trọng: Bỏ padding cố định, dùng flex để căn giữa khối nội dung */
-    padding: 0; 
-    justify-content: center; 
-    width: 100%;
-}
-
-/* Thêm lớp phủ sẫm màu */
-.LostFoundhero-bg ::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 2) !important; 
-    z-index: 1;
-}
-
-
-.LostFoundhero-bg { 
-    position: absolute; 
-    inset: 0; 
-    z-index: -1; 
-}
-
-
-.LostFoundhero-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: relative;
-    z-index: 0;
-}
-
-
-
-.LostFoundhero-text { 
-    color: #fff; 
-    width: 100%;
-    max-width: var(--container-max); /* Khóa chặt ở 1650px */
-    margin: 0 auto; /* Ép vào giữa màn hình */
-    padding: 0 var(--side-padding); /* Trả lại đúng 55px padding để chữ đứng đúng vị trí cũ */
-    margin-bottom: 48px;
-    z-index: 2;
-    text-align: left; /* Đảm bảo chữ vẫn canh trái bên trong cái lồng 1650px */
-}
-
-.sub-title {
-    font-size: 11px;
-    word-spacing: 5px;
-    font-weight: 200;
-    letter-spacing: 1px;
-    margin-bottom: 30px;
-}
-
-
-.LostFoundhero-text h1
- { font-size: 30x; line-height: 1.1; margin-bottom: 30px; font-weight: 400; }
-
-
-.mobile-only { 
-    display: none !important; 
-}
-
-/* Mặc định trên Desktop: Giấu nút Mobile */
-.mobile-menu-btn, .mobile-overlay { display: none; }
-
-
-
-
-
-@media (max-width: 1024px) {
-    .LostFoundhero  {
-       
-        height: auto !important; 
-        
-       
-        min-height: 120vw !important; 
-        
-    
-        background-size: cover !important;
-        background-position: center !important;
-
-       
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end; 
-        align-items: center;    
-        text-align: center;
-        padding: 0 20px;
-        padding-bottom: 20px !important; 
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-        border-top: 1px solid #ffffff;
-    }
-
-
-
-    .LostFoundhero-text {
-        padding: 0 !important; 
-        margin: 0 auto !important;
-        max-width: 100% !important; 
-        width: 100% !important;
-        
-        /* Đảm bảo căn giữa tuyệt đối */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center !important;
-        margin-bottom: 20px !important; 
-    }
-
-}
-
-
-/* TABLET: Dàn ngang ra tối ưu */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .LostFoundhero  {
-        min-height: 56vw !important; 
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
 /* ==========================================================================
-   FRITZ HANSEN — DESKTOP BASELINE (VERTICAL META & CENTERED SEO)
+   CANGSHAN VILLA — DESKTOP BASELINE (VERTICAL META & CENTERED SEO)
    ========================================================================== */
 
 /* --- SECTION 1: HEADER --- */
@@ -792,7 +650,7 @@ SITEHEADER
 
 
 /* ==========================================================================
-   FRITZ HANSEN — DESKTOP BASELINE (17-IMAGE EDITORIAL GALLERY)
+   CANGSHAN VILLA — DESKTOP BASELINE (17-IMAGE EDITORIAL GALLERY)
    ========================================================================== */
 
 .cangshan-villa-gallery-section {
@@ -850,7 +708,7 @@ SITEHEADER
 
 
 /* ==========================================================================
-   FRITZ HANSEN — MOBILE RESPONSIVE (MAX-WIDTH: 767PX)
+   CANGSHAN VILLA — MOBILE RESPONSIVE (MAX-WIDTH: 767PX)
    ========================================================================== */
 
 @media (max-width: 767px) {
