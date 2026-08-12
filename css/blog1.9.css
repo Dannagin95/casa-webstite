@@ -1,4 +1,4 @@
-    .nineteenbloghero {
+.nineteenbloghero {
     height: 93vh; 
     position: relative; 
     display: flex;
@@ -8,22 +8,19 @@
     width: 100%;
 }
 
-/* Thêm lớp phủ sẫm màu */
 
-.nineteenbloghero-bg ::after {
+
+.nineteenbloghero-bg::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3); 
-    z-index: 2;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2; /* Nằm trên ảnh */
+    pointer-events: none;
 }
 
 
-.nineteenbloghero-bg { 
-    position: absolute; 
-    inset: 0; 
-    z-index: -1; 
-}
+.nineteenbloghero-bg { position: absolute; inset: 0; z-index: 0; }
 
 
 .nineteenbloghero-bg img {

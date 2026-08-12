@@ -18,12 +18,13 @@
 .thirdteenbloghero-bg::after,
 .fourteenthbloghero-bg::after,
 .fifteenthbloghero-bg::after,
-.sixteenbloghero-bg ::after {
+.sixteenbloghero-bg::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.1); 
-    z-index: 1;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2; /* Nằm trên ảnh */
+    pointer-events: none;
 }
 
 
