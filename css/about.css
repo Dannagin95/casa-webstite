@@ -14,8 +14,8 @@
     .about-main-visual { order: 1 !important; width: 100% !important; }
     .image-inner { width: 100% !important; height: 55vh !important; display: block !important; }
     .image-inner img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
-    .about-main-text .title { font-size: 22px !important; font-weight: 400; margin-bottom: 20px !important; }
-    .about-main-text .sub-title { font-size: 12px !important; font-weight: 100; margin-bottom: 10px !important; color: #ffffff; }
+    .about-main-text .title { font-family: var(--special-font); font-size: 1.8em !important; font-weight: 400; margin-bottom: 20px !important; }
+    .about-main-text .sub-title { font-size: 12px !important; font-weight: 100; margin-bottom: 30px !important; color: #ffffff; }
     .about-main-text .description { font-size: 11px !important; line-height: 1.6 !important; }
     .about-intro .btn-discover {
         background-color: #ffffff !important; color: #000000 !important;
@@ -136,7 +136,7 @@
         display: flex !important; flex-direction: column !important; justify-content: flex-end !important;
         padding: 60px 55px !important;
     }
-    .about-main-text .title { font-size: clamp(24px, 2.5vw, 35px); font-weight: 400; line-height: 1.1 !important; margin-bottom: 40px; }
+    .about-main-text .title { font-family: var(--special-font); font-size: clamp(24px, 2.5vw, 35px); font-weight: 400; line-height: 1.1 !important; margin-bottom: 20px; }
     .about-main-text .sub-title {display: block; word-spacing: 5px; font-size: 11px; font-weight: 200; color: #ffffff; letter-spacing: 1px; text-transform: uppercase;}
     .about-main-text .description { font-size: 13px !important; line-height: 1.6 !important;    margin-bottom: 40px !important; }
     .about-intro .btn-discover {

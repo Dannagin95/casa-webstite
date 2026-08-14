@@ -93,6 +93,7 @@ body.search-open {
     background: transparent; /* Hoặc thêm background nếu muốn nổi bật hơn */
 }
 .search-list a { 
+    font-family: var(--special-font);
     text-decoration: none; 
     text-transform: none;
     color: #000000; 

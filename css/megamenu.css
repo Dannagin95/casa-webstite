@@ -1,3 +1,4 @@
+
 .mega-menu {
     position: absolute;
     top: 100%;
@@ -32,6 +33,10 @@
     max-width: 1650px;
     margin: 0 auto;
     padding: 40px 55px;
+}
+
+.mega-content-container {
+    font-family: var(--special-font);
 }
 
 .mega-section {
@@ -96,7 +101,7 @@
 }
 
 .mega-subtitle {
-    font-size: 12px;
+    font-size: 0.9rem;
     color: #6d6a6a;
 
 }

@@ -35,12 +35,12 @@
     margin: 0 auto !important;
     padding: 0 var(--side-padding) 80px var(--side-padding) !important; /* Lề 55px và đáy 80px */
     box-sizing: border-box;
-    text-align: left; /* Luôn canh trái trong cái lồng 1650px */
+    text-align: left; 
 }
 
 .blog-subtitle {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     font-size: 11px;
     font-weight: 200;
     color: #ffffff;
@@ -50,9 +50,11 @@
 
 
 .blog-title {
-    font-size: clamp(40px, 5vw, 30px); /* Tự co giãn font theo màn hình */
-    font-weight: 500;
-    margin-bottom: 18px;
+    font-family: var(--special-font);
+    font-size: clamp(40px, 5vw, 30px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 10px;
     letter-spacing: -0.02em;
 }
 

@@ -146,6 +146,7 @@ body.modal-open {
 .casa-modal-header span {
     display: block;
     word-spacing: 3px;
+    font-family: var(--special-font);
     font-size: 14px;
     font-weight: 200;        
     color: #2b2929;
@@ -155,7 +156,8 @@ body.modal-open {
 }
 
 .casa-modal-header h2 {
-    font-size: 18px;
+    font-family: var(--special-font);
+    font-size: 1.2rem;
     font-weight: 500;
     color: #000000;
     margin: 0 0 8px 0;

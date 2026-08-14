@@ -15,18 +15,24 @@ body.menu-open {
     }
 
     .mobile-overlay a {
-    text-decoration: none !important;
-}
+        text-decoration: none !important;
+    }
+    
     .has-sub, .sub-nav-item, .has-sub-level-3{
         display: flex !important;
         justify-content: space-between !important;
         align-items: center;
         padding: 5px 0 !important;
         font-size: 22px !important;
+        font-family: var(--special-font);
         font-weight: 600 !important;
         color: #000;
         cursor: pointer;
         width: 100%;
+    }
+
+    .no-sub {
+        font-family: var(--special-font);
     }
 
     
@@ -69,6 +75,7 @@ body.menu-open {
     }
 
     .card-title {
+        font-family: var(--special-font);
         position: absolute;
         bottom: 15px;
         left: 15px;

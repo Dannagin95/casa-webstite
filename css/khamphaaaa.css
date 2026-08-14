@@ -11,12 +11,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 13px;
+        margin-bottom: 18px;
     }
 
     .section-title {
-        font-size: 1.9rem; /* Giảm size xuống một chút cho tinh tế */
-        font-weight: 500;
+        font-family: var(--special-font);
+        font-size: 2.4rem; /* Giảm size xuống một chút cho tinh tế */
+        font-weight: 400;
         text-transform: none;
         letter-spacing: -0.5px; /* QUOC dùng letter-spacing hẹp cho title */
         color: var(--text-color);
@@ -100,8 +101,9 @@
     }
 
     .item-title {
-        font-size: 1.9rem;
-        font-weight: 500;
+        font-family: var(--special-font);
+        font-size: 2.2rem;
+        font-weight: 400;
         margin-bottom: 20px;
         color: #000000;
         display: block;

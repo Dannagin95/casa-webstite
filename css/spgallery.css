@@ -24,13 +24,15 @@
     }
 
     .luot-header .main-title {
+        font-family: var(--special-font);
         font-size: 28px; 
         font-weight: 400; 
         color: #000;
         margin: 0;
         margin-bottom: -5px !important;
         line-height: 1.2;
-        font-family: 'Be Vietnam pro', sans-serif;
+        max-width: 60%;
+        
     }
 
 
@@ -110,11 +112,12 @@
     }
 
     .sanpham-info .name {
-        font-size: 18px;
+        font-family: var(--special-font);
+        font-size: 1.4rem;
         font-weight: 600;
         margin: 0 0 5px 0;
         color: #000;
-        font-family: 'Be Vietnam Pro', sans-serif;
+        
     }
 
     .sanpham-info .desc {
