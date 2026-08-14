@@ -559,18 +559,18 @@ SITEHEADER
 
 
 /* ==========================================================================
-   CANGSHAN VILLA — DESKTOP BASELINE (VERTICAL META & CENTERED SEO)
+   AESOP CENTRAL HOUSE 19 — DESKTOP BASELINE (VERTICAL META & CENTERED SEO)
    ========================================================================== */
 
 /* --- SECTION 1: HEADER --- */
-.cangshan-villa-header {
+.sixgrid-collection-header {
     width: 100%;
     background-color: #ffffff;
     padding-top: 150px;
     padding-bottom: 40px;
 }
 
-.cangshan-villa-container {
+.sixgrid-collection-container {
     max-width: 1650px;
     margin: 0 auto;
     padding: 0 var(--side-padding);
@@ -580,7 +580,7 @@ SITEHEADER
     text-align: left;
 }
 
-.cangshan-villa-subtitle {
+.sixgrid-collection-subtitle {
     font-size: 11px;
     font-weight: 300;
     word-spacing: 5px;
@@ -591,7 +591,7 @@ SITEHEADER
     display: block;
 }
 
-.cangshan-villa-title {
+.sixgrid-collection-title {
     font-size: 33px;
     font-weight: 600;
     line-height: 1.15;
@@ -601,13 +601,13 @@ SITEHEADER
 }
 
 /* Cụm thông tin xếp dọc */
-.cangshan-villa-meta {
+.sixgrid-collection-meta {
     display: flex;
     flex-direction: column;
     gap: 3px;
 }
 
-.cangshan-villa-meta-item {
+.sixgrid-collection-meta-item {
     font-size: 22px;
     color: #888888;
     font-weight: 600;
@@ -616,14 +616,14 @@ SITEHEADER
 
 
 /* --- SECTION 2: SEO TEXT (CĂN GIỮA LỌT LÒNG) --- */
-.cangshan-villa-seo-section {
+.sixgrid-collection-seo-section {
     width: 100%;
     background-color: #ffffff;
     padding-top: 40px;
     padding-bottom: 80px;
 }
 
-.cangshan-villa-seo-container {
+.sixgrid-collection-seo-container {
     max-width: 720px;
     margin: 0 auto;
     display: flex;
@@ -632,7 +632,7 @@ SITEHEADER
     text-align: left;
 }
 
-.cangshan-villa-seo-container p {
+.sixgrid-collection-seo-container p {
     font-size: 13px;
     line-height: 1.7;
     color: var(--black, #111111);
@@ -640,27 +640,27 @@ SITEHEADER
     font-weight: 400;
 }
 
-.cangshan-villa-seo-container p strong {
+.sixgrid-collection-seo-container p strong {
     font-weight: 600;
     color: #000000;
-}   
+} 
 
 
 
 
 
 /* ==========================================================================
-   CANGSHAN VILLA — DESKTOP BASELINE (17-IMAGE EDITORIAL GALLERY)
+   AESOP CENTRAL HOUSE 19 — DESKTOP BASELINE (17-IMAGE EDITORIAL GALLERY)
    ========================================================================== */
 
-.cangshan-villa-gallery-section {
+.sixgrid-collection-gallery-section {
     width: 100%;
     background-color: #ffffff;
     padding-top: 40px;
     padding-bottom: 60px;
 }
 
-.cangshan-villa-gallery-container {
+.sixgrid-collection-gallery-container {
     max-width: 1650px;
     margin: 0 auto;
     padding: 0 var(--side-padding);
@@ -670,8 +670,8 @@ SITEHEADER
 }
 
 /* Base reset cho từng khung chứa hình */
-.cangshan-villa-img-full,
-.cangshan-villa-img-item {
+.sixgrid-collection-img-full,
+.sixgrid-collection-img-item {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -681,7 +681,7 @@ SITEHEADER
 
 
 /* Thẻ img hiển thị sắc nét */
-.cangshan-villa-gallery-container img {
+.sixgrid-collection-gallery-container img {
     width: 100%;
     height: auto;
     display: block;
@@ -689,12 +689,12 @@ SITEHEADER
 }
 
 /* Hình ngang Full-width */
-.cangshan-villa-img-full {
+.sixgrid-collection-img-full {
     width: 100%;
 }
 
 /* Lưới 2 hình dọc đi đôi */
-.cangshan-villa-grid-2-vertical {
+.sixgrid-collection-grid-2-vertical {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px; /* Gap ngang đúng bằng gap dọc */
@@ -702,11 +702,18 @@ SITEHEADER
 }
 
 
-.cangshan-villa-grid-2-vertical img {
+.sixgrid-collection-grid-2-vertical img {
     width: 100%;
     aspect-ratio: 3 / 4; /* Tỷ lệ 3:4 (hoặc đổi thành 2 / 3 nếu muốn dài hơn) */
     object-fit: cover;
     display: block;
+}
+
+.sixgrid-collection-grid-3-vertical {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; /* Gap ngang đúng bằng gap dọc */
+    width: 100%;
 }
 
 
@@ -714,80 +721,80 @@ SITEHEADER
 
 
 
-
 /* ==========================================================================
-   CANGSHAN VILLA — MOBILE RESPONSIVE (MAX-WIDTH: 767PX)
+   AESOP CENTRAL HOUSE 19 — MOBILE RESPONSIVE (MAX-WIDTH: 767PX)
    ========================================================================== */
 
 @media (max-width: 767px) {
 
     /* --- 1. HEADER SECTION --- */
-    .cangshan-villa-header {
+    .sixgrid-collection-header {
         padding-top: 100px;
         padding-bottom: 60px; /* Ngăn cách section 40px */
     }
 
-    .cangshan-villa-container {
+    .sixgrid-collection-container {
         padding: 0 20px; /* Lề 2 bên mặc định 20px */
     }
 
-    .cangshan-villa-subtitle {
+    .sixgrid-collection-subtitle {
         font-size: 10px;
         letter-spacing: 0.15em;
         margin-bottom: 16px;
     }
 
-    .cangshan-villa-title {
+    .sixgrid-collection-title {
         font-size: 22px; /* Scale nhẹ font title cho vừa màn hình mobile */
         line-height: 1.2;
         margin-bottom: 16px;
     }
 
-    .cangshan-villa-meta {
+    .sixgrid-collection-meta {
         gap: 4px;
     }
 
-    .cangshan-villa-meta-item {
+    .sixgrid-collection-meta-item {
         font-size: 12px;
     }
 
 
     /* --- 2. SEO TEXT SECTION --- */
-    .cangshan-villa-seo-section {
+    .sixgrid-collection-seo-section {
         padding-top: 0;
         padding-bottom: 40px; /* Ngăn cách section 40px */
     }
 
-    .cangshan-villa-seo-container {
+    .sixgrid-collection-seo-container {
         padding: 0 20px; /* Lề 2 bên mặc định 20px */
         gap: 16px;
     }
 
-    .cangshan-villa-seo-container p {
+    .sixgrid-collection-seo-container p {
         font-size: 13px;
         line-height: 1.65;
     }
 
 
     /* --- 3. GALLERY SECTION (17 HÌNH STACK DỌC) --- */
-    .cangshan-villa-gallery-section {
+    .sixgrid-collection-gallery-section {
         padding-top: 0;
         padding-bottom: 60px;
     }
 
-    .cangshan-villa-gallery-container {
+    .sixgrid-collection-gallery-container {
         padding: 0 20px; /* Lề 2 bên mặc định 20px */
         gap: 20px;       /* Khoảng cách giữa các khối ảnh 40px */
     }
 
     /* Chuyển toàn bộ lưới 2 cột thành 1 cột dọc thuần túy */
-    .cangshan-villa-grid-2-vertical {
+    .sixgrid-collection-grid-2-vertical,
+    .sixgrid-collection-grid-3-vertical {
         grid-template-columns: 1fr;
         gap: 20px; /* Khoảng cách giữa 2 hình trong cặp cũng là 40px */
     }
 
     /* Đảm bảo hình tự xả chiều cao chuẩn tỉ lệ gốc */
-    .cangshan-villa-gallery-container img {
+    .sixgrid-collection-gallery-container img {
         width: 100%;
         height: auto;
     }
@@ -805,73 +812,82 @@ SITEHEADER
 @media (min-width: 768px) and (max-width: 991px) {
 
     /* --- HEADER SECTION --- */
-    .cangshan-villa-header {
+    .sixgrid-collection-header {
         padding-top: 80px;
         padding-bottom: 40px; /* Gap section 40px */
     }
 
-    .cangshan-villa-container {
+    .sixgrid-collection-container {
         max-width: 100%;
         padding: 0 20px !important; /* Lề 2 bên chuẩn 20px */
     }
 
-    .cangshan-villa-subtitle {
+    .sixgrid-collection-subtitle {
         font-size: 10px;
         margin-bottom: 14px;
     }
 
-    .cangshan-villa-title {
+    .sixgrid-collection-title {
         font-size: 23px;
         margin-bottom: 16px;
     }
 
-    .cangshan-villa-meta {
+    .sixgrid-collection-meta {
         gap: 5px;
     }
 
-    .cangshan-villa-meta-item {
+    .sixgrid-collection-meta-item {
         font-size: 12px;
     }
 
 
     /* --- SEO TEXT SECTION --- */
-    .cangshan-villa-seo-section {
+    .sixgrid-collection-seo-section {
         padding-top: 0;
         padding-bottom: 40px; /* Gap section 40px */
     }
 
-    .cangshan-villa-seo-container {
+    .sixgrid-collection-seo-container {
         max-width: 600px;
         padding: 0 20px !important;
         gap: 16px;
     }
 
-    .cangshan-villa-seo-container p {
+    .sixgrid-collection-seo-container p {
         font-size: 13px;
         line-height: 1.6;
     }
 
 
     /* --- GALLERY SECTION --- */
-    .cangshan-villa-gallery-section {
+    .sixgrid-collection-gallery-section {
         padding-top: 0;
         padding-bottom: 60px;
     }
 
-    .cangshan-villa-gallery-container {
+    .sixgrid-collection-gallery-container {
         max-width: 100%;
         padding: 0 20px !important; /* Lề 2 bên chuẩn 20px */
-        gap: 40px;                   /* Gap giữa các hàng ảnh 40px */
+        gap: 40px;                  /* Gap giữa các hàng ảnh 40px */
     }
 
-    .cangshan-villa-grid-2-vertical {
+    .sixgrid-collection-grid-2-vertical {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px; /* Gap ngang 2 hình dọc vừa vặn cho màn hình 768-991 */
         width: 100%;
     }
 
-    .cangshan-villa-gallery-container img {
+
+    .sixgrid-collection-grid-3-vertical {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px; 
+        width: 100%;
+    }
+
+
+    .sixgrid-collection-gallery-container img {
         width: 100%;
         height: auto;
     }
@@ -891,73 +907,81 @@ SITEHEADER
 @media (min-width: 992px) and (max-width: 1024px) {
 
     /* --- HEADER SECTION --- */
-    .cangshan-villa-header {
+    .sixgrid-collection-header {
         padding-top: 100px;
         padding-bottom: 40px; /* Gap section 40px */
     }
 
-    .cangshan-villa-container {
+    .sixgrid-collection-container {
         max-width: 100%;
         padding: 0 20px !important; /* Lề 2 bên chuẩn 20px */
     }
 
-    .cangshan-villa-subtitle {
+    .sixgrid-collection-subtitle {
         font-size: 11px;
         margin-bottom: 18px;
     }
 
-    .cangshan-villa-title {
+    .sixgrid-collection-title {
         font-size: 25px;
         margin-bottom: 18px;
     }
 
-    .cangshan-villa-meta {
+    .sixgrid-collection-meta {
         gap: 6px;
     }
 
-    .cangshan-villa-meta-item {
+    .sixgrid-collection-meta-item {
         font-size: 13px;
     }
 
 
     /* --- SEO TEXT SECTION --- */
-    .cangshan-villa-seo-section {
+    .sixgrid-collection-seo-section {
         padding-top: 0;
         padding-bottom: 40px; /* Gap section 40px */
     }
 
-    .cangshan-villa-seo-container {
+    .sixgrid-collection-seo-container {
         max-width: 680px; /* Bóp khung chữ lọt lòng gọn gàng */
         padding: 0 20px !important;
         gap: 18px;
     }
 
-    .cangshan-villa-seo-container p {
+    .sixgrid-collection-seo-container p {
         font-size: 13px;
         line-height: 1.65;
     }
 
 
     /* --- GALLERY SECTION --- */
-    .cangshan-villa-gallery-section {
+    .sixgrid-collection-gallery-section {
         padding-top: 0;
         padding-bottom: 80px;
     }
 
-    .cangshan-villa-gallery-container {
+    .sixgrid-collection-gallery-container {
         max-width: 100%;
         padding: 0 20px !important; /* Lề 2 bên chuẩn 20px */
-        gap: 40px;                   /* Gap giữa các hàng ảnh 40px */
+        gap: 40px;                  /* Gap giữa các hàng ảnh 40px */
     }
 
-    .cangshan-villa-grid-2-vertical {
+    .sixgrid-collection-grid-2-vertical {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 24px; /* Gap giữa 2 hình dọc vừa tầm màn hình 1024px */
         width: 100%;
     }
 
-    .cangshan-villa-gallery-container img {
+
+    .sixgrid-collection-grid-3-vertical {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        width: 100%;
+    }
+
+    .sixgrid-collection-gallery-container img {
         width: 100%;
         height: auto;
     }
