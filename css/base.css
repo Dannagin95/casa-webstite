@@ -137,6 +137,13 @@ img {
     -webkit-user-drag: none !important;
 }
 
+
+.hero-text h1,
+[class*="hero"] h1,
+[id*="hero"] h1 {
+    font-family: var(--special-font);
+}
+
 a, button, .clickable-area {
     pointer-events: auto !important;
 }
