@@ -1,9 +1,9 @@
 
 :root {
-    --font-heading: 'Quicksand', sans-serif;
-    --font-body: 'Quicksand', sans-serif;
-    --special-font: 'Afacad Flux'; 
-    --CASA-Parquet-font: 'Cal Sans', sans-serif;
+    --font-heading: 'Quicksand', system-ui, -apple-system, sans-serif;
+    --font-body: 'Quicksand', system-ui, -apple-system, sans-serif;
+    --special-font: 'Afacad Flux', system-ui, -apple-system, sans-serif;
+    --CASA-Parquet-font: 'Cal Sans', system-ui, -apple-system, sans-serif;
 
     --black: #000000;
     --white: #ffffff;
