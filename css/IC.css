@@ -270,7 +270,6 @@
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    gap: 6px;
     opacity: 0.9;
     transition: opacity 0.3s ease;
 }
@@ -284,11 +283,12 @@
     text-transform: uppercase;
     letter-spacing: 0.08em;
     opacity: 0.75;
-    font-weight: 500;
+    font-weight: 300;
+    margin-bottom: 23px;
 }
 
 .project-title {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 500;
     margin: 0;
     letter-spacing: -0.01em;
