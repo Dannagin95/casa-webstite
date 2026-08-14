@@ -566,7 +566,8 @@ SITEHEADER
 .aesop-central-header,
 .sunyata-meili-header,
 .hometour-elystan-header,
-.hometour-collector-header {
+.hometour-collectour-header,
+.contemporary-homes-header {
     width: 100%;
     background-color: #ffffff;
     padding-top: 150px;
@@ -576,7 +577,8 @@ SITEHEADER
 .aesop-central-container,
 .sunyata-meili-container,
 .hometour-elystan-container,
-.hometour-collector-container {
+.hometour-collectour-container,
+.contemporary-homes-container {
     max-width: 1650px;
     margin: 0 auto;
     padding: 0 var(--side-padding);
@@ -589,7 +591,8 @@ SITEHEADER
 .aesop-central-subtitle,
 .sunyata-meili-subtitle,
 .hometour-elystan-subtitle,
-.hometour-collector-subtitle {
+.hometour-collectour-subtitle,
+.contemporary-homes-subtitle {
     font-size: 11px;
     font-weight: 300;
     word-spacing: 5px;
@@ -603,7 +606,8 @@ SITEHEADER
 .aesop-central-title,
 .sunyata-meili-title,
 .hometour-elystan-title,
-.hometour-collector-title {
+.hometour-collectour-title,
+.contemporary-homes-title {
     font-size: 33px;
     font-weight: 600;
     line-height: 1.15;
@@ -616,7 +620,8 @@ SITEHEADER
 .aesop-central-meta,
 .sunyata-meili-meta,
 .hometour-elystan-meta,
-.hometour-collector-meta {
+.hometour-collectour-meta,
+.contemporary-homes-meta {
     display: flex;
     flex-direction: column;
     gap: 3px;
@@ -625,7 +630,8 @@ SITEHEADER
 .aesop-central-meta-item,
 .sunyata-meili-meta-item,
 .hometour-elystan-meta-item,
-.hometour-collector-meta-item {
+.hometour-collectour-meta-item,
+.contemporary-homes-meta-item {
     font-size: 22px;
     color: #888888;
     font-weight: 600;
@@ -637,7 +643,8 @@ SITEHEADER
 .aesop-central-seo-section,
 .sunyata-meili-seo-section,
 .hometour-elystan-seo-section,
-.hometour-collector-seo-section {
+.hometour-collectour-seo-section,
+.contemporary-homes-seo-section {
     width: 100%;
     background-color: #ffffff;
     padding-top: 40px;
@@ -647,7 +654,8 @@ SITEHEADER
 .aesop-central-seo-container,
 .sunyata-meili-seo-container,
 .hometour-elystan-seo-container,
-.hometour-collector-seo-container {
+.hometour-collectour-seo-container,
+.contemporary-homes-seo-container {
     max-width: 720px;
     margin: 0 auto;
     display: flex;
@@ -659,7 +667,8 @@ SITEHEADER
 .aesop-central-seo-container,
 .sunyata-meili-seo-container,
 .hometour-elystan-seo-container,
-.hometour-collector-seo-container p {
+.hometour-collectour-seo-container,
+.contemporary-homes-seo-container p {
     font-size: 13px;
     line-height: 1.7;
     color: var(--black, #111111);
@@ -670,7 +679,8 @@ SITEHEADER
 .aesop-central-seo-container,
 .sunyata-meili-seo-container,
 .hometour-elystan-seo-container,
-.hometour-collector-seo-container p strong {
+.hometour-collectour-seo-container,
+.contemporary-homes-seo-container p strong {
     font-weight: 600;
     color: #000000;
 }   
@@ -686,7 +696,8 @@ SITEHEADER
 .aesop-central-gallery-section,
 .sunyata-meili-gallery-section,
 .hometour-elystan-gallery-section,
-.hometour-collector-gallery-section {
+.hometour-collectour-gallery-section,
+.contemporary-homes-gallery-section {
     width: 100%;
     background-color: #ffffff;
     padding-top: 40px;
@@ -696,7 +707,8 @@ SITEHEADER
 .aesop-central-gallery-container,
 .sunyata-meili-gallery-container,
 .hometour-elystan-gallery-container,
-.hometour-collector-gallery-container {
+.hometour-collectour-gallery-container,
+.contemporary-homes-gallery-container {
     max-width: 1650px;
     margin: 0 auto;
     padding: 0 var(--side-padding);
@@ -709,11 +721,13 @@ SITEHEADER
 .aesop-central-img-full,
 .sunyata-meili-img-full,
 .hometour-elystan-img-full,
-.hometour-collector-img-full,
+.hometour-collectour-img-full,
+.contemporary-homes-img-full,
 .aesop-central-img-item,
 .sunyata-meili-img-item,
 .hometour-elystan-img-item,
-.hometour-collector-img-item {
+.hometour-collectour-img-item,
+.contemporary-homes-img-item {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -726,7 +740,8 @@ SITEHEADER
 .aesop-central-gallery-container,
 .sunyata-meili-gallery-container,
 .hometour-elystan-gallery-container,
-.hometour-collector-gallery-container img {
+.hometour-collectour-gallery-container,
+.contemporary-homes-gallery-container img {
     width: 100%;
     height: auto;
     display: block;
@@ -737,7 +752,8 @@ SITEHEADER
 .aesop-central-img-full,
 .sunyata-meili-img-full,
 .hometour-elystan-img-full,
-.hometour-collector-img-full {
+.hometour-collectour-img-full,
+.contemporary-homes-img-full {
     width: 100%;
 }
 
@@ -745,7 +761,8 @@ SITEHEADER
 .aesop-central-grid-2-vertical,
 .sunyata-meili-grid-2-vertical,
 .hometour-elystan-grid-2-vertical,
-.hometour-collector-grid-2-vertical {
+.hometour-collectour-grid-2-vertical,
+.contemporary-homes-grid-2-vertical {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px; /* Gap ngang đúng bằng gap dọc */
@@ -756,7 +773,8 @@ SITEHEADER
 .aesop-central-grid-3-vertical,
 .sunyata-meili-grid-3-vertical,
 .hometour-elystan-grid-3-vertical,
-.hometour-collector-grid-3-vertical {
+.hometour-collectour-grid-3-vertical,
+.contemporary-homes-grid-3-vertical {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px; /* Gap ngang đúng bằng gap dọc */
@@ -778,7 +796,8 @@ SITEHEADER
     .aesop-central-header,
 .sunyata-meili-header,
 .hometour-elystan-header,
-.hometour-collector-header {
+.hometour-collectour-header,
+.contemporary-homes-header {
         padding-top: 100px;
         padding-bottom: 60px; /* Ngăn cách section 40px */
     }
@@ -786,14 +805,16 @@ SITEHEADER
     .aesop-central-container,
 .sunyata-meili-container,
 .hometour-elystan-container,
-.hometour-collector-container {
+.hometour-collectour-container,
+.contemporary-homes-container {
         padding: 0 20px; /* Lề 2 bên mặc định 20px */
     }
 
     .aesop-central-subtitle,
 .sunyata-meili-subtitle,
 .hometour-elystan-subtitle,
-.hometour-collector-subtitle {
+.hometour-collectour-subtitle,
+.contemporary-homes-subtitle {
         font-size: 10px;
         letter-spacing: 0.15em;
         margin-bottom: 16px;
@@ -802,7 +823,8 @@ SITEHEADER
     .aesop-central-title,
 .sunyata-meili-title,
 .hometour-elystan-title,
-.hometour-collector-title {
+.hometour-collectour-title,
+.contemporary-homes-title {
         font-size: 22px; /* Scale nhẹ font title cho vừa màn hình mobile */
         line-height: 1.2;
         margin-bottom: 16px;
@@ -811,14 +833,16 @@ SITEHEADER
     .aesop-central-meta,
 .sunyata-meili-meta,
 .hometour-elystan-meta,
-.hometour-collector-meta {
+.hometour-collectour-meta,
+.contemporary-homes-meta {
         gap: 4px;
     }
 
     .aesop-central-meta-item,
 .sunyata-meili-meta-item,
 .hometour-elystan-meta-item,
-.hometour-collector-meta-item {
+.hometour-collectour-meta-item,
+.contemporary-homes-meta-item {
         font-size: 12px;
     }
 
@@ -827,7 +851,8 @@ SITEHEADER
     .aesop-central-seo-section,
 .sunyata-meili-seo-section,
 .hometour-elystan-seo-section,
-.hometour-collector-seo-section {
+.hometour-collectour-seo-section,
+.contemporary-homes-seo-section {
         padding-top: 0;
         padding-bottom: 40px; /* Ngăn cách section 40px */
     }
@@ -835,7 +860,8 @@ SITEHEADER
     .aesop-central-seo-container,
 .sunyata-meili-seo-container,
 .hometour-elystan-seo-container,
-.hometour-collector-seo-container {
+.hometour-collectour-seo-container,
+.contemporary-homes-seo-container {
         padding: 0 20px; /* Lề 2 bên mặc định 20px */
         gap: 16px;
     }
@@ -843,7 +869,8 @@ SITEHEADER
     .aesop-central-seo-container,
 .sunyata-meili-seo-container,
 .hometour-elystan-seo-container,
-.hometour-collector-seo-container p {
+.hometour-collectour-seo-container,
+.contemporary-homes-seo-container p {
         font-size: 13px;
         line-height: 1.65;
     }
@@ -853,7 +880,8 @@ SITEHEADER
     .aesop-central-gallery-section,
 .sunyata-meili-gallery-section,
 .hometour-elystan-gallery-section,
-.hometour-collector-gallery-section {
+.hometour-collectour-gallery-section,
+.contemporary-homes-gallery-section {
         padding-top: 0;
         padding-bottom: 60px;
     }
@@ -861,7 +889,8 @@ SITEHEADER
     .aesop-central-gallery-container,
 .sunyata-meili-gallery-container,
 .hometour-elystan-gallery-container,
-.hometour-collector-gallery-container {
+.hometour-collectour-gallery-container,
+.contemporary-homes-gallery-container {
         padding: 0 20px; /* Lề 2 bên mặc định 20px */
         gap: 20px;       /* Khoảng cách giữa các khối ảnh 40px */
     }
@@ -870,11 +899,13 @@ SITEHEADER
     .aesop-central-grid-2-vertical,
 .sunyata-meili-grid-2-vertical,
 .hometour-elystan-grid-2-vertical,
-.hometour-collector-grid-2-vertical,
+.hometour-collectour-grid-2-vertical,
+.contemporary-homes-grid-2-vertical,
     .aesop-central-grid-3-vertical,
 .sunyata-meili-grid-3-vertical,
 .hometour-elystan-grid-3-vertical,
-.hometour-collector-grid-3-vertical {
+.hometour-collectour-grid-3-vertical,
+.contemporary-homes-grid-3-vertical {
         grid-template-columns: 1fr;
         gap: 20px; /* Khoảng cách giữa 2 hình trong cặp cũng là 40px */
     }
@@ -883,7 +914,8 @@ SITEHEADER
     .aesop-central-gallery-container,
 .sunyata-meili-gallery-container,
 .hometour-elystan-gallery-container,
-.hometour-collector-gallery-container img {
+.hometour-collectour-gallery-container,
+.contemporary-homes-gallery-container img {
         width: 100%;
         height: auto;
     }
@@ -904,7 +936,8 @@ SITEHEADER
     .aesop-central-header,
 .sunyata-meili-header,
 .hometour-elystan-header,
-.hometour-collector-header {
+.hometour-collectour-header,
+.contemporary-homes-header {
         padding-top: 80px;
         padding-bottom: 40px; /* Gap section 40px */
     }
@@ -912,7 +945,8 @@ SITEHEADER
     .aesop-central-container,
 .sunyata-meili-container,
 .hometour-elystan-container,
-.hometour-collector-container {
+.hometour-collectour-container,
+.contemporary-homes-container {
         max-width: 100%;
         padding: 0 20px !important; /* Lề 2 bên chuẩn 20px */
     }
@@ -920,7 +954,8 @@ SITEHEADER
     .aesop-central-subtitle,
 .sunyata-meili-subtitle,
 .hometour-elystan-subtitle,
-.hometour-collector-subtitle {
+.hometour-collectour-subtitle,
+.contemporary-homes-subtitle {
         font-size: 10px;
         margin-bottom: 14px;
     }
@@ -928,7 +963,8 @@ SITEHEADER
     .aesop-central-title,
 .sunyata-meili-title,
 .hometour-elystan-title,
-.hometour-collector-title {
+.hometour-collectour-title,
+.contemporary-homes-title {
         font-size: 23px;
         margin-bottom: 16px;
     }
@@ -936,14 +972,16 @@ SITEHEADER
     .aesop-central-meta,
 .sunyata-meili-meta,
 .hometour-elystan-meta,
-.hometour-collector-meta {
+.hometour-collectour-meta,
+.contemporary-homes-meta {
         gap: 5px;
     }
 
     .aesop-central-meta-item,
 .sunyata-meili-meta-item,
 .hometour-elystan-meta-item,
-.hometour-collector-meta-item {
+.hometour-collectour-meta-item,
+.contemporary-homes-meta-item {
         font-size: 12px;
     }
 
@@ -952,7 +990,8 @@ SITEHEADER
     .aesop-central-seo-section,
 .sunyata-meili-seo-section,
 .hometour-elystan-seo-section,
-.hometour-collector-seo-section {
+.hometour-collectour-seo-section,
+.contemporary-homes-seo-section {
         padding-top: 0;
         padding-bottom: 40px; /* Gap section 40px */
     }
@@ -960,7 +999,8 @@ SITEHEADER
     .aesop-central-seo-container,
 .sunyata-meili-seo-container,
 .hometour-elystan-seo-container,
-.hometour-collector-seo-container {
+.hometour-collectour-seo-container,
+.contemporary-homes-seo-container {
         max-width: 600px;
         padding: 0 20px !important;
         gap: 16px;
@@ -969,7 +1009,8 @@ SITEHEADER
     .aesop-central-seo-container,
 .sunyata-meili-seo-container,
 .hometour-elystan-seo-container,
-.hometour-collector-seo-container p {
+.hometour-collectour-seo-container,
+.contemporary-homes-seo-container p {
         font-size: 13px;
         line-height: 1.6;
     }
@@ -979,7 +1020,8 @@ SITEHEADER
     .aesop-central-gallery-section,
 .sunyata-meili-gallery-section,
 .hometour-elystan-gallery-section,
-.hometour-collector-gallery-section {
+.hometour-collectour-gallery-section,
+.contemporary-homes-gallery-section {
         padding-top: 0;
         padding-bottom: 60px;
     }
@@ -987,7 +1029,8 @@ SITEHEADER
     .aesop-central-gallery-container,
 .sunyata-meili-gallery-container,
 .hometour-elystan-gallery-container,
-.hometour-collector-gallery-container {
+.hometour-collectour-gallery-container,
+.contemporary-homes-gallery-container {
         max-width: 100%;
         padding: 0 20px !important; /* Lề 2 bên chuẩn 20px */
         gap: 40px;                   /* Gap giữa các hàng ảnh 40px */
@@ -996,7 +1039,8 @@ SITEHEADER
     .aesop-central-grid-2-vertical,
 .sunyata-meili-grid-2-vertical,
 .hometour-elystan-grid-2-vertical,
-.hometour-collector-grid-2-vertical {
+.hometour-collectour-grid-2-vertical,
+.contemporary-homes-grid-2-vertical {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px; /* Gap ngang 2 hình dọc vừa vặn cho màn hình 768-991 */
@@ -1007,7 +1051,8 @@ SITEHEADER
     .aesop-central-grid-3-vertical,
 .sunyata-meili-grid-3-vertical,
 .hometour-elystan-grid-3-vertical,
-.hometour-collector-grid-3-vertical {
+.hometour-collectour-grid-3-vertical,
+.contemporary-homes-grid-3-vertical {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px; 
@@ -1018,7 +1063,8 @@ SITEHEADER
     .aesop-central-gallery-container,
 .sunyata-meili-gallery-container,
 .hometour-elystan-gallery-container,
-.hometour-collector-gallery-container img {
+.hometour-collectour-gallery-container,
+.contemporary-homes-gallery-container img {
         width: 100%;
         height: auto;
     }
@@ -1041,7 +1087,8 @@ SITEHEADER
     .aesop-central-header,
 .sunyata-meili-header,
 .hometour-elystan-header,
-.hometour-collector-header {
+.hometour-collectour-header,
+.contemporary-homes-header {
         padding-top: 100px;
         padding-bottom: 40px; /* Gap section 40px */
     }
@@ -1049,7 +1096,8 @@ SITEHEADER
     .aesop-central-container,
 .sunyata-meili-container,
 .hometour-elystan-container,
-.hometour-collector-container {
+.hometour-collectour-container,
+.contemporary-homes-container {
         max-width: 100%;
         padding: 0 20px !important; /* Lề 2 bên chuẩn 20px */
     }
@@ -1057,7 +1105,8 @@ SITEHEADER
     .aesop-central-subtitle,
 .sunyata-meili-subtitle,
 .hometour-elystan-subtitle,
-.hometour-collector-subtitle {
+.hometour-collectour-subtitle,
+.contemporary-homes-subtitle {
         font-size: 11px;
         margin-bottom: 18px;
     }
@@ -1065,7 +1114,8 @@ SITEHEADER
     .aesop-central-title,
 .sunyata-meili-title,
 .hometour-elystan-title,
-.hometour-collector-title {
+.hometour-collectour-title,
+.contemporary-homes-title {
         font-size: 25px;
         margin-bottom: 18px;
     }
@@ -1073,14 +1123,16 @@ SITEHEADER
     .aesop-central-meta,
 .sunyata-meili-meta,
 .hometour-elystan-meta,
-.hometour-collector-meta {
+.hometour-collectour-meta,
+.contemporary-homes-meta {
         gap: 6px;
     }
 
     .aesop-central-meta-item,
 .sunyata-meili-meta-item,
 .hometour-elystan-meta-item,
-.hometour-collector-meta-item {
+.hometour-collectour-meta-item,
+.contemporary-homes-meta-item {
         font-size: 13px;
     }
 
@@ -1089,7 +1141,8 @@ SITEHEADER
     .aesop-central-seo-section,
 .sunyata-meili-seo-section,
 .hometour-elystan-seo-section,
-.hometour-collector-seo-section {
+.hometour-collectour-seo-section,
+.contemporary-homes-seo-section {
         padding-top: 0;
         padding-bottom: 40px; /* Gap section 40px */
     }
@@ -1097,7 +1150,8 @@ SITEHEADER
     .aesop-central-seo-container,
 .sunyata-meili-seo-container,
 .hometour-elystan-seo-container,
-.hometour-collector-seo-container {
+.hometour-collectour-seo-container,
+.contemporary-homes-seo-container {
         max-width: 680px; /* Bóp khung chữ lọt lòng gọn gàng */
         padding: 0 20px !important;
         gap: 18px;
@@ -1106,7 +1160,8 @@ SITEHEADER
     .aesop-central-seo-container,
 .sunyata-meili-seo-container,
 .hometour-elystan-seo-container,
-.hometour-collector-seo-container p {
+.hometour-collectour-seo-container,
+.contemporary-homes-seo-container p {
         font-size: 13px;
         line-height: 1.65;
     }
@@ -1116,7 +1171,8 @@ SITEHEADER
     .aesop-central-gallery-section,
 .sunyata-meili-gallery-section,
 .hometour-elystan-gallery-section,
-.hometour-collector-gallery-section {
+.hometour-collectour-gallery-section,
+.contemporary-homes-gallery-section {
         padding-top: 0;
         padding-bottom: 80px;
     }
@@ -1124,7 +1180,8 @@ SITEHEADER
     .aesop-central-gallery-container,
 .sunyata-meili-gallery-container,
 .hometour-elystan-gallery-container,
-.hometour-collector-gallery-container {
+.hometour-collectour-gallery-container,
+.contemporary-homes-gallery-container {
         max-width: 100%;
         padding: 0 20px !important; /* Lề 2 bên chuẩn 20px */
         gap: 40px;                   /* Gap giữa các hàng ảnh 40px */
@@ -1133,7 +1190,8 @@ SITEHEADER
     .aesop-central-grid-2-vertical,
 .sunyata-meili-grid-2-vertical,
 .hometour-elystan-grid-2-vertical,
-.hometour-collector-grid-2-vertical {
+.hometour-collectour-grid-2-vertical,
+.contemporary-homes-grid-2-vertical {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 24px; /* Gap giữa 2 hình dọc vừa tầm màn hình 1024px */
@@ -1144,7 +1202,8 @@ SITEHEADER
     .aesop-central-grid-3-vertical,
 .sunyata-meili-grid-3-vertical,
 .hometour-elystan-grid-3-vertical,
-.hometour-collector-grid-3-vertical {
+.hometour-collectour-grid-3-vertical,
+.contemporary-homes-grid-3-vertical {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
@@ -1154,7 +1213,8 @@ SITEHEADER
     .aesop-central-gallery-container,
 .sunyata-meili-gallery-container,
 .hometour-elystan-gallery-container,
-.hometour-collector-gallery-container img {
+.hometour-collectour-gallery-container,
+.contemporary-homes-gallery-container img {
         width: 100%;
         height: auto;
     }
