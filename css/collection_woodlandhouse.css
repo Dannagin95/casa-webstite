@@ -563,14 +563,14 @@ SITEHEADER
    ========================================================================== */
 
 /* --- SECTION 1: HEADER --- */
-.layered-sydney-header {
+.hometour-woodland-header {
     width: 100%;
     background-color: #ffffff;
     padding-top: 150px;
     padding-bottom: 40px;
 }
 
-.layered-sydney-container {
+.hometour-woodland-container {
     max-width: 1650px;
     margin: 0 auto;
     padding: 0 var(--side-padding);
@@ -580,7 +580,7 @@ SITEHEADER
     text-align: left;
 }
 
-.layered-sydney-subtitle {
+.hometour-woodland-subtitle {
     font-size: 11px;
     font-weight: 300;
     word-spacing: 5px;
@@ -591,7 +591,7 @@ SITEHEADER
     display: block;
 }
 
-.layered-sydney-title {
+.hometour-woodland-title {
     font-size: 33px;
     font-weight: 600;
     line-height: 1.15;
@@ -601,13 +601,13 @@ SITEHEADER
 }
 
 /* Cụm thông tin xếp dọc */
-.layered-sydney-meta {
+.hometour-woodland-meta {
     display: flex;
     flex-direction: column;
     gap: 3px;
 }
 
-.layered-sydney-meta-item {
+.hometour-woodland-meta-item {
     font-size: 22px;
     color: #888888;
     font-weight: 600;
@@ -616,14 +616,14 @@ SITEHEADER
 
 
 /* --- SECTION 2: SEO TEXT (CĂN GIỮA LỌT LÒNG) --- */
-.layered-sydney-seo-section {
+.hometour-woodland-seo-section {
     width: 100%;
     background-color: #ffffff;
     padding-top: 40px;
     padding-bottom: 80px;
 }
 
-.layered-sydney-seo-container {
+.hometour-woodland-seo-container {
     max-width: 720px;
     margin: 0 auto;
     display: flex;
@@ -632,7 +632,7 @@ SITEHEADER
     text-align: left;
 }
 
-.layered-sydney-seo-container p {
+.hometour-woodland-seo-container p {
     font-size: 13px;
     line-height: 1.7;
     color: var(--black, #111111);
@@ -640,7 +640,7 @@ SITEHEADER
     font-weight: 400;
 }
 
-.layered-sydney-seo-container p strong {
+.hometour-woodland-seo-container p strong {
     font-weight: 600;
     color: #000000;
 } 
@@ -653,14 +653,14 @@ SITEHEADER
    AESOP CENTRAL HOUSE 19 — DESKTOP BASELINE (17-IMAGE EDITORIAL GALLERY)
    ========================================================================== */
 
-.layered-sydney-gallery-section {
+.hometour-woodland-gallery-section {
     width: 100%;
     background-color: #ffffff;
     padding-top: 40px;
     padding-bottom: 60px;
 }
 
-.layered-sydney-gallery-container {
+.hometour-woodland-gallery-container {
     max-width: 1650px;
     margin: 0 auto;
     padding: 0 var(--side-padding);
@@ -670,8 +670,8 @@ SITEHEADER
 }
 
 /* Base reset cho từng khung chứa hình */
-.layered-sydney-img-full,
-.layered-sydney-img-item {
+.hometour-woodland-img-full,
+.hometour-woodland-img-item {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -681,7 +681,7 @@ SITEHEADER
 
 
 /* Thẻ img hiển thị sắc nét */
-.layered-sydney-gallery-container img {
+.hometour-woodland-gallery-container img {
     width: 100%;
     height: auto;
     display: block;
@@ -689,12 +689,12 @@ SITEHEADER
 }
 
 /* Hình ngang Full-width */
-.layered-sydney-img-full {
+.hometour-woodland-img-full {
     width: 100%;
 }
 
 /* Lưới 2 hình dọc đi đôi */
-.layered-sydney-grid-2-vertical {
+.hometour-woodland-grid-2-vertical {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px; /* Gap ngang đúng bằng gap dọc */
@@ -702,7 +702,7 @@ SITEHEADER
 }
 
 
-.layered-sydney-grid-3-vertical {
+.hometour-woodland-grid-3-vertical {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px; /* Gap ngang đúng bằng gap dọc */
@@ -721,73 +721,73 @@ SITEHEADER
 @media (max-width: 767px) {
 
     /* --- 1. HEADER SECTION --- */
-    .layered-sydney-header {
+    .hometour-woodland-header {
         padding-top: 100px;
         padding-bottom: 60px; /* Ngăn cách section 40px */
     }
 
-    .layered-sydney-container {
+    .hometour-woodland-container {
         padding: 0 20px; /* Lề 2 bên mặc định 20px */
     }
 
-    .layered-sydney-subtitle {
+    .hometour-woodland-subtitle {
         font-size: 10px;
         letter-spacing: 0.15em;
         margin-bottom: 16px;
     }
 
-    .layered-sydney-title {
+    .hometour-woodland-title {
         font-size: 22px; /* Scale nhẹ font title cho vừa màn hình mobile */
         line-height: 1.2;
         margin-bottom: 16px;
     }
 
-    .layered-sydney-meta {
+    .hometour-woodland-meta {
         gap: 4px;
     }
 
-    .layered-sydney-meta-item {
+    .hometour-woodland-meta-item {
         font-size: 12px;
     }
 
 
     /* --- 2. SEO TEXT SECTION --- */
-    .layered-sydney-seo-section {
+    .hometour-woodland-seo-section {
         padding-top: 0;
         padding-bottom: 40px; /* Ngăn cách section 40px */
     }
 
-    .layered-sydney-seo-container {
+    .hometour-woodland-seo-container {
         padding: 0 20px; /* Lề 2 bên mặc định 20px */
         gap: 16px;
     }
 
-    .layered-sydney-seo-container p {
+    .hometour-woodland-seo-container p {
         font-size: 13px;
         line-height: 1.65;
     }
 
 
     /* --- 3. GALLERY SECTION (17 HÌNH STACK DỌC) --- */
-    .layered-sydney-gallery-section {
+    .hometour-woodland-gallery-section {
         padding-top: 0;
         padding-bottom: 60px;
     }
 
-    .layered-sydney-gallery-container {
+    .hometour-woodland-gallery-container {
         padding: 0 20px; /* Lề 2 bên mặc định 20px */
         gap: 20px;       /* Khoảng cách giữa các khối ảnh 40px */
     }
 
     /* Chuyển toàn bộ lưới 2 cột thành 1 cột dọc thuần túy */
-    .layered-sydney-grid-2-vertical,
-    .layered-sydney-grid-3-vertical {
+    .hometour-woodland-grid-2-vertical,
+    .hometour-woodland-grid-3-vertical {
         grid-template-columns: 1fr;
         gap: 20px; /* Khoảng cách giữa 2 hình trong cặp cũng là 40px */
     }
 
     /* Đảm bảo hình tự xả chiều cao chuẩn tỉ lệ gốc */
-    .layered-sydney-gallery-container img {
+    .hometour-woodland-gallery-container img {
         width: 100%;
         height: auto;
     }
@@ -805,66 +805,66 @@ SITEHEADER
 @media (min-width: 768px) and (max-width: 991px) {
 
     /* --- HEADER SECTION --- */
-    .layered-sydney-header {
+    .hometour-woodland-header {
         padding-top: 80px;
         padding-bottom: 40px; /* Gap section 40px */
     }
 
-    .layered-sydney-container {
+    .hometour-woodland-container {
         max-width: 100%;
         padding: 0 20px !important; /* Lề 2 bên chuẩn 20px */
     }
 
-    .layered-sydney-subtitle {
+    .hometour-woodland-subtitle {
         font-size: 10px;
         margin-bottom: 14px;
     }
 
-    .layered-sydney-title {
+    .hometour-woodland-title {
         font-size: 23px;
         margin-bottom: 16px;
     }
 
-    .layered-sydney-meta {
+    .hometour-woodland-meta {
         gap: 5px;
     }
 
-    .layered-sydney-meta-item {
+    .hometour-woodland-meta-item {
         font-size: 12px;
     }
 
 
     /* --- SEO TEXT SECTION --- */
-    .layered-sydney-seo-section {
+    .hometour-woodland-seo-section {
         padding-top: 0;
         padding-bottom: 40px; /* Gap section 40px */
     }
 
-    .layered-sydney-seo-container {
+    .hometour-woodland-seo-container {
         max-width: 600px;
         padding: 0 20px !important;
         gap: 16px;
     }
 
-    .layered-sydney-seo-container p {
+    .hometour-woodland-seo-container p {
         font-size: 13px;
         line-height: 1.6;
     }
 
 
     /* --- GALLERY SECTION --- */
-    .layered-sydney-gallery-section {
+    .hometour-woodland-gallery-section {
         padding-top: 0;
         padding-bottom: 60px;
     }
 
-    .layered-sydney-gallery-container {
+    .hometour-woodland-gallery-container {
         max-width: 100%;
         padding: 0 20px !important; /* Lề 2 bên chuẩn 20px */
         gap: 40px;                  /* Gap giữa các hàng ảnh 40px */
     }
 
-    .layered-sydney-grid-2-vertical {
+    .hometour-woodland-grid-2-vertical {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px; /* Gap ngang 2 hình dọc vừa vặn cho màn hình 768-991 */
@@ -872,7 +872,7 @@ SITEHEADER
     }
 
 
-    .layered-sydney-grid-3-vertical {
+    .hometour-woodland-grid-3-vertical {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px; 
@@ -880,7 +880,7 @@ SITEHEADER
     }
 
 
-    .layered-sydney-gallery-container img {
+    .hometour-woodland-gallery-container img {
         width: 100%;
         height: auto;
     }
@@ -900,66 +900,66 @@ SITEHEADER
 @media (min-width: 992px) and (max-width: 1024px) {
 
     /* --- HEADER SECTION --- */
-    .layered-sydney-header {
+    .hometour-woodland-header {
         padding-top: 100px;
         padding-bottom: 40px; /* Gap section 40px */
     }
 
-    .layered-sydney-container {
+    .hometour-woodland-container {
         max-width: 100%;
         padding: 0 20px !important; /* Lề 2 bên chuẩn 20px */
     }
 
-    .layered-sydney-subtitle {
+    .hometour-woodland-subtitle {
         font-size: 11px;
         margin-bottom: 18px;
     }
 
-    .layered-sydney-title {
+    .hometour-woodland-title {
         font-size: 25px;
         margin-bottom: 18px;
     }
 
-    .layered-sydney-meta {
+    .hometour-woodland-meta {
         gap: 6px;
     }
 
-    .layered-sydney-meta-item {
+    .hometour-woodland-meta-item {
         font-size: 13px;
     }
 
 
     /* --- SEO TEXT SECTION --- */
-    .layered-sydney-seo-section {
+    .hometour-woodland-seo-section {
         padding-top: 0;
         padding-bottom: 40px; /* Gap section 40px */
     }
 
-    .layered-sydney-seo-container {
+    .hometour-woodland-seo-container {
         max-width: 680px; /* Bóp khung chữ lọt lòng gọn gàng */
         padding: 0 20px !important;
         gap: 18px;
     }
 
-    .layered-sydney-seo-container p {
+    .hometour-woodland-seo-container p {
         font-size: 13px;
         line-height: 1.65;
     }
 
 
     /* --- GALLERY SECTION --- */
-    .layered-sydney-gallery-section {
+    .hometour-woodland-gallery-section {
         padding-top: 0;
         padding-bottom: 80px;
     }
 
-    .layered-sydney-gallery-container {
+    .hometour-woodland-gallery-container {
         max-width: 100%;
         padding: 0 20px !important; /* Lề 2 bên chuẩn 20px */
         gap: 40px;                  /* Gap giữa các hàng ảnh 40px */
     }
 
-    .layered-sydney-grid-2-vertical {
+    .hometour-woodland-grid-2-vertical {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 24px; /* Gap giữa 2 hình dọc vừa tầm màn hình 1024px */
@@ -967,14 +967,14 @@ SITEHEADER
     }
 
 
-    .layered-sydney-grid-3-vertical {
+    .hometour-woodland-grid-3-vertical {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
         width: 100%;
     }
 
-    .layered-sydney-gallery-container img {
+    .hometour-woodland-gallery-container img {
         width: 100%;
         height: auto;
     }
