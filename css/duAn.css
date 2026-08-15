@@ -255,8 +255,8 @@ IPAD/TABLET SYNC (768px - 1024px)
         transform: translateY(-50%); 
         margin: 0 !important; 
         
-        font-family: 'Be Vietnam Pro', sans-serif;
-        font-size: 14px;
+        font-family: var(--special-font);
+        font-size: 18px;
         font-weight: 200;
         color: #2b2929;
         text-decoration: none;

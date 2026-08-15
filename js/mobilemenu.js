@@ -203,7 +203,7 @@ function applyCasaFont() {
             .${className} { 
                 font-family: var(--CASA-Parquet-font, 'Cal Sans'), sans-serif !important; 
                 letter-spacing: 2px !important;
-                font-weight: 500 !important;
+                font-weight: 400 !important;
                 display: inline !important;
                 white-space: nowrap !important;
                 -webkit-font-smoothing: antialiased !important;
