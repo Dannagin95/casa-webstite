@@ -9,10 +9,18 @@
         const openModal = () => {
             if (modal) {
                 modal.classList.add('is-open');
-                document.body.classList.add('modal-open', 'sample-open'); // Kích hoạt CSS khóa cuộn nền
+                document.body.classList.add('modal-open', 'sample-open'); 
                 document.body.style.overflow = 'hidden';
 
-                if (form) form.style.display = 'block'; 
+                if (form) {
+                    form.style.display = 'block'; 
+                    form.reset(); 
+                   
+                    const selectedText = document.querySelector('#casaWoodSelect .selected-text');
+                    if (selectedText) selectedText.textContent = 'Chọn loại gỗ / Tông màu';
+                    const hiddenInput = document.getElementById('sample-wood-type');
+                    if (hiddenInput) hiddenInput.value = '';
+                }
                 if (successMsg) successMsg.style.display = 'none';
             }
         };
@@ -20,7 +28,7 @@
         const closeModal = () => {
             if (modal) {
                 modal.classList.remove('is-open');
-                document.body.classList.remove('modal-open', 'sample-open'); // Gỡ class khóa cuộn
+                document.body.classList.remove('modal-open', 'sample-open');
                 document.body.style.overflow = '';
             }
         };
@@ -42,12 +50,9 @@
             });
         }
 
-        // ========================================================
-        // 🔥 CHẶN KÉO TRÔI CẢ CỤM MODAL TRÊN MOBILE (FIX TOUCHMOVE)
-        // ========================================================
+       
         if (modal) {
             modal.addEventListener('touchmove', (e) => {
-                // Nếu người dùng vuốt trúng vùng nền tối ngoài (overlay) hoặc chính modal container mà không phải vùng nội dung đang cuộn, chặn đứng hành vi kéo trôi
                 if (e.target === modal || e.target.classList.contains('casa-modal-overlay') || e.target.classList.contains('sample-drawer')) {
                     e.preventDefault();
                 }
@@ -79,14 +84,63 @@
             }
         });
  
+      
         if (form) {
+            const submitBtn = document.getElementById('sample-submit-btn');
+
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                form.style.display = 'none';
-                if (successMsg) {
-                    successMsg.style.display = 'block';
+
+                const btnTextSpan = submitBtn ? submitBtn.querySelector('span') : null;
+                const originalText = btnTextSpan ? btnTextSpan.textContent : 'Gửi yêu cầu';
+                
+                if (submitBtn) {
+                    if (btnTextSpan) btnTextSpan.textContent = 'Đang gửi...';
+                    submitBtn.disabled = true;
                 }
-                form.reset();
+
+          
+                const formData = {
+                    name: document.getElementById('sample-name').value,
+                    phone: document.getElementById('sample-phone').value,
+                    address: document.getElementById('sample-address').value,
+                    wood_type: document.getElementById('sample-wood-type').value,
+                    note: document.getElementById('sample-note').value
+                };
+
+              
+                const scriptURL = "https://script.google.com/macros/s/AKfycbxW9Wh7KbWZJA0XiItTL4vHmreaz2eGwu-jOsiMzMRhvUjewgDEoEInQavkNnEFTsc-/exec";
+
+                fetch(scriptURL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Bắt buộc khi gọi Google Apps Script từ client
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(() => {
+                    // Thành công: Ẩn form, hiển thị thông báo
+                    form.style.display = 'none';
+                    if (successMsg) {
+                        successMsg.style.display = 'block';
+                    }
+                    form.reset();
+
+                    // Khôi phục trạng thái nút bấm
+                    if (submitBtn) {
+                        if (btnTextSpan) btnTextSpan.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    console.error('Lỗi kết nối:', error);
+                    alert('Đã có lỗi xảy ra, mày thử kiểm tra lại kết nối rồi gửi lại nhé!');
+                    if (submitBtn) {
+                        if (btnTextSpan) btnTextSpan.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }
+                });
             });
         }
     };
@@ -98,6 +152,7 @@
     }
 })();
 
+// Xử lý Custom Select Dropdown cho chọn loại gỗ
 document.addEventListener("DOMContentLoaded", function() {
     const customSelect = document.getElementById("casaWoodSelect");
     if (!customSelect) return;
@@ -113,12 +168,10 @@ document.addEventListener("DOMContentLoaded", function() {
         customSelect.classList.toggle("is-open");
     });
 
-    // 🔥 NGĂN CLICK/KÉO THANH CUỘN CỦA LIST LÀM ĐÓNG SẬP DROPDOWN 🔥
     optionsContainer.addEventListener("click", function(e) {
         e.stopPropagation();
     });
 
-    // Chọn option trong danh sách
     optionsList.forEach(option => {
         option.addEventListener("click", function(e) {
             e.stopPropagation();
