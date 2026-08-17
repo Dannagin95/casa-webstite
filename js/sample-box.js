@@ -1,4 +1,5 @@
-(function () {
+
+/*(function () {
     'use strict';
 
     const initSampleBox = () => {
@@ -191,4 +192,4 @@ document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener("click", function() {
         customSelect.classList.remove("is-open");
     });
-});
+});*/
