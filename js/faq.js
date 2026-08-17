@@ -50,60 +50,75 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!modalOverlay || !openModalBtn) return;
 
-    // 1. Mở Modal
     const openModal = () => {
         modalOverlay.classList.add('is-open');
         modalOverlay.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden'; // Khóa cuộn trang bên dưới
+        document.body.style.overflow = 'hidden';
     };
 
-    // 2. Đóng Modal
     const closeModal = () => {
         modalOverlay.classList.remove('is-open');
         modalOverlay.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = ''; // Mở lại cuộn trang
+        document.body.style.overflow = '';
     };
 
-    // Event mở modal khi bấm nút "Hỏi askcasa"
     openModalBtn.addEventListener('click', openModal);
 
-    // Event đóng modal khi bấm nút X
     if (closeModalBtn) {
         closeModalBtn.addEventListener('click', closeModal);
     }
 
-    // Event đóng modal khi click ra ngoài vùng card (click vào nền mờ)
     modalOverlay.addEventListener('click', (e) => {
         if (e.target === modalOverlay) {
             closeModal();
         }
     });
 
-    // Event đóng modal khi nhấn phím ESC
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modalOverlay.classList.contains('is-open')) {
             closeModal();
         }
     });
 
-    // 3. Xử lý Submit Form
     if (faqForm) {
-        faqForm.addEventListener('submit', (e) => {
+        faqForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            // Lấy dữ liệu nếu cần gửi qua API
+            const submitBtn = faqForm.querySelector('.askcasa-submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Đang gửi...';
+            submitBtn.disabled = true;
+
+            const checkboxes = faqForm.querySelectorAll('.askcasa-checkbox-input');
             const formData = {
-                name: document.getElementById('askcasaUserName')?.value,
-                email: document.getElementById('askcasaUserEmail')?.value,
-                question: document.getElementById('askcasaUserQuestion')?.value
+                name: document.getElementById('casaUserName')?.value || '',
+                email: document.getElementById('casaUserEmail')?.value || '',
+                question: document.getElementById('casaUserQuestion')?.value || '',
+                dataConsent: checkboxes[0] ? checkboxes[0].checked : false,
+                marketingConsent: checkboxes[1] ? checkboxes[1].checked : false
             };
 
-            console.log('Dữ liệu câu hỏi:', formData);
+            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz0Gy9vk6Rf-wInQgByDye1QJgjI5JC51cugw2AnkQ-fmb4GrGhR0hXRN3HDlbPz62f9g/exec';
 
-            // Thông báo demo & Reset form
-            alert('Cảm ơn bạn! Câu hỏi của bạn đã được gửi tới CASA Parquet.');
-            faqForm.reset();
-            closeModal();
+            try {
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                alert('Cảm ơn bạn! Câu hỏi của bạn đã được gửi tới CASA Parquet.');
+                faqForm.reset();
+                closeModal();
+            } catch (error) {
+                alert('Có lỗi xảy ra, vui lòng thử lại sau.');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
         });
     }
 });
