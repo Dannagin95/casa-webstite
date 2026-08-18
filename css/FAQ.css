@@ -471,7 +471,7 @@ NÚT HỎI CASA
 
 
 .askcasa-form-submit-wrapper {
-    margin: 20px 0 60px;
+    margin: 20px 0 0;
 }
 
 
@@ -615,11 +615,45 @@ NÚT HỎI CASA
     color: #000000;  
 }
 
-/* ==========================================================================
-   RESPONSIVE MOBILE (< 767PX) - CHUẨN ĐÉT SAMPLE BOX
-   ========================================================================== */
+.reCAPTCHA-confirm {
+    font-size: 11px; 
+    color: #888; 
+    text-align: start; 
+    margin-top: 10px;
+}
+
+
+
+
+
+.grecaptcha-badge {
+    right: -2px !important;
+    bottom: 14px !important;
+    width: 70px !important;
+    height: 60px !important;
+    overflow: hidden !important;
+    opacity: 0.3 !important;
+    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1), right 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease !important;
+    filter: grayscale(100%) contrast(1.2) brightness(0.9) !important;
+}
+
+.grecaptcha-badge:hover {
+    width: 256px !important;
+    right: 0px !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+
+
+@media (max-width: 1280px) {
+    .grecaptcha-badge {
+        display: none !important;
+    }
+}
 
 @media (max-width: 767px) {
+    
     .askcasa-modal-overlay {
         position: fixed !important;
         top: 8px !important;
@@ -662,7 +696,7 @@ NÚT HỎI CASA
         max-width: none !important;
         max-height: none !important;
         background: #ffffff !important;
-        padding: 32px 20px 40px 20px !important;
+        padding: 32px 20px 20px 20px !important;
         display: flex !important;
         flex-direction: column !important;
         border-radius: 0 !important;
@@ -688,6 +722,17 @@ NÚT HỎI CASA
 
     .askcasa-form-grid {
         grid-template-columns: 1fr !important;
+    }
+
+    .askcasa-form-submit-wrapper {
+        margin: 20px 0 0px;
+    }
+
+    .reCAPTCHA-confirm {
+        font-size: 9px; 
+        color: #888; 
+        text-align: center; 
+        margin-top: 10px !important;
     }
 }
 
