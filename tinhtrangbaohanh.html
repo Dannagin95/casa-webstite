@@ -8,8 +8,8 @@
     <link rel="canonical" href="https://casa-parquet.vn/tinhtrangbaohanh.html" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Urbanist:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/tracuubaohanh.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/tracuubaohanh.css">
 <script src="https://www.google.com/recaptcha/api.js?render=6LfZ-YotAAAAAO4pktKGLZaHl0o7nLrShyF8R_PF"></script>
 </head>
 <body>
@@ -29,7 +29,7 @@
             <h2 class="auth-title">Thông tin không tồn tại</h2>
             <p class="auth-subtitle">Thông tin không tồn tại. Mã đơn hàng hoặc Số điện thoại chưa được đăng ký trong hệ thống bảo hành của chúng tôi.</p>
             <div class="result-actions">
-                <a href="tracuubaohanh.html" class="btn-primary">Quay lại tra cứu</a>
+                <a href="/tracuubaohanh.html" class="btn-primary">Quay lại tra cứu</a>
             </div>
         </div>
 
@@ -85,8 +85,8 @@ function showResult(data) {
         </div>
 
         <div class="result-actions">
-            <a href="${data.pdfLink}" class="btn-primary" target="_blank">Tải chứng chỉ CO/CQ (PDF)</a>
-            <a href="index.html" class="btn-outline">Về trang chủ</a>
+            <a href="/${data.pdfLink}" class="btn-primary" target="_blank">Tải chứng chỉ CO/CQ (PDF)</a>
+            <a href="/index.html" class="btn-outline">Về trang chủ</a>
         </div>
     `;
 }
