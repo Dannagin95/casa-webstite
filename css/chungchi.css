@@ -164,8 +164,8 @@
     .main-title {
         font-size: clamp(38px, 5vw, 50px);
         font-weight: 400;
-        line-height: 1.4;
-        margin-bottom: 30px;
+        line-height: 1.2;
+        margin-bottom: 35px;
     }
 
     .desc-text {

@@ -159,6 +159,11 @@ a, button, .clickable-area {
 }
 
 
+.faq-question {
+    font-family: var(--special-font);
+    font-size: 16px !important;
+    font-weight: 500 !important;
+}
 
 
 /*FAQ*/
