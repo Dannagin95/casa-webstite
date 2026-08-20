@@ -149,14 +149,11 @@
    ========================================================================== */
 
 /* --- 1. BASE STYLES (DÙNG CHUNG) --- */
-.seventhblog-header { margin-bottom: 60px; max-width: 1000px; }
+.seventhblog-header { margin-bottom: 60px;}
 
 .seventhblog-main-title {
     font-size: clamp(38px, 5vw, 50px);
-    line-height: 1.4;
-    margin-bottom: 30px;
     color: var(--black);
-    font-family: var(--font-heading);
 }
 
 .seventhblog-subtitle {
@@ -572,14 +569,11 @@
    ========================================================================== */
 
 /* --- 1. BASE STYLES (DÙNG CHUNG) --- */
-.eighthblog-header { margin-bottom: 60px; max-width: 1000px; }
+.eighthblog-header { margin-bottom: 60px;}
 
 .eighthblog-main-title {
     font-size: clamp(38px, 5vw, 50px);
-    line-height: 1.4;
-    margin-bottom: 30px;
     color: var(--black);
-    font-family: var(--font-heading);
 }
 
 .eighthblog-subtitle {
@@ -999,14 +993,11 @@
    ========================================================================== */
 
 /* --- 1. BASE STYLES (DÙNG CHUNG) --- */
-.ninthblog-header { margin-bottom: 60px; max-width: 1000px; }
+.ninthblog-header { margin-bottom: 60px;}
 
 .ninthblog-main-title {
     font-size: clamp(38px, 5vw, 50px);
-    line-height: 1.4;
-    margin-bottom: 30px;
     color: var(--black);
-    font-family: var(--font-heading);
 }
 
 .ninthblog-subtitle {
@@ -1424,14 +1415,11 @@
    ========================================================================== */
 
 /* --- 1. BASE STYLES (DÙNG CHUNG) --- */
-.tenthblog-header { margin-bottom: 60px; max-width: 1000px; }
+.tenthblog-header { margin-bottom: 60px;}
 
 .tenthblog-main-title {
     font-size: clamp(38px, 5vw, 50px);
-    line-height: 1.4;
-    margin-bottom: 30px;
     color: var(--black);
-    font-family: var(--font-heading);
 }
 
 .tenthblog-subtitle {

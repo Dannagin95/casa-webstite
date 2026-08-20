@@ -1187,14 +1187,11 @@ main.filter-activated .casa-filter-trigger .filter-icon-svg circle {
    ========================================================================== */
 
 /* --- 1. BASE STYLES (DÙNG CHUNG) --- */
-.firstblog-header { margin-bottom: 60px; max-width: 1000px; }
+.firstblog-header { margin-bottom: 60px;}
 
 .firstblog-main-title {
     font-size: clamp(38px, 5vw, 50px);
-    line-height: 1.4;
-    margin-bottom: 30px;
     color: var(--black);
-    font-family: var(--font-heading);
 }
 
 .firstblog-subtitle {
@@ -1529,12 +1526,10 @@ main.filter-activated .casa-filter-trigger .filter-icon-svg circle {
 
 
 /* --- 1. BASE STYLES (DESKTOP MẶC ĐỊNH) --- */
-.secondblog-header { margin-bottom: 60px; max-width: 1000px; }
+.secondblog-header { margin-bottom: 60px;}
 .secondblog-main-title {
     font-size: clamp(38px, 5vw, 50px);
-    line-height: 1.4;
-    margin-bottom: 30px;
-    font-family: var(--font-heading);
+    color: var(--black);
 }
 .secondblog-subtitle {
     font-size: 13px;
@@ -1728,14 +1723,11 @@ main.filter-activated .casa-filter-trigger .filter-icon-svg circle {
    ========================================================================== */
 
 /* --- 1. BASE STYLES (DÙNG CHUNG) --- */
-.thirdblog-header { margin-bottom: 60px; max-width: 1000px; }
+.thirdblog-header { margin-bottom: 60px;}
 
 .thirdblog-main-title {
     font-size: clamp(38px, 5vw, 50px);
-    line-height: 1.4;
-    margin-bottom: 30px;
     color: var(--black);
-    font-family: var(--font-heading);
 }
 
 .thirdblog-subtitle {
@@ -2005,14 +1997,11 @@ main.filter-activated .casa-filter-trigger .filter-icon-svg circle {
    ========================================================================== */
 
 /* --- 1. BASE STYLES (DÙNG CHUNG) --- */
-.fourthblog-header { margin-bottom: 60px; max-width: 1000px; }
+.fourthblog-header { margin-bottom: 60px;}
 
 .fourthblog-main-title {
     font-size: clamp(38px, 5vw, 50px);
-    line-height: 1.4;
-    margin-bottom: 30px;
     color: var(--black);
-    font-family: var(--font-heading);
 }
 
 .fourthblog-subtitle {

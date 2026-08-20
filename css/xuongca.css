@@ -119,7 +119,7 @@
     line-height: 1.4;
     margin-bottom: 30px;
     max-width: 670px;
-    font-family: var(--font-heading);
+    font-family: var(--special-font);
 }
 
 .herringbone-description p {
@@ -216,7 +216,7 @@
         font-size: 28px !important; 
         line-height: 1.2;
         margin-bottom: 25px;
-        max-width: 90%;
+        max-width: 70%;
         font-weight: 400;
     }
 
@@ -706,11 +706,11 @@
     }
 
     .italy90-title, .french30-title, .hungary45-title { 
-        font-size: 22px !important; 
+        font-size: 20px !important; 
         line-height: 1.2;
         margin-bottom: 25px;
         max-width: 100%;
-        font-weight: 400;    
+        font-weight: 500;    
     }
 
     .italy90-description p, .french30-description p, .hungary45-description p {

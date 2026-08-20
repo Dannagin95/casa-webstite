@@ -129,14 +129,11 @@
    ========================================================================== */
 
 /* --- 1. BASE STYLES (DÙNG CHUNG) --- */
-.nineteenblog-header { margin-bottom: 60px; max-width: 1000px; }
+.nineteenblog-header { margin-bottom: 60px;}
 
 .nineteenblog-main-title {
     font-size: clamp(38px, 5vw, 50px);
-    line-height: 1.4;
-    margin-bottom: 30px;
     color: var(--black);
-    font-family: var(--font-heading);
 }
 
 .nineteenblog-subtitle {

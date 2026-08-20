@@ -3,14 +3,11 @@
    ========================================================================== */
 
 /* --- 1. BASE STYLES (DÙNG CHUNG) --- */
-.fifthblog-header { margin-bottom: 60px; max-width: 1000px; }
+.fifthblog-header { margin-bottom: 60px;}
 
 .fifthblog-main-title {
     font-size: clamp(38px, 5vw, 50px);
-    line-height: 1.4;
-    margin-bottom: 30px;
     color: var(--black);
-    font-family: var(--font-heading);
 }
 
 .fifthblog-subtitle {
@@ -391,14 +388,11 @@
    ========================================================================== */
 
 /* --- 1. BASE STYLES (DÙNG CHUNG) --- */
-.sixblog-header { margin-bottom: 60px; max-width: 1000px; }
+.sixblog-header { margin-bottom: 60px;}
 
 .sixblog-main-title {
     font-size: clamp(38px, 5vw, 50px);
-    line-height: 1.4;
-    margin-bottom: 30px;
     color: var(--black);
-    font-family: var(--font-heading);
 }
 
 .sixblog-subtitle {
