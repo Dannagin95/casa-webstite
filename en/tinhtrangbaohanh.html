@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Status</title>
+    <title>Warranty Status | CASA Parquet</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="canonical" href="https://casa-parquet.vn/tinhtrangbaohanh.html" />
+    <link rel="canonical" href="https://casa-parquet.vn/en/tinhtrangbaohanh.html" />
+    <link rel="alternate" hreflang="vi" href="https://casa-parquet.vn/tinhtrangbaohanh.html" />
+    <link rel="alternate" hreflang="en" href="https://casa-parquet.vn/en/tinhtrangbaohanh.html" />
+    <link rel="alternate" hreflang="x-default" href="https://casa-parquet.vn/tinhtrangbaohanh.html" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Urbanist:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/base.css">
@@ -19,17 +22,17 @@
         
         <div id="loading-state" class="state-container">
             <div class="simple-loader"></div>
-            <p>Retrieving data from [Your Brand] systems...</p>
+            <p>Retrieving warranty information from CASA Parquet...</p>
         </div>
 
         <div id="result-content" class="state-container" style="display:none;">
             </div>
 
         <div id="error-state" class="state-container" style="display:none;">
-            <h2 class="auth-title">Thông tin không tồn tại</h2>
-            <p class="auth-subtitle">Thông tin không tồn tại. Mã đơn hàng hoặc Số điện thoại chưa được đăng ký trong hệ thống bảo hành của chúng tôi.</p>
+            <h2 class="auth-title">Information Not Found</h2>
+            <p class="auth-subtitle">The information could not be found. The order number or phone number is not registered in our warranty system.</p>
             <div class="result-actions">
-                <a href="/tracuubaohanh.html" class="btn-primary">Quay lại tra cứu</a>
+                <a href="/en/tracuubaohanh.html" class="btn-primary">Back to Warranty Lookup</a>
             </div>
         </div>
 
@@ -42,7 +45,7 @@
     const customerID = urlParams.get('id');
     
     if (!customerID) {
-        window.location.href = 'tracuubaohanh.html';
+        window.location.href = '/en/tracuubaohanh.html';
         return;
     }
 
@@ -78,15 +81,15 @@ function showResult(data) {
         <p class="auth-subtitle">CASA Parquet - European Excellence</p>
 
         <div class="warranty-info-group">
-            <div class="info-row"><span class="label">Khách hàng</span><span class="value">${data.customerName}</span></div>
-            <div class="info-row"><span class="label">Sản phẩm</span><span class="value">${data.productName}</span></div>
-            <div class="info-row"><span class="label">Ngày lắp đặt</span><span class="value">${data.installDate}</span></div>
-            <div class="info-row"><span class="label">Hạn bảo hành</span><span class="value expiry-highlight">${data.expiryDate}</span></div>
+            <div class="info-row"><span class="label">Customer</span><span class="value">${data.customerName}</span></div>
+            <div class="info-row"><span class="label">Product</span><span class="value">${data.productName}</span></div>
+            <div class="info-row"><span class="label">Installation Date</span><span class="value">${data.installDate}</span></div>
+            <div class="info-row"><span class="label">Warranty Expiry</span><span class="value expiry-highlight">${data.expiryDate}</span></div>
         </div>
 
         <div class="result-actions">
-            <a href="/${data.pdfLink}" class="btn-primary" target="_blank">Tải chứng chỉ CO/CQ (PDF)</a>
-            <a href="/index.html" class="btn-outline">Về trang chủ</a>
+            <a href="/${data.pdfLink}" class="btn-primary" target="_blank">Download CO/CQ Certificate (PDF)</a>
+            <a href="/en/index.html" class="btn-outline">Back to Home</a>
         </div>
     `;
 }
