@@ -155,68 +155,81 @@
     ];
 
 
-    // =============================================================
-    // BUILD ROUTE MAPS
-    // =============================================================
+    // =========================================================
+    // ROUTE NORMALIZATION
+    // =========================================================
 
-    const VI_TO_EN = new Map(ROUTE_PAIRS);
-
-    const EN_TO_VI = new Map(
-        ROUTE_PAIRS.map(([vi, en]) => [en, vi])
-    );
-
-
-    // Homepage aliases should always return
-    // to the clean Vietnamese homepage.
-    EN_TO_VI.set('/en/', '/');
-    EN_TO_VI.set('/en/index.html', '/');
-
-
-    // =============================================================
-    // NORMALIZE CURRENT PATH
-    // =============================================================
-
-    function normalizePath(pathname) {
+    function normalizeRouteKey(pathname) {
         let path = pathname || '/';
 
-        /*
-         * Browsers may return Vietnamese filenames
-         * in URL-encoded form.
-         *
-         * Example:
-         *
-         * %C4%90i%E1%BB%81u-g%C3%AC...
-         *
-         * We decode the pathname before checking
-         * the language route map.
-         */
         try {
             path = decodeURIComponent(path);
         } catch (error) {
-            // If decoding fails, keep the browser pathname.
+            // Keep original pathname if decoding fails.
         }
 
         if (!path.startsWith('/')) {
             path = '/' + path;
         }
 
-        return path;
+        path = path.replace(/\/{2,}/g, '/');
+
+        if (path === '/index.html') {
+            return '/';
+        }
+
+        if (
+            path === '/en' ||
+            path === '/en/' ||
+            path === '/en/index.html'
+        ) {
+            return '/en/';
+        }
+
+        if (path.length > 1) {
+            path = path.replace(/\/+$/, '');
+            path = path.replace(/\.html$/i, '');
+        }
+
+        return path.toLowerCase();
     }
 
 
-    // =============================================================
+    // =========================================================
+    // BUILD ROUTE MAPS
+    // =========================================================
+
+    const VI_TO_EN = new Map();
+    const EN_TO_VI = new Map();
+
+    ROUTE_PAIRS.forEach(([vi, en]) => {
+        VI_TO_EN.set(
+            normalizeRouteKey(vi),
+            en
+        );
+
+        EN_TO_VI.set(
+            normalizeRouteKey(en),
+            vi
+        );
+    });
+
+    VI_TO_EN.set(
+        normalizeRouteKey('/'),
+        '/en/'
+    );
+
+    EN_TO_VI.set(
+        normalizeRouteKey('/en/'),
+        '/'
+    );
+
+
+    // =========================================================
     // DETECT LANGUAGE FROM CLICKED ELEMENT
-    // =============================================================
+    // =========================================================
 
     function getTargetLanguage(element) {
-
-        /*
-         * Mobile menu and footer already use:
-         *
-         * data-lang="VN"
-         * data-lang="EN"
-         */
-
         const declared = element && element.getAttribute
             ? element.getAttribute('data-lang')
             : null;
@@ -233,20 +246,6 @@
             }
         }
 
-
-        /*
-         * Desktop header currently does NOT have
-         * data-lang.
-         *
-         * Therefore we detect its existing text:
-         *
-         * Vietnam (VIE)
-         * English (ENG)
-         *
-         * This means we do NOT need to modify
-         * the existing HTML structure.
-         */
-
         const text = (
             element && element.textContent
                 ? element.textContent
@@ -255,14 +254,12 @@
             .trim()
             .toLowerCase();
 
-
         if (
             text.includes('english') ||
             text.includes('(eng)')
         ) {
             return 'EN';
         }
-
 
         if (
             text.includes('vietnam') ||
@@ -271,16 +268,22 @@
             return 'VN';
         }
 
-
         return null;
     }
 
 
-    // =============================================================
+    // =========================================================
     // DETECT CURRENT SITE LANGUAGE
-    // =============================================================
+    // =========================================================
 
-    function currentSiteLanguage(path) {
+    function currentSiteLanguage(pathname) {
+        let path = pathname || '/';
+
+        try {
+            path = decodeURIComponent(path);
+        } catch (error) {
+            // Keep original pathname if decoding fails.
+        }
 
         if (
             path === '/en' ||
@@ -294,181 +297,111 @@
     }
 
 
-    // =============================================================
+    // =========================================================
     // RESOLVE TARGET ROUTE
-    // =============================================================
+    // =========================================================
 
     function resolveLanguageRoute(targetLanguage) {
-
-        const currentPath = normalizePath(
+        const currentPath = normalizeRouteKey(
             window.location.pathname
         );
 
         const currentLanguage = currentSiteLanguage(
-            currentPath
+            window.location.pathname
         );
-
-
-        /*
-         * User clicks the language
-         * they are already viewing.
-         *
-         * Do nothing.
-         */
 
         if (targetLanguage === currentLanguage) {
             return null;
         }
 
-
-        // ---------------------------------------------------------
-        // VIETNAMESE → ENGLISH
-        // ---------------------------------------------------------
-
         if (targetLanguage === 'EN') {
-
-            /*
-             * Exact equivalent exists.
-             */
-
             if (VI_TO_EN.has(currentPath)) {
                 return VI_TO_EN.get(currentPath);
             }
 
-
-            /*
-             * Page has NOT been translated yet.
-             *
-             * Do NOT invent:
-             *
-             * /en/current-page.html
-             *
-             * because that could produce a 404.
-             *
-             * Safe fallback:
-             */
+            console.warn(
+                '[CASA Language Router] EN route not found:',
+                window.location.pathname
+            );
 
             return '/en/';
         }
 
-
-        // ---------------------------------------------------------
-        // ENGLISH → VIETNAMESE
-        // ---------------------------------------------------------
-
         if (targetLanguage === 'VN') {
-
-            /*
-             * Exact Vietnamese equivalent exists.
-             */
-
             if (EN_TO_VI.has(currentPath)) {
                 return EN_TO_VI.get(currentPath);
             }
 
-
-            /*
-             * Unknown English route.
-             *
-             * Safe fallback:
-             */
+            console.warn(
+                '[CASA Language Router] VN route not found:',
+                window.location.pathname
+            );
 
             return '/';
         }
-
 
         return null;
     }
 
 
-    // =============================================================
+    // =========================================================
     // SWITCH LANGUAGE
-    // =============================================================
+    // =========================================================
 
     function switchCasaLanguage(targetLanguage) {
-
         const targetPath = resolveLanguageRoute(
             targetLanguage
         );
 
-
-        /*
-         * Same language selected.
-         * No navigation required.
-         */
-
         if (!targetPath) {
             return;
         }
-
-
-        /*
-         * Preserve query parameters and hash.
-         *
-         * Example:
-         *
-         * ?utm_source=instagram
-         * #section
-         */
 
         const destination =
             targetPath +
             window.location.search +
             window.location.hash;
 
-
-        window.location.assign(destination);
+        window.location.replace(destination);
     }
 
 
-    // =============================================================
+    // =========================================================
     // LANGUAGE CLICK LISTENER
-    // =============================================================
+    // =========================================================
 
     document.addEventListener(
-    'click',
-    function (event) {
+        'click',
+        function (event) {
+            const option = event.target.closest(
+                '.lang-item, ' +
+                '.casa-sheet-item, ' +
+                '.langg-dropdown li, ' +
+                '.lang-sheet-list li'
+            );
 
-        const option = event.target.closest(
-            '.lang-item, ' +
-            '.casa-sheet-item, ' +
-            '.langg-dropdown li, ' +
-            '.lang-sheet-list li'
-        );
+            if (!option) {
+                return;
+            }
 
-        if (!option) {
-            return;
-        }
+            const targetLanguage =
+                getTargetLanguage(option);
 
-        const targetLanguage =
-            getTargetLanguage(option);
+            if (!targetLanguage) {
+                return;
+            }
 
-        if (!targetLanguage) {
-            return;
-        }
-
-        switchCasaLanguage(
-            targetLanguage
-        );
-    },
-    true
-);
+            switchCasaLanguage(
+                targetLanguage
+            );
+        },
+        true
+    );
 
 
-    // =============================================================
+    // =========================================================
     // PUBLIC API
-    // =============================================================
-
-    /*
-     * Expose one small public function.
-     *
-     * This can be useful later if CASA adds
-     * another language button somewhere else.
-     *
-     * Example:
-     *
-     * CASALanguageRouter.switchLanguage('EN');
-     */
+    // =========================================================
 
     window.CASALanguageRouter = Object.freeze({
         switchLanguage: switchCasaLanguage
