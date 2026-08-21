@@ -25,6 +25,35 @@
         ['/tinhtrangbaohanh.html', '/en/tinhtrangbaohanh.html'],
         ['/tracuubaohanh.html', '/en/tracuubaohanh.html'],
 
+
+        [
+            '/San_pham/Riva.html',
+            '/en/Products/Riva.html'
+        ],
+
+        [
+            '/San_pham/Alpi.html',
+            '/en/Products/Alpi.html'
+        ],
+
+        [
+            '/San_pham/Mastro.html',
+            '/en/Products/Mastro.html'
+        ],
+
+        [
+            '/San_pham/La-Dolce.html',
+            '/en/Products/La-Dolce.html'
+        ],
+
+        [
+            '/San_pham/Parma.html',
+            '/en/Products/Parma.html'
+        ],
+
+
+
+
         [
             '/blog/Cau-truc-va-dac-tinh-cua-go-tu-nhien.html',
             '/en/Blog/natural-wood-structure-and-characteristics.html'
