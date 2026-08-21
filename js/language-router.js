@@ -105,6 +105,7 @@
             '/blog/Vi-sao-engineered-wood-phu-hop-voi-khi-hau-nong-am.html',
             '/en/Blog/why-engineered-wood-suits-hot-humid-climates.html'
         ]
+
     ];
 
     const LANGUAGE_STORAGE_KEY = 'casaPreferredLanguage';

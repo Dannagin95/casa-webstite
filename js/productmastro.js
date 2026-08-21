@@ -43,11 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
        SECTION 2: HERO SLIDER (NGOÀI TRANG CHỦ)
        ========================================== */
     const heroGallery = [
-        { type: 'video', src: '../image/imagesMastro/Mastroherovd1.mp4' },
-        { type: 'image', src: '../image/imagesMastro/mastrohero01.jpg' },
-        { type: 'image', src: '../image/imagesMastro/mastrohero02.jpg' },
-        { type: 'image', src: '../image/imagesMastro/mastrohero03.jpg' },
-        { type: 'image', src: '../image/imagesMastro/mastrohero04.jpg' }
+        { type: 'video', src: '/image/imagesMastro/Mastroherovd1.mp4' },
+        { type: 'image', src: '/image/imagesMastro/mastrohero01.jpg' },
+        { type: 'image', src: '/image/imagesMastro/mastrohero02.jpg' },
+        { type: 'image', src: '/image/imagesMastro/mastrohero03.jpg' },
+        { type: 'image', src: '/image/imagesMastro/mastrohero04.jpg' }
     ];
     let currentHeroIndex = 0;
 

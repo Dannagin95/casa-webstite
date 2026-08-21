@@ -43,11 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
        SECTION 2: HERO SLIDER (NGOÀI TRANG CHỦ)
        ========================================== */
     const heroGallery = [
-        { type: 'video', src: '../image/imagesParma/parmaherovd01.mp4' },
-        { type: 'image', src: '../image/imagesParma/parmahero02.jpg' },
-        { type: 'image', src: '../image/imagesParma/parmahero01.jpg' },
-        { type: 'image', src: '../image/imagesParma/parmahero03.jpg' },
-        { type: 'image', src: '../image/imagesParma/parmahero04.jpg' }
+        { type: 'video', src: '/image/imagesParma/parmaherovd01.mp4' },
+        { type: 'image', src: '/image/imagesParma/parmahero02.jpg' },
+        { type: 'image', src: '/image/imagesParma/parmahero01.jpg' },
+        { type: 'image', src: '/image/imagesParma/parmahero03.jpg' },
+        { type: 'image', src: '/image/imagesParma/parmahero04.jpg' }
     ];
     let currentHeroIndex = 0;
 

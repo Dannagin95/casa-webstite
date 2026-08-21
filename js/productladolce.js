@@ -43,11 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
        SECTION 2: HERO SLIDER (NGOÀI TRANG CHỦ)
        ========================================== */
     const heroGallery = [
-        { type: 'video', src: '../image/imagesLaDolce/ladolceherovd1.mp4' },
-        { type: 'image', src: '../image/imagesLaDolce/ladolcehero03.jpg' },
-        { type: 'image', src: '../image/imagesLaDolce/ladolcehero01.jpg' },
-        { type: 'image', src: '../image/imagesLaDolce/ladolcehero02.jpg' },
-        { type: 'image', src: '../image/imagesLaDolce/ladolcehero04.jpg' }
+        { type: 'video', src: '/image/imagesLaDolce/ladolceherovd1.mp4' },
+        { type: 'image', src: '/image/imagesLaDolce/ladolcehero03.jpg' },
+        { type: 'image', src: '/image/imagesLaDolce/ladolcehero01.jpg' },
+        { type: 'image', src: '/image/imagesLaDolce/ladolcehero02.jpg' },
+        { type: 'image', src: '/image/imagesLaDolce/ladolcehero04.jpg' }
     ];
     let currentHeroIndex = 0;
 

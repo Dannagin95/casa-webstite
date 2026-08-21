@@ -43,11 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
        SECTION 2: HERO SLIDER (NGOÀI TRANG CHỦ)
        ========================================== */
     const heroGallery = [
-        { type: 'video', src: '../image/imagesAlpi/Alpiherovideo.mp4' },
-        { type: 'image', src: '../image/imagesAlpi/alpihero01.jpg' },
-        { type: 'image', src: '../image/imagesAlpi/alpihero02.jpg' },
-        { type: 'image', src: '../image/imagesAlpi/alpihero03.jpg' },
-        { type: 'image', src: '../image/imagesAlpi/alpihero04.jpg' }
+        { type: 'video', src: '/image/imagesAlpi/Alpiherovideo.mp4' },
+        { type: 'image', src: '/image/imagesAlpi/alpihero01.jpg' },
+        { type: 'image', src: '/image/imagesAlpi/alpihero02.jpg' },
+        { type: 'image', src: '/image/imagesAlpi/alpihero03.jpg' },
+        { type: 'image', src: '/image/imagesAlpi/alpihero04.jpg' }
     ];
     let currentHeroIndex = 0;
 
