@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warranty Status | CASA Parquet</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="canonical" href="https://casa-parquet.vn/en/tinhtrangbaohanh.html" />
+    <link rel="canonical" href="https://casa-parquet.vn/en/warranty_status.html" />
     <link rel="alternate" hreflang="vi" href="https://casa-parquet.vn/tinhtrangbaohanh.html" />
-    <link rel="alternate" hreflang="en" href="https://casa-parquet.vn/en/tinhtrangbaohanh.html" />
+    <link rel="alternate" hreflang="en" href="https://casa-parquet.vn/en/warranty_status.html" />
     <link rel="alternate" hreflang="x-default" href="https://casa-parquet.vn/tinhtrangbaohanh.html" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Urbanist:wght@300;400&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
             <h2 class="auth-title">Information Not Found</h2>
             <p class="auth-subtitle">The information could not be found. The order number or phone number is not registered in our warranty system.</p>
             <div class="result-actions">
-                <a href="/en/tracuubaohanh.html" class="btn-primary">Back to Warranty Lookup</a>
+                <a href="/en/warranty_lookup.html" class="btn-primary">Back to Warranty Lookup</a>
             </div>
         </div>
 
@@ -45,7 +45,7 @@
     const customerID = urlParams.get('id');
     
     if (!customerID) {
-        window.location.href = '/en/tracuubaohanh.html';
+        window.location.href = '/en/warranty_lookup.html';
         return;
     }
 

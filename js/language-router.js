@@ -5,25 +5,26 @@
         ['/', '/en/'],
         ['/index.html', '/en/'],
 
-        ['/lichsu.html', '/en/lichsu.html'],
-        ['/Cau_truc.html', '/en/Cau_truc.html'],
-        ['/Du_an.html', '/en/Du_an.html'],
-        ['/chungchi.html', '/en/chungchi.html'],
-        ['/hethang.html', '/en/hethang.html'],
-        ['/quytrinh.html', '/en/quytrinh.html'],
-        ['/Tai_lieu.html', '/en/Tai_lieu.html'],
-        ['/tintuc.html', '/en/tintuc.html'],
-        ['/wood.html', '/en/wood.html'],
-        ['/xuongca.html', '/en/xuongca.html'],
+        ['/lichsu.html', '/en/about.html'],
+        ['/Cau_truc.html', '/en/structure.html'],
+        ['/Du_an.html', '/en/Our_Projects.html'],
+        ['/chungchi.html', '/en/Certifications.html'],
+        ['/hethang.html', '/en/straight-lay-flooring.html'],
+        ['/quytrinh.html', '/en/process.html'],
+        ['/Tai_lieu.html', '/en/catalogue.html'],
+        ['/tintuc.html', '/en/news.html'],
+        ['/wood.html', '/en/Our_Wood.html'],
+        ['/xuongca.html', '/en/herringbone-and-chevron.html'],
         ['/blog.html', '/en/blog.html'],
         ['/contactus.html', '/en/contactus.html'],
         ['/international-collection.html', '/en/international-collection.html'],
-        ['/san-pham.html', '/en/san-pham.html'],
-        ['/baohanh.html', '/en/baohanh.html'],
+        ['/san-pham.html', '/en/products.html'],
+        ['/baohanh.html', '/en/warranty.html'],
         ['/showroom.html', '/en/showroom.html'],
         ['/surface.html', '/en/surface.html'],
-        ['/tinhtrangbaohanh.html', '/en/tinhtrangbaohanh.html'],
-        ['/tracuubaohanh.html', '/en/tracuubaohanh.html'],
+        ['/tinhtrangbaohanh.html', '/en/warranty_status.html'],
+        ['/tracuubaohanh.html', '/en/warranty_lookup.html'],
+
 
 
         [
@@ -49,6 +50,29 @@
         [
             '/San_pham/Parma.html',
             '/en/Products/Parma.html'
+        ],
+
+
+
+
+        [
+            '/Du_an/Du-an-khach-san-5-sao.html',
+            '/en/Our-Projects/Five-Star-Hotel.html'
+        ],
+
+        [
+            '/Du_an/Penthouse.html',
+            '/en/Our-Projects/Penthouse.html'
+        ],
+
+        [
+            '/Du_an/Showroom-ADES-Lighting.html',
+            '/en/Our-Projects/Showroom-ADES-Lighting.html'
+        ],
+
+        [
+            '/Du_an/Bao-tang.html',
+            '/en/Our-Projects/Antique-Museum.html'
         ],
 
 
