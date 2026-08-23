@@ -176,6 +176,22 @@
         [
             '/The_Collection/Cangshan-Villa.html',
             '/en/The_Collection/Cangshan-Villa.html'
+        ],
+        [
+            '/The_Collection/Fritz-Hansen-Jing-An-Showroom.html',
+            '/en/The_Collection/Fritz-Hansen-Jing-An-Showroom.html'
+        ],
+        [
+            '/The_Collection/Home-Tour-Collector’s-Penthouse.html',
+            '/en/The_Collection/Home-Tour-Collector’s-Penthouse.html'
+        ],
+        [
+            '/The_Collection/Home-Tour-Colony.html',
+            '/en/The_Collection/Home-Tour-Colony.html'
+        ],
+        [
+            '/The_Collection/Home-Tour-Elystan.html',
+            '/en/The_Collection/Home-Tour-Elystan.html'
         ]
 
 
