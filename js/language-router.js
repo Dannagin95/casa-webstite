@@ -213,7 +213,28 @@
         [
             '/The_Collection/Layered-Sydney-Home.html',
             '/en/The_Collection/Layered-Sydney-Home.html'
+        ],
+        [
+            '/The_Collection/Lost-&-Found.html',
+            '/en/The_Collection/Lost-&-Found.html'
+        ],
+        [
+            '/The_Collection/Open-House.html',
+            '/en/The_Collection/Open-House.html'
+        ],
+        [
+            '/The_Collection/Slimbone-x-Theo-Bert-Pot.html',
+            '/en/The_Collection/Slimbone-x-Theo-Bert-Pot.html'
+        ],
+        [
+            '/The_Collection/Sunyata-Meili.html',
+            '/en/The_Collection/Sunyata-Meili.html'
+        ],
+        [
+            '/The_Collection/Xinyi-Residence.html',
+            '/en/The_Collection/Xinyi-Residence.html'
         ]
+
 
 
     ];
