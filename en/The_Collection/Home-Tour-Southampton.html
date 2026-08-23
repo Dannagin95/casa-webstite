@@ -11,7 +11,7 @@
     <meta property="og:title" content="Home Tour Southampton | Modern Organic Interior">
     <meta property="og:description" content="Explore a Southampton home by Clive Lonstein where Oak flooring, natural materials, vintage pieces and a muted palette create a warm Modern Organic interior.">
     <meta property="og:url" content="https://casa-parquet.vn/en/The_Collection/Home-Tour-Southampton.html">
-    <meta property="og:site_name" content="Home Tour Southampton | Modern Organic Interior">
+    <meta property="og:site_name" content="CASA Parquet">
     <meta property="og:image" content="https://casa-parquet.vn/image/International Collection/Home Tour Southampton/Home-Tour-Southampton.webp">
 
     <meta name="twitter:card" content="summary_large_image">
@@ -70,9 +70,6 @@
         <button class="top-bar-btn" onclick="toggleTopbar()"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
 </div>
-
-
-
 
 
 
@@ -298,8 +295,6 @@
 
 
 
-
-
 <div id="search-drawer" class="search-drawer">
     <div class="search-backdrop" id="search-backdrop"></div>
     
@@ -321,7 +316,6 @@
         </div>
     </div>
 </div>
-
 
 
 
@@ -522,6 +516,24 @@
 </div>
 </div>
 
+
+
+
+
+
+<header class="hometour-southampton-header">
+    <div class="hometour-southampton-container">
+        <span class="hometour-southampton-subtitle">Modern Organic</span>
+        <h1 class="hometour-southampton-title" style="font-family: var(--special-font);">Home Tour | Southampton</h1>
+        
+        <div class="hometour-southampton-meta">
+            <div class="hometour-southampton-meta-item">New York City, North America</div>
+            <div class="hometour-southampton-meta-item">Clive Lonstein</div>
+            <div class="hometour-southampton-meta-item">Ph. William Jess Laird</div>
+            <div class="hometour-southampton-meta-item">Ref. Est Living</div>
+        </div>
+    </div>
+</header>
 
 
 
@@ -1437,7 +1449,7 @@
         currentX = e.touches[0].clientX;
         const deltaX = currentX - startX;
         
-        // Quy đổi quãng đường vuốt px from tay thành tỷ lệ % from dải trượt để không bị lệch trục tọa độ
+        // Quy đổi quãng đường vuốt px của tay thành tỷ lệ % của dải trượt để không bị lệch trục tọa độ
         const deltaPercent = (deltaX / trackWidth) * 100;
         const currentOffsetPercent = -currentIndex * 100;
         

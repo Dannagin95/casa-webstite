@@ -192,8 +192,35 @@
         [
             '/The_Collection/Home-Tour-Elystan.html',
             '/en/The_Collection/Home-Tour-Elystan.html'
+        ],
+        [
+            '/The_Collection/Home-Tour-Residence-GF.html',
+            '/en/The_Collection/Home-Tour-Residence-GF.html'
+        ],
+        [
+            '/The_Collection/Home-Tour-Southampton.html',
+            '/en/The_Collection/Home-Tour-Southampton.html'
+        ],
+        [
+            '/The_Collection/Home-Tour-Woodland-House.html',
+            '/en/The_Collection/Home-Tour-Woodland-House.html'
+        ],
+        [
+            '/The_Collection/Koloru-House.html',
+            '/en/The_Collection/Koloru-House.html'
+        ],
+        [
+            '/The_Collection/Layered-Sydney-Home.html',
+            '/en/The_Collection/Layered-Sydney-Home.html'
+        ],
+        [
+            '/The_Collection/Lost-&-Found.html',
+            '/en/The_Collection/Lost-&-Found.html'
+        ],
+        [
+            '/The_Collection/Open-House.html',
+            '/en/The_Collection/Open-House.html'
         ]
-
 
     ];
 
