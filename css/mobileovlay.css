@@ -22,10 +22,10 @@ body.menu-open {
         display: flex !important;
         justify-content: space-between !important;
         align-items: center;
-        padding: 5px 0 !important;
-        font-size: 22px !important;
+        padding: 2px 0 !important;
+        font-size: 26px !important;
         font-family: var(--special-font);
-        font-weight: 600 !important;
+        font-weight: 400 !important;
         color: #000;
         cursor: pointer;
         width: 100%;
