@@ -157,7 +157,27 @@
         [
             '/blog/Vi-sao-engineered-wood-phu-hop-voi-khi-hau-nong-am.html',
             '/en/Blog/why-engineered-wood-suits-hot-humid-climates.html'
+        ],
+
+
+
+        [
+            '/The_Collection/Aesop-Central-House-19.html',
+            '/en/The_Collection/Aesop-Central-House-19.html'
+        ],
+        [
+            '/The_Collection/Bauwerk-Parkett-Villapark.html',
+            '/en/The_Collection/Bauwerk-Parkett-Villapark.html'
+        ],
+        [
+            '/The_Collection/Best-of-est-Contemporary-Homes.html',
+            '/en/The_Collection/Best-of-est-Contemporary-Homes.html'
+        ],
+        [
+            '/The_Collection/Cangshan-Villa.html',
+            '/en/The_Collection/Cangshan-Villa.html'
         ]
+
 
     ];
 
