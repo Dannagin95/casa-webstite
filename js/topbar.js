@@ -5,7 +5,7 @@ const topBarDataVI = [
 
 const topBarDataEN = [
     { text: "Warranty policy - learn more", link: "/en/warranty.html" },
-    { text: "Visit us - view map", link: "/en/showroom.html" }
+    { text: "Our Showroom Locator", link: "/en/showroom.html" }
 ];
 
 const isEnglishPage =
