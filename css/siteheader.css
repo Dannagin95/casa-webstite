@@ -9,7 +9,6 @@
     padding: 30px 0;
     background: transparent;
     transition: background 0.4s ease;
-    /* CHIÊU ĐẶC TRỊ: Header giờ như không khí, chuột đi xuyên qua vùng trống */
     pointer-events: auto !important; 
 }
 
@@ -45,7 +44,7 @@
     position: relative; 
 }
 
-.nav-list { display: flex; align-items: center; gap: 38px; }
+.nav-list { display: flex; align-items: center; gap: 30px; }
 .nav-link, .util-item, .lang-switch {
     color: #fff;
     text-decoration: none;

@@ -47,7 +47,7 @@ SITEHEADER
     position: relative; 
 }
 
-.nav-list { display: flex; align-items: center; gap: 38px; }
+.nav-list { display: flex; align-items: center; gap: 30px; }
 .nav-link, .util-item, .lang-switch {
     color: #000000;
     text-decoration: none;
