@@ -262,7 +262,6 @@
 
 
 @media (max-width: 1024px) {
-    /* Hiện nhóm mobile mới */
     .m-nav-group {
         display: flex !important;
         align-items: center;
@@ -331,7 +330,7 @@
             transform 0.3s ease;
     }
 
-    /* Ghi đè riêng cho Tablet (từ 768px đến 1024px): Né 4 cạnh 16px, nằm bên phải, rộng 50% */
+   
     @media (min-width: 768px) {
         .mobile-overlay {
             top: 16px !important;
@@ -371,7 +370,7 @@
 
     .mobile-nav a {
         display: flex;
-        justify-content: space-between; /* Đẩy mũi tên sang phải */
+        justify-content: space-between;
         align-items: center;
         padding: 8px 0;
         font-size: 21px;
@@ -382,17 +381,14 @@
 
     .mobile-nav a i {
         font-size: 14px;
-        color: #ccc; /* Mũi tên nhạt màu như QUOC */
+        color: #ccc; 
     }
 
 
 
 
-    /* PHẦN ĐÁY BOX */
-    /* PHẦN ĐÁY MENU MOBILE */
 
     .mobile-footer {
-        /* Bỏ padding ngang ở đây để line có thể chạy full lề */
         padding: 0 0 0px 0 !important; 
         margin-top: auto;
         width: 100%;
@@ -401,14 +397,12 @@
         height: 0.5px;
         background: #e0e0e0; 
         margin-bottom: 20px;
-        /* Line này sẽ rộng bằng menu ở trên nếu nó không bị kẹt trong padding */
         width: 100%; 
     }
     .footer-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        /* Chỉ đưa padding 20px vào phần nội dung chữ/icon */
         padding: 0 20px; 
     }
 
@@ -418,7 +412,7 @@
         border-radius: 50%;
         overflow: hidden;
         border: 1px solid #eee;
-        display: flex; /* Căn giữa cái hình bên trong */
+        display: flex;
         align-items: center;
         justify-content: center;
     }
@@ -426,8 +420,8 @@
     .casa-current-flag {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Quan trọng: để nó cắt hình chữ nhật thành vuông */
-        aspect-ratio: 1/1; /* Ép tỉ lệ vuông */
+        object-fit: cover; 
+        aspect-ratio: 1/1;
     }
 
     .casa-current-text {
@@ -435,42 +429,40 @@
         font-weight: 600;
     }
 
-    /* Lá cờ trong bảng Bottom Sheet */
+
     .casa-sheet-item img {
         width: 22px; height: 22px; border-radius: 50%;
-        object-fit: cover; aspect-ratio: 1/1; /* Tròn xoe */
+        object-fit: cover; aspect-ratio: 1/1; 
     }
     
     .casa-lang-trigger { display: flex; align-items: center; gap: 8px; cursor: pointer; }
     .casa-arrow { transition: transform 0.3s ease; }
 
-    /* Khi mở bảng: Xoay mũi tên */
+
     body.sheet-open .casa-arrow { transform: rotate(180deg); }
 
-    /* 2. Lớp phủ đen */
+
     .casa-sheet-overlay {
         position: fixed; top: 0; left: 0; width: 100%; height: 100%;
         background: rgba(0,0,0,0.5); z-index: 2000;
         opacity: 0; visibility: hidden;
-        /* Không để delay ở đây để nó hiện ngay */
         transition: opacity 0.4s ease, visibility 0.4s;
     }
 
-    /* 3. Bottom Sheet (Ẩn triệt để khi chưa mở) */
+   
     .casa-lang-sheet {
         position: fixed; bottom: 0; left: 0; width: 100%;
         background: #fff; border-radius: 24px 24px 0 0;
         padding: 30px 20px 50px 20px; z-index: 2001;
-        transform: translateY(110%); /* Giấu kỹ bên dưới */
+        transform: translateY(110%);
         visibility: hidden;
-        /* Thêm delay 0.1s cho transform */
         transition: transform 0.6s cubic-bezier(0.32, 1, 0.23, 1) 0.1s, visibility 0.6s 0.1s;
     }
 
 
     .casa-sheet-header {
         display: flex;
-        justify-content: center; /* Ép chữ Ngôn ngữ vào giữa */
+        justify-content: center;
         width: 100%;
         margin-bottom: 20px;
     }
@@ -478,7 +470,7 @@
     .casa-sheet-header h3 {
         font-size: 17px; 
         font-weight: 600; 
-        margin: 0; /* Xóa margin mặc định có thể gây lệch */
+        margin: 0;
         color: #000000;
         text-align: center;
     }
@@ -486,8 +478,8 @@
     .casa-sheet-line {
         height: 0.5px; 
         background: #eee; 
-        width: 100%; /* Line chạy full chiều ngang sheet */
-        margin: 0 auto 10px auto; /* Căn giữa line */
+        width: 100%;
+        margin: 0 auto 10px auto;
     }
     .casa-sheet-list {
         list-style: none; padding: 0; margin: 0;
@@ -496,7 +488,6 @@
 
 
 
-    /* 4. Nút X tròn - Ẩn mặc định */
     .casa-sheet-close {
         position: absolute; top: -65px; left: 50%; transform: translateX(-50%);
         width: 44px; height: 44px; background: #fff; border-radius: 50%;
@@ -505,7 +496,7 @@
         opacity: 0;
     }
 
-    /* TRẠNG THÁI MỞ */
+
     body.sheet-open .casa-sheet-overlay { opacity: 1; visibility: visible; }
     body.sheet-open .casa-lang-sheet { transform: translateY(0); visibility: visible; }
     body.sheet-open .casa-sheet-close { 
@@ -515,7 +506,7 @@
     }
 
     body:not(.sheet-open) .casa-lang-sheet {
-        transition: transform 0.4s ease, visibility 0.4s; /* Đóng nhanh hơn cho thoát */
+        transition: transform 0.4s ease, visibility 0.4s;
     }
 
     @keyframes fadeInXWithDelay {
@@ -527,7 +518,7 @@
     .casa-sheet-item {
         display: flex; 
         align-items: center; 
-        justify-content: center; /* Ép nội dung ngôn ngữ vào giữa */
+        justify-content: center;
         gap: 12px;
         padding: 18px 0;
         border-bottom: none !important;
@@ -540,7 +531,7 @@
     }
 
     .casa-sheet-item.active span {
-        font-weight: 700; /* Đậm lên khi được chọn */
+        font-weight: 700; 
         color: #000;
     }
     .casa-sheet-item:last-child { border-bottom: none; }

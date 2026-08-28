@@ -6,13 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const langDropdown = document.querySelector('.lang-dropdown');
     const body = document.body;
 
-    // Nếu thiếu bất kỳ phần tử cốt lõi nào của header, dừng luôn khối này
-    // (tránh lỗi null trên các trang không có đủ header giống trang chủ)
+  
     if (!header || !megaMenu || !langTrigger || !langDropdown) return;
 
     let closeTimer;
 
-    // --- HÀM CƠ CHẾ ĐÓNG/MỞ ---
     const setHeaderWhite = (isActive) => {
         if (isActive) {
             header.classList.add('header-is-white');
@@ -23,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // 1. CLICK LANG
+ 
     langTrigger.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -149,8 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // --- MOBILE MENU (hamburger) ---
-// LƯU Ý: bản gốc có 1 khối DOMContentLoaded bị dán lồng nhầm bên trong
-// closeBtn.onclick, làm hỏng cấu trúc hàm. Đã dọn lại đúng, chỉ giữ 1 khối duy nhất.
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.m-trigger-btn');
     const closeBtn = document.querySelector('.close-menu');

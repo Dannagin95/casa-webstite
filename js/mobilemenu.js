@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const subContainer = document.querySelector('.sub-menu-container');
     const backBtn = document.querySelector('.sub-back-trigger');
     const backText = document.querySelector('.back-text');
-    const overlay = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('mobileMenu') || document.querySelector('.mobile-overlay');
+    const triggerBtn = document.querySelector('.m-trigger-btn');
     let menuHistory = []; 
 
     function resetMenuState() {
@@ -20,6 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
             mainNav.classList.add('active');
             mainNav.style.display = 'flex';
         }
+    }
+
+    if (triggerBtn && overlay) {
+        triggerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            overlay.style.display = 'flex';
+            overlay.classList.add('active');
+        });
     }
 
     if (overlay) {
@@ -80,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (prevLayer) {
                 prevLayer.classList.add('active');
                 prevLayer.style.display = 'flex';
-                
 
                 if (prevId === 'main-nav-level') {
                     if (backBtn) backBtn.style.display = 'none';
@@ -120,6 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     closeBtn.click();
                 } else {
                     overlay.style.display = 'none';
+                    overlay.classList.remove('active');
                 }
                 resetMenuState();
             });
@@ -132,11 +141,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const isOpen = window.getComputedStyle(overlay).display !== 'none';
             if (isOpen) {
                 const clickedInside = overlay.contains(e.target);
-                const triggerBtn = e.target.closest('.hamburger-btn, .mobile-menu-trigger, .menu-toggle');
-                if (!clickedInside && !triggerBtn) {
+                const triggerBtnEl = e.target.closest('.m-trigger-btn');
+                if (!clickedInside && !triggerBtnEl) {
                     const closeBtn = overlay.querySelector('.close-menu');
                     if (closeBtn) {
                         closeBtn.click();
+                    } else {
+                        overlay.style.display = 'none';
+                        overlay.classList.remove('active');
                     }
                 }
             }
@@ -144,6 +156,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const closeMenuTrigger = e.target.closest('.close-menu');
         if (closeMenuTrigger) {
+            if (overlay) {
+                overlay.style.display = 'none';
+                overlay.classList.remove('active');
+            }
             resetMenuState();
         }
 
@@ -172,9 +188,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    window.addEventListener('pageshow', (event) => {
+    window.addEventListener('pageshow', () => {
         if (overlay) {
             overlay.style.display = 'none';
+            overlay.classList.remove('active');
         }
         resetMenuState();
         document.body.classList.remove('sheet-open');
