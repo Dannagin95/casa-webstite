@@ -12,11 +12,11 @@ export const searchDatabase = [
 
    
     { title: "Sản phẩm", url: "/san-pham.html", keywords: "san pham sản phẩm" },
-    { title: "Riva", url: "../San_pham/Riva.html", keywords: "bo suu tap Riva" },
-    { title: "Alpi", url: "../San_pham/Alpi.html", keywords: "bo suu tap Alpi" },
-    { title: "Mastro", url: "../San_pham/Mastro.html", keywords: "bo suu tap Mastro" },
-    { title: "La Dolce", url: "../San_pham/La-Dolce.html", keywords: "bo suu tap La Dolce" },
-    { title: "Parma", url: "../San_pham/Parma.html", keywords: "bo suu tap Parma" },
+    { title: "Riva", url: "/San_pham/Riva.html", keywords: "bo suu tap Riva" },
+    { title: "Alpi", url: "/San_pham/Alpi.html", keywords: "bo suu tap Alpi" },
+    { title: "Mastro", url: "/San_pham/Mastro.html", keywords: "bo suu tap Mastro" },
+    { title: "La Dolce", url: "/San_pham/La-Dolce.html", keywords: "bo suu tap La Dolce" },
+    { title: "Parma", url: "/San_pham/Parma.html", keywords: "bo suu tap Parma" },
 
     
     { title: "Gỗ", url: "/wood.html", keywords: "cau truc cấu trúc gỗ sàn gỗ" },
@@ -30,3 +30,9 @@ export const searchDatabase = [
     { title: "Dự Án", url: "/Du_an.html", keywords: "dự án" },
     { title: "Blog" , url: "/blog.html", keywords: "bl blog b"},
 ];
+
+
+
+
+
+

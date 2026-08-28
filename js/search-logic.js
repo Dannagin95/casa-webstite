@@ -1,10 +1,18 @@
-import { searchDatabase } from './database.js';
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     const input = document.getElementById('search-input');
     const searchList = document.querySelector('.search-list');
 
     if (input && searchList) {
+
+
+        const isEnglish = window.location.pathname.startsWith('/en/') || window.location.pathname === '/en';
+        const dbModule = isEnglish
+            ? await import('/js/endatabase.js')
+            : await import('/js/database.js');
+        const searchDatabase = dbModule.searchDatabase;
+
+        const notFoundText = isEnglish ? 'No results for' : 'Không thấy';
+
         const originalListHTML = searchList.innerHTML;
 
         const removeVietnameseTones = (str) => {
@@ -15,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const getHighlightText = (text, query) => {
     if (!query.trim()) return text;
     
-    // Tạo regex tìm kiếm không phân biệt hoa thường và hỗ trợ tiếng Việt
+
     const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const regex = new RegExp(`(${escapedQuery})`, 'gi');
     
@@ -41,12 +49,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 if (filtered.length > 0) {
                     searchList.innerHTML = filtered.map(item => {
-                        // Gọi hàm highlight cho tiêu đề [cite: 2026-02-11]
                         const highlightedTitle = getHighlightText(item.title, rawValue);
                         return `<li><a href="${item.url}">${highlightedTitle}</a></li>`;
                     }).join('');
                 } else {
-                    searchList.innerHTML = `<li style="padding: 10px 0; color: #999; text-align: center;">Không thấy "${rawValue}"</li>`;
+                    searchList.innerHTML = `<li style="padding: 10px 0; color: #999; text-align: center;">${notFoundText} "${rawValue}"</li>`;
                 }
             }, 200);
         });
