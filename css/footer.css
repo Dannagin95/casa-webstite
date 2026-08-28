@@ -180,10 +180,10 @@
 
 
 
-/* Loại bỏ cái kén đen, chỉ giữ lại icon và chữ [cite: 2025-12-29] */
+
 .country-selector {
-    background: transparent !important; /* Xóa nền đen [cite: 2025-12-29] */
-    border: none !important; /* Xóa viền [cite: 2025-12-29] */
+    background: transparent !important;
+    border: none !important; 
     padding: 0 !important;
     display: inline-flex;
     align-items: center;
@@ -191,11 +191,19 @@
     position: relative;
     cursor: pointer;
     color: #fff;
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 11px;
+    font-weight: 400;
 }
 
-/* Lá cờ tròn xoe chuẩn [cite: 2025-12-29] */
+.country-selector span {
+    font-family: var(--special-font);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.1px;
+}
+
+
 .casa-flag-box-footer {
     width: 20px;
     height: 20px;
@@ -210,23 +218,20 @@
     aspect-ratio: 1/1;
 }
 
-/* Bảng Drop-up: Phẳng, không bóng đổ, dài ra [cite: 2025-12-29] */
+
 .langg-dropdown {
     position: absolute;
-    bottom: calc(100% + 20px); /* Khoảng cách trồi lên trên [cite: 2025-12-29] */
-    
-    /* SỬA TẠI ĐÂY: Ép lề phải thẳng hàng với lề phải của nút [cite: 2025-12-29] */
+    bottom: calc(100% + 20px); 
     right: 0; 
     left: auto; 
-    
     background: #ffffff;
     list-style: none !important;
     padding: 10px 0 !important;
-    width: 200px; /* Bảng dài ra hơn nút [cite: 2025-12-29] */
+    width: 200px; 
     display: none;
     z-index: 9999;
-    border-radius: 0; /* Phẳng lỳ [cite: 2025-12-29] */
-    box-shadow: none !important; /* Không bóng đổ [cite: 2025-12-29] */
+    border-radius: 0; 
+    box-shadow: none !important; 
     border: 1px solid #eee;
 }
 
@@ -239,7 +244,7 @@
     padding: 12px 20px;
     display: flex; 
     align-items: center; 
-    justify-content: flex-start; /* Căn trái toàn bộ nội dung trong bảng [cite: 2025-12-29] */
+    justify-content: flex-start;
     gap: 12px;
     color: #000;
     font-weight: 400;
@@ -261,7 +266,7 @@
     font-weight: 700;
 }
 
-/* Xoay mũi tên [cite: 2025-12-29] */
+
 .casa-arrow-footer {
     transition: transform 0.3s ease;
 }
@@ -279,7 +284,7 @@
     display: none !important;
 }
 
-/* Responsive lề 20px [cite: 2026-02-07] */
+
 @media (max-width: 1024px) {
     .bottom-right {
         padding: 0 20px;
@@ -295,32 +300,30 @@
         padding: 60px 20px 40px 20px !important;
     }
 
-    /* 1. Cụm Mission: Vẫn dóng lề trái cho lỳ */
     .footer-mission {
         margin-bottom: 90px !important;
     }
 
     .mission-text {
-        font-size: 1.4rem !important; /* Thu nhỏ tí cho bớt thô trên mobile */
+        font-size: 1.4rem !important; 
         line-height: 1.3 !important;
         text-align: left !important;
     }
 
-    /* 2. Layout Main: Chia 2 cột cho Link, Newsletter thì tràn hàng */
+   
     .footer-main {
         display: grid !important;
-        /* Hai cột đầu chia đôi, cột Newsletter (thứ 3) sẽ cho xuống hàng */
         grid-template-columns: 1fr 1fr !important; 
         column-gap: 20px !important;
         row-gap: 50px !important;
         margin-bottom: 0px !important;
     }
 
-    /* Ép cái Newsletter phải chiếm trọn 2 cột (xuống hàng riêng) */
+
     .newsletter-col {
         grid-column: span 2 !important;
         width: 100% !important;
-        padding: 0 !important; /* Đảm bảo không bị lề lạ */
+        padding: 0 !important; 
     }
 
 
@@ -329,10 +332,9 @@
     }
 
 
-    /* 3. Newsletter Box: Tràn 100% như QUOC */
     .newsletter-form .input-group {
         display: flex !important;
-        width: calc(100vw - 40px) !important; /* Full màn hình trừ đi lề 2 bên 20px */
+        width: calc(100vw - 40px) !important; 
         max-width: none !important; 
         margin: 0 auto !important;
         box-sizing: border-box !important;
@@ -353,7 +355,7 @@
     }
 
     
-    /* 4. Bottom Bar: Trình bày trật tự dóng lề trái */
+
     .footer-bottom {
         flex-direction: column !important;
         align-items: flex-start !important;
@@ -389,34 +391,33 @@
 
 
 
-    /* Nút chọn quốc gia: Phẳng hóa & Dóng trái */
-    /* Nút chọn quốc gia Footer */
+
 
 .footer-bottom {
         display: flex !important;
-        flex-direction: column !important; /* Xếp chồng để dóng hàng dọc [cite: 2025-12-29] */
-        align-items: flex-start !important; /* Ép tất cả dạt trái [cite: 2025-12-29] */
-        padding: 40px 0 0 0 !important; /* Xóa padding ngang để dùng padding của .footer [cite: 2025-12-29] */
+        flex-direction: column !important; 
+        align-items: flex-start !important; 
+        padding: 40px 0 0 0 !important; 
         width: 100% !important;
     }
 
-    /* 2. Cụm bên trái (Social, Copyright) [cite: 2025-12-29] */
+
     .bottom-left {
         width: 100% !important;
         margin-bottom: 30px !important;
     }
 
-    /* 3. Cụm bên phải (Nút chọn ngôn ngữ) [cite: 2025-12-29] */
+
     .bottom-right {
         width: 100% !important;
-        padding: 0 !important; /* Xóa cái padding 20px thừa này đi Danna! [cite: 2026-02-07] */
+        padding: 0 !important; 
         display: flex !important;
         justify-content: flex-start !important;
     }
 
-    /* 4. Nắn cái nút ID langgSelector [cite: 2025-12-29] */
+
     #langgSelector.country-selector {
-        margin-left: 0 !important; /* Đã có padding 20px của .footer bọc ngoài rồi [cite: 2026-02-07] */
+        margin-left: 0 !important; 
         padding: 0 !important;
         display: inline-flex !important;
     }
@@ -424,7 +425,7 @@
 
 .langg-dropdown { display: none !important; }
 
-/* Overlay & Container mới */
+
 .lang-sheet-overlay {
     display: block !important;
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -439,7 +440,6 @@
     background: #fff; border-radius: 24px 24px 0 0;
     padding: 30px 20px 50px 20px; z-index: 3001;
     transform: translateY(110%); visibility: hidden;
-    /* Nhịp trễ 0.1s huyền thoại của Danna */
     transition: transform 0.6s cubic-bezier(0.32, 1, 0.23, 1) 0.1s, visibility 0.6s 0.1s;
 }
 
@@ -456,7 +456,7 @@ body.footer-sheet-open .lang-sheet-overlay { opacity: 1; visibility: visible; }
 body.footer-sheet-open .lang-sheet-container { transform: translateY(0); visibility: visible; }
 body.footer-sheet-open .lang-sheet-close { 
     display: flex !important; 
-    /* Đợi 0.5s cho Sheet lên xong mới nhảy ra */
+  
     animation: fadeInXFooter 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.5s; 
     opacity: 0; 
 }
@@ -476,12 +476,12 @@ body.footer-sheet-open .lang-sheet-close {
 
 
     @media (max-width: 768px) {
-    /* 1. GIẢI PHÓNG CÁI LỒNG TỔNG (QUAN TRỌNG NHẤT) */
+   
     .footer-container, 
     .footer-content,
     .footer-mission,
     .footer-main {
-        max-width: 100% !important; /* Phá bỏ giới hạn 1650px */
+        max-width: 100% !important; 
         width: 100% !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
@@ -489,10 +489,10 @@ body.footer-sheet-open .lang-sheet-close {
         padding-right: 0 !important;
     }
 
-    /* 2. ÉP DÃN CỘT TRÊN HỆ GRID */
+  
     .footer-main {
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important; /* Chia đôi chuẩn như hình cũ */
+        grid-template-columns: 1fr 1fr !important; 
         gap: 20px !important;
         justify-content: stretch !important;
     }
@@ -501,7 +501,7 @@ body.footer-sheet-open .lang-sheet-close {
         width: 100% !important;
     }
 
-    /* 3. ĐẢM BẢO CHỮ SỨ MỆNH DÀN TRẢI */
+ 
     .mission-text {
         width: 100% !important;
         max-width: 100% !important;
@@ -517,7 +517,7 @@ body.footer-sheet-open .lang-sheet-close {
 
 
 
-/*Phần Email*/
+
 .newsletter-wrapper {
     position: relative;
     margin-top: 20px;
@@ -535,7 +535,7 @@ body.footer-sheet-open .lang-sheet-close {
 }
 
 .success-check-icon {
-    background-color: #cccbd8; /* Màu xám tím nhạt */
+    background-color: #cccbd8; 
     width: 22px;
     height: 22px;
     border-radius: 50%;
@@ -545,23 +545,22 @@ body.footer-sheet-open .lang-sheet-close {
 }
 
 .success-text {
-    color: #888da8; /* Màu chữ xanh xám nhạt */
+    color: #888da8; 
     font-size: 10px;
     margin: 0;
     font-weight: 400;
 }
 
-/* Triệt tiêu màu nền mặc định khi trình duyệt autofill */
 .newsletter-input:-webkit-autofill,
 .newsletter-input:-webkit-autofill:hover, 
 .newsletter-input:-webkit-autofill:focus, 
 .newsletter-input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px rgb(23 26 27) inset !important; /* Thay #1a1a1a bằng màu nền footer của mày */
-    -webkit-text-fill-color: white !important; /* Giữ màu chữ luôn trắng */
+    -webkit-box-shadow: 0 0 0 30px rgb(23 26 27) inset !important; 
+    -webkit-text-fill-color: white !important;
     transition: background-color 5000s ease-in-out 0s;
 }
 
-/* Thêm cái này để tắt cái khung viền xanh mặc định của trình duyệt nếu có */
+
 .newsletter-input:focus {
     outline: none;
     box-shadow: none;
@@ -576,20 +575,20 @@ body.footer-sheet-open .lang-sheet-close {
 
     
 
-/* --- FIX FOOTER TRIỆT ĐỂ CHO TABLET LỚN (820px - 1439px) --- */
+
 @media screen and (min-width: 820px) and (max-width: 1439px) {
     .footer {
-        /* Padding chuẩn 40px trên dưới theo yêu cầu của mày */
+
         padding: 60px 20px 40px 20px !important; 
         overflow: hidden;
     }
 
     .footer-container {
-        padding: 0 !important; /* Đã có padding 20px ở .footer bọc ngoài */
+        padding: 0 !important; 
         max-width: 100% !important;
     }
 
-    /* 1. Cụm Mission: Thu nhỏ font lại tí cho sang, không bị thô */
+
     .footer-mission {
         margin-bottom: 60px !important;
     }
@@ -598,32 +597,32 @@ body.footer-sheet-open .lang-sheet-close {
         max-width: 90% !important;
     }
 
-    /* 2. Layout Main: CHIA ĐỀU 4 PHẦN (Newsletter chiếm 2 phần cuối) */
+
     .footer-main {
         display: grid !important;
-        grid-template-columns: repeat(4, 1fr) !important; /* Chia 4 cột bằng nhau */
+        grid-template-columns: repeat(4, 1fr) !important;
         gap: 20px !important;
         align-items: start;
     }
 
-    /* Đẩy Newsletter vào 2 cột cuối */
+
     .newsletter-col {
         grid-column: span 2 !important; 
     }
 
-    /* 3. QUAN TRỌNG: Fix cái Box Email làm vỡ layout */
+
     .newsletter-form .input-group {
-        width: 100% !important; /* Không dùng 100vw ở đây, chết đấy! */
-        max-width: 100% !important; /* Cho nó dãn hết khung 2 cột */
+        width: 100% !important; 
+        max-width: 100% !important; 
         margin: 0 !important;
         box-sizing: border-box !important;
     }
 
     .newsletter-desc {
-        max-width: 100% !important; /* Cho chữ chạy hết chiều rộng cột */
+        max-width: 100% !important; 
     }
 
-    /* 4. Bottom Bar: Trả về 2 bên cho chuyên nghiệp */
+
     .footer-bottom {
         flex-direction: row !important;
         justify-content: space-between !important;

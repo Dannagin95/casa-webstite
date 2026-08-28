@@ -149,21 +149,19 @@
 }
 
 .lang-switch span {
-    font-size: 12px;     /* Chỉnh font chữ VN cho thanh thoát */
+    font-size: 12px; 
     font-weight: 800;
-    line-height: 1;      /* Đảm bảo chữ không làm lệch chiều cao hàng */
+    line-height: 1;
     letter-spacing: 0.5px;
 }
 
 .lang-switch i {
-    font-size: 0.7em; /* Cho nó nhỏ lại, cực kỳ tinh tế */
+    font-size: 0.7em; 
     margin-left: 5px;
     vertical-align: middle;
-    opacity: 3; /* Hơi mờ tí cho sang */
+    opacity: 3; 
     transition: transform 0.3s ease, opacity 0.3s ease; 
     font-weight: 700 !important; 
-    
-    /* Nếu nó vẫn chưa chịu đậm, dùng chiêu "đắp thêm thịt" này */
     -webkit-text-stroke: 0.5px currentColor;
 }
 
@@ -215,20 +213,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    line-height: 1; /* Triệt tiêu dòng đệm baseline */
+    line-height: 1; 
 }
 
 
 
-/* Icon cờ trong list - tròn xòe */
+
 .flag-icon-small {
-    width: 22px !important;  /* Tăng nhẹ kích thước cho dễ nhìn */
-    height: 22px !important; /* BẮT BUỘC width và height phải bằng nhau */
-    border-radius: 50% !important; /* Bo tròn hoàn hảo */
+    width: 22px !important; 
+    height: 22px !important; 
+    border-radius: 50% !important; 
     aspect-ratio: 1 / 1 !important;
-    object-fit: cover !important;  /* CỰC KỲ QUAN TRỌNG: Giúp ảnh không bị méo/bầu dục */
+    object-fit: cover !important;
     display: inline-block;
-    flex-shrink: 0; /* Đảm bảo icon không bị bóp méo khi text quá dài */
+    flex-shrink: 0;
 }
 
 .lang-item span {
@@ -275,20 +273,20 @@
         margin-right: -4px;
     }
 
-    /* Ẩn hoàn toàn nhóm desktop để lấy chỗ */
+   
     .desktop-only { 
         display: none !important; 
     }
 
-    /* Golden Parameters: Lề 2 bên 20px [cite: 2026-02-07] */
+
     .header-inner {
         padding: 0 20px !important;
         height: 30px;
     }
 
-    /* Định hình các nút trigger mới */
+
     .m-trigger-btn, .m-trigger-search {
-        color: #fff !important; /* Mặc định trắng trên nền ảnh */
+        color: #fff !important; 
         stroke: #fff !important;
         background: none;
         border: none;
