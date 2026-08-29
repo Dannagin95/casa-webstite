@@ -77,7 +77,10 @@
 
 
 
-
+        [
+            '/blog/San-go-cho-biet-thu_Loai-go-kich-thuoc&Kieu-lat.html',
+            '/en/Blog/wood-flooring-for-villas-wood-species-plank-size-and-patterns.html'
+        ],
         [
             '/blog/Cau-truc-va-dac-tinh-cua-go-tu-nhien.html',
             '/en/Blog/natural-wood-structure-and-characteristics.html'
