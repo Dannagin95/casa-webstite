@@ -61,6 +61,11 @@
         ],
 
         [
+            '/Du_an/Villa.html',
+            '/en/Our-Projects/Villa.html'
+        ],
+
+        [
             '/Du_an/Penthouse.html',
             '/en/Our-Projects/Penthouse.html'
         ],
