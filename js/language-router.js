@@ -91,6 +91,10 @@
             '/en/Blog/natural-wood-structure-and-characteristics.html'
         ],
         [
+            '/blog/San-go-cho-biet-phong-ngu.html',
+            '/en/Blog/wood-flooring-for-bedrooms-color-species-and-surface.html'
+        ],
+        [
             '/blog/Designed-to-Last_Huong-dan-bao-duong-san-go-ky-thuat.html',
             '/en/Blog/engineered-wood-flooring-care-guide.html'
         ],
