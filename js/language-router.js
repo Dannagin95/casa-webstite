@@ -95,6 +95,10 @@
             '/en/Blog/wood-flooring-for-bedrooms-color-species-and-surface.html'
         ],
         [
+            '/blog/San-go-co-chiu-nuoc-khong.html',
+            '/en/Blog/can-wood-flooring-handle-water-water-and-humidity.html'
+        ],
+        [
             '/blog/Designed-to-Last_Huong-dan-bao-duong-san-go-ky-thuat.html',
             '/en/Blog/engineered-wood-flooring-care-guide.html'
         ],
