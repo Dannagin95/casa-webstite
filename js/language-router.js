@@ -80,8 +80,10 @@
             '/en/Our-Projects/Antique-Museum.html'
         ],
 
-
-
+        [
+            '/blog/Nen-lat-san-go-theo-chieu-nao.html',
+            '/en/Blog/which-direction-to-lay-wood-flooring.html'
+        ],
         [
             '/blog/San-go-cho-biet-thu_Loai-go-kich-thuoc&Kieu-lat.html',
             '/en/Blog/wood-flooring-for-villas-wood-species-plank-size-and-patterns.html'
