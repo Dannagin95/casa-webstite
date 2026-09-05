@@ -79,6 +79,10 @@
             '/Du_an/Bao-tang.html',
             '/en/Our-Projects/Antique-Museum.html'
         ],
+        [
+            '/Du_an/Nha-pho-thiet-ke-theo-phong-cach-Mid-Century.html',
+            '/en/Our-Projects/Mid-Century-Townhouse.html'
+        ],
 
         [
             '/blog/Nen-lat-san-go-theo-chieu-nao.html',
