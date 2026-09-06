@@ -270,7 +270,8 @@
 }
 
 .hungary-subtitle {
-    font-size: 10px;
+    font-family: var(--special-font);
+    font-size: 13px;
     font-weight: 300;
     word-spacing: 5px;
     text-transform: uppercase;
@@ -581,7 +582,7 @@
 /* --- SPEC LIST & LINES --- */
 .spec-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid #eee; }
 .spec-list li { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #eee; }
-.spec-label { font-size: 11px; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; color: #888; }
+.spec-label { font-family: var(--special-font); font-size: 11px; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; color: #888; }
 .spec-value { font-size: 13px; font-weight: 600; color: #1a1a1a; }
 
 /*===================================================================

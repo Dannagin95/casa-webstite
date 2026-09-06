@@ -118,11 +118,13 @@
 }
 
 .tech-label .section-subtitle {
-    display: inline-block;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    display: block;
+    word-spacing: 3px;
+    font-size: 14px;
+    font-weight: 200;
     color: #2b2929;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
     margin-bottom: 30px;
 }
 

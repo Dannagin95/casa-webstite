@@ -154,8 +154,8 @@
 
 /* --- TYPOGRAPHY TUNING (CHỈNH Ở ĐÂY) --- */
 .category-title {
-    font-family: var(--font-heading);
-    font-size: 24px;
+    font-family: var(--special-font);
+    font-size: 32px;
     font-weight: 400;
     margin-bottom: 35px;
     color: var(--black);

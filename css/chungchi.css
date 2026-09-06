@@ -152,7 +152,7 @@
     }
 
     .sub-title {
-        font-size: 11px;
+        font-size: 13px;
         word-spacing: 5px;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -317,7 +317,8 @@
 }
 
 .cert-tag {
-    font-size: 11px;
+    font-family: var(--special-font);
+    font-size: 13px;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 15px;

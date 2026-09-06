@@ -147,7 +147,7 @@ IPAD/TABLET SYNC (768px - 1024px)
     .project-grid::-webkit-scrollbar { display: none; }
 
     .project-card {
-        flex: 0 0 38vw !important; /* Độ rộng hiển thị được ~2 card rưỡi */
+        flex: 0 0 38vw !important; 
         width: 38vw !important;
         aspect-ratio: 6 / 7; 
         scroll-snap-stop: always !important;
@@ -158,7 +158,7 @@ IPAD/TABLET SYNC (768px - 1024px)
     }
 
     .project-grid .project-card:nth-child(n+4) {
-        display: block !important; /* Hoặc display: flex !important tùy thuộc vào cách card hiển thị */
+        display: block !important; 
     }
 
     .card-img {

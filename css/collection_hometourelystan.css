@@ -587,7 +587,8 @@ SITEHEADER
 }
 
 .hometour-elystan-subtitle {
-    font-size: 11px;
+    font-family: var(--special-font);
+    font-size: 13px;
     font-weight: 300;
     word-spacing: 5px;
     text-transform: uppercase;
