@@ -181,7 +181,8 @@
 }
 
 .detail-text-col p {
-    font-size: 14px;
+    font-family: var(--special-font);
+    font-size: 16px;
     line-height: 1.6;
     color: var(--color-text-muted);
 }
@@ -550,11 +551,12 @@ SECTION 1
 }
 
 .stat-line {
+    font-family: var(--special-font);
     display: flex;
     justify-content: space-between;
     padding: 12px 0;
     border-bottom: 1px solid rgba(255,255,255,0.05);
-    font-size: 18px;
+    font-size: 21px;
     font-weight: 300;
 }
 

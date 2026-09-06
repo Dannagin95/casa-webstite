@@ -583,7 +583,7 @@
 .spec-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid #eee; }
 .spec-list li { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #eee; }
 .spec-label { font-family: var(--special-font); font-size: 11px; font-weight: 400; text-transform: uppercase; letter-spacing: 1px; color: #888; }
-.spec-value { font-size: 13px; font-weight: 600; color: #1a1a1a; }
+.spec-value { font-family: var(--special-font); font-size: 15px; font-weight: 500; color: #1a1a1a; }
 
 /*===================================================================
    2. LAYER TABLET LARGE (992px - 1199px)
@@ -749,7 +749,7 @@
     }
 
     .spec-value { 
-        font-size: 11px;
+        font-size: 13px;
         font-weight: 600; 
         color: #1a1a1a; 
     }

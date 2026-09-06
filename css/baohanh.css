@@ -2,7 +2,7 @@
 
 body {
     background-color: var(--color-bg-page);
-    font-family: 'Be Vietnam Pro', sans-serif;
+    
     color: var(--black);
     min-height: 100vh;
     display: flex;
