@@ -37,11 +37,12 @@
 }
 
 .top-bar-content p {
-    font-size: 10px;
+    font-family: var(--special-font);
+    font-size: 13px;
     font-weight: 800;
     letter-spacing: 0em;
     text-transform: none;
-    margin: 0; /* Fix lỗi mặc định của thẻ P */
+    margin: 0;
 }
 
 /* Hiệu ứng trượt và mờ cho nội dung Topbar */
