@@ -194,7 +194,7 @@
 .duan-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px; /* Khoảng cách giữa 3 cột [cite: 2025-12-29] */
+    gap: 30px; 
     row-gap: 80px;
 }
 
@@ -271,13 +271,13 @@
 
 @media (max-width: 1024px) {
     
-    /* 1. ĐỒNG BỘ LỀ ĐẦU TRANG VỚI TOÀN BỘ WEBSITE [cite: 2026-02-07] */
+
     .duan-page-body {
-        padding-top: 0 !important; /* Triệt tiêu để khớp với các trang khác [cite: 2026-02-07] */
+        padding-top: 0 !important; 
         padding-bottom: 30px !important;
     }
 
-    /* 2. KHUNG CONTAINER CHUẨN CASA [cite: 2026-02-07] */
+
     .duan-page-body .casa-container {
         padding-left: 20px !important;
         padding-right: 20px !important;
@@ -286,7 +286,6 @@
         margin: 0 !important;
     }
 
-    /* 3. CÁC KHỐI TEXT: BUNG RỘNG & FIX LỀ TRÊN DƯỚI [cite: 2025-12-29] */
     .duan-intro-text-wrapper,
     .duan-mid-content,
     .duan-outro-wrapper {
@@ -297,7 +296,7 @@
         margin-right: 0 !important;
     }
 
-    /* Thu hẹp lề để layout "chặt" hơn trên mobile [cite: 2025-12-29] */
+
     .duan-intro-minimal {
         padding-top: 40px !important;
         padding-bottom: 35px !important;
@@ -315,7 +314,7 @@
         margin-bottom: 15px !important;
     }
 
-    /* 4. HÌNH LỚN HERO: TRÀN VIỀN [cite: 2025-12-29] */
+
     .duan-hero-image {
         position: relative;
         left: 0 !important; 
@@ -341,15 +340,22 @@
         object-fit: cover;
     }
 
-    /* 5. GRID DỰ ÁN: 1 CỘT DỌC [cite: 2025-12-29] */
+
+    .duan-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px; 
+        row-gap: 60px;
+    }
+}
+
+
+@media (max-width: 767px) {
     .duan-grid {
         grid-template-columns: 1fr !important;
         gap: 60px !important;
     }
 }
-
-
-
 
 
 
