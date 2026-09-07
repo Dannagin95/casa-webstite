@@ -42,18 +42,14 @@
 
 @media (max-width: 1024px) {
     .duannhero {
-        /* 1. Xóa bỏ chiều cao 75vh cũ */
         height: auto !important; 
-        
-        /* 2. Dùng min-height theo % chiều ngang màn hình (tương đương tỉ lệ 4:5) */
-        /* Cách này giúp nó co giãn thông minh mà không bị ép cứng như aspect-ratio */
         min-height: 120vw !important; 
         
-        /* 3. Đảm bảo ảnh nền luôn lấp đầy cái khung mới này */
+
         background-size: cover !important;
         background-position: center !important;
 
-        /* GIỮ NGUYÊN TOÀN BỘ CẤU TRÚC CỦA MÀY */
+       
         display: flex;
         flex-direction: column;
         justify-content: flex-end; 
@@ -71,13 +67,11 @@
         margin: 0 auto !important;
         max-width: 100% !important; 
         width: 100% !important;
-        
-        /* Đảm bảo căn giữa tuyệt đối */
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center !important;
-        margin-bottom: 20px !important; /* Khoảng cách so với đáy section 20px */
+        margin-bottom: 20px !important;
     }
 
     .duannhero-text h1 {
@@ -93,10 +87,11 @@
         margin-bottom: 0px;
     }
 }
-/* TABLET: Dàn ngang ra tối ưu */
+
+
 @media (min-width: 768px) and (max-width: 1024px) {
     .duannhero {
-        min-height: 56vw !important; /* Tỉ lệ ngang cho Tablet [cite: 2026-02-07] */
+        min-height: 56vw !important; 
     }
 }
 
@@ -108,13 +103,13 @@
 
 
 
-/* TỔNG THỂ TRANG DUAN [cite: 2025-12-29] */
+
 .duan-page-body {
     padding-top: 100px;
     padding-bottom: var(--section-gap);
 }
 
-/* TẦNG 1: INTRO */
+
 .duan-intro-minimal {
     padding-bottom: 80px;
 }
@@ -123,8 +118,6 @@
     max-width: 720px; 
     margin-left: auto;
     margin-right: auto;
-    
-    /* CHỮ LỆCH TRÁI: Đây là điểm mấu chốt mày muốn [cite: 2025-12-29] */
     text-align: left; 
 }
 
@@ -134,18 +127,16 @@
     line-height: 1.6;
     color: #000000;
     margin-bottom: 25px;
-    
-    /* Giữ nguyên form chữ khi zoom in/out [cite: 2025-12-29] */
     word-break: keep-all;
 }
 
-/* TẦNG 2: HÌNH LỚN [cite: 2025-12-29] */
+
 .duan-hero-image {
-    width: 100vw; /* Ép rộng bằng đúng chiều rộng màn hình [cite: 2025-12-29] */
+    width: 100vw;
     position: relative;
-    left: 50%; /* Đẩy sang phải 50% [cite: 2025-12-29] */
+    left: 50%;
     right: 50%;
-    margin-left: -50vw; /* Kéo ngược lại lề trái 50% để căn giữa hoàn hảo [cite: 2025-12-29] */
+    margin-left: -50vw;
     margin-right: -50vw;
     margin-bottom: 80px; 
     overflow: hidden;
@@ -153,34 +144,31 @@
 
 .duan-hero-wrapper {
     width: 100%;
-    max-width: 100%; /* Bỏ cái 90% nãy tao đề xuất đi [cite: 2025-12-29] */
+    max-width: 100%;
     aspect-ratio: 16 / 6;
 }
 
 .duan-hero-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Đảm bảo ảnh không bị méo khi tràn viền [cite: 2025-12-29] */
+    object-fit: cover;
 }
 
-/* TẦNG 3: TEXT GIỮA (Căn trái đồng bộ Intro) [cite: 2025-12-29] */
+
 .duan-mid-content {
-    /* ÉP KHUNG RA GIỮA: Dùng margin auto [cite: 2025-12-29] */
-    max-width: 720px; /* Khớp đúng độ rộng 720px của Tầng 1 [cite: 2025-12-29] */
+    max-width: 720px; 
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 100px; /* Khoảng cách xuống Grid dự án bên dưới [cite: 2025-12-29] */
-
-    /* CHỮ LỆCH TRÁI: Đúng nết QUOC [cite: 2025-12-29] */
+    margin-bottom: 100px; 
     text-align: left; 
 }
 
 .duan-mid-content p {
     font-family: var(--font-body);
     font-size: 13px;
-    line-height: 1.6; /* Dãn dòng rộng đồng bộ [cite: 2025-12-29] */
+    line-height: 1.6; 
     color: #000000;
-    font-style: italic; /* Giữ nguyên nét nghiêng để phân biệt với Intro [cite: 2025-12-29] */
+    font-style: italic; 
 }
 
 
@@ -205,7 +193,7 @@
 
 .duan-card-img {
     width: 100%;
-    aspect-ratio: 6/7; /* Tỉ lệ dọc Portrait chuẩn QUOC [cite: 2025-12-29] */
+    aspect-ratio: 6/7;
     overflow: hidden;
     margin-bottom: 20px;
 }
@@ -218,7 +206,7 @@
 }
 
 .duan-card:hover .duan-card-img img {
-    transform: scale(1.05); /* Hover mượt kiểu Casa [cite: 2026-02-11] */
+    transform: scale(1.05);
 }
 
 .duan-card-title {
@@ -244,7 +232,7 @@
 }
 
 .duan-outro-wrapper {
-    max-width: 720px; /* Giữ đúng trục dọc 720px xuyên suốt [cite: 2025-12-29] */
+    max-width: 720px;
     margin-left: auto;
     margin-right: auto;
     text-align: left; 
@@ -253,17 +241,17 @@
 .duan-outro-main p {
     font-family: var(--font-body);
     font-size: 13px;
-    line-height: 1.6; /* Dãn dòng rộng để đoạn văn dài không bị ngộp [cite: 2025-12-29] */
+    line-height: 1.6;
     color: #000000;
-    margin-bottom: 25px; /* Khoảng cách với dòng cuối [cite: 2025-12-29] */
+    margin-bottom: 25px;
 }
 
 .duan-outro-closing p {
     font-family: var(--font-body);
     font-size: 13px;
     line-height: 1.6;
-    color: #000000; /* Chốt hạ bằng màu đậm hơn cho có lực [cite: 2025-12-29] */
-    font-weight: 700; /* Hơi đậm hơn một chút để tạo điểm nhấn kết bài [cite: 2025-12-29] */
+    color: #000000;
+    font-weight: 700;
     position: relative;
 }
 
@@ -394,10 +382,10 @@
     }
 
     .section-title {
-        font-size: 1.9rem; /* Giảm size xuống một chút cho tinh tế */
+        font-size: 1.9rem;
         font-weight: 500;
         text-transform: none;
-        letter-spacing: -0.5px; /* QUOC dùng letter-spacing hẹp cho title */
+        letter-spacing: -0.5px;
         color: var(--text-color);
     }
 
@@ -410,7 +398,7 @@
         color: var(--color-text-muted);
     }
 
-    /* Cụm 2 nút điều hướng */
+
     .khamphaalbum-controls {
         display: flex;
         gap: 12px;
@@ -420,13 +408,13 @@
         width: 35px;
         height: 35px;
         border-radius: 50%;
-        border: 1px solid var(--black); /* Màu dark từ footer nhưng nhạt đi */
+        border: 1px solid var(--black);
         background-color: transparent;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        color: var(--color-dark); /* Màu hắc ín của mày */
+        color: var(--color-dark); 
         transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         padding: 0;
     }
@@ -434,20 +422,18 @@
 
 .khamphaalbum-slider {
     display: flex;
-    /* Tăng gap lên một chút cho thoáng giống QUOC */
     gap: 20px; 
     overflow-x: auto;
     scroll-snap-type: x proximity;
     scroll-behavior: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    /* Quan trọng: Padding này phải khớp với container của mày để đồng nhất lề */
     padding: 0; 
 }
 
-/* Ép lề chuẩn cho toàn bộ section khamphaalbum */
+
 .khamphaalbum-section .casa-container {
-    max-width: 1200px; /* Hoặc con số chuẩn của các section khác mày đang dùng */
+    max-width: 1200px;
     margin-left: auto !important;
     margin-right: auto !important;
     padding-left: 55px !important;
@@ -455,9 +441,9 @@
     box-sizing: border-box !important;
 }
 
-/* Sửa lại kích thước item để không làm bung lề container */
+
 .khamphaalbum-item {
-    flex: 0 0 calc((100% - 40px) / 3) !important; /* 24px là tổng gap: 12px * 2 */
+    flex: 0 0 calc((100% - 40px) / 3) !important;
     min-width: calc((100% - 40px) / 3) !important;
     scroll-snap-stop: always !important;
     scroll-snap-align: start !important;
@@ -473,7 +459,7 @@
 }
 
 .item-info {
-        position: relative; /* Đảm bảo nó nằm theo luồng tự nhiên */
+        position: relative;
         padding: 0 10px 20px 0;
         text-align: left;
     }
@@ -491,7 +477,6 @@
         line-height: 1.6;
         color: #000000;
         margin-bottom: 15px;
-        /* Giới hạn 3 dòng để các card đều nhau */
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
@@ -501,20 +486,20 @@
 
     .card-link {
     display: inline-block;
-    background-color: #1a1a1a; /* Màu đen đặc trưng */
+    background-color: #1a1a1a;
     color: #ffffff;
-    padding: 12px 28px; /* Độ rộng vừa phải để nút nhìn cân đối */
-    border-radius: 100px; /* Bo tròn hoàn toàn hai đầu */
+    padding: 12px 28px;
+    border-radius: 100px;
     font-size: 1.1rem;
     font-weight: 400;
     text-decoration: none;
-    text-transform: none; /* QUOC thường không viết hoa hết, để chữ tự nhiên */
+    text-transform: none;
     transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
     border: 2px solid #1a1a1a;
-    margin-top: 5px; /* Tạo khoảng cách nhẹ với đoạn mô tả */
+    margin-top: 5px;
 }
 
-/* Hiệu ứng Hover - Đảo màu nhẹ nhàng */
+
 .card-link:hover {
     background-color: transparent;
     color: #1a1a1a;
@@ -524,7 +509,7 @@
         width: 100%;
         height: 1px;
         transform: scaleY(0.8);
-        background-color:var(--color-bar); /* Nền thanh mảnh, nhạt */
+        background-color:var(--color-bar);
         margin-top: 30px;
         position: relative;
         overflow: hidden;
@@ -559,7 +544,6 @@
         overflow: hidden; 
     }
 
-    /* 2. Header: Căn thẳng hàng lề 20px [cite: 2026-02-07] */
     .khamphaalbum-header {
         padding: 0 20px !important;
         margin-bottom: 20px !important;
@@ -577,24 +561,23 @@
 
     
     .khamphaalbum-slider {
-        padding: 0 20px !important; /* Tạo lề 20px cho ảnh đầu [cite: 2026-02-07] */
-        scroll-padding: 0 20px !important; /* BUỘC trình duyệt dừng đúng vạch 20px */
+        padding: 0 20px !important;
+        scroll-padding: 0 20px !important;
         gap: 7px !important;
         scroll-snap-type: x mandatory !important;
         display: flex !important;
         margin-right: 0 !important;
     }
 
-    /* 4. Item: Tỷ lệ 85% sang chảnh, hở đuôi ảnh sau */
     .khamphaalbum-item {
         flex: 0 0 85% !important;
         min-width: 100% !important;
         max-width: 100% !important;
-        scroll-snap-align: start !important; /* Hít chặt lề trái khi vuốt */
+        scroll-snap-align: start !important;
     }
 
     
-    /* 3. Đảm bảo item cuối không mang theo margin thừa */
+
     .khamphaalbum-item:last-child {
         margin-right: 0 !important;
     }
@@ -604,7 +587,7 @@
         margin-bottom: 15px !important;
     }
 
-    /* 5. Fix Text: Không bị chìm, không bị lệch */
+
     .item-info {
         padding: 0 !important;
     }
