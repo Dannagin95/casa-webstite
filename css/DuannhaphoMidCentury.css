@@ -147,9 +147,23 @@
     /* Full viewport breakout strategy */
     width: 100%;
     position: relative;
-    margin: 30px 0;
+    margin: 30px 0 -10px;
     overflow: hidden;
 }
+
+
+.DuannhaphoMidCentury-lasthero-image,
+.DuannhaphoMidCenturynd-lasthero-image,
+.DuannhaphoMidCenturyrd-lasthero-image,
+.DuannhaphoMidCenturyfth-lasthero-image {
+    /* Full viewport breakout strategy */
+    width: 100%;
+    position: relative;
+    margin: 30px 0 30px;
+    overflow: hidden;
+}
+
+
 
 .DuannhaphoMidCentury-hero-wrapper,
 .DuannhaphoMidCenturynd-hero-wrapper,

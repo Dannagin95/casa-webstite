@@ -147,9 +147,24 @@
     /* Full viewport breakout strategy */
     width: 100%;
     position: relative;
-    margin: 30px 0;
+    margin: 30px 0 -10px;
     overflow: hidden;
 }
+
+
+.Duancanhoduongdai-lasthero-image,
+.Duancanhoduongdaind-lasthero-image,
+.Duancanhoduongdaird-lasthero-image,
+.Duancanhoduongdaifth-lasthero-image {
+    /* Full viewport breakout strategy */
+    width: 100%;
+    position: relative;
+    margin: 30px 0 30px;
+    overflow: hidden;
+}
+
+
+
 
 .Duancanhoduongdai-hero-wrapper,
 .Duancanhoduongdaind-hero-wrapper,
