@@ -110,7 +110,7 @@
 
 /* TỔNG THỂ TRANG DUAN [cite: 2025-12-29] */
 .duan-page-body {
-    padding-top: var(--section-gap); /* 80px [cite: 2025-12-29] */
+    padding-top: 100px;
     padding-bottom: var(--section-gap);
 }
 
@@ -194,7 +194,7 @@
 .duan-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px; 
+    gap: 40px; 
     row-gap: 80px;
 }
 
