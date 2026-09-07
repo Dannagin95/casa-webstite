@@ -24,12 +24,12 @@
 .DuankhonggiandentrangHerrringbonehero-text { 
     color: #fff; 
     width: 100%;
-    max-width: var(--container-max); /* Khóa chặt ở 1650px */
-    margin: 0 auto; /* Ép vào giữa màn hình */
-    padding: 0 var(--side-padding); /* Trả lại đúng 55px padding để chữ đứng đúng vị trí cũ */
+    max-width: var(--container-max); 
+    margin: 0 auto; 
+    padding: 0 var(--side-padding); 
     margin-bottom: 48px;
     z-index: 2;
-    text-align: left; /* Đảm bảo chữ vẫn canh trái bên trong cái lồng 1650px */
+    text-align: left; 
 }
 
 .DuankhonggiandentrangHerrringbonehero-text h1

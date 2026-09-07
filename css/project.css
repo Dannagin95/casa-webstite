@@ -233,12 +233,14 @@
     font-size: 18px;
     color: #000000;
     line-height: 1.4;
+    max-width: 250px;
 }
 
 
 
 .duan-outro-text {
-    padding-top: 80px;
+    padding-top: 140px;
+    padding-bottom: 80px;
 }
 
 .duan-outro-wrapper {

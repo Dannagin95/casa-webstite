@@ -53,7 +53,14 @@
         ],
 
 
-
+        [
+            '/Du_an/Sac-Soi-sang-he-lat-Herringbone&Tuong-phan-den-trang.html',
+            '/en/Our-Projects/Light-Oak-Herringbone-Black-and-White-Interior.html'
+        ],
+        [
+            '/Du_an/Biet-thu-ngoai-o-Nhip-lat-thang-cua-san-soi-tu-nhien.html',
+            '/en/Our-Projects/Suburban-Villa-Natural-Oak-Straight-Lay.html'
+        ],
 
         [
             '/Du_an/Du-an-khach-san-5-sao.html',
