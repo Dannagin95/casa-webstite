@@ -295,11 +295,11 @@ WOOD IMAGE' RANGE
     background: transparent;
     color: #000000;
     border-radius: 100px;
-    font-family: var(--font-body);
-    font-size: 20px;
-    font-weight: 400;
+    font-family: var(--special-font);
+    font-size: 23px;
+    font-weight: 100;
     text-transform: none;
-    letter-spacing: 0.05em;
+    letter-spacing: -0.02em;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -545,7 +545,7 @@ WOOD IMAGE' RANGE
         width: auto !important;
         flex: 0 1 auto !important;
         padding: 10px 24px !important;
-        font-size: 16px;
+        font-size: 17px;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -818,6 +818,7 @@ WOOD IMAGE' RANGE
 }
 
 .woodcommitment .btn-read-more {
+    font-family: var(--special-font);
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -826,8 +827,9 @@ WOOD IMAGE' RANGE
     padding: 15px 35px !important;
     border-radius: 50px !important;
     text-decoration: none !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
+    font-size: 17px !important;
+    font-weight: 100 !important;
+    letter-spacing: -0.02em !important;
     transition: transform 0.3s ease !important;
 }
 

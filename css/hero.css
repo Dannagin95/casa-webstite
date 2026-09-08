@@ -159,8 +159,8 @@
     color: #000000;
     border: 2px solid #ffffff !important;
     border-radius: 100px !important;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 100;
     letter-spacing: -0.02em;
     text-decoration: none !important; 
     transition: all 0.2s ease;
@@ -247,7 +247,7 @@
 
     .btn-shop {
         padding: 13px 30px;
-        font-size: 11px !important;
+        font-size: 14px !important;
         width: fit-content !important; 
         display:flex;
         margin: 0 auto;

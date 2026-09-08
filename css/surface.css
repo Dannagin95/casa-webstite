@@ -784,7 +784,7 @@ NÚT HỎI CASA
     box-sizing: border-box;
 }
 
-/* NÚT HỎI CASA BO TRÒN + CHỮ THƯỜNG */
+
 .faq-ask-btn {
     display: inline-flex;
     align-items: center;
@@ -792,11 +792,9 @@ NÚT HỎI CASA
     padding: 12px 28px;
     background-color: transparent;
     border: 1px solid #1a1a1a;
-    border-radius: 50px; /* Bo tròn góc */
+    border-radius: 50px; 
     color: #1a1a1a;
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-transform: none; /* Chữ thường tự nhiên, không uppercase */
+    text-transform: none;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }

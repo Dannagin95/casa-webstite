@@ -11,7 +11,7 @@
     .product-main-text .title { font-size: 22px !important; font-weight: 400; margin-bottom: 20px !important; }
     .product-main-text .sub-title { font-size: 12px !important; font-weight: 100; margin-bottom: 10px !important; color: #ffffff; }
     .product-main-text .description { font-size: 11px !important; line-height: 1.6 !important; }
-    .product-intro .btn-discover { background-color: #ffffff !important; color: #000000 !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; height: 48px !important; padding: 0 40px !important; border-radius: 50px !important; margin-top: 20px !important; text-decoration: none; font-weight: 600; }
+    .product-intro .btn-discover { font-family: var(--special-font); background-color: #ffffff !important; color: #000000 !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; height: 48px !important; padding: 0 40px !important; border-radius: 50px !important; margin-top: 20px !important; text-decoration: none; font-weight: 100; }
 }
 
 /* ============================================================
@@ -155,6 +155,8 @@
     .product-main-text .description { font-size: 13px !important; line-height: 1.6 !important; margin-bottom: 40px !important; max-width: 100%; }
    
     .product-intro .btn-discover {
+        font-family: var(--special-font);
+        font-size: 17px;
         display: inline-block !important; 
         width: fit-content !important; 
         align-self: flex-start !important; 
@@ -163,7 +165,8 @@
         padding: 14px 45px !important; 
         border-radius: 50px !important; 
         text-decoration: none; 
-        font-weight: 400; 
+        font-weight: 100; 
+        letter-spacing: -0.02em;
         border: 1px solid transparent !important; 
         transition: all 0.1s ease-in-out !important;
     }

@@ -70,6 +70,20 @@ h1, h2, h3, h4, .urbanist, .sub-title, .philo-label, .section-label {
     letter-spacing: -0.02em;
 }
 
+.faq-ask-btn {
+    font-family: var(--special-font);
+    font-weight: 100;
+    font-size: 17px;
+    letter-spacing: -0.02em;
+}
+
+
+.duan-card-info p {
+    font-family: var(--special-font);
+    font-weight: 200;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+}
 
 
 p {

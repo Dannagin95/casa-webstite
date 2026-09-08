@@ -22,7 +22,8 @@
         display: inline-flex !important; align-items: center !important; justify-content: center !important;
         height: 48px !important; padding: 0 40px !important; border-radius: 50px !important;
         margin-top: 20px !important; text-decoration: none !important; /* FIX: Bỏ gạch chân */
-        font-weight: 600;
+        font-weight: 100;
+        font-family: var(--special-font);
     }
 }
 
@@ -140,9 +141,20 @@
     .about-main-text .sub-title {display: block; word-spacing: 5px; font-size: 11px; font-weight: 200; color: #ffffff; letter-spacing: 1px; text-transform: uppercase;}
     .about-main-text .description { font-size: 13px !important; line-height: 1.6 !important;    margin-bottom: 40px !important; }
     .about-intro .btn-discover {
-        display: inline-block !important; width: fit-content !important; background: #fff !important;
-        color: #000 !important; padding: 14px 45px !important; border-radius: 50px !important;
-        text-decoration: none !important;
+        font-family: var(--special-font);
+        font-size: 17px;
+        display: inline-block !important; 
+        width: fit-content !important; 
+        align-self: flex-start !important; 
+        background: #fff !important; 
+        color: #000 !important; 
+        padding: 14px 45px !important; 
+        border-radius: 50px !important; 
+        text-decoration: none; 
+        font-weight: 100; 
+        letter-spacing: -0.02em;
+        border: 1px solid transparent !important; 
+        transition: all 0.1s ease-in-out !important;
     }
     .about-intro .btn-discover:hover { background-color: transparent !important; box-shadow: inset 0 0 0 2px #ffffff !important; color: #ffffff !important }
 }
