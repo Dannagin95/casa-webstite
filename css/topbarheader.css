@@ -17,9 +17,9 @@
     justify-content: center;
     gap: 96px; 
     width: 100%;
-    max-width: var(--container-max); /* Dùng biến 1440px từ base */
+    max-width: var(--container-max);
     margin: 0 auto;
-    padding: 0 var(--side-padding); /* Ép lề 4% vào đây */
+    padding: 0 var(--side-padding);
 }
 
 .top-bar-btn {
@@ -45,7 +45,7 @@
     margin: 0;
 }
 
-/* Hiệu ứng trượt và mờ cho nội dung Topbar */
+
 .top-bar-content p {
     transition: opacity 0.4s ease, transform 0.4s ease;
     opacity: 1;
@@ -55,13 +55,12 @@
 /* Khi nội dung đang thay đổi */
 .top-bar-content.is-changing p {
     opacity: 0;
-    transform: translateY(5px); /* Trượt nhẹ xuống dưới khi biến mất */
+    transform: translateY(5px);
 }
 
 
 
 @media (max-width: 1024px) {
-    /* 1. ẨN CÁC THÀNH PHẦN DESKTOP */
     .desktop-only { 
         display: none !important; 
     }
@@ -71,7 +70,7 @@
         align-items: center; 
     }
 
-    /* 2. TOP-BAR: MỎNG & CHỮ NHỎ ĐÚNG CHẤT QUOC */
+
     .top-bar {
         padding: 9px 0;
     }
@@ -81,7 +80,7 @@
     }
 
     .top-bar-content p {
-        font-size: 9px; /* Chữ siêu nhỏ */
+        font-size: 9px;
         letter-spacing: 0.5px;
         font-weight: 800;
         text-transform: none;
@@ -91,12 +90,12 @@
     }
 
     .top-bar-btn {
-        font-size: 9px; /* Mũi tên nhỏ lại cho cân đối */
+        font-size: 9px; 
         -webkit-text-stroke: 0.7px #ffffff;
     }
 
-    /* 3. HEADER: THỨ TỰ ICON & CĂN GIỮA LOGO */
+
     .site-header {
-        top: 22px; /* Sát lên trên sau top-bar */
+        top: 22px;
     }
 }
