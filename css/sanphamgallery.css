@@ -87,7 +87,6 @@
         opacity: 0; 
         transition: all 0.3s ease;
         cursor: pointer;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         border: 2px solid var(--color-bg-dark);
     }
 
@@ -113,8 +112,19 @@
 
     .sanpham-info { padding: 7px 0; }
    
-    .sanpham-info .name { font-family: var(--special-font); font-size: 28px !important; margin: 10px 0; font-weight: 500; color: #1a1a1a; }
-    .sanpham-info .desc { font-size: 13px !important; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 15px; }
+    .sanpham-info .name { font-family: var(--special-font); 
+        font-size: 28px !important; 
+        margin: 10px 0; 
+        font-weight: 500; 
+        color: #1a1a1a; 
+    }
+
+    .sanpham-info .desc { font-size: 13px !important; 
+        color: var(--color-text-muted); 
+        line-height: 1.6; 
+        margin-bottom: 15px; 
+    }
+
 
    .luot-footer {
         display: flex !important;
@@ -138,14 +148,14 @@
         left: 0;
         height: 3px;
         background-color: #000 !important;
-        width: 50%; /* Mặc định 50% */
+        width: 50%;
         transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
     .luot-nav {
         display: flex !important;
         gap: 15px !important;
-        flex-shrink: 0; /* Không cho cụm nút bị co lại */
+        flex-shrink: 0;
     }
 
     .nav-btn {
