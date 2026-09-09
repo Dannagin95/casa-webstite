@@ -314,7 +314,7 @@
    
     .footer-main {
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important; 
+        grid-template-columns: 1fr 1fr  !important; 
         column-gap: 20px !important;
         row-gap: 50px !important;
         margin-bottom: 0px !important;
