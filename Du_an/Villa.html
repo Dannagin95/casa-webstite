@@ -980,12 +980,12 @@
     const nextBtn = document.getElementById("lightboxNext");
     const dotsContainer = document.getElementById("lightboxDots");
 
-    const sourceImages = Array.from(document.querySelectorAll('.duan01-card-img img, .duan01-hero-wrapper img, .duan01nd-hero-wrapper img')); 
+    const sourceImages = Array.from(document.querySelectorAll('.Duancanhoduongdai-card-img img, .duan01-hero-wrapper img, .Duancanhoduongdaind-hero-wrapper img')); 
     const realCount = sourceImages.length;
     
-    let currentIndex = 1; // 1 ứng với ảnh thật đầu tiên sau khi bọc clone ảo ở hai đầu
+    let currentIndex = 1;
     let isZoomed = false;
-    let isTransitioning = false; // Khóa chặn spam click làm loạn dải trượt
+    let isTransitioning = false;
 
     let startX = 0;
     let currentX = 0;

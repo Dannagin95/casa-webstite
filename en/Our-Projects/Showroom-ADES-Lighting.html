@@ -1053,7 +1053,7 @@
 
     
 
-    <script>
+<script>
     document.addEventListener("DOMContentLoaded", function() {
     const lightbox = document.getElementById("casaLightbox");
     const track = document.getElementById("lightboxTrack");
@@ -1062,7 +1062,7 @@
     const nextBtn = document.getElementById("lightboxNext");
     const dotsContainer = document.getElementById("lightboxDots");
 
-    const sourceImages = Array.from(document.querySelectorAll('.duan03-card-img img')); 
+    const sourceImages = Array.from(document.querySelectorAll('.duan03-card-img img, .duan03-hero-wrapper img, .duan03nd-hero-wrapper img')); 
     const realCount = sourceImages.length;
     
     let currentIndex = 1; // 1 ứng với ảnh thật đầu tiên sau khi bọc clone ảo ở hai đầu
