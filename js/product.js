@@ -572,3 +572,103 @@ document.addEventListener('DOMContentLoaded', () => {
     initGalleryScroll();
     initProductLightbox();
 });
+
+
+
+
+
+
+
+
+
+
+
+const navLinks = document.querySelectorAll('.riva-nav-link');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            const headerOffset = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const startPosition = window.pageYOffset;
+            const targetPosition = elementPosition + startPosition - headerOffset;
+            const distance = targetPosition - startPosition;
+            
+            let startTime = null;
+            const duration = 950;
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const progress = Math.min(timeElapsed / duration, 1);
+                
+                const ease = progress < 0.5 
+                    ? 4 * progress * progress * progress 
+                    : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+                
+                window.scrollTo(0, startPosition + (distance * ease));
+                
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(animation);
+                }
+            }
+
+            requestAnimationFrame(animation);
+        }
+    });
+});
+
+const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -60% 0px',
+    threshold: 0
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+    });
+}, observerOptions);
+
+navLinks.forEach(link => {
+    const targetId = link.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+        observer.observe(targetElement);
+    }
+});
+
+const stickyWrapper = document.querySelector('.riva-sticky-wrapper');
+const navContainer = document.querySelector('.riva-sticky-nav-container');
+const mainBodyWrapper = document.querySelector('.riva-main-body-wrapper');
+
+if (stickyWrapper && navContainer && mainBodyWrapper) {
+    const initialOffsetTop = stickyWrapper.getBoundingClientRect().top + window.pageYOffset;
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.pageYOffset;
+        const wrapperBottom = mainBodyWrapper.offsetTop + mainBodyWrapper.offsetHeight;
+
+        if (scrollY >= initialOffsetTop - 10 && scrollY < wrapperBottom - 180) {
+            navContainer.classList.add('is-fixed');
+        } else {
+            navContainer.classList.remove('is-fixed');
+        }
+    }, { passive: true });
+}
+
+
+

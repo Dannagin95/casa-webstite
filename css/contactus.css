@@ -172,23 +172,22 @@
 
 
 
-/* --- RESPONSIVE MOBILE CHUẨN QUOC [cite: 2026-02-11] --- */
+
 @media (max-width: 1024px) {
-    /* 1. Phẳng hóa nền: bỏ xám nhạt, để trắng tinh cho đồng nhất [cite: 2026-02-11] */
     .contact-only-body {
         background-color: #ffffff !important;
     }
 
-    /* 2. Ép lề đúng luật 20px [cite: 2026-02-07] */
+
     .casa-container-small {
         padding: 0 20px !important;
         max-width: 100% !important;
     }
 
-    /* 3. Phá bỏ cái "khung" card [cite: 2026-02-11] */
+
     .contact-card {
-        border: none !important; /* Bỏ viền cho thoáng */
-        padding: 0 !important;   /* Bỏ padding card để hít theo container 20px */
+        border: none !important;
+        padding: 0 !important;
         background: transparent !important;
     }
 
@@ -199,7 +198,7 @@
     }
 
     .contact-card-title {
-        font-size: 28px !important; /* To và đậm chất như QUOC [cite: 2026-02-11] */
+        font-size: 28px !important;
         margin-bottom: 25px !important;
     }
 
@@ -212,8 +211,8 @@
     .input-group input, 
     .input-group select, 
     .input-group textarea {
-        padding: 14px 12px !important; /* Tăng độ cao cho dễ chạm tay [cite: 2026-02-11] */
-        font-size: 16px !important;    /* Tránh iOS tự động zoom khi click vào input */
+        padding: 14px 12px !important;
+        font-size: 16px !important;
         border-color: #e5e5e5;
     }
 
@@ -226,7 +225,7 @@
     .contact-submit-btn {
         padding: 18px !important;
         font-size: 16px;
-        border-radius: 2px !important; /* Vuông vức hơn cho đanh [cite: 2026-02-11] */
+        border-radius: 2px !important;
         margin-top: 10px;
     }
 
