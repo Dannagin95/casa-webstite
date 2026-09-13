@@ -588,11 +588,14 @@ const navLinks = document.querySelectorAll('.riva-nav-link');
 navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href');
+        const targetId = this.hash || this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
-            const headerOffset = 80;
+            let headerOffset = 90;
+            if (targetId === '#structure' || targetId === '#finishing' || targetId === '#ask-here' ) {
+                headerOffset = 30; 
+            }
             const elementPosition = targetElement.getBoundingClientRect().top;
             const startPosition = window.pageYOffset;
             const targetPosition = elementPosition + startPosition - headerOffset;
