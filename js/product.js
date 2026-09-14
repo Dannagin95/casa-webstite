@@ -596,13 +596,10 @@ navLinks.forEach(link => {
             if (targetId === '#structure' || targetId === '#finishing' || targetId === '#ask-here' ) {
                 headerOffset = 30; 
             }
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const startPosition = window.pageYOffset;
-            const targetPosition = elementPosition + startPosition - headerOffset;
-            const distance = targetPosition - startPosition;
             
             let startTime = null;
             const duration = 950;
+            const startPosition = window.pageYOffset;
 
             function animation(currentTime) {
                 if (startTime === null) startTime = currentTime;
@@ -613,7 +610,10 @@ navLinks.forEach(link => {
                     ? 4 * progress * progress * progress 
                     : 1 - Math.pow(-2 * progress + 2, 3) / 2;
                 
-                window.scrollTo(0, startPosition + (distance * ease));
+                const currentTargetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+                const currentDistance = currentTargetPosition - startPosition;
+                
+                window.scrollTo(0, startPosition + (currentDistance * ease));
                 
                 if (timeElapsed < duration) {
                     requestAnimationFrame(animation);
@@ -624,6 +624,9 @@ navLinks.forEach(link => {
         }
     });
 });
+
+
+
 
 const observerOptions = {
     root: null,

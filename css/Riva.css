@@ -103,12 +103,11 @@ HÌNH NGANG LỚN
 
 
 .riva-label {
-    font-size: 11px;
+    font-size: 14px;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 700;
     letter-spacing: 1px;
     color: #2b2929;
-    font-weight: 300;
     margin-bottom: 30px;
 }
 
@@ -1292,7 +1291,12 @@ HÌNH NGANG LỚN
     text-transform: uppercase;
     display: block;
     margin-bottom: 8px;
+    
 }
+
+
+
+
 
 .riva-structure-grid {
     display: grid;
@@ -1337,6 +1341,11 @@ HÌNH NGANG LỚN
     border-top: 1px solid #eae6df;
 }
 
+.riva-layer-item:last-child {
+    border-bottom: 1px solid #eae6df;
+    padding-bottom: 20px;
+}
+
 .riva-layer-tag {
     font-size: 10px;
     letter-spacing: 0.12em;
@@ -1358,6 +1367,7 @@ HÌNH NGANG LỚN
     font-size: 13px;
     line-height: 1.6;
     color: #666;
+    max-width: 450px;
 }
 
 @media (max-width: 1024px) {
@@ -1404,9 +1414,13 @@ Bảng màu - mã sp
 
 .riva-finishes-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
     margin-top: 40px;
+}
+
+.riva-intro p {
+    max-width: 430px;
 }
 
 .riva-finish-item {
@@ -1418,11 +1432,10 @@ Bảng màu - mã sp
 }
 
 .riva-finish-circle {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     margin-bottom: 16px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
 }
 
@@ -1473,7 +1486,7 @@ Tư vấn thêm
 .riva-inquiry-section {
     width: 100%;
     padding: 90px 0;
-    background-color: #f2f5ec; /* Màu xanh nhạt sang trọng giống mẫu Itlas */
+    background-color: #f4f4f4;
     border-top: 1px solid #eae6df;
 }
 
@@ -1482,6 +1495,14 @@ Tư vấn thêm
     grid-template-columns: 1fr 1.3fr;
     gap: 80px;
     align-items: flex-start;
+}
+
+.riva-inquiry-info p {
+    font-family: var(--special-font);
+    font-size: 26px;
+    font-weight: 400;
+    max-width: 360px;
+    line-height: 1.4;
 }
 
 .riva-inquiry-form {
