@@ -1287,16 +1287,16 @@
     const sourceImages = Array.from(document.querySelectorAll('.sixgrid-collection-img-full img, .sixgrid-collection-img-item img')); 
     const realCount = sourceImages.length;
     
-    let currentIndex = 1; // 1 ứng với ảnh thật đầu tiên sau khi bọc clone ảo ở hai đầu
+    let currentIndex = 1;
     let isZoomed = false;
-    let isTransitioning = false; // Khóa chặn spam click làm loạn dải trượt
+    let isTransitioning = false;
 
     let startX = 0;
     let currentX = 0;
     let isDragging = false;
     let trackWidth = 0;
 
-    // 1. TỰ ĐỘNG GENERATE TRACK SLIDER CÓ BỌC HAI ĐẦU ẢNH CLONE ĐỂ XOAY VÒNG VÔ HẠN
+
     if (track && realCount > 0) {
         track.innerHTML = "";
         
@@ -1315,7 +1315,7 @@
             });
         }
 
-        // Tạo Clone ảnh cuối đưa lên đầu
+
         const lastClone = createSlideElement(sourceImages[realCount - 1]);
         track.appendChild(lastClone);
 
@@ -1325,7 +1325,7 @@
             track.appendChild(slide);
         });
 
-        // Tạo Clone ảnh đầu đưa xuống dưới cùng
+
         const firstClone = createSlideElement(sourceImages[0]);
         track.appendChild(firstClone);
     }
@@ -1352,14 +1352,14 @@
     function openLightbox(index) {
         lightbox.style.display = "flex";
         trackWidth = lightbox.querySelector('.lightbox-track-wrapper').offsetWidth;
-        moveToSlide(index + 1, false); // Nhảy thẳng tới vị trí slide không lướt qua transition thô bạo
+        moveToSlide(index + 1, false);
         
         setTimeout(() => {
             lightbox.classList.add("active");
         }, 10);
     }
 
-    // 2. HÀM TRƯỢT DẢI TỊNH TIẾN (%) TOÀN DIỆN MƯỢT MÀ
+
     function moveToSlide(index, withTransition = true) {
         if (isTransitioning && withTransition) return;
         resetZoom();
@@ -1377,17 +1377,17 @@
         updateDots();
     }
 
-    // Lén lút dịch chuyển trả vị trí ngầm khi dải ảnh trượt xong tấm clone biên
+
     track.addEventListener("transitionend", function() {
         isTransitioning = false;
         
-        // Vuốt kịch phải qua tấm clone đầu -> Chuyển ngầm về tấm đầu thật
+
         if (currentIndex >= realCount + 1) {
             track.style.transition = "none";
             currentIndex = 1;
             track.style.transform = `translateX(-${currentIndex * 100}%)`;
         }
-        // Vuốt kịch trái qua tấm clone cuối -> Chuyển ngầm về tấm cuối thật
+
         if (currentIndex <= 0) {
             track.style.transition = "none";
             currentIndex = realCount;
@@ -1412,12 +1412,12 @@
         });
     }
 
-    // 3. ĐIỀU CHỈNH THUẬT TOÁN VUỐT CHẠM TỶ LỆ TUYẾN TÍNH (%) - BÁM TAY TUYỆT ĐỐI
+
     track.addEventListener("touchstart", function(e) {
         if (isZoomed || isTransitioning) return;
         isDragging = true;
         startX = e.touches[0].clientX;
-        track.style.transition = "none"; // Khóa chặt transition để dải ảnh dính cứng vào tay khi lướt
+        track.style.transition = "none";
         trackWidth = lightbox.querySelector('.lightbox-track-wrapper').offsetWidth;
     }, { passive: true });
 
@@ -1426,7 +1426,7 @@
         currentX = e.touches[0].clientX;
         const deltaX = currentX - startX;
         
-        // Quy đổi quãng đường vuốt px của tay thành tỷ lệ % của dải trượt để không bị lệch trục tọa độ
+
         const deltaPercent = (deltaX / trackWidth) * 100;
         const currentOffsetPercent = -currentIndex * 100;
         
@@ -1444,7 +1444,7 @@
         } else if (finalDeltaX > 50) {
             moveToSlide(currentIndex - 1);
         } else {
-            moveToSlide(currentIndex); // Vuốt hờ trả về vị trí cũ
+            moveToSlide(currentIndex);
         }
     });
 
