@@ -103,7 +103,7 @@ HÌNH NGANG LỚN
 
 
 .riva-label {
-    font-size: 14px;
+    font-size: 18px;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1px;
@@ -1176,11 +1176,11 @@ HÌNH NGANG LỚN
     width: 100%;
 }
 
-/* Tạo khung giữ chỗ (placeholder) để tránh sụt layout khi fixed */
+
 .riva-sticky-wrapper {
     position: relative;
     width: 100%;
-    min-height: 60px; /* Khớp với chiều cao thực tế của cụm nút */
+    min-height: 60px;
 }
 
 .riva-sticky-nav-container {
@@ -1244,10 +1244,10 @@ HÌNH NGANG LỚN
     padding: 10px 22px;
     border-radius: 100px;
     font-family: var(--special-font);
-    font-size: 13px;
-    font-weight: 100;
+    font-size: 14px;
+    font-weight: 700;
     text-decoration: none;
-    transition: all 0.25s ease;
+    transition: all 0.09s ease;
     white-space: nowrap;
 }
 
