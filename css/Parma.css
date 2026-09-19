@@ -1505,7 +1505,7 @@ Tư vấn thêm
     font-family: var(--special-font);
     font-size: 26px;
     font-weight: 400;
-    max-width: 360px;
+    max-width: 380px;
     line-height: 1.4;
 }
 
@@ -1586,6 +1586,7 @@ Tư vấn thêm
     color: #111;
     padding: 12px 32px;
     border-radius: 100px;
+    font-family: var(--special-font);
     font-size: 17px;
     font-weight: 500;
     cursor: pointer;
