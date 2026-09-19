@@ -301,7 +301,7 @@ HÌNH NGANG LỚN
         font-size: 13px;
         line-height: 1.6;
         margin-bottom: 25px;
-        max-width: 670px;
+        max-width: 600px !important;
         color: var(--color-black);
     }
 
@@ -1414,13 +1414,17 @@ Bảng màu - mã sp
 
 .riva-finishes-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     margin-top: 40px;
 }
 
 .riva-intro p {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 25px;
     max-width: 430px;
+    color: var(--color-black);
 }
 
 .riva-finish-item {
@@ -1432,8 +1436,8 @@ Bảng màu - mã sp
 }
 
 .riva-finish-circle {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     margin-bottom: 16px;
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;

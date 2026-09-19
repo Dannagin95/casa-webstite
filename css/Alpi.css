@@ -103,12 +103,11 @@ HÌNH NGANG LỚN
 
 
 .alpi-label {
-    font-size: 11px;
+    font-size: 18px;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 700;
     letter-spacing: 1px;
     color: #2b2929;
-    font-weight: 300;
     margin-bottom: 30px;
 }
 
@@ -302,7 +301,7 @@ HÌNH NGANG LỚN
         font-size: 13px;
         line-height: 1.6;
         margin-bottom: 25px;
-        max-width: 670px;
+        max-width: 600px !important;
         color: var(--color-black);
     }
 
@@ -578,13 +577,12 @@ HÌNH NGANG LỚN
     TẦNG 5: MOBILE (< 767px) - BẢN FIX CUỐI CÙNG (NO GRID)
 ===================================================================*/
 @media (max-width: 767px) {
-    /* 1. RESET GIỚI HẠN TOÀN TRANG */
     .alpi-product-section {
         overflow-x: hidden !important;
         width: 100%;
     }
 
-    /* Đảm bảo thằng cha bao ngoài cùng giữ lề 20px */
+
     .alpi-container {
         padding: 0 20px !important;
         box-sizing: border-box !important;
@@ -592,7 +590,7 @@ HÌNH NGANG LỚN
     }
 
     .alpi-intro {
-        padding: 40px 0; /* Bỏ padding 20px ở đây vì cha đã có */
+        padding: 40px 0;
     }
 
     .alpi-title {
@@ -608,7 +606,7 @@ HÌNH NGANG LỚN
         color: var(--black);
     }
 
-    /* 2. RESET KHUNG LƯỚI */
+
     .alpi-main-grid {
         display: block !important;
         width: 100% !important;
@@ -660,13 +658,12 @@ HÌNH NGANG LỚN
 
 
 
-    /* 4. GALLERY SLIDER: CHUẨN LỀ 20PX & TỈ LỆ 6/7 */
     .alpi-gallery-grid {
         display: flex !important;
         overflow-x: auto !important;
         gap: 10px !important; 
         
-        /* Trick: Margin âm để phá lề cha khi vuốt, Padding dương để lề ban đầu vẫn là 20px */
+
         margin-left: -20px !important;
         margin-right: -20px !important;
         padding-left: 20px !important;
@@ -685,7 +682,7 @@ HÌNH NGANG LỚN
         scroll-snap-stop: always !important;
     }
 
-    /* Đã sửa chính tả từ river -> alpi */
+
     .alpi-photo img {
         width: 100%;
         display: block;
@@ -697,8 +694,7 @@ HÌNH NGANG LỚN
   
     .alpi-progress-container {
         display: block !important;
-        position: relative; /* Follows the natural flow after the grid */
-        /* 20px top, auto left/right to center the bar */
+        position: relative;
         margin: 20px auto 0 auto !important;
         width: 100%;
         height: 1px;
@@ -720,13 +716,12 @@ HÌNH NGANG LỚN
 
 
 
-    /* 5. SIDEBAR & THÔNG SỐ: ĐỔ DỌC */
     .alpi-sidebar {
         width: 100% !important;
         position: static !important;
         display: block !important;
         margin-top: 30px;
-        padding: 0 !important; /* Tuyệt đối không thêm padding ở đây */
+        padding: 0 !important;
     }
 
     .alpi-sticky-content {
@@ -795,7 +790,7 @@ HÌNH NGANG LỚN
 
 
 
-/* Khung nền đen bao phủ toàn màn hình */
+
 .casa-lightbox {
     display: none; 
     position: fixed; 
@@ -811,7 +806,7 @@ HÌNH NGANG LỚN
     overflow: hidden;
 }
 
-/* Khung bọc giới hạn dải trượt */
+
 .lightbox-track-wrapper {
     width: calc(100% - 200px);
     height: 85vh;
@@ -822,7 +817,7 @@ HÌNH NGANG LỚN
     z-index: 100001;
 }
 
-/* Dải nội dung nằm ngang liên tục */
+
 .lightbox-track {
     display: flex;
     width: 100%;
@@ -831,7 +826,7 @@ HÌNH NGANG LỚN
     will-change: transform;
 }
 
-/* Từng tấm slide (Chứa ảnh hoặc video) */
+
 .lightbox-slide {
     flex: 0 0 100%;
     width: 100%;
@@ -842,7 +837,7 @@ HÌNH NGANG LỚN
     user-select: none;
 }
 
-/* Định dạng hiển thị đồng bộ cho cả Ảnh và Video */
+
 .lightbox-slide img,
 .lightbox-slide video {
     max-width: 100%;
@@ -862,14 +857,14 @@ HÌNH NGANG LỚN
     transform: scale(1);
 }
 
-/* Trạng thái ảnh khi được ZOOM TO (Chỉ áp dụng riêng cho img, không zoom video) */
+
 .lightbox-slide img.zoomed {
     transform: scale(2) !important;
     cursor: zoom-out !important;
     z-index: 100005;
 }
 
-/* Nút Đóng (Dấu X) */
+
 .lightbox-close {
     position: absolute;
     top: 30px;
@@ -884,7 +879,7 @@ HÌNH NGANG LỚN
 }
 .lightbox-close:hover { opacity: 0.6; }
 
-/* 🌟 GIỮ NGUYÊN GỐC 100% THÔNG SỐ NÚT TRÒN TRÊN DESKTOP CỦA MÀY */
+
 .lightbox-btn {
     position: absolute;
     top: 50%;
@@ -905,27 +900,26 @@ HÌNH NGANG LỚN
     user-select: none;
 }
 .lightbox-btn svg {
-    width: 13px; /* Icon mũi tên 13px */
+    width: 13px;
     height: 13px;
-    color: #000000; /* Màu đen mặc định */
+    color: #000000;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 .lightbox-btn:hover {
     border-color: #ffffff;
-    background-color: rgba(19, 19, 19, 0.95); /* Màu nền khi hover */
+    background-color: rgba(19, 19, 19, 0.95);
 }
 .lightbox-btn:hover svg { 
-    color: #ffffff; /* Mũi tên chuyển trắng khi hover */
 }
 .lightbox-prev { left: 40px; }
 .lightbox-next { right: 40px; }
 
-/* HÀNG CHẤM: Ẩn mặc định trên desktop */
+
 .lightbox-dots {
     display: none;
 }
 
-/* 📱 RESPONSIVE - Áp dụng lề mặc định dự án của mày */
+
 @media (max-width: 768px) {
     .lightbox-track-wrapper {
         width: 100%;
@@ -977,7 +971,7 @@ HÌNH NGANG LỚN
     TẦNG BỔ SUNG: ĐIỀU KHIỂN VIDEO (DESKTOP & MOBILE)
 ===================================================================*/
 
-/* --- Định vị nút Play/Pause và Thanh tiến trình trong Hero --- */
+
 .alpi-hero-container {
     position: relative;
 }
@@ -1148,7 +1142,7 @@ HÌNH NGANG LỚN
     border-radius: 2px;
 }
 
-/* Tinh chỉnh vị trí controls trong chi tiết riêng cho Mobile */
+
 @media (max-width: 768px) {
     .lightbox-custom-controls {
         bottom: 80px; /* Đẩy cao hơn hàng dấu chấm trên Mobile */
@@ -1160,5 +1154,460 @@ HÌNH NGANG LỚN
     .v-time-display {
         font-size: 11px; /* Hạ size chữ thời gian xuống một chút */
         min-width: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#nav-sentinel {
+    height: 1px;
+    width: 100%;
+}
+
+
+.alpi-sticky-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 60px;
+}
+
+.alpi-sticky-nav-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    will-change: transform, opacity;
+    opacity: 0.95;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.35s ease, 
+                background 0.3s ease, 
+                padding 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+.alpi-sticky-nav-container.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    padding: 14px 0;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.alpi-sticky-nav-container.is-fixed .alpi-container-inner {
+    max-width: var(--container-width, 1650px);
+    margin: 0 auto;
+    padding: 0 var(--side-padding);
+}
+
+.alpi-quick-nav-wrap {
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.alpi-sticky-nav-container.is-fixed .alpi-quick-nav-wrap {
+    margin: 0;
+}
+
+.alpi-quick-nav {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.alpi-nav-link {
+    background-color: transparent;
+    border: 2px solid var(--color-bg-dark);
+    color: #111;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-family: var(--special-font);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.09s ease;
+    white-space: nowrap;
+}
+
+.alpi-nav-link:hover {
+    background-color: var(--color-bg-dark);
+    color: var(--white);
+}
+
+.alpi-nav-link.active {
+    background-color: var(--color-bg-dark);
+    color: #fff;
+    border-color: #111;
+}
+
+.alpi-sticky-nav-container.is-fixed .alpi-nav-link {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+.alpi-sticky-nav-container.is-fixed .alpi-nav-link:hover {
+    background: var(--color-bg-dark);
+    border-color: var(--color-bg-dark);
+}
+
+.alpi-sticky-nav-container.is-fixed .alpi-nav-link.active {
+    background-color: var(--color-bg-dark);
+    color: #fff;
+    border-color: var(--color-bg-dark);
+}
+
+.alpi-structure-section {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+.alpi-meta-category {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: #888;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+    
+}
+
+
+
+
+
+.alpi-structure-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.alpi-structure-img-col {
+    width: 100%;
+    background: transparent;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.alpi-structure-img-col img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.alpi-structure-specs-col {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.alpi-struct-intro-text p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+}
+
+.alpi-layers-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.alpi-layer-item {
+    padding-top: 20px;
+    border-top: 1px solid #eae6df;
+}
+
+.alpi-layer-item:last-child {
+    border-bottom: 1px solid #eae6df;
+    padding-bottom: 20px;
+}
+
+.alpi-layer-tag {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: #888;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.alpi-layer-item h4 {
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 6px;
+}
+
+.alpi-layer-item p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #666;
+    max-width: 450px;
+}
+
+@media (max-width: 1024px) {
+    .alpi-quick-nav-wrap {
+        justify-content: flex-start;
+        margin-top: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .alpi-quick-nav {
+        overflow-x: auto;
+        width: 100%;
+        scrollbar-width: none;
+    }
+
+    .alpi-quick-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .alpi-nav-link {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .alpi-structure-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+
+
+
+
+
+/*==========
+Bảng màu - mã sp 
+==========*/
+.alpi-finishes-section {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+.alpi-finishes-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.alpi-intro p {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 430px;
+    color: var(--color-black);
+}
+
+.alpi-finish-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.alpi-finish-circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.alpi-finish-item:hover .alpi-finish-circle {
+    transform: scale(1.04);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.alpi-finish-code {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.alpi-finish-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: #111;
+    letter-spacing: 0.04em;
+}
+
+@media (max-width: 1024px) {
+    .alpi-finishes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .alpi-finish-circle {
+        width: 120px;
+        height: 120px;
+    }
+}
+/*==========
+Bảng màu - mã sp 
+==========*/
+
+
+
+
+
+
+
+/*==========
+Tư vấn thêm 
+==========*/
+.alpi-inquiry-section {
+    width: 100%;
+    padding: 90px 0;
+    background-color: #f4f4f4;
+    border-top: 1px solid #eae6df;
+}
+
+.alpi-inquiry-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+.alpi-inquiry-info p {
+    font-family: var(--special-font);
+    font-size: 26px;
+    font-weight: 400;
+    max-width: 360px;
+    line-height: 1.4;
+}
+
+.alpi-inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.alpi-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.alpi-form-row.full {
+    grid-template-columns: 1fr;
+}
+
+.alpi-form-group input,
+.alpi-form-group select,
+.alpi-form-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    padding: 10px 0;
+    font-size: 16px;
+    font-family: var(--special-font) !important;
+    color: #111;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.alpi-form-group select {
+    color: #777;
+}
+
+.alpi-form-group input:focus,
+.alpi-form-group select:focus,
+.alpi-form-group textarea:focus {
+    border-color: #111;
+}
+
+.alpi-form-group input::placeholder,
+.alpi-form-group textarea::placeholder {
+    color: #666;
+}
+
+.alpi-form-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.alpi-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: var(--special-font);
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.alpi-checkbox-label input {
+    margin-top: 2px;
+    accent-color: #111;
+}
+
+.alpi-submit-btn {
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid #111;
+    color: #111;
+    padding: 12px 32px;
+    border-radius: 100px;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.alpi-submit-btn:hover {
+    background-color: #111;
+    color: #fff;
+}
+
+@media (max-width: 1024px) {
+    .alpi-inquiry-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .alpi-form-row {
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 }
