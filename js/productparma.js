@@ -590,8 +590,12 @@ navLinks.forEach(link => {
         
         if (targetElement) {
             let headerOffset = 90;
-            if (targetId === '#structure' || targetId === '#finishing' || targetId === '#ask-here' ) {
+            if (targetId === '#structure' || targetId === '#finishing') {
                 headerOffset = 30; 
+            }
+
+            if (targetId === '#ask-here' ) {
+                headerOffset = 20; 
             }
             
             let startTime = null;
