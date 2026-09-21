@@ -584,10 +584,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 const navLinks = document.querySelectorAll('.riva-nav-link');
+function centerNavLink(link) {
+    const navContainer = link.closest('.riva-quick-nav');
+    if (!navContainer) return;
+    const scrollTarget = link.offsetLeft - (navContainer.clientWidth / 2) + (link.offsetWidth / 2);
+    navContainer.scrollTo({
+        left: scrollTarget,
+        behavior: 'smooth'
+    });
+}
 
 navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
+    
+        centerNavLink(this);
+
         const targetId = this.hash || this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         
@@ -633,9 +645,6 @@ navLinks.forEach(link => {
     });
 });
 
-
-
-
 const observerOptions = {
     root: null,
     rootMargin: '-20% 0px -60% 0px',
@@ -649,6 +658,7 @@ const observer = new IntersectionObserver((entries) => {
             navLinks.forEach(link => {
                 if (link.getAttribute('href') === `#${id}`) {
                     link.classList.add('active');
+                    centerNavLink(link);
                 } else {
                     link.classList.remove('active');
                 }
@@ -683,6 +693,3 @@ if (stickyWrapper && navContainer && mainBodyWrapper) {
         }
     }, { passive: true });
 }
-
-
-

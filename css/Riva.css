@@ -1387,17 +1387,53 @@ HÌNH NGANG LỚN
     max-width: 450px;
 }
 
-@media (max-width: 1024px) {
-    .riva-quick-nav-wrap {
-        justify-content: flex-start;
+
+
+
+
+
+
+/* ==========================================
+   MOBILE (max-width: 767px) - Đã mở khóa scroll ngang
+   ========================================== */
+@media (max-width: 767px) {
+    .riva-sticky-wrapper {
+        width: 100%;
         margin-top: 16px;
         margin-bottom: 20px;
+        min-height: 44px;
+        overflow: visible; 
     }
-    
-    .riva-quick-nav {
-        overflow-x: auto;
+
+    .riva-sticky-nav-container:not(.is-fixed) {
+        position: relative;
         width: 100%;
+        overflow: visible;
+    }
+
+    .riva-quick-nav-wrap {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+        overflow: visible;
+    }
+
+    .riva-quick-nav {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        overflow-x: auto;
+        overflow-y: hidden;
         scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        gap: 8px;
+        padding: 0 20px;
+        box-sizing: border-box;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .riva-quick-nav::-webkit-scrollbar {
@@ -1405,8 +1441,50 @@ HÌNH NGANG LỚN
     }
 
     .riva-nav-link {
-        padding: 8px 16px;
-        font-size: 12px;
+        flex-shrink: 0;
+        padding: 8px 14px;
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+    .riva-sticky-nav-container.is-fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+        padding: 10px 0;
+        z-index: 100;
+        transform: translateY(0);
+        opacity: 1;
+        box-sizing: border-box;
+        border-radius: 0;
+    }
+
+    .riva-sticky-nav-container.is-fixed .riva-container-inner,
+    .riva-sticky-nav-container.is-fixed .riva-quick-nav-wrap {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+    }
+
+    .riva-sticky-nav-container.is-fixed .riva-quick-nav {
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 100%;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        gap: 8px;
+        padding: 0 20px;
+        box-sizing: border-box;
+        margin: 0;
     }
 
     .riva-structure-grid {
@@ -1414,6 +1492,13 @@ HÌNH NGANG LỚN
         gap: 30px;
     }
 }
+
+
+
+
+
+
+
 
 
 
