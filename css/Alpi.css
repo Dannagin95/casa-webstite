@@ -1278,7 +1278,8 @@ HÌNH NGANG LỚN
 
 .alpi-sticky-nav-container.is-fixed .alpi-nav-link {
     background: rgba(255, 255, 255, 0.85);
-    border-color: rgba(0, 0, 0, 0.641);
+    border-color: var(--color-bg-dark);
+    color: var(--color-bg-dark);
 }
 
 .alpi-sticky-nav-container.is-fixed .alpi-nav-link:hover {
