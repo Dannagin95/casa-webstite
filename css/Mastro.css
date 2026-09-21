@@ -1178,7 +1178,7 @@ HÌNH NGANG LỚN
 
 
 .mastro-sticky-wrapper {
-    position: relative;
+    position: relative; 
     width: 100%;
     min-height: 60px;
 }
@@ -1198,25 +1198,26 @@ HÌNH NGANG LỚN
                 box-shadow 0.3s ease;
 }
 
+
 .mastro-sticky-nav-container.is-fixed {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    padding: 14px 0;
+    right: 0;
+    left: auto;
+    width: auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
     transform: translateY(0);
     opacity: 1;
+    z-index: 100;
 }
 
 .mastro-sticky-nav-container.is-fixed .mastro-container-inner {
-    max-width: var(--container-width, 1650px);
-    margin: 0 auto;
-    padding: 0 var(--side-padding);
+    max-width: none;
+    margin: 0;
+    padding: 0;
 }
 
 .mastro-quick-nav-wrap {
@@ -1227,8 +1228,21 @@ HÌNH NGANG LỚN
     justify-content: flex-end;
 }
 
+
 .mastro-sticky-nav-container.is-fixed .mastro-quick-nav-wrap {
+    width: auto;
     margin: 0;
+    background: #fff;
+    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.05);
+
+    border-left: 1px solid rgba(0, 0, 0, 0.06);
+    border-right: none; 
+    border-top: none;
+    border-radius: 0 0 0 20px; 
+    padding: 12px var(--side-padding) 12px 24px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .mastro-quick-nav {
@@ -1264,7 +1278,7 @@ HÌNH NGANG LỚN
 
 .mastro-sticky-nav-container.is-fixed .mastro-nav-link {
     background: rgba(255, 255, 255, 0.85);
-    border-color: rgba(0, 0, 0, 0.15);
+    border-color: rgba(0, 0, 0, 0.641);
 }
 
 .mastro-sticky-nav-container.is-fixed .mastro-nav-link:hover {
@@ -1285,13 +1299,14 @@ HÌNH NGANG LỚN
 }
 
 .mastro-meta-category {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    color: #888;
-    text-transform: uppercase;
     display: block;
-    margin-bottom: 8px;
-    
+    word-spacing: 3px;
+    font-size: 14px;
+    font-weight: 200;
+    color: #2b2929;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin-bottom: 40px !important;
 }
 
 

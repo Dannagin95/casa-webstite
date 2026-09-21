@@ -590,13 +590,17 @@ navLinks.forEach(link => {
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
-            let headerOffset = 90;
+            let headerOffset = 0;
             if (targetId === '#structure' || targetId === '#finishing') {
-                headerOffset = 30; 
+                headerOffset = 0; 
             }
 
             if (targetId === '#ask-here' ) {
-                headerOffset = 20; 
+                headerOffset = 0; 
+            }
+
+            if (targetId === '#specs' || targetId === '#features' ) {
+                headerOffset = 90; 
             }
             
             let startTime = null;
