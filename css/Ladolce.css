@@ -320,15 +320,13 @@ HÌNH NGANG LỚN
 
     /* GIA CỐ STICKY SCROLL CHUẨN XÁC */
     .ladolce-sidebar {
-    position: sticky;
-    top: 100px;
-    height: fit-content;
-    
-    /* CHIÊU KHÓA CHẾT CHIỀU RỘNG [cite: 2026-03-27] */
-    width: 100% !important;
-    min-width: 0 !important; 
-    flex: 0 0 380px !important; 
-}
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+        width: 100% !important;
+        min-width: 0 !important; 
+        flex: 0 0 380px !important; 
+    }
 
     .ladolce-sticky-content {
         display: flex;
@@ -360,10 +358,39 @@ HÌNH NGANG LỚN
         padding: 0 var(--side-mb);
     }
 
+
+    .ladolce-intro {
+        padding: 60px 0;
+        max-width: 680px;
+    }
+
+    .ladolce-title {
+        font-size: 40px !important; 
+        line-height: 1.2 !important; 
+        color: var(--black) !important; 
+        margin-bottom: 25px !important; 
+        font-weight: 400;
+    }
+
+    .ladolce-desc {
+        font-size: 12px !important; 
+        line-height: 1.6 !important; 
+        color: var(--black) !important; 
+        margin-bottom: 20px;
+    }
+
+    .ladolce-hero-fullwidth {
+        width: 100%; 
+        max-width: 100%;
+        margin-left: 0; 
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
     .ladolce-main-grid {
         display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 40px;
+        grid-template-columns: 1.1fr 0.7fr;
+        gap: 30px;
         align-items: start;
     }
 
@@ -373,11 +400,16 @@ HÌNH NGANG LỚN
         gap: 10px;
     }
 
+    
     .ladolce-sidebar {
         position: sticky;
-        top: 80px;
+        top: 100px;
         height: fit-content;
+        width: 100% !important;
+        min-width: 0 !important; 
+        flex: 0 0 380px !important; 
     }
+
 
     .ladolce-sticky-content {
         display: flex;
@@ -418,7 +450,7 @@ HÌNH NGANG LỚN
     }
 
     .ladolce-intro {
-        padding: 40px 0; /* Bỏ padding 20px ở đây vì cha đã có */
+        padding: 40px 0;
     }
 
     .ladolce-title {
@@ -445,20 +477,20 @@ HÌNH NGANG LỚN
 }
     
     .ladolce-hero-fullwidth {
-    margin-top: 60px; /* Nhớ thêm đơn vị px nhé */
-    margin-bottom: 20px;
-    
-    width: 100vw; /* Ép nó rộng bằng đúng chiều rộng màn hình */
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    
-    /* Đảm bảo bên trong không bị lòi ra ngoài */
-    max-width: 100vw; 
-    overflow: hidden;
-}
+        margin-top: 60px; /* Nhớ thêm đơn vị px nhé */
+        margin-bottom: 20px;
+        
+        width: 100vw; /* Ép nó rộng bằng đúng chiều rộng màn hình */
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        
+        /* Đảm bảo bên trong không bị lòi ra ngoài */
+        max-width: 100vw; 
+        overflow: hidden;
+    }
 
     .ladolce-hero-container {
         aspect-ratio: 16 / 9;
@@ -507,16 +539,18 @@ HÌNH NGANG LỚN
         right: 50%;
         margin-left: -50vw;
         margin-right: -50vw;
-        margin-bottom: 40px;
-        padding: 40px 20px;
+        padding: 20px 20px;
         box-sizing: border-box;
+        scroll-padding-left: 20px;
         scrollbar-width: none;
         -webkit-overflow-scrolling: touch;
     }
 
     .ladolce-photo {
         flex: 0 0 44%; 
+        min-width: 44% !important;
         scroll-snap-align: start;
+        scroll-snap-stop: always;
         aspect-ratio: 6 / 7;
     }
 
@@ -525,9 +559,32 @@ HÌNH NGANG LỚN
         height: 100%;
         object-fit: cover;
     }
+
+
+    .ladolce-progress-container {
+        display: block !important;
+        position: relative;
+        margin: 0 auto 0 auto !important;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.1);
+        left: 0 !important;
+        transform: none !important;
+    }
+
+    .ladolce-progress-bar {
+        position: absolute; 
+        top: 0;
+        left: 0;
+        width: 20% !important; 
+        height: 100%;
+        background-color: #000000;
+        transition: transform 0.1s linear ;
+        will-change: transform;
+    }
     
     .ladolce-smallprogress-container {
-        display: block !important;
+        display: none;
         position: relative;
         width: calc(100% - 160px); 
         height: 2px;
@@ -1283,8 +1340,8 @@ HÌNH NGANG LỚN
 }
 
 .ladolce-sticky-nav-container.is-fixed .ladolce-nav-link:hover {
-    background: var(--color-bg-dark);
-    border-color: var(--color-bg-dark);
+    background-color: var(--color-bg-dark);
+    color: var(--white);
 }
 
 .ladolce-sticky-nav-container.is-fixed .ladolce-nav-link.active {
@@ -1386,17 +1443,51 @@ HÌNH NGANG LỚN
     max-width: 450px;
 }
 
-@media (max-width: 1024px) {
-    .ladolce-quick-nav-wrap {
-        justify-content: flex-start;
+
+
+
+/* ==========================================
+   MOBILE (max-width: 767px) - Đã mở khóa scroll ngang
+   ========================================== */
+@media (max-width: 767px) {
+    .ladolce-sticky-wrapper {
+        width: 100%;
         margin-top: 16px;
         margin-bottom: 20px;
+        min-height: 44px;
+        overflow: visible; 
+        display: none;
     }
-    
-    .ladolce-quick-nav {
-        overflow-x: auto;
+
+    .ladolce-sticky-nav-container:not(.is-fixed) {
+        position: relative;
         width: 100%;
+        overflow: visible;
+    }
+
+    .ladolce-quick-nav-wrap {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+        overflow: visible;
+    }
+
+    .ladolce-quick-nav {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        overflow-x: auto;
+        overflow-y: hidden;
         scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        gap: 8px;
+        padding: 0 20px;
+        box-sizing: border-box;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .ladolce-quick-nav::-webkit-scrollbar {
@@ -1404,13 +1495,98 @@ HÌNH NGANG LỚN
     }
 
     .ladolce-nav-link {
-        padding: 8px 16px;
-        font-size: 12px;
+        flex-shrink: 0;
+        padding: 8px 14px;
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+    .ladolce-sticky-nav-container.is-fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+        padding: 10px 0;
+        z-index: 100;
+        transform: translateY(0);
+        opacity: 1;
+        box-sizing: border-box;
+        border-radius: 0;
+    }
+
+    .ladolce-sticky-nav-container.is-fixed .ladolce-container-inner,
+    .ladolce-sticky-nav-container.is-fixed .ladolce-quick-nav-wrap {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+    }
+
+    .ladolce-sticky-nav-container.is-fixed .ladolce-quick-nav {
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 100%;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        gap: 8px;
+        padding: 0 20px;
+        box-sizing: border-box;
+        margin: 0;
     }
 
     .ladolce-structure-grid {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+}
+
+
+
+
+
+
+
+/* ==========================================
+   TABLET MINI (768px - 991px) - Chuẩn form desktop gốc, set lề 20px, section 40px, font nhỏ hơn
+   ========================================== */
+@media (min-width: 768px) and (max-width: 991px) {
+    :root {
+        --side-padding: 20px; /* Chuẩn thông số vàng lề 2 bên 20px */
+    }
+
+    .ladolce-sticky-wrapper {
+        position: relative; 
+        width: 100%;
+        min-height: 50px;
+        margin-bottom: -50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+
+    .ladolce-quick-nav-wrap {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .ladolce-nav-link {
+        padding: 8px 16px;
+        font-size: 11px; 
+    }
+
+    /* Trạng thái is-fixed kế thừa trọn vẹn logic góc phải của desktop, tự động ăn theo --side-padding: 20px */
+    .ladolce-sticky-nav-container.is-fixed .ladolce-quick-nav-wrap {
+        padding: 10px var(--side-padding) 10px 20px;
     }
 }
 
