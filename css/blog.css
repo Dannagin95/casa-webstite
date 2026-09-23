@@ -644,7 +644,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
+        width: 50%;
         background: var(--color-bg-dark) !important;
         border: 2px solid var(--color-bg-dark) !important; /* Viền đen đồng bộ lúc đầu */
         border-radius: 999px !important;

@@ -1325,7 +1325,7 @@ HÌNH NGANG LỚN
 }
 
 .riva-sticky-nav-container.is-fixed .riva-nav-link {
-    background: rgba(255, 255, 255, 0.85);
+    background: var(--white);
     border-color: var(--color-bg-dark);
     color: var(--color-bg-dark);
 }
@@ -1599,7 +1599,7 @@ Bảng màu - mã sp
 ==========*/
 .riva-finishes-section {
     width: 100%;
-    padding: 20px 0;
+    padding: 60px 0;
     background-color: #fff;
 }
 
