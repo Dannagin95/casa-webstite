@@ -1312,8 +1312,8 @@ HÌNH NGANG LỚN
 
 .alpi-nav-link {
     background-color: transparent;
-    border: 2px solid var(--color-bg-dark);
-    color: #111;
+    border: 1px solid var(--color-bg-dark);
+    color: var(--color-bg-dark);
     padding: 10px 22px;
     border-radius: 100px;
     font-family: var(--special-font);
@@ -1332,7 +1332,7 @@ HÌNH NGANG LỚN
 .alpi-nav-link.active {
     background-color: var(--color-bg-dark);
     color: #fff;
-    border-color: #111;
+    border-color: var(--color-bg-dark);
 }
 
 .alpi-sticky-nav-container.is-fixed .alpi-nav-link {
