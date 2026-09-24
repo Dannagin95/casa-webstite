@@ -1337,6 +1337,7 @@ HÌNH NGANG LỚN
     background: var(--white);
     border-color: var(--color-bg-dark);
     color: var(--color-bg-dark);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.056);
 }
 
 .alpi-sticky-nav-container.is-fixed .alpi-nav-link:hover {
