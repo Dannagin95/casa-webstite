@@ -1,6 +1,10 @@
 // database.js
 
 export const searchDatabase = [
+    { title: "CASA Parquet", url: "/index.html", keywords: "CASA" },
+    { title: "Về CASA Parquet", url: "/lichsu.html", keywords: "lich su CASA" },
+    { title: "Dự án của CASA Parquet", url: "/Du_an.html", keywords: "CASA" },
+    { title: "Liên hệ với CASA Parquet", url: "/contactus.html", keywords: "CASA" },
     
     { title: "Lịch sử", url: "/lichsu.html", keywords: "lich su" },
     { title: "Chứng chỉ", url: "/chungchi.html", keywords: "chung chi certifications brochure catalogue" },
