@@ -2,6 +2,11 @@
 
 export const searchDatabase = [
 
+    { title: "CASA Parquet", url: "/en/index.html", keywords: "CASA" },
+    { title: "About CASA Parquet", url: "/en/about.html", keywords: "CASA" },
+    { title: "CASA Parquet's Projects", url: "/en/Our_Projects.html", keywords: "CASA" },
+    { title: "Contact with CASA Parquet", url: "/en/contactus.html", keywords: "CASA" },
+
     { title: "About", url: "/en/about.html", keywords: "about who we are history" },
     { title: "Certifications", url: "/en/Certifications.html", keywords: "certifications brochure catalogue" },
     { title: "Warranty Policy", url: "/en/warranty.html", keywords: "warranty policy" },
