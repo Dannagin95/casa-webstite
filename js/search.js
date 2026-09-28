@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const panel = document.querySelector('.search-panel');
     const closeBtn = document.getElementById('search-close-btn');
     const input = document.getElementById('search-input');
+    
+    // Các phần tử cho tính năng Clear input
+    const searchHeader = input ? input.closest('.search-header') : null;
+    const clearBtn = document.getElementById('search-clear-btn');
+    const searchList = document.querySelector('.search-list');
+    const originalListHTML = searchList ? searchList.innerHTML : '';
 
     if (drawer && panel) {
         const openSearch = (e) => {
@@ -20,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.classList.remove('search-open');
         };
 
-        // Gán sự kiện cho tất cả các nút mở [cite: 2026-02-11]
+        // Gán sự kiện cho tất cả các nút mở
         triggers.forEach(btn => {
             btn.onclick = openSearch;
         });
@@ -37,5 +43,37 @@ document.addEventListener('DOMContentLoaded', function() {
                 closeSearch();
             }
         });
+    }
+
+    // 2. Logic điều khiển hiển thị nút Clear và reset danh sách
+    if (input && searchHeader) {
+        const updateClearButton = () => {
+            if (input.value.trim().length > 0) {
+                searchHeader.classList.add('has-text');
+            } else {
+                searchHeader.classList.remove('has-text');
+            }
+        };
+
+        // Lắng nghe sự kiện input để hiện/ẩn nút Clear
+        input.addEventListener('input', function() {
+            updateClearButton();
+        });
+
+        // Xử lý khi bấm nút Clear (×)
+        if (clearBtn) {
+            clearBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                input.value = '';             // Xóa sạch chữ
+                updateClearButton();          // Ẩn nút Clear đi
+                if (searchList) {
+                    searchList.innerHTML = originalListHTML; // Phục hồi danh sách ban đầu
+                }
+                input.focus();                // Giữ focus để gõ tiếp
+            });
+        }
+
+        // Chạy kiểm tra ban đầu
+        updateClearButton();
     }
 });

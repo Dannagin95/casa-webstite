@@ -34,9 +34,3 @@ export const searchDatabase = [
     { title: "Dự Án", url: "/Du_an.html", keywords: "dự án" },
     { title: "Blog" , url: "/blog.html", keywords: "bl blog b"},
 ];
-
-
-
-
-
-

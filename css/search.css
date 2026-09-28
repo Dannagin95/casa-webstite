@@ -1,9 +1,10 @@
-/*SEARCHPANEL */
+/* ==========================================================================
+   SEARCH PANEL - HOÀN CHỈNH (FIX LỖI LAYOUT & SCROLL)
+   ========================================================================== */
 body.search-open {
     overflow: hidden;
 }
 
-/* 2. Tổng thể lớp phủ */
 .search-drawer {
     position: fixed;
     inset: 0;
@@ -18,13 +19,12 @@ body.search-open {
     pointer-events: auto;
 }
 
-/* 3. Lớp nền mờ - FIX: Thêm opacity ban đầu */
 .search-backdrop {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.4);
     z-index: -1;
-    opacity: 0; /* Bắt đầu từ 0 */
+    opacity: 0;
     transition: opacity 0.4s ease;
 }
 
@@ -32,7 +32,7 @@ body.search-open {
     opacity: 1;
 }
 
-/* 4. Cái bảng trắng - Đã căn chỉnh lề mỏng và zoom chuẩn */
+/* Khung panel chính được cấu hình Flex dọc để quản lý cuộn */
 .search-panel {
     position: fixed;
     top: 16px; 
@@ -45,12 +45,15 @@ body.search-open {
 
     background: #fff;
     z-index: 10001;
-    padding: 30px 40px 40px 40px;
+    padding: 30px 40px;
     box-shadow: -10px 0 30px rgba(0,0,0,0.05);
 
-    /* Hiệu ứng Fade + Slide mượt */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
     opacity: 0;
-    transform: translateX(30px); /* Nhích xa hơn tí cho cảm giác trượt rõ hơn */
+    transform: translateX(30px);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -59,21 +62,30 @@ body.search-open {
     transform: translateX(0);
 }
 
-/* Input & List */
 .search-header {
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    width: 100% !important;
+    position: relative !important;
+    box-sizing: border-box !important;
     border-bottom: 2px solid #000000;
     padding-bottom: 15px;
-    margin-bottom: 35px;
-}
-.search-header .text {
-    font-size: 25px;
-    font-weight: 500;
+    margin-bottom: 25px;
+    flex-shrink: 0;
 }
 
-.search-header input {
-    flex: 1; border: none; outline: none; font-size: 30px; font-weight: 800; font-family: inherit; color: #000000
+#search-input {
+    flex: 1 !important;
+    min-width: 0 !important;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    font-weight: 800;
+    font-family: inherit;
+    color: #000000;
+    background: transparent;
 }
 
 #search-input::placeholder {
@@ -84,14 +96,84 @@ body.search-open {
     transition: color 0.3s ease;
 }
 
-.close-x { background: none; border: none; cursor: pointer; padding: 5px; }
-.search-list { list-style: none; padding: 0; }
-.search-list li { margin-bottom: 10px; }
+
+
+
+.search-clear-btn {
+    display: none !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 4px 6px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    font-size: 17px !important;
+    font-weight: 500 !important;
+    font-family: var(--special-font, inherit) !important;
+    color: #858585 !important;
+    transition: color 0.2s ease !important;
+    transform: translateY(4px) !important; /* Canh thẳng hàng với input */
+}
+
+.search-clear-btn:hover {
+    color: #000000;
+}
+
+.search-header.has-text .search-clear-btn {
+    display: flex !important;
+}
+
+
+
+
+
+#search-close-btn.close-x,
+.search-header .close-x {
+    position: static !important;
+    right: auto !important;
+    top: auto !important;
+    transform: translateY(4px) !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    padding: 5px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Danh sách kết quả chiếm phần không gian còn lại và tự sinh thanh cuộn */
+.search-list { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.search-list::-webkit-scrollbar {
+    width: 5px;
+}
+.search-list::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.2);
+    border-radius: 4px;
+}
+
+.search-list li { 
+    margin-bottom: 16px; 
+}
+
 .search-list li a .highlight {
     color: #FFD700;
     font-weight: bold;
-    background: transparent; /* Hoặc thêm background nếu muốn nổi bật hơn */
+    background: transparent;
 }
+
 .search-list a { 
     font-family: var(--special-font);
     text-decoration: none; 
@@ -120,47 +202,16 @@ body.search-open {
     width: 100%; 
 }
 
-
-/* Ép lại phần header của search để nút X luôn nằm gọn bên trong, không bị tràn viền */
-.search-header {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 12px !important;
-    width: 100% !important;
-    position: relative !important;
-    box-sizing: border-box !important;
-}
-
-/* Triệt tiêu mọi thuộc tính absolute/dịch chuyển đang làm nút X bị tràn ra ngoài */
-#search-close-btn.close-x,
-.search-header .close-x {
-    position: static !important;
-    right: auto !important;
-    top: auto !important;
-    transform: none !important;
-    margin: 0 !important;
-    flex-shrink: 0 !important;
-    background: transparent !important;
-    border: none !important;
-    cursor: pointer !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    transform: translateY(4px) !important;
-}
-
-/* Đảm bảo input co giãn linh hoạt chiếm khoảng trống còn lại */
-#search-input {
-    flex: 1 !important;
-    min-width: 0 !important;
+.search-list .search-item-link::after {
+    display: none !important;
 }
 
 
 
-
+/* ==========================================================================
+   MOBILE RESPONSIVE (max-width: 767px)
+   ========================================================================== */
 @media (max-width: 767px) {
-    /* Khóa cứng body triệt để chống trôi nền và lọt sự kiện bàn phím */
     body.search-open {
         position: fixed !important;
         width: 100% !important;
@@ -178,10 +229,9 @@ body.search-open {
         align-items: center !important;
         box-sizing: border-box !important;
         z-index: 100000 !important;
-        overscroll-behavior: none !important; /* Chặn đứng hiệu ứng nảy trang */
+        overscroll-behavior: none !important;
     }
 
-    /* Ép backdrop phủ kín và chặn tuyệt đối thao tác chạm xuyên tầng */
     .search-backdrop {
         position: absolute !important;
         inset: 0 !important;
@@ -206,7 +256,6 @@ body.search-open {
 
         height: auto !important;
         height: fit-content !important;
-        /* Dùng 100vh thay vì dvh để khung không bị bóp méo khi bàn phím ảo bung lên */
         max-height: calc(100vh - 16px) !important; 
 
         background: #ffffff !important;
@@ -223,7 +272,7 @@ body.search-open {
         opacity: 0;
         transform: translateY(-10px);
         transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        overscroll-behavior: contain !important; /* Chỉ cho phép cuộn nội bộ bên trong panel nếu nội dung dài */
+        overscroll-behavior: contain !important;
     }
 
     .search-header {
@@ -233,11 +282,14 @@ body.search-open {
         gap: 12px !important;
         width: 100% !important;
         position: relative !important;
+        margin-bottom: 15px !important;
+        flex-shrink: 0 !important;
     }
 
     #search-input {
         flex: 1 !important;
         min-width: 0 !important;
+        font-size: 22px !important;
     }
 
     #search-input::placeholder {
@@ -267,32 +319,28 @@ body.search-open {
     }
 
     .search-list {
-        margin-top: -18px !important; 
-        margin-right: 0 !important;
-        margin-bottom: 0 !important;
-        margin-left: 0 !important;
+        margin: 0 !important;
         padding: 0 !important;
         overflow-y: auto !important;
-        flex-grow: 1;
-        min-height: 0;
+        flex-grow: 1 !important;
+        min-height: 0 !important;
         overscroll-behavior: contain !important;
     }
 
-    .search-list::-webkit-scrollbar { display: none; }
+    .search-list::-webkit-scrollbar { 
+        display: none; 
+    }
     
-    .search-list li { margin-bottom: 6px !important; }
-    .search-list li a { font-size: 18px !important; }
+    .search-list li { 
+        margin-bottom: 10px !important; 
+    }
+    .search-list li a { 
+        font-size: 18px !important; 
+    }
 }
 
-
-
-
-
-
-
-
 /* ==========================================================================
-   KHÓA CHẶT SEARCH DRAWER CHO TABLET (768px - 1024px)
+   TABLET RESPONSIVE (768px - 1024px)
    ========================================================================== */
 @media (min-width: 768px) and (max-width: 1024px) {
     body.search-open {
@@ -302,23 +350,19 @@ body.search-open {
         touch-action: none !important;
     }
 
-  
     .search-drawer {
         overscroll-behavior: none !important;
     }
 
-  
     .search-backdrop {
         touch-action: none !important;
     }
 
- 
     .search-panel {
         max-height: calc(100vh - 32px) !important;
         overflow-y: auto !important;
         overscroll-behavior: contain !important; 
     }
-
 
     .search-list {
         overflow-y: auto !important;
