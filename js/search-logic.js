@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             { title: "Contact Us", url: "/en/contactus.html", keywords: "contact" }
         ] : [
             { title: "CASA Parquet", url: "/index.html", keywords: "casa parquet trang chủ" },
-            { title: "Về CASA Parquet & Lịch sử", url: "/lichsu.html", keywords: "lich su ve casa parquet about history" },
+            { title: "Về chúng tôi", url: "/lichsu.html", keywords: "lich su ve casa parquet about history" },
             { title: "Chứng chỉ", url: "/chungchi.html", keywords: "chung chi certifications brochure catalogue" },
             { title: "Dự Án", url: "/Du_an.html", keywords: "du an projects" },
             { title: "Sản phẩm", url: "/san-pham.html", keywords: "san pham products" },
