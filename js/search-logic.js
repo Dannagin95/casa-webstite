@@ -1,10 +1,15 @@
 document.addEventListener('DOMContentLoaded', async function() {
     const input = document.getElementById('search-input');
     const searchList = document.querySelector('.search-list');
+    const searchHeader = input ? input.closest('.search-header') : null;
+    const clearBtn = document.getElementById('search-clear-btn');
 
     if (input && searchList) {
         const originalListHTML = searchList.innerHTML;
         const isEnglish = window.location.pathname.startsWith('/en/') || window.location.pathname === '/en';
+
+        // Tự động đổi nhãn theo ngôn ngữ website
+        const mainPageLabel = isEnglish ? 'Main Page' : 'Trang chính';
 
         // Tải đúng file JSON full-text theo ngôn ngữ
         let searchDatabase = [];
@@ -19,7 +24,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         const notFoundText = isEnglish ? 'No results for' : 'Không tìm thấy kết quả cho';
-
 
         const quickLinks = isEnglish ? [
             { title: "CASA Parquet", url: "/en/", keywords: "casa parquet" },
@@ -72,9 +76,32 @@ document.addEventListener('DOMContentLoaded', async function() {
             return text.replace(regex, '<span class="highlight">$1</span>');
         };
 
+        // Hàm kiểm soát hiển thị nút Xóa
+        const updateClearButton = () => {
+            if (searchHeader) {
+                if (input.value.trim().length > 0) {
+                    searchHeader.classList.add('has-text');
+                } else {
+                    searchHeader.classList.remove('has-text');
+                }
+            }
+        };
+
+        // Xử lý sự kiện khi bấm nút Xóa
+        if (clearBtn) {
+            clearBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                input.value = '';
+                updateClearButton();
+                searchList.innerHTML = originalListHTML;
+                input.focus();
+            });
+        }
+
         let debounce;
         input.addEventListener('input', function() {
             clearTimeout(debounce);
+            updateClearButton(); // Cập nhật trạng thái nút Xóa khi gõ chữ
             const rawValue = this.value;
             const querySafe = removeVietnameseTones(rawValue);
 
@@ -84,16 +111,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                     return;
                 }
 
-
                 const matchedQuickLinks = quickLinks.filter(item => {
                     const titleSafe = removeVietnameseTones(item.title);
                     const keywordsSafe = removeVietnameseTones(item.keywords);
                     return titleSafe.includes(querySafe) || keywordsSafe.includes(querySafe);
                 });
 
-                
                 const matchedFullText = searchDatabase.filter(item => {
- 
                     const isDuplicate = matchedQuickLinks.some(ql => ql.url === item.url);
                     if (isDuplicate) return false;
                     return item.contentSafe && item.contentSafe.includes(querySafe);
@@ -112,7 +136,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                                     <a href="${item.url}" class="search-item-link" style="display: block; text-decoration: none;">
                                         <div style="font-size: 20px; font-weight: 700; color: #000;">
                                             ${highlightedTitle} 
-                                            <span style="font-size: 11px; font-weight: 600; color: #b78103; background: #fff8e1; padding: 2px 6px; border-radius: 4px; margin-left: 8px; vertical-align: middle;">Trang chính</span>
+                                            <span style="font-size: 11px; font-weight: 600; color: #b78103; background: #fff8e1; padding: 2px 6px; border-radius: 4px; margin-left: 8px; vertical-align: middle;">${mainPageLabel}</span>
                                         </div>
                                     </a>
                                 </li>
@@ -120,7 +144,6 @@ document.addEventListener('DOMContentLoaded', async function() {
                         }).join('');
                     }
 
-                   
                     if (matchedFullText.length > 0) {
                         htmlContent += matchedFullText.map(item => {
                             const highlightedTitle = getHighlightText(item.title, rawValue);
@@ -144,5 +167,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
             }, 200);
         });
+
+        // Chạy kiểm tra trạng thái lúc đầu vừa load
+        updateClearButton();
     }
 });
