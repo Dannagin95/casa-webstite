@@ -26,17 +26,17 @@ document.addEventListener('DOMContentLoaded', async function() {
         const notFoundText = isEnglish ? 'No results for' : 'Không tìm thấy kết quả cho';
 
         const quickLinks = isEnglish ? [
-            { title: "CASA Parquet", url: "/en/", keywords: "casa parquet" },
-            { title: "About CASA / History", url: "/en/lichsu.html", keywords: "history about" },
-            { title: "Certifications", url: "/en/chungchi.html", keywords: "certifications brochure catalogue" },
-            { title: "Projects", url: "/en/Du_an.html", keywords: "projects" },
-            { title: "Products", url: "/en/san-pham.html", keywords: "products" },
+            { title: "CASA Parquet", url: "/en/index.html", keywords: "CASA parquet" },
+            { title: "About CASA / History", url: "/en/about.html", keywords: "history about" },
+            { title: "Certifications", url: "/en/Certifications.html", keywords: "certifications brochure catalogue" },
+            { title: "Projects", url: "/en/Our_Projects.html", keywords: "projects" },
+            { title: "Products", url: "/en/products.html", keywords: "products" },
             { title: "Wood & Structure", url: "/en/wood.html", keywords: "structure wood" },
             { title: "Blog", url: "/en/blog.html", keywords: "blog" },
             { title: "Contact Us", url: "/en/contactus.html", keywords: "contact" }
         ] : [
-            { title: "CASA Parquet", url: "/index.html", keywords: "casa parquet trang chủ" },
-            { title: "Về chúng tôi", url: "/lichsu.html", keywords: "lich su ve casa parquet about history" },
+            { title: "CASA Parquet", url: "/index.html", keywords: "CASA parquet trang chủ" },
+            { title: "Về chúng tôi", url: "/lichsu.html", keywords: "lich su ve CASA parquet about history" },
             { title: "Chứng chỉ", url: "/chungchi.html", keywords: "chung chi certifications brochure catalogue" },
             { title: "Dự Án", url: "/Du_an.html", keywords: "du an projects" },
             { title: "Sản phẩm", url: "/san-pham.html", keywords: "san pham products" },
