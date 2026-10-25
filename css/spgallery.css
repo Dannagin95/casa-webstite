@@ -1,40 +1,25 @@
 /* --- MOBILE CSS cho .sanpham-gallery --- */
 @media (max-width: 768px) {
-    
-
     .sanpham-gallery {
-
         padding: 40px 20px; 
         overflow: hidden; 
     }
 
-    /* 2. Header (Tiêu đề) */
     .luot-header {
-        margin-bottom: 25px;
         text-align: left;
+        margin-bottom: 20px;
     }
 
     .luot-header .sub-title {
         display: block;
-        font-size: 11px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: #2b2929;
-        margin-bottom: 20px;
-    }
-
-    .luot-header .main-title {
-        font-family: var(--special-font);
-        font-size: 28px; 
-        font-weight: 400; 
-        color: #000;
         margin: 0;
-        margin-bottom: -5px !important;
-        line-height: 1.2;
-        max-width: 60%;
-        
+        font-size: 12px;
+        word-spacing: 3px;
+        font-weight: 200;
+        letter-spacing: 0.05em;
+        color: #2b2929;
+        text-transform: uppercase;
     }
-
 
     .luot-viewport {
         display: flex;
@@ -43,10 +28,6 @@
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
         scrollbar-width: none;
-        
-        
-        /* 2. Giảm tốc độ trượt tự do (friction) */
-        /* Thuộc tính này cực kỳ hiệu quả để làm slide "đầm" hơn */
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
         margin-left: -20px; 
@@ -58,29 +39,28 @@
 
 
     .luot-viewport::-webkit-scrollbar {
-        display: none; /* Ẩn thanh cuộn mặc định (Chrome/Safari) */
+        display: none;
     }
 
     .luot-track {
         display: flex;
-        gap: 7px; /* Khoảng cách giữa các card */
+        gap: 7px;
         width: max-content;
     }
-    /* 4. Product Card (Thẻ sản phẩm) */
+
     .sanpham-card {
-        /* 85vw hoặc con số mày ưng, giữ nguyên */
         width: 89vw; 
         flex-shrink: 0;
-        scroll-snap-align: start; /* Dính sát lề khi trượt qua */
+        scroll-snap-align: start;
         scroll-snap-stop: always; 
     }
-    /* Hình ảnh */
+
     .sanpham-image {
         position: relative;
         width: 100%;
-        aspect-ratio: 7/8; /* Tỷ lệ ảnh dọc chuẩn e-commerce hiện nay */
+        aspect-ratio: 7/8;
         overflow: hidden;
-        background-color: #f5f5f5; /* Màu nền chờ khi ảnh chưa load */
+        background-color: #f5f5f5;
         margin-bottom: 15px;
     }
 
@@ -91,54 +71,37 @@
         display: block;
     }
 
-    /* Nút Quick Add (Ẩn trên mobile hoặc hiện góc nhỏ, ở đây tao ẩn để sạch layout giống video) */
-    .quick-add-btn {
-        display: none; 
-    }
 
-    /* Thông tin sản phẩm */
+
     .sanpham-info {
-        text-align: left;
+        position: absolute !important;
+        bottom: 30px !important;
+        left: 20px !important;
+        z-index: 2;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: start !important;
+        justify-content: flex-start !important;
+        background: transparent !important;
+        background-image: none !important;
     }
 
-    .sanpham-info .badge {
-        font-size: 10px;
-        font-weight: 700;
-        color: #666;
-        text-transform: uppercase;
-        display: block;
-        margin-bottom: 5px;
-        letter-spacing: 0.5px;
-    }
+
 
     .sanpham-info .name {
         font-family: var(--special-font);
-        font-size: 1.4rem;
-        font-weight: 600;
-        margin: 0 0 5px 0;
-        color: #000;
-        
+        color: #ffffff !important;
+        font-weight: 400 !important;
+        font-size: 25px !important; 
+        line-height: 1.1 !important;
+        margin: 0 !important;
     }
 
-    .sanpham-info .desc {
-        font-size: 12px;
-        color: #555;
-        margin: 0 0 8px 0;
-        line-height: 1.4;
-        display: -webkit-box;
-        -webkit-line-clamp: 2; /* Giới hạn 2 dòng mô tả */
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+
+    .sanpham-info .card-arrow {
+        display: none;
     }
 
-    .sanpham-info .price {
-        font-size: 14px;
-        color: #000;
-        font-weight: 500;
-        margin: 0;
-    }
-
-    /* 5. Footer & Progress Bar */
     .luot-footer {
         margin-top: 10px;
         display: flex;
@@ -146,16 +109,16 @@
         align-items: center;
     }
 
-    /* Ẩn nút mũi tên (Nav) trên mobile vì đã dùng vuốt */
+
     .luot-nav {
         display: none; 
     }
 
-    /* Thanh Progress Bar */
+
     .luot-progress-container {
-        width: 100%; /* Full width theo container cha */
-        height: 2px; /* Thanh mảnh tinh tế */
-        background-color: #e0e0e0; /* Màu nền xám nhạt */
+        width: 100%;
+        height: 2px;
+        background-color: #e0e0e0;
         position: relative;
         overflow: hidden;
         margin-top: 10px;
@@ -166,8 +129,8 @@
         left: 0;
         top: 0;
         height: 100%;
-        width: 20%; /* Ví dụ độ dài ban đầu, JS sẽ tính lại cái này */
-        background-color: #000; /* Màu đen chạy trên nền xám */
+        width: 20%; 
+        background-color: #000;
         transition: width 0.3s ease, left 0.3s ease;
     }
 }
@@ -188,10 +151,9 @@
         scroll-padding-left: 20px !important;
     }
     .luot-track {
-        gap: 8px !important; /* Khoảng cách card riêng cho Tablet nhỏ */
+        gap: 8px !important; 
     }
     .sanpham-card {
-        /* Chỉnh width tại đây: Hiện ~2.5 card */
         width: calc((100vw - 40px - 30px) / 2.2) !important;
         flex: 0 0 calc((100vw - 40px - 30px) / 2.2) !important;
         flex-shrink: 0 !important;
@@ -228,7 +190,7 @@
      
     .luot-header {
         margin-bottom: 25px;
-        text-align: left; /* Canh trái cho giống phong cách tạp chí */
+        text-align: left;
     }
 
     .luot-header .sub-title {
@@ -247,8 +209,6 @@
         -webkit-overflow-scrolling: touch !important; 
         scroll-snap-type: x mandatory !important;
         scrollbar-width: none !important;
-        
-        /* Logic tràn viền nhưng giữ lề 20px [cite: 2026-02-07] */
         margin-left: -20px !important; 
         margin-right: -20px !important;
         padding-left: 20px !important; 
@@ -269,7 +229,6 @@
         transition: none !important;
     }
 
-    /* Bỏ width dư thừa theo ý mày, chỉ giữ để ngăn co rút */
     .luot-track::after {
         content: "";
         display: block;
@@ -277,7 +236,6 @@
     }
 
     .sanpham-card {
-        /* Mày đang để chia 2 (~2 card hiện ra), tao giữ nguyên tỉ lệ này */
         width: calc((100vw - 40px - 20px) / 2.5) !important;
         flex: 0 0 calc((100vw - 40px - 20px) / 2.5) !important;
         flex-shrink: 0 !important;
